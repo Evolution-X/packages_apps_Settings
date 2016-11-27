@@ -26,6 +26,8 @@ import androidx.preference.TwoStatePreference;
 import com.android.settings.core.PreferenceControllerMixin;
 import com.android.settingslib.development.DeveloperOptionsPreferenceController;
 
+import android.os.SystemProperties;
+
 public class DisableAutomaticUpdatesPreferenceController extends
         DeveloperOptionsPreferenceController implements
         Preference.OnPreferenceChangeListener, PreferenceControllerMixin {
@@ -72,5 +74,10 @@ public class DisableAutomaticUpdatesPreferenceController extends
         Settings.Global.putInt(mContext.getContentResolver(),
                 Settings.Global.OTA_DISABLE_AUTOMATIC_UPDATE, DISABLE_UPDATES_SETTING);
         ((TwoStatePreference) mPreference).setChecked(false);
+    }
+
+    @Override
+    public boolean isAvailable() {
+        return SystemProperties.getBoolean("ro.build.ab_update", false);
     }
 }
