@@ -277,4 +277,7 @@
     <string name="doze_brightness_force_summary">Use custom brightness values instead of screen brightness</string>
     <string name="ambient_pulse_brightness_title">Ambient display brightness</string>
     <string name="ambient_doze_brightness_title">Always on display brightness</string>
+
+    <!-- Running services - Background processes tab -->
+    <string name="background_processes_settings_title">Background processes</string>
 </resources>
