@@ -378,4 +378,7 @@
     <!-- Circle to search -->
     <string name="search_all_entrypoints_enabled_title">Circle to Search</string>
     <string name="search_all_entrypoints_enabled_summary">Use CTS instead of Google Lens for navbar long press</string>
+
+    <!-- Running services - Background processes tab -->
+    <string name="background_processes_settings_title">Background processes</string>
 </resources>
