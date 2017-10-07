@@ -67,6 +67,12 @@
             settings:keywords="@string/keywords_battery_adaptive_preferences" />
     </com.android.settingslib.widget.UntitledPreferenceCategory>
 
+    <!-- Battery light -->
+    <lineageos.preference.LineagePartsPreference
+        android:key="battery_lights"
+        settings:requiresConfig="@*lineageos.platform:integer/config_deviceLightCapabilities"
+        settings:requiresConfigMask="64" />
+
     <com.android.settingslib.widget.UntitledPreferenceCategory
         android:key="percentage_category">
         <SwitchPreferenceCompat
