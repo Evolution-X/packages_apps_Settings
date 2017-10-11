@@ -97,6 +97,22 @@
             android:order="-140"
             settings:userRestriction="no_adjust_volume"
             settings:controller="com.android.settings.notification.AlarmVolumePreferenceController"/>
+
+        <!-- Increasing ring -->
+        <org.evolution.settings.preferences.SystemSettingSwitchPreference
+            android:key="increasing_ring"
+            android:title="@string/increasing_ring_volume_option_title"
+            android:order="-137"
+            android:defaultValue="false"
+            settings:controller="com.android.settings.notification.IncreasingRingPreferenceController" />
+
+        <!-- Increasing ring volume -->
+        <com.android.settings.notification.IncreasingRingVolumePreference
+            android:key="increasing_ring_volume"
+            android:icon="@drawable/ring_notif_increasing"
+            android:dependency="increasing_ring"
+            android:order="-136"
+            settings:controller="com.android.settings.notification.IncreasingRingVolumePreferenceController" />
     </com.android.settingslib.widget.UntitledPreferenceCategory>
 
     <!-- Vibrations and haptics category -->
@@ -128,7 +144,7 @@
             android:order="-120"
             settings:keywords="@string/sound_settings"/>
 
-        <!-- Phone ringtone for Slot2 -->
+       <!-- Phone ringtone for Slot2 -->
         <com.android.settings.DefaultRingtonePreference
             android:key="ringtone2"
             android:title="@string/ringtone_title"
