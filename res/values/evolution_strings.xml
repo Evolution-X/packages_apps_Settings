@@ -31,4 +31,10 @@
 
     <!-- Scroll fling haptic feedback -->
     <string name="scroll_fling_haptic_feedback_title">Vibrate on scroll flings</string>
+
+    <!-- Charger haptic feedback -->
+    <string name="charger_haptic_feedback_title">Vibrate on charger connection changes</string>
+
+    <!-- Charging sound -->
+    <string name="charging_sounds_custom_title">Charging sounds</string>
 </resources>
