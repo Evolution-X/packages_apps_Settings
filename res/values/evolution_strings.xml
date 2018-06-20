@@ -14,4 +14,7 @@
     <string name="build_maintainer_summary" translatable="false">Unknown</string>
     <string name="build_maintainer_donate_url" translatable="false">https://linktr.ee/joeyhuab</string>
 
+    <!-- Hardware info -->
+    <string name="platform_revision">Platform</string>
+    <string name="total_ram">Total RAM</string>
 </resources>
