@@ -29,10 +29,10 @@
             android:summary="@string/summary_placeholder"
             android:fragment="com.android.settings.applications.ProcessStatsSummary" />
 
-        <com.android.settings.BugreportPreference
+        <!--<com.android.settings.BugreportPreference
             android:key="bugreport"
             android:title="@*android:string/bugreport_title"
-            android:dialogTitle="@*android:string/bugreport_title" />
+            android:dialogTitle="@*android:string/bugreport_title" />-->
 
         <Preference
             android:key="bug_report_handler"
@@ -214,10 +214,12 @@
             android:summary="@string/enable_linux_terminal_summary"
             android:fragment="com.android.settings.development.linuxterminal.LinuxTerminalDashboardFragment" />
 
+        <!--
         <SwitchPreferenceCompat
             android:key="bugreport_in_power"
             android:title="@string/bugreport_in_power"
             android:summary="@string/bugreport_in_power_summary" />
+        -->
 
         <SwitchPreferenceCompat
             android:key="enable_verbose_vendor_logging"
