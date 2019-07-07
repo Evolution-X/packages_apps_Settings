@@ -525,4 +525,6 @@ public class Settings extends SettingsActivity {
     public static class ContactsStorageSettingsActivity extends SettingsActivity { /* empty */ }
 
     public static class PrivateDnsSettingsActivity extends SettingsActivity { /* empty */ }
+
+    public static class SmartPixelsActivity extends SettingsActivity {}
 }
