@@ -210,6 +210,7 @@ import com.android.settings.wifi.savedaccesspoints2.SavedAccessPointsWifiSetting
 import com.android.settings.wifi.tether.WifiTetherSettings;
 
 import org.evolution.settings.EvolutionSettings;
+import org.evolution.settings.fragments.miscellaneous.SmartPixels;
 
 public class SettingsGateway {
 
@@ -409,6 +410,7 @@ public class SettingsGateway {
             ZenModeFragment.class.getName(),
             PrivateDnsSettings.class.getName(),
             VolumeStepsSettings.class.getName(),
+            SmartPixels.class.getName(),
     };
 
     public static final String[] SETTINGS_FOR_RESTRICTED = {
@@ -458,5 +460,6 @@ public class SettingsGateway {
             Settings.NavigationModeSettingsActivity.class.getName(),
             // Others (Evolution X Additions)
             Settings.PrivateDnsSettingsActivity.class.getName(),
+            Settings.SmartPixelsActivity.class.getName(),
     };
 }
