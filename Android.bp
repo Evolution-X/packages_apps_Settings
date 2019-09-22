@@ -51,15 +51,24 @@ android_library {
         "SpaPrivilegedLib-defaults",
     ],
 
-    srcs: ["src/**/*.java", "src/**/*.kt"],
+    srcs: [
+           "src/**/*.java",
+           "src/**/*.kt",
+           "Evolver/src/**/*.java",
+           "Evolver/src/**/*.kt",
+    ],
     exclude_srcs: [
         "src/com/android/settings/biometrics/fingerprint2/shared/**/*.kt",
     ],
     use_resource_processor: true,
+
+    aaptflags: ["--extra-packages org.evolution.settings"],
+
     resource_dirs: [
         "res",
         "res-export", // for external usage
         "res-product",
+        "Evolver/res",
     ],
     static_libs: [
         // External dependencies
