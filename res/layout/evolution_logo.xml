@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2019-2024 The Evolution X Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="?android:attr/colorPrimary"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:selectable="false">
+
+        <ImageView
+            android:adjustViewBounds="true"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_evolution_logo"/>
+</LinearLayout>
