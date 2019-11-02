@@ -48,4 +48,8 @@
     <!-- Wake gestures haptics -->
     <string name="doze_gesture_vibrate_title">Haptic feedback</string>
     <string name="doze_gesture_vibrate_summary">Vibrate when this gesture is invoked</string>
+
+    <!-- Pulse on music track change -->
+    <string name="pulse_on_new_tracks_title">Music ticker</string>
+    <string name="pulse_on_new_tracks_summary">Show Ambient Display when a new music track is played</string>
 </resources>
