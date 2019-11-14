@@ -211,6 +211,11 @@
             android:key="long_screen_settings"
             settings:requiresConfig="@*lineageos.platform:bool/config_haveHigherAspectRatioScreen" />-->
 
+        <ListPreference
+            android:key="display_cutout_emulation"
+            android:title="@string/display_cutout_emulation"
+            settings:keywords="@string/display_cutout_emulation_keywords" />
+
         <Preference
             android:key="screensaver"
             android:title="@string/screensaver_settings_title"
