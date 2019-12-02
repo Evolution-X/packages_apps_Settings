@@ -13,6 +13,7 @@
     <string name="build_maintainer">Build maintainer</string>
     <string name="build_maintainer_summary" translatable="false">Unknown</string>
     <string name="build_maintainer_donate_url" translatable="false">https://linktr.ee/joeyhuab</string>
+    <string name="device_name">Device</string>
 
     <!-- Deep Sleep percentage in device info -->
     <string name="status_sleep_time">Deep sleep</string>
