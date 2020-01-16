@@ -43,14 +43,15 @@ public class BasebandVersionPreferenceController extends BasePreferenceControlle
 
     @Override
     public CharSequence getSummary() {
-        String baseband = SystemProperties.get(BASEBAND_PROPERTY,
+        String baseBands = SystemProperties.get(BASEBAND_PROPERTY,
                 mContext.getString(R.string.device_info_default));
-        for (String str : baseband.split(",")) {
-            if (!TextUtils.isEmpty(str)) {
-                return str;
+        if (null != baseBands) {
+            String[] baseBandArray = baseBands.split(",");
+            if ((baseBandArray != null) && (baseBandArray.length > 0)) {
+                return baseBandArray[0];
             }
         }
-        return baseband;
+        return baseBands;
     }
 }
 // LINT.ThenChange(BasebandVersionPreference.kt)
