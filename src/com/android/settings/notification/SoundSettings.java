@@ -260,6 +260,7 @@ public class SoundSettings extends DashboardFragment implements OnActivityResult
         controllers.add(new PhoneRingtonePreferenceController(context));
         controllers.add(new AlarmRingtonePreferenceController(context));
         controllers.add(new NotificationRingtonePreferenceController(context));
+        controllers.add(new VibrationPatternPreferenceController(context));
 
         // === Other Sound Settings ===
         final DialPadTonePreferenceController dialPadTonePreferenceController =
