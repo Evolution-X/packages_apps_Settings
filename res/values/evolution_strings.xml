@@ -400,4 +400,8 @@
     <string name="clipboard_auto_clear_summary">Automatically clear clipboard at the scheduled time</string>
     <string name="clipboard_auto_clear_enabled_title">Use clipboard auto clear</string>
     <string name="clipboard_auto_clear_timeout_disable_clipboard">Disable clipboard</string>
+
+    <!-- Cycle through ringer modes gesture -->
+    <string name="prevent_ringing_option_cycle">Cycle through modes</string>
+    <string name="prevent_ringing_option_cycle_summary">On (cycle through modes)</string>
 </resources>
