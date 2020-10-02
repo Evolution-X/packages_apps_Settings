@@ -183,6 +183,9 @@
     <string name="wifi_timeout">WiFi timeout</string>
     <string name="wifi_timeout_summary">Do not automatically turn off WiFi</string>
     <string name="wifi_timeout_summary_auto">WiFi will turn off after <xliff:g id="timeout_description">%1$s</xliff:g> if no network connected</string>
+    <string name="bluetooth_timeout">Bluetooth timeout</string>
+    <string name="bluetooth_timeout_summary">Do not automatically turn off Bluetooth</string>
+    <string name="bluetooth_timeout_summary_auto">Bluetooth will turn off after <xliff:g id="timeout_description">%1$s</xliff:g> if no devices connected</string>
     <string name="custom_timeout_summary_never">Never</string>
     <string name="custom_timeout_summary_5secs">5 seconds</string>
     <string name="custom_timeout_summary_10secs">10 seconds</string>
