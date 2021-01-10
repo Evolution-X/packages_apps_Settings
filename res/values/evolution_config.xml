@@ -45,4 +45,7 @@
         <item>com.google.android.calendar</item>
         <item>com.google.android.gm</item>
     </string-array>
+
+    <!-- Whether to show double tap ambient settings -->
+    <bool name="config_supports_double_tap_ambient" translatable="false">true</bool>
 </resources>
