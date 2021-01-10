@@ -159,4 +159,9 @@
     <!-- Hide screen capture status -->
     <string name="hide_screen_capture_status_title">Hide screen capture status</string>
     <string name="hide_screen_capture_status_summary">Hide screen capture status from all applications. Can be convenient in some cases but may lead to privacy leaks. Need to restart applications for the change to take effect.</string>
+
+    <!-- Doze on double tap -->
+    <string name="double_tap_title">Double tap</string>
+    <string name="doze_double_tap_title">Double tap to check phone</string>
+    <string name="doze_double_tap_summary">Pulse notifications by a double tap</string>
 </resources>
