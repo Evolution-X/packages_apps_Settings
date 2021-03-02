@@ -119,4 +119,10 @@
     <string name="custom_timeout_summary_2hours">2 hours</string>
     <string name="custom_timeout_summary_4hours">4 hours</string>
     <string name="custom_timeout_summary_8hours">8 hours</string>
+
+    <!-- Default getTimeSpentInApp string for Wellbeing to display. [CHAR LIMIT=NONE] --> 
+    <string name="duration_less_than_one_minute">Less than 1 Minute</string>
+
+    <!-- Summary for Wellbeing screen time usage. [CHAR LIMIT=NONE] -->
+    <string name="screen_time_summary_usage_today">%1$s today</string>
 </resources>
