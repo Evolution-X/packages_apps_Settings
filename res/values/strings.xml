@@ -13920,9 +13920,4 @@
     <string name="search_gesture_feature_title">Circle to Search</string>
     <!-- Summary text for press and hold nav handle OR home button to invoke Circle to Search. [CHAR LIMIT=NONE] -->
     <string name="search_gesture_feature_summary">Touch and hold the Home button or the navigation handle to search using the content on your screen.</string>
-
-    <!-- Sound: Title for the option defining the phone ringtone for slot1 on Muilti SIM device. [CHAR LIMIT=50] -->
-    <string name="ringtone1_title">Phone ringtone - SIM 1</string>
-    <!-- Sound: Title for the option defining the phone ringtone for slot2 on Muilti SIM device. [CHAR LIMIT=50] -->
-    <string name="ringtone2_title">Phone ringtone - SIM 2</string>
 </resources>
