@@ -45,4 +45,8 @@
     <!-- App search preference -->
     <string name="search">Search</string>
     <string name="search_apps">Search apps</string>
+
+    <!-- USB configuration -->
+    <string name="usb_default_config_title">USB configuration</string>
+    <string name="usb_default_config_summary">Choose the default behavior when connected to a device via USB</string>
 </resources>
