@@ -23,4 +23,8 @@
 
     <!-- Device SKU -->
     <string name="hardware_sku">Hardware SKU</string>
+
+    <!-- USB configuration -->
+    <string name="usb_default_config_title">USB configuration</string>
+    <string name="usb_default_config_summary">Choose the default behavior when connected to a device via USB</string>
 </resources>
