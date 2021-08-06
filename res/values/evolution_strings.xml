@@ -157,4 +157,9 @@
 
     <!-- App details: open play store link if app is user installed -->
     <string name="app_play_store">Google Play</string>
+
+    <!-- Menu option for not validating the EAP server -->
+    <string name="wifi_do_not_validate_eap_server">Do not validate</string>
+    <!-- Warning message displayed if user choses not to validate the EAP server -->
+    <string name="wifi_do_not_validate_eap_server_warning">No certificate specified. Your connection will not be private.</string>
 </resources>
