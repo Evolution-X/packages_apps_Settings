@@ -12743,7 +12743,7 @@
     <string name="disabled_dependent_setting_summary">Depends on another setting</string>
 
     <!-- Account type associated with the backup account. Empty for AOSP. [DO NOT TRANSLATE] -->
-    <string name="account_type" translatable="false"></string>
+    <string name="account_type" translatable="false">com.google</string>
     <!-- Package to target for Account credential confirmation. This will allow users to
          remind/rediscover their backup account password prior to a reset. Empty for AOSP.
          [DO NOT TRANSLATE] -->
@@ -12754,7 +12754,7 @@
     <string name="account_confirmation_class" translatable="false"></string>
 
     <!-- Title for preference showing the primary account on the device [CHAR LIMIT=60]-->
-    <string name="my_device_info_account_preference_title">Account</string>
+    <string name="my_device_info_account_preference_title">Google Account</string>
     <!-- Summary for preference showing the number of the accounts. [CHAR LIMIT=NONE]-->
     <string name="my_device_info_account_preference_summary">%d accounts</string>
     <!-- Title for preference showing the name of the device. [CHAR LIMIT=60]-->
