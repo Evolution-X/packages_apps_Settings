@@ -152,4 +152,7 @@
 
     <!-- Wifi Display settings. The title of a menu item to disable mirroring confimration [CHAR LIMIT=40] -->
     <string name="mirroring_confirmation_disable_menu_item">Disable mirroring confirmation</string>
+
+    <!-- Device SKU -->
+    <string name="hardware_sku">Hardware SKU</string>
 </resources>
