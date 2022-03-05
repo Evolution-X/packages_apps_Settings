@@ -160,4 +160,7 @@
     <!-- App search preference -->
     <string name="search">Search</string>
     <string name="search_apps">Search apps</string>
+
+    <!-- Device SKU -->
+    <string name="hardware_sku">Hardware SKU</string>
 </resources>
