@@ -205,6 +205,8 @@ import com.android.settings.wifi.tether.WifiTetherSettings;
 
 import org.evolution.settings.EvolutionSettings;
 
+import con.android.settings.wifi.tether.WifiTetherClientManager;
+
 public class SettingsGateway {
 
     /**
@@ -397,6 +399,7 @@ public class SettingsGateway {
             VibrationIntensitySettingsFragment.class.getName(),
             PrivateDnsSettings.class.getName(),
             VolumeStepsSettings.class.getName(),
+            WifiTetherClientManager.class.getName(),
     };
 
     public static final String[] SETTINGS_FOR_RESTRICTED = {
