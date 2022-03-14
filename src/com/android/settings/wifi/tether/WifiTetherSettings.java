@@ -48,6 +48,8 @@ import com.android.settingslib.core.AbstractPreferenceController;
 import com.android.settingslib.search.SearchIndexable;
 import com.android.settingslib.wifi.WifiEnterpriseRestrictionUtils;
 
+import com.android.settings.wifi.tether.WifiTetherClientManagerPreferenceController;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -76,6 +78,9 @@ public class WifiTetherSettings extends RestrictedDashboardFragment
     static final String KEY_WIFI_HOTSPOT_SPEED = "wifi_hotspot_speed";
     @VisibleForTesting
     static final String KEY_INSTANT_HOTSPOT = "wifi_hotspot_instant";
+    @VisibleForTesting
+    static final String KEY_WIFI_TETHER_CLIENT_MANAGER =
+            WifiTetherClientManagerPreferenceController.PREF_KEY;
 
     @VisibleForTesting
     SettingsMainSwitchBar mMainSwitchBar;
@@ -90,6 +95,7 @@ public class WifiTetherSettings extends RestrictedDashboardFragment
     WifiTetherMaximizeCompatibilityPreferenceController mMaxCompatibilityPrefController;
     @VisibleForTesting
     WifiTetherAutoOffPreferenceController mWifiTetherAutoOffPreferenceController;
+    private WifiTetherClientManagerPreferenceController mClientPrefController;
 
     @VisibleForTesting
     boolean mUnavailable;
@@ -199,6 +205,7 @@ public class WifiTetherSettings extends RestrictedDashboardFragment
         mMaxCompatibilityPrefController =
                 use(WifiTetherMaximizeCompatibilityPreferenceController.class);
         mWifiTetherAutoOffPreferenceController = use(WifiTetherAutoOffPreferenceController.class);
+        mClientPrefController = use(WifiTetherClientManagerPreferenceController.class);
     }
 
     @Override
@@ -283,6 +290,7 @@ public class WifiTetherSettings extends RestrictedDashboardFragment
         controllers.add(
                 new WifiTetherAutoOffPreferenceController(context, KEY_WIFI_TETHER_AUTO_OFF));
         controllers.add(new WifiTetherMaximizeCompatibilityPreferenceController(context, listener));
+        controllers.add(new WifiTetherClientManagerPreferenceController(context, listener));
         return controllers;
     }
 
@@ -329,6 +337,7 @@ public class WifiTetherSettings extends RestrictedDashboardFragment
         }
         configBuilder.setAutoShutdownEnabled(
                 mWifiTetherAutoOffPreferenceController.isEnabled());
+        mClientPrefController.updateConfig(configBuilder);
         return configBuilder.build();
     }
 
@@ -369,6 +378,7 @@ public class WifiTetherSettings extends RestrictedDashboardFragment
                 keys.add(KEY_WIFI_TETHER_NETWORK_PASSWORD);
                 keys.add(KEY_WIFI_TETHER_AUTO_OFF);
                 keys.add(KEY_WIFI_TETHER_MAXIMIZE_COMPATIBILITY);
+                keys.add(KEY_WIFI_TETHER_CLIENT_MANAGER);
             }
 
             // Remove duplicate
