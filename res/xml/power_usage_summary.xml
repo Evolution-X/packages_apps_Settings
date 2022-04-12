@@ -80,6 +80,11 @@
             android:fragment="org.evolution.settings.fragments.miscellaneous.IdleManagerSettings" />
 
         <Preference
+            android:key="sleep_mode"
+            android:title="@string/sleep_mode_title"
+            android:fragment="com.android.settings.fuelgauge.sleepmode.SleepMode" />
+
+        <Preference
             android:key="app_battery_usage"
             android:title="@string/app_battery_usage_title"
             settings:controller="com.android.settings.fuelgauge.AppBatteryUsagePrefController" />
