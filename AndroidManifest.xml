@@ -5762,6 +5762,24 @@
             </intent-filter>
         </activity>
 
+        <!-- Sleep Mode -->
+        <receiver android:name="com.android.settings.fuelgauge.sleepmode.SleepModeReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.SLEEP_MODE_TURN_OFF" />
+            </intent-filter>
+        </receiver>
+        <activity android:name="Settings$SleepModeActivity"
+            android:label="@string/sleep_mode_title"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.fuelgauge.sleepmode.SleepMode" />
+        </activity>
+
         <activity android:name=".Settings$FingerprintSettingsActivityV2"
             android:label="@string/security_settings_fingerprint_preference_title"
             android:exported="false"
