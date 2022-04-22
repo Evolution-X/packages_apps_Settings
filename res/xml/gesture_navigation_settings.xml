@@ -29,6 +29,12 @@
         android:summary="@string/show_navbar_hint_summary"
         android:defaultValue="true" />
 
+    <org.evolution.settings.preferences.SecureSettingSwitchPreference
+        android:key="back_gesture_arrow"
+        android:title="@string/back_gesture_arrow_title"
+        android:summary="@string/back_gesture_arrow_summary"
+        android:defaultValue="true" />
+
     <com.android.settings.widget.LabeledSeekBarPreference
         android:key="gesture_back_height"
         android:title="@string/back_height_title"
