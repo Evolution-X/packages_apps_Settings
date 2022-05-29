@@ -99,6 +99,7 @@ public class DashboardFeatureProviderImpl implements DashboardFeatureProvider {
     private static final String TAG = "DashboardFeatureImpl";
     private static final String DASHBOARD_TILE_PREF_KEY_PREFIX = "dashboard_tile_pref_";
     private static final String META_DATA_KEY_INTENT_ACTION = "com.android.settings.intent.action";
+    private static final String WELLBEING_PACKAGE = "com.google.android.apps.wellbeing";
     private static final String TOP_LEVEL_ACCOUNT_CATEGORY = "top_level_account_category";
 
     @VisibleForTesting
@@ -543,6 +544,17 @@ public class DashboardFeatureProviderImpl implements DashboardFeatureProvider {
                     preference.setIcon(iconDrawable);
                     return;
                 }
+            }
+            if (WELLBEING_PACKAGE.equals(iconPackage) && iconDrawable instanceof LayerDrawable
+                 && ((LayerDrawable) iconDrawable).getDrawable(1) != null) {
+                iconDrawable = ((LayerDrawable) iconDrawable).getDrawable(1);
+                iconDrawable.mutate();
+            }
+            // Skip tinting and Adaptive Icon transformation for homepage account type raw icons
+            if (TextUtils.equals(tile.getGroupKey(), "top_level_account_category")
+                    && iconPackage == null) {
+                preference.setIcon(iconDrawable);
+                return;
             }
             iconDrawable.setTint(Utils.getHomepageIconColor(preference.getContext()));
         }
