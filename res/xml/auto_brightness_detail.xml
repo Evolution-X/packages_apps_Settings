@@ -43,6 +43,12 @@
         settings:userRestriction="no_config_brightness"
         settings:allowDividerAbove="true" />
 
+    <Preference
+        android:key="reset_auto_brightness_adjustment"
+        android:title="@string/reset_auto_brightness_adjustment_title"
+        android:summary="@string/reset_auto_brightness_adjustment_summary"
+        settings:controller="com.android.settings.display.ResetAutoBrightnessAdjustmentPreferenceController"/>
+
     <com.android.settingslib.widget.FooterPreference
         android:key="auto_brightness_footer"
         android:title="@string/auto_brightness_description"
