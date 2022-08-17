@@ -57,11 +57,11 @@ public class RecentLocationAccessSeeAllPreferenceController
                                 DeviceConfig.NAMESPACE_PRIVACY,
                                 SystemUiDeviceConfigFlags
                                         .PROPERTY_LOCATION_INDICATORS_SMALL_ENABLED,
-                                false)
+                                true)
                         ? Settings.Secure.getInt(
                                         mContext.getContentResolver(),
                                         Settings.Secure.LOCATION_SHOW_SYSTEM_OPS,
-                                        0)
+                                        1)
                                 == 1
                         : false;
 
