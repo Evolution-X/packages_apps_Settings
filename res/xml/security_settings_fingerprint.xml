@@ -41,6 +41,12 @@
             android:summary="@string/security_settings_require_screen_on_to_auth_description"
             settings:keywords="@string/security_settings_require_screen_on_to_auth_keywords"
             settings:controller="com.android.settings.biometrics.fingerprint.FingerprintSettingsRequireScreenOnToAuthPreferenceController" />
+
+        <org.evolution.settings.preferences.SystemSettingSwitchPreference
+            android:key="fingerprint_lockout"
+            android:title="@string/fingerprint_lockout_title"
+            android:summary="@string/fingerprint_lockout_summary"
+            android:defaultValue="false" />
     </PreferenceCategory>
 
     <PreferenceCategory
