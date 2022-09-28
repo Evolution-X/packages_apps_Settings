@@ -219,4 +219,8 @@
     <string name="always_on_display_schedule_sunrise">Sunrise</string>
     <string name="always_on_display_schedule_mixed_sunset">Turns on from sunset till a time</string>
     <string name="always_on_display_schedule_mixed_sunrise">Turns on from a time till sunrise</string>
+
+    <!-- Fingerprint lockout -->
+    <string name="fingerprint_lockout_title">Disable fingerprint lockout</string>
+    <string name="fingerprint_lockout_summary">Deactivates 30 second timeout as well as permanent lockout after multiple failed fingerprint unlock attempts</string>
 </resources>
