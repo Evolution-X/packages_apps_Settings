@@ -50,6 +50,12 @@
             settings:keywords="@string/security_settings_screen_off_unlock_udfps_keywords"
             settings:controller="com.android.settings.biometrics.fingerprint.FingerprintSettingsScreenOffUnlockUdfpsPreferenceController"
             settings:isPreferenceVisible="false"/>
+
+        <org.evolution.settings.preferences.SystemSettingSwitchPreference
+            android:key="fingerprint_lockout"
+            android:title="@string/fingerprint_lockout_title"
+            android:summary="@string/fingerprint_lockout_summary"
+            android:defaultValue="false" />
     </PreferenceCategory>
 
     <PreferenceCategory

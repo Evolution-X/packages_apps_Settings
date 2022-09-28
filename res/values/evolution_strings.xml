@@ -335,4 +335,8 @@
     <!-- Idle manager -->
     <string name="idle_manager_title">Idle manager</string>
     <string name="idle_manager_summary">Stop all non-essential background processes when the device is idle</string>
+
+    <!-- fingerprint lockout -->
+    <string name="fingerprint_lockout_title">Disable fingerprint lockout</string>
+    <string name="fingerprint_lockout_summary">Deactivates 30 second timeout as well as permanent lockout after multiple failed fingerprint unlock attempts</string>
 </resources>
