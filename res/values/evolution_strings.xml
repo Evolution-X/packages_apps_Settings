@@ -25,4 +25,7 @@
 
     <!-- Volume slider haptic feedback -->
     <string name="volume_slider_haptic_feedback_title">Vibrate on volume slider changes</string>
+
+    <!-- QS Tiles haptic -->
+    <string name="qs_tiles_haptic_feedback_title">Vibrate on touching QS tiles</string>
 </resources>

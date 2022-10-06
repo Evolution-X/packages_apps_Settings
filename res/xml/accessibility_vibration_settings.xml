@@ -91,6 +91,12 @@
         android:title="@string/misc_vibration_category_title"
         app:controller="com.android.settings.sound.CustomHapticPreferenceController">
 
+        <!-- QS Tiles haptic -->
+        <org.evolution.settings.preferences.SecureSettingSwitchPreference
+            android:key="quick_settings_vibrate"
+            android:title="@string/qs_tiles_haptic_feedback_title"
+            android:defaultValue="false" />
+
         <!-- Volume slider haptic -->
         <org.evolution.settings.preferences.SystemSettingSwitchPreference
             android:key="volume_slider_haptic"
