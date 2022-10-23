@@ -338,4 +338,8 @@
     <string name="app_lock_credential_incorrect">Incorrect PIN, Password, or Pattern.</string>
     <string name="app_lock_biometrics_title">Allow Biometrics</string>
     <string name="app_lock_biometrics_summary">Unlock locked apps using fingerprint or face unlock when custom lock is enabled</string>
+
+    <!-- Show clipboard overlay -->
+    <string name="show_clipboard_overlay_title">Show clipboard overlay</string>
+    <string name="show_clipboard_overlay_summary">Show an overlay in the left bottom corner of the screen when something is copied to the clipboard</string>
 </resources>
