@@ -22,4 +22,7 @@
 
     <!-- Misc Haptics -->
     <string name="misc_vibration_category_title">Additional vibration options</string>
+
+    <!-- Volume slider haptic feedback -->
+    <string name="volume_slider_haptic_feedback_title">Vibrate on volume slider changes</string>
 </resources>
