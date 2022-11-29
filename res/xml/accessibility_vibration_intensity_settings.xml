@@ -96,7 +96,14 @@
     <!-- Misc vibration options -->
     <PreferenceCategory
         android:key="misc_vibration_category"
-        android:title="@string/misc_vibration_category_title" >
+        android:title="@string/misc_vibration_category_title"
+        app:controller="com.android.settings.sound.CustomHapticPreferenceController">
+
+        <!-- Volume slider haptic -->
+        <org.evolution.settings.preferences.SystemSettingSwitchPreference
+            android:key="volume_slider_haptic"
+            android:title="@string/volume_slider_haptic_feedback_title"
+            android:defaultValue="false" />
 
     </PreferenceCategory>
 
