@@ -54,4 +54,7 @@
     <!-- Show clipboard overlay -->
     <string name="show_clipboard_overlay_title">Show clipboard overlay</string>
     <string name="show_clipboard_overlay_summary">Show an overlay in the left bottom corner of the screen when something is copied to the clipboard</string>
+
+    <!-- Screen resolution -->
+    <string name="custom_screen_resolution_title">Custom screen resolution</string>
 </resources>
