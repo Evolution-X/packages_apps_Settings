@@ -905,9 +905,11 @@ public class AdvancedBluetoothDetailsHeaderController extends BasePreferenceCont
                 () -> {
                     final Uri uri = Uri.parse(iconUri);
                     try {
-                        mContext.getContentResolver()
-                                .takePersistableUriPermission(
-                                        uri, Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                        if (!uri.toString().startsWith("android.resource://com.android.bluetooth.bthelper/drawable")) {
+                            mContext.getContentResolver()
+                                    .takePersistableUriPermission(
+                                            uri, Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                        }
 
                         final Bitmap bitmap =
                                 MediaStore.Images.Media.getBitmap(
