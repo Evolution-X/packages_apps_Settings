@@ -93,6 +93,6 @@
     <string name="wifi_device_mac_addr">Use device MAC</string>
 
     <!-- Hardware info -->
-    <string name="platform_revision">Platform</string>
+    <string name="soc_model">SoC Model</string>
     <string name="total_ram">Total RAM</string>
 </resources>
