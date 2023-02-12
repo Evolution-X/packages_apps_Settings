@@ -42,6 +42,6 @@
     <string name="private_dns_hostname_quad9" translatable="false">dns.quad9.net</string>
 
     <!-- Hardware info -->
-    <string name="platform_revision">Platform</string>
+    <string name="soc_model">SoC Model</string>
     <string name="total_ram">Total RAM</string>
 </resources>
