@@ -103,6 +103,12 @@
             android:summary="@string/doze_on_charge_summary"
             android:defaultValue="false" />
 
+        <Preference
+            android:key="always_on_display_schedule"
+            android:title="@string/always_on_display_schedule_title"
+            android:fragment="com.android.settings.display.AODSchedule"
+            settings:controller="com.android.settings.display.AODSchedulePreferenceController" />
+
         <org.evolution.settings.preferences.SecureSettingSwitchPreference
             android:key="pulse_on_new_tracks"
             android:title="@string/pulse_on_new_tracks_title"

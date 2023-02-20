@@ -37,6 +37,7 @@ import com.android.settings.R;
 import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.display.AmbientDisplayAlwaysOnPreferenceController;
 import com.android.settings.display.AmbientDisplayNotificationsPreferenceController;
+import com.android.settings.display.AODSchedulePreferenceController;
 import com.android.settings.gestures.DoubleTapScreenPreferenceController;
 import com.android.settings.gestures.PickupGesturePreferenceController;
 import com.android.settings.gestures.ScreenOffUdfpsPreferenceController;
@@ -56,9 +57,6 @@ import java.util.List;
 @SearchIndexable
 public class LockscreenDashboardFragment extends DashboardFragment
         implements OwnerInfoPreferenceController.OwnerInfoCallback {
-
-    public static final String KEY_AMBIENT_DISPLAY_ALWAYS_ON = "ambient_display_always_on";
-
     private static final String TAG = "LockscreenDashboardFragment";
 
     @VisibleForTesting
@@ -129,6 +127,7 @@ public class LockscreenDashboardFragment extends DashboardFragment
         use(DoubleTapScreenPreferenceController.class).setConfig(getConfig(context));
         use(PickupGesturePreferenceController.class).setConfig(getConfig(context));
         use(ScreenOffUdfpsPreferenceController.class).setConfig(getConfig(context));
+        use(AODSchedulePreferenceController.class).setConfig(getConfig(context));
 
         mControlsContentObserver = new ContentObserver(
                 new Handler(Looper.getMainLooper())) {
