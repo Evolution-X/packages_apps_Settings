@@ -331,4 +331,10 @@
     <!-- HDR Display -->
     <string name="hdr_display_title">HDR Display</string>
     <string name="hdr_display_summary">Enable peak brightness for HDR content. This will increase battery usage</string>
+
+    <!-- Ambient wake toggles -->
+    <string name="doze_gesture_ambient_title">Show Ambient</string>
+    <string name="doze_gesture_ambient_summary">Show Ambient Display instead of fully waking the screen up</string>
+    <string name="gesture_wake_ambient">Show Ambient</string>
+    <string name="gesture_wake">Fully wake</string>
 </resources>
