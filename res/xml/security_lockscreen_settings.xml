@@ -109,8 +109,8 @@
             android:summary="@string/pulse_on_new_tracks_summary"
             android:defaultValue="false" />
 
-        <Preference
-            android:key="ambient_display_tap"
+        <com.android.settingslib.PrimarySwitchPreference
+            android:key="gesture_tap"
             android:title="@string/ambient_display_tap_screen_title"
             android:fragment="com.android.settings.gestures.TapScreenGestureSettings"
             settings:searchable="false"
@@ -123,7 +123,7 @@
             settings:searchable="false"
             settings:controller="com.android.settings.gestures.DoubleTapScreenPreferenceController" />
 
-        <Preference
+        <com.android.settingslib.PrimarySwitchPreference
             android:key="ambient_display_pick_up"
             android:title="@string/ambient_display_pickup_title"
             android:fragment="com.android.settings.gestures.PickupGestureSettings"

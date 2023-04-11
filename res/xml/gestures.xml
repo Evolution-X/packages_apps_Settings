@@ -67,8 +67,8 @@
         android:fragment="com.android.settings.gestures.OneHandedSettings"
         settings:controller="com.android.settings.gestures.OneHandedEnablePreferenceController" />
 
-    <Preference
-        android:key="gesture_tap_screen_input_summary"
+    <com.android.settingslib.PrimarySwitchPreference
+        android:key="gesture_tap"
         android:title="@string/ambient_display_tap_screen_title"
         android:fragment="com.android.settings.gestures.TapScreenGestureSettings"
         settings:searchable="false"
@@ -81,19 +81,19 @@
         settings:searchable="false"
         settings:controller="com.android.settings.gestures.DoubleTapScreenPreferenceController" />
 
+    <com.android.settingslib.PrimarySwitchPreference
+        android:key="gesture_pick_up_input_summary"
+        android:title="@string/ambient_display_pickup_title"
+        android:fragment="com.android.settings.gestures.PickupGestureSettings"
+        settings:searchable="false"
+        settings:controller="com.android.settings.gestures.PickupGesturePreferenceController" />
+
     <Preference
         android:key="double_tap"
         android:title="@string/doze_double_tap_title"
         android:fragment="com.android.settings.gestures.DoubleTapAmbientSettings"
         settings:controller="com.android.settings.gestures.DoubleTapAmbientPreferenceController"
         settings:userRestriction="no_ambient_display" />
-
-    <Preference
-        android:key="gesture_pick_up_input_summary"
-        android:title="@string/ambient_display_pickup_title"
-        android:fragment="com.android.settings.gestures.PickupGestureSettings"
-        settings:searchable="false"
-        settings:controller="com.android.settings.gestures.PickupGesturePreferenceController" />
 
     <Preference
         android:key="gesture_screen_off_udfps_input_summary"
