@@ -41,4 +41,10 @@
         android:summary="@string/doze_gesture_ambient_summary"
         android:defaultValue="false" />
 
+    <org.evolution.settings.preferences.SecureSettingSwitchPreference
+        android:key="doze_pick_up_gesture_vibrate"
+        android:title="@string/doze_gesture_vibrate_title"
+        android:summary="@string/doze_gesture_vibrate_summary"
+        android:defaultValue="false" />
+
 </PreferenceScreen>
