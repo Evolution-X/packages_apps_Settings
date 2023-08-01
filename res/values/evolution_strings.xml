@@ -258,4 +258,8 @@
     <string name="reset_auto_brightness_adjustment_title">Reset preference</string>
     <string name="reset_auto_brightness_adjustment_summary">Let the system forget your brightness preference and reset it to the default one</string>
     <string name="reset_auto_brightness_adjustment_done">Auto brightness preference has been reset</string>
+
+    <!-- Wake gestures haptics -->
+    <string name="doze_gesture_vibrate_title">Haptic feedback</string>
+    <string name="doze_gesture_vibrate_summary">Vibrate when this gesture is invoked</string>
 </resources>
