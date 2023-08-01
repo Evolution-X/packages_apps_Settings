@@ -17,6 +17,7 @@
 package com.android.settings.gestures;
 
 import android.content.Context;
+import android.os.Vibrator;
 import android.provider.Settings;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
@@ -36,11 +37,15 @@ public class PickupGestureInsidePreferenceController extends AbstractPreferenceC
 
     private static final String KEY = "gesture_pick_up";
     private static final String AMBIENT_KEY = "doze_pick_up_gesture_ambient";
+    private static final String VIB_KEY = "doze_pick_up_gesture_vibrate";
 
     private final boolean mDefault;
     private final Context mContext;
     private MainSwitchPreference mSwitch;
     private SecureSettingSwitchPreference mAmbientPref;
+    private SecureSettingSwitchPreference mVibPref;
+
+    private boolean mIsVibAvailable;
 
     public PickupGestureInsidePreferenceController(Context context) {
         super(context);
@@ -70,6 +75,11 @@ public class PickupGestureInsidePreferenceController extends AbstractPreferenceC
         });
         mSwitch.addOnSwitchChangeListener(this);
         updateState(mSwitch);
+
+        mVibPref = screen.findPreference(VIB_KEY);
+        final Vibrator vibrator = (Vibrator) mContext.getSystemService(Context.VIBRATOR_SERVICE);
+        mIsVibAvailable = vibrator != null && vibrator.hasVibrator();
+        if (!mIsVibAvailable) mVibPref.setVisible(false);
     }
 
     public void setChecked(boolean isChecked) {
@@ -101,5 +111,6 @@ public class PickupGestureInsidePreferenceController extends AbstractPreferenceC
     private void updateAmbientEnablement(boolean enabled) {
         if (mAmbientPref == null) return;
         mAmbientPref.setEnabled(enabled);
+        if (mVibPref != null && mIsVibAvailable) mVibPref.setEnabled(enabled);
     }
 }
