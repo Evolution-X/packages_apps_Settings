@@ -28,4 +28,7 @@
 
     <!-- QS Tiles haptic -->
     <string name="qs_tiles_haptic_feedback_title">Vibrate on touching QS tiles</string>
+
+    <!-- Scroll fling haptic feedback -->
+    <string name="scroll_fling_haptic_feedback_title">Vibrate on scroll flings</string>
 </resources>
