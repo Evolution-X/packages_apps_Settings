@@ -40,4 +40,7 @@
 
     <!-- QS Brightness slider haptic feedback -->
     <string name="qs_brightness_slider_haptic_feedback_title">Vibrate on brightness slider changes</string>
+
+    <!-- Screenshot shutter -->
+    <string name="screenshot_shutter_sound_title">Screenshot sound</string>
 </resources>
