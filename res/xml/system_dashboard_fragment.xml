@@ -67,6 +67,13 @@
         android:order="-380">
 
         <Preference
+            android:key="gesture_system_navigation_input_summary"
+            android:title="@string/system_navigation_title"
+            android:icon="@drawable/ic_hand_gesture"
+            android:fragment="com.android.settings.gestures.SystemNavigationGestureSettings"
+            settings:controller="com.android.settings.gestures.SystemNavigationPreferenceController"/>
+
+        <Preference
             android:key="Keyboard_settings"
             android:title="@string/keyboard_settings"
             android:icon="@drawable/ic_settings_keyboards"
