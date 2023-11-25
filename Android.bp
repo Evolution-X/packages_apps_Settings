@@ -70,6 +70,7 @@ android_library {
         "res-export", // for external usage
         "res-product",
         "Evolver/res",
+        "SettingsGoogle/res",
     ],
     static_libs: [
         // External dependencies
