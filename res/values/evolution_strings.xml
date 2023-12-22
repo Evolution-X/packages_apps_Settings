@@ -19,4 +19,7 @@
     <string name="hide_developer_status_summary">Hide developer status from apps</string>
     <string name="search">Search</string>
     <string name="search_apps">Search apps</string>
+
+    <!-- Misc Haptics -->
+    <string name="misc_vibration_category_title">Additional vibration options</string>
 </resources>
