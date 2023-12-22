@@ -14,4 +14,6 @@
     <string name="build_maintainer_summary" translatable="false">Unknown</string>
     <string name="build_maintainer_donate_url" translatable="false">https://linktr.ee/joeyhuab</string>
 
+    <!-- Misc Haptics -->
+    <string name="misc_vibration_category_title">Additional vibration options</string>
 </resources>
