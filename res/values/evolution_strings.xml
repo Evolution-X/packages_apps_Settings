@@ -408,4 +408,25 @@
     <!-- Pulse on music track change -->
     <string name="pulse_on_new_tracks_title">Music ticker</string>
     <string name="pulse_on_new_tracks_summary">Show Ambient Display when a new music track is played</string>
+
+    <!-- Per-app configs -->
+    <string name="per_app_config_empty_text">No installed apps support current settings</string>
+
+    <!-- Per-app refresh rate -->
+    <string name="per_app_refresh_rate_title">Per-app refresh rate config</string>
+    <string name="per_app_refresh_rate_summary">Configure refresh rate individually for each apps</string>
+    <string name="per_app_refresh_rate_default">Follow system</string>
+
+    <!-- Screen refresh rate -->
+    <string name="screen_refresh_rate_title">Screen refresh rate</string>
+    <string name="min_refresh_rate_title">Minimum refresh rate</string>
+    <string name="max_refresh_rate_title">Maximum refresh rate</string>
+
+    <!-- Extreme refresh rate -->
+    <string name="extreme_refresh_rate_title">Extreme refresh rate</string>
+    <string name="extreme_refresh_rate_summary">Force highest refresh rate for all apps</string>
+    <string name="extreme_refresh_rate_warning">This will ensure system select highest refresh rate, ignoring user selected and app preferred options. Apps that require specific refresh rate may run abnormally.</string>
+
+    <!-- Confirm dialog -->
+    <string name="confirm_before_enable_title">Continue to enable?</string>
 </resources>
