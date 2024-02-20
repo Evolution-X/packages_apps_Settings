@@ -21,7 +21,6 @@ import static androidx.recyclerview.widget.RecyclerView.SCROLL_STATE_IDLE;
 
 import static com.android.internal.jank.InteractionJankMonitor.CUJ_SETTINGS_PAGE_SCROLL;
 import static com.android.settings.ChangeIds.CHANGE_RESTRICT_SAW_INTENT;
-import static com.android.settings.Utils.PROPERTY_DELETE_ALL_APP_CLONES_ENABLED;
 import static com.android.settings.applications.manageapplications.AppFilterRegistry.FILTER_APPS_ALL;
 import static com.android.settings.applications.manageapplications.AppFilterRegistry.FILTER_APPS_BATTERY_OPTIMIZED;
 import static com.android.settings.applications.manageapplications.AppFilterRegistry.FILTER_APPS_BATTERY_RESTRICTED;
@@ -61,7 +60,6 @@ import android.os.ServiceManager;
 import android.os.UserHandle;
 import android.os.UserManager;
 import android.preference.PreferenceFrameLayout;
-import android.provider.DeviceConfig;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.ArraySet;
@@ -888,9 +886,7 @@ public class ManageApplications extends InstrumentedFragment
         }
 
         mOptionsMenu.findItem(R.id.delete_all_app_clones)
-                .setVisible(mListType == LIST_TYPE_CLONED_APPS  && DeviceConfig.getBoolean(
-                        DeviceConfig.NAMESPACE_APP_CLONING, PROPERTY_DELETE_ALL_APP_CLONES_ENABLED,
-                true) && Utils.getCloneUserId(getContext()) != -1);
+                .setVisible(mListType == LIST_TYPE_CLONED_APPS && Utils.getCloneUserId(getContext()) != -1);
     }
 
     @Override
