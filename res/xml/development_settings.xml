@@ -192,6 +192,7 @@
         <SwitchPreferenceCompat
             android:key="enable_adb_root"
             android:title="@string/adb_enable_root"
+            android:dependency="enable_adb"
             android:summary="@string/adb_enable_summary_root"
             android:persistent="false" />
 
