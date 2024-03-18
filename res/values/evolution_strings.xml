@@ -37,4 +37,7 @@
 
     <!-- Charging sound -->
     <string name="charging_sounds_custom_title">Charging sounds</string>
+
+    <!-- QS Brightness slider haptic feedback -->
+    <string name="qs_brightness_slider_haptic_feedback_title">Vibrate on brightness slider changes</string>
 </resources>
