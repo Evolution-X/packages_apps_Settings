@@ -115,6 +115,12 @@
             android:title="@string/charger_haptic_feedback_title"
             android:defaultValue="false" />
 
+        <!-- QS Bightness slider haptic feedback -->
+        <org.evolution.settings.preferences.SystemSettingSwitchPreference
+            android:key="qs_brightness_slider_haptic"
+            android:title="@string/qs_brightness_slider_haptic_feedback_title"
+            android:defaultValue="false" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>
