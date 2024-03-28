@@ -26,7 +26,9 @@ import android.content.pm.PackageManager.USER_MIN_ASPECT_RATIO_APP_DEFAULT
 import android.content.pm.PackageManager.USER_MIN_ASPECT_RATIO_UNSET
 import android.os.Build
 import android.os.Bundle
+import android.os.SystemProperties
 import android.util.Log
+import android.text.TextUtils
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
@@ -68,6 +70,14 @@ import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 
+fun getDeviceName(): String {
+    val device = SystemProperties.get("ro.product.marketname")
+    if (TextUtils.isEmpty(device)) {
+        return Build.MODEL
+    }
+    return device
+}
+
 object UserAspectRatioAppsPageProvider : SettingsPageProvider {
     override val name = "UserAspectRatioAppsPage"
     private val owner = createSettingsPage()
@@ -98,7 +108,7 @@ object UserAspectRatioAppsPageProvider : SettingsPageProvider {
 
     @Composable
     @VisibleForTesting
-    fun getSummary(): String = stringResource(R.string.aspect_ratio_summary_text, Build.MODEL)
+    fun getSummary(): String = stringResource(R.string.aspect_ratio_summary_text, getDeviceName())
 }
 
 @Composable
@@ -112,7 +122,7 @@ fun UserAspectRatioAppList(
         appList = appList,
         header = {
             Box(Modifier.padding(SettingsDimension.itemPadding)) {
-                SettingsBody(stringResource(R.string.aspect_ratio_main_summary_text, Build.MODEL))
+                SettingsBody(stringResource(R.string.aspect_ratio_main_summary_text, getDeviceName()))
             }
             Illustration(object : IllustrationModel {
                 override val resId = R.raw.user_aspect_ratio_education
