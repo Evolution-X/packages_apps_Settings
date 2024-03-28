@@ -33,9 +33,11 @@ import android.app.settings.SettingsEnums;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
+import android.os.SystemProperties;
 import android.os.Bundle;
 import android.os.RemoteException;
 import android.os.UserHandle;
+import android.text.TextUtils;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
@@ -204,8 +206,13 @@ public class UserAspectRatioDetails extends AppInfoBase implements
     private void initPreferences() {
         addPreferencesFromResource(R.xml.user_aspect_ratio_details);
 
+        String device = SystemProperties.get("ro.product.marketname");
+        if (TextUtils.isEmpty(device)) {
+            device = Build.MODEL;
+        }
+
         final String summary = getContext().getResources().getString(
-                R.string.aspect_ratio_main_summary, Build.MODEL);
+                R.string.aspect_ratio_main_summary, device);
         findPreference(KEY_HEADER_SUMMARY).setTitle(summary);
 
         ((ActionButtonsPreference) findPreference(KEY_HEADER_BUTTONS))
