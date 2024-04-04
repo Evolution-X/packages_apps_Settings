@@ -193,8 +193,13 @@ public class ImeiInfoPreferenceController extends BasePreferenceController {
     private CharSequence getTitle(int simSlot) {
         boolean isPrimaryImei = isMultiSim() && isPrimaryImei(simSlot);
         final int phoneType = getPhoneType(simSlot);
-        return phoneType == PHONE_TYPE_CDMA ? getTitleForCdmaPhone(simSlot, isPrimaryImei)
-                : getTitleForGsmPhone(simSlot, isPrimaryImei);
+        if (mTelephonyManager != null) {
+            return phoneType == PHONE_TYPE_CDMA ? getTitleForCdmaPhone(simSlot, isPrimaryImei)
+                    : getTitleForGsmPhone(simSlot, isPrimaryImei);
+        } else {
+            Log.e(TAG, "TelephonyManager is null. Unable to get phone type.");
+            return mContext.getString(R.string.status_imei);
+        }
     }
 
     public int getPhoneType(int slotIndex) {
