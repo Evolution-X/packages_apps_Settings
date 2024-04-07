@@ -222,6 +222,7 @@
     <string name="thick_label">Thick</string>
 
     <!-- Hardware info -->
+    <string name="device_market_name">Market Name</string>
     <string name="soc_model">SoC Model</string>
     <string name="total_ram">Total RAM</string>
 
