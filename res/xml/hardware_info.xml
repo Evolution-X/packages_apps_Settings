@@ -21,6 +21,15 @@
     android:title="@string/model_info"
     settings:keywords="@string/keywords_model_and_hardware">
 
+    <!-- Market Name -->
+    <Preference
+        android:key="hardware_info_market_name"
+        android:title="@string/device_market_name"
+        android:summary="@string/summary_placeholder"
+        android:selectable="false"
+        settings:controller="com.android.settings.deviceinfo.hardwareinfo.MarketNamePreferenceController"
+        settings:enableCopying="true"/>
+
     <!-- Model -->
     <Preference
         android:key="hardware_info_device_model"
