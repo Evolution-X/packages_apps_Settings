@@ -15,6 +15,7 @@
     <string name="build_maintainer_donate_url" translatable="false">https://linktr.ee/joeyhuab</string>
 
     <!-- Hardware info -->
+    <string name="device_market_name">Market Name</string>
     <string name="soc_model">SoC Model</string>
     <string name="total_ram">Total RAM</string>
 </resources>
