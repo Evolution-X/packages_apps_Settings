@@ -654,4 +654,7 @@ public class Settings extends SettingsActivity {
         }
     }
     public static class SafetyCenterActivity extends SettingsActivity { }
+
+    /** Evolution X additions */
+    public static class PrivateDnsSettingsActivity extends SettingsActivity { /* empty */ }
 }
