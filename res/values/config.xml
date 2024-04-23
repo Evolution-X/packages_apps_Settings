@@ -269,6 +269,11 @@
     <string name="config_settingsintelligence_package_name" translatable="false">
         com.android.settings.intelligence
     </string>
+    
+    <!-- Google Settings intelligence package name -->
+    <string name="config_google_settingsintelligence_package_name" translatable="false">
+        com.google.android.settings.intelligence
+    </string>
 
     <!-- Package Installer package name -->
     <string name="config_package_installer_package_name" translatable="false">
