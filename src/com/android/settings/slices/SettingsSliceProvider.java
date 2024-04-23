@@ -492,7 +492,7 @@ public class SettingsSliceProvider extends SliceProvider {
             return hasPermission
                     && TextUtils.equals(
                             callingPackage,
-                            context.getString(R.string.config_settingsintelligence_package_name));
+                            Utils.getAsiPackage(context));
         }
         return false;
     }
