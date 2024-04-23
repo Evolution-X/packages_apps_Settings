@@ -65,8 +65,7 @@ public class SearchMenuController implements LifecycleObserver, OnCreateOptionsM
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         final Activity activity = mHost.getActivity();
-        final String SettingsIntelligencePkgName = activity.getString(
-                R.string.config_settingsintelligence_package_name);
+        final String SettingsIntelligencePkgName = Utils.getAsiPackage(activity);
         if (!WizardManagerHelper.isDeviceProvisioned(activity)
                 || WizardManagerHelper.isAnySetupWizard(activity.getIntent())) {
             return;
