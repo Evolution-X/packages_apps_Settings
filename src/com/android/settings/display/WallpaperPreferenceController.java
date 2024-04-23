@@ -32,11 +32,17 @@ import com.android.settings.core.BasePreferenceController;
 import com.android.settingslib.RestrictedLockUtilsInternal;
 import com.android.settingslib.RestrictedPreference;
 
+import com.android.internal.util.evolution.Utils;
+
 import java.util.List;
 
 public class WallpaperPreferenceController extends BasePreferenceController {
     private static final String TAG = "WallpaperPrefController";
     private static final String LAUNCHED_SETTINGS = "app_launched_settings";
+    private static final String DEFAULT_WP_CLASS = "com.android.settings.Settings$WallpaperSettingsActivity";
+    private static final String DEFAULT_WP_PKG = "com.android.settings";
+    private static final String GOOGLE_WP_CLASS = "com.google.android.apps.wallpaper.picker.CategoryPickerActivity";
+    private static final String GOOGLE_WP_PKG = "com.google.android.apps.wallpaper";
 
     private final String mWallpaperPackage;
     private final String mWallpaperClass;
@@ -47,13 +53,14 @@ public class WallpaperPreferenceController extends BasePreferenceController {
 
     public WallpaperPreferenceController(Context context, String key) {
         super(context, key);
-        mWallpaperPackage = mContext.getString(R.string.config_wallpaper_picker_package);
-        mWallpaperClass = mContext.getString(R.string.config_wallpaper_picker_class);
-        mStylesAndWallpaperClass =
-                mContext.getString(R.string.config_styles_and_wallpaper_picker_class);
-        mWallpaperActionName = mContext.getString(R.string.config_wallpaper_picker_action);
-        mStylesAndWallpaperActionName =
-                mContext.getString(R.string.config_styles_and_wallpaper_picker_action);
+        final boolean isGoogleWpInstalled = Utils.isPackageInstalled(context, GOOGLE_WP_PKG);
+        mWallpaperPackage = isGoogleWpInstalled ? GOOGLE_WP_PKG : DEFAULT_WP_PKG;
+        mWallpaperClass = isGoogleWpInstalled ? GOOGLE_WP_CLASS : DEFAULT_WP_CLASS;
+        mStylesAndWallpaperClass = isGoogleWpInstalled ?
+                mContext.getString(R.string.config_styles_and_wallpaper_picker_class) : "";
+        mWallpaperActionName = isGoogleWpInstalled ? mContext.getString(R.string.config_wallpaper_picker_action) : "";
+        mStylesAndWallpaperActionName = isGoogleWpInstalled ?
+                mContext.getString(R.string.config_styles_and_wallpaper_picker_action) : "";
         mWallpaperLaunchExtra = mContext.getString(R.string.config_wallpaper_picker_launch_extra);
     }
 
