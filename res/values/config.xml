@@ -263,6 +263,11 @@
     <string name="config_settingsintelligence_package_name" translatable="false">
         com.android.settings.intelligence
     </string>
+    
+    <!-- Google Settings intelligence package name -->
+    <string name="config_google_settingsintelligence_package_name" translatable="false">
+        com.google.android.settings.intelligence
+    </string>
 
     <!-- Settings intelligence interaction log intent action -->
     <string name="config_settingsintelligence_log_action" translatable="false"></string>
