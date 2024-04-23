@@ -41,6 +41,7 @@ import androidx.annotation.VisibleForTesting;
 
 import com.android.internal.telephony.SmsApplication;
 import com.android.settings.R;
+import com.android.settings.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -175,7 +176,7 @@ public class ApplicationFeatureProviderImpl implements ApplicationFeatureProvide
 
         // Keep Settings intelligence enabled, otherwise search feature will be disabled.
         keepEnabledPackages.add(
-                mContext.getString(R.string.config_settingsintelligence_package_name));
+                Utils.getAsiPackage(mContext));
 
         // Keep Package Installer enabled.
         keepEnabledPackages.add(mContext.getString(R.string.config_package_installer_package_name));

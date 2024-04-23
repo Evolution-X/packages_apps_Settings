@@ -1240,6 +1240,15 @@ public final class Utils extends com.android.settingslib.Utils {
         return false;
     }
 
+    public static String getAsiPackage(Context context) {
+        final boolean isGoogleAsiInstalled = com.android.internal.util.evolution.Utils.isPackageInstalled(context,
+            context.getString(R.string.config_google_settingsintelligence_package_name));
+        final String settingsIntelligencePkg = context.getString(isGoogleAsiInstalled
+            ? R.string.config_google_settingsintelligence_package_name
+            : R.string.config_settingsintelligence_package_name);
+        return settingsIntelligencePkg;
+    }
+
     /**
      * Returns true if current binder uid is Settings Intelligence.
      */
@@ -1247,7 +1256,7 @@ public final class Utils extends com.android.settingslib.Utils {
         final int callingUid = Binder.getCallingUid();
         final String callingPackage = context.getPackageManager().getPackagesForUid(callingUid)[0];
         final boolean isSettingsIntelligence = TextUtils.equals(callingPackage,
-                context.getString(R.string.config_settingsintelligence_package_name));
+                getAsiPackage(context));
         return isSettingsIntelligence;
     }
 
