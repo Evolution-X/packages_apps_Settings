@@ -68,7 +68,7 @@ public interface SearchFeatureProvider {
      * @return a package name of settings intelligence.
      */
     default String getSettingsIntelligencePkgName(Context context) {
-        return context.getString(R.string.config_settingsintelligence_package_name);
+        return Utils.getAsiPackage(context);
     }
 
     /**
