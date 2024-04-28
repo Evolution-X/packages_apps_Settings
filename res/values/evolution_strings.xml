@@ -221,4 +221,8 @@
     <!-- Game space -->
     <string name="game_space_title">Game space</string>
     <string name="game_space_summary">Enhance your gaming experience</string>
+
+    <!-- Unlimit screenrecord -->
+    <string name="unlimit_screenrecord_title">Unlimit screenrecord</string>
+    <string name="unlimit_screenrecord_summary">Remove the 15GiB file size limit\nMay result in a larger than needed output file</string>
 </resources>
