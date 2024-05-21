@@ -30,8 +30,9 @@
             android:id="@+id/image3"
             android:layout_width="match_parent"
             android:layout_height="@dimen/color_mode_preview_height"
-            android:scaleType="centerCrop"
+            android:scaleType="fitCenter"
             android:cropToPadding="true"
+            android:background="@*android:color/transparent"
             android:src="@drawable/color_mode_preview3"
             android:contentDescription="@null" />
 
