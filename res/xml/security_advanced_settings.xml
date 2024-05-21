@@ -123,6 +123,13 @@
         android:fragment="com.android.settings.security.HideDeveloperStatusSettings"
         settings:controller="com.android.settings.security.HideDeveloperStatusPreferenceController" />
 
+    <org.evolution.settings.preferences.GlobalSettingSwitchPreference
+        android:order="95"
+        android:key="hide_screen_capture_status"
+        android:title="@string/hide_screen_capture_status_title"
+        android:summary="@string/hide_screen_capture_status_summary"
+        android:defaultValue="false"/>
+
     <!-- work profile security section -->
     <PreferenceCategory
         android:order="310"
