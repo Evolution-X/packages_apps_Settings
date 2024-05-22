@@ -8,11 +8,15 @@
     <string name="evolution_license_title">Evolution X legal</string>
     <!-- Android version screen, build maintainer -->
     <string name="build_maintainer">Údržbár kompilácie</string>
+    <!-- App search preference -->
+    <string name="search">Hľadať</string>
+    <string name="search_apps">Vyhľadať aplikácie</string>
     <!-- Hide developer status -->
     <string name="hide_developer_status_title">Skryť status vývojára</string>
     <string name="hide_developer_status_summary">Skrytie statusu vývojára z aplikácií</string>
-    <string name="search">Hľadať</string>
-    <string name="search_apps">Vyhľadať aplikácie</string>
+    <!-- Notch: Full screen apps -->
+    <string name="display_cutout_force_fullscreen_title">Aplikácie na celú obrazovku</string>
+    <string name="display_cutout_force_fullscreen_summary">Prinútiť aplikácie ignorovať výrez v displeji</string>
     <!-- Misc Haptics -->
     <string name="misc_vibration_category_title">Rôzne haptické prvky</string>
     <!-- Volume slider haptic feedback -->
@@ -42,4 +46,206 @@
     <!-- Unlimit screenrecord -->
     <string name="unlimit_screenrecord_title">Záznam obrazovky bez obmedzenia</string>
     <string name="unlimit_screenrecord_summary">Odstrániť obmedzenie veľkosti súboru 15GiB\nMôže mať za následok väčší výstupný súbor, ako je potrebné</string>
+    <!-- Force LTE_CA -->
+    <string name="force_lte_ca">Vynútiť LTE CA</string>
+    <string name="force_lte_ca_summary">Vynútiť agregáciu operátora LTE k činnosti</string>
+    <!-- AdGuard DNS Option -->
+    <!-- AdGuard DNS hostname -->
+    <!-- Open DNS Option -->
+    <!-- Open DNS hostname -->
+    <!-- Cleanbrowsing DNS Option -->
+    <!-- Cleanbrowsing DNS hostname -->
+    <!-- Quad9 DNS Option -->
+    <!-- Quad9 DNS hostname -->
+    <!-- Per-app volume -->
+    <string name="app_volume">Hlasitosť aplikácie</string>
+    <string name="app_volume_title">Ovládanie hlasitosti pre jednotlivé aplikácie</string>
+    <string name="app_volume_summary">Zobraziť tlačidlo hlasitosti pre jednotlivé aplikácie v dialógovom okne hlasitosti</string>
+    <!-- Smart Pause -->
+    <string name="adaptive_playback_screen_title">Inteligentné Pozastavenie</string>
+    <string name="adaptive_playback_enabled">Použiť inteligentné pozastavenie</string>
+    <string name="adaptive_playback_disabled_summary">Vypnúť</string>
+    <string name="adaptive_playback_intro_text">Automaticky pozastaví médiá keď je hlasitosť stlmená a automaticky obnoví prehrávanie médií pokiaľ sa hlasitosť znova zvýši vo vybranom čase (ak je zvolený).</string>
+    <string name="adaptive_playback_timeout_title">Použiť časový limit</string>
+    <string name="adaptive_playback_timeout_none">Bez časového limitu</string>
+    <string name="adaptive_playback_timeout_none_summary">Zapnuté (bez časového limitu)</string>
+    <string name="adaptive_playback_timeout_30_secs">30 sekúnd</string>
+    <string name="adaptive_playback_timeout_30_secs_summary">Zapnuté (30 sekúnd)</string>
+    <string name="adaptive_playback_timeout_1_min">1 minúta</string>
+    <string name="adaptive_playback_timeout_1_min_summary">Zapnuté (1 minúta)</string>
+    <string name="adaptive_playback_timeout_2_min">2 minúty</string>
+    <string name="adaptive_playback_timeout_2_min_summary">Zapnuté (2 minúty)</string>
+    <string name="adaptive_playback_timeout_5_min">5 minút</string>
+    <string name="adaptive_playback_timeout_5_min_summary">Zapnuté (5 minút)</string>
+    <string name="adaptive_playback_timeout_10_min">10 minút</string>
+    <string name="adaptive_playback_timeout_10_min_summary">Zapnuté (10 minút)</string>
+    <!-- Enforce DNS for VPN -->
+    <string name="vpn_enforce_dns_title">Zakázať pre VPN</string>
+    <string name="vpn_enforce_dns_summary">Zakázať súkromné DNS pri pripojení k sieti VPN\nObnoví sa po odpojení</string>
+    <!-- Volume Steps -->
+    <string name="volume_steps_title">Stupne hlasitosti</string>
+    <string name="volume_steps_summary">Ovládanie granularity každého streamu</string>
+    <string name="max_music_volume_title">Médiá</string>
+    <string name="max_call_volume_title">Hovory</string>
+    <string name="max_alarm_volume_title">Budíky</string>
+    <string name="steps_unit">kroky</string>
+    <!-- Cycle through ringer modes gesture -->
+    <string name="prevent_ringing_option_cycle">Prepínanie medzi režimami</string>
+    <string name="prevent_ringing_option_cycle_summary">Zapnuté (Prepínanie medzi režimami)</string>
+    <!-- Back gesture animation -->
+    <string name="back_gesture_arrow_title">Animácia gesta späť</string>
+    <string name="back_gesture_arrow_summary">Zobrazovať animovanú šípku gesta späť</string>
+    <!-- Back gesture haptic -->
+    <string name="back_gesture_haptic_title">Hmatová spätná väzba</string>
+    <string name="back_gesture_haptic_summary">Povoliť efekt krátkeho zavibrovania pri použití gesta \"Späť\"</string>
+    <!-- Auto pin confirm -->
+    <string name="lock_screen_auto_pin_confirm_summary_custom">Odomkne sa automaticky po zadaní správneho kódu PIN. Je to o niečo menej bezpečné ako ťuknutie na tlačidlo Enter na potvrdenie.</string>
+    <!-- Doze on charge -->
+    <string name="doze_on_charge_title">Vždy zapnuté počas nabíjania</string>
+    <string name="doze_on_charge_summary">Zobraziť, že zariadenie sa nabíja</string>
+    <!-- Incall vibrate options -->
+    <string name="incall_vibration_category">Možnosti vibrácií pri hovore</string>
+    <string name="incall_vibrate_connect_title">Zavibrovat při spojení</string>
+    <string name="incall_vibrate_call_wait_title">Vibrovať pri čakajúcom hovore</string>
+    <string name="incall_vibrate_disconnect_title">Zavibrovať pri ukončení hovoru</string>
+    <!-- Label for a numbered SIM card.  [CHAR LIMIT=40] -->
+    <!-- Hide screen capture status -->
+    <string name="hide_screen_capture_status_title">Skryť stav snímania obrazovky</string>
+    <string name="hide_screen_capture_status_summary">Skryť stav snímania obrazovky a nahrávania obrazovky zo všetkých aplikácií. V niektorých prípadoch to môže byť vhodné, ale môže to viesť k úniku súkromia. Je potrebné reštartovať aplikácie, aby sa zmena prejavila.</string>
+    <!-- Doze on double tap -->
+    <string name="double_tap_title">Dvojklik</string>
+    <string name="doze_double_tap_title">Kontrola telefónu dvojitým klepnutím</string>
+    <string name="doze_double_tap_summary">Pulzovať upozornenia dvojitým kliknutím</string>
+    <!-- App lock -->
+    <string name="app_lock_title">Zámok aplikácií</string>
+    <plurals name="app_lock_summary">
+        <item quantity="one">Chránená <xliff:g example="1" id="Number of applications">%1$d</xliff:g> aplikácia</item>
+        <item quantity="few">Chránené <xliff:g example="10" id="Number of applications">%1$d</xliff:g> aplikácie</item>
+        <item quantity="many">Chránených <xliff:g example="10" id="Number of applications">%1$d</xliff:g> aplikácií</item>
+        <item quantity="other">Chránených <xliff:g example="10" id="Number of applications">%1$d</xliff:g> aplikácií</item>
+    </plurals>
+    <string name="app_lock_authentication_dialog_title">Odomknúť</string>
+    <string name="enable_debugging">Povoliť ladenie</string>
+    <string name="disable_debugging">Zakázať ladenie</string>
+    <string name="app_lock_packages_title">Chránené aplikácie</string>
+    <string name="app_lock_packages_summary">Vyberte aplikácie, ktoré chcete chrániť pomocou biometrických údajov alebo poverení zariadenia</string>
+    <string name="app_lock_timeout_title">Časovač aut. zámku</string>
+    <string name="app_lock_timeout_summary">Doba, po ktorej by mala byť  aplikácia na pozadí uzamknutá</string>
+    <string name="app_lock_notifications_title">Zbaliť upozornenia</string>
+    <string name="app_lock_notifications_summary">Obsah oznámení sa pri uzamknutých aplikáciách skryje a zbalí. Plávajúce upozornenia budú automaticky vypnuté.</string>
+    <string name="app_lock_notifications_disabled_summary">Najprv chráňte aplikáciu</string>
+    <string name="app_lock_biometrics_allowed_title">Povoliť biometriu na odomykanie</string>
+    <string name="app_lock_footer_text">Bubliny budú po uplynutí časového limitu automaticky zrušené</string>
+    <string name="enable_protection">Zapnúť ochranu</string>
+    <string name="hide_from_launcher_title">Skryť z launcheru</string>
+    <string name="hide_from_launcher_summary">Zabrániť zobrazeniu tejto aplikácie v akomkoľvek spúšťači. Vyžaduje reštart spúšťača, aby sa zmeny prejavili.</string>
+    <string name="custom_timeout_summary_never">Nikdy</string>
+    <string name="custom_timeout_summary_5secs">5 sekúnd</string>
+    <string name="custom_timeout_summary_10secs">10 sekúnd</string>
+    <string name="custom_timeout_summary_15secs">15 sekúnd</string>
+    <string name="custom_timeout_summary_30secs">30 sekúnd</string>
+    <string name="custom_timeout_summary_1min">1 minúta</string>
+    <string name="custom_timeout_summary_2mins">2 minúty</string>
+    <string name="custom_timeout_summary_5mins">5 minút</string>
+    <string name="custom_timeout_summary_10mins">10 minút</string>
+    <string name="custom_timeout_summary_20mins">20 minút</string>
+    <string name="custom_timeout_summary_30mins">30 minút</string>
+    <string name="custom_timeout_summary_1hour">1 hodina</string>
+    <string name="custom_timeout_summary_2hours">2 hodiny</string>
+    <string name="custom_timeout_summary_4hours">4 hodiny</string>
+    <string name="custom_timeout_summary_8hours">8 hodín</string>
+    <!-- Navigation bar IME space -->
+    <string name="navigation_bar_ime_space_title">Priestor pod klávesnicou</string>
+    <string name="ime_narrow">Zúžený</string>
+    <string name="ime_default">Predvolené</string>
+    <string name="ime_hidden">Skryté</string>
+    <!-- Ambient wake toggles -->
+    <string name="doze_gesture_ambient_title">Zobraziť Ambientný displej</string>
+    <string name="doze_gesture_ambient_summary">Zobraziť ambientný diplej namiesto úplného prebudenia obrazovky</string>
+    <!-- Gesture navbar length -->
+    <string name="gesture_navbar_length_title">Dĺžka navigačného pásika</string>
+    <string name="short_label">Krátka</string>
+    <string name="long_label">Dlhé</string>
+    <!-- Back gesture height -->
+    <string name="back_height_low_label">Plný</string>
+    <string name="back_height_high_label">Dole</string>
+    <string name="back_height_title">Výška gesta „Späť“</string>
+    <string name="back_height_summary">Výška obrazovky platná pre gesto „Späť“</string>
+    <!-- Gesture navbar radius -->
+    <string name="gesture_navbar_radius_title">Polomer pilulky</string>
+    <string name="thin_label">Tenké</string>
+    <string name="thick_label">Hrubé</string>
+    <!-- Hardware info -->
+    <string name="soc_model">SoC Model</string>
+    <string name="total_ram">Celková RAM</string>
+    <!-- Default getTimeSpentInApp string for Wellbeing to display. [CHAR LIMIT=NONE] -->
+    <string name="duration_less_than_one_minute">Menej ako 1 Minúta</string>
+    <!-- Summary for Wellbeing screen time usage. [CHAR LIMIT=NONE] -->
+    <string name="screen_time_summary_usage_today">Dnes %1$s</string>
+    <!-- Refresh rate -->
+    <string name="low_power_refresh_rate_title_custom">Obnovovacia frekvencia (Úsporný režim)</string>
+    <!-- Menu option for not validating the EAP server -->
+    <string name="wifi_do_not_validate_eap_server">Neoverovať</string>
+    <!-- Warning message displayed if user choses not to validate the EAP server -->
+    <string name="wifi_do_not_validate_eap_server_warning">Nie je určený žiadny certifikát. Pripojenie nebude súkromné.</string>
+    <!-- Pulse on music track change -->
+    <string name="pulse_on_new_tracks_title">Hudobné oznámenie</string>
+    <string name="pulse_on_new_tracks_summary">Zobraziť Ambientní displej po spustení novej hudobnej skladby</string>
+    <!-- Hotspot -->
+    <string name="wifi_hotspot_hidden_ssid_title">Skrytá sieť</string>
+    <string name="wifi_hotspot_hidden_ssid_summary">Názov vášho mobilného hotspotu sa nezobrazí v zozname dostupných WLAN sietí.</string>
+    <!-- General -->
+    <string name="copied_to_clipboard">Skopírované do schránky</string>
+    <string name="longpress_to_clipboard">Dlhým stlačením skopírujete</string>
+    <!-- Increasing ring tone volume -->
+    <string name="increasing_ring_volume_option_title">Zvyšovanie hlasitosti zvonenia</string>
+    <string name="increasing_ring_min_volume_title">Začiatočná hlasitosť</string>
+    <string name="increasing_ring_ramp_up_time_title">Doba zvyšovania</string>
+    <!-- Columbus -->
+    <string name="columbus_gesture_detected">Bolo zaznamenané rýchle klepnutie!</string>
+    <string name="columbus_gesture_enrollment_complete">Hotovo</string>
+    <string name="columbus_gesture_enrollment_do_it_later">Teraz nie</string>
+    <string name="columbus_gesture_enrollment_settings">Prejsť do nastavení</string>
+    <string name="columbus_gesture_enrollment_try_it">Vyskúšať to</string>
+    <string name="columbus_gesture_training_action_no_selection_error">Vyberte akciu, ktorú chcete vykonať</string>
+    <string name="columbus_gesture_training_action_text">Vyberte, čo sa má stať, keď použijete rýchle klepnutie. Neskôr to môžete zmeniť v nastaveniach.</string>
+    <string name="columbus_gesture_training_action_title">Vyberte možnosť rýchleho klepnutia</string>
+    <string name="columbus_gesture_training_enrolling_first_gesture">…Dvojité klepnutie 1 z 2 zistených</string>
+    <string name="columbus_gesture_training_enrolling_first_gesture_text">Skúsme to ešte raz. Dvakrát rýchlo klepnite na zadnú stranu telefónu.</string>
+    <string name="columbus_gesture_training_enrolling_first_gesture_title">Pekne!</string>
+    <string name="columbus_gesture_training_enrolling_second_gesture">…Dvojité klepnutie 2 z 2 zistených</string>
+    <string name="columbus_gesture_training_enrolling_second_gesture_text">Ste pripravení začať používať rýchle klepnutie</string>
+    <string name="columbus_gesture_training_enrolling_second_gesture_title">Dobrá práca!</string>
+    <string name="columbus_gesture_training_enrolling_text">Dvakrát rýchlo klepnte na zadnú stranu telefónu.</string>
+    <string name="columbus_gesture_training_enrolling_title">Vyskúšať rýchle klepnutie</string>
+    <string name="columbus_gesture_training_finished_text">Ak chcete zmeniť silu klepnutia potrebnú na použitie rýchleho klepnutia, prejdite do nastavení.</string>
+    <string name="columbus_gesture_training_finished_title">Nastavili ste rýchle klepnutie</string>
+    <string name="columbus_gesture_training_intro_text_accidental">Práve ste dvakrát klepli na zadnú stranu vášho zariadenia, čo vám umožňuje použiť vášho Asistenta on‑the‑go. Toto gesto si môžete prispôsobiť v nastaveniach.</string>
+    <string name="columbus_gesture_training_intro_text_suw">Dvoma klepnutiami urobíte snímku obrazovky, zobrazíte oznámenia alebo spustíte inú akciu.</string>
+    <string name="columbus_gesture_training_intro_title">Rýchle klepnutie pre rýchle akcie</string>
+    <string name="columbus_gesture_training_launch_no_selection_error">Vyberte prosím aplikáciu, ktorú chcete otvoriť</string>
+    <string name="columbus_gesture_training_launch_text">Vyberte aplikáciu, ktorú chcete otvoriť, keď použijete rýchle klepnutie.</string>
+    <string name="columbus_gesture_training_launch_title">Vyberte aplikáciu, ktorú chcete otvoriť</string>
+    <string name="columbus_launch_app_extra_widget_a11y_label">Nastavenie skratky %1$s</string>
+    <string name="columbus_launch_settings_activity_title">Nastavenia rýchleho klepnutia</string>
+    <string name="columbus_name">Rýchle klepnutie</string>
+    <string name="columbus_radio_button_extra_widget_a11y_label">Nastavenie %1$s</string>
+    <string name="columbus_setting_action_assistant_title">Prístup k digitálnemu asistentovi</string>
+    <string name="columbus_setting_action_launch_summary_no_selection">Žiadne vybraná aplikácia</string>
+    <string name="columbus_setting_action_launch_summary_not_installed">Aplikácia nie je nainštalovaná</string>
+    <string name="columbus_setting_action_launch_title">Otvoriť aplikáciu</string>
+    <string name="columbus_setting_action_notification_title">Zobraziť upozornenia</string>
+    <string name="columbus_setting_action_open_app_title">Otvoriť aplikáciu</string>
+    <string name="columbus_setting_action_overview_title">Zobrazit nedávné aplikacie</string>
+    <string name="columbus_setting_action_play_pause_title">Prehrať alebo pozastaviť médiá</string>
+    <string name="columbus_setting_action_screenshot_title">Urobiť snímku obrazovky</string>
+    <string name="columbus_setting_actions_title">Dvojitým klepnutím na zadnú stranu telefónu</string>
+    <string name="columbus_setting_additional_settings_title">Sila rýchleho klepnutia</string>
+    <string name="columbus_setting_app_selection_help_text">Vyberte aplikáciu, ktorá sa otvorí, keď dvakrát klepnete na zadnú stranu telefónu. Ak aplikáciu odinštalujete, rýchle klenutie sa vypne, kým nevyberiete inú aplikáciu.</string>
+    <string name="columbus_setting_app_shortcut_selection_help_text">Vyberte, čo sa má stať, keď otvoríte túto aplikáciu pomocou rýchleho klepnutia.</string>
+    <string name="columbus_setting_enable_switch_title">Použiť rýchle klepnutie</string>
+    <string name="columbus_setting_sensitivity_title">Vyžadovať silnejšie klepnutie</string>
+    <!-- No storage restrict -->
+    <string name="no_storage_restrict_title">Úložisko bez obmedzení</string>
+    <string name="no_storage_restrict_summary">Odstrániť obmedzenia pri výbere priečinkov prostredníctvom rámca Storage Access Framework. V niektorých prípadoch to môže byť vhodné, ale môže to viesť k úniku súkromia.</string>
 </resources>
