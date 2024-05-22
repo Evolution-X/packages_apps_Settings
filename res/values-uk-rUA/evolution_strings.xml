@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2019-2024 The Evolution X Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Device Info screen. Evolution X legal. -->
+    <string name="evolution_license_title">Юридичні застереження Evolution X</string>
+    <!-- Android version screen, build maintainer -->
+    <string name="build_maintainer">Розробник збірки</string>
+    <!-- App search preference -->
+    <string name="search">Пошук</string>
+    <string name="search_apps">Пошук додатків</string>
+    <!-- Hide developer status -->
+    <string name="hide_developer_status_title">Приховати статус розробника</string>
+    <string name="hide_developer_status_summary">Приховати статус розробника від додатків</string>
+    <!-- Notch: Full screen apps -->
+    <string name="display_cutout_force_fullscreen_title">Повноекранні застосунки</string>
+    <string name="display_cutout_force_fullscreen_summary">Змусити застосунки ігнорувати виріз</string>
+    <!-- Misc Haptics -->
+    <string name="misc_vibration_category_title">Додаткові параметри вібрації</string>
+    <!-- Volume slider haptic feedback -->
+    <string name="volume_slider_haptic_feedback_title">Вібрувати при зміні повзунка гучності</string>
+    <!-- QS Tiles haptic -->
+    <string name="qs_tiles_haptic_feedback_title">Вібрація при дотику до плитки швидких налаштувань</string>
+    <!-- Scroll fling haptic feedback -->
+    <string name="scroll_fling_haptic_feedback_title">Вібрувати при перевертанні прокручування</string>
+    <!-- Charger haptic feedback -->
+    <string name="charger_haptic_feedback_title">Вібрувати при зміні підключення до зарядного пристрою</string>
+    <!-- Charging sound -->
+    <string name="charging_sounds_custom_title">Звуки зарядження</string>
+    <!-- QS Brightness slider haptic feedback -->
+    <string name="qs_brightness_slider_haptic_feedback_title">Вібрувати при зміні повзунка яскравості</string>
+    <!-- Screenshot shutter -->
+    <string name="screenshot_shutter_sound_title">Звук знімка екрана</string>
+    <!-- Three-fingers-swipe to screenshot -->
+    <string name="swipe_to_screenshot_gesture_title">Жест трьома пальцями</string>
+    <string name="swipe_to_screenshot_gesture_summary">Проведіть трьома пальцями для знімку екрану</string>
+    <!-- Deep Sleep percentage in device info -->
+    <string name="status_sleep_time">Глибокий сон</string>
+    <!-- Show clipboard overlay -->
+    <string name="show_clipboard_overlay_title">Показати накладення буфера обміну</string>
+    <string name="show_clipboard_overlay_summary">Показувати накладання в лівому нижньому куті екрана, коли щось копіюється в буфер обміну</string>
+    <!-- Screen resolution -->
+    <string name="custom_screen_resolution_title">Користувацька роздільна здатність екрана</string>
+    <!-- Unlimit screenrecord -->
+    <string name="unlimit_screenrecord_title">Скасувати обмеження запису екрану</string>
+    <string name="unlimit_screenrecord_summary">Видалити обмеження розміру 15 Гб файлу\nМоже призвести до більшого, ніж необхідний файл виводу</string>
+    <!-- Force LTE_CA -->
+    <string name="force_lte_ca">Примусово увімкнути LTE CA</string>
+    <string name="force_lte_ca_summary">Примусово застосовувати агрегацію операторів LTE</string>
+    <!-- WiFi Hotspot -->
+    <string name="wifi_hotspot_ap_band_title">Діапазон частот точки доступу</string>
+    <string name="wifi_hotspot_hidden_ssid_title">Прихована мережа</string>
+    <string name="wifi_hotspot_hidden_ssid_summary">Назва вашої точки доступу не буде показуватися в списку доступних мереж WLAN.</string>
+    <string name="wifi_hotspot_client_manager_title">Підключені пристрої</string>
+    <string name="wifi_hotspot_client_manager_summary">Список і керування пристроями, підключені до точки доступу, і встановлення обмеження на кількість клієнтів</string>
+    <string name="wifi_hotspot_client_manager_list_only_summary">Список пристроїв, підключених до точки доступу</string>
+    <string name="wifi_hotspot_client_limit_title">Обмеження кількості підключених пристроїв</string>
+    <string name="wifi_hotspot_blocked_clients_list_title">Заблоковані пристрої</string>
+    <string name="wifi_hotspot_connected_clients_list_title">Підключені пристрої</string>
+    <string name="wifi_hotspot_block_client_dialog_title">Заблокувати пристрій</string>
+    <string name="wifi_hotspot_block_client_dialog_text">Ця дія відключить \"<xliff:g id="device_name">%1$s</xliff:g>\" від цього пристрою і заблокує його</string>
+    <string name="wifi_hotspot_unblock_client_dialog_title">Розблокувати пристрій</string>
+    <string name="wifi_hotspot_unblock_client_dialog_text">Цей пристрій \"<xliff:g id="device_name">%1$s</xliff:g>\" зможе під\'єднатися до цієї точки доступу</string>
+    <string name="wifi_hotspot_client_manager_footer_text">Наразі немає доступних клієнтів. Підключені та заблоковані пристрої з’являться тут, коли вони стануть доступними.</string>
+    <string name="wifi_band_24ghz_and_5ghz">2,4 ГГц &amp; 5 ГГц</string>
+    <string name="wifi_band_24ghz_and_6ghz">2,4 ГГц &amp; 6 ГГц</string>
+    <string name="wifi_band_60ghz">60 ГГц</string>
+    <plurals name="wifi_hotspot_client_limit_summary">
+        <item quantity="other">До <xliff:g id="device_num">Пристроїв%1$d</xliff:g> можуть підключатися до цієї точки доступу</item>
+        <item quantity="one">До цієї точки доступу можна під\'єднати <xliff:g id="device_num">%1$d</xliff:g> пристроїв</item>
+        <item quantity="few">До цієї точки доступу можна під\'єднати <xliff:g id="device_num">%1$d</xliff:g> пристроїв</item>
+        <item quantity="many">До цієї точки доступу можна під\'єднати <xliff:g id="device_num">%1$d</xliff:g> пристроїв</item>
+    </plurals>
+    <!-- AdGuard DNS Option -->
+    <!-- AdGuard DNS hostname -->
+    <!-- Open DNS Option -->
+    <!-- Open DNS hostname -->
+    <!-- Cleanbrowsing DNS Option -->
+    <!-- Cleanbrowsing DNS hostname -->
+    <!-- Quad9 DNS Option -->
+    <!-- Quad9 DNS hostname -->
+    <!-- Per-app volume -->
+    <string name="app_volume">Гучність додатка</string>
+    <string name="app_volume_title">Налаштування гучності додатків</string>
+    <string name="app_volume_summary">Показувати кнопку гучності для кожного додатку в діалоговому вікні гучності</string>
+    <!-- Smart Pause -->
+    <string name="adaptive_playback_screen_title">Розумна Пауза</string>
+    <string name="adaptive_playback_enabled">Використовувати розумну паузу</string>
+    <string name="adaptive_playback_disabled_summary">Вимкнути</string>
+    <string name="adaptive_playback_intro_text">Автоматично призупиняє медіа програвач, коли гучність вимкнена, та продовжить програвання коли гучність відновлена протягом встановленого часу.</string>
+    <string name="adaptive_playback_timeout_title">Встановлений час Розумної Паузи</string>
+    <string name="adaptive_playback_timeout_none">Без обмежень у часі</string>
+    <string name="adaptive_playback_timeout_none_summary">Увімкнено (без обмежень)</string>
+    <string name="adaptive_playback_timeout_30_secs">30 секунд</string>
+    <string name="adaptive_playback_timeout_30_secs_summary">Увімкнено (30 секунд)</string>
+    <string name="adaptive_playback_timeout_1_min">1 хвилина</string>
+    <string name="adaptive_playback_timeout_1_min_summary">Увімкнено (1 хвилина)</string>
+    <string name="adaptive_playback_timeout_2_min">2 хвилини</string>
+    <string name="adaptive_playback_timeout_2_min_summary">Увімкнено (2 хвилини)</string>
+    <string name="adaptive_playback_timeout_5_min">5 хвилин</string>
+    <string name="adaptive_playback_timeout_5_min_summary">Увімкнено (5 хвилин)</string>
+    <string name="adaptive_playback_timeout_10_min">10 хвилин</string>
+    <string name="adaptive_playback_timeout_10_min_summary">Увімкнено (10 хвилин)</string>
+    <!-- Enforce DNS for VPN -->
+    <string name="vpn_enforce_dns_title">Вимкнути для VPN</string>
+    <string name="vpn_enforce_dns_summary">Вимкнути приватний DNS при під\'єднанні до VPN\nбуде відновлено після від\'єднання</string>
+    <!-- Volume Steps -->
+    <string name="volume_steps_title">Рівні гучності</string>
+    <string name="volume_steps_summary">Контролюйте деталізацію кожного потоку</string>
+    <string name="max_music_volume_title">Медіа</string>
+    <string name="max_call_volume_title">Дзвінки</string>
+    <string name="max_alarm_volume_title">Будильники</string>
+    <string name="steps_unit">кроків</string>
+    <!-- Cycle through ringer modes gesture -->
+    <string name="prevent_ringing_option_cycle">Перемикання між режимами</string>
+    <string name="prevent_ringing_option_cycle_summary">Увімкнути (переключення між режимами)</string>
+    <!-- Back gesture animation -->
+    <string name="back_gesture_arrow_title">Анімація жесту \"Назад\"</string>
+    <string name="back_gesture_arrow_summary">Відображати анімовану стрілку жесту \"Назад\"</string>
+    <!-- Back gesture haptic -->
+    <string name="back_gesture_haptic_title">Вібровідгук</string>
+    <string name="back_gesture_haptic_summary">Увімкнути тактильний ефект від жестів назад</string>
+    <!-- Auto pin confirm -->
+    <string name="lock_screen_auto_pin_confirm_summary_custom">Автоматичне розблокування при введенні правильного PIN-коду. Це трохи менш безпечно, ніж натискання Enter для підтвердження.</string>
+    <!-- Doze on charge -->
+    <string name="doze_on_charge_title">Завжди показувати під час заряджання</string>
+    <string name="doze_on_charge_summary">Показати пристрій заряджається</string>
+    <!-- Incall vibrate options -->
+    <string name="incall_vibration_category">Параметри вібрації під час дзвінка</string>
+    <string name="incall_vibrate_connect_title">Вибрація при з\'єднанні</string>
+    <string name="incall_vibrate_call_wait_title">Вібрувати при з\'єднанні</string>
+    <string name="incall_vibrate_disconnect_title">Вібрація при роз\'єднанні</string>
+    <!-- Label for a numbered SIM card.  [CHAR LIMIT=40] -->
+    <!-- Hide screen capture status -->
+    <string name="hide_screen_capture_status_title">Приховати статус захоплення екрану</string>
+    <string name="hide_screen_capture_status_summary">Це видаляє ліміти даних з екрану та записи екрану для всіх програм. Зазвичай такі програми замінюються чорними зонами в записах. Це може бути зручним у деяких випадках, але може призвести до витоку конфіденційності. Після зміни цього перемикача, вам може знадобитися перезапуск програм, щоб зміни набрали сили.</string>
+    <!-- Doze on double tap -->
+    <string name="double_tap_title">Подвійне натискання</string>
+    <string name="doze_double_tap_title">Двічі торкніться, щоб перевірити телефон</string>
+    <string name="doze_double_tap_summary">Імпульсні повідомлення подвійним натисканням</string>
+    <!-- App lock -->
+    <string name="app_lock_title">Блокування додатка</string>
+    <plurals name="app_lock_summary">
+        <item quantity="one"><xliff:g example="1" id="Number of applications">%1$d</xliff:g> Додаток захищено</item>
+        <item quantity="few"><xliff:g example="10" id="Number of applications">%1$d</xliff:g> Програма захищена</item>
+        <item quantity="many"><xliff:g example="10" id="Number of applications">%1$d</xliff:g> додатків захищено</item>
+        <item quantity="other"><xliff:g example="10" id="Number of applications">%1$d</xliff:g> додатків захищено</item>
+    </plurals>
+    <string name="app_lock_authentication_dialog_title">Розблокувати</string>
+    <string name="enable_debugging">Увімкнути налагодження</string>
+    <string name="disable_debugging">Вимкнути відлагодження</string>
+    <string name="app_lock_packages_title">Захищені додатки</string>
+    <string name="app_lock_packages_summary">Виберіть програми для захисту за допомогою біометричних даних або облікових даних пристрою</string>
+    <string name="app_lock_timeout_title">Час автоблокування</string>
+    <string name="app_lock_timeout_summary">Тривалість часу, після якого розблокована програма у фоновому режимі має бути заблокована</string>
+    <string name="app_lock_notifications_title">Згорнути сповіщення</string>
+    <string name="app_lock_notifications_summary">Зміст сповіщень буде приховано і згорнуто для вибраних програм, коли вони будуть заблоковані. Спливаючі сповіщення будуть автоматично вимкнені.</string>
+    <string name="app_lock_notifications_disabled_summary">Спершу виберіть програму для захисту</string>
+    <string name="app_lock_biometrics_allowed_title">Увімкніть біометричні дані для розблокування</string>
+    <string name="app_lock_footer_text">Спливаючі повідомлення будуть автоматично видалені після закінчення тайм-ауту</string>
+    <string name="enable_protection">Увімкнути захист</string>
+    <string name="hide_from_launcher_title">Сховати значок з меню програм</string>
+    <string name="hide_from_launcher_summary">Заборонити показ цієї програми в лаунчері. Необхідний перезапуск лаунчера, щоб зміни набрали чинності.</string>
+    <string name="custom_timeout_summary_never">Ніколи</string>
+    <string name="custom_timeout_summary_5secs">5 секунд</string>
+    <string name="custom_timeout_summary_10secs">10 секунд</string>
+    <string name="custom_timeout_summary_15secs">15 секунд</string>
+    <string name="custom_timeout_summary_30secs">30 секунд</string>
+    <string name="custom_timeout_summary_1min">1 хвилина</string>
+    <string name="custom_timeout_summary_2mins">2 хвилини</string>
+    <string name="custom_timeout_summary_5mins">5 хвилин</string>
+    <string name="custom_timeout_summary_10mins">10 хвилин</string>
+    <string name="custom_timeout_summary_20mins">20 хвилин</string>
+    <string name="custom_timeout_summary_30mins">30 хвилин</string>
+    <string name="custom_timeout_summary_1hour">1 година</string>
+    <string name="custom_timeout_summary_2hours">2 години</string>
+    <string name="custom_timeout_summary_4hours">4 години</string>
+    <string name="custom_timeout_summary_8hours">8 годин</string>
+    <!-- Navigation bar IME space -->
+    <string name="navigation_bar_ime_space_title">Місце під клавіатурою</string>
+    <string name="ime_narrow">Вузький</string>
+    <string name="ime_default">За замовчуванням</string>
+    <string name="ime_hidden">Приховано</string>
+    <!-- Ambient wake toggles -->
+    <string name="doze_gesture_ambient_title">Показати Активний екран</string>
+    <string name="doze_gesture_ambient_summary">Показати Активний екран замість повного пробудження екрану</string>
+    <!-- Gesture navbar length -->
+    <string name="gesture_navbar_length_title">Довжина індикатора жестів навігації</string>
+    <string name="short_label">Коротка</string>
+    <string name="long_label">Довга</string>
+    <!-- Back gesture height -->
+    <string name="back_height_low_label">Повний</string>
+    <string name="back_height_high_label">Знизу</string>
+    <string name="back_height_title">Висота жесту \"Назад\"</string>
+    <string name="back_height_summary">Висота екрану дійсна для жесту \"Назад\"</string>
+    <!-- Gesture navbar radius -->
+    <string name="gesture_navbar_radius_title">Радіус жесту навігації</string>
+    <string name="thin_label">Тонкий</string>
+    <string name="thick_label">Товстий</string>
+    <!-- Hardware info -->
+    <string name="soc_model">Модель SoC</string>
+    <string name="total_ram">Об\'єм ОЗП</string>
+    <!-- Default getTimeSpentInApp string for Wellbeing to display. [CHAR LIMIT=NONE] -->
+    <string name="duration_less_than_one_minute">Менше 1 хвилини</string>
+    <!-- Summary for Wellbeing screen time usage. [CHAR LIMIT=NONE] -->
+    <string name="screen_time_summary_usage_today">%1$s сьогодні</string>
+    <!-- Refresh rate -->
+    <string name="low_power_refresh_rate_title_custom">Частота оновлення при низькому заряду батареї</string>
+    <!-- Menu option for not validating the EAP server -->
+    <string name="wifi_do_not_validate_eap_server">Не перевіряти</string>
+    <!-- Warning message displayed if user choses not to validate the EAP server -->
+    <string name="wifi_do_not_validate_eap_server_warning">Сертифікат не вказано. З’єднання не буде конфіденційним.</string>
+    <!-- Pulse on music track change -->
+    <string name="pulse_on_new_tracks_title">Підсвічувати музику</string>
+    <string name="pulse_on_new_tracks_summary">Підсвічувати екран коли відтворюється новий музичний трек</string>
+</resources>
