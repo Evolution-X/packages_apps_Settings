@@ -8,13 +8,14 @@
     <string name="evolution_license_title">Hivatalos Evolution X</string>
     <!-- Android version screen, build maintainer -->
     <string name="build_maintainer">A kiadás felelőse</string>
-    <!-- Hide developer status -->
-    <string name="hide_developer_status_title">Rejtett fejlesztői állapot</string>
-    <string name="hide_developer_status_summary">A fejlesztői állapot elrejtése az alkalmazások elől</string>
+    <!-- App search preference -->
     <string name="search">Keresés</string>
     <string name="search_apps">Alkalmazások keresése</string>
+    <!-- Notch: Full screen apps -->
+    <string name="display_cutout_force_fullscreen_title">Teljesképernyős-alkalmazások</string>
+    <string name="display_cutout_force_fullscreen_summary">Alkalmazások kényszerítése, hogy a képernyőkivágást mellőzzék</string>
     <!-- Misc Haptics -->
-    <string name="misc_vibration_category_title">Egyéb rezgő visszajelzők</string>
+    <string name="misc_vibration_category_title">További beállítások a vibráláshoz</string>
     <!-- Volume slider haptic feedback -->
     <string name="volume_slider_haptic_feedback_title">A Hangerő-csúszka rezgő visszajelzése</string>
     <!-- QS Tiles haptic -->
@@ -29,9 +30,6 @@
     <string name="qs_brightness_slider_haptic_feedback_title">A Fényerő-csúszka rezgő visszajelzése</string>
     <!-- Screenshot shutter -->
     <string name="screenshot_shutter_sound_title">A képernyőmentés hangja</string>
-    <!-- Three-fingers-swipe to screenshot -->
-    <string name="swipe_to_screenshot_gesture_title">Képernyőkép csúsztatással</string>
-    <string name="swipe_to_screenshot_gesture_summary">Csúsztasson három ujjal képernyőkép készítéséhez</string>
     <!-- Deep Sleep percentage in device info -->
     <string name="status_sleep_time">Mélyalvás</string>
     <!-- Show clipboard overlay -->
@@ -42,4 +40,258 @@
     <!-- Unlimit screenrecord -->
     <string name="unlimit_screenrecord_title">Végtelen fájlméret</string>
     <string name="unlimit_screenrecord_summary">Eltörli a 15GB-os fájlméret-limitet\nA szükségesnél nagyobb kimenő fájlméretet eredményezhet</string>
+    <!-- Force LTE_CA -->
+    <string name="force_lte_ca">Az LTE CA erőltetése</string>
+    <string name="force_lte_ca_summary">A működéshez kényszerítse az LTE szolgáltató aggregációt</string>
+    <!-- AdGuard DNS Option -->
+    <!-- AdGuard DNS hostname -->
+    <!-- Open DNS Option -->
+    <!-- Open DNS hostname -->
+    <!-- Cleanbrowsing DNS Option -->
+    <!-- Cleanbrowsing DNS hostname -->
+    <!-- Quad9 DNS Option -->
+    <!-- Quad9 DNS hostname -->
+    <!-- Per-app volume -->
+    <string name="app_volume">Alkalmazásonkénti hangerő</string>
+    <string name="app_volume_title">Hangerőszabályozás alkalmazásonként</string>
+    <string name="app_volume_summary">Alkalmazásonként különálló hangerőgomb megjelenítése a panelen</string>
+    <!-- Smart Pause -->
+    <string name="adaptive_playback_screen_title">Okos szüneteltetés</string>
+    <string name="adaptive_playback_enabled">Az \'Okos szüneteltetés\' használata</string>
+    <string name="adaptive_playback_disabled_summary">Ki</string>
+    <string name="adaptive_playback_intro_text">Hangerőnémításkor automatikusan leállítja a lejátszást és automatikusan újra is indítja, ha a némítás megszűnik.</string>
+    <string name="adaptive_playback_timeout_title">A használt időtúllépés mértéke</string>
+    <string name="adaptive_playback_timeout_none">Nincs időkorlát</string>
+    <string name="adaptive_playback_timeout_none_summary">Be (nincs időkorlát)</string>
+    <string name="adaptive_playback_timeout_30_secs">30 másodperc</string>
+    <string name="adaptive_playback_timeout_30_secs_summary">Be (30 másodperc)</string>
+    <string name="adaptive_playback_timeout_1_min">1 perc</string>
+    <string name="adaptive_playback_timeout_1_min_summary">Be (1 perc)</string>
+    <string name="adaptive_playback_timeout_2_min">2 perc</string>
+    <string name="adaptive_playback_timeout_2_min_summary">Be (2 perc)</string>
+    <string name="adaptive_playback_timeout_5_min">5 perc</string>
+    <string name="adaptive_playback_timeout_5_min_summary">Be (5 perc)</string>
+    <string name="adaptive_playback_timeout_10_min">10 perc</string>
+    <string name="adaptive_playback_timeout_10_min_summary">Be (10 perc)</string>
+    <!-- Enforce DNS for VPN -->
+    <string name="vpn_enforce_dns_title">Letiltás VPN használatkor</string>
+    <string name="vpn_enforce_dns_summary">Ha VPN-hez csatlakozik, kapcsolja ki a privát DNS-t\nVisszaáll alapállapotba kapcsolatbontás után</string>
+    <!-- Volume Steps -->
+    <string name="volume_steps_title">Hangerőléptetések</string>
+    <string name="volume_steps_summary">Az egyes adatfolyamok részletességének szabályozása</string>
+    <string name="max_music_volume_title">Média</string>
+    <string name="max_call_volume_title">Hívások</string>
+    <string name="max_alarm_volume_title">Ébresztések</string>
+    <string name="steps_unit">lépés</string>
+    <!-- Cycle through ringer modes gesture -->
+    <string name="prevent_ringing_option_cycle">Üzemmódok közötti váltás</string>
+    <string name="prevent_ringing_option_cycle_summary">Be (üzemmódok közötti váltás)</string>
+    <!-- Back gesture animation -->
+    <string name="back_gesture_arrow_title">A \'Vissza\'-vezérlés animációja</string>
+    <string name="back_gesture_arrow_summary">Mutasson egy animált nyilat a \'Vissza\'-mozdulatvezérléshez</string>
+    <!-- Back gesture haptic -->
+    <string name="back_gesture_haptic_title">Rezgés \'Vissza\'-vezérléskor</string>
+    <string name="back_gesture_haptic_summary">Rezegni fog a készülék amikor a \'Vissza\'-vezérlőt használja</string>
+    <!-- Auto pin confirm -->
+    <string name="lock_screen_auto_pin_confirm_summary_custom">Helyes PIN beírásakor automatikusan feleldódik. Ez kevésbé biztonságos mint a megerősítéses belépés.</string>
+    <!-- Doze on charge -->
+    <string name="doze_on_charge_title">Töltés közben mindig látszik</string>
+    <string name="doze_on_charge_summary">Ha a készülék töltődik; akkor megjelenik</string>
+    <!-- Incall vibrate options -->
+    <string name="incall_vibration_category">A hívás közbeni rezgés beállításai</string>
+    <string name="incall_vibrate_connect_title">Rezgés a kapcsolat létrejöttekor</string>
+    <string name="incall_vibrate_call_wait_title">Rezgés hívásvárakoztatásnál</string>
+    <string name="incall_vibrate_disconnect_title">Rezgés a kapcsolat bontásakor</string>
+    <!-- Label for a numbered SIM card.  [CHAR LIMIT=40] -->
+    <!-- Hide screen capture status -->
+    <string name="hide_screen_capture_status_title">Képernyőfelvétel-állapot elrejtése</string>
+    <string name="hide_screen_capture_status_summary">Az összes alkalmazás elől elrejti a képenyőfelvétel-státuszt és a képernyőkép-státuszt. Bizonyos esetekben kényelmes lehet, de adatszivárgáshoz vezethet. A módosítás életbe lépéséhez újra kell indítani az alkalmazásokat.</string>
+    <!-- Doze on double tap -->
+    <string name="double_tap_title">Duplakopp</string>
+    <string name="doze_double_tap_title">Gyorsellenőrzés dupla érintéssel</string>
+    <string name="doze_double_tap_summary">Pulzáló értesítések dupla érintésre</string>
+    <!-- App lock -->
+    <string name="app_lock_title">Alkalmazás-zár</string>
+    <plurals name="app_lock_summary">
+        <item quantity="one"><xliff:g example="1" id="Number of applications">%1$d</xliff:g> alkalmazás védett</item>
+        <item quantity="other"><xliff:g example="10" id="Number of applications">%1$d</xliff:g> alkalmazás védett</item>
+    </plurals>
+    <string name="app_lock_authentication_dialog_title">Zárfeloldás</string>
+    <string name="enable_debugging">Hibakeresés engedélyezése</string>
+    <string name="disable_debugging">Hibakeresés kikapcsolása</string>
+    <string name="app_lock_packages_title">Védett alkalmazások</string>
+    <string name="app_lock_packages_summary">Válassza ki a biometrikus- vagy készülékhitelesítő-adatokkal védeni kívánt alkalmazásokat</string>
+    <string name="app_lock_timeout_title">Az automatikus lezárás időkorlátja</string>
+    <string name="app_lock_timeout_summary">Az az időtartam, amely után a feloldott alkalmazás a háttérben visszazár</string>
+    <string name="app_lock_notifications_title">Összezárt értesítések</string>
+    <string name="app_lock_notifications_summary">A kiválasztott zárolt alkalmazások értesítései elrejtődnek és összecsukódnak. A lebegő értesítések automatikusan letiltásra kerülnek.</string>
+    <string name="app_lock_notifications_disabled_summary">Előbb állítson be legalább egy védett alkalmazást</string>
+    <string name="app_lock_biometrics_allowed_title">Biometria-bekapcsolás a feloldáshoz</string>
+    <string name="app_lock_footer_text">A buborékok az időkorlát letelte után automatikusan eltűnnek</string>
+    <string name="enable_protection">Védelem-engedélyezés</string>
+    <string name="hide_from_launcher_title">Elrejtés a Launcherből</string>
+    <string name="hide_from_launcher_summary">Megakadályozza hogy ez az alkalmazás látszódjon bármilyen launcheren. A funkcióhoz újra kell indítani a launchert.</string>
+    <!-- Wifi/Bluetooth auto timeout -->
+    <string name="wifi_timeout">Wi-Fi-időkorlát</string>
+    <string name="wifi_timeout_summary">Ne kapcsolódjon ki automatikusan a Wi-Fi</string>
+    <string name="wifi_timeout_summary_auto">Ha nincs hálózat, a Wi-Fi <xliff:g id="timeout_description">%1$s</xliff:g> elteltével kikapcsol</string>
+    <string name="bluetooth_timeout">Bluetooth-időkorlát</string>
+    <string name="bluetooth_timeout_summary">Ne kapcsolódjon ki automatikusan a Bluetooth</string>
+    <string name="bluetooth_timeout_summary_auto">Ha nincs csatlakoztatott eszköz, a Bluetooth <xliff:g id="timeout_description">%1$s</xliff:g> elteltével kapcsol ki</string>
+    <string name="custom_timeout_summary_never">Soha</string>
+    <string name="custom_timeout_summary_5secs">5 másodperc</string>
+    <string name="custom_timeout_summary_10secs">10 másodperc</string>
+    <string name="custom_timeout_summary_15secs">15 másodperc</string>
+    <string name="custom_timeout_summary_30secs">30 másodperc</string>
+    <string name="custom_timeout_summary_1min">1 perc</string>
+    <string name="custom_timeout_summary_2mins">2 perc</string>
+    <string name="custom_timeout_summary_5mins">5 perc</string>
+    <string name="custom_timeout_summary_10mins">10 perc</string>
+    <string name="custom_timeout_summary_20mins">20 perc</string>
+    <string name="custom_timeout_summary_30mins">30 perc</string>
+    <string name="custom_timeout_summary_1hour">1 óra</string>
+    <string name="custom_timeout_summary_2hours">2 óra</string>
+    <string name="custom_timeout_summary_4hours">4 óra</string>
+    <string name="custom_timeout_summary_8hours">8 óra</string>
+    <!-- Navigation bar IME space -->
+    <string name="navigation_bar_ime_space_title">IME-gombhely</string>
+    <string name="ime_narrow">Keskeny</string>
+    <string name="ime_default">Alapértelmezett</string>
+    <string name="ime_hidden">Rejtett</string>
+    <!-- Ambient wake toggles -->
+    <string name="doze_gesture_ambient_title">Csak a \'Környezeti\'</string>
+    <string name="doze_gesture_ambient_summary">A képernyő teljes felébresztése helyett a \'Környezeti kijelző\' megjelenítése</string>
+    <!-- Gesture navbar length -->
+    <string name="gesture_navbar_length_title">Kapszulahossz</string>
+    <string name="short_label">Rövid</string>
+    <string name="long_label">Hosszú</string>
+    <!-- Back gesture height -->
+    <string name="back_height_low_label">Teljes</string>
+    <string name="back_height_high_label">Alul</string>
+    <string name="back_height_title">A \'Vissza\'-vezérlés magassága</string>
+    <string name="back_height_summary">Az érvényes terület nagysága a \'Vissza\'-vezérléshez</string>
+    <!-- Gesture navbar radius -->
+    <string name="gesture_navbar_radius_title">A kapszula rádiusza</string>
+    <string name="thin_label">Vékony</string>
+    <string name="thick_label">Vastag</string>
+    <!-- Hardware info -->
+    <string name="device_market_name">Az Áruház neve</string>
+    <string name="soc_model">CPU modell</string>
+    <string name="total_ram">Az összes RAM</string>
+    <!-- Default getTimeSpentInApp string for Wellbeing to display. [CHAR LIMIT=NONE] -->
+    <string name="duration_less_than_one_minute">Kevesebb, mint egy perc</string>
+    <!-- Summary for Wellbeing screen time usage. [CHAR LIMIT=NONE] -->
+    <string name="screen_time_summary_usage_today">Ma: %1$s</string>
+    <!-- Refresh rate -->
+    <string name="low_power_refresh_rate_title_custom">Képernyőfrissítés gyenge akkuhoz</string>
+    <!-- Menu option for not validating the EAP server -->
+    <string name="wifi_do_not_validate_eap_server">Ne legyen érvényesítés</string>
+    <!-- Warning message displayed if user choses not to validate the EAP server -->
+    <string name="wifi_do_not_validate_eap_server_warning">Nincs tanusítvány megadva. Kapcsolata nem lesz privát.</string>
+    <!-- Pulse on music track change -->
+    <string name="pulse_on_new_tracks_title">Zene-jelzőszalag</string>
+    <string name="pulse_on_new_tracks_summary">A Környezeti kijelző megjelenítése, ha új zeneszám kerül lejátszásra</string>
+    <!-- Clipboard -->
+    <string name="copied_to_clipboard">Vágólapra másolva</string>
+    <string name="longpress_to_clipboard">Másolás hosszannyomással</string>
+    <!-- Increasing ring tone volume -->
+    <string name="increasing_ring_volume_option_title">Emelkedő csengőhang</string>
+    <string name="increasing_ring_min_volume_title">Kezdeti hangerő</string>
+    <string name="increasing_ring_ramp_up_time_title">Felfutási idő</string>
+    <!-- Columbus -->
+    <string name="columbus_gesture_detected">Gyorskoppintás észlelhető!</string>
+    <string name="columbus_gesture_enrollment_complete">Kész</string>
+    <string name="columbus_gesture_enrollment_do_it_later">Most nem</string>
+    <string name="columbus_gesture_enrollment_settings">Beállítások megnyitása</string>
+    <string name="columbus_gesture_enrollment_try_it">Próbálja ki</string>
+    <string name="columbus_gesture_training_action_no_selection_error">Válasszon egy végrehajtandó műveletet</string>
+    <string name="columbus_gesture_training_action_text">Adja meg mi történjen Gyorskoppintásokkor. Bármikor megváltoztathatja a Beállításokban.</string>
+    <string name="columbus_gesture_training_action_title">Válasszon egyet a lehetőségek közül</string>
+    <string name="columbus_gesture_training_enrolling_first_gesture">… A kettő közül az első duplaérintés érzékelve</string>
+    <string name="columbus_gesture_training_enrolling_first_gesture_text">Tegyen próbát még egyszer. Gyorsan érintse meg kétszer a készüléke hátlapját.</string>
+    <string name="columbus_gesture_training_enrolling_first_gesture_title">Szép!</string>
+    <string name="columbus_gesture_training_enrolling_second_gesture">… A második duplaérintés is érzékelve</string>
+    <string name="columbus_gesture_training_enrolling_second_gesture_text">Ön felkészült a Gyorskoppintás használatára</string>
+    <string name="columbus_gesture_training_enrolling_second_gesture_title">Megcsinálta!</string>
+    <string name="columbus_gesture_training_enrolling_text">Gyorsan koppintson kétszer a készüléke hátulján.</string>
+    <string name="columbus_gesture_training_enrolling_title">Tesztelje a Gyorskoppintásokat</string>
+    <string name="columbus_gesture_training_finished_text">A Gyorskoppintások használatához szükséges lenne az érintés erősségét változtatni, lépjen a Beállitásokba.</string>
+    <string name="columbus_gesture_training_finished_title">Beállította a Gyorskoppintásokat</string>
+    <string name="columbus_gesture_training_intro_text_accidental">Kétszer koppintson a készülék hátulján, ezzel férhet hozzá személyes digitális segédjéhez. Ezt a vezérlést személyre szabhatja a beállításokban.</string>
+    <string name="columbus_gesture_training_intro_text_suw">Duplakoppal készithet képernyőmentést, láthatja az értesitéseket vagy elindíthat más műveletet.</string>
+    <string name="columbus_gesture_training_intro_title">Gyorskoppintás a gyors működésért</string>
+    <string name="columbus_gesture_training_launch_no_selection_error">Válasszon ki egy indítandó alkalmazást</string>
+    <string name="columbus_gesture_training_launch_text">Állitsa be, melyik alkalmazás induljon el, ha a Gyorskoppintást használja.</string>
+    <string name="columbus_gesture_training_launch_title">Válassza ki a megnyitandó alkalmazást</string>
+    <string name="columbus_launch_app_extra_widget_a11y_label">%1$s-parancsikon-beállítások</string>
+    <string name="columbus_launch_settings_activity_title">A Gyorskoppintás beállitásai</string>
+    <string name="columbus_name">Gyorskoppintás</string>
+    <string name="columbus_radio_button_extra_widget_a11y_label">%1$s-beállítások</string>
+    <string name="columbus_setting_action_assistant_title">Hozzáférhet személyes digitális segédjéhez</string>
+    <string name="columbus_setting_action_launch_summary_no_selection">Nincs alkalmazás kiválasztva</string>
+    <string name="columbus_setting_action_launch_summary_not_installed">Nincs alkalmazás telepítve</string>
+    <string name="columbus_setting_action_launch_title">Alkalmazásindítás</string>
+    <string name="columbus_setting_action_notification_title">Értesítés-megjelenítés</string>
+    <string name="columbus_setting_action_open_app_title">Alkalmazásindítás</string>
+    <string name="columbus_setting_action_overview_title">Az előzményalkalmazások megjelenítése</string>
+    <string name="columbus_setting_action_play_pause_title">Médiaindítás vagy szüneteltetés</string>
+    <string name="columbus_setting_action_screenshot_title">Képernyőkép-készítés</string>
+    <string name="columbus_setting_actions_title">Duplakopp a hátlapon:</string>
+    <string name="columbus_setting_additional_settings_title">A Gyorskoppintás erőssége</string>
+    <string name="columbus_setting_app_selection_help_text">Válasszon alkalmazást, amit duplakoppal szeretne inditani. Ha valaha is törli ezt az alkalmazást a Gyorskoppintás funkciója leáll, míg be nem állít más alkalmazást.</string>
+    <string name="columbus_setting_app_shortcut_selection_help_text">Adja meg mi történjen, ha ezt az alkalmazást a Gyorskoppintással nyitja meg.</string>
+    <string name="columbus_setting_enable_switch_title">A Gyorskoppintás használata</string>
+    <string name="columbus_setting_sensitivity_title">Erősebb érintések kellenek</string>
+    <!-- No storage restrict -->
+    <string name="no_storage_restrict_title">Nincs tárhelykorlátozás</string>
+    <string name="no_storage_restrict_summary">Távolítsa el a korlátozást, amikor a Tárhelyhozzáférés Keretrendszer segítségével választ ki mappákat. Bizonyos esetekben kényelmes lehet, de adatszivárgáshoz vezethet.</string>
+    <!-- Wifi Display settings. The title of a menu item to disable mirroring confimration [CHAR LIMIT=40] -->
+    <string name="mirroring_confirmation_disable_menu_item">Megerősítés nélküli tükrözés</string>
+    <!-- Game space -->
+    <string name="game_space_title">Játéktér</string>
+    <string name="game_space_summary">Megnöveli az Ön játékélményét</string>
+    <!-- AOD/Extra dim schedule -->
+    <string name="extra_dim_schedule_title">Időzített Extrasötét</string>
+    <string name="string_disabled">Kikapcsolva</string>
+    <string name="always_on_display_schedule_title">A \'Mindig bekapcsolva\' ütemezése</string>
+    <string name="always_on_display_schedule_sunset">Napnyugta</string>
+    <string name="always_on_display_schedule_sunrise">Napkelte</string>
+    <string name="always_on_display_schedule_mixed_sunset">Napnyugtától egy bizonyos ideig bekapcsol</string>
+    <string name="always_on_display_schedule_mixed_sunrise">Egy adott időponttól Napkeltéig kapcsol be</string>
+    <!-- DC Dimming -->
+    <string name="dc_dimming_title">DC-kiegyenlítés</string>
+    <string name="dc_dimming_info">Csökkenti a szem megerőltetését gyenge fényviszonyok mellett a képernyővillogás csökkentésével. Rossz képminőséget és gyenge színeket vagy magasabb akkufogyasztást okozhat.</string>
+    <string name="dc_dimming_main_switch_title">A DC-kiegyenlítés használata</string>
+    <string name="keywords_display_dc_dimming">DC-kiegyenlítés, vibrálás, szem, megterhelés, mentesítés</string>
+    <!-- Radio Info -->
+    <string name="radio_info_title">Rádióinformációk</string>
+    <!-- WiFi Hotspot -->
+    <string name="wifi_hotspot_hidden_ssid_title">Rejtett hálózat</string>
+    <string name="wifi_hotspot_hidden_ssid_summary">Az Ön által létrehozott hotspot neve nem fog megjelenni a mások által elérhető WLAN-hálózatok listájában.</string>
+    <string name="wifi_hotspot_client_manager_title">Csatlakozó készülékek</string>
+    <string name="wifi_hotspot_client_manager_summary">A hotspothoz csatlakoztatott készülékek listája és kezelése</string>
+    <string name="wifi_hotspot_client_manager_list_only_summary">A hotspothoz csatlakoztatott készülékek listája</string>
+    <string name="wifi_hotspot_client_limit_title">Maximálisan csatlakoztatható készülék</string>
+    <string name="wifi_hotspot_blocked_clients_list_title">Blokkolt készülékek</string>
+    <string name="wifi_hotspot_connected_clients_list_title">Csatlakoztatott készülékek</string>
+    <string name="wifi_hotspot_block_client_dialog_title">Készüléktiltás</string>
+    <string name="wifi_hotspot_block_client_dialog_text">Ez a művelet lecsatlakoztatja \"<xliff:g id="device_name">%1$s</xliff:g>\" készüléket erről a hotspotról és tiltólistához adja</string>
+    <string name="wifi_hotspot_unblock_client_dialog_title">Készülékfeloldás</string>
+    <string name="wifi_hotspot_unblock_client_dialog_text">\"<xliff:g id="device_name">%1$s</xliff:g>\"-készülék kapcsolódhat ehhez a hotspothoz</string>
+    <string name="wifi_hotspot_client_manager_footer_text">Jelenleg nincs elérhető kliens. Amint lesz akár csatlakoztatott, akár letiltott, az itt fog megjelenni.</string>
+    <plurals name="wifi_hotspot_client_limit_summary">
+        <item quantity="other">Legfeljebb <xliff:g id="device_num">%1$d</xliff:g> készülék csatlakozhat ehhez a hotspothoz</item>
+        <item quantity="one">Legfeljebb <xliff:g id="device_num">%1$d</xliff:g> készülék csatlakozhat ehhez a hotspothoz</item>
+    </plurals>
+    <!-- Smart 5G -->
+    <string name="smart_5g_title">Okos 5G</string>
+    <string name="smart_5g_summary">Az akkufogyasztás csökkentése érdekében automatikusan vált az 5G és a 4G között</string>
+    <!-- Hide developer status -->
+    <string name="hide_developer_status_title">Rejtett fejlesztői állapot</string>
+    <string name="hide_developer_status_summary">A fejlesztői állapot elrejtése az alkalmazások elől</string>
+    <!-- USB configuration -->
+    <string name="usb_default_config_title">USB-konfiguráció</string>
+    <string name="usb_default_config_summary">Alapértelmezett mód beállítása USB-re való csatlakozáskor</string>
+    <!-- App details: open play store link if app is user installed -->
+    <string name="app_play_store">Google Play Áruház</string>
 </resources>
