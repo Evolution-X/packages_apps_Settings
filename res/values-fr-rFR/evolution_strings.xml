@@ -8,11 +8,12 @@
     <string name="evolution_license_title">License d\'Evolution X</string>
     <!-- Android version screen, build maintainer -->
     <string name="build_maintainer">Mainteneur de l\'appareil</string>
-    <!-- Hide developer status -->
-    <string name="hide_developer_status_title">Masquer le statut de développeur</string>
-    <string name="hide_developer_status_summary">Masquer le statut de développeur aux applications</string>
+    <!-- App search preference -->
     <string name="search">Rechercher</string>
     <string name="search_apps">Rechercher des applications</string>
+    <!-- Notch: Full screen apps -->
+    <string name="display_cutout_force_fullscreen_title">Applications en plein écran</string>
+    <string name="display_cutout_force_fullscreen_summary">Forcer les applications à ignorer l\'encoche</string>
     <!-- Misc Haptics -->
     <string name="misc_vibration_category_title">Haptiques diverses</string>
     <!-- Volume slider haptic feedback -->
@@ -42,4 +43,248 @@
     <!-- Unlimit screenrecord -->
     <string name="unlimit_screenrecord_title">Ne pas limiter l\'enregistrement d\'écran</string>
     <string name="unlimit_screenrecord_summary">Retirer la limite de taille de fichier de 15GiB\npeut entraîner un fichier de sortie plus grand que nécessaire</string>
+    <!-- Force LTE_CA -->
+    <string name="force_lte_ca">Forcer LTE/4G CA</string>
+    <string name="force_lte_ca_summary">Forcer l\'agrégation de l\'opérateur LTE à fonctionner</string>
+    <!-- AdGuard DNS Option -->
+    <!-- AdGuard DNS hostname -->
+    <!-- Open DNS Option -->
+    <!-- Open DNS hostname -->
+    <!-- Cleanbrowsing DNS Option -->
+    <!-- Cleanbrowsing DNS hostname -->
+    <!-- Quad9 DNS Option -->
+    <!-- Quad9 DNS hostname -->
+    <!-- Per-app volume -->
+    <string name="app_volume">Volume de l\'application</string>
+    <string name="app_volume_title">Contrôle du volume par application</string>
+    <string name="app_volume_summary">Permet de définir des niveaux de volume différents pour chaque application</string>
+    <!-- Smart Pause -->
+    <string name="adaptive_playback_screen_title">Pause intelligente</string>
+    <string name="adaptive_playback_enabled">Utiliser la pause intelligente</string>
+    <string name="adaptive_playback_disabled_summary">Désactivé</string>
+    <string name="adaptive_playback_intro_text">Met automatiquement les médias en pause lorsque le volume est mis en sourdine et reprend automatiquement lorsque le volume est restauré dans le délai défini.</string>
+    <string name="adaptive_playback_timeout_title">Utiliser un délai de</string>
+    <string name="adaptive_playback_timeout_none">Aucun délai</string>
+    <string name="adaptive_playback_timeout_none_summary">Activé (sans délai)</string>
+    <string name="adaptive_playback_timeout_30_secs">30 secondes</string>
+    <string name="adaptive_playback_timeout_30_secs_summary">Activé (30 secondes)</string>
+    <string name="adaptive_playback_timeout_1_min">1 minute</string>
+    <string name="adaptive_playback_timeout_1_min_summary">Activé (1 minute)</string>
+    <string name="adaptive_playback_timeout_2_min">2 minutes</string>
+    <string name="adaptive_playback_timeout_2_min_summary">Activé (2 minutes)</string>
+    <string name="adaptive_playback_timeout_5_min">5 minutes</string>
+    <string name="adaptive_playback_timeout_5_min_summary">Activé (5 minutes)</string>
+    <string name="adaptive_playback_timeout_10_min">10 minutes</string>
+    <string name="adaptive_playback_timeout_10_min_summary">Activé (10 minutes)</string>
+    <!-- Enforce DNS for VPN -->
+    <string name="vpn_enforce_dns_title">Désactiver pour le VPN</string>
+    <string name="vpn_enforce_dns_summary">Désactiver le DNS privé lorsque connecté à un VPN\nRestaurera lors de la déconnexion</string>
+    <!-- Volume Steps -->
+    <string name="volume_steps_title">Niveaux de volume</string>
+    <string name="volume_steps_summary">Contrôler la granularité de chaque flux</string>
+    <string name="max_music_volume_title">Média</string>
+    <string name="max_call_volume_title">Appels</string>
+    <string name="max_alarm_volume_title">Alarmes</string>
+    <string name="steps_unit">étapes</string>
+    <!-- Cycle through ringer modes gesture -->
+    <string name="prevent_ringing_option_cycle">Alterner entre les modes</string>
+    <string name="prevent_ringing_option_cycle_summary">Activé (alterner entre les modes)</string>
+    <!-- Back gesture animation -->
+    <string name="back_gesture_arrow_title">Animation du geste de retour</string>
+    <string name="back_gesture_arrow_summary">Afficher une flèche animée pour le geste de retour</string>
+    <!-- Back gesture haptic -->
+    <string name="back_gesture_haptic_title">Retour haptique</string>
+    <string name="back_gesture_haptic_summary">Activer le retour haptique sur le geste retour</string>
+    <!-- Auto pin confirm -->
+    <string name="lock_screen_auto_pin_confirm_summary_custom">Déverrouiller automatiquement si vous saisissez un code PIN correct. Ceci est légèrement moins sécurisé que d\'appuyer sur Entrée pour confirmer.</string>
+    <!-- Doze on charge -->
+    <string name="doze_on_charge_title">Écran toujours allumé pendant la charge</string>
+    <string name="doze_on_charge_summary">Afficher l\'écran de veille pendant la charge</string>
+    <!-- Incall vibrate options -->
+    <string name="incall_vibration_category">Options des vibrations pour l\'appel entrant</string>
+    <string name="incall_vibrate_connect_title">Vibrer lors de la connexion</string>
+    <string name="incall_vibrate_call_wait_title">Vibrer pendant un appel en attente</string>
+    <string name="incall_vibrate_disconnect_title">Vibrer lors de la déconnexion</string>
+    <!-- Label for a numbered SIM card.  [CHAR LIMIT=40] -->
+    <!-- Hide screen capture status -->
+    <string name="hide_screen_capture_status_title">Masquer le statut de la capture d\'écran</string>
+    <string name="hide_screen_capture_status_summary">Masquer l\'état de la capture d\'écran de toutes les applications. Peut être pratique dans certains cas, mais peut entraîner des fuites de confidentialité. Besoin de redémarrer les applications pour que le changement prenne effet.</string>
+    <!-- Doze on double tap -->
+    <string name="double_tap_title">Double appui</string>
+    <string name="doze_double_tap_title">Appuyez deux fois pour allumer l\'écran</string>
+    <string name="doze_double_tap_summary">Faire apparaître les notifications par double appui</string>
+    <!-- App lock -->
+    <string name="app_lock_title">Verrouillage d\'applications</string>
+    <plurals name="app_lock_summary">
+        <item quantity="one"><xliff:g example="1" id="Nombre d\'applications">%1$d</xliff:g> application est protégée</item>
+        <item quantity="other"><xliff:g example="10" id="Nombre d\'applications">%1$d</xliff:g> applications sont protégées</item>
+    </plurals>
+    <string name="app_lock_authentication_dialog_title">Déverrouiller</string>
+    <string name="enable_debugging">Activer le déboggage</string>
+    <string name="disable_debugging">Désactiver le débogage</string>
+    <string name="app_lock_packages_title">Applications protégées</string>
+    <string name="app_lock_packages_summary">Sélectionnez les applications à protéger avec des données biométriques ou des informations d\'identification de l\'appareil</string>
+    <string name="app_lock_timeout_title">Délai avant verrouillage automatique</string>
+    <string name="app_lock_timeout_summary">Durée après laquelle une application déverrouillée en arrière-plan doit être verrouillée</string>
+    <string name="app_lock_notifications_title">Effacer les notifications</string>
+    <string name="app_lock_notifications_summary">Le contenu des notifications sera masqué et réduit pour les applications sélectionnées quand elles seront verrouillées.
+Les notifications flottantes seront automatiquement désactivées.</string>
+    <string name="app_lock_notifications_disabled_summary">Choisissez d\'abord une application à protéger</string>
+    <string name="app_lock_biometrics_allowed_title">Activer le déverrouillage biométrique</string>
+    <string name="app_lock_footer_text">Les bulles seront automatiquement rejetées après l\'expiration du délai</string>
+    <string name="enable_protection">Activer la protection</string>
+    <string name="hide_from_launcher_title">Masquer l’icône dans le lanceur d\'applications</string>
+    <string name="hide_from_launcher_summary">Empêcher cette application d\'apparaître dans tous les lanceurs d\'applications. Nécessite un redémarrage du lanceur pour que les changements prennent effet.</string>
+    <!-- Wifi/Bluetooth auto timeout -->
+    <string name="wifi_timeout">Délai de déconnexion WiFi</string>
+    <string name="wifi_timeout_summary">Ne pas désactiver automatiquement le WiFi</string>
+    <string name="wifi_timeout_summary_auto">Le Wi-Fi sera désactivé après <xliff:g id="timeout_description">%1$s</xliff:g> si aucun réseau n\'est disponible</string>
+    <string name="bluetooth_timeout">Délai de désactivation du Bluetooth</string>
+    <string name="bluetooth_timeout_summary">Ne pas désactiver le Bluetooth automatiquement</string>
+    <string name="bluetooth_timeout_summary_auto">Le Bluetooth sera désactivé après <xliff:g id="timeout_description">%1$s</xliff:g> si aucun appareil n\'est connecté</string>
+    <string name="custom_timeout_summary_never">Jamais</string>
+    <string name="custom_timeout_summary_5secs">5 secondes</string>
+    <string name="custom_timeout_summary_10secs">10 secondes</string>
+    <string name="custom_timeout_summary_15secs">15 secondes</string>
+    <string name="custom_timeout_summary_30secs">30 secondes</string>
+    <string name="custom_timeout_summary_1min">1 minute</string>
+    <string name="custom_timeout_summary_2mins">2 minutes</string>
+    <string name="custom_timeout_summary_5mins">5 minutes</string>
+    <string name="custom_timeout_summary_10mins">10 minutes</string>
+    <string name="custom_timeout_summary_20mins">20 minutes</string>
+    <string name="custom_timeout_summary_30mins">30 minutes</string>
+    <string name="custom_timeout_summary_1hour">1 heure</string>
+    <string name="custom_timeout_summary_2hours">2 heures</string>
+    <string name="custom_timeout_summary_4hours">4 heures</string>
+    <string name="custom_timeout_summary_8hours">8 heures</string>
+    <!-- Navigation bar IME space -->
+    <string name="navigation_bar_ime_space_title">Espace IME</string>
+    <string name="ime_narrow">Fin</string>
+    <string name="ime_default">Par défaut</string>
+    <string name="ime_hidden">Cachée</string>
+    <!-- Ambient wake toggles -->
+    <string name="doze_gesture_ambient_title">Montrer l\'affichage ambiant</string>
+    <string name="doze_gesture_ambient_summary">Montrer l\'affichage ambiant au lieu de réveiller complètement l\'écran</string>
+    <!-- Gesture navbar length -->
+    <string name="gesture_navbar_length_title">Longueur de la barre de navigation</string>
+    <string name="short_label">Court</string>
+    <string name="long_label">Longue</string>
+    <!-- Back gesture height -->
+    <string name="back_height_low_label">Plein</string>
+    <string name="back_height_high_label">Bas</string>
+    <string name="back_height_title">Hauteur du geste retour</string>
+    <string name="back_height_summary">Hauteur de l\'écran valide pour le geste arrière</string>
+    <!-- Gesture navbar radius -->
+    <string name="gesture_navbar_radius_title">Epaisseur de la barre de navigation par geste</string>
+    <string name="thin_label">Fine</string>
+    <string name="thick_label">Épaisse</string>
+    <!-- Hardware info -->
+    <string name="device_market_name">Nom du marché</string>
+    <string name="soc_model">Modèle SoC</string>
+    <string name="total_ram">Mémoire RAM totale</string>
+    <!-- Default getTimeSpentInApp string for Wellbeing to display. [CHAR LIMIT=NONE] -->
+    <string name="duration_less_than_one_minute">Moins d\'une minute</string>
+    <!-- Summary for Wellbeing screen time usage. [CHAR LIMIT=NONE] -->
+    <string name="screen_time_summary_usage_today">%1$s aujourd\'hui</string>
+    <!-- Refresh rate -->
+    <string name="low_power_refresh_rate_title_custom">Taux de rafraîchissement avec économiseur d\'énergie</string>
+    <!-- Menu option for not validating the EAP server -->
+    <string name="wifi_do_not_validate_eap_server">Ne pas valider</string>
+    <!-- Warning message displayed if user choses not to validate the EAP server -->
+    <string name="wifi_do_not_validate_eap_server_warning">Aucun certificat spécifié. Votre connexion ne sera pas privée.</string>
+    <!-- Pulse on music track change -->
+    <string name="pulse_on_new_tracks_title">Indicateur de musique</string>
+    <string name="pulse_on_new_tracks_summary">Allume l\'écran en mode Ambiant quand une nouvelle piste musicale est jouée</string>
+    <!-- Clipboard -->
+    <string name="copied_to_clipboard">Copié dans le presse-papier</string>
+    <string name="longpress_to_clipboard">Appui long pour copier</string>
+    <!-- Increasing ring tone volume -->
+    <string name="increasing_ring_volume_option_title">Augmenter le volume de la sonnerie</string>
+    <string name="increasing_ring_min_volume_title">Volume de départ</string>
+    <string name="increasing_ring_ramp_up_time_title">Temps de montée en puissance</string>
+    <!-- Columbus -->
+    <string name="columbus_gesture_detected">Quick Tap détecté !</string>
+    <string name="columbus_gesture_enrollment_complete">Terminé</string>
+    <string name="columbus_gesture_enrollment_do_it_later">Plus tard</string>
+    <string name="columbus_gesture_enrollment_settings">Accéder aux paramètres</string>
+    <string name="columbus_gesture_enrollment_try_it">Essayer</string>
+    <string name="columbus_gesture_training_action_no_selection_error">Veuillez sélectionner une action à réaliser</string>
+    <string name="columbus_gesture_training_action_text">Sélectionnez l\'action déclenchée par le tapotement. Vous pourrez la changer plus tard dans les paramètres.</string>
+    <string name="columbus_gesture_training_action_title">Séléctionnez l\'action du Quick Tap</string>
+    <string name="columbus_gesture_training_enrolling_first_gesture">Double-tap. 1 sur 2 détécté</string>
+    <string name="columbus_gesture_training_enrolling_first_gesture_text">Essayons encore une fois. Tapotez rapidement le dos de votre téléphone deux fois.</string>
+    <string name="columbus_gesture_training_enrolling_first_gesture_title">Bien !</string>
+    <string name="columbus_gesture_training_enrolling_second_gesture">Double-tap. 2 sur 2 détécté</string>
+    <string name="columbus_gesture_training_enrolling_second_gesture_text">Vous êtes prêt à utiliser Quick Tap</string>
+    <string name="columbus_gesture_training_enrolling_second_gesture_title">Vous avez compris !</string>
+    <string name="columbus_gesture_training_enrolling_text">Tapotez le dos de votre téléphone deux fois.</string>
+    <string name="columbus_gesture_training_enrolling_title">Essayer Quick Tap</string>
+    <string name="columbus_gesture_training_finished_text">Pour modifier la force de tapotement nécessaire au déclenchement des actions, allez dans les paramètres.</string>
+    <string name="columbus_gesture_training_finished_title">Vous avez configuré Quick Tap</string>
+    <string name="columbus_gesture_training_intro_text_accidental">Vous venez de tapoter deux fois au dos de votre appareil, ce qui vous permet d\'utiliser l\'Assistant. Vous pouvez personnaliser ce geste dans les paramètres.</string>
+    <string name="columbus_gesture_training_intro_text_suw">Prenez une capture d\'écran, affichez des notifications, ou démarrez une autre action en deux tapotements.</string>
+    <string name="columbus_gesture_training_intro_title">Des actions rapides avec Quick Tap</string>
+    <string name="columbus_gesture_training_launch_no_selection_error">Veuillez sélectionner une application à lancer</string>
+    <string name="columbus_gesture_training_launch_text">Sélectionnez l\'application que vous aimeriez lancer lorsque vous utilisez Quick Tap.</string>
+    <string name="columbus_gesture_training_launch_title">Choisir l\'application à ouvrir</string>
+    <string name="columbus_launch_app_extra_widget_a11y_label">Paramètres de raccourcis de %1$s</string>
+    <string name="columbus_launch_settings_activity_title">Paramètres Quick Tap</string>
+    <string name="columbus_name">Quick Tap</string>
+    <string name="columbus_radio_button_extra_widget_a11y_label">Paramètres de %1$s</string>
+    <string name="columbus_setting_action_assistant_title">Accéder à votre assistant numérique</string>
+    <string name="columbus_setting_action_launch_summary_no_selection">Aucune application sélectionnée</string>
+    <string name="columbus_setting_action_launch_summary_not_installed">Application non installée.</string>
+    <string name="columbus_setting_action_launch_title">Ouvrir l’application</string>
+    <string name="columbus_setting_action_notification_title">Afficher les notifications</string>
+    <string name="columbus_setting_action_open_app_title">Ouvrir l’application</string>
+    <string name="columbus_setting_action_overview_title">Voir les applications récentes</string>
+    <string name="columbus_setting_action_play_pause_title">Lecture/pause du média</string>
+    <string name="columbus_setting_action_screenshot_title">Prendre une capture d\'écran</string>
+    <string name="columbus_setting_actions_title">Tapotez deux fois au dos du téléphone pour</string>
+    <string name="columbus_setting_additional_settings_title">Force du Quick Tap</string>
+    <string name="columbus_setting_app_selection_help_text">Sélectionnez une application à ouvrir lorsque vous tapotez deux fois au dos de votre téléphone. Si vous désintallez l\'application, Quick Tap sera désactivé jusqu\'à ce que vous sélectionniez une nouvelle application.</string>
+    <string name="columbus_setting_app_shortcut_selection_help_text">Sélectionnez ce qu\'il se passe lorsque vous ouvrez cette application en utilisant le Quick Tap.</string>
+    <string name="columbus_setting_enable_switch_title">Utiliser Quick Tap</string>
+    <string name="columbus_setting_sensitivity_title">Requiert des tapotements plus forts</string>
+    <!-- No storage restrict -->
+    <string name="no_storage_restrict_title">Aucune restriction de stockage</string>
+    <string name="no_storage_restrict_summary">Supprimez la restriction lors de la sélection de dossiers via le cadre d\'accès de stockage. Peut être pratique dans certains cas, mais peut entraîner des fuites de confidentialité.</string>
+    <!-- Wifi Display settings. The title of a menu item to disable mirroring confimration [CHAR LIMIT=40] -->
+    <string name="mirroring_confirmation_disable_menu_item">Désactiver la confirmation du miroir</string>
+    <!-- Game space -->
+    <string name="game_space_title">Espace jeux</string>
+    <string name="game_space_summary">Améliore votre expérience de jeu</string>
+    <!-- AOD/Extra dim schedule -->
+    <string name="extra_dim_schedule_title">Horaire d\'atténuation supplémentaire</string>
+    <string name="string_disabled">Désactivé</string>
+    <string name="always_on_display_schedule_title">Affichage permanent programmé</string>
+    <string name="always_on_display_schedule_sunset">Coucher du soleil</string>
+    <string name="always_on_display_schedule_sunrise">Lever du soleil</string>
+    <string name="always_on_display_schedule_mixed_sunset">Allumé du coucher du soleil jusqu\'à une heure précise</string>
+    <string name="always_on_display_schedule_mixed_sunrise">S\'allume à une certaine heure jusqu\'au lever du soleil</string>
+    <!-- DC Dimming -->
+    <string name="dc_dimming_title">Atténuation DC</string>
+    <string name="dc_dimming_info">Réduit les contraintes oculaires dans des conditions de faible lumière en réduisant le scintillement de l\'écran. Peut entraîner une baisse de la qualité de l\'image et une faible production de couleurs, ou une augmentation de la consommation d\'énergie.</string>
+    <string name="dc_dimming_main_switch_title">Utiliser l\'atténuation DC</string>
+    <string name="keywords_display_dc_dimming">Atténuation DC, anti scintillement, fatigue occulaire</string>
+    <!-- Radio Info -->
+    <string name="radio_info_title">Infos radio</string>
+    <!-- WiFi Hotspot -->
+    <string name="wifi_hotspot_hidden_ssid_title">Réseau masqué</string>
+    <string name="wifi_hotspot_hidden_ssid_summary">Le nom de votre point d\'accès n\'apparaîtra pas dans la liste des réseaux WLAN disponibles.</string>
+    <string name="wifi_hotspot_client_manager_title">Appareils connectés</string>
+    <string name="wifi_hotspot_client_manager_summary">Lister et gérer les appareils connectés au point d\'accès</string>
+    <string name="wifi_hotspot_client_manager_list_only_summary">Lister les appareils connectés au point d\'accès</string>
+    <string name="wifi_hotspot_client_limit_title">Limite d\'appareils pouvant se connecter</string>
+    <string name="wifi_hotspot_blocked_clients_list_title">Appareils bloqués</string>
+    <string name="wifi_hotspot_connected_clients_list_title">Appareils connectés</string>
+    <string name="wifi_hotspot_block_client_dialog_title">Bloquer l\'appareil</string>
+    <string name="wifi_hotspot_block_client_dialog_text">Cette action déconnectera \"<xliff:g id="device_name">%1$s</xliff:g>\" de cet appareil et l\'ajoutera à la liste de blocage</string>
+    <string name="wifi_hotspot_unblock_client_dialog_title">Débloquer l\'appareil</string>
+    <string name="wifi_hotspot_unblock_client_dialog_text">L\'appareil \"<xliff:g id="device_name">%1$s</xliff:g>\" pourra se connecter à ce point d\'accès</string>
+    <string name="wifi_hotspot_client_manager_footer_text">Aucun client n\'est actuellement disponible. Les appareils connectés et bloqués seront répertoriés ici lorsqu\'ils seront disponibles.</string>
+    <plurals name="wifi_hotspot_client_limit_summary">
+        <item quantity="other">Un maximum de <xliff:g id="device_num">%1$d</xliff:g> appareils peuvent se connecter au point d\'accès</item>
+        <item quantity="one">Un maximum de <xliff:g id="device_num">%1$d</xliff:g> appareil peut se connecter au point d\'accès</item>
+    </plurals>
 </resources>
