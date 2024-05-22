@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2019-2024 The Evolution X Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Device Info screen. Evolution X legal. -->
+    <string name="evolution_license_title">Evolution X 法律資訊</string>
+    <!-- Android version screen, build maintainer -->
+    <string name="build_maintainer">維護者</string>
+    <!-- App search preference -->
+    <string name="search">搜尋</string>
+    <string name="search_apps">搜尋應用程式</string>
+    <!-- Hide developer status -->
+    <string name="hide_developer_status_title">隱藏開發者狀態</string>
+    <string name="hide_developer_status_summary">從應用程式中隱藏開發者狀態</string>
+    <!-- Notch: Full screen apps -->
+    <string name="display_cutout_force_fullscreen_title">全螢幕應用程式</string>
+    <string name="display_cutout_force_fullscreen_summary">強制應用程式忽略瀏海區域</string>
+    <!-- Misc Haptics -->
+    <string name="misc_vibration_category_title">觸控選項</string>
+    <!-- Volume slider haptic feedback -->
+    <string name="volume_slider_haptic_feedback_title">調整音量控制條時震動</string>
+    <!-- QS Tiles haptic -->
+    <string name="qs_tiles_haptic_feedback_title">點擊快速設定圖塊時震動</string>
+    <!-- Scroll fling haptic feedback -->
+    <string name="scroll_fling_haptic_feedback_title">滑動時震動</string>
+    <!-- Charger haptic feedback -->
+    <string name="charger_haptic_feedback_title">連接充電器時震動</string>
+    <!-- Charging sound -->
+    <string name="charging_sounds_custom_title">充電音效</string>
+    <!-- QS Brightness slider haptic feedback -->
+    <string name="qs_brightness_slider_haptic_feedback_title">調整亮度控制條時震動</string>
+    <!-- Screenshot shutter -->
+    <string name="screenshot_shutter_sound_title">螢幕截圖音效</string>
+    <!-- Three-fingers-swipe to screenshot -->
+    <string name="swipe_to_screenshot_gesture_title">滑動以擷取螢幕畫面</string>
+    <string name="swipe_to_screenshot_gesture_summary">同時滑動三支指頭以擷取螢幕畫面</string>
+    <!-- Deep Sleep percentage in device info -->
+    <string name="status_sleep_time">深度睡眠</string>
+    <!-- Show clipboard overlay -->
+    <string name="show_clipboard_overlay_title">顯示剪貼簿</string>
+    <string name="show_clipboard_overlay_summary">複製文字或圖片後在左下角顯示複製內容</string>
+    <!-- Screen resolution -->
+    <string name="custom_screen_resolution_title">自訂螢幕解析度</string>
+    <!-- Unlimit screenrecord -->
+    <string name="unlimit_screenrecord_title">無限制螢幕錄影</string>
+    <string name="unlimit_screenrecord_summary">移除檔案大小最高 15GB 的限制\n可能導致輸出檔案大小高於所需的大小</string>
+    <!-- Force LTE_CA -->
+    <string name="force_lte_ca">強制 LTE 載波聚合</string>
+    <string name="force_lte_ca_summary">強制啟用 LTE 載波聚合</string>
+    <!-- AdGuard DNS Option -->
+    <!-- AdGuard DNS hostname -->
+    <!-- Open DNS Option -->
+    <!-- Open DNS hostname -->
+    <!-- Cleanbrowsing DNS Option -->
+    <!-- Cleanbrowsing DNS hostname -->
+    <!-- Quad9 DNS Option -->
+    <!-- Quad9 DNS hostname -->
+    <!-- Per-app volume -->
+    <string name="app_volume">應用程式音量</string>
+    <string name="app_volume_title">個別應用程式音量控制</string>
+    <string name="app_volume_summary">允許為個別應用程式設定不同的音量\n注意：這將啟用多重音訊焦點</string>
+    <!-- Smart Pause -->
+    <string name="adaptive_playback_screen_title">智慧暫停</string>
+    <string name="adaptive_playback_enabled">使用智慧暫停</string>
+    <string name="adaptive_playback_disabled_summary">關閉</string>
+    <string name="adaptive_playback_intro_text">靜音後自動停止播放媒體，並在取消靜音後自動繼續播放</string>
+    <string name="adaptive_playback_timeout_title">使用逾時</string>
+    <string name="adaptive_playback_timeout_none">無逾時</string>
+    <string name="adaptive_playback_timeout_none_summary">開啟 (無逾時)</string>
+    <string name="adaptive_playback_timeout_30_secs">30 秒</string>
+    <string name="adaptive_playback_timeout_30_secs_summary">開啟 (30秒)</string>
+    <string name="adaptive_playback_timeout_1_min">1 分鐘</string>
+    <string name="adaptive_playback_timeout_1_min_summary">開啟 (1分鐘)</string>
+    <string name="adaptive_playback_timeout_2_min">2 分鐘</string>
+    <string name="adaptive_playback_timeout_2_min_summary">開啟 (2分鐘)</string>
+    <string name="adaptive_playback_timeout_5_min">5 分鐘</string>
+    <string name="adaptive_playback_timeout_5_min_summary">開啟 (5分鐘)</string>
+    <string name="adaptive_playback_timeout_10_min">10 分鐘</string>
+    <string name="adaptive_playback_timeout_10_min_summary">開啟 (10分鐘)</string>
+    <!-- Enforce DNS for VPN -->
+    <string name="vpn_enforce_dns_title">停用 DNS</string>
+    <string name="vpn_enforce_dns_summary">連接 VPN 時停用私人 DNS\n斷開連線後將恢復</string>
+    <!-- Volume Steps -->
+    <string name="volume_steps_title">音量級別</string>
+    <string name="volume_steps_summary">控制個別應用的音量級別</string>
+    <string name="max_music_volume_title">媒體</string>
+    <string name="max_call_volume_title">通話</string>
+    <string name="max_alarm_volume_title">鬧鐘</string>
+    <string name="steps_unit">級別</string>
+    <!-- Cycle through ringer modes gesture -->
+    <string name="prevent_ringing_option_cycle">循環切換鈴聲模式</string>
+    <string name="prevent_ringing_option_cycle_summary">開啟 (循環切換鈴聲模式)</string>
+    <!-- Back gesture animation -->
+    <string name="back_gesture_arrow_title">返回手勢動畫</string>
+    <string name="back_gesture_arrow_summary">使用返回手勢時顯示箭頭動畫</string>
+    <!-- Back gesture haptic -->
+    <string name="back_gesture_haptic_title">返回手勢震動</string>
+    <string name="back_gesture_haptic_summary">觸發返回手勢時震動</string>
+    <!-- Auto pin confirm -->
+    <string name="lock_screen_auto_pin_confirm_summary_custom">當您輸入正確的 PIN 碼時自動解鎖。安全性會略低於點擊確認按鈕進行密碼確認。</string>
+    <!-- Doze on charge -->
+    <string name="doze_on_charge_title">在充電時開啟 AOD</string>
+    <string name="doze_on_charge_summary">充電時一律顯示時間和資訊</string>
+    <!-- Incall vibrate options -->
+    <string name="incall_vibration_category">通話中震動選項</string>
+    <string name="incall_vibrate_connect_title">接通時震動</string>
+    <string name="incall_vibrate_call_wait_title">有插撥電話時震動</string>
+    <string name="incall_vibrate_disconnect_title">掛斷時震動</string>
+    <!-- Label for a numbered SIM card.  [CHAR LIMIT=40] -->
+    <!-- Hide screen capture status -->
+    <string name="hide_screen_capture_status_title">隱藏螢幕截圖狀態</string>
+    <string name="hide_screen_capture_status_summary">隱藏所有應用程式的螢幕截圖和螢幕錄製狀態。在某些情況下可能很方便，但可能會導致隱私洩漏。變更此設定後，您可能需要重新啟動應用程式才能使變更生效。</string>
+    <!-- Doze on double tap -->
+    <string name="double_tap_title">點擊兩下</string>
+    <string name="doze_double_tap_title">點擊兩下以查看手機</string>
+    <string name="doze_double_tap_summary">點擊兩下查看 AOD 上顯示的通知</string>
+    <!-- App lock -->
+    <string name="app_lock_title">應用程式鎖</string>
+    <plurals name="app_lock_summary">
+        <item quantity="other"><xliff:g example="10" id="Number of applications">%1$d</xliff:g> 個應用程式已受到保護</item>
+    </plurals>
+    <string name="app_lock_authentication_dialog_title">解除鎖定</string>
+    <string name="enable_debugging">啟用偵錯功能</string>
+    <string name="disable_debugging">停用偵錯功能</string>
+    <string name="app_lock_packages_title">受保護的應用程式</string>
+    <string name="app_lock_packages_summary">選擇要使用生物辨識或裝置憑證保護的應用程式</string>
+    <string name="app_lock_timeout_title">自動鎖定時間</string>
+    <string name="app_lock_timeout_summary">後台已解鎖的應用程式在一段時間後會被重新鎖定</string>
+    <string name="app_lock_notifications_title">隱藏通知</string>
+    <string name="app_lock_notifications_summary">當選定應用程式在鎖定時，其通知內容將會隱藏和摺疊。浮動通知將會自動停用。</string>
+    <string name="app_lock_notifications_disabled_summary">先選擇一個應用程式保護</string>
+    <string name="app_lock_biometrics_allowed_title">啟用生物辨識解鎖</string>
+    <string name="app_lock_footer_text">超過時間後通知氣泡會自動消失</string>
+    <string name="enable_protection">啟用保護</string>
+    <string name="hide_from_launcher_title">在啟動器中隱藏圖示</string>
+    <string name="hide_from_launcher_summary">防止受保護的應用程式在桌面啟動器上出現，需要重新啟動桌面啟動器來套用設定。</string>
+    <string name="custom_timeout_summary_never">永遠不要</string>
+    <string name="custom_timeout_summary_5secs">5 秒</string>
+    <string name="custom_timeout_summary_10secs">10 秒</string>
+    <string name="custom_timeout_summary_15secs">15 秒</string>
+    <string name="custom_timeout_summary_30secs">30 秒</string>
+    <string name="custom_timeout_summary_1min">1 分鐘</string>
+    <string name="custom_timeout_summary_2mins">2 分鐘</string>
+    <string name="custom_timeout_summary_5mins">5 分鐘</string>
+    <string name="custom_timeout_summary_10mins">10 分鐘</string>
+    <string name="custom_timeout_summary_20mins">20 分鐘</string>
+    <string name="custom_timeout_summary_30mins">30 分鐘</string>
+    <string name="custom_timeout_summary_1hour">1 小時</string>
+    <string name="custom_timeout_summary_2hours">2 小時</string>
+    <string name="custom_timeout_summary_4hours">4 小時</string>
+    <string name="custom_timeout_summary_8hours">8 小時</string>
+    <!-- Navigation bar IME space -->
+    <string name="navigation_bar_ime_space_title">輸入法按鍵空間</string>
+    <string name="ime_narrow">緊湊</string>
+    <string name="ime_default">預設值</string>
+    <string name="ime_hidden">隱藏</string>
+    <!-- Ambient wake toggles -->
+    <string name="doze_gesture_ambient_title">顯示微光螢幕</string>
+    <string name="doze_gesture_ambient_summary">僅顯示時間和部分資訊，而不是完全喚醒螢幕</string>
+    <!-- Gesture navbar length -->
+    <string name="gesture_navbar_length_title">導航條長度</string>
+    <string name="short_label">短</string>
+    <string name="long_label">長</string>
+    <!-- Back gesture height -->
+    <string name="back_height_low_label">全螢幕</string>
+    <string name="back_height_high_label">底部</string>
+    <string name="back_height_title">返回手勢觸發高度</string>
+    <string name="back_height_summary">調整能夠觸發返回手勢的高度</string>
+    <!-- Gesture navbar radius -->
+    <string name="gesture_navbar_radius_title">導覽列粗細</string>
+    <string name="thin_label">細</string>
+    <string name="thick_label">厚</string>
+    <!-- Hardware info -->
+    <string name="soc_model">晶片型號</string>
+    <string name="total_ram">總記憶體</string>
+    <!-- Default getTimeSpentInApp string for Wellbeing to display. [CHAR LIMIT=NONE] -->
+    <string name="duration_less_than_one_minute">少於 1 分鐘</string>
+    <!-- Summary for Wellbeing screen time usage. [CHAR LIMIT=NONE] -->
+    <string name="screen_time_summary_usage_today">今天使用了 %1$s</string>
+    <!-- Refresh rate -->
+    <string name="low_power_refresh_rate_title_custom">省電模式更新率</string>
+    <!-- Menu option for not validating the EAP server -->
+    <string name="wifi_do_not_validate_eap_server">不進行驗證</string>
+    <!-- Warning message displayed if user choses not to validate the EAP server -->
+    <string name="wifi_do_not_validate_eap_server_warning">您未指定任何憑證，因此無法為您設定私人連線。</string>
+    <!-- Pulse on music track change -->
+    <string name="pulse_on_new_tracks_title">音樂通知提示</string>
+    <string name="pulse_on_new_tracks_summary">播放新的音樂曲目時顯示微光螢幕</string>
+    <!-- Hotspot -->
+    <string name="wifi_hotspot_hidden_ssid_title">隱藏的網路</string>
+    <string name="wifi_hotspot_hidden_ssid_summary">您的無線基地台名稱將不會顯示 WLAN 網路列表中。</string>
+    <!-- General -->
+    <string name="copied_to_clipboard">已複製到剪貼簿</string>
+    <string name="longpress_to_clipboard">長按複製</string>
+    <!-- Increasing ring tone volume -->
+    <string name="increasing_ring_volume_option_title">漸強鈴聲音量</string>
+    <string name="increasing_ring_min_volume_title">起始音量</string>
+    <string name="increasing_ring_ramp_up_time_title">漸強時間</string>
+    <!-- Columbus -->
+    <string name="columbus_gesture_detected">偵測到快速輕觸手勢！</string>
+    <string name="columbus_gesture_enrollment_complete">完成</string>
+    <string name="columbus_gesture_enrollment_do_it_later">暫時不要</string>
+    <string name="columbus_gesture_enrollment_settings">前往設定</string>
+    <string name="columbus_gesture_enrollment_try_it">試試看</string>
+    <string name="columbus_gesture_training_action_no_selection_error">請選擇要執行的動作</string>
+    <string name="columbus_gesture_training_action_text">選擇使用快速輕觸時要執行的動作。您稍後可在設定中更改。</string>
+    <string name="columbus_gesture_training_action_title">選擇快速輕觸選項</string>
+    <string name="columbus_gesture_training_enrolling_first_gesture">雙擊手勢偵測到第一次點擊</string>
+    <string name="columbus_gesture_training_enrolling_first_gesture_text">再試一次，快速的點擊手機背面兩次。</string>
+    <string name="columbus_gesture_training_enrolling_first_gesture_title">很好！</string>
+    <string name="columbus_gesture_training_enrolling_second_gesture">雙擊手勢偵測到第二次點擊</string>
+    <string name="columbus_gesture_training_enrolling_second_gesture_text">雙擊手勢已準備完成且能開始使用</string>
+    <string name="columbus_gesture_training_enrolling_second_gesture_title">沒問題！</string>
+    <string name="columbus_gesture_training_enrolling_text">快速的點擊手機背面兩次</string>
+    <string name="columbus_gesture_training_enrolling_title">嘗試快速輕觸</string>
+    <string name="columbus_gesture_training_finished_text">要更改使用快速輕觸所需的手勢力度，請前往設定。</string>
+    <string name="columbus_gesture_training_finished_title">您已經完成快速輕觸設定</string>
+    <string name="columbus_gesture_training_intro_text_accidental">您成功觸發了快速輕觸手勢，透過點擊手機背面兩下可以開啟數位助理，您可以在設定中自訂想要使用的功能。</string>
+    <string name="columbus_gesture_training_intro_text_suw">螢幕截圖、顯示通知或是更多動作，只要點擊兩下即可完成。</string>
+    <string name="columbus_gesture_training_intro_title">快速輕觸執行動作</string>
+    <string name="columbus_gesture_training_launch_no_selection_error">請選擇要開啟的應用程式</string>
+    <string name="columbus_gesture_training_launch_text">選擇在快速輕觸時要開啟的應用程式</string>
+    <string name="columbus_gesture_training_launch_title">選擇要開啟的應用程式</string>
+    <string name="columbus_launch_app_extra_widget_a11y_label">%1$s 捷徑設定</string>
+    <string name="columbus_launch_settings_activity_title">快速輕觸設定</string>
+    <string name="columbus_name">快速輕觸</string>
+    <string name="columbus_radio_button_extra_widget_a11y_label">%1$s 設定</string>
+    <string name="columbus_setting_action_assistant_title">使用您的數位助理</string>
+    <string name="columbus_setting_action_launch_summary_no_selection">未選取任何應用程式</string>
+    <string name="columbus_setting_action_launch_summary_not_installed">應用程式未安裝</string>
+    <string name="columbus_setting_action_launch_title">開啟應用程式</string>
+    <string name="columbus_setting_action_notification_title">顯示通知</string>
+    <string name="columbus_setting_action_open_app_title">開啟應用程式</string>
+    <string name="columbus_setting_action_overview_title">查看最近使用的應用程式</string>
+    <string name="columbus_setting_action_play_pause_title">播放或暫停媒體</string>
+    <string name="columbus_setting_action_screenshot_title">螢幕擷取畫面</string>
+    <string name="columbus_setting_actions_title">點擊手機背面兩下</string>
+    <string name="columbus_setting_additional_settings_title">快速輕觸力道</string>
+    <string name="columbus_setting_app_selection_help_text">選擇點擊手機背面兩次要開啟的應用程式。如果您移除了該應用程式，快速輕觸功能會停用，直到您設定另一個應用程式。</string>
+    <string name="columbus_setting_app_shortcut_selection_help_text">選擇使用快速輕觸開啟這個應用程式後要執行的動作</string>
+    <string name="columbus_setting_enable_switch_title">使用快速輕觸</string>
+    <string name="columbus_setting_sensitivity_title">需要更用力的點擊</string>
+    <!-- No storage restrict -->
+    <string name="no_storage_restrict_title">無儲存限制</string>
+    <string name="no_storage_restrict_summary">移除選取資料夾的儲存空間存取限制。在某些情況下可能很方便，但可能會導致隱私洩漏。</string>
+</resources>
