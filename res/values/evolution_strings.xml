@@ -155,4 +155,8 @@
 
     <!-- Device SKU -->
     <string name="hardware_sku">Hardware SKU</string>
+
+    <!-- Doze on charge -->
+    <string name="doze_on_charge_title">Always show when charging</string>
+    <string name="doze_on_charge_summary">Display info when device is charging</string>
 </resources>
