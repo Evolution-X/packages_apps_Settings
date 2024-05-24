@@ -204,4 +204,6 @@
     <string name="duration_less_than_one_minute">Kevesebb, mint egy perc</string>
     <!-- Summary for Wellbeing screen time usage. [CHAR LIMIT=NONE] -->
     <string name="screen_time_summary_usage_today">Ma: %1$s</string>
+    <!-- Refresh rate -->
+    <string name="low_power_refresh_rate_title_custom">Képernyőfrissítés gyenge akkuhoz</string>
 </resources>
