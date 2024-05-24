@@ -202,4 +202,6 @@
     <string name="duration_less_than_one_minute">Menos de 1 minuto</string>
     <!-- Summary for Wellbeing screen time usage. [CHAR LIMIT=NONE] -->
     <string name="screen_time_summary_usage_today">%1$s hoje</string>
+    <!-- Refresh rate -->
+    <string name="low_power_refresh_rate_title_custom">Taxa de atualização para poupar energia</string>
 </resources>
