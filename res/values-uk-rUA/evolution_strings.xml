@@ -208,4 +208,11 @@
     <string name="screen_time_summary_usage_today">%1$s сьогодні</string>
     <!-- Refresh rate -->
     <string name="low_power_refresh_rate_title_custom">Частота оновлення при низькому заряду батареї</string>
+    <!-- Menu option for not validating the EAP server -->
+    <string name="wifi_do_not_validate_eap_server">Не перевіряти</string>
+    <!-- Warning message displayed if user choses not to validate the EAP server -->
+    <string name="wifi_do_not_validate_eap_server_warning">Сертифікат не вказано. З’єднання не буде конфіденційним.</string>
+    <!-- Pulse on music track change -->
+    <string name="pulse_on_new_tracks_title">Підсвічувати музику</string>
+    <string name="pulse_on_new_tracks_summary">Підсвічувати екран коли відтворюється новий музичний трек</string>
 </resources>
