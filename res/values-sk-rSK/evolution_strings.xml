@@ -8,11 +8,15 @@
     <string name="evolution_license_title">Evolution X legal</string>
     <!-- Android version screen, build maintainer -->
     <string name="build_maintainer">Údržbár kompilácie</string>
+    <!-- App search preference -->
+    <string name="search">Hľadať</string>
+    <string name="search_apps">Vyhľadať aplikácie</string>
     <!-- Hide developer status -->
     <string name="hide_developer_status_title">Skryť status vývojára</string>
     <string name="hide_developer_status_summary">Skrytie statusu vývojára z aplikácií</string>
-    <string name="search">Hľadať</string>
-    <string name="search_apps">Vyhľadať aplikácie</string>
+    <!-- Notch: Full screen apps -->
+    <string name="display_cutout_force_fullscreen_title">Aplikácie na celú obrazovku</string>
+    <string name="display_cutout_force_fullscreen_summary">Prinútiť aplikácie ignorovať výrez v displeji</string>
     <!-- Misc Haptics -->
     <string name="misc_vibration_category_title">Rôzne haptické prvky</string>
     <!-- Volume slider haptic feedback -->
@@ -42,4 +46,173 @@
     <!-- Unlimit screenrecord -->
     <string name="unlimit_screenrecord_title">Záznam obrazovky bez obmedzenia</string>
     <string name="unlimit_screenrecord_summary">Odstrániť obmedzenie veľkosti súboru 15GiB\nMôže mať za následok väčší výstupný súbor, ako je potrebné</string>
+    <!-- Force LTE_CA -->
+    <string name="force_lte_ca">Vynútiť LTE CA</string>
+    <string name="force_lte_ca_summary">Vynútiť agregáciu operátora LTE k činnosti</string>
+    <!-- WiFi Hotspot -->
+    <string name="wifi_hotspot_ap_band_title">Pásmo prístupového bodu</string>
+    <string name="wifi_hotspot_hidden_ssid_title">Skrytá sieť</string>
+    <string name="wifi_hotspot_hidden_ssid_summary">Názov vášho mobilného hotspotu sa nezobrazí v zozname dostupných WLAN sietí.</string>
+    <string name="wifi_hotspot_client_manager_title">Pripojené zariadenia</string>
+    <string name="wifi_hotspot_client_manager_summary">Zobraziť a spravovať zariadenia pripojené k hotspotu</string>
+    <string name="wifi_hotspot_client_manager_list_only_summary">Zobraziť zariadenia pripojené k hotspotu</string>
+    <string name="wifi_hotspot_client_limit_title">Limit počtu pripojených zariadení</string>
+    <string name="wifi_hotspot_blocked_clients_list_title">Zablokované zariadenia</string>
+    <string name="wifi_hotspot_connected_clients_list_title">Pripojené zariadenia</string>
+    <string name="wifi_hotspot_block_client_dialog_title">Zablokovať zariadenie</string>
+    <string name="wifi_hotspot_block_client_dialog_text">Táto akcia odpojí zariadenie „<xliff:g id="device_name">%1$s</xliff:g>“ z tohto zariadenia a pridá ho na zoznam blokovaných</string>
+    <string name="wifi_hotspot_unblock_client_dialog_title">Odblokovať zariadenie</string>
+    <string name="wifi_hotspot_unblock_client_dialog_text">Zariadeniu „<xliff:g id="device_name">%1$s</xliff:g>“ bude umožnené sa pripojiť na tento hotspot</string>
+    <string name="wifi_hotspot_client_manager_footer_text">Momentálne nie sú žiadne zariadenia dostupné. Pripojené a zablokované zariadenia budú zobrazené v tomto zozname, keď budú dostupné.</string>
+    <string name="wifi_band_24ghz_and_5ghz">2.4 GHz &amp; 5 GHz</string>
+    <string name="wifi_band_24ghz_and_6ghz">2.4 GHz &amp; 6 GHz</string>
+    <string name="wifi_band_60ghz">60 GHz</string>
+    <plurals name="wifi_hotspot_client_limit_summary">
+        <item quantity="other">Až <xliff:g id="device_num">%1$d</xliff:g> zariadení sa môže pripojiť k tomuto hotspotu</item>
+        <item quantity="one">Až <xliff:g id="device_num">%1$d</xliff:g> zariadenie sa môže pripojiť k tomuto hotspotu</item>
+        <item quantity="few">Až <xliff:g id="device_num">%1$d</xliff:g> zariadenia sa môžu pripojiť k tomuto hotspotu</item>
+        <item quantity="many">Až <xliff:g id="device_num">%1$d</xliff:g> zariadení sa môže pripojiť k tomuto hotspotu</item>
+    </plurals>
+    <!-- AdGuard DNS Option -->
+    <!-- AdGuard DNS hostname -->
+    <!-- Open DNS Option -->
+    <!-- Open DNS hostname -->
+    <!-- Cleanbrowsing DNS Option -->
+    <!-- Cleanbrowsing DNS hostname -->
+    <!-- Quad9 DNS Option -->
+    <!-- Quad9 DNS hostname -->
+    <!-- Per-app volume -->
+    <string name="app_volume">Hlasitosť aplikácie</string>
+    <string name="app_volume_title">Ovládanie hlasitosti pre jednotlivé aplikácie</string>
+    <string name="app_volume_summary">Zobraziť tlačidlo hlasitosti pre jednotlivé aplikácie v dialógovom okne hlasitosti</string>
+    <!-- Smart Pause -->
+    <string name="adaptive_playback_screen_title">Inteligentné Pozastavenie</string>
+    <string name="adaptive_playback_enabled">Použiť inteligentné pozastavenie</string>
+    <string name="adaptive_playback_disabled_summary">Vypnúť</string>
+    <string name="adaptive_playback_intro_text">Automaticky pozastaví médiá keď je hlasitosť stlmená a automaticky obnoví prehrávanie médií pokiaľ sa hlasitosť znova zvýši vo vybranom čase (ak je zvolený).</string>
+    <string name="adaptive_playback_timeout_title">Použiť časový limit</string>
+    <string name="adaptive_playback_timeout_none">Bez časového limitu</string>
+    <string name="adaptive_playback_timeout_none_summary">Zapnuté (bez časového limitu)</string>
+    <string name="adaptive_playback_timeout_30_secs">30 sekúnd</string>
+    <string name="adaptive_playback_timeout_30_secs_summary">Zapnuté (30 sekúnd)</string>
+    <string name="adaptive_playback_timeout_1_min">1 minúta</string>
+    <string name="adaptive_playback_timeout_1_min_summary">Zapnuté (1 minúta)</string>
+    <string name="adaptive_playback_timeout_2_min">2 minúty</string>
+    <string name="adaptive_playback_timeout_2_min_summary">Zapnuté (2 minúty)</string>
+    <string name="adaptive_playback_timeout_5_min">5 minút</string>
+    <string name="adaptive_playback_timeout_5_min_summary">Zapnuté (5 minút)</string>
+    <string name="adaptive_playback_timeout_10_min">10 minút</string>
+    <string name="adaptive_playback_timeout_10_min_summary">Zapnuté (10 minút)</string>
+    <!-- Enforce DNS for VPN -->
+    <string name="vpn_enforce_dns_title">Zakázať pre VPN</string>
+    <string name="vpn_enforce_dns_summary">Zakázať súkromné DNS pri pripojení k sieti VPN\nObnoví sa po odpojení</string>
+    <!-- Volume Steps -->
+    <string name="volume_steps_title">Stupne hlasitosti</string>
+    <string name="volume_steps_summary">Ovládanie granularity každého streamu</string>
+    <string name="max_music_volume_title">Médiá</string>
+    <string name="max_call_volume_title">Hovory</string>
+    <string name="max_alarm_volume_title">Budíky</string>
+    <string name="steps_unit">kroky</string>
+    <!-- Cycle through ringer modes gesture -->
+    <string name="prevent_ringing_option_cycle">Prepínanie medzi režimami</string>
+    <string name="prevent_ringing_option_cycle_summary">Zapnuté (Prepínanie medzi režimami)</string>
+    <!-- Back gesture animation -->
+    <string name="back_gesture_arrow_title">Animácia gesta späť</string>
+    <string name="back_gesture_arrow_summary">Zobrazovať animovanú šípku gesta späť</string>
+    <!-- Back gesture haptic -->
+    <string name="back_gesture_haptic_title">Hmatová spätná väzba</string>
+    <string name="back_gesture_haptic_summary">Povoliť efekt krátkeho zavibrovania pri použití gesta \"Späť\"</string>
+    <!-- Auto pin confirm -->
+    <string name="lock_screen_auto_pin_confirm_summary_custom">Odomkne sa automaticky po zadaní správneho kódu PIN. Je to o niečo menej bezpečné ako ťuknutie na tlačidlo Enter na potvrdenie.</string>
+    <!-- Doze on charge -->
+    <string name="doze_on_charge_title">Vždy zapnuté počas nabíjania</string>
+    <string name="doze_on_charge_summary">Zobraziť, že zariadenie sa nabíja</string>
+    <!-- Incall vibrate options -->
+    <string name="incall_vibration_category">Možnosti vibrácií pri hovore</string>
+    <string name="incall_vibrate_connect_title">Zavibrovat při spojení</string>
+    <string name="incall_vibrate_call_wait_title">Vibrovať pri čakajúcom hovore</string>
+    <string name="incall_vibrate_disconnect_title">Zavibrovať pri ukončení hovoru</string>
+    <!-- Label for a numbered SIM card.  [CHAR LIMIT=40] -->
+    <!-- Hide screen capture status -->
+    <string name="hide_screen_capture_status_title">Skryť stav snímania obrazovky</string>
+    <string name="hide_screen_capture_status_summary">Skryť stav snímania obrazovky zo všetkých aplikácií. V niektorých prípadoch to môže byť vhodné, ale môže to viesť k úniku súkromia. Je potrebné reštartovať aplikácie, aby sa zmena prejavila.</string>
+    <!-- Doze on double tap -->
+    <string name="double_tap_title">Dvojklik</string>
+    <string name="doze_double_tap_title">Kontrola telefónu dvojitým klepnutím</string>
+    <string name="doze_double_tap_summary">Pulzovať upozornenia dvojitým kliknutím</string>
+    <!-- App lock -->
+    <string name="app_lock_title">Zámok aplikácií</string>
+    <plurals name="app_lock_summary">
+        <item quantity="one"><xliff:g example="1" id="Number of applications">%1$d</xliff:g> aplikácia je chránená</item>
+        <item quantity="few"><xliff:g example="1" id="Number of applications">%1$d</xliff:g> aplikácie sú chránené</item>
+        <item quantity="many"><xliff:g example="1" id="Number of applications">%1$d</xliff:g> aplikácií je chránených</item>
+        <item quantity="other"><xliff:g example="1" id="Number of applications">%1$d</xliff:g> aplikácií je chránených</item>
+    </plurals>
+    <string name="app_lock_authentication_dialog_title">Odomknúť</string>
+    <string name="enable_debugging">Povoliť ladenie</string>
+    <string name="disable_debugging">Zakázať ladenie</string>
+    <string name="app_lock_packages_title">Chránené aplikácie</string>
+    <string name="app_lock_packages_summary">Vyberte aplikácie, ktoré chcete chrániť pomocou biometrických údajov alebo poverení zariadenia</string>
+    <string name="app_lock_timeout_title">Časovač aut. zámku</string>
+    <string name="app_lock_timeout_summary">Doba, po ktorej by mala byť  aplikácia na pozadí uzamknutá</string>
+    <string name="app_lock_notifications_title">Zbaliť upozornenia</string>
+    <string name="app_lock_notifications_summary">Obsah oznámení sa pri uzamknutých aplikáciách skryje a zbalí. Plávajúce upozornenia budú automaticky vypnuté.</string>
+    <string name="app_lock_notifications_disabled_summary">Najprv chráňte aplikáciu</string>
+    <string name="app_lock_biometrics_allowed_title">Povoliť biometriu na odomykanie</string>
+    <string name="app_lock_footer_text">Bubliny budú po uplynutí časového limitu automaticky zrušené</string>
+    <string name="enable_protection">Zapnúť ochranu</string>
+    <string name="hide_from_launcher_title">Skryť z launcheru</string>
+    <string name="hide_from_launcher_summary">Zabrániť zobrazeniu tejto aplikácie v akomkoľvek spúšťači. Vyžaduje reštart spúšťača, aby sa zmeny prejavili.</string>
+    <string name="custom_timeout_summary_never">Nikdy</string>
+    <string name="custom_timeout_summary_5secs">5 sekúnd</string>
+    <string name="custom_timeout_summary_10secs">10 sekúnd</string>
+    <string name="custom_timeout_summary_15secs">15 sekúnd</string>
+    <string name="custom_timeout_summary_30secs">30 sekúnd</string>
+    <string name="custom_timeout_summary_1min">1 minúta</string>
+    <string name="custom_timeout_summary_2mins">2 minúty</string>
+    <string name="custom_timeout_summary_5mins">5 minút</string>
+    <string name="custom_timeout_summary_10mins">10 minút</string>
+    <string name="custom_timeout_summary_20mins">20 minút</string>
+    <string name="custom_timeout_summary_30mins">30 minút</string>
+    <string name="custom_timeout_summary_1hour">1 hodina</string>
+    <string name="custom_timeout_summary_2hours">2 hodiny</string>
+    <string name="custom_timeout_summary_4hours">4 hodiny</string>
+    <string name="custom_timeout_summary_8hours">8 hodín</string>
+    <!-- Navigation bar IME space -->
+    <string name="navigation_bar_ime_space_title">Priestor pod klávesnicou</string>
+    <string name="ime_narrow">Zúžený</string>
+    <string name="ime_default">Predvolené</string>
+    <string name="ime_hidden">Skryté</string>
+    <!-- Ambient wake toggles -->
+    <string name="doze_gesture_ambient_title">Zobraziť Ambientný displej</string>
+    <string name="doze_gesture_ambient_summary">Zobraziť ambientný diplej namiesto úplného prebudenia obrazovky</string>
+    <!-- Gesture navbar length -->
+    <string name="gesture_navbar_length_title">Dĺžka navigačného pásika</string>
+    <string name="short_label">Krátka</string>
+    <string name="long_label">Dlhé</string>
+    <!-- Back gesture height -->
+    <string name="back_height_low_label">Plný</string>
+    <string name="back_height_high_label">Dole</string>
+    <string name="back_height_title">Výška gesta „Späť“</string>
+    <string name="back_height_summary">Výška obrazovky platná pre gesto „Späť“</string>
+    <!-- Gesture navbar radius -->
+    <string name="gesture_navbar_radius_title">Polomer pilulky</string>
+    <string name="thin_label">Tenké</string>
+    <string name="thick_label">Hrubé</string>
+    <!-- Hardware info -->
+    <string name="soc_model">SoC Model</string>
+    <string name="total_ram">Celková RAM</string>
+    <!-- Default getTimeSpentInApp string for Wellbeing to display. [CHAR LIMIT=NONE] -->
+    <string name="duration_less_than_one_minute">Menej ako 1 Minúta</string>
+    <!-- Summary for Wellbeing screen time usage. [CHAR LIMIT=NONE] -->
+    <string name="screen_time_summary_usage_today">Dnes %1$s</string>
+    <!-- Refresh rate -->
+    <string name="low_power_refresh_rate_title_custom">Obnovovacia frekvencia (Úsporný režim)</string>
+    <!-- Menu option for not validating the EAP server -->
+    <string name="wifi_do_not_validate_eap_server">Neoverovať</string>
+    <!-- Warning message displayed if user choses not to validate the EAP server -->
+    <string name="wifi_do_not_validate_eap_server_warning">Nie je určený žiadny certifikát. Pripojenie nebude súkromné.</string>
+    <!-- Pulse on music track change -->
+    <string name="pulse_on_new_tracks_title">Hudobné oznámenie</string>
+    <string name="pulse_on_new_tracks_summary">Zobraziť Ambientní displej po spustení novej hudobnej skladby</string>
 </resources>
