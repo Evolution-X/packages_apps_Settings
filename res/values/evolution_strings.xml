@@ -303,4 +303,8 @@
     <string name="columbus_setting_enable_switch_title">Use Quick Tap</string>
     <string name="columbus_setting_sensitivity_title">Require stronger taps</string>
     <string name="columbus_summary" translatable="false">%1$s / %2$s</string>
+
+    <!-- No storage restrict -->
+    <string name="no_storage_restrict_title">No storage restrict</string>
+    <string name="no_storage_restrict_summary">Remove the restriction when selecting folders through Storage Access Framework. Can be convenient in some cases but may lead to privacy leaks.</string>
 </resources>
