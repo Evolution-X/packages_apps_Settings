@@ -122,6 +122,13 @@
         android:fragment="com.android.settings.security.MemtagPage"
         settings:controller="com.android.settings.security.MemtagPagePreferenceController" />
 
+    <org.evolution.settings.preferences.GlobalSettingSwitchPreference
+        android:order="96"
+        android:key="no_storage_restrict"
+        android:title="@string/no_storage_restrict_title"
+        android:summary="@string/no_storage_restrict_summary"
+        android:defaultValue="false"/>
+
     <!-- work profile security section -->
     <PreferenceCategory
         android:order="310"
