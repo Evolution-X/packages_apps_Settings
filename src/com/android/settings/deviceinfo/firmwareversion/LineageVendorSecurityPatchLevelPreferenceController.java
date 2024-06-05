@@ -44,7 +44,8 @@ public class LineageVendorSecurityPatchLevelPreferenceController extends BasePre
 
     @Override
     public int getAvailabilityStatus() {
-        return AVAILABLE;
+        return mContext.getResources().getBoolean(R.bool.config_show_vendor_patch_level)
+                ? AVAILABLE : UNSUPPORTED_ON_DEVICE;
     }
 
     @Override
