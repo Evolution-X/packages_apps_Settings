@@ -49,30 +49,6 @@
     <!-- Force LTE_CA -->
     <string name="force_lte_ca">Vynútiť LTE CA</string>
     <string name="force_lte_ca_summary">Vynútiť agregáciu operátora LTE k činnosti</string>
-    <!-- WiFi Hotspot -->
-    <string name="wifi_hotspot_ap_band_title">Pásmo prístupového bodu</string>
-    <string name="wifi_hotspot_hidden_ssid_title">Skrytá sieť</string>
-    <string name="wifi_hotspot_hidden_ssid_summary">Názov vášho mobilného hotspotu sa nezobrazí v zozname dostupných WLAN sietí.</string>
-    <string name="wifi_hotspot_client_manager_title">Pripojené zariadenia</string>
-    <string name="wifi_hotspot_client_manager_summary">Zobraziť a spravovať zariadenia pripojené k hotspotu</string>
-    <string name="wifi_hotspot_client_manager_list_only_summary">Zobraziť zariadenia pripojené k hotspotu</string>
-    <string name="wifi_hotspot_client_limit_title">Limit počtu pripojených zariadení</string>
-    <string name="wifi_hotspot_blocked_clients_list_title">Zablokované zariadenia</string>
-    <string name="wifi_hotspot_connected_clients_list_title">Pripojené zariadenia</string>
-    <string name="wifi_hotspot_block_client_dialog_title">Zablokovať zariadenie</string>
-    <string name="wifi_hotspot_block_client_dialog_text">Táto akcia odpojí zariadenie „<xliff:g id="device_name">%1$s</xliff:g>“ z tohto zariadenia a pridá ho na zoznam blokovaných</string>
-    <string name="wifi_hotspot_unblock_client_dialog_title">Odblokovať zariadenie</string>
-    <string name="wifi_hotspot_unblock_client_dialog_text">Zariadeniu „<xliff:g id="device_name">%1$s</xliff:g>“ bude umožnené sa pripojiť na tento hotspot</string>
-    <string name="wifi_hotspot_client_manager_footer_text">Momentálne nie sú žiadne zariadenia dostupné. Pripojené a zablokované zariadenia budú zobrazené v tomto zozname, keď budú dostupné.</string>
-    <string name="wifi_band_24ghz_and_5ghz">2.4 GHz &amp; 5 GHz</string>
-    <string name="wifi_band_24ghz_and_6ghz">2.4 GHz &amp; 6 GHz</string>
-    <string name="wifi_band_60ghz">60 GHz</string>
-    <plurals name="wifi_hotspot_client_limit_summary">
-        <item quantity="other">Až <xliff:g id="device_num">%1$d</xliff:g> zariadení sa môže pripojiť k tomuto hotspotu</item>
-        <item quantity="one">Až <xliff:g id="device_num">%1$d</xliff:g> zariadenie sa môže pripojiť k tomuto hotspotu</item>
-        <item quantity="few">Až <xliff:g id="device_num">%1$d</xliff:g> zariadenia sa môžu pripojiť k tomuto hotspotu</item>
-        <item quantity="many">Až <xliff:g id="device_num">%1$d</xliff:g> zariadení sa môže pripojiť k tomuto hotspotu</item>
-    </plurals>
     <!-- AdGuard DNS Option -->
     <!-- AdGuard DNS hostname -->
     <!-- Open DNS Option -->
@@ -143,10 +119,10 @@
     <!-- App lock -->
     <string name="app_lock_title">Zámok aplikácií</string>
     <plurals name="app_lock_summary">
-        <item quantity="one"><xliff:g example="1" id="Number of applications">%1$d</xliff:g> aplikácia je chránená</item>
-        <item quantity="few"><xliff:g example="1" id="Number of applications">%1$d</xliff:g> aplikácie sú chránené</item>
-        <item quantity="many"><xliff:g example="1" id="Number of applications">%1$d</xliff:g> aplikácií je chránených</item>
-        <item quantity="other"><xliff:g example="1" id="Number of applications">%1$d</xliff:g> aplikácií je chránených</item>
+        <item quantity="one">Chránená <xliff:g example="1" id="Number of applications">%1$d</xliff:g> aplikácia</item>
+        <item quantity="few">Chránené <xliff:g example="10" id="Number of applications">%1$d</xliff:g> aplikácie</item>
+        <item quantity="many">Chránených <xliff:g example="10" id="Number of applications">%1$d</xliff:g> aplikácií</item>
+        <item quantity="other">Chránených <xliff:g example="10" id="Number of applications">%1$d</xliff:g> aplikácií</item>
     </plurals>
     <string name="app_lock_authentication_dialog_title">Odomknúť</string>
     <string name="enable_debugging">Povoliť ladenie</string>
@@ -215,4 +191,57 @@
     <!-- Pulse on music track change -->
     <string name="pulse_on_new_tracks_title">Hudobné oznámenie</string>
     <string name="pulse_on_new_tracks_summary">Zobraziť Ambientní displej po spustení novej hudobnej skladby</string>
+    <!-- Columbus -->
+    <string name="columbus_gesture_detected">Bolo zaznamenané rýchle klepnutie!</string>
+    <string name="columbus_gesture_enrollment_complete">Hotovo</string>
+    <string name="columbus_gesture_enrollment_do_it_later">Teraz nie</string>
+    <string name="columbus_gesture_enrollment_settings">Prejsť do nastavení</string>
+    <string name="columbus_gesture_enrollment_try_it">Vyskúšať to</string>
+    <string name="columbus_gesture_training_action_no_selection_error">Vyberte akciu, ktorú chcete vykonať</string>
+    <string name="columbus_gesture_training_action_text">Vyberte, čo sa má stať, keď použijete rýchle klepnutie. Neskôr to môžete zmeniť v nastaveniach.</string>
+    <string name="columbus_gesture_training_action_title">Vyberte možnosť rýchleho klepnutia</string>
+    <string name="columbus_gesture_training_enrolling_first_gesture">…Dvojité klepnutie 1 z 2 zistených</string>
+    <string name="columbus_gesture_training_enrolling_first_gesture_text">Skúsme to ešte raz. Dvakrát rýchlo klepnite na zadnú stranu telefónu.</string>
+    <string name="columbus_gesture_training_enrolling_first_gesture_title">Pekne!</string>
+    <string name="columbus_gesture_training_enrolling_second_gesture">…Dvojité klepnutie 2 z 2 zistených</string>
+    <string name="columbus_gesture_training_enrolling_second_gesture_text">Ste pripravení začať používať rýchle klepnutie</string>
+    <string name="columbus_gesture_training_enrolling_second_gesture_title">Dobrá práca!</string>
+    <string name="columbus_gesture_training_enrolling_text">Dvakrát rýchlo klepnte na zadnú stranu telefónu.</string>
+    <string name="columbus_gesture_training_enrolling_title">Vyskúšať rýchle klepnutie</string>
+    <string name="columbus_gesture_training_finished_text">Ak chcete zmeniť silu klepnutia potrebnú na použitie rýchleho klepnutia, prejdite do nastavení.</string>
+    <string name="columbus_gesture_training_finished_title">Nastavili ste rýchle klepnutie</string>
+    <string name="columbus_gesture_training_intro_text_accidental">Práve ste dvakrát klepli na zadnú stranu vášho zariadenia, čo vám umožňuje použiť vášho Asistenta on‑the‑go. Toto gesto si môžete prispôsobiť v nastaveniach.</string>
+    <string name="columbus_gesture_training_intro_text_suw">Dvoma klepnutiami urobíte snímku obrazovky, zobrazíte oznámenia alebo spustíte inú akciu.</string>
+    <string name="columbus_gesture_training_intro_title">Rýchle klepnutie pre rýchle akcie</string>
+    <string name="columbus_gesture_training_launch_no_selection_error">Vyberte prosím aplikáciu, ktorú chcete otvoriť</string>
+    <string name="columbus_gesture_training_launch_text">Vyberte aplikáciu, ktorú chcete otvoriť, keď použijete rýchle klepnutie.</string>
+    <string name="columbus_gesture_training_launch_title">Vyberte aplikáciu, ktorú chcete otvoriť</string>
+    <string name="columbus_launch_app_extra_widget_a11y_label">Nastavenie skratky %1$s</string>
+    <string name="columbus_launch_settings_activity_title">Nastavenia rýchleho klepnutia</string>
+    <string name="columbus_name">Rýchle klepnutie</string>
+    <string name="columbus_radio_button_extra_widget_a11y_label">Nastavenie %1$s</string>
+    <string name="columbus_setting_action_assistant_title">Prístup k digitálnemu asistentovi</string>
+    <string name="columbus_setting_action_launch_summary_no_selection">Žiadne vybraná aplikácia</string>
+    <string name="columbus_setting_action_launch_summary_not_installed">Aplikácia nie je nainštalovaná</string>
+    <string name="columbus_setting_action_launch_title">Otvoriť aplikáciu</string>
+    <string name="columbus_setting_action_notification_title">Zobraziť upozornenia</string>
+    <string name="columbus_setting_action_open_app_title">Otvoriť aplikáciu</string>
+    <string name="columbus_setting_action_overview_title">Zobrazit nedávné aplikacie</string>
+    <string name="columbus_setting_action_play_pause_title">Prehrať alebo pozastaviť médiá</string>
+    <string name="columbus_setting_action_screenshot_title">Urobiť snímku obrazovky</string>
+    <string name="columbus_setting_actions_title">Dvojitým klepnutím na zadnú stranu telefónu</string>
+    <string name="columbus_setting_additional_settings_title">Sila rýchleho klepnutia</string>
+    <string name="columbus_setting_app_selection_help_text">Vyberte aplikáciu, ktorá sa otvorí, keď dvakrát klepnete na zadnú stranu telefónu. Ak aplikáciu odinštalujete, rýchle klenutie sa vypne, kým nevyberiete inú aplikáciu.</string>
+    <string name="columbus_setting_app_shortcut_selection_help_text">Vyberte, čo sa má stať, keď otvoríte túto aplikáciu pomocou rýchleho klepnutia.</string>
+    <string name="columbus_setting_enable_switch_title">Použiť rýchle klepnutie</string>
+    <string name="columbus_setting_sensitivity_title">Vyžadovať silnejšie klepnutie</string>
+    <!-- No storage restrict -->
+    <string name="no_storage_restrict_title">Úložisko bez obmedzení</string>
+    <string name="no_storage_restrict_summary">Odstrániť obmedzenia pri výbere priečinkov prostredníctvom rámca Storage Access Framework. V niektorých prípadoch to môže byť vhodné, ale môže to viesť k úniku súkromia.</string>
+    <!-- Hotspot -->
+    <string name="wifi_hotspot_hidden_ssid_title">Skrytá sieť</string>
+    <string name="wifi_hotspot_hidden_ssid_summary">Názov vášho mobilného hotspotu sa nezobrazí v zozname dostupných WLAN sietí.</string>
+    <!-- General -->
+    <string name="copied_to_clipboard">Skopírované do schránky</string>
+    <string name="longpress_to_clipboard">Dlhým stlačením skopírujete</string>
 </resources>
