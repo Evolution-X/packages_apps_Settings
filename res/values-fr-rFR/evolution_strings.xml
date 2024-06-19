@@ -243,4 +243,8 @@ Les notifications flottantes seront automatiquement désactivées.</string>
     <!-- General -->
     <string name="copied_to_clipboard">Copié dans le presse-papier</string>
     <string name="longpress_to_clipboard">Appui long pour copier</string>
+    <!-- Increasing ring tone volume -->
+    <string name="increasing_ring_volume_option_title">Augmenter le volume de la sonnerie</string>
+    <string name="increasing_ring_min_volume_title">Volume de départ</string>
+    <string name="increasing_ring_ramp_up_time_title">Temps de montée en puissance</string>
 </resources>
