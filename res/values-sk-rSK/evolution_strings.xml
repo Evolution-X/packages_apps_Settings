@@ -244,4 +244,8 @@
     <!-- General -->
     <string name="copied_to_clipboard">Skopírované do schránky</string>
     <string name="longpress_to_clipboard">Dlhým stlačením skopírujete</string>
+    <!-- Increasing ring tone volume -->
+    <string name="increasing_ring_volume_option_title">Zvyšovanie hlasitosti zvonenia</string>
+    <string name="increasing_ring_min_volume_title">Začiatočná hlasitosť</string>
+    <string name="increasing_ring_ramp_up_time_title">Doba zvyšovania</string>
 </resources>
