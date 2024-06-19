@@ -242,4 +242,8 @@
     <!-- General -->
     <string name="copied_to_clipboard">Copiado para a área de transferência</string>
     <string name="longpress_to_clipboard">Pressione e segure para copiar</string>
+    <!-- Increasing ring tone volume -->
+    <string name="increasing_ring_volume_option_title">Toque crescente</string>
+    <string name="increasing_ring_min_volume_title">Volume inicial</string>
+    <string name="increasing_ring_ramp_up_time_title">Intervalo de aumento</string>
 </resources>
