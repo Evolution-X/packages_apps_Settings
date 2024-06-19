@@ -220,8 +220,8 @@
     <string name="columbus_launch_app_extra_widget_a11y_label">%1$s настройки ярлыка</string>
     <string name="columbus_launch_settings_activity_title">Параметры короткого касания</string>
     <string name="columbus_name">Короткое касание</string>
-    <string name="columbus_radio_button_extra_widget_a11y_label">%1$s настройки</string>
-    <string name="columbus_setting_action_assistant_title">Доступ к цифровому ассистенту</string>
+    <string name="columbus_radio_button_extra_widget_a11y_label">%1$s - настройки</string>
+    <string name="columbus_setting_action_assistant_title">Доступ к вашему цифровому ассистенту</string>
     <string name="columbus_setting_action_launch_summary_no_selection">Приложение не выбрано</string>
     <string name="columbus_setting_action_launch_summary_not_installed">Приложение не установлено</string>
     <string name="columbus_setting_action_launch_title">Открыть приложение</string>
@@ -245,4 +245,8 @@
     <!-- General -->
     <string name="copied_to_clipboard">Скопировано в буфер обмена</string>
     <string name="longpress_to_clipboard">Удерживайте для копирования</string>
+    <!-- Increasing ring tone volume -->
+    <string name="increasing_ring_volume_option_title">Возрастающая громкость звонка</string>
+    <string name="increasing_ring_min_volume_title">Начальная громкость</string>
+    <string name="increasing_ring_ramp_up_time_title">Время повышения громкости</string>
 </resources>
