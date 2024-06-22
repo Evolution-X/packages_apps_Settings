@@ -17,4 +17,27 @@
 
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:title="@string/color_mode_title" />
+    xmlns:settings="http://schemas.android.com/apk/res-auto"
+    android:title="@string/color_mode_title">
+
+    <PreferenceCategory
+        android:key="display_engine_category"
+        android:title="@string/display_engine_category"
+        android:order="100">
+
+        <org.evolution.settings.preferences.SecureSettingListPreference
+            android:key="display_engine_mode"
+            android:title="@string/display_engine_mode_title"
+            android:entries="@array/display_engine_mode_entries"
+            android:entryValues="@array/display_engine_mode_values"
+            android:summary="%s"
+            android:defaultValue="0" />
+
+        <com.android.settingslib.widget.FooterPreference
+            android:key="display_engine_mode_footer"
+            android:title="@string/display_engine_mode_footer_text"
+            android:selectable="false"
+            settings:searchable="false" />
+    </PreferenceCategory>
+
+</PreferenceScreen>
