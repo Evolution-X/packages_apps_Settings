@@ -18,7 +18,7 @@
     <string name="display_cutout_force_fullscreen_title">Полноэкранные приложения</string>
     <string name="display_cutout_force_fullscreen_summary">Заставить приложения игнорировать пространство надреза</string>
     <!-- Misc Haptics -->
-    <string name="misc_vibration_category_title">Прочие тактильные события</string>
+    <string name="misc_vibration_category_title">Дополнительные настройки вибрации</string>
     <!-- Volume slider haptic feedback -->
     <string name="volume_slider_haptic_feedback_title">Вибрация при перемещении ползунка громкости</string>
     <!-- QS Tiles haptic -->
@@ -60,12 +60,12 @@
     <!-- Per-app volume -->
     <string name="app_volume">Громкость приложений</string>
     <string name="app_volume_title">Громкость для каждого приложения</string>
-    <string name="app_volume_summary">Изменение громкости для отдельных приложений</string>
+    <string name="app_volume_summary">Добавить кнопку изменения громкости для отдельных приложений в панель регулировки</string>
     <!-- Smart Pause -->
     <string name="adaptive_playback_screen_title">Адаптивное воспроизведение</string>
     <string name="adaptive_playback_enabled">Использовать умную паузу</string>
     <string name="adaptive_playback_disabled_summary">Выкл.</string>
-    <string name="adaptive_playback_intro_text">Адаптивное воспроизведение автоматически приостанавливает воспроизведение при отключении громкости и автоматически возобновляется в течение заданного времени.</string>
+    <string name="adaptive_playback_intro_text">Автоматическая приостановка воспроизведения медиа при отключении звука устройства и последующее возобновление при увеличении громкости через заданный промежуток.</string>
     <string name="adaptive_playback_timeout_title">Использовать время ожидания</string>
     <string name="adaptive_playback_timeout_none">Без времени ожидания</string>
     <string name="adaptive_playback_timeout_none_summary">Вкл (без ожидания)</string>
