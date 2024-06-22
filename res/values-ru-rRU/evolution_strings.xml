@@ -13,7 +13,7 @@
     <string name="search_apps">Поиск приложений</string>
     <!-- Hide developer status -->
     <string name="hide_developer_status_title">Скрыть статус разработчика</string>
-    <string name="hide_developer_status_summary">Скрыть статус разработчика из приложений</string>
+    <string name="hide_developer_status_summary">Скрытие статуса разработчика для выбранных приложений</string>
     <!-- Notch: Full screen apps -->
     <string name="display_cutout_force_fullscreen_title">Полноэкранные приложения</string>
     <string name="display_cutout_force_fullscreen_summary">Заставить приложения игнорировать пространство надреза</string>
@@ -80,8 +80,8 @@
     <string name="adaptive_playback_timeout_10_min">10 минут</string>
     <string name="adaptive_playback_timeout_10_min_summary">Вкл. (10 минут)</string>
     <!-- Enforce DNS for VPN -->
-    <string name="vpn_enforce_dns_title">Отключить для VPN</string>
-    <string name="vpn_enforce_dns_summary">Отключить личный DNS при подключении к VPN\nСоединение будет восстановлено после отключения</string>
+    <string name="vpn_enforce_dns_title">Не использовать при VPN</string>
+    <string name="vpn_enforce_dns_summary">Отключать личный DNS при подключении к VPN\nСоединение будет восстановлено после отключения</string>
     <!-- Volume Steps -->
     <string name="volume_steps_title">Шаги громкости</string>
     <string name="volume_steps_summary">Управление количеством шагов регулировки звука для каждого потока</string>
@@ -110,9 +110,8 @@
     <string name="incall_vibrate_disconnect_title">Вибрация при отключении</string>
     <!-- Label for a numbered SIM card.  [CHAR LIMIT=40] -->
     <!-- Hide screen capture status -->
-    <string name="hide_screen_capture_status_title">Скрыть состояние захвата экрана</string>
-    <string name="hide_screen_capture_status_summary">Скрывает состояние захвата экрана для всех приложений. Это может быть удобным в некоторых случаях, но может привести к утечке конфиденциальной информации.\n
-Необходимо перезапустить приложения, чтобы изменения вступили в силу.</string>
+    <string name="hide_screen_capture_status_title">Скрыть захват экрана</string>
+    <string name="hide_screen_capture_status_summary">Скрытие захвата экрана устройства для всех приложений. Это может быть удобным в некоторых случаях, но может привести к утечке конфиденциальной информации.\nНеобходимо перезапустить приложения, чтобы изменения вступили в силу.</string>
     <!-- Doze on double tap -->
     <string name="double_tap_title">Двойное касание</string>
     <string name="doze_double_tap_title">Просмотр времени и уведомлений двойным касанием</string>
@@ -122,8 +121,8 @@
     <plurals name="app_lock_summary">
         <item quantity="one"><xliff:g example="1" id="Number of applications">%1$d</xliff:g> приложение защищено</item>
         <item quantity="few"><xliff:g example="10" id="Number of applications">%1$d</xliff:g> приложений защищены</item>
-        <item quantity="many"><xliff:g example="10" id="Количество приложений">%1$d</xliff:g> приложения защищены</item>
-        <item quantity="other"><xliff:g example="10" id="Количество приложений">%1$d</xliff:g> приложения защищены</item>
+        <item quantity="many"><xliff:g example="10" id="Number of applications">%1$d</xliff:g> приложения защищены</item>
+        <item quantity="other"><xliff:g example="10" id="Number of applications">%1$d</xliff:g> приложения защищены</item>
     </plurals>
     <string name="app_lock_authentication_dialog_title">Разблокировать</string>
     <string name="enable_debugging">Включить отладку</string>
@@ -139,7 +138,7 @@
     <string name="app_lock_footer_text">Всплывающие уведомления будут автоматически удалены по истечении таймаута</string>
     <string name="enable_protection">Включить защиту</string>
     <string name="hide_from_launcher_title">Скрытие в лаунчере</string>
-    <string name="hide_from_launcher_summary">Запретите появление этого приложения в любом лаунчере. Требуется перезагрузка лаунчера, чтобы изменения вступили в силу.</string>
+    <string name="hide_from_launcher_summary">Запрет на отображение этого приложения в любом лаунчере. Требуется перезагрузка лаунчера, чтобы изменения вступили в силу.</string>
     <string name="custom_timeout_summary_never">Никогда</string>
     <string name="custom_timeout_summary_5secs">5 секунд</string>
     <string name="custom_timeout_summary_10secs">10 секунд</string>
@@ -191,54 +190,54 @@
     <string name="wifi_do_not_validate_eap_server_warning">Сертификат не указан. Ваше соединение не будет защищено.</string>
     <!-- Pulse on music track change -->
     <string name="pulse_on_new_tracks_title">Текущий трек</string>
-    <string name="pulse_on_new_tracks_summary">Показывать \"Активный экран\" при воспроизведении нового трека</string>
+    <string name="pulse_on_new_tracks_summary">Показывать Активный экран при воспроизведении нового трека</string>
     <!-- Columbus -->
     <string name="columbus_gesture_detected">Обнаружено быстрое нажатие!</string>
     <string name="columbus_gesture_enrollment_complete">Готово</string>
     <string name="columbus_gesture_enrollment_do_it_later">Не сейчас</string>
     <string name="columbus_gesture_enrollment_settings">Перейти к настройкам</string>
-    <string name="columbus_gesture_enrollment_try_it">Попробуй</string>
+    <string name="columbus_gesture_enrollment_try_it">Попробуйте</string>
     <string name="columbus_gesture_training_action_no_selection_error">Выберите действие, которое нужно выполнить</string>
-    <string name="columbus_gesture_training_action_text">Вы можете выбрать действие, которое выполняется при быстром касании. Этот параметр можно будет изменить в настройках.</string>
+    <string name="columbus_gesture_training_action_text">Выберите действие, которое будет выполняться при касании. Этот параметр можно будет изменить в настройках.</string>
     <string name="columbus_gesture_training_action_title">Выберите действие для короткого касания</string>
-    <string name="columbus_gesture_training_enrolling_first_gesture">… Обнаружено двойное нажатие 1 из 2</string>
-    <string name="columbus_gesture_training_enrolling_first_gesture_text">Попробуйте ещё раз. Быстрым движением дважды коснитесь задней панели телефона.</string>
+    <string name="columbus_gesture_training_enrolling_first_gesture">… Вы коснулись устройства дважды (1 попытка из 2)</string>
+    <string name="columbus_gesture_training_enrolling_first_gesture_text">Попробуйте ещё раз. Быстро коснитесь задней панели вашего устройства два раза.</string>
     <string name="columbus_gesture_training_enrolling_first_gesture_title">Прекрасно!</string>
-    <string name="columbus_gesture_training_enrolling_second_gesture">… Обнаружено двойное нажатие 2 из 2</string>
-    <string name="columbus_gesture_training_enrolling_second_gesture_text">Вы готовы начать использовать Быстрое нажатие</string>
+    <string name="columbus_gesture_training_enrolling_second_gesture">… Вы коснулись устройства дважды (2 попытка из 2)</string>
+    <string name="columbus_gesture_training_enrolling_second_gesture_text">Вы готовы начать использовать Короткое касание</string>
     <string name="columbus_gesture_training_enrolling_second_gesture_title">У вас получилось!</string>
-    <string name="columbus_gesture_training_enrolling_text">Быстрым движением дважды коснитесь задней панели телефона.</string>
-    <string name="columbus_gesture_training_enrolling_title">Попробуйте короткое касание</string>
-    <string name="columbus_gesture_training_finished_text">Чтобы изменить силу нажатия для использования короткого касания, перейдите в настройки.</string>
-    <string name="columbus_gesture_training_finished_title">Вы настроили быстрое нажатие</string>
-    <string name="columbus_gesture_training_intro_text_accidental">Вы дважды нажимали на задней панели вашего устройства, что позволяет вам использовать вашего помощника на ходу. Вы можете настроить этот жест в настройках.</string>
-    <string name="columbus_gesture_training_intro_text_suw">Сделать снимок экрана, показать уведомления или начать другое действие двумя касаниями.</string>
-    <string name="columbus_gesture_training_intro_title">Быстрое нажатие для быстрых действий</string>
-    <string name="columbus_gesture_training_launch_no_selection_error">Пожалуйста, выберите приложение для открытия</string>
-    <string name="columbus_gesture_training_launch_text">Выберите приложение, которое будет запускаться коротким касанием.</string>
+    <string name="columbus_gesture_training_enrolling_text">Быстрыми касаниями дважды постучите по задней панели вашего устройства.</string>
+    <string name="columbus_gesture_training_enrolling_title">Попробуйте Короткое касание</string>
+    <string name="columbus_gesture_training_finished_text">Чтобы изменить чувствительность Короткого касания, перейдите в настройки.</string>
+    <string name="columbus_gesture_training_finished_title">Вы настроили Короткое касание</string>
+    <string name="columbus_gesture_training_intro_text_accidental">Вы только что дважды коснулись задней панели вашего устройства, что позволяет быстро вызывать Голосового помощника. Этот жест можно настроить в настройках.</string>
+    <string name="columbus_gesture_training_intro_text_suw">Делайте скриншоты, открывайте уведомления и не только – всего в два касания.</string>
+    <string name="columbus_gesture_training_intro_title">Короткое касание для быстрых действий</string>
+    <string name="columbus_gesture_training_launch_no_selection_error">Пожалуйста, выберите приложение, которое хотите открыть</string>
+    <string name="columbus_gesture_training_launch_text">Выберите приложение, которое будет запускаться Коротким касанием.</string>
     <string name="columbus_gesture_training_launch_title">Выберите приложение для открытия</string>
-    <string name="columbus_launch_app_extra_widget_a11y_label">%1$s настройки ярлыка</string>
-    <string name="columbus_launch_settings_activity_title">Параметры короткого касания</string>
+    <string name="columbus_launch_app_extra_widget_a11y_label">Настройки ярлыка %1$s</string>
+    <string name="columbus_launch_settings_activity_title">Параметры Короткого касания</string>
     <string name="columbus_name">Короткое касание</string>
-    <string name="columbus_radio_button_extra_widget_a11y_label">%1$s - настройки</string>
-    <string name="columbus_setting_action_assistant_title">Доступ к вашему цифровому ассистенту</string>
+    <string name="columbus_radio_button_extra_widget_a11y_label">Настройки %1$s</string>
+    <string name="columbus_setting_action_assistant_title">Открыть цифрового помощника</string>
     <string name="columbus_setting_action_launch_summary_no_selection">Приложение не выбрано</string>
     <string name="columbus_setting_action_launch_summary_not_installed">Приложение не установлено</string>
     <string name="columbus_setting_action_launch_title">Открыть приложение</string>
-    <string name="columbus_setting_action_notification_title">Показывать уведомления</string>
+    <string name="columbus_setting_action_notification_title">Показать уведомления</string>
     <string name="columbus_setting_action_open_app_title">Открыть приложение</string>
     <string name="columbus_setting_action_overview_title">Показать недавние приложения</string>
-    <string name="columbus_setting_action_play_pause_title">Воспроизведение или остановка мультимедия</string>
+    <string name="columbus_setting_action_play_pause_title">Начать или приостановить воспроизведение</string>
     <string name="columbus_setting_action_screenshot_title">Сделать снимок экрана</string>
     <string name="columbus_setting_actions_title">Дважды коснитесь задней панели телефона, чтобы</string>
-    <string name="columbus_setting_additional_settings_title">Сила короткого касания</string>
-    <string name="columbus_setting_app_selection_help_text">Выберите приложение, которое будет открываться при двойном касании задней панели телефона. Если вы удалите его, функция короткого касания будет отключена, пока вы не выберете другое приложение.</string>
+    <string name="columbus_setting_additional_settings_title">Чувствительность Короткого касания</string>
+    <string name="columbus_setting_app_selection_help_text">Выберите приложение, которое будет открываться при двойном касании задней панели вашего устройства. Если вы удалите его, то функция короткого касания будет отключена, пока вы не выберете другое.</string>
     <string name="columbus_setting_app_shortcut_selection_help_text">Выберите действие, которое будет выполняться после запуска приложения коротким касанием.</string>
-    <string name="columbus_setting_enable_switch_title">Использовать короткое касание</string>
+    <string name="columbus_setting_enable_switch_title">Короткое касание</string>
     <string name="columbus_setting_sensitivity_title">Требуются более сильные касания</string>
     <!-- No storage restrict -->
-    <string name="no_storage_restrict_title">Без ограничения на хранение</string>
-    <string name="no_storage_restrict_summary">Удалите ограничение при выборе папок через Storage Access Framework. Может быть удобным в некоторых случаях, но может привести к утечкам конфиденциальности.</string>
+    <string name="no_storage_restrict_title">Без ограничений хранилища</string>
+    <string name="no_storage_restrict_summary">Убрать ограничения при выборе папок через Storage Access Framework. Может быть удобным в некоторых случаях, но может привести к утечкам конфиденциальности.</string>
     <!-- Hotspot -->
     <string name="wifi_hotspot_hidden_ssid_title">Скрытая сеть</string>
     <string name="wifi_hotspot_hidden_ssid_summary">Имя вашей мобильной точки доступа не будет отображаться в списке доступных сетей WLAN.</string>
