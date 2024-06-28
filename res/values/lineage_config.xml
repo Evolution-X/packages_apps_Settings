@@ -55,4 +55,7 @@
 
     <!-- Whether to show vendor security patch level -->
     <bool name="config_show_vendor_patch_level" translatable="false">true</bool>
+
+    <!-- Whether Wi-Fi hotspot instant should be shown or not. -->
+    <bool name="config_show_wifi_hotspot_instant">true</bool>
 </resources>
