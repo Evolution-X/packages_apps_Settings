@@ -111,7 +111,7 @@
     <!-- Label for a numbered SIM card.  [CHAR LIMIT=40] -->
     <!-- Hide screen capture status -->
     <string name="hide_screen_capture_status_title">Ekran yakalama durumunu gizle</string>
-    <string name="hide_screen_capture_status_summary">Tüm uygulamalardan ekran yakalama durumunu gizleyin. Bazı durumlarda kullanışlı olabilir ancak gizlilik sızıntılarına yol açabilir. Değişikliğin etkili olması için uygulamaları yeniden başlatmanız gerekir.</string>
+    <string name="hide_screen_capture_status_summary">Tüm uygulamalardan ekran yakalama ve ekran kayıt durumunu gizleyin. Bazı durumlarda kullanışlı olabilir ancak gizlilik sızıntılarına yol açabilir. Değişikliğin etkili olması için uygulamaları yeniden başlatmanız gerekir.</string>
     <!-- Doze on double tap -->
     <string name="double_tap_title">Çift dokunma</string>
     <string name="doze_double_tap_title">Telefonu kontrol etmek için çift dokunun</string>
@@ -189,6 +189,16 @@
     <!-- Pulse on music track change -->
     <string name="pulse_on_new_tracks_title">Müzik şeridi</string>
     <string name="pulse_on_new_tracks_summary">Yeni bir müzik parçası çalındığında Ortam Ekranını Göster</string>
+    <!-- Hotspot -->
+    <string name="wifi_hotspot_hidden_ssid_title">Gizli ağ</string>
+    <string name="wifi_hotspot_hidden_ssid_summary">Hotspot isminiz uygun WLAN ağları listesinde görünmeyecek.</string>
+    <!-- General -->
+    <string name="copied_to_clipboard">Panoya kopyalandı</string>
+    <string name="longpress_to_clipboard">Kopyalamak için uzun basın</string>
+    <!-- Increasing ring tone volume -->
+    <string name="increasing_ring_volume_option_title">Artan zil sesi</string>
+    <string name="increasing_ring_min_volume_title">Başlangıç sesi</string>
+    <string name="increasing_ring_ramp_up_time_title">Yükseliş süresi</string>
     <!-- Columbus -->
     <string name="columbus_gesture_detected">Hızlı dokunma algılandı!</string>
     <string name="columbus_gesture_enrollment_complete">Tamamlandı</string>
@@ -236,14 +246,4 @@
     <!-- No storage restrict -->
     <string name="no_storage_restrict_title">Depolama kısıtlaması yok</string>
     <string name="no_storage_restrict_summary">Depolama Erişim Çerçevesi aracılığıyla klasör seçerken kısıtlamayı kaldırın. Bazı durumlarda kullanışlı olabilir ancak gizlilik sızıntılarına yol açabilir.</string>
-    <!-- Hotspot -->
-    <string name="wifi_hotspot_hidden_ssid_title">Gizli ağ</string>
-    <string name="wifi_hotspot_hidden_ssid_summary">Hotspot isminiz uygun WLAN ağları listesinde görünmeyecek.</string>
-    <!-- General -->
-    <string name="copied_to_clipboard">Panoya kopyalandı</string>
-    <string name="longpress_to_clipboard">Kopyalamak için uzun basın</string>
-    <!-- Increasing ring tone volume -->
-    <string name="increasing_ring_volume_option_title">Artan zil sesi</string>
-    <string name="increasing_ring_min_volume_title">Başlangıç sesi</string>
-    <string name="increasing_ring_ramp_up_time_title">Yükseliş süresi</string>
 </resources>
