@@ -191,6 +191,16 @@
     <!-- Pulse on music track change -->
     <string name="pulse_on_new_tracks_title">Підсвічувати музику</string>
     <string name="pulse_on_new_tracks_summary">Підсвічувати екран коли відтворюється новий музичний трек</string>
+    <!-- Hotspot -->
+    <string name="wifi_hotspot_hidden_ssid_title">Прихована мережа</string>
+    <string name="wifi_hotspot_hidden_ssid_summary">Назва вашої точки доступу не буде показуватися в списку доступних мереж WLAN.</string>
+    <!-- General -->
+    <string name="copied_to_clipboard">Скопійовано до буферу обміну</string>
+    <string name="longpress_to_clipboard">Довге натискання для копіювання</string>
+    <!-- Increasing ring tone volume -->
+    <string name="increasing_ring_volume_option_title">Наростаюча гучність дзвінка</string>
+    <string name="increasing_ring_min_volume_title">Початкова гучність</string>
+    <string name="increasing_ring_ramp_up_time_title">Час наростання</string>
     <!-- Columbus -->
     <string name="columbus_gesture_detected">Виявлено Quick Tap!</string>
     <string name="columbus_gesture_enrollment_complete">Готово</string>
@@ -238,14 +248,4 @@
     <!-- No storage restrict -->
     <string name="no_storage_restrict_title">Немає обмеження сховища</string>
     <string name="no_storage_restrict_summary">Видаляйте обмеження під час вибору тек через функцію доступу до сховища даних. Деякі випадки може бути зручним, але може призвести до покриття конфіденційності.</string>
-    <!-- Hotspot -->
-    <string name="wifi_hotspot_hidden_ssid_title">Прихована мережа</string>
-    <string name="wifi_hotspot_hidden_ssid_summary">Назва вашої точки доступу не буде показуватися в списку доступних мереж WLAN.</string>
-    <!-- General -->
-    <string name="copied_to_clipboard">Скопійовано до буферу обміну</string>
-    <string name="longpress_to_clipboard">Довге натискання для копіювання</string>
-    <!-- Increasing ring tone volume -->
-    <string name="increasing_ring_volume_option_title">Наростаюча гучність дзвінка</string>
-    <string name="increasing_ring_min_volume_title">Початкова гучність</string>
-    <string name="increasing_ring_ramp_up_time_title">Час наростання</string>
 </resources>
