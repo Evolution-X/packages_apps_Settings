@@ -111,7 +111,7 @@
     <!-- Label for a numbered SIM card.  [CHAR LIMIT=40] -->
     <!-- Hide screen capture status -->
     <string name="hide_screen_capture_status_title">Skryť stav snímania obrazovky</string>
-    <string name="hide_screen_capture_status_summary">Skryť stav snímania obrazovky zo všetkých aplikácií. V niektorých prípadoch to môže byť vhodné, ale môže to viesť k úniku súkromia. Je potrebné reštartovať aplikácie, aby sa zmena prejavila.</string>
+    <string name="hide_screen_capture_status_summary">Skryť stav snímania obrazovky a nahrávania obrazovky zo všetkých aplikácií. V niektorých prípadoch to môže byť vhodné, ale môže to viesť k úniku súkromia. Je potrebné reštartovať aplikácie, aby sa zmena prejavila.</string>
     <!-- Doze on double tap -->
     <string name="double_tap_title">Dvojklik</string>
     <string name="doze_double_tap_title">Kontrola telefónu dvojitým klepnutím</string>
@@ -191,6 +191,16 @@
     <!-- Pulse on music track change -->
     <string name="pulse_on_new_tracks_title">Hudobné oznámenie</string>
     <string name="pulse_on_new_tracks_summary">Zobraziť Ambientní displej po spustení novej hudobnej skladby</string>
+    <!-- Hotspot -->
+    <string name="wifi_hotspot_hidden_ssid_title">Skrytá sieť</string>
+    <string name="wifi_hotspot_hidden_ssid_summary">Názov vášho mobilného hotspotu sa nezobrazí v zozname dostupných WLAN sietí.</string>
+    <!-- General -->
+    <string name="copied_to_clipboard">Skopírované do schránky</string>
+    <string name="longpress_to_clipboard">Dlhým stlačením skopírujete</string>
+    <!-- Increasing ring tone volume -->
+    <string name="increasing_ring_volume_option_title">Zvyšovanie hlasitosti zvonenia</string>
+    <string name="increasing_ring_min_volume_title">Začiatočná hlasitosť</string>
+    <string name="increasing_ring_ramp_up_time_title">Doba zvyšovania</string>
     <!-- Columbus -->
     <string name="columbus_gesture_detected">Bolo zaznamenané rýchle klepnutie!</string>
     <string name="columbus_gesture_enrollment_complete">Hotovo</string>
@@ -238,14 +248,4 @@
     <!-- No storage restrict -->
     <string name="no_storage_restrict_title">Úložisko bez obmedzení</string>
     <string name="no_storage_restrict_summary">Odstrániť obmedzenia pri výbere priečinkov prostredníctvom rámca Storage Access Framework. V niektorých prípadoch to môže byť vhodné, ale môže to viesť k úniku súkromia.</string>
-    <!-- Hotspot -->
-    <string name="wifi_hotspot_hidden_ssid_title">Skrytá sieť</string>
-    <string name="wifi_hotspot_hidden_ssid_summary">Názov vášho mobilného hotspotu sa nezobrazí v zozname dostupných WLAN sietí.</string>
-    <!-- General -->
-    <string name="copied_to_clipboard">Skopírované do schránky</string>
-    <string name="longpress_to_clipboard">Dlhým stlačením skopírujete</string>
-    <!-- Increasing ring tone volume -->
-    <string name="increasing_ring_volume_option_title">Zvyšovanie hlasitosti zvonenia</string>
-    <string name="increasing_ring_min_volume_title">Začiatočná hlasitosť</string>
-    <string name="increasing_ring_ramp_up_time_title">Doba zvyšovania</string>
 </resources>
