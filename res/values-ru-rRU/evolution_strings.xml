@@ -191,6 +191,16 @@
     <!-- Pulse on music track change -->
     <string name="pulse_on_new_tracks_title">Текущий трек</string>
     <string name="pulse_on_new_tracks_summary">Показывать Активный экран при воспроизведении нового трека</string>
+    <!-- Hotspot -->
+    <string name="wifi_hotspot_hidden_ssid_title">Скрытая сеть</string>
+    <string name="wifi_hotspot_hidden_ssid_summary">Имя вашей мобильной точки доступа не будет отображаться в списке доступных сетей WLAN.</string>
+    <!-- General -->
+    <string name="copied_to_clipboard">Скопировано в буфер обмена</string>
+    <string name="longpress_to_clipboard">Удерживайте для копирования</string>
+    <!-- Increasing ring tone volume -->
+    <string name="increasing_ring_volume_option_title">Возрастающая громкость звонка</string>
+    <string name="increasing_ring_min_volume_title">Начальная громкость</string>
+    <string name="increasing_ring_ramp_up_time_title">Время повышения громкости</string>
     <!-- Columbus -->
     <string name="columbus_gesture_detected">Обнаружено быстрое нажатие!</string>
     <string name="columbus_gesture_enrollment_complete">Готово</string>
@@ -238,14 +248,4 @@
     <!-- No storage restrict -->
     <string name="no_storage_restrict_title">Без ограничений хранилища</string>
     <string name="no_storage_restrict_summary">Убрать ограничения при выборе папок через Storage Access Framework. Может быть удобным в некоторых случаях, но может привести к утечкам конфиденциальности.</string>
-    <!-- Hotspot -->
-    <string name="wifi_hotspot_hidden_ssid_title">Скрытая сеть</string>
-    <string name="wifi_hotspot_hidden_ssid_summary">Имя вашей мобильной точки доступа не будет отображаться в списке доступных сетей WLAN.</string>
-    <!-- General -->
-    <string name="copied_to_clipboard">Скопировано в буфер обмена</string>
-    <string name="longpress_to_clipboard">Удерживайте для копирования</string>
-    <!-- Increasing ring tone volume -->
-    <string name="increasing_ring_volume_option_title">Возрастающая громкость звонка</string>
-    <string name="increasing_ring_min_volume_title">Начальная громкость</string>
-    <string name="increasing_ring_ramp_up_time_title">Время повышения громкости</string>
 </resources>
