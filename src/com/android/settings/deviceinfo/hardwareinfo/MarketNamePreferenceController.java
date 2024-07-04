@@ -48,6 +48,6 @@ public class MarketNamePreferenceController extends BasePreferenceController {
 
     @Override
     public CharSequence getSummary() {
-        return SystemProperties.get("ro.product.marketname");
+        return SystemProperties.get("ro.product.marketname", Build.DEVICE);
     }
 }
