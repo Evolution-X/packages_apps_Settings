@@ -37,6 +37,7 @@ import android.net.wifi.p2p.WifiP2pManager.Channel;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.os.SystemProperties;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Slog;
@@ -84,6 +85,7 @@ public final class WifiDisplaySettings extends SettingsPreferenceFragment implem
     private static final boolean DEBUG = false;
 
     private static final int MENU_ID_ENABLE_WIFI_DISPLAY = Menu.FIRST;
+    private static final int MENU_ID_DISABLE_CONFIRM_DIALOGUE = Menu.FIRST + 1;
 
     private static final int CHANGE_SETTINGS = 1 << 0;
     private static final int CHANGE_ROUTES = 1 << 1;
@@ -104,6 +106,7 @@ public final class WifiDisplaySettings extends SettingsPreferenceFragment implem
     private int mPendingChanges;
 
     private boolean mWifiDisplayOnSetting;
+    private boolean mDisableConfirmDialogue;
     private WifiDisplayStatus mWifiDisplayStatus;
 
     private TextView mEmptyView;
@@ -203,6 +206,10 @@ public final class WifiDisplaySettings extends SettingsPreferenceFragment implem
                     R.string.wifi_display_enable_menu_item);
             item.setCheckable(true);
             item.setChecked(mWifiDisplayOnSetting);
+            MenuItem itemSecond = menu.add(Menu.NONE, MENU_ID_DISABLE_CONFIRM_DIALOGUE, 0,
+                    R.string.mirroring_confirmation_disable_menu_item);
+            itemSecond.setCheckable(true);
+            itemSecond.setChecked(mDisableConfirmDialogue);
         }
         super.onCreateOptionsMenu(menu, inflater);
     }
@@ -215,6 +222,13 @@ public final class WifiDisplaySettings extends SettingsPreferenceFragment implem
                 item.setChecked(mWifiDisplayOnSetting);
                 Settings.Global.putInt(getContentResolver(),
                         Settings.Global.WIFI_DISPLAY_ON, mWifiDisplayOnSetting ? 1 : 0);
+                return true;
+            case MENU_ID_DISABLE_CONFIRM_DIALOGUE:
+                mDisableConfirmDialogue = !item.isChecked();
+                item.setChecked(mDisableConfirmDialogue);
+                SystemProperties.set(
+                        "persist.sys.disable_mirroring_confirmation_dialog",
+                        Boolean.toString(mDisableConfirmDialogue));
                 return true;
         }
         return super.onOptionsItemSelected(item);
@@ -253,6 +267,8 @@ public final class WifiDisplaySettings extends SettingsPreferenceFragment implem
                     Settings.Global.WIFI_DISPLAY_CERTIFICATION_ON, 0) != 0;
             mWpsConfig = Settings.Global.getInt(getContentResolver(),
                     Settings.Global.WIFI_DISPLAY_WPS_CONFIG, WpsInfo.INVALID);
+            mDisableConfirmDialogue = SystemProperties.getBoolean(
+                    "persist.sys.disable_mirroring_confirmation_dialog", false);
 
             // The wifi display enabled setting may have changed.
             invalidateOptions = true;
