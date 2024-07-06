@@ -111,7 +111,7 @@
     <!-- Label for a numbered SIM card.  [CHAR LIMIT=40] -->
     <!-- Hide screen capture status -->
     <string name="hide_screen_capture_status_title">隱藏螢幕截圖狀態</string>
-    <string name="hide_screen_capture_status_summary">隱藏所有應用程式的螢幕截圖狀態。 這在某些情況下很方便，但可能會導致隱私洩露。變更此設定後，您可能需要重新啟動應用程式才能使變更生效。</string>
+    <string name="hide_screen_capture_status_summary">隱藏所有應用程式的螢幕截圖和螢幕錄製狀態。在某些情況下可能很方便，但可能會導致隱私洩漏。變更此設定後，您可能需要重新啟動應用程式才能使變更生效。</string>
     <!-- Doze on double tap -->
     <string name="double_tap_title">點擊兩下</string>
     <string name="doze_double_tap_title">點擊兩下以查看手機</string>
@@ -188,6 +188,16 @@
     <!-- Pulse on music track change -->
     <string name="pulse_on_new_tracks_title">音樂通知提示</string>
     <string name="pulse_on_new_tracks_summary">播放新的音樂曲目時顯示微光螢幕</string>
+    <!-- Hotspot -->
+    <string name="wifi_hotspot_hidden_ssid_title">隱藏的網路</string>
+    <string name="wifi_hotspot_hidden_ssid_summary">您的無線基地台名稱將不會顯示 WLAN 網路列表中。</string>
+    <!-- General -->
+    <string name="copied_to_clipboard">已複製到剪貼簿</string>
+    <string name="longpress_to_clipboard">長按複製</string>
+    <!-- Increasing ring tone volume -->
+    <string name="increasing_ring_volume_option_title">漸強鈴聲音量</string>
+    <string name="increasing_ring_min_volume_title">起始音量</string>
+    <string name="increasing_ring_ramp_up_time_title">漸強時間</string>
     <!-- Columbus -->
     <string name="columbus_gesture_detected">偵測到快速輕觸手勢！</string>
     <string name="columbus_gesture_enrollment_complete">完成</string>
@@ -235,14 +245,4 @@
     <!-- No storage restrict -->
     <string name="no_storage_restrict_title">無儲存限制</string>
     <string name="no_storage_restrict_summary">移除選取資料夾的儲存空間存取限制。在某些情況下可能很方便，但可能會導致隱私洩漏。</string>
-    <!-- Hotspot -->
-    <string name="wifi_hotspot_hidden_ssid_title">隱藏的網路</string>
-    <string name="wifi_hotspot_hidden_ssid_summary">您的無線基地台名稱將不會顯示 WLAN 網路列表中。</string>
-    <!-- General -->
-    <string name="copied_to_clipboard">已複製到剪貼簿</string>
-    <string name="longpress_to_clipboard">長按複製</string>
-    <!-- Increasing ring tone volume -->
-    <string name="increasing_ring_volume_option_title">漸強鈴聲音量</string>
-    <string name="increasing_ring_min_volume_title">起始音量</string>
-    <string name="increasing_ring_ramp_up_time_title">漸強時間</string>
 </resources>
