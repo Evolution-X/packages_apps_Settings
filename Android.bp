@@ -53,6 +53,7 @@ android_library {
     ],
 
     srcs: [
+        "src/**/*.aidl",
         "src/**/*.java",
         "src/**/*.kt",
         "Evolver/src/**/*.java",
