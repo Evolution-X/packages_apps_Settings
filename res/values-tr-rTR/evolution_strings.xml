@@ -246,4 +246,6 @@
     <!-- No storage restrict -->
     <string name="no_storage_restrict_title">Depolama kısıtlaması yok</string>
     <string name="no_storage_restrict_summary">Depolama Erişim Çerçevesi aracılığıyla klasör seçerken kısıtlamayı kaldırın. Bazı durumlarda kullanışlı olabilir ancak gizlilik sızıntılarına yol açabilir.</string>
+    <!-- Wifi Display settings. The title of a menu item to disable mirroring confimration [CHAR LIMIT=40] -->
+    <string name="mirroring_confirmation_disable_menu_item">Yansıtma onayını devre dışı bırak</string>
 </resources>
