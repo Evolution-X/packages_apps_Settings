@@ -247,4 +247,6 @@ Les notifications flottantes seront automatiquement désactivées.</string>
     <!-- No storage restrict -->
     <string name="no_storage_restrict_title">Aucune restriction de stockage</string>
     <string name="no_storage_restrict_summary">Supprimez la restriction lors de la sélection de dossiers via le cadre d\'accès de stockage. Peut être pratique dans certains cas, mais peut entraîner des fuites de confidentialité.</string>
+    <!-- Wifi Display settings. The title of a menu item to disable mirroring confimration [CHAR LIMIT=40] -->
+    <string name="mirroring_confirmation_disable_menu_item">Désactiver la confirmation du miroir</string>
 </resources>

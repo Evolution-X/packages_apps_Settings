@@ -111,7 +111,7 @@
     <!-- Label for a numbered SIM card.  [CHAR LIMIT=40] -->
     <!-- Hide screen capture status -->
     <string name="hide_screen_capture_status_title">Képernyőfelvétel-állapot elrejtése</string>
-    <string name="hide_screen_capture_status_summary">Az összes alkalmazás elől elrejti a képenyőfelvétel-státuszt. Bizonyos esetekben kényelmes lehet, de adatszivárgáshoz vezethet. A módosítás életbe lépéséhez újra kell indítani az alkalmazásokat.</string>
+    <string name="hide_screen_capture_status_summary">Az összes alkalmazás elől elrejti a képenyőfelvétel-státuszt és a képernyőkép-státuszt. Bizonyos esetekben kényelmes lehet, de adatszivárgáshoz vezethet. A módosítás életbe lépéséhez újra kell indítani az alkalmazásokat.</string>
     <!-- Doze on double tap -->
     <string name="double_tap_title">Duplakopp</string>
     <string name="doze_double_tap_title">Gyorsellenőrzés dupla érintéssel</string>
@@ -189,6 +189,16 @@
     <!-- Pulse on music track change -->
     <string name="pulse_on_new_tracks_title">Zene-jelzőszalag</string>
     <string name="pulse_on_new_tracks_summary">A Környezeti kijelző megjelenítése, ha új zeneszám kerül lejátszásra</string>
+    <!-- Hotspot -->
+    <string name="wifi_hotspot_hidden_ssid_title">Rejtett hálózat</string>
+    <string name="wifi_hotspot_hidden_ssid_summary">Az Ön által létrehozott hotspot neve nem fog megjelenni a mások által elérhető WLAN-hálózatok listájában.</string>
+    <!-- General -->
+    <string name="copied_to_clipboard">Vágólapra másolva</string>
+    <string name="longpress_to_clipboard">Másolás hosszannyomással</string>
+    <!-- Increasing ring tone volume -->
+    <string name="increasing_ring_volume_option_title">Emelkedő csengőhang</string>
+    <string name="increasing_ring_min_volume_title">Kezdeti hangerő</string>
+    <string name="increasing_ring_ramp_up_time_title">Felfutási idő</string>
     <!-- Columbus -->
     <string name="columbus_gesture_detected">Gyorskoppintás észlelhető!</string>
     <string name="columbus_gesture_enrollment_complete">Kész</string>
@@ -236,14 +246,6 @@
     <!-- No storage restrict -->
     <string name="no_storage_restrict_title">Nincs tárhelykorlátozás</string>
     <string name="no_storage_restrict_summary">Távolítsa el a korlátozást, amikor a Tárhelyhozzáférés Keretrendszer segítségével választ ki mappákat. Bizonyos esetekben kényelmes lehet, de adatszivárgáshoz vezethet.</string>
-    <!-- Hotspot -->
-    <string name="wifi_hotspot_hidden_ssid_title">Rejtett hálózat</string>
-    <string name="wifi_hotspot_hidden_ssid_summary">Az Ön által létrehozott hotspot neve nem fog megjelenni a mások által elérhető WLAN-hálózatok listájában.</string>
-    <!-- General -->
-    <string name="copied_to_clipboard">Vágólapra másolva</string>
-    <string name="longpress_to_clipboard">Másolás hosszannyomással</string>
-    <!-- Increasing ring tone volume -->
-    <string name="increasing_ring_volume_option_title">Emelkedő csengőhang</string>
-    <string name="increasing_ring_min_volume_title">Kezdeti hangerő</string>
-    <string name="increasing_ring_ramp_up_time_title">Felfutási idő</string>
+    <!-- Wifi Display settings. The title of a menu item to disable mirroring confimration [CHAR LIMIT=40] -->
+    <string name="mirroring_confirmation_disable_menu_item">Megerősítés nélküli tükrözés</string>
 </resources>
