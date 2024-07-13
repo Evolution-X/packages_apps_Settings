@@ -251,4 +251,17 @@
     <!-- Game space -->
     <string name="game_space_title">Játéktér</string>
     <string name="game_space_summary">Megnöveli az Ön játékélményét</string>
+    <!-- AOD/Extra dim Schedule -->
+    <string name="extra_dim_schedule_title">Időzítés</string>
+    <string name="string_disabled">Kikapcsolva</string>
+    <string name="always_on_display_schedule_title">A \'Mindig bekapcsolva\' ütemezése</string>
+    <string name="always_on_display_schedule_sunset">Napnyugta</string>
+    <string name="always_on_display_schedule_sunrise">Napkelte</string>
+    <string name="always_on_display_schedule_mixed_sunset">Napnyugtától egy bizonyos ideig bekapcsol</string>
+    <string name="always_on_display_schedule_mixed_sunrise">Egy adott időponttól Napkeltéig kapcsol be</string>
+    <!-- DC Dimming -->
+    <string name="dc_dimming_title">DC-kiegyenlítés</string>
+    <string name="dc_dimming_info">Csökkenti a szem megerőltetését gyenge fényviszonyok mellett a képernyővillogás csökkentésével. Rossz képminőséget és gyenge színeket vagy magasabb akkufogyasztást okozhat.</string>
+    <string name="dc_dimming_main_switch_title">A DC-kiegyenlítés használata</string>
+    <string name="keywords_display_dc_dimming">DC-kiegyenlítés, vibrálás, szem, megterhelés, mentesítés</string>
 </resources>
