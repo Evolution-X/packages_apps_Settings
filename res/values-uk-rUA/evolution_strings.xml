@@ -250,4 +250,7 @@
     <string name="no_storage_restrict_summary">Видаляйте обмеження під час вибору тек через функцію доступу до сховища даних. Деякі випадки може бути зручним, але може призвести до покриття конфіденційності.</string>
     <!-- Wifi Display settings. The title of a menu item to disable mirroring confimration [CHAR LIMIT=40] -->
     <string name="mirroring_confirmation_disable_menu_item">Вимкнути підтвердження віддзеркалення</string>
+    <!-- Game space -->
+    <string name="game_space_title">Ігровий простір</string>
+    <string name="game_space_summary">Покращіть свій ігровий досвід</string>
 </resources>
