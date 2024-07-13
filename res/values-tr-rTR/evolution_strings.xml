@@ -251,4 +251,17 @@
     <!-- Game space -->
     <string name="game_space_title">Oyun alanı</string>
     <string name="game_space_summary">Oyun deneyiminizi geliştirin</string>
+    <!-- AOD/Extra dim Schedule -->
+    <string name="extra_dim_schedule_title">Zamanla</string>
+    <string name="string_disabled">Devre dışı</string>
+    <string name="always_on_display_schedule_title">Her zaman açık ekranı programla</string>
+    <string name="always_on_display_schedule_sunset">Gün batımı</string>
+    <string name="always_on_display_schedule_sunrise">Gün doğumu</string>
+    <string name="always_on_display_schedule_mixed_sunset">Gün batımından bir zamana kadar açılıyor</string>
+    <string name="always_on_display_schedule_mixed_sunrise">Bir zamandan gün doğumuna kadar açılıyor</string>
+    <!-- DC Dimming -->
+    <string name="dc_dimming_title">DC Karartma</string>
+    <string name="dc_dimming_info">Ekran titremesini en aza indirerek düşük ışık koşullarında göz yorgunluğunu azaltır. Düşük görüntü kalitesi ve zayıf renk üretimine veya daha yüksek güç tüketimine neden olabilir.</string>
+    <string name="dc_dimming_main_switch_title">DC Karartmayı kullan</string>
+    <string name="keywords_display_dc_dimming">dc karartma, anti, titreme, göz, zorlanma</string>
 </resources>
