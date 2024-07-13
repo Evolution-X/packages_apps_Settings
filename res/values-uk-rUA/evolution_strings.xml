@@ -253,4 +253,17 @@
     <!-- Game space -->
     <string name="game_space_title">Ігровий простір</string>
     <string name="game_space_summary">Покращіть свій ігровий досвід</string>
+    <!-- AOD/Extra dim Schedule -->
+    <string name="extra_dim_schedule_title">Розклад</string>
+    <string name="string_disabled">Вимкнено</string>
+    <string name="always_on_display_schedule_title">Розклад роботи Завжди включеного екрану</string>
+    <string name="always_on_display_schedule_sunset">Захід сонця</string>
+    <string name="always_on_display_schedule_sunrise">Схід сонця</string>
+    <string name="always_on_display_schedule_mixed_sunset">Від заходу до заданого часу</string>
+    <string name="always_on_display_schedule_mixed_sunrise">Від заданого часу до світанку</string>
+    <!-- DC Dimming -->
+    <string name="dc_dimming_title">DC Затемнення</string>
+    <string name="dc_dimming_info">Знижує навантаження на очі при низькому освітленні шляхом мінімізації мерехтіння екрану. Може призвести до зниження якості зображення та поганого відтворення кольорів або збільшення енергоспоживання.</string>
+    <string name="dc_dimming_main_switch_title">Використати DC Затемнення</string>
+    <string name="keywords_display_dc_dimming">dc затемнення, проти, мерехтіння, очі, навантаження</string>
 </resources>
