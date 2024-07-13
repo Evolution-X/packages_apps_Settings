@@ -344,9 +344,7 @@ public class WifiTetherSettings extends RestrictedDashboardFragment
                 mWifiTetherAutoOffPreferenceController.isEnabled());
         configBuilder.setHiddenSsid(mHiddenSsidPrefController.isHiddenSsidEnabled());
         mClientPrefController.updateConfig(configBuilder);
-        if (!mWifiTetherViewModel.isSpeedFeatureAvailable()) {
-            mApBandPreferenceController.setupBands(configBuilder);
-        }
+        mApBandPreferenceController.setupBands(configBuilder);
         return configBuilder.build();
     }
 

@@ -125,7 +125,7 @@ public class WifiTetherApBandPreferenceController extends WifiTetherBasePreferen
             if (is24GHzSupported && is5GHzSupported) bands.add("4");
             if (is24GHzSupported && is6GHzSupported) bands.add("5");
         }
-        return bands.toArray(new String[0]);
+        return bands.toArray(new String[bands.size()]);
     }
 
     private String[] getSupportedApBandSummaries() {
@@ -144,7 +144,7 @@ public class WifiTetherApBandPreferenceController extends WifiTetherBasePreferen
             addCombinedBand(bands, is24GHzSupported, is5GHzSupported, R.string.wifi_band_24ghz_and_5ghz, res);
             addCombinedBand(bands, is24GHzSupported, is6GHzSupported, R.string.wifi_band_24ghz_and_6ghz, res);
         }
-        return bands.toArray(new String[0]);
+        return bands.toArray(new String[bands.size()]);
     }
 
     private void addCombinedBand(List<String> bands, boolean band1Supported, boolean band2Supported, int resourceId, Resources res) {
