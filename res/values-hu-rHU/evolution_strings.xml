@@ -248,4 +248,7 @@
     <string name="no_storage_restrict_summary">Távolítsa el a korlátozást, amikor a Tárhelyhozzáférés Keretrendszer segítségével választ ki mappákat. Bizonyos esetekben kényelmes lehet, de adatszivárgáshoz vezethet.</string>
     <!-- Wifi Display settings. The title of a menu item to disable mirroring confimration [CHAR LIMIT=40] -->
     <string name="mirroring_confirmation_disable_menu_item">Megerősítés nélküli tükrözés</string>
+    <!-- Game space -->
+    <string name="game_space_title">Játéktér</string>
+    <string name="game_space_summary">Megnöveli az Ön játékélményét</string>
 </resources>
