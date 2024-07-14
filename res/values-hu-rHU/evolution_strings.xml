@@ -174,6 +174,7 @@
     <string name="thin_label">Vékony</string>
     <string name="thick_label">Vastag</string>
     <!-- Hardware info -->
+    <string name="device_market_name">Az Áruház neve</string>
     <string name="soc_model">CPU modell</string>
     <string name="total_ram">Az összes RAM</string>
     <!-- Default getTimeSpentInApp string for Wellbeing to display. [CHAR LIMIT=NONE] -->
@@ -189,10 +190,7 @@
     <!-- Pulse on music track change -->
     <string name="pulse_on_new_tracks_title">Zene-jelzőszalag</string>
     <string name="pulse_on_new_tracks_summary">A Környezeti kijelző megjelenítése, ha új zeneszám kerül lejátszásra</string>
-    <!-- Hotspot -->
-    <string name="wifi_hotspot_hidden_ssid_title">Rejtett hálózat</string>
-    <string name="wifi_hotspot_hidden_ssid_summary">Az Ön által létrehozott hotspot neve nem fog megjelenni a mások által elérhető WLAN-hálózatok listájában.</string>
-    <!-- General -->
+    <!-- Clipboard -->
     <string name="copied_to_clipboard">Vágólapra másolva</string>
     <string name="longpress_to_clipboard">Másolás hosszannyomással</string>
     <!-- Increasing ring tone volume -->
@@ -251,8 +249,8 @@
     <!-- Game space -->
     <string name="game_space_title">Játéktér</string>
     <string name="game_space_summary">Megnöveli az Ön játékélményét</string>
-    <!-- AOD/Extra dim Schedule -->
-    <string name="extra_dim_schedule_title">Időzítés</string>
+    <!-- AOD/Extra dim schedule -->
+    <string name="extra_dim_schedule_title">Időzített Extrasötét</string>
     <string name="string_disabled">Kikapcsolva</string>
     <string name="always_on_display_schedule_title">A \'Mindig bekapcsolva\' ütemezése</string>
     <string name="always_on_display_schedule_sunset">Napnyugta</string>
@@ -264,4 +262,21 @@
     <string name="dc_dimming_info">Csökkenti a szem megerőltetését gyenge fényviszonyok mellett a képernyővillogás csökkentésével. Rossz képminőséget és gyenge színeket vagy magasabb akkufogyasztást okozhat.</string>
     <string name="dc_dimming_main_switch_title">A DC-kiegyenlítés használata</string>
     <string name="keywords_display_dc_dimming">DC-kiegyenlítés, vibrálás, szem, megterhelés, mentesítés</string>
+    <!-- Hotspot -->
+    <string name="wifi_hotspot_hidden_ssid_title">Rejtett hálózat</string>
+    <string name="wifi_hotspot_hidden_ssid_summary">Az Ön által létrehozott hotspot neve nem fog megjelenni a mások által elérhető WLAN-hálózatok listájában.</string>
+    <string name="wifi_hotspot_ap_band_title">AP-sáv</string>
+    <string name="wifi_hotspot_client_manager_title">Csatlakozó készülékek</string>
+    <string name="wifi_hotspot_client_manager_summary">A hotspothoz csatlakoztatott készülékek listája és kezelése</string>
+    <string name="wifi_hotspot_client_manager_list_only_summary">A hotspothoz csatlakoztatott készülékek listája</string>
+    <string name="wifi_hotspot_client_limit_title">Maximálisan csatlakoztatható készülék</string>
+    <string name="wifi_hotspot_blocked_clients_list_title">Blokkolt készülékek</string>
+    <string name="wifi_hotspot_connected_clients_list_title">Csatlakoztatott készülékek</string>
+    <string name="wifi_hotspot_block_client_dialog_title">Készüléktiltás</string>
+    <string name="wifi_hotspot_block_client_dialog_text">Ez a művelet lecsatlakoztatja \"<xliff:g id="device_name">%1$s</xliff:g>\" készüléket erről a hotspotról és tiltólistához adja</string>
+    <string name="wifi_hotspot_unblock_client_dialog_title">Készülékfeloldás</string>
+    <string name="wifi_hotspot_unblock_client_dialog_text">\"<xliff:g id="device_name">%1$s</xliff:g>\"-készülék kapcsolódhat ehhez a hotspothoz</string>
+    <string name="wifi_hotspot_client_manager_footer_text">Jelenleg nincs elérhető kliens. Amint lesz akár csatlakoztatott, akár letiltott, az itt fog megjelenni.</string>
+    <string name="wifi_band_24ghz_and_5ghz">2.4 GHz és 5 GHz</string>
+    <string name="wifi_band_24ghz_and_6ghz">2.4 GHz és 6 GHz</string>
 </resources>
