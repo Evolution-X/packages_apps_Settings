@@ -175,6 +175,7 @@ Les notifications flottantes seront automatiquement désactivées.</string>
     <string name="thin_label">Fine</string>
     <string name="thick_label">Épaisse</string>
     <!-- Hardware info -->
+    <string name="device_market_name">Nom du marché</string>
     <string name="soc_model">Modèle SoC</string>
     <string name="total_ram">Mémoire RAM totale</string>
     <!-- Default getTimeSpentInApp string for Wellbeing to display. [CHAR LIMIT=NONE] -->
@@ -190,10 +191,7 @@ Les notifications flottantes seront automatiquement désactivées.</string>
     <!-- Pulse on music track change -->
     <string name="pulse_on_new_tracks_title">Indicateur de musique</string>
     <string name="pulse_on_new_tracks_summary">Allume l\'écran en mode Ambiant quand une nouvelle piste musicale est jouée</string>
-    <!-- Hotspot -->
-    <string name="wifi_hotspot_hidden_ssid_title">Réseau masqué</string>
-    <string name="wifi_hotspot_hidden_ssid_summary">Le nom de votre point d\'accès n\'apparaîtra pas dans la liste des réseaux WLAN disponibles.</string>
-    <!-- General -->
+    <!-- Clipboard -->
     <string name="copied_to_clipboard">Copié dans le presse-papier</string>
     <string name="longpress_to_clipboard">Appui long pour copier</string>
     <!-- Increasing ring tone volume -->
@@ -252,8 +250,8 @@ Les notifications flottantes seront automatiquement désactivées.</string>
     <!-- Game space -->
     <string name="game_space_title">Espace jeux</string>
     <string name="game_space_summary">Améliore votre expérience de jeu</string>
-    <!-- AOD/Extra dim Schedule -->
-    <string name="extra_dim_schedule_title">Planifier</string>
+    <!-- AOD/Extra dim schedule -->
+    <string name="extra_dim_schedule_title">Horaire d\'atténuation supplémentaire</string>
     <string name="string_disabled">Désactivé</string>
     <string name="always_on_display_schedule_title">Affichage permanent programmé</string>
     <string name="always_on_display_schedule_sunset">Coucher du soleil</string>
@@ -265,4 +263,21 @@ Les notifications flottantes seront automatiquement désactivées.</string>
     <string name="dc_dimming_info">Réduit les contraintes oculaires dans des conditions de faible lumière en réduisant le scintillement de l\'écran. Peut entraîner une baisse de la qualité de l\'image et une faible production de couleurs, ou une augmentation de la consommation d\'énergie.</string>
     <string name="dc_dimming_main_switch_title">Utiliser l\'atténuation DC</string>
     <string name="keywords_display_dc_dimming">Atténuation DC, anti scintillement, fatigue occulaire</string>
+    <!-- Hotspot -->
+    <string name="wifi_hotspot_hidden_ssid_title">Réseau masqué</string>
+    <string name="wifi_hotspot_hidden_ssid_summary">Le nom de votre point d\'accès n\'apparaîtra pas dans la liste des réseaux WLAN disponibles.</string>
+    <string name="wifi_hotspot_ap_band_title">Bande du point d\'accès</string>
+    <string name="wifi_hotspot_client_manager_title">Appareils connectés</string>
+    <string name="wifi_hotspot_client_manager_summary">Lister et gérer les appareils connectés au point d\'accès</string>
+    <string name="wifi_hotspot_client_manager_list_only_summary">Lister les appareils connectés au point d\'accès</string>
+    <string name="wifi_hotspot_client_limit_title">Limite d\'appareils pouvant se connecter</string>
+    <string name="wifi_hotspot_blocked_clients_list_title">Appareils bloqués</string>
+    <string name="wifi_hotspot_connected_clients_list_title">Appareils connectés</string>
+    <string name="wifi_hotspot_block_client_dialog_title">Bloquer l\'appareil</string>
+    <string name="wifi_hotspot_block_client_dialog_text">Cette action déconnectera \"<xliff:g id="device_name">%1$s</xliff:g>\" de cet appareil et l\'ajoutera à la liste de blocage</string>
+    <string name="wifi_hotspot_unblock_client_dialog_title">Débloquer l\'appareil</string>
+    <string name="wifi_hotspot_unblock_client_dialog_text">L\'appareil \"<xliff:g id="device_name">%1$s</xliff:g>\" pourra se connecter à ce point d\'accès</string>
+    <string name="wifi_hotspot_client_manager_footer_text">Aucun client n\'est actuellement disponible. Les appareils connectés et bloqués seront répertoriés ici lorsqu\'ils seront disponibles.</string>
+    <string name="wifi_band_24ghz_and_5ghz">2,4 GHz &amp; 5 GHz</string>
+    <string name="wifi_band_24ghz_and_6ghz">2,4 GHz &amp; 6 GHz</string>
 </resources>
