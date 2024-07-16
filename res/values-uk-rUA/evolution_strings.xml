@@ -176,6 +176,7 @@
     <string name="thin_label">Тонкий</string>
     <string name="thick_label">Товстий</string>
     <!-- Hardware info -->
+    <string name="device_market_name">Ім\'я пристрою</string>
     <string name="soc_model">Модель SoC</string>
     <string name="total_ram">Об\'єм ОЗП</string>
     <!-- Default getTimeSpentInApp string for Wellbeing to display. [CHAR LIMIT=NONE] -->
@@ -191,10 +192,7 @@
     <!-- Pulse on music track change -->
     <string name="pulse_on_new_tracks_title">Підсвічувати музику</string>
     <string name="pulse_on_new_tracks_summary">Підсвічувати екран коли відтворюється новий музичний трек</string>
-    <!-- Hotspot -->
-    <string name="wifi_hotspot_hidden_ssid_title">Прихована мережа</string>
-    <string name="wifi_hotspot_hidden_ssid_summary">Назва вашої точки доступу не буде показуватися в списку доступних мереж WLAN.</string>
-    <!-- General -->
+    <!-- Clipboard -->
     <string name="copied_to_clipboard">Скопійовано до буферу обміну</string>
     <string name="longpress_to_clipboard">Довге натискання для копіювання</string>
     <!-- Increasing ring tone volume -->
@@ -253,8 +251,8 @@
     <!-- Game space -->
     <string name="game_space_title">Ігровий простір</string>
     <string name="game_space_summary">Покращіть свій ігровий досвід</string>
-    <!-- AOD/Extra dim Schedule -->
-    <string name="extra_dim_schedule_title">Розклад</string>
+    <!-- AOD/Extra dim schedule -->
+    <string name="extra_dim_schedule_title">Додатковий режим затемнення</string>
     <string name="string_disabled">Вимкнено</string>
     <string name="always_on_display_schedule_title">Розклад роботи Завжди включеного екрану</string>
     <string name="always_on_display_schedule_sunset">Захід сонця</string>
@@ -266,4 +264,7 @@
     <string name="dc_dimming_info">Знижує навантаження на очі при низькому освітленні шляхом мінімізації мерехтіння екрану. Може призвести до зниження якості зображення та поганого відтворення кольорів або збільшення енергоспоживання.</string>
     <string name="dc_dimming_main_switch_title">Використати DC Затемнення</string>
     <string name="keywords_display_dc_dimming">dc затемнення, проти, мерехтіння, очі, навантаження</string>
+    <!-- Hotspot -->
+    <string name="wifi_hotspot_hidden_ssid_title">Прихована мережа</string>
+    <string name="wifi_hotspot_hidden_ssid_summary">Назва вашої точки доступу не буде показуватися в списку доступних мереж WLAN.</string>
 </resources>
