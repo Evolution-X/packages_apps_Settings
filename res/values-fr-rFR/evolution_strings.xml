@@ -175,6 +175,7 @@ Les notifications flottantes seront automatiquement désactivées.</string>
     <string name="thin_label">Fine</string>
     <string name="thick_label">Épaisse</string>
     <!-- Hardware info -->
+    <string name="device_market_name">Nom du marché</string>
     <string name="soc_model">Modèle SoC</string>
     <string name="total_ram">Mémoire RAM totale</string>
     <!-- Default getTimeSpentInApp string for Wellbeing to display. [CHAR LIMIT=NONE] -->
@@ -190,10 +191,7 @@ Les notifications flottantes seront automatiquement désactivées.</string>
     <!-- Pulse on music track change -->
     <string name="pulse_on_new_tracks_title">Indicateur de musique</string>
     <string name="pulse_on_new_tracks_summary">Allume l\'écran en mode Ambiant quand une nouvelle piste musicale est jouée</string>
-    <!-- Hotspot -->
-    <string name="wifi_hotspot_hidden_ssid_title">Réseau masqué</string>
-    <string name="wifi_hotspot_hidden_ssid_summary">Le nom de votre point d\'accès n\'apparaîtra pas dans la liste des réseaux WLAN disponibles.</string>
-    <!-- General -->
+    <!-- Clipboard -->
     <string name="copied_to_clipboard">Copié dans le presse-papier</string>
     <string name="longpress_to_clipboard">Appui long pour copier</string>
     <!-- Increasing ring tone volume -->
@@ -252,8 +250,8 @@ Les notifications flottantes seront automatiquement désactivées.</string>
     <!-- Game space -->
     <string name="game_space_title">Espace jeux</string>
     <string name="game_space_summary">Améliore votre expérience de jeu</string>
-    <!-- AOD/Extra dim Schedule -->
-    <string name="extra_dim_schedule_title">Planifier</string>
+    <!-- AOD/Extra dim schedule -->
+    <string name="extra_dim_schedule_title">Horaire d\'atténuation supplémentaire</string>
     <string name="string_disabled">Désactivé</string>
     <string name="always_on_display_schedule_title">Affichage permanent programmé</string>
     <string name="always_on_display_schedule_sunset">Coucher du soleil</string>
@@ -265,4 +263,7 @@ Les notifications flottantes seront automatiquement désactivées.</string>
     <string name="dc_dimming_info">Réduit les contraintes oculaires dans des conditions de faible lumière en réduisant le scintillement de l\'écran. Peut entraîner une baisse de la qualité de l\'image et une faible production de couleurs, ou une augmentation de la consommation d\'énergie.</string>
     <string name="dc_dimming_main_switch_title">Utiliser l\'atténuation DC</string>
     <string name="keywords_display_dc_dimming">Atténuation DC, anti scintillement, fatigue occulaire</string>
+    <!-- Hotspot -->
+    <string name="wifi_hotspot_hidden_ssid_title">Réseau masqué</string>
+    <string name="wifi_hotspot_hidden_ssid_summary">Le nom de votre point d\'accès n\'apparaîtra pas dans la liste des réseaux WLAN disponibles.</string>
 </resources>
