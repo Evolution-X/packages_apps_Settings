@@ -116,14 +116,15 @@ public class WifiTetherApBandPreferenceController extends WifiTetherBasePreferen
         final boolean is6GHzSupported = mWifiManager.is6GHzBandSupported();
         final boolean is60GHzSupported = mWifiManager.is60GHzBandSupported();
         final boolean isBridgedApSupported = mWifiManager.isBridgedApConcurrencySupported();
+        final boolean is6GHzSoftApBandSupported = mWifiManager.is6GHzApBandSupported();
         List<String> bands = new ArrayList<>();
         if (is24GHzSupported) bands.add("0");
         if (is5GHzSupported) bands.add("1");
-        if (is6GHzSupported) bands.add("2");
+        if (is6GHzSupported && is6GHzSoftApBandSupported) bands.add("2");
         if (is60GHzSupported) bands.add("3");
         if (isBridgedApSupported) {
             if (is24GHzSupported && is5GHzSupported) bands.add("4");
-            if (is24GHzSupported && is6GHzSupported) bands.add("5");
+            if (is24GHzSupported && is6GHzSupported && is6GHzSoftApBandSupported) bands.add("5");
         }
         return bands.toArray(new String[bands.size()]);
     }
@@ -136,13 +137,14 @@ public class WifiTetherApBandPreferenceController extends WifiTetherBasePreferen
         final boolean is6GHzSupported = mWifiManager.is6GHzBandSupported();
         final boolean is60GHzSupported = mWifiManager.is60GHzBandSupported();
         final boolean isBridgedApSupported = mWifiManager.isBridgedApConcurrencySupported();
+        final boolean is6GHzSoftApBandSupported = mWifiManager.is6GHzApBandSupported();
         if (is24GHzSupported) bands.add(res.getString(R.string.wifi_band_24ghz));
         if (is5GHzSupported) bands.add(res.getString(R.string.wifi_band_5ghz));
-        if (is6GHzSupported) bands.add(res.getString(R.string.wifi_band_6ghz));
+        if (is6GHzSupported && is6GHzSoftApBandSupported) bands.add(res.getString(R.string.wifi_band_6ghz));
         if (is60GHzSupported)bands.add(res.getString(R.string.wifi_band_60ghz));
         if (isBridgedApSupported) {
             addCombinedBand(bands, is24GHzSupported, is5GHzSupported, R.string.wifi_band_24ghz_and_5ghz, res);
-            addCombinedBand(bands, is24GHzSupported, is6GHzSupported, R.string.wifi_band_24ghz_and_6ghz, res);
+            addCombinedBand(bands, is24GHzSupported, is6GHzSupported && is6GHzSoftApBandSupported, R.string.wifi_band_24ghz_and_6ghz, res);
         }
         return bands.toArray(new String[bands.size()]);
     }
