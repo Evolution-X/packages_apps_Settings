@@ -266,4 +266,6 @@ Les notifications flottantes seront automatiquement désactivées.</string>
     <!-- Hotspot -->
     <string name="wifi_hotspot_hidden_ssid_title">Réseau masqué</string>
     <string name="wifi_hotspot_hidden_ssid_summary">Le nom de votre point d\'accès n\'apparaîtra pas dans la liste des réseaux WLAN disponibles.</string>
+    <!-- Radio Info -->
+    <string name="radio_info_title">Infos radio</string>
 </resources>
