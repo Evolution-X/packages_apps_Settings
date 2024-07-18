@@ -265,4 +265,6 @@
     <!-- Hotspot -->
     <string name="wifi_hotspot_hidden_ssid_title">Rejtett hálózat</string>
     <string name="wifi_hotspot_hidden_ssid_summary">Az Ön által létrehozott hotspot neve nem fog megjelenni a mások által elérhető WLAN-hálózatok listájában.</string>
+    <!-- Radio Info -->
+    <string name="radio_info_title">Rádióinformációk</string>
 </resources>
