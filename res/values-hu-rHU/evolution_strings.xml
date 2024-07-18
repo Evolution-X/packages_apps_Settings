@@ -137,6 +137,13 @@
     <string name="enable_protection">Védelem-engedélyezés</string>
     <string name="hide_from_launcher_title">Elrejtés a Launcherből</string>
     <string name="hide_from_launcher_summary">Megakadályozza hogy ez az alkalmazás látszódjon bármilyen launcheren. A funkcióhoz újra kell indítani a launchert.</string>
+    <!-- Wifi/Bluetooth auto timeout -->
+    <string name="wifi_timeout">Wi-Fi-időkorlát</string>
+    <string name="wifi_timeout_summary">Ne kapcsolódjon ki automatikusan a Wi-Fi</string>
+    <string name="wifi_timeout_summary_auto">Ha nincs hálózat, a Wi-Fi <xliff:g id="timeout_description">%1$s</xliff:g> elteltével kikapcsol</string>
+    <string name="bluetooth_timeout">Bluetooth-időkorlát</string>
+    <string name="bluetooth_timeout_summary">Ne kapcsolódjon ki automatikusan a Bluetooth</string>
+    <string name="bluetooth_timeout_summary_auto">Ha nincs csatlakoztatott eszköz, a Bluetooth <xliff:g id="timeout_description">%1$s</xliff:g> elteltével kapcsol ki</string>
     <string name="custom_timeout_summary_never">Soha</string>
     <string name="custom_timeout_summary_5secs">5 másodperc</string>
     <string name="custom_timeout_summary_10secs">10 másodperc</string>
@@ -265,6 +272,20 @@
     <!-- Hotspot -->
     <string name="wifi_hotspot_hidden_ssid_title">Rejtett hálózat</string>
     <string name="wifi_hotspot_hidden_ssid_summary">Az Ön által létrehozott hotspot neve nem fog megjelenni a mások által elérhető WLAN-hálózatok listájában.</string>
+    <string name="wifi_hotspot_ap_band_title">AP-sáv</string>
+    <string name="wifi_hotspot_client_manager_title">Csatlakozó készülékek</string>
+    <string name="wifi_hotspot_client_manager_summary">A hotspothoz csatlakoztatott készülékek listája és kezelése</string>
+    <string name="wifi_hotspot_client_manager_list_only_summary">A hotspothoz csatlakoztatott készülékek listája</string>
+    <string name="wifi_hotspot_client_limit_title">Maximálisan csatlakoztatható készülék</string>
+    <string name="wifi_hotspot_blocked_clients_list_title">Blokkolt készülékek</string>
+    <string name="wifi_hotspot_connected_clients_list_title">Csatlakoztatott készülékek</string>
+    <string name="wifi_hotspot_block_client_dialog_title">Készüléktiltás</string>
+    <string name="wifi_hotspot_block_client_dialog_text">Ez a művelet lecsatlakoztatja \"<xliff:g id="device_name">%1$s</xliff:g>\" készüléket erről a hotspotról és tiltólistához adja</string>
+    <string name="wifi_hotspot_unblock_client_dialog_title">Készülékfeloldás</string>
+    <string name="wifi_hotspot_unblock_client_dialog_text">\"<xliff:g id="device_name">%1$s</xliff:g>\"-készülék kapcsolódhat ehhez a hotspothoz</string>
+    <string name="wifi_hotspot_client_manager_footer_text">Jelenleg nincs elérhető kliens. Amint lesz akár csatlakoztatott, akár letiltott, az itt fog megjelenni.</string>
+    <string name="wifi_band_24ghz_and_5ghz">2.4 GHz és 5 GHz</string>
+    <string name="wifi_band_24ghz_and_6ghz">2.4 GHz és 6 GHz</string>
     <!-- Radio Info -->
     <string name="radio_info_title">Rádióinformációk</string>
 </resources>
