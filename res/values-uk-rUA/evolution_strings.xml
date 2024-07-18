@@ -267,4 +267,6 @@
     <!-- Hotspot -->
     <string name="wifi_hotspot_hidden_ssid_title">Прихована мережа</string>
     <string name="wifi_hotspot_hidden_ssid_summary">Назва вашої точки доступу не буде показуватися в списку доступних мереж WLAN.</string>
+    <!-- Radio Info -->
+    <string name="radio_info_title">Інформація про радіо</string>
 </resources>
