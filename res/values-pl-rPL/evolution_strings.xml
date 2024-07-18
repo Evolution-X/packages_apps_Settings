@@ -267,4 +267,6 @@
     <!-- Hotspot -->
     <string name="wifi_hotspot_hidden_ssid_title">Ukryta sieć</string>
     <string name="wifi_hotspot_hidden_ssid_summary">Nazwa Twojego mobilnego punktu dostępu nie pojawi się na liście dostępnych sieci WLAN.</string>
+    <!-- Radio Info -->
+    <string name="radio_info_title">Informacje o radiu</string>
 </resources>
