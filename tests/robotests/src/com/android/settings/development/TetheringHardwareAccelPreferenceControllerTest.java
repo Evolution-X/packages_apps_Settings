@@ -102,8 +102,8 @@ public class TetheringHardwareAccelPreferenceControllerTest {
         final int mode = Settings.Global.getInt(mContext.getContentResolver(),
                 Settings.Global.TETHER_OFFLOAD_DISABLED, -1 /* default */);
 
-        assertThat(mode).isEqualTo(TetheringHardwareAccelPreferenceController.SETTING_VALUE_OFF);
+        assertThat(mode).isEqualTo(TetheringHardwareAccelPreferenceController.SETTING_VALUE_ON);
         verify(mPreference).setEnabled(false);
-        verify(mPreference).setChecked(false);
+        verify(mPreference).setChecked(true);
     }
 }
