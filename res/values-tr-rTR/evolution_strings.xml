@@ -137,6 +137,13 @@
     <string name="enable_protection">Korumayı etkinleştir</string>
     <string name="hide_from_launcher_title">Uygulamayı başlatıcıdan gizle</string>
     <string name="hide_from_launcher_summary">Bu uygulamanın herhangi bir başlatıcıda görünmesini engelleyin. Değişikliklerin etkili olması için başlatıcının yeniden başlatılması gerekir.</string>
+    <!-- Wifi/Bluetooth auto timeout -->
+    <string name="wifi_timeout">WiFi zaman aşımı</string>
+    <string name="wifi_timeout_summary">WiFi\'yi otomatik olarak kapatma</string>
+    <string name="wifi_timeout_summary_auto">Bağlantılı bir ağ yoksa WiFi <xliff:g id="timeout_description">%1$s</xliff:g> sonra kapanacak</string>
+    <string name="bluetooth_timeout">Bluetooth zaman aşımı</string>
+    <string name="bluetooth_timeout_summary">Bluetooth\'u otomatik olarak kapatma</string>
+    <string name="bluetooth_timeout_summary_auto">Hiçbir cihaz bağlı değilse <xliff:g id="timeout_description">%1$s</xliff:g> sonra Bluetooth kapanacak</string>
     <string name="custom_timeout_summary_never">Asla</string>
     <string name="custom_timeout_summary_5secs">5 saniye</string>
     <string name="custom_timeout_summary_10secs">10 saniyede</string>
@@ -174,6 +181,7 @@
     <string name="thin_label">İnce</string>
     <string name="thick_label">Kalın</string>
     <!-- Hardware info -->
+    <string name="device_market_name">Pazar Adı</string>
     <string name="soc_model">SoC Modeli</string>
     <string name="total_ram">Toplam RAM</string>
     <!-- Default getTimeSpentInApp string for Wellbeing to display. [CHAR LIMIT=NONE] -->
@@ -189,10 +197,7 @@
     <!-- Pulse on music track change -->
     <string name="pulse_on_new_tracks_title">Müzik şeridi</string>
     <string name="pulse_on_new_tracks_summary">Yeni bir müzik parçası çalındığında Ortam Ekranını Göster</string>
-    <!-- Hotspot -->
-    <string name="wifi_hotspot_hidden_ssid_title">Gizli ağ</string>
-    <string name="wifi_hotspot_hidden_ssid_summary">Hotspot isminiz uygun WLAN ağları listesinde görünmeyecek.</string>
-    <!-- General -->
+    <!-- Clipboard -->
     <string name="copied_to_clipboard">Panoya kopyalandı</string>
     <string name="longpress_to_clipboard">Kopyalamak için uzun basın</string>
     <!-- Increasing ring tone volume -->
@@ -251,8 +256,8 @@
     <!-- Game space -->
     <string name="game_space_title">Oyun alanı</string>
     <string name="game_space_summary">Oyun deneyiminizi geliştirin</string>
-    <!-- AOD/Extra dim Schedule -->
-    <string name="extra_dim_schedule_title">Zamanla</string>
+    <!-- AOD/Extra dim schedule -->
+    <string name="extra_dim_schedule_title">Ekstra karanlık programı</string>
     <string name="string_disabled">Devre dışı</string>
     <string name="always_on_display_schedule_title">Her zaman açık ekranı programla</string>
     <string name="always_on_display_schedule_sunset">Gün batımı</string>
@@ -264,4 +269,9 @@
     <string name="dc_dimming_info">Ekran titremesini en aza indirerek düşük ışık koşullarında göz yorgunluğunu azaltır. Düşük görüntü kalitesi ve zayıf renk üretimine veya daha yüksek güç tüketimine neden olabilir.</string>
     <string name="dc_dimming_main_switch_title">DC Karartmayı kullan</string>
     <string name="keywords_display_dc_dimming">dc karartma, anti, titreme, göz, zorlanma</string>
+    <!-- Hotspot -->
+    <string name="wifi_hotspot_hidden_ssid_title">Gizli ağ</string>
+    <string name="wifi_hotspot_hidden_ssid_summary">Hotspot isminiz uygun WLAN ağları listesinde görünmeyecek.</string>
+    <!-- Radio Info -->
+    <string name="radio_info_title">Radyo bilgisi</string>
 </resources>
