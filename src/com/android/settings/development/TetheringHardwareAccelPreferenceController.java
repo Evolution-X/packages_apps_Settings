@@ -67,8 +67,14 @@ public class TetheringHardwareAccelPreferenceController extends DeveloperOptions
     @Override
     protected void onDeveloperOptionsSwitchDisabled() {
         super.onDeveloperOptionsSwitchDisabled();
+        // The default is to enable tether offload, i.e. SETTING_VALUE_ON == 0.
+        // packages/modules/Connectivity/Tethering/src/com/android/networkstack/tethering/OffloadHardwareInterface.java#DEFAULT_TETHER_OFFLOAD_DISABLED
+        // is 0
         Settings.Global.putInt(mContext.getContentResolver(),
                 Settings.Global.TETHER_OFFLOAD_DISABLED, SETTING_VALUE_ON);
-        ((TwoStatePreference) mPreference).setChecked(false);
+        // The sysprop callback refreshes this via updatePreferenceStates() when dev options
+        // disabled, but keep direct state consistent for completeness + the SettingsRoboTest for
+        // this controller checks for this directly.
+        ((TwoStatePreference) mPreference).setChecked(true);
     }
 }
