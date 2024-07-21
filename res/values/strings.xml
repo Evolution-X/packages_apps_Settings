@@ -7682,7 +7682,7 @@
     handle actions such as open web page, making phone calls, default SMS apps [CHAR  LIMIT=40]-->
     <string name="app_default_dashboard_title">Default apps</string>
     <!-- Title for setting tile leading to App Clones menu under the Apps page [CHAR LIMIT=40] -->
-    <string name="cloned_apps_dashboard_title">Cloned Apps</string>
+    <string name="cloned_apps_dashboard_title">Cloned apps</string>
     <!-- Description for introduction of the cloned apps page [CHAR LIMIT=NONE]-->
     <string name="desc_cloned_apps_intro_text">Create a second instance of an app so that you can use two accounts at the same time.</string>
     <!-- Description while displaying cloneable app list in Cloned Apps page [CHAR LIMIT=NONE]-->
