@@ -11,9 +11,6 @@
     <!-- App search preference -->
     <string name="search">Rechercher</string>
     <string name="search_apps">Rechercher des applications</string>
-    <!-- Hide developer status -->
-    <string name="hide_developer_status_title">Masquer le statut de développeur</string>
-    <string name="hide_developer_status_summary">Masquer le statut de développeur aux applications</string>
     <!-- Notch: Full screen apps -->
     <string name="display_cutout_force_fullscreen_title">Applications en plein écran</string>
     <string name="display_cutout_force_fullscreen_summary">Forcer les applications à ignorer l\'encoche</string>
@@ -138,6 +135,13 @@ Les notifications flottantes seront automatiquement désactivées.</string>
     <string name="enable_protection">Activer la protection</string>
     <string name="hide_from_launcher_title">Masquer l’icône dans le lanceur d\'applications</string>
     <string name="hide_from_launcher_summary">Empêcher cette application d\'apparaître dans tous les lanceurs d\'applications. Nécessite un redémarrage du lanceur pour que les changements prennent effet.</string>
+    <!-- Wifi/Bluetooth auto timeout -->
+    <string name="wifi_timeout">Délai de déconnexion WiFi</string>
+    <string name="wifi_timeout_summary">Ne pas désactiver automatiquement le WiFi</string>
+    <string name="wifi_timeout_summary_auto">Le Wi-Fi sera désactivé après <xliff:g id="timeout_description">%1$s</xliff:g> si aucun réseau n\'est disponible</string>
+    <string name="bluetooth_timeout">Délai de désactivation du Bluetooth</string>
+    <string name="bluetooth_timeout_summary">Ne pas désactiver le Bluetooth automatiquement</string>
+    <string name="bluetooth_timeout_summary_auto">Le Bluetooth sera désactivé après <xliff:g id="timeout_description">%1$s</xliff:g> si aucun appareil n\'est connecté</string>
     <string name="custom_timeout_summary_never">Jamais</string>
     <string name="custom_timeout_summary_5secs">5 secondes</string>
     <string name="custom_timeout_summary_10secs">10 secondes</string>
@@ -263,9 +267,24 @@ Les notifications flottantes seront automatiquement désactivées.</string>
     <string name="dc_dimming_info">Réduit les contraintes oculaires dans des conditions de faible lumière en réduisant le scintillement de l\'écran. Peut entraîner une baisse de la qualité de l\'image et une faible production de couleurs, ou une augmentation de la consommation d\'énergie.</string>
     <string name="dc_dimming_main_switch_title">Utiliser l\'atténuation DC</string>
     <string name="keywords_display_dc_dimming">Atténuation DC, anti scintillement, fatigue occulaire</string>
-    <!-- Hotspot -->
-    <string name="wifi_hotspot_hidden_ssid_title">Réseau masqué</string>
-    <string name="wifi_hotspot_hidden_ssid_summary">Le nom de votre point d\'accès n\'apparaîtra pas dans la liste des réseaux WLAN disponibles.</string>
     <!-- Radio Info -->
     <string name="radio_info_title">Infos radio</string>
+    <!-- WiFi Hotspot -->
+    <string name="wifi_hotspot_hidden_ssid_title">Réseau masqué</string>
+    <string name="wifi_hotspot_hidden_ssid_summary">Le nom de votre point d\'accès n\'apparaîtra pas dans la liste des réseaux WLAN disponibles.</string>
+    <string name="wifi_hotspot_client_manager_title">Appareils connectés</string>
+    <string name="wifi_hotspot_client_manager_summary">Lister et gérer les appareils connectés au point d\'accès</string>
+    <string name="wifi_hotspot_client_manager_list_only_summary">Lister les appareils connectés au point d\'accès</string>
+    <string name="wifi_hotspot_client_limit_title">Limite d\'appareils pouvant se connecter</string>
+    <string name="wifi_hotspot_blocked_clients_list_title">Appareils bloqués</string>
+    <string name="wifi_hotspot_connected_clients_list_title">Appareils connectés</string>
+    <string name="wifi_hotspot_block_client_dialog_title">Bloquer l\'appareil</string>
+    <string name="wifi_hotspot_block_client_dialog_text">Cette action déconnectera \"<xliff:g id="device_name">%1$s</xliff:g>\" de cet appareil et l\'ajoutera à la liste de blocage</string>
+    <string name="wifi_hotspot_unblock_client_dialog_title">Débloquer l\'appareil</string>
+    <string name="wifi_hotspot_unblock_client_dialog_text">L\'appareil \"<xliff:g id="device_name">%1$s</xliff:g>\" pourra se connecter à ce point d\'accès</string>
+    <string name="wifi_hotspot_client_manager_footer_text">Aucun client n\'est actuellement disponible. Les appareils connectés et bloqués seront répertoriés ici lorsqu\'ils seront disponibles.</string>
+    <plurals name="wifi_hotspot_client_limit_summary">
+        <item quantity="other">Un maximum de <xliff:g id="device_num">%1$d</xliff:g> appareils peuvent se connecter au point d\'accès</item>
+        <item quantity="one">Un maximum de <xliff:g id="device_num">%1$d</xliff:g> appareil peut se connecter au point d\'accès</item>
+    </plurals>
 </resources>
