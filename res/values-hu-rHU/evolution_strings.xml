@@ -11,9 +11,6 @@
     <!-- App search preference -->
     <string name="search">Keresés</string>
     <string name="search_apps">Alkalmazások keresése</string>
-    <!-- Hide developer status -->
-    <string name="hide_developer_status_title">Rejtett fejlesztői állapot</string>
-    <string name="hide_developer_status_summary">A fejlesztői állapot elrejtése az alkalmazások elől</string>
     <!-- Notch: Full screen apps -->
     <string name="display_cutout_force_fullscreen_title">Teljesképernyős-alkalmazások</string>
     <string name="display_cutout_force_fullscreen_summary">Alkalmazások kényszerítése, hogy a képernyőkivágást mellőzzék</string>
@@ -269,9 +266,24 @@
     <string name="dc_dimming_info">Csökkenti a szem megerőltetését gyenge fényviszonyok mellett a képernyővillogás csökkentésével. Rossz képminőséget és gyenge színeket vagy magasabb akkufogyasztást okozhat.</string>
     <string name="dc_dimming_main_switch_title">A DC-kiegyenlítés használata</string>
     <string name="keywords_display_dc_dimming">DC-kiegyenlítés, vibrálás, szem, megterhelés, mentesítés</string>
-    <!-- Hotspot -->
-    <string name="wifi_hotspot_hidden_ssid_title">Rejtett hálózat</string>
-    <string name="wifi_hotspot_hidden_ssid_summary">Az Ön által létrehozott hotspot neve nem fog megjelenni a mások által elérhető WLAN-hálózatok listájában.</string>
     <!-- Radio Info -->
     <string name="radio_info_title">Rádióinformációk</string>
+    <!-- WiFi Hotspot -->
+    <string name="wifi_hotspot_hidden_ssid_title">Rejtett hálózat</string>
+    <string name="wifi_hotspot_hidden_ssid_summary">Az Ön által létrehozott hotspot neve nem fog megjelenni a mások által elérhető WLAN-hálózatok listájában.</string>
+    <string name="wifi_hotspot_client_manager_title">Csatlakozó készülékek</string>
+    <string name="wifi_hotspot_client_manager_summary">A hotspothoz csatlakoztatott készülékek listája és kezelése</string>
+    <string name="wifi_hotspot_client_manager_list_only_summary">A hotspothoz csatlakoztatott készülékek listája</string>
+    <string name="wifi_hotspot_client_limit_title">Maximálisan csatlakoztatható készülék</string>
+    <string name="wifi_hotspot_blocked_clients_list_title">Blokkolt készülékek</string>
+    <string name="wifi_hotspot_connected_clients_list_title">Csatlakoztatott készülékek</string>
+    <string name="wifi_hotspot_block_client_dialog_title">Készüléktiltás</string>
+    <string name="wifi_hotspot_block_client_dialog_text">Ez a művelet lecsatlakoztatja \"<xliff:g id="device_name">%1$s</xliff:g>\" készüléket erről a hotspotról és tiltólistához adja</string>
+    <string name="wifi_hotspot_unblock_client_dialog_title">Készülékfeloldás</string>
+    <string name="wifi_hotspot_unblock_client_dialog_text">\"<xliff:g id="device_name">%1$s</xliff:g>\"-készülék kapcsolódhat ehhez a hotspothoz</string>
+    <string name="wifi_hotspot_client_manager_footer_text">Jelenleg nincs elérhető kliens. Amint lesz akár csatlakoztatott, akár letiltott, az itt fog megjelenni.</string>
+    <plurals name="wifi_hotspot_client_limit_summary">
+        <item quantity="other">Legfeljebb <xliff:g id="device_num">%1$d</xliff:g> készülék csatlakozhat ehhez a hotspothoz</item>
+        <item quantity="one">Legfeljebb <xliff:g id="device_num">%1$d</xliff:g> készülék csatlakozhat ehhez a hotspothoz</item>
+    </plurals>
 </resources>
