@@ -11,9 +11,6 @@
     <!-- App search preference -->
     <string name="search">Поиск</string>
     <string name="search_apps">Поиск приложений</string>
-    <!-- Hide developer status -->
-    <string name="hide_developer_status_title">Скрыть статус разработчика</string>
-    <string name="hide_developer_status_summary">Скрытие статуса разработчика для выбранных приложений</string>
     <!-- Notch: Full screen apps -->
     <string name="display_cutout_force_fullscreen_title">Полноэкранные приложения</string>
     <string name="display_cutout_force_fullscreen_summary">Заставить приложения игнорировать пространство надреза</string>
@@ -139,6 +136,13 @@
     <string name="enable_protection">Включить защиту</string>
     <string name="hide_from_launcher_title">Скрытие в лаунчере</string>
     <string name="hide_from_launcher_summary">Запрет на отображение этого приложения в любом лаунчере. Требуется перезагрузка лаунчера, чтобы изменения вступили в силу.</string>
+    <!-- Wifi/Bluetooth auto timeout -->
+    <string name="wifi_timeout">Выключение WiFi</string>
+    <string name="wifi_timeout_summary">Не выключать WiFi автоматически</string>
+    <string name="wifi_timeout_summary_auto">WiFi будет выключен через <xliff:g id="timeout_description">%1$s</xliff:g> при отсутствии подключения к точке доступа</string>
+    <string name="bluetooth_timeout">Выключение Bluetooth</string>
+    <string name="bluetooth_timeout_summary">Не выключать Bluetooth автоматически</string>
+    <string name="bluetooth_timeout_summary_auto">Bluetooth будет выключен через <xliff:g id="timeout_description">%1$s</xliff:g>, если нет подключённых устройств</string>
     <string name="custom_timeout_summary_never">Никогда</string>
     <string name="custom_timeout_summary_5secs">5 секунд</string>
     <string name="custom_timeout_summary_10secs">10 секунд</string>
@@ -176,6 +180,7 @@
     <string name="thin_label">Тоньше</string>
     <string name="thick_label">Толще</string>
     <!-- Hardware info -->
+    <string name="device_market_name">Кодовое имя</string>
     <string name="soc_model">Модель SoC</string>
     <string name="total_ram">Всего ОЗУ</string>
     <!-- Default getTimeSpentInApp string for Wellbeing to display. [CHAR LIMIT=NONE] -->
@@ -191,10 +196,7 @@
     <!-- Pulse on music track change -->
     <string name="pulse_on_new_tracks_title">Текущий трек</string>
     <string name="pulse_on_new_tracks_summary">Показывать Активный экран при воспроизведении нового трека</string>
-    <!-- Hotspot -->
-    <string name="wifi_hotspot_hidden_ssid_title">Скрытая сеть</string>
-    <string name="wifi_hotspot_hidden_ssid_summary">Имя вашей мобильной точки доступа не будет отображаться в списке доступных сетей WLAN.</string>
-    <!-- General -->
+    <!-- Clipboard -->
     <string name="copied_to_clipboard">Скопировано в буфер обмена</string>
     <string name="longpress_to_clipboard">Удерживайте для копирования</string>
     <!-- Increasing ring tone volume -->
@@ -247,5 +249,45 @@
     <string name="columbus_setting_sensitivity_title">Требуются более сильные касания</string>
     <!-- No storage restrict -->
     <string name="no_storage_restrict_title">Без ограничений хранилища</string>
-    <string name="no_storage_restrict_summary">Убрать ограничения при выборе папок через Storage Access Framework. Может быть удобным в некоторых случаях, но может привести к утечкам конфиденциальности.</string>
+    <string name="no_storage_restrict_summary">Убрать ограничения при выборе папок через Storage Access Framework. Это может быть удобным в некоторых случаях, но может привести к утечке конфиденциальной информации.</string>
+    <!-- Wifi Display settings. The title of a menu item to disable mirroring confimration [CHAR LIMIT=40] -->
+    <string name="mirroring_confirmation_disable_menu_item">Отключить подтверждение трансляции</string>
+    <!-- Game space -->
+    <string name="game_space_title">Game Space</string>
+    <string name="game_space_summary">Улучшите свой игровой опыт</string>
+    <!-- AOD/Extra dim schedule -->
+    <string name="extra_dim_schedule_title">Расписание включения дополнительного уменьшения яркости</string>
+    <string name="string_disabled">Отключено</string>
+    <string name="always_on_display_schedule_title">Расписание работы Всегда включённого экрана</string>
+    <string name="always_on_display_schedule_sunset">Закат</string>
+    <string name="always_on_display_schedule_sunrise">Рассвет</string>
+    <string name="always_on_display_schedule_mixed_sunset">Включен от заката до заданного времени</string>
+    <string name="always_on_display_schedule_mixed_sunrise">Включен от заданного времени до рассвета</string>
+    <!-- DC Dimming -->
+    <string name="dc_dimming_title">DC Dimming</string>
+    <string name="dc_dimming_info">Снижает нагрузку на глаза в условиях низкой освещенности за счёт уменьшения мерцания экрана. Может привести к снижению качества изображения и ухудшению цветопередачи, а также к увеличению энергопотребления.</string>
+    <string name="dc_dimming_main_switch_title">Использовать DC Dimming</string>
+    <string name="keywords_display_dc_dimming">dc dimming, мерцание, глаза, напряжение</string>
+    <!-- Radio Info -->
+    <string name="radio_info_title">Информация о сети</string>
+    <!-- WiFi Hotspot -->
+    <string name="wifi_hotspot_hidden_ssid_title">Скрытая сеть</string>
+    <string name="wifi_hotspot_hidden_ssid_summary">Имя вашей мобильной точки доступа не будет отображаться в списке доступных сетей WLAN.</string>
+    <string name="wifi_hotspot_client_manager_title">Подключенные устройства</string>
+    <string name="wifi_hotspot_client_manager_summary">Список устройств, подключенных к точке доступа, и управление ими</string>
+    <string name="wifi_hotspot_client_manager_list_only_summary">Список устройств, подключенных к точке доступа</string>
+    <string name="wifi_hotspot_client_limit_title">Лимит подключенных устройств</string>
+    <string name="wifi_hotspot_blocked_clients_list_title">Заблокированные устройства</string>
+    <string name="wifi_hotspot_connected_clients_list_title">Подключенные устройства</string>
+    <string name="wifi_hotspot_block_client_dialog_title">Заблокировать устройство</string>
+    <string name="wifi_hotspot_block_client_dialog_text">Это действие отключит \"<xliff:g id="device_name">%1$s</xliff:g>\" от этого устройства и добавит его в список блокировки</string>
+    <string name="wifi_hotspot_unblock_client_dialog_title">Разблокировать устройство</string>
+    <string name="wifi_hotspot_unblock_client_dialog_text">Это устройство \"<xliff:g id="device_name">%1$s</xliff:g>\" сможет подключиться к этой точке доступа</string>
+    <string name="wifi_hotspot_client_manager_footer_text">В настоящее время нет доступных клиентов. Подключенные и заблокированные устройства будут перечислены здесь, когда они станут доступны.</string>
+    <plurals name="wifi_hotspot_client_limit_summary">
+        <item quantity="other">К этой точке доступа может подключиться до <xliff:g id="device_num">%1$d</xliff:g> устройств</item>
+        <item quantity="one">К этой точке доступа может подключиться до <xliff:g id="device_num">%1$d</xliff:g> устройства</item>
+        <item quantity="few">К этой точке доступа может подключиться до <xliff:g id="device_num">%1$d</xliff:g> устройств</item>
+        <item quantity="many">К этой точке доступа может подключиться до <xliff:g id="device_num">%1$d</xliff:g> устройств</item>
+    </plurals>
 </resources>
