@@ -66,12 +66,14 @@
         android:selectable="false"
         settings:searchable="false"
         settings:controller="com.android.settings.display.darkmode.DarkModeCustomBedtimePreferenceController" />
-
-    <lineageos.preference.LineageSecureSettingSwitchPreference
-        android:key="berry_black_theme"
-        android:dependency="dark_ui_activated"
-        android:title="@string/berry_black_theme_title"
-        android:summary="@string/berry_black_theme_summary"
-        android:defaultValue="false"
-        settings:requiresPackage="org.lineageos.overlay.customization.blacktheme" />
+        
+    <org.evolution.settings.preferences.SecureSettingListPreference
+        android:key="black_theme_style"
+        android:title="@string/black_theme_style_title"
+        android:summary="%s"
+        android:dialogTitle="@string/black_theme_style_title"
+        android:entries="@array/black_theme_style_entries"
+        android:entryValues="@array/black_theme_style_values"
+        android:defaultValue="0"
+        android:dependency="dark_ui_activated" />
 </PreferenceScreen>
