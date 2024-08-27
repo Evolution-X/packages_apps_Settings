@@ -393,4 +393,11 @@
     <string name="bluetooth_details_audio_codec_title">Audio codec</string>
     <!-- Summary shown when the audio codec of a paired device cannot be read or chosen. [CHAR LIMIT=40] -->
     <string name="bluetooth_details_audio_codec_unavailable">Not available</string>
+
+    <!-- Clipboard auto clear -->
+    <string name="clipboard_auto_clear_timeout_title">Clipboard auto clear timeout</string>
+    <string name="clipboard_auto_clear_title">Clipboard auto clear</string>
+    <string name="clipboard_auto_clear_summary">Automatically clear clipboard at the scheduled time</string>
+    <string name="clipboard_auto_clear_enabled_title">Use clipboard auto clear</string>
+    <string name="clipboard_auto_clear_timeout_disable_clipboard">Disable clipboard</string>
 </resources>
