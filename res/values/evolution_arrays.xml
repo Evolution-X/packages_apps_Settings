@@ -48,4 +48,45 @@
         <item>14400000</item>
         <item>28800000</item>
     </string-array>
+
+    <!-- Clipboard auto clear settings. The delay before the clipboard is cleared. These are shown in a list dialog. -->
+    <string-array name="clipboard_auto_clear_timeout_entries">
+        <item>@string/clipboard_auto_clear_timeout_disable_clipboard</item>
+        <item>@string/custom_timeout_summary_15secs</item>
+        <item>@string/custom_timeout_summary_30secs</item>
+        <item>@string/custom_timeout_summary_1min</item>
+        <item>@string/custom_timeout_summary_2mins</item>
+        <item>@string/custom_timeout_summary_5mins</item>
+        <item>@string/custom_timeout_summary_10mins</item>
+        <item>@string/custom_timeout_summary_30mins</item>
+        <item>@string/custom_timeout_summary_1hour_def</item>
+        <item>@string/custom_timeout_summary_2hours</item>
+        <item>@string/custom_timeout_summary_4hours</item>
+        <item>@string/custom_timeout_summary_8hours</item>
+        <item>@string/custom_timeout_summary_12hours</item>
+        <item>@string/custom_timeout_summary_24hours</item>
+        <item>@string/custom_timeout_summary_36hours</item>
+        <item>@string/custom_timeout_summary_48hours</item>
+        <item>@string/custom_timeout_summary_72hours</item>
+    </string-array>
+
+    <string-array name="clipboard_auto_clear_timeout_values" translatable="false">
+        <item>0</item>
+        <item>15000</item>
+        <item>30000</item>
+        <item>60000</item>
+        <item>120000</item>
+        <item>300000</item>
+        <item>600000</item>
+        <item>1800000</item>
+        <item>3600000</item>
+        <item>7200000</item>
+        <item>14400000</item>
+        <item>28800000</item>
+        <item>43200000</item>
+        <item>86400000</item>
+        <item>129600000</item>
+        <item>172800000</item>
+        <item>259200000</item>
+    </string-array>
 </resources>
