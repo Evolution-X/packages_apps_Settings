@@ -339,4 +339,8 @@
     <!-- fingerprint lockout -->
     <string name="fingerprint_lockout_title">Disable fingerprint lockout</string>
     <string name="fingerprint_lockout_summary">Deactivates 30 second timeout as well as permanent lockout after multiple failed fingerprint unlock attempts</string>
+
+    <!-- Long press navbar to search -->
+    <string name="navbar_long_press_gesture_title">Long press to search</string>
+    <string name="navbar_long_press_gesture_summary">Touch and hold the Home button or the navigation handle to search using the content on your screen</string>
 </resources>
