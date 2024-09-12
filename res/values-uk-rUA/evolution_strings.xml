@@ -11,9 +11,6 @@
     <!-- App search preference -->
     <string name="search">Пошук</string>
     <string name="search_apps">Пошук додатків</string>
-    <!-- Hide developer status -->
-    <string name="hide_developer_status_title">Приховати статус розробника</string>
-    <string name="hide_developer_status_summary">Приховати статус розробника від додатків</string>
     <!-- Notch: Full screen apps -->
     <string name="display_cutout_force_fullscreen_title">Повноекранні застосунки</string>
     <string name="display_cutout_force_fullscreen_summary">Змусити застосунки ігнорувати виріз</string>
@@ -33,9 +30,6 @@
     <string name="qs_brightness_slider_haptic_feedback_title">Вібрувати при зміні повзунка яскравості</string>
     <!-- Screenshot shutter -->
     <string name="screenshot_shutter_sound_title">Звук знімка екрана</string>
-    <!-- Three-fingers-swipe to screenshot -->
-    <string name="swipe_to_screenshot_gesture_title">Жест трьома пальцями</string>
-    <string name="swipe_to_screenshot_gesture_summary">Проведіть трьома пальцями для знімку екрану</string>
     <!-- Deep Sleep percentage in device info -->
     <string name="status_sleep_time">Глибокий сон</string>
     <!-- Show clipboard overlay -->
@@ -271,9 +265,37 @@
     <string name="dc_dimming_info">Знижує навантаження на очі при низькому освітленні шляхом мінімізації мерехтіння екрану. Може призвести до зниження якості зображення та поганого відтворення кольорів або збільшення енергоспоживання.</string>
     <string name="dc_dimming_main_switch_title">Використати DC Затемнення</string>
     <string name="keywords_display_dc_dimming">dc затемнення, проти, мерехтіння, очі, навантаження</string>
-    <!-- Hotspot -->
-    <string name="wifi_hotspot_hidden_ssid_title">Прихована мережа</string>
-    <string name="wifi_hotspot_hidden_ssid_summary">Назва вашої точки доступу не буде показуватися в списку доступних мереж WLAN.</string>
     <!-- Radio Info -->
     <string name="radio_info_title">Інформація про радіо</string>
+    <!-- WiFi Hotspot -->
+    <string name="wifi_hotspot_hidden_ssid_title">Прихована мережа</string>
+    <string name="wifi_hotspot_hidden_ssid_summary">Назва вашої точки доступу не буде показуватися в списку доступних мереж WLAN.</string>
+    <string name="wifi_hotspot_client_manager_title">Підключені пристрої</string>
+    <string name="wifi_hotspot_client_manager_summary">Список і керування пристроями, підключені до точки доступу, і встановлення обмеження на кількість клієнтів</string>
+    <string name="wifi_hotspot_client_manager_list_only_summary">Список пристроїв, підключених до точки доступу</string>
+    <string name="wifi_hotspot_client_limit_title">Обмеження кількості підключених пристроїв</string>
+    <string name="wifi_hotspot_blocked_clients_list_title">Заблоковані пристрої</string>
+    <string name="wifi_hotspot_connected_clients_list_title">Підключені пристрої</string>
+    <string name="wifi_hotspot_block_client_dialog_title">Заблокувати пристрій</string>
+    <string name="wifi_hotspot_block_client_dialog_text">Ця дія відключить \"<xliff:g id="device_name">%1$s</xliff:g>\" від цього пристрою і заблокує його</string>
+    <string name="wifi_hotspot_unblock_client_dialog_title">Розблокувати пристрій</string>
+    <string name="wifi_hotspot_unblock_client_dialog_text">Цей пристрій \"<xliff:g id="device_name">%1$s</xliff:g>\" зможе під\'єднатися до цієї точки доступу</string>
+    <string name="wifi_hotspot_client_manager_footer_text">Наразі немає доступних клієнтів. Підключені та заблоковані пристрої з’являться тут, коли вони стануть доступними.</string>
+    <plurals name="wifi_hotspot_client_limit_summary">
+        <item quantity="other">До цієї точки доступу можна підключити до <xliff:g id="device_num">%1$d</xliff:g> пристроїв</item>
+        <item quantity="one">До цієї точки доступу можна під\'єднати до <xliff:g id="device_num">%1$d</xliff:g> пристрою</item>
+        <item quantity="few">До цієї точки доступу можна під\'єднати до <xliff:g id="device_num">%1$d</xliff:g> пристроїв</item>
+        <item quantity="many">До цієї точки доступу можна під\'єднати до <xliff:g id="device_num">%1$d</xliff:g> пристроїв</item>
+    </plurals>
+    <!-- Smart 5G -->
+    <string name="smart_5g_title">Розумний 5G</string>
+    <string name="smart_5g_summary">Автоматично перемикати між 5G та 4G, щоб зменшити споживання заряду батареї</string>
+    <!-- Hide developer status -->
+    <string name="hide_developer_status_title">Приховати статус розробника</string>
+    <string name="hide_developer_status_summary">Приховати статус розробника від додатків</string>
+    <!-- USB configuration -->
+    <string name="usb_default_config_title">Конфігурація USB</string>
+    <string name="usb_default_config_summary">Вибрати поведінку за замовчуванням під час підключення пристрою через USB</string>
+    <!-- App details: open play store link if app is user installed -->
+    <string name="app_play_store">Google Ігри</string>
 </resources>
