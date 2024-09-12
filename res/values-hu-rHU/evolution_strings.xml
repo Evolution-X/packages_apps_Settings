@@ -30,9 +30,6 @@
     <string name="qs_brightness_slider_haptic_feedback_title">A Fényerő-csúszka rezgő visszajelzése</string>
     <!-- Screenshot shutter -->
     <string name="screenshot_shutter_sound_title">A képernyőmentés hangja</string>
-    <!-- Three-fingers-swipe to screenshot -->
-    <string name="swipe_to_screenshot_gesture_title">Képernyőkép csúsztatással</string>
-    <string name="swipe_to_screenshot_gesture_summary">Csúsztasson három ujjal képernyőkép készítéséhez</string>
     <!-- Deep Sleep percentage in device info -->
     <string name="status_sleep_time">Mélyalvás</string>
     <!-- Show clipboard overlay -->
@@ -286,4 +283,15 @@
         <item quantity="other">Legfeljebb <xliff:g id="device_num">%1$d</xliff:g> készülék csatlakozhat ehhez a hotspothoz</item>
         <item quantity="one">Legfeljebb <xliff:g id="device_num">%1$d</xliff:g> készülék csatlakozhat ehhez a hotspothoz</item>
     </plurals>
+    <!-- Smart 5G -->
+    <string name="smart_5g_title">Okos 5G</string>
+    <string name="smart_5g_summary">Az akkufogyasztás csökkentése érdekében automatikusan vált az 5G és a 4G között</string>
+    <!-- Hide developer status -->
+    <string name="hide_developer_status_title">Rejtett fejlesztői állapot</string>
+    <string name="hide_developer_status_summary">A fejlesztői állapot elrejtése az alkalmazások elől</string>
+    <!-- USB configuration -->
+    <string name="usb_default_config_title">USB-konfiguráció</string>
+    <string name="usb_default_config_summary">Alapértelmezett mód beállítása USB-re való csatlakozáskor</string>
+    <!-- App details: open play store link if app is user installed -->
+    <string name="app_play_store">Google Play Áruház</string>
 </resources>
