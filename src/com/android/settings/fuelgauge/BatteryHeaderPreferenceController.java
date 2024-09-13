@@ -45,6 +45,7 @@ public class BatteryHeaderPreferenceController extends BasePreferenceController
     @VisibleForTesting BatteryStatusFeatureProvider mBatteryStatusFeatureProvider;
     @VisibleForTesting UsageProgressBarPreference mBatteryUsageProgressBarPref;
 
+    private int mBatteryDivider;
     private BatteryTip mBatteryTip;
     private final PowerManager mPowerManager;
 
@@ -53,6 +54,8 @@ public class BatteryHeaderPreferenceController extends BasePreferenceController
         mPowerManager = context.getSystemService(PowerManager.class);
         mBatteryStatusFeatureProvider =
                 FeatureFactory.getFeatureFactory().getBatteryStatusFeatureProvider();
+                
+        mBatteryDivider = mContext.getResources().getInteger(R.integer.config_battery_divider);
     }
 
     @Override
@@ -137,7 +140,7 @@ public class BatteryHeaderPreferenceController extends BasePreferenceController
         mBatteryUsageProgressBarPref.setPercent(batteryLevel, BATTERY_MAX_LEVEL);
 
         if (chargeCounterUah > 0) {
-            int chargeCounter = chargeCounterUah / 1_000;
+            int chargeCounter = chargeCounterUah / mBatteryDivider;
             mBatteryUsageProgressBarPref.setTotalSummary(
                     formatBatteryChargeCounterText(chargeCounter));
         }
