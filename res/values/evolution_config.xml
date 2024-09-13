@@ -21,4 +21,7 @@
 
     <!-- Traffic light package to use -->
     <string name="config_face_enroll_traffic_light_package"></string>
+
+    <!-- Battery Info: mAh -->
+    <integer name="config_battery_divider" translatable="false">1000</integer>
 </resources>
