@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2019-2024 The Evolution X Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Wi-Fi MAC address randomization -->
+    <string-array name="wifi_privacy_entries_ext">
+        <item>@string/wifi_per_connection_random_mac_addr</item>
+        <item>@string/wifi_per_network_random_mac_addr</item>
+        <item>@string/wifi_device_mac_addr</item>
+    </string-array>
+
+    <string-array name="wifi_privacy_values_ext" translatable="false">
+        <item>100</item>
+        <item>1</item>
+        <item>0</item>
+    </string-array>
+</resources>
