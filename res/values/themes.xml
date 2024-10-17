@@ -269,4 +269,8 @@
 
     <style name="ThemeOverlay.SafetyCenterColors"
         parent="ThemeOverlay.SafetyCenterColors.Light" />
+
+    <style name="Theme.DeviceDefault.DayNight.NoEdgeToEdge" parent="@android:style/Theme.DeviceDefault.DayNight">
+        <item name="android:windowOptOutEdgeToEdgeEnforcement">true</item>
+    </style>
 </resources>
