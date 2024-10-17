@@ -652,6 +652,7 @@
         </activity>
 
         <activity android:name=".wifi.WifiConfigInfo"
+            android:theme="@style/Theme.DeviceDefault.DayNight.NoEdgeToEdge"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -674,6 +675,7 @@
         </activity>
 
         <activity android:name=".wifi.WifiStatusTest"
+            android:theme="@style/Theme.DeviceDefault.DayNight.NoEdgeToEdge"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
