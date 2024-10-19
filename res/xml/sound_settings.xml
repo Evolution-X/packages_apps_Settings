@@ -133,6 +133,14 @@
         settings:controller="com.android.settings.sound.MediaControlsParentPreferenceController"
         settings:keywords="@string/keywords_media_controls"/>
 
+    <!-- System Haptics intensities preference -->
+    <Preference
+        android:key="haptics_settings"
+        android:title="@string/haptics_settings_title"
+        android:summary="@string/haptics_settings_summary"
+        android:order="-91"
+        android:fragment="com.android.settings.sound.HapticsPreferenceFragment"/>
+
     <!-- Also vibration -->
     <Preference
         android:fragment="com.android.settings.accessibility.VibrationSettings"
