@@ -197,8 +197,8 @@
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:navigationBarDividerColor">@*android:color/ripple_material_light</item>
         <!-- Homepage should follow device default design, the values is same as device default theme.-->
-        <item name="android:navigationBarColor">@android:color/white</item>
-        <item name="android:statusBarColor">?attr/colorPrimaryDark</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:statusBarColor">@color/settingslib_materialColorSurfaceContainerLow</item>
         <item name="android:colorBackground">@color/legacy_settingslib_materialColorSurfaceContainer</item>
     </style>
 
