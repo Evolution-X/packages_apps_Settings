@@ -21,12 +21,6 @@
     android:key="top_level_settings">
 
     <PreferenceCategory
-        android:order="-140"
-        android:key="top_level_account_category"
-        android:layout="@layout/settingslib_untitled_preference_category">
-    </PreferenceCategory>
-
-    <PreferenceCategory
         android:order="-130"
         android:key="top_level_connectivity_category"
         android:layout="@layout/settingslib_expressive_untitled_preference_category">
@@ -238,6 +232,12 @@
             android:fragment="com.android.settings.emergency.EmergencyDashboardFragment"
             settings:isPreferenceVisible="@bool/config_show_emergency_settings"
             settings:highlightableMenuKey="@string/menu_key_emergency"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:order="-90"
+        android:key="top_level_account_category"
+        android:layout="@layout/settingslib_untitled_preference_category">
     </PreferenceCategory>
 
     <PreferenceCategory
