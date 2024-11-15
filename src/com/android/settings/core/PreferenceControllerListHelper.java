@@ -74,7 +74,9 @@ public class PreferenceControllerListHelper {
             try {
                 controller = BasePreferenceController.createInstance(context, controllerName);
             } catch (IllegalStateException e) {
-                Log.d(TAG, "Could not find Context-only controller for pref: " + controllerName);
+                if (Log.isLoggable(TAG, Log.DEBUG)) {
+                    Log.d(TAG, "Could not find Context-only controller for pref: " + controllerName);
+                }
                 final String key = metadata.getString(METADATA_KEY);
                 final boolean isWorkProfile = metadata.getBoolean(METADATA_FOR_WORK, false);
                 if (TextUtils.isEmpty(key)) {
