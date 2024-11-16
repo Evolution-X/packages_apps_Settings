@@ -21,8 +21,22 @@
     android:key="top_level_settings">
 
     <com.android.settingslib.widget.UntitledPreferenceCategory
-        android:order="-140"
+        android:order="-150"
         android:key="top_level_account_category"/>
+
+    <com.android.settingslib.widget.UntitledPreferenceCategory
+        android:order="-140"
+        android:key="top_level_evolution_category">
+        <com.android.settings.widget.HomepagePreference
+            android:fragment="org.evolution.settings.EvolutionSettings"
+            android:icon="@drawable/ic_homepage_evolution"
+            android:key="top_level_evolver"
+            android:order="-160"
+            android:title="@string/evolver_dashboard_title"
+            android:summary="@string/evolver_dashboard_summary"
+            settings:highlightableMenuKey="@string/menu_key_evolver"
+            settings:controller="org.evolution.settings.TopLevelEvolutionSettingsPreferenceController"/>
+    </com.android.settingslib.widget.UntitledPreferenceCategory>
 
     <com.android.settingslib.widget.UntitledPreferenceCategory
         android:order="-130"
