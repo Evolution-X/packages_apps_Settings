@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2019-2024 The Evolution X Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Device Info screen. Evolution X legal. -->
+    <string name="evolution_license_title">Evolution X legal</string>
+    <!-- Android version screen, build maintainer -->
+    <string name="build_maintainer">Údržbár kompilácie</string>
+    <!-- Hide developer status -->
+    <string name="hide_developer_status_title">Skryť status vývojára</string>
+    <string name="hide_developer_status_summary">Skrytie statusu vývojára z aplikácií</string>
+    <string name="search">Hľadať</string>
+    <string name="search_apps">Vyhľadať aplikácie</string>
+    <!-- Misc Haptics -->
+    <string name="misc_vibration_category_title">Rôzne haptické prvky</string>
+    <!-- Volume slider haptic feedback -->
+    <string name="volume_slider_haptic_feedback_title">Vibrovanie pri zmene jasu posuvníka</string>
+    <!-- QS Tiles haptic -->
+    <string name="qs_tiles_haptic_feedback_title">Vibrovať pri kliknutí na ikonu rýchlych nastavení</string>
+    <!-- Scroll fling haptic feedback -->
+    <string name="scroll_fling_haptic_feedback_title">Vibrovať pri presunoch</string>
+    <!-- Charger haptic feedback -->
+    <string name="charger_haptic_feedback_title">Vibrovať pri zmene pripojenia nabíjačky</string>
+    <!-- Charging sound -->
+    <string name="charging_sounds_custom_title">Zvuky nabíjania</string>
+    <!-- QS Brightness slider haptic feedback -->
+    <string name="qs_brightness_slider_haptic_feedback_title">Vibrovanie pri zmene jasu posuvníka</string>
+    <!-- Screenshot shutter -->
+    <string name="screenshot_shutter_sound_title">Zvuk snímky obrazovky</string>
+    <!-- Three-fingers-swipe to screenshot -->
+    <string name="swipe_to_screenshot_gesture_title">Potiahnutím zhotoviť snímku obrazovky</string>
+    <string name="swipe_to_screenshot_gesture_summary">Potiahnutím tromi prstami zhotoviť snímku obrazovky</string>
+    <!-- Deep Sleep percentage in device info -->
+    <string name="status_sleep_time">Hlboký spánok</string>
+    <!-- Show clipboard overlay -->
+    <string name="show_clipboard_overlay_title">Zobraziť dialóg schránky</string>
+    <string name="show_clipboard_overlay_summary">Po skopírovaní niečoho do schránky zobraziť v ľavom dolnom rohu obrazovky dialóg schránky</string>
+    <!-- Screen resolution -->
+    <string name="custom_screen_resolution_title">Vlastné rozlíšenie obrazovky</string>
+    <!-- Unlimit screenrecord -->
+    <string name="unlimit_screenrecord_title">Záznam obrazovky bez obmedzenia</string>
+    <string name="unlimit_screenrecord_summary">Odstrániť obmedzenie veľkosti súboru 15GiB\nMôže mať za následok väčší výstupný súbor, ako je potrebné</string>
+</resources>

@@ -52,6 +52,7 @@
     <color name="shortcut_background">#fff5f5f5</color>
 
     <!-- Dashboard/homepage icon background colors -->
+    <color name="homepage_evolution_background">#0060FF</color>
     <color name="homepage_network_background">#2196F3</color>
     <color name="homepage_connected_device_background">#72B70F</color>
     <color name="homepage_app_and_notification_background">#FF7E0F</color>
