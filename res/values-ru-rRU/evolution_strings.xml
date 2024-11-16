@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2019-2024 The Evolution X Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Device Info screen. Evolution X legal. -->
+    <string name="evolution_license_title">Правовая информация Evolution X</string>
+    <!-- Android version screen, build maintainer -->
+    <string name="build_maintainer">Сопровождающий</string>
+    <!-- Hide developer status -->
+    <string name="hide_developer_status_title">Скрыть статус разработчика</string>
+    <string name="hide_developer_status_summary">Скрыть статус разработчика из приложений</string>
+    <string name="search">Поиск</string>
+    <string name="search_apps">Поиск приложений</string>
+    <!-- Misc Haptics -->
+    <string name="misc_vibration_category_title">Прочие тактильные события</string>
+    <!-- Volume slider haptic feedback -->
+    <string name="volume_slider_haptic_feedback_title">Вибрация при перемещении ползунка громкости</string>
+    <!-- QS Tiles haptic -->
+    <string name="qs_tiles_haptic_feedback_title">Вибрация при нажатии на плитки быстрых настроек</string>
+    <!-- Scroll fling haptic feedback -->
+    <string name="scroll_fling_haptic_feedback_title">Вибрация при быстрой прокрутке</string>
+    <!-- Charger haptic feedback -->
+    <string name="charger_haptic_feedback_title">Вибрация при подключении и отключении зарядки</string>
+    <!-- Charging sound -->
+    <string name="charging_sounds_custom_title">Звук подключения зарядки</string>
+    <!-- QS Brightness slider haptic feedback -->
+    <string name="qs_brightness_slider_haptic_feedback_title">Вибрация при перемещении ползунка яркости</string>
+    <!-- Screenshot shutter -->
+    <string name="screenshot_shutter_sound_title">Звук снимка экрана</string>
+    <!-- Three-fingers-swipe to screenshot -->
+    <string name="swipe_to_screenshot_gesture_title">Жест для создания снимка экрана</string>
+    <string name="swipe_to_screenshot_gesture_summary">Проведите тремя пальцами для создания снимка экрана</string>
+    <!-- Deep Sleep percentage in device info -->
+    <string name="status_sleep_time">Глубокий сон</string>
+    <!-- Show clipboard overlay -->
+    <string name="show_clipboard_overlay_title">Показывать окно буфера обмена</string>
+    <string name="show_clipboard_overlay_summary">Показывать содержимое буфера обмена в левом нижнем углу экрана, когда что-то копируется в буфер</string>
+    <!-- Screen resolution -->
+    <string name="custom_screen_resolution_title">Пользовательское разрешение экрана</string>
+    <!-- Unlimit screenrecord -->
+    <string name="unlimit_screenrecord_title">Снять ограничение на запись экрана</string>
+    <string name="unlimit_screenrecord_summary">Убрать ограничение на размер в 15 ГБ\nИтоговый файл может иметь очень большой размер</string>
+</resources>
