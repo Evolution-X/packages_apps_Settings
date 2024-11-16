@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2019-2024 The Evolution X Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Device Info screen. Evolution X legal. -->
+    <string name="evolution_license_title">Giấy phép Evolution X</string>
+    <!-- Android version screen, build maintainer -->
+    <string name="build_maintainer">Người bảo trì</string>
+    <!-- Screenshot shutter -->
+    <string name="screenshot_shutter_sound_title">Âm thanh chụp màn hình</string>
+    <!-- Deep Sleep percentage in device info -->
+    <string name="status_sleep_time">Thời gian ngủ sâu</string>
+    <!-- Show clipboard overlay -->
+    <string name="show_clipboard_overlay_title">Hiển thị bảng nhớ tạm nổi</string>
+    <string name="show_clipboard_overlay_summary">Hiển thị bảng nổi ở góc trái màn hình khi có nội dung được sao chép</string>
+    <!-- Force LTE_CA -->
+    <string name="force_lte_ca">Bắt buộc LTE CA</string>
+    <string name="force_lte_ca_summary">Kích hoạt chế độ ghép kênh LTE</string>
+    <!-- AdGuard DNS Option -->
+    <!-- AdGuard DNS hostname -->
+    <!-- Open DNS Option -->
+    <!-- Open DNS hostname -->
+    <!-- Cleanbrowsing DNS Option -->
+    <!-- Cleanbrowsing DNS hostname -->
+    <!-- Quad9 DNS Option -->
+    <!-- Quad9 DNS hostname -->
+    <!-- Per-app volume -->
+    <string name="app_volume">Âm lượng ứng dụng</string>
+    <string name="app_volume_title">Âm lượng riêng cho ứng dụng</string>
+    <string name="app_volume_summary">Đặt mức âm lượng khác nhau cho từng ứng dụng</string>
+    <!-- Wi-Fi MAC address randomization -->
+    <string name="wifi_per_connection_random_mac_addr">Dùng MAC ngẫu nhiên theo kết nối (mặc định)</string>
+    <string name="wifi_per_network_random_mac_addr">Dùng MAC ngẫu nhiên theo mạng</string>
+    <string name="wifi_device_mac_addr">Dùng MAC thiết bị</string>
+    <!-- Hardware info -->
+    <string name="device_market_name">Tên thương mại</string>
+    <string name="soc_model">Chip xử lý</string>
+    <string name="total_ram">Tổng RAM</string>
+    <!-- Wifi/Bluetooth auto timeout -->
+    <string name="wifi_timeout">Tự tắt Wi-Fi</string>
+    <string name="wifi_timeout_summary">Không tự động tắt Wi-Fi</string>
+    <string name="wifi_timeout_summary_auto">Tự tắt Wi-Fi sau <xliff:g id="timeout_description">%1$s</xliff:g> khi mất kết nối</string>
+    <string name="bluetooth_timeout">Tự tắt Bluetooth</string>
+    <string name="bluetooth_timeout_summary">Không tự động tắt Bluetooth</string>
+    <string name="bluetooth_timeout_summary_auto">Tự tắt Bluetooth sau <xliff:g id="timeout_description">%1$s</xliff:g> khi không có thiết bị kết nối</string>
+    <string name="custom_timeout_summary_never">Không bao giờ</string>
+    <string name="custom_timeout_summary_5secs">5 giây</string>
+    <string name="custom_timeout_summary_10secs">10 giây</string>
+    <string name="custom_timeout_summary_15secs">15 giây</string>
+    <string name="custom_timeout_summary_30secs">30 giây</string>
+    <string name="custom_timeout_summary_1min">1 phút</string>
+    <string name="custom_timeout_summary_2mins">2 phút</string>
+    <string name="custom_timeout_summary_5mins">5 phút</string>
+    <string name="custom_timeout_summary_10mins">10 phút</string>
+    <string name="custom_timeout_summary_20mins">20 phút</string>
+    <string name="custom_timeout_summary_30mins">30 phút</string>
+    <string name="custom_timeout_summary_1hour">1 giờ</string>
+    <string name="custom_timeout_summary_2hours">2 giờ</string>
+    <string name="custom_timeout_summary_4hours">4 giờ</string>
+    <string name="custom_timeout_summary_8hours">8 giờ</string>
+    <string name="custom_timeout_summary_12hours">12 giờ</string>
+    <string name="custom_timeout_summary_24hours">24 giờ</string>
+    <string name="custom_timeout_summary_36hours">36 giờ</string>
+    <string name="custom_timeout_summary_48hours">48 giờ</string>
+    <string name="custom_timeout_summary_72hours">72 giờ</string>
+    <!-- Default Timeouts -->
+    <string name="custom_timeout_summary_1hour_def">1 giờ (mặc định)</string>
+    <!-- Default getTimeSpentInApp string for Wellbeing to display. [CHAR LIMIT=NONE] -->
+    <string name="duration_less_than_one_minute">Dưới 1 phút</string>
+    <!-- Summary for Wellbeing screen time usage. [CHAR LIMIT=NONE] -->
+    <string name="screen_time_summary_usage_today">%1$s hôm nay</string>
+    <!-- Auto pin confirm -->
+    <string name="lock_screen_auto_pin_confirm_summary_custom">Tự động mở khóa khi nhập đúng PIN. Tính năng này làm giảm bảo mật so với việc phải nhấn Enter để xác nhận.</string>
+    <!-- Radio Info -->
+    <string name="radio_info_title">Thông tin radio</string>
+    <!-- USB configuration -->
+    <string name="usb_default_config_title">Cấu hình cổng USB</string>
+    <string name="usb_default_config_summary">Chọn hành vi mặc định khi được kết nối với thiết bị qua cổng USB</string>
+    <!-- App details: open play store link if app is user installed -->
+    <string name="app_play_store">Google Play</string>
+    <!-- Menu option for not validating the EAP server -->
+    <string name="wifi_do_not_validate_eap_server">Không xác thực</string>
+    <!-- Warning message displayed if user choses not to validate the EAP server -->
+    <string name="wifi_do_not_validate_eap_server_warning">Không có chứng chỉ được chỉ định. Kết nối của bạn có thể không an toàn.</string>
+    <!-- Clipboard -->
+    <string name="copied_to_clipboard">Đã sao chép vào bảng nhớ tạm</string>
+    <string name="longpress_to_clipboard">Nhấn giữ để sao chép</string>
+    <!-- WiFi Hotspot -->
+    <string name="wifi_hotspot_hidden_ssid_title">Ẩn mạng</string>
+    <string name="wifi_hotspot_hidden_ssid_summary">Tên mạng phát sóng sẽ không hiển thị trong danh sách Wi-Fi khả dụng</string>
+    <string name="wifi_hotspot_client_manager_title">Thiết bị đã kết nối</string>
+    <string name="wifi_hotspot_client_manager_summary">Xem và quản lý thiết bị kết nối đến điểm phát sóng</string>
+    <string name="wifi_hotspot_client_manager_list_only_summary">Danh sách thiết bị kết nối đến điểm phát sóng</string>
+    <string name="wifi_hotspot_client_limit_title">Giới hạn thiết bị kết nối</string>
+    <string name="wifi_hotspot_blocked_clients_list_title">Thiết bị bị chặn</string>
+    <string name="wifi_hotspot_connected_clients_list_title">Thiết bị đang kết nối</string>
+    <string name="wifi_hotspot_block_client_dialog_title">Chặn thiết bị</string>
+    <string name="wifi_hotspot_block_client_dialog_text">Hành động này sẽ ngắt kết nối \"<xliff:g id="device_name">%1$s</xliff:g>\" và thêm vào danh sách chặn</string>
+    <string name="wifi_hotspot_unblock_client_dialog_title">Bỏ chặn thiết bị</string>
+    <string name="wifi_hotspot_unblock_client_dialog_text">Thiết bị \"<xliff:g id="device_name">%1$s</xliff:g>\" sẽ có thể kết nối đến điểm phát sóng</string>
+    <string name="wifi_hotspot_client_manager_footer_text">Chưa có thiết bị nào. Các thiết bị kết nối và bị chặn sẽ hiển thị tại đây.</string>
+    <plurals name="wifi_hotspot_client_limit_summary">
+        <item quantity="other">Tối đa <xliff:g id="device_num">%1$d</xliff:g> thiết bị có thể kết nối</item>
+    </plurals>
+    <!-- Smart 5G -->
+    <string name="smart_5g_title">5G thông minh</string>
+    <string name="smart_5g_summary">Tự động chuyển đổi giữa 5G và 4G để tiết kiệm pin</string>
+    <!-- Doze on double tap -->
+    <string name="double_tap_title">Chạm hai lần</string>
+    <string name="doze_double_tap_title">Chạm hai lần để kiểm tra</string>
+    <string name="doze_double_tap_summary">Hiển thị thông báo khi chạm hai lần</string>
+    <!-- Clipboard auto clear -->
+    <string name="clipboard_auto_clear_timeout_title">Thời gian tự xóa bảng nhớ tạm</string>
+    <string name="clipboard_auto_clear_title">Tự động xóa bảng nhớ tạm</string>
+    <string name="clipboard_auto_clear_summary">Tự động xóa nội dung bảng nhớ tạm theo lịch</string>
+    <string name="clipboard_auto_clear_enabled_title">Bật tự động xóa bảng nhớ tạm</string>
+    <string name="clipboard_auto_clear_timeout_disable_clipboard">Tắt bảng nhớ tạm</string>
+    <!-- Game space -->
+    <string name="game_space_title">Không gian trò chơi</string>
+    <string name="game_space_summary">Cải thiện trải nghiệm chơi game</string>
+    <!-- Unlimit screenrecord -->
+    <string name="unlimit_screenrecord_title">Bỏ giới hạn ghi màn hình</string>
+    <string name="unlimit_screenrecord_summary">Gỡ bỏ giới hạn kích thước file 15GiB\nCó thể tạo file xuất lớn hơn mức cần thiết</string>
+    <!-- Hide screen capture status -->
+    <string name="hide_screen_capture_status_title">Ẩn trạng thái chụp/ghi màn hình</string>
+    <string name="hide_screen_capture_status_summary">Ẩn trạng thái chụp/ghi màn hình khỏi ứng dụng. Tiện ích nhưng có thể ảnh hưởng riêng tư. Khởi động lại ứng dụng để áp dụng.</string>
+    <!-- No storage restrict -->
+    <string name="no_storage_restrict_title">Không giới hạn lưu trữ</string>
+    <string name="no_storage_restrict_summary">Gỡ bỏ hạn chế khi chọn thư mục. Tiện lợi trong một số trường hợp nhưng có thể làm lộ thông tin cá nhân.</string>
+    <!-- Wifi Display settings. The title of a menu item to disable mirroring confimration [CHAR LIMIT=40] -->
+    <string name="mirroring_confirmation_disable_menu_item">Tắt xác nhận chiếu màn hình</string>
+    <!-- Hide developer status -->
+    <string name="hide_developer_status_title">Ẩn trạng thái nhà phát triển</string>
+    <string name="hide_developer_status_summary">Ẩn trạng thái nhà phát triển khỏi ứng dụng</string>
+    <!-- App search preference -->
+    <string name="search">Tìm kiếm</string>
+    <string name="search_apps">Tìm kiếm ứng dụng</string>
+    <!-- App lock -->
+    <string name="app_lock_title">Khoá ứng dụng</string>
+    <plurals name="app_lock_summary">
+        <item quantity="other"><xliff:g example="10" id="Number of applications">%1$d</xliff:g> ứng dụng đang được bảo vệ</item>
+    </plurals>
+    <string name="app_lock_authentication_dialog_title">Mở khóa</string>
+    <string name="enable_debugging">Bật gỡ lỗi</string>
+    <string name="disable_debugging">Tắt gỡ lỗi</string>
+    <string name="app_lock_packages_title">Các ứng dụng được bảo vệ</string>
+    <string name="app_lock_packages_summary">Chọn các ứng dụng để bảo vệ bằng sinh trắc học hoặc thông tin xác thực thiết bị</string>
+    <string name="app_lock_timeout_title">Hẹn giờ tự động khóa</string>
+    <string name="app_lock_timeout_summary">Khoảng thời gian mà ứng dụng dưới nền tự động bị khoá</string>
+    <string name="app_lock_notifications_title">Sắp xếp thông báo</string>
+    <string name="app_lock_notifications_summary">Ẩn và thu gọn nội dung thông báo cho ứng dụng bị khóa. Thông báo nổi sẽ tự động tắt.</string>
+    <string name="app_lock_notifications_disabled_summary">Bảo vệ ứng dụng trước tiên</string>
+    <string name="app_lock_biometrics_allowed_title">Bật sinh trắc học để mở khóa</string>
+    <string name="app_lock_footer_text">Bong bóng nổi sẽ tự động biến mất sau khi hết thời gian chờ</string>
+    <string name="enable_protection">Bật bảo vệ</string>
+    <string name="hide_from_launcher_title">Ẩn khỏi trình khởi chạy</string>
+    <string name="hide_from_launcher_summary">Ẩn ứng dụng khỏi màn hình chính. Cần khởi động lại launcher để áp dụng thay đổi.</string>
+    <!-- Doze on charge -->
+    <string name="doze_on_charge_title">Luôn hiển thị khi đang sạc</string>
+    <string name="doze_on_charge_summary">Hiển thị trạng thái và thông báo khi đang sạc</string>
+    <!-- Incall vibrate options -->
+    <string name="incall_vibration_category">Các tùy chọn rung trong cuộc gọi</string>
+    <string name="incall_vibrate_connect_title">Rung khi kết nối</string>
+    <string name="incall_vibrate_call_wait_title">Rung khi chờ cuộc gọi</string>
+    <string name="incall_vibrate_disconnect_title">Rung khi ngắt kết nối</string>
+    <!-- Label for a numbered SIM card.  [CHAR LIMIT=40] -->
+    <!-- Increasing ring tone volume -->
+    <string name="increasing_ring_volume_option_title">Âm lượng chuông tăng dần</string>
+    <string name="increasing_ring_min_volume_title">Âm lượng ban đầu</string>
+    <string name="increasing_ring_ramp_up_time_title">Thời gian tăng dần</string>
+    <!-- Back gesture height -->
+    <string name="back_height_low_label">Toàn bộ</string>
+    <string name="back_height_high_label">Dưới cùng</string>
+    <string name="back_height_title">Chiều cao vuốt back</string>
+    <string name="back_height_summary">Vùng nhạy cảm cho cử chỉ quay lại</string>
+    <!-- Back gesture animation -->
+    <string name="back_gesture_arrow_title">Hiệu ứng vuốt back</string>
+    <string name="back_gesture_arrow_summary">Hiển thị mũi tên khi thực hiện vuốt back</string>
+    <!-- Enforce DNS for VPN -->
+    <string name="vpn_enforce_dns_title">Tắt cho VPN</string>
+    <string name="vpn_enforce_dns_summary">Vô hiệu hóa DNS riêng tư khi dùng VPN\nSẽ khôi phục khi ngắt kết nối VPN</string>
+    <!-- Cycle through ringer modes gesture -->
+    <string name="prevent_ringing_option_cycle">Chuyển đổi chế độ</string>
+    <string name="prevent_ringing_option_cycle_summary">Bật (chuyển đổi chế độ)</string>
+    <!-- Volume Steps -->
+    <string name="volume_steps_title">Mức âm lượng</string>
+    <string name="volume_steps_summary">Tùy chỉnh chi tiết các mức âm lượng</string>
+    <string name="max_music_volume_title">Đa phương tiện</string>
+    <string name="max_call_volume_title">Cuộc gọi</string>
+    <string name="max_alarm_volume_title">Báo thức</string>
+    <string name="steps_unit">bước</string>
+    <!-- AOD/Extra dim schedule -->
+    <string name="extra_dim_schedule_title">Lịch trình</string>
+    <string name="string_disabled">Tắt</string>
+    <string name="always_on_display_schedule_title">Luôn hiển thị theo lịch biểu</string>
+    <string name="always_on_display_schedule_sunset">Hoàng hôn</string>
+    <string name="always_on_display_schedule_sunrise">Bình minh</string>
+    <string name="always_on_display_schedule_mixed_sunset">Bật từ hoàng hôn cho đến một thời gian nhất định</string>
+    <string name="always_on_display_schedule_mixed_sunrise">Bật từ một thời gian nhất định cho đến bình minh</string>
+    <!-- Vibration patterns -->
+    <string name="vibration_pattern_title">Kiểu rung</string>
+    <string name="pattern_custom">Tùy chỉnh</string>
+    <string name="custom_vibration_pattern_title">Mẫu rung tùy chỉnh</string>
+    <string name="custom_vibration_pattern_summary">Đặt kiểu rung tùy chỉnh</string>
+    <!-- Idle manager -->
+    <string name="idle_manager_title">Quản lý chế độ chờ</string>
+    <string name="idle_manager_summary">Dừng các tiến trình nền không cần thiết khi máy ở chế độ chờ</string>
+    <!-- fingerprint lockout -->
+    <string name="fingerprint_lockout_title">Tắt khóa vân tay</string>
+    <string name="fingerprint_lockout_summary">Vô hiệu hóa thời gian chờ 30 giây và khóa vĩnh viễn sau nhiều lần thử vân tay thất bại</string>
+    <!-- Long press navbar to search -->
+    <string name="navbar_long_press_gesture_title">Nhấn giữ để tìm kiếm</string>
+    <string name="navbar_long_press_gesture_summary">Nhấn giữ nút Home hoặc thanh điều hướng để tìm kiếm nội dung trên màn hình</string>
+    <!-- Circle to search -->
+    <string name="search_all_entrypoints_enabled_title">Khoanh tròn để tìm kiếm</string>
+    <string name="search_all_entrypoints_enabled_summary">Dùng cử chỉ khoanh tròn thay cho Google Lens</string>
+    <!-- Running services - Background processes tab -->
+    <string name="background_processes_settings_title">Tiến trình nền</string>
+    <!-- Reality Display Engine -->
+    <string name="display_engine_category">Công nghệ hiển thị</string>
+    <string name="display_engine_mode_title">Reality display engine</string>
+    <string name="x_reality_engine_mode_title">X-Reality engine</string>
+    <string name="vivid_engine_mode_title">Hiển thị sống động</string>
+    <string name="triluminos_engine_mode_title">Hiển thị Triluminos</string>
+    <string name="display_engine_default">Mặc định</string>
+    <string name="display_engine_mode_footer_text">Lấy cảm hứng từ Sony Bravia/X-Reality, công nghệ hiển thị bao gồm chế độ Vivid để tăng độ sáng và bão hòa màu, chế độ X-Reality để cải thiện chi tiết và độ chính xác màu, và chế độ Triluminos cho độ chính xác màu sắc vượt trội.</string>
+    <!-- HDR Display -->
+    <string name="hdr_display_title">Tăng độ sáng HDR</string>
+    <string name="hdr_display_summary">Tăng cường dải màu và độ rõ nét cho nội dung HDR. HDR sẽ hiển thị sáng hơn nhưng tốn pin hơn.</string>
+    <!-- Ambient wake toggles -->
+    <string name="doze_gesture_ambient_title">Hiển thị màn hình thoáng</string>
+    <string name="doze_gesture_ambient_summary">Hiển thị màn hình xem nhanh thay vì đánh thức hoàn toàn</string>
+    <string name="gesture_wake_ambient">Hiển thị màn hình thoáng</string>
+    <string name="gesture_wake">Đánh thức hoàn toàn</string>
+    <!-- Pocket mode -->
+    <string name="proximity_wake_title">Chống mở máy nhầm</string>
+    <string name="proximity_wake_summary">Kiểm tra cảm biến tiệm cận trước khi bật màn hình</string>
+    <!-- Adaptive Playback -->
+    <string name="adaptive_playback_screen_title">Tạm dừng thông minh</string>
+    <string name="adaptive_playback_enabled">Bật tạm dừng thông minh</string>
+    <string name="adaptive_playback_disabled_summary">Tắt</string>
+    <string name="adaptive_playback_intro_text">Tự động tạm dừng phát media khi tắt âm lượng và tiếp tục khi bật lại trong khoảng thời gian cài đặt.</string>
+    <string name="adaptive_playback_timeout_title">Thời gian chờ</string>
+    <string name="adaptive_playback_timeout_none">Không giới hạn</string>
+    <string name="adaptive_playback_timeout_none_summary">Bật (không giới hạn)</string>
+    <string name="adaptive_playback_timeout_30_secs">30 giây</string>
+    <string name="adaptive_playback_timeout_30_secs_summary">Bật (30 giây)</string>
+    <string name="adaptive_playback_timeout_1_min">1 phút</string>
+    <string name="adaptive_playback_timeout_1_min_summary">Bật (1 phút)</string>
+    <string name="adaptive_playback_timeout_2_min">2 phút</string>
+    <string name="adaptive_playback_timeout_2_min_summary">Bật (2 phút)</string>
+    <string name="adaptive_playback_timeout_5_min">5 phút</string>
+    <string name="adaptive_playback_timeout_5_min_summary">Bật (5 phút)</string>
+    <string name="adaptive_playback_timeout_10_min">10 phút</string>
+    <string name="adaptive_playback_timeout_10_min_summary">Bật (10 phút)</string>
+    <!-- Reset auto brightness adjustment -->
+    <string name="reset_auto_brightness_adjustment_title">Đặt lại cài đặt</string>
+    <string name="reset_auto_brightness_adjustment_summary">Xóa tùy chọn độ sáng và khôi phục về mặc định</string>
+    <string name="reset_auto_brightness_adjustment_done">Đã đặt lại tùy chọn độ sáng tự động</string>
+    <!-- Force dark mode -->
+    <string name="force_dark_title">Chế độ tối cho ứng dụng bên thứ ba</string>
+    <string name="force_dark_summary">Áp dụng màu tối cho ứng dụng không hỗ trợ chế độ tối. Một số giao diện có thể hiển thị không đúng.</string>
+    <!-- Data Usage Cycle -->
+    <string name="billing_cycle_type_title">Chu kỳ dùng dữ liệu</string>
+    <string name="billing_cycle_type_monthly">Hàng tháng</string>
+    <string name="billing_cycle_type_weekly">Hàng tuần</string>
+    <string name="billing_cycle_type_daily">Hàng ngày</string>
+    <string name="billing_cycle_less_than_one_hour_left">Còn dưới 1 giờ</string>
+    <string name="billing_cycle_hours_left">{count, plural,
+        =1      {Còn # giờ}
+        other   {Còn # giờ}
+        }</string>
+    <string name="cycle_type_weekly_title">Ngày đặt lại chu kỳ</string>
+    <string name="cycle_type_weekly_sub">Ngày trong tuần:\n1 = Thứ Hai</string>
+    <string name="cycle_type_daily_title">Giờ đặt lại chu kỳ</string>
+    <string name="cycle_type_daily_sub">Giờ trong ngày:</string>
+    <!-- Wake gestures haptics -->
+    <string name="doze_gesture_vibrate_title">Phản hồi rung</string>
+    <string name="doze_gesture_vibrate_summary">Rung khi thực hiện cử chỉ</string>
+    <!-- Per-app configs -->
+    <string name="per_app_config_empty_text">Không có ứng dụng nào hỗ trợ cài đặt hiện tại</string>
+    <!-- Per-app refresh rate -->
+    <string name="per_app_refresh_rate_title">Tần số quét theo ứng dụng</string>
+    <string name="per_app_refresh_rate_summary">Đặt tần số quét riêng cho từng ứng dụng</string>
+    <string name="per_app_refresh_rate_default">Theo hệ thống</string>
+    <!-- Screen refresh rate -->
+    <string name="screen_refresh_rate_title">Tần số quét màn hình</string>
+    <string name="min_refresh_rate_title">Tần số quét tối thiểu</string>
+    <string name="max_refresh_rate_title">Tần số quét tối đa</string>
+    <string name="battery_saver_refresh_rate_title">Giảm tần số quét</string>
+    <string name="battery_saver_refresh_rate_summary">Giảm xuống 60 Hz để tiết kiệm pin khi bật chế độ tiết kiệm pin</string>
+    <string name="battery_saver_refresh_rate_disabled_summary">Đang bật tần số quét cực cao</string>
+    <!-- Extreme refresh rate -->
+    <string name="extreme_refresh_rate_title">Tần số quét cực cao</string>
+    <string name="extreme_refresh_rate_summary">Luôn dùng tần số quét cao nhất cho mọi ứng dụng</string>
+    <string name="extreme_refresh_rate_warning">Hệ thống sẽ luôn chọn tần số quét cao nhất, bỏ qua tùy chọn của người dùng và ứng dụng. Ứng dụng yêu cầu tần số cụ thể có thể chạy không bình thường.</string>
+    <!-- Confirm dialog -->
+    <string name="confirm_before_enable_title">Tiếp tục bật?</string>
+    <!-- Battery Saver -->
+    <string name="adaptive_battery_switch_title">Dùng pin thích ứng</string>
+    <string name="basic_battery_saver_title">Tiết kiệm pin tiêu chuẩn</string>
+    <string name="basic_battery_saver_summary">Giới hạn hiệu ứng hình ảnh và hoạt động nền. Bật chế độ tối nếu chưa bật.</string>
+    <string name="battery_saver_reminder_category">Nhắc nhở</string>
+    <string name="battery_saver_reminder_switch_title">Nhắc nhở tiết kiệm pin</string>
+    <string name="battery_saver_reminder_switch_summary">Nhắc nhở khi pin yếu</string>
+    <string name="battery_saver_schedule_category">Lịch trình</string>
+    <string name="battery_saver_schedule_switch_title">Bật theo mức pin</string>
+    <string name="battery_saver_schedule_switch_summary">Tự bật tiết kiệm pin khi pin xuống mức bạn đặt</string>
+    <string name="battery_schedule_title">Lịch trình và nhắc nhở</string>
+    <string name="battery_schedule_summary">Quản lý thời điểm bật tiết kiệm pin</string>
+    <string name="extreme_battery_saver_title">Tiết kiệm pin tối đa</string>
+    <string name="extreme_battery_saver_summary">Bao gồm tất cả thay đổi trên. Đồng thời tạm dừng ứng dụng không thiết yếu và thông báo của chúng.</string>
+    <string name="smart_battery_a11y_expand_label">Mở rộng, Pin thích ứng</string>
+    <string name="smart_battery_a11y_collapse_label">Thu gọn, Pin thích ứng</string>
+    <string name="smart_battery_title">Pin thích ứng</string>
+    <string name="unified_battery_saver_page_intro">Tiết kiệm năng lượng để kéo dài thời gian sử dụng pin</string>
+    <!-- IME button space -->
+    <string name="show_ime_space_title">Hiện khoảng trống IME</string>
+    <string name="show_ime_space_summary">Hiện thanh chuyển đổi bàn phím hoặc ẩn bàn phím ảo từ thanh công cụ dưới cùng khi gõ</string>
+    <!-- Pulse on music track change -->
+    <string name="pulse_on_new_tracks_title">Trình phát nhạc</string>
+    <string name="pulse_on_new_tracks_summary">Hiển thị màn hình thoáng khi phát bài hát mới</string>
+</resources>
