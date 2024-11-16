@@ -27,6 +27,21 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:order="-135"
+        android:key="top_level_evolution_category"
+        android:layout="@layout/settingslib_expressive_untitled_preference_category">
+        <com.android.settings.widget.HomepagePreference
+            android:fragment="org.evolution.settings.EvolutionSettings"
+            android:icon="@drawable/ic_settings_evolution_filled"
+            android:key="top_level_evolver"
+            android:order="-160"
+            android:title="@string/evolver_dashboard_title"
+            android:summary="@string/evolver_dashboard_summary"
+            settings:highlightableMenuKey="@string/menu_key_evolver"
+            settings:controller="org.evolution.settings.TopLevelEvolutionSettingsPreferenceController"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:order="-130"
         android:key="top_level_connectivity_category"
         android:layout="@layout/settingslib_expressive_untitled_preference_category">
