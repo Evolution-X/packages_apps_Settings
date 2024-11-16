@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: Evolution X
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Device Info screen. Evolution X legal. -->
+    <string name="evolution_license_title">یاساکانی Evolution X</string>
+    <!-- Android version screen, build maintainer -->
+    <string name="build_maintainer_label">سەرپەرشتی دەکرێت لەلایەن</string>
+    <string name="build_maintainer">بەرپرسی وەشان</string>
+    <string name="maintainer_link_github">پڕۆفایلی GitHub</string>
+    <string name="maintainer_link_donate">کۆمەککردن</string>
+    <string name="device_name">ئامێر</string>
+    <!-- Display settings screen, setting option to toggle sleep on face down -->
+    <string name="face_down_sleep_title">ناسینەوەی سەرەوخواربوون</string>
+    <!-- Display settings screen, setting option summary to toggle sleep on face down -->
+    <string name="face_down_sleep_summary">کوژاندنەوەی ڕوونما دوای ماوەیەکی کورت کاتێک ئامێرەکە سەرەوخوار دەکرێت</string>
+    <!-- Deep Sleep percentage in device info -->
+    <string name="status_sleep_time">خەوتنی قووڵ</string>
+    <!-- Show clipboard overlay -->
+    <string name="show_clipboard_overlay_title">نیشاندانی کلیپبۆرد لەسەر ڕوونما</string>
+    <string name="show_clipboard_overlay_summary">نیشاندانی پانێڵێکی بچووک لە گۆشەی خوارەوەی چەپی ڕوونما کاتێک شتێک کۆپی دەکرێت بۆ کلیپبۆرد</string>
+    <!-- AdGuard DNS Option -->
+    <!-- AdGuard DNS hostname -->
+    <!-- Open DNS Option -->
+    <!-- Open DNS hostname -->
+    <!-- Cleanbrowsing DNS Option -->
+    <!-- Cleanbrowsing DNS hostname -->
+    <!-- Quad9 DNS Option -->
+    <!-- Quad9 DNS hostname -->
+    <!-- Hardware info -->
+    <string name="device_market_name">ناوی بازاڕ</string>
+    <string name="hardware_platform_label">پلاتفۆرم</string>
+    <string name="total_ram">تەواوی ڕام (RAM)</string>
+    <!-- Wi-Fi/Bluetooth auto timeout -->
+    <string name="wifi_timeout">کاتی ڕاوەستانی وایفای</string>
+    <string name="wifi_timeout_summary">وایفای خۆکار مەکوژێنەرەوە</string>
+    <string name="wifi_timeout_summary_auto">وایفای دەکوژێتەوە دوای <xliff:g id="timeout_description">%1$s</xliff:g> ئەگەر هیچ تۆڕێک نەبەسترابێتەوە</string>
+    <string name="bluetooth_timeout">کاتی ڕاوەستانی بلووتووس</string>
+    <string name="bluetooth_timeout_summary">بلووتووس خۆکار مەکوژێنەرەوە</string>
+    <string name="bluetooth_timeout_summary_auto">بلووتووس دەکوژێتەوە دوای <xliff:g id="timeout_description">%1$s</xliff:g> ئەگەر هیچ ئامێرێک نەبەسترابێتەوە</string>
+    <string name="custom_timeout_summary_never">هەرگیز</string>
+    <string name="custom_timeout_summary_5secs">٥ چرکە</string>
+    <string name="custom_timeout_summary_10secs">١٠ چرکە</string>
+    <string name="custom_timeout_summary_15secs">١٥ چرکە</string>
+    <string name="custom_timeout_summary_30secs">٣٠ چرکە</string>
+    <string name="custom_timeout_summary_1min">١ خولەک</string>
+    <string name="custom_timeout_summary_2mins">٢ خولەک</string>
+    <string name="custom_timeout_summary_5mins">٥ خولەک</string>
+    <string name="custom_timeout_summary_10mins">١٠ خولەک</string>
+    <string name="custom_timeout_summary_20mins">٢٠ خولەک</string>
+    <string name="custom_timeout_summary_30mins">٣٠ خولەک</string>
+    <string name="custom_timeout_summary_1hour">١ کاتژمێر</string>
+    <string name="custom_timeout_summary_2hours">٢ کاتژمێر</string>
+    <string name="custom_timeout_summary_4hours">٤ کاتژمێر</string>
+    <string name="custom_timeout_summary_8hours">٨ کاتژمێر</string>
+    <string name="custom_timeout_summary_12hours">١٢ کاتژمێر</string>
+    <string name="custom_timeout_summary_24hours">٢٤ کاتژمێر</string>
+    <string name="custom_timeout_summary_36hours">٣٦ کاتژمێر</string>
+    <string name="custom_timeout_summary_48hours">٤٨ کاتژمێر</string>
+    <string name="custom_timeout_summary_72hours">٧٢ کاتژمێر</string>
+    <!-- Default timeouts -->
+    <string name="custom_timeout_summary_1hour_def">١ کاتژمێر (بنەڕەتی)</string>
+    <!-- Default getTimeSpentInApp string for Wellbeing to display. [CHAR LIMIT=NONE] -->
+    <string name="duration_less_than_one_minute">کەمتر لە ١ خولەک</string>
+    <!-- Summary for Wellbeing screen time usage. [CHAR LIMIT=NONE] -->
+    <string name="screen_time_summary_usage_today">%1$s ئەمڕۆ</string>
+    <!-- Auto pin confirm -->
+    <string name="lock_screen_auto_pin_confirm_summary_custom">کردنەوەی قوفڵ بە شێوەی خۆکار ئەگەر کۆدی PIN بە ڕاستی داخڵ بکەیت. ئەمە کەمێک کەمتر پارێزراوە لەوەی کە پەنجە بنێیت بە دوگمەی Enter بۆ پشتڕاستکردنەوە.</string>
+    <!-- Radio Info -->
+    <string name="radio_info_title">زانیاری ڕادیۆ</string>
+    <!-- USB configuration -->
+    <string name="usb_default_config_title">ڕێکخستنی USB</string>
+    <string name="usb_default_config_summary">دیاریکردنی جۆری کارکردنی USB کاتێک دەبەسترێت بە کۆمپیوتەرەوە</string>
+    <!-- App details: open play store link if app is user installed -->
+    <string name="app_play_store">گۆگڵ پلەی (Google Play)</string>
+    <!-- Menu option for not validating the EAP server -->
+    <string name="wifi_do_not_validate_eap_server">پشتڕاست مەکەرەوە</string>
+    <!-- Warning message displayed if user choses not to validate the EAP server -->
+    <string name="wifi_do_not_validate_eap_server_warning">هیچ بڕوانامەیەک دیاری نەکراوە. پەیوەندییەکەت تایبەت نابێت.</string>
+    <!-- Clipboard -->
+    <string name="copied_to_clipboard">کۆپی کرا بۆ کلیپبۆرد</string>
+    <string name="longpress_to_clipboard">دەستداگرتنی درێژ بۆ کۆپیکردن</string>
+    <!-- Wi-Fi Hotspot -->
+    <string name="wifi_hotspot_hidden_ssid_title">تۆڕی شاراوە</string>
+    <string name="wifi_hotspot_hidden_ssid_summary">ناوی هۆتسپۆتەکەت لە لیستی تۆڕە وایفایە بەردەستەکاندا دەرناکەوێت.</string>
+    <string name="wifi_hotspot_client_manager_title">ئامێرە بەستراوەکان</string>
+    <string name="wifi_hotspot_client_manager_summary">بینین و بەڕێوەبردنی ئەو ئامێرانەی بە هۆتسپۆتەوە بەستراونەتەوە</string>
+    <string name="wifi_hotspot_client_manager_list_only_summary">لیستی ئەو ئامێرانەی بە هۆتسپۆتەوە بەستراونەتەوە</string>
+    <string name="wifi_hotspot_client_limit_title">ڕادەی ئامێرە بەستراوەکان</string>
+    <string name="wifi_hotspot_blocked_clients_list_title">ئامێرە بلۆککراوەکان</string>
+    <string name="wifi_hotspot_connected_clients_list_title">ئامێرە بەستراوەکان</string>
+    <string name="wifi_hotspot_block_client_dialog_title">بلۆککردنی ئامێر</string>
+    <string name="wifi_hotspot_block_client_dialog_text">ئەم کارە ئامێری \"<xliff:g id="device_name">%1$s</xliff:g>\" دەپچڕێنێت و دەیکاتە لیستی بلۆکەوە</string>
+    <string name="wifi_hotspot_unblock_client_dialog_title">لابردنی بلۆک لەسەر ئامێر</string>
+    <string name="wifi_hotspot_unblock_client_dialog_text">ئامێری \"<xliff:g id="device_name">%1$s</xliff:g>\" دەتوانێت بەم هۆتسپۆتەوە ببەسترێتەوە</string>
+    <string name="wifi_hotspot_client_manager_footer_text">لە ئێستادا هیچ ئامێرێک بەردەست نییە. ئامێرە بەستراوەکان و بلۆککراوەکان لێرەدا نیشان دەدرێن کاتێک بەردەست بن.</string>
+    <plurals name="wifi_hotspot_client_limit_summary">
+        <item quantity="other">تاوەکو <xliff:g id="device_num">%1$d</xliff:g> ئامێر دەتوانن بەم هۆتسپۆتەوە ببەسترێنەوە</item>
+        <item quantity="one">تاوەکو <xliff:g id="device_num">%1$d</xliff:g> ئامێر دەتوانێت بەم هۆتسپۆتەوە ببەستریتەوە</item>
+    </plurals>
+    <!-- Smart 5G -->
+    <string name="smart_5g_title">5Gـی زیرەک</string>
+    <string name="smart_5g_summary">گۆڕینی خۆکار لە نێوان 5G و 4G بۆ کەمکردنەوەی بەکارهێنانی پاتری</string>
+    <!-- Doze on double tap -->
+    <string name="double_tap_title">دووجار دەستلێدان</string>
+    <string name="doze_double_tap_title">دووجار دەستلێدان بۆ پشکنینی مۆبایل</string>
+    <string name="doze_double_tap_summary">نیشاندانی ئاگادارییەکان بە دووجار دەستلێدان لە ڕوونما</string>
+    <!-- Clipboard auto clear -->
+    <string name="clipboard_auto_clear_timeout_title">کاتی پاککردنەوەی خۆکاری کلیپبۆرد</string>
+    <string name="clipboard_auto_clear_title">پاککردنەوەی خۆکاری کلیپبۆرد</string>
+    <string name="clipboard_auto_clear_summary">خۆکار کلیپبۆرد پاک دەکرێتەوە لەو کاتەی دیاری کراوە</string>
+    <string name="clipboard_auto_clear_enabled_title">بەکارهێنانی پاککردنەوەی خۆکاری کلیپبۆرد</string>
+    <string name="clipboard_auto_clear_timeout_disable_clipboard">ناچالاککردنی کلیپبۆرد</string>
+    <!-- Game space -->
+    <string name="game_space_title">شوێنی یاری (Game space)</string>
+    <string name="game_space_summary">باشترکردنی ئەزموونی یارییەکانت</string>
+    <!-- Unlimit screenrecord -->
+    <string name="unlimit_screenrecord_title">تۆمارکردنی ڕوونمای بێ سنوور</string>
+    <string name="unlimit_screenrecord_summary">لابردنی سنووری قەبارەی فایلی ١٥ گێگابایت\nلەیەکتریوانەیە قەبارەی فایلەکە زۆر گەورە بێت</string>
+    <!-- Hide screen capture status -->
+    <string name="hide_screen_capture_status_title">شاردنەوەی باری تۆمارکردنی ڕوونما</string>
+    <string name="hide_screen_capture_status_summary">شاردنەوەی باری وێنەگرتن/تۆمارکردنی ڕوونما لە ئەپەکان. بەسوودە بەڵام مەترسی بۆ سەر تایبەتمەندییەکانت هەیە. پێویستە ئەپەکان دەستپێبکەیتەوە بۆ جێبەجێبوون.</string>
+    <!-- No storage restrict -->
+    <string name="no_storage_restrict_title">بێ سنووردارکردنی کۆگا</string>
+    <string name="no_storage_restrict_summary">لابردنی سنووردارکردن لە کاتی هەڵبژاردنی فۆڵدەرەکان لە ڕێگەی (Storage Access Framework). لە هەندێک کاتدا ئاسانکارییە بەڵام لەوانەیە ببێتە هۆی دزەکردنی زانیارییە تایبەتەکان.</string>
+    <!-- Wi-Fi Display settings. The title of a menu item to disable mirroring confirmation [CHAR LIMIT=40] -->
+    <string name="mirroring_confirmation_disable_menu_item">ناچالاککردنی پشتڕاستکردنەوەی ئاوێنەکردن (Mirroring)</string>
+    <!-- Device SKU -->
+    <string name="hardware_sku">ناسنامەی جۆری ڕەقەکاڵا</string>
+    <!-- Doze on charge -->
+    <string name="doze_on_charge_title">هەمیشە نیشان بدە لە کاتی بارگاویکردن</string>
+    <string name="doze_on_charge_summary">نیشاندانی زانیارییەکان کاتێک ئامێرەکە بارگاوی دەبێتەوە</string>
+    <!-- Incall vibrate options -->
+    <string name="incall_vibration_category">لەرینەوە لە کاتی پەیوەندی</string>
+    <string name="incall_vibrate_connect_title">لەرینەوە لە کاتی وەڵامدانەوە</string>
+    <string name="incall_vibrate_call_wait_title">لەرینەوە لە کاتی چاوەڕوانی پەیوەندی</string>
+    <string name="incall_vibrate_disconnect_title">لەرینەوە لە کاتی داخستنی پەیوەندی</string>
+    <!-- Label for a numbered SIM card. [CHAR LIMIT=40] -->
+    <!-- Increasing ring tone volume -->
+    <string name="increasing_ring_volume_option_title">زیادبوونی دەنگی زەنگ</string>
+    <string name="increasing_ring_min_volume_title">دەنگی دەستپێک</string>
+    <string name="increasing_ring_ramp_up_time_title">کاتی بەرزبوونەوە</string>
+    <!-- Enforce DNS for VPN -->
+    <string name="vpn_enforce_dns_title">ناچالاککردن بۆ VPN</string>
+    <string name="vpn_enforce_dns_summary">ناچالاککردنی DNSـی تایبەت کاتێک بە VPNـەوە دەبەسترێیتەوە\nدوای پچڕانی VPN دەگەڕێتەوە باری ئاسایی</string>
+    <!-- Cycle through ringer modes gesture -->
+    <string name="prevent_ringing_option_cycle">سوڕانەوە لە نێوان دۆخەکان</string>
+    <string name="prevent_ringing_option_cycle_summary">چالاکە (سوڕانەوە لە نێوان دۆخەکان)</string>
+    <!-- AOD Schedule -->
+    <string name="always_on_display_schedule_title">خشتەی ڕوونمای هەمیشە داگیرساو (AOD)</string>
+    <string name="string_disabled">ناچالاککراوە</string>
+    <string name="always_on_display_schedule_sunset">ئاوابوونی خۆر</string>
+    <string name="always_on_display_schedule_sunrise">هەڵاتنی خۆر</string>
+    <string name="always_on_display_schedule_mixed_sunset">هەڵکردن لە ئاوابوونی خۆرەوە تا کاتێکی دیاریکراو</string>
+    <string name="always_on_display_schedule_mixed_sunrise">هەڵکردن لە کاتێکی دیاریکراوەوە تا هەڵاتنی خۆر</string>
+    <!-- Fingerprint lockout -->
+    <string name="fingerprint_lockout_title">ناچالاککردنی قوفڵبوونی پەنجەمۆر</string>
+    <string name="fingerprint_lockout_summary">ناچالاککردنی وەستانی ٣٠ چرکەیی و قوفڵبوونی هەمیشەیی دوای چەندین هەوڵی سەرنەکەوتووی پەنجەمۆر</string>
+    <!-- Long press navbar to search -->
+    <string name="navbar_long_press_gesture_title">دەستداگرتنی درێژ بۆ گەڕان</string>
+    <string name="navbar_long_press_gesture_summary">دەست دابگرە لەسەر دوگمەی سەرەکی یان هێڵی گەڕان بۆ گەڕان بەپێی ئەو ناوەرۆکەی لەسەر ڕوونماکەتە</string>
+    <!-- Circle to search -->
+    <string name="search_all_entrypoints_enabled_title">بازنە بکێشە بۆ گەڕان (Circle to Search)</string>
+    <string name="search_all_entrypoints_enabled_summary">بەکارهێنانی CTS لەبری Google Lens بۆ دەستداگرتنی درێژ لەسەر شریتی گەڕان</string>
+    <!-- Running services - Background processes tab -->
+    <string name="background_processes_settings_title">پڕۆسەکانی پاشبنەما</string>
+    <!-- Reality Display Engine -->
+    <string name="display_engine_category">بزوێنەری ڕوونما</string>
+    <string name="display_engine_mode_title">بزوێنەری ڕوونمای ڕاستی (Reality display engine)</string>
+    <string name="x_reality_engine_mode_title">بزوێنەری X-Reality</string>
+    <string name="vivid_engine_mode_title">ڕوونمای Vivid</string>
+    <string name="triluminos_engine_mode_title">ڕوونمای Triluminos</string>
+    <string name="display_engine_default">بنەڕەتی</string>
+    <string name="display_engine_mode_footer_text">ئیلهام وەرگیراو لە بزوێنەری Sony\'s Bravia/X-Reality، ئەم بزوێنەرە دۆخی Vivid لەخۆ دەگرێت بۆ باشترکردنی ڕوونی و ڕەنگ، دۆخی X-Reality بۆ باشترکردنی وردەکارییەکان، و دۆخی Triluminos بۆ وردی نایابی ڕەنگەکان.</string>
+    <!-- Ambient wake toggles -->
+    <string name="doze_gesture_ambient_title">نیشاندانی دۆخی Ambient</string>
+    <string name="doze_gesture_ambient_summary">نیشاندانی ڕوونمای Ambient لەبری هەڵکردنی تەواوەتی ڕوونما</string>
+    <string name="gesture_wake_ambient">نیشاندانی Ambient</string>
+    <string name="gesture_wake">هەڵکردنی تەواو</string>
+    <!-- Pocket mode -->
+    <string name="proximity_wake_title">دۆخی گیرفان</string>
+    <string name="proximity_wake_summary">پشکنینی هەستەوەری نزیکی (Proximity) پێش هەڵکردنی ڕوونما</string>
+    <!-- Reset auto brightness adjustment -->
+    <string name="reset_auto_brightness_adjustment_title">ڕێکخستنەوەی بژاردەکان</string>
+    <string name="reset_auto_brightness_adjustment_summary">ڕێگە بدە بە سیستمەکە کە بژاردەکانی ڕووناکی لەبیر بکات و بیگەڕێنێتەوە بۆ باری بنەڕەتی</string>
+    <string name="reset_auto_brightness_adjustment_done">بژاردەکانی ڕووناکی خۆکار ڕێکخرایەوە</string>
+    <!-- Wake gestures haptics -->
+    <string name="doze_gesture_vibrate_title">وەڵامدانەوەی لەرینەوە (Haptic)</string>
+    <string name="doze_gesture_vibrate_summary">لەرینەوە کاتێک ئەم ئاماژەیە بەکاردێت</string>
+    <!-- Power off verify -->
+    <string name="power_off_verify_footer">پشتڕاستکردنەوەی کوژانەوە ئامێرەکەت دەپارێزێت بە ڕێگریکردن لە کەسانی تر بۆ کوژاندنەوەی مۆبایلەکەت دوای ئەوەی ون دەبێت، ئەمەش هەلی دۆزینەوەی زیاد دەکات. پێویستە تەنها وشەی تێپەڕی قوفڵی ڕوونما داخل بکەیت کاتێک دەتەوێت مۆبایلەکە بکوژێنیتەوە یان پێی بکەیتەوە لە ڕوونمای قوفڵدا.</string>
+    <string name="power_off_verify_summary">کاتێک ئامێرەکەت قوفڵە، پێویستە وشەی تێپەڕ بەکاربهێنیت بۆ کوژاندنەوە یان پێکردنەوە.</string>
+    <string name="power_off_verify_title">پشتڕاستکردنەوەی کوژانەوە</string>
+    <!-- IME button space -->
+    <string name="show_ime_space_title">نیشاندانی شوێنی دوگمەی IME</string>
+    <string name="show_ime_space_summary">چالاککردنی تایبەتمەندی گۆڕینی خێرای ڕێگەی داخڵکردن یان شاردنەوەی تەختەکلیل لە شریتی خوارەوە لە کاتی نووسیندا</string>
+    <!-- Pulse on music track change -->
+    <string name="pulse_on_new_tracks_title">نیشاندەری مۆسیقا</string>
+    <string name="pulse_on_new_tracks_summary">نیشاندانی ڕوونمای Ambient کاتێک گۆرانییەکی نوێ لێدەدرێت</string>
+    <!-- Per-app configs -->
+    <string name="per_app_config_empty_text">هیچ ئەپێکی دامەزراو پاڵپشتی ڕێکخستنەکانی ئێستا ناکات</string>
+    <!-- Per-app refresh rate -->
+    <string name="per_app_refresh_rate_title">ڕێکخستنی ڕێژەی نوێبوونەوە بۆ هەر ئەپێک</string>
+    <string name="per_app_refresh_rate_summary">ڕێکخستنی ڕێژەی نوێبوونەوە (Refresh rate) بە جیا بۆ هەر ئەپێک</string>
+    <string name="per_app_refresh_rate_default">شوێنکەوتنی سیستم</string>
+    <!-- Screen refresh rate -->
+    <string name="screen_refresh_rate_title">ڕێژەی نوێبوونەوەی ڕوونما</string>
+    <string name="min_refresh_rate_title">کەمترین ڕێژەی نوێبوونەوە</string>
+    <string name="max_refresh_rate_title">بەرزترین ڕێژەی نوێبوونەوە</string>
+    <string name="battery_saver_refresh_rate_title">کەمکردنەوەی ڕێژەی نوێبوونەوە</string>
+    <string name="battery_saver_refresh_rate_summary">بەکارهێنانی ڕێژەی 60 Hz بۆ پاشەکەوتکردنی وزە کاتێک پاشەکەوتکەری پاتری چالاکە</string>
+    <string name="battery_saver_refresh_rate_disabled_summary">ڕێژەی نوێبوونەوەی ئەوپەڕی (Extreme) چالاکە</string>
+    <!-- Extreme refresh rate -->
+    <string name="extreme_refresh_rate_title">ڕێژەی نوێبوونەوەی ئەوپەڕی (Extreme)</string>
+    <string name="extreme_refresh_rate_summary">بەکارهێنانی بەرزترین ڕێژەی نوێبوونەوەی پاڵپشتیکراوی پانێڵەکە بەبێ ڕەچاوکردنی پاشەکەوتکەری پاتری یان سنووردارکردنەکانی تر. بەکارهێنانی پاتری زیاد دەکات.</string>
+    <string name="extreme_refresh_rate_warning">ئەمە دڵنیایی دەدات کە سیستمەکە بەرزترین ڕێژەی نوێبوونەوە هەڵدەبژێرێت، و ڕەچاوی بژاردەکانی تری بەکارهێنەر و ئەپەکان ناکات. ئەو ئەپانەی پێویستیان بە ڕێژەیەکی دیاریکراوە، لەوانەیە بە ناڕێکی کار بکەن.</string>
+    <!-- Confirm dialog -->
+    <string name="confirm_before_enable_title">بەردەوام بیت لە چالاککردن؟</string>
+    <!-- Override Mock Location restriction -->
+    <string name="override_mock_location_title">تێپەڕاندنی سنوورداری شوێنی ساختە</string>
+    <string name="override_mock_location_summary">کاتێک چالاکە، ئەپەکان ناتوانن شوێنە ساختەکان بدۆزنەوە</string>
+    <!-- Force LTE_CA -->
+    <string name="force_lte_ca_title">کۆکردنەوەی هێڵەکان (Carrier Aggregation)</string>
+    <string name="force_lte_ca_summary">خێرایی LTE زیاد دەکات لە ڕێگەی کۆکردنەوەی شەپۆلە پاڵپشتیکراوەکان</string>
+    <!-- Screenshot shutter -->
+    <string name="screenshot_shutter_sound_title">دەنگی وێنەی ڕوونما</string>
+    <!-- Back gesture height -->
+    <string name="back_height_low_label">تەواو</string>
+    <string name="back_height_high_label">خوارەوە</string>
+    <string name="back_height_title">بەرزی ئاماژەی گەڕانەوە</string>
+    <string name="back_height_summary">ئەو بەشەی ڕوونما کە ئاماژەی گەڕانەوەی تێدا کار دەکات</string>
+    <!-- Back gesture animation -->
+    <string name="back_gesture_arrow_title">ئەنیمەیشنی ئاماژەی گەڕانەوە</string>
+    <string name="back_gesture_arrow_summary">نیشاندانی تیرێکی جووڵاو بۆ ئاماژەی گەڕانەوە.</string>
+    <!-- Back gesture haptic -->
+    <string name="back_gesture_haptic_title">لەرینەوەی ئاماژەی گەڕانەوە</string>
+    <string name="back_gesture_haptic_summary">لەرینەوە کاتێک ئاماژەی گەڕانەوە ئەنجام دەدرێت</string>
+    <!-- Vibration patterns -->
+    <string name="vibration_pattern_title">شێوازی لەرینەوەی زەنگ</string>
+    <string name="pattern_custom">تایبەت</string>
+    <string name="custom_vibration_pattern_title">شێوازی تایبەت</string>
+    <string name="custom_vibration_pattern_summary">دانانی شێوازێکی لەرینەوەی تایبەت</string>
+    <!-- Locale Picker -->
+    <string name="clear_search_query_description">پاککردنەوەی گەڕان</string>
+    <string name="language_picker_page">پەڕەی هەڵبژاردنی زمان</string>
+    <string name="search_region">گەڕان لە ناوچەکان</string>
+    <string name="search_region_page">پەڕەی گەڕان لە ناوچەکان</string>
+    <!-- Doze brightness -->
+    <string name="doze_brightness_force_title">سەپاندنی ئاستی ڕووناکی</string>
+    <string name="doze_brightness_force_summary">بەکارهێنانی ڕووناکی تایبەت لەبری ڕووناکی ڕاستەقینەی شاشە</string>
+    <string name="ambient_pulse_brightness_title">ڕووناکی Ambient display</string>
+    <string name="ambient_doze_brightness_title">ڕووناکی Always on display</string>
+    <!-- Battery Saver -->
+    <string name="adaptive_battery_switch_title">بەکارهێنانی پاتری گونجاو</string>
+    <string name="basic_battery_saver_title">پاشەکەوتکەری ئاسایی پاتری</string>
+    <string name="basic_battery_saver_summary">کاریگەرییە بینراوەکان و چالاکییەکانی پاشبنەما سنووردار دەکات. تێمای تاریک چالاک دەکات.</string>
+    <string name="battery_saver_reminder_category">بیرهێنانەوەکان</string>
+    <string name="battery_saver_reminder_switch_title">بیرهێنانەوەکانی پاشەکەوتکەری پاتری</string>
+    <string name="battery_saver_reminder_switch_summary">بیرهێنانەوەت بۆ دێت کاتێک پاتری کەم دەبێتەوە</string>
+    <string name="battery_saver_schedule_category">خشتە</string>
+    <string name="battery_saver_schedule_switch_title">هەڵکردن بەپێی ئاستی پاتری</string>
+    <string name="battery_saver_schedule_switch_summary">پاشەکەوتکەری پاتری هەڵدەبێت کاتێک پاتری دەگاتە ئەو ئاستەی دیاریت کردووە</string>
+    <string name="battery_schedule_title">خشتە و بیرهێنانەوەکان</string>
+    <string name="battery_schedule_summary">بەڕێوەبردنی کاتی هەڵبوونی پاشەکەوتکەری پاتری</string>
+    <string name="extreme_battery_saver_title">پاشەکەوتکەری ئەوپەڕی پاتری</string>
+    <string name="extreme_battery_saver_summary">هەموو گۆڕانکارییەکانی سەرەوە دەگرێتەوە، هەروەها ئەپە ناسەرەکییەکان و ئاگادارییەکانیان ڕادەگرێت.</string>
+    <string name="smart_battery_a11y_expand_label">فراوانکردن، پاتری زیرەک</string>
+    <string name="smart_battery_a11y_collapse_label">کۆکردنەوە، پاتری زیرەک</string>
+    <string name="smart_battery_title">پاتری زیرەک</string>
+    <string name="unified_battery_saver_page_intro">وزە پاشەکەوت بکە بۆ ئەوەی پاتری مۆبایلەکەت زیاتر بمێنێتەوە</string>
+    <!-- Per-app volume -->
+    <string name="app_volume">دەنگی ئەپ</string>
+    <string name="app_volume_title">کۆنتڕۆڵکردنی دەنگ بۆ هەر ئەپێک</string>
+    <string name="app_volume_summary">نیشاندانی دوگمەی دەنگی هەر ئەپێک لە ناو دیالۆگی دەنگی گشتی</string>
+    <!-- Vibration settings for sliders -->
+    <string name="accessibility_slider_haptics_category_title">خلیسکێنەرەکان (Sliders)</string>
+    <string name="accessibility_volume_dialog_haptic_title">لەرینەوەی خلیسکێنەری دەنگ</string>
+    <!-- Multi Audio Focus -->
+    <string name="multi_audio_focus_title">فۆکەسی چەند دەنگی</string>
+    <string name="multi_audio_focus_summary">ڕێگەدان بە چەند ئەپێک کە لە یەک کاتدا دەنگ لێبدەن</string>
+    <!-- Data Usage Cycle -->
+    <string name="billing_cycle_type_title">جۆری خولی بەکارهێنانی داتای مۆبایل</string>
+    <string name="billing_cycle_type_monthly">مانگانە</string>
+    <string name="billing_cycle_type_weekly">هەفتانە</string>
+    <string name="billing_cycle_type_daily">ڕۆژانە</string>
+    <string name="billing_cycle_less_than_one_hour_left">کەمتر لە ١ کاتژمێر ماوە</string>
+    <string name="billing_cycle_hours_left">{count, plural, =1 {# کاتژمێر ماوە} other {# کاتژمێر ماون}}</string>
+    <string name="cycle_type_weekly_title">ڕۆژی دەستپێکردنەوەی خول</string>
+    <string name="cycle_type_weekly_sub">ڕۆژی هەر هەفتەیەک:\n1 = دووشەممە</string>
+    <string name="cycle_type_daily_title">کاتی دەستپێکردنەوەی خول</string>
+    <string name="cycle_type_daily_sub">کاتی هەر ڕۆژێک:</string>
+    <string name="double_tap_power_torch_action_title">لایت</string>
+    <string name="gesture_navbar_auto_hide_title">شاردنەوەی خۆکاری نیشاندەری ئاماژە</string>
+    <string name="gesture_navbar_auto_hide_summary">بە شێوەیەکی خۆکار نیشاندەری ئاماژە دەشارێتەوە دوای ماوەیەکی کەم لە بێکاری</string>
+    <!-- Sleep mode -->
+    <string name="sleep_mode_title">دۆخی خەوتن</string>
+    <string name="sleep_mode_summary_on">هەڵکراوە / <xliff:g name="auto_mode_summary" example="Never turn off automatically">%1$s</xliff:g></string>
+    <string name="sleep_mode_summary_off">کوژاوەتەوە / <xliff:g name="auto_mode_summary" example="Never turn on automatically">%1$s</xliff:g></string>
+    <string name="sleep_mode_ringer_title">دۆخی زەنگ</string>
+    <string name="sleep_mode_ringer_off_title">گۆڕانکاری مەکە</string>
+    <string name="sleep_mode_ringer_vibrate_title">لەرینەوە</string>
+    <string name="sleep_mode_ringer_dnd_title">بێزارم مەکە</string>
+    <string name="sleep_mode_ringer_silent_title">بێدەنگ</string>
+    <string name="sleep_mode_schedule_sunset">ئاوابوونی خۆر</string>
+    <string name="sleep_mode_schedule_sunrise">هەڵاتنی خۆر</string>
+    <string name="sleep_mode_schedule_mixed_sunset">هەڵدەبێت لە ئاوابوونی خۆرەوە تا کاتێکی دیاریکراو</string>
+    <string name="sleep_mode_schedule_mixed_sunrise">هەڵدەبێت لە کاتێکی دیاریکراوەوە تا هەڵاتنی خۆر</string>
+    <string name="sleep_mode_toggles_title">گۆڕینەکان (Toggles)</string>
+    <string name="sleep_mode_wifi_toggle_title">کوژاندنەوەی وایفای</string>
+    <string name="sleep_mode_wifi_toggle_summary">وایفای بکوژێنەرەوە کاتێک دۆخی خەوتن چالاک دەبێت</string>
+    <string name="sleep_mode_bluetooth_toggle_title">کوژاندنەوەی بلوتووس</string>
+    <string name="sleep_mode_bluetooth_toggle_summary">بلوتووس بکوژێنەرەوە کاتێک دۆخی خەوتن چالاک دەبێت</string>
+    <string name="sleep_mode_cellular_toggle_title">کوژاندنەوەی داتای مۆبایل</string>
+    <string name="sleep_mode_cellular_toggle_summary">داتای مۆبایل بکوژێنەرەوە کاتێک دۆخی خەوتن چالاک دەبێت</string>
+    <string name="sleep_mode_location_toggle_title">کوژاندنەوەی شوێن (Location)</string>
+    <string name="sleep_mode_location_toggle_summary">شوێن بکوژێنەرەوە کاتێک دۆخی خەوتن چالاک دەبێت</string>
+    <string name="sleep_mode_sensors_toggle_title">ناچالاککردنی هەستەوەرەکان</string>
+    <string name="sleep_mode_sensors_toggle_summary">هەستەوەرەکان بکوژێنەرەوە کاتێک دۆخی خەوتن چالاکە</string>
+    <string name="sleep_mode_display_text">دۆخی خەوتن ڕێگەت پێدەدات هەندێک خزمەتگوزاری ناچالاک بکەیت بۆ پاشەکەوتکردنی پاتری و بێدەنگکردنی مۆبایلەکەت لە کاتی خەوتندا.</string>
+    <!-- Display settings screen, activation button action for manual mode. [CHAR LIMIT=40] -->
+    <string name="night_display_activation_on_manual">ئێستا هەڵیبکە</string>
+    <!-- Display settings screen, deactivation button action for manual mode. [CHAR LIMIT=40] -->
+    <string name="night_display_activation_off_manual">ئێستا بیکوژێنەرەوە</string>
+    <!-- Display settings screen, activation button action for sunset-to-sunrise schedule [CHAR LIMIT=40] -->
+    <string name="night_display_activation_on_twilight">هەڵکردن تا هەڵاتنی خۆر</string>
+    <!-- Display settings screen, deactivation button action for sunset-to-sunrise schedule [CHAR LIMIT=40] -->
+    <string name="night_display_activation_off_twilight">کوژاندنەوە تا ئاوابوونی خۆر</string>
+    <!-- Display settings screen, activation button action for custom schedule [CHAR LIMIT=40] -->
+    <string name="night_display_activation_on_custom">هەڵکردن تا <xliff:g name="time" example="6 AM">%1$s</xliff:g></string>
+    <!-- Display settings screen, deactivation button action for custom schedule [CHAR LIMIT=40] -->
+    <string name="night_display_activation_off_custom">کوژاندنەوە تا <xliff:g name="time" example="10 PM">%1$s</xliff:g></string>
+</resources>
