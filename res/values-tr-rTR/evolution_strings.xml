@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2019-2024 The Evolution X Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Device Info screen. Evolution X legal. -->
+    <string name="evolution_license_title">Evolution X Lisansı</string>
+    <!-- Android version screen, build maintainer -->
+    <string name="build_maintainer">Cihaz sorumlusu</string>
+    <!-- Hide developer status -->
+    <string name="hide_developer_status_title">Geliştirici durumunu gizle</string>
+    <string name="hide_developer_status_summary">Geliştirici durumunu uygulamalardan gizle</string>
+    <string name="search">Ara</string>
+    <string name="search_apps">Uygulamaları ara</string>
+    <!-- Misc Haptics -->
+    <string name="misc_vibration_category_title">Çeşitli Haptikler</string>
+    <!-- Volume slider haptic feedback -->
+    <string name="volume_slider_haptic_feedback_title">Ses seviyesi kaydırıcısı değiştiğinde titreşim</string>
+    <!-- QS Tiles haptic -->
+    <string name="qs_tiles_haptic_feedback_title">Hızlı ayarlar karelerine dokunulduğunda titret</string>
+    <!-- Scroll fling haptic feedback -->
+    <string name="scroll_fling_haptic_feedback_title">Kaydırma hareketlerinde titreşim</string>
+    <!-- Charger haptic feedback -->
+    <string name="charger_haptic_feedback_title">Şarj cihazı bağlantı değişikliklerinde titreşim</string>
+    <!-- Charging sound -->
+    <string name="charging_sounds_custom_title">Şarj sesleri</string>
+    <!-- QS Brightness slider haptic feedback -->
+    <string name="qs_brightness_slider_haptic_feedback_title">Parlaklık kaydırıcısı değiştiğinde titreşim</string>
+    <!-- Screenshot shutter -->
+    <string name="screenshot_shutter_sound_title">Ekran görüntüsü sesi</string>
+    <!-- Three-fingers-swipe to screenshot -->
+    <string name="swipe_to_screenshot_gesture_title">Ekran görüntüsü için kaydır</string>
+    <string name="swipe_to_screenshot_gesture_summary">Ekran görüntüsü almak için üç parmağınızı ekran üzerinde kaydırın</string>
+    <!-- Deep Sleep percentage in device info -->
+    <string name="status_sleep_time">Derin uyku</string>
+    <!-- Show clipboard overlay -->
+    <string name="show_clipboard_overlay_title">Pano yer paylaşımını göster</string>
+    <string name="show_clipboard_overlay_summary">Panoya bir şey kopyalandığında ekranın sol alt köşesinde bir kaplama göster</string>
+    <!-- Screen resolution -->
+    <string name="custom_screen_resolution_title">Özel ekran çözünürlüğü</string>
+    <!-- Unlimit screenrecord -->
+    <string name="unlimit_screenrecord_title">Sınırsız ekran kaydı</string>
+    <string name="unlimit_screenrecord_summary">15GiB dosya boyutu sınırını kaldırın\nGerektiğinden daha büyük bir dosyaya neden olabilir</string>
+</resources>
