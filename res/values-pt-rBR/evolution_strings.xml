@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2019-2024 The Evolution X Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Device Info screen. Evolution X legal. -->
+    <string name="evolution_license_title">Licença EvolutionX</string>
+    <!-- Android version screen, build maintainer -->
+    <string name="build_maintainer">Mantenedor</string>
+    <!-- Hide developer status -->
+    <string name="hide_developer_status_title">Ocultar status do desenvolvedor</string>
+    <string name="hide_developer_status_summary">Ocultar as Opções de Desenvolvedor para os aplicativos</string>
+    <string name="search">Pesquisar</string>
+    <string name="search_apps">Pesquisar aplicativos</string>
+    <!-- Misc Haptics -->
+    <string name="misc_vibration_category_title">Mais opções de vibração</string>
+    <!-- Volume slider haptic feedback -->
+    <string name="volume_slider_haptic_feedback_title">Vibrar ao deslizar pela barra de volume</string>
+    <!-- QS Tiles haptic -->
+    <string name="qs_tiles_haptic_feedback_title">Vibrar ao tocar nas configurações rápidas</string>
+    <!-- Scroll fling haptic feedback -->
+    <string name="scroll_fling_haptic_feedback_title">Vibrar ao rolar listas</string>
+    <!-- Charger haptic feedback -->
+    <string name="charger_haptic_feedback_title">Vibrar ao mudar a conexão do carregador</string>
+    <!-- Charging sound -->
+    <string name="charging_sounds_custom_title">Sons de carregamento</string>
+    <!-- QS Brightness slider haptic feedback -->
+    <string name="qs_brightness_slider_haptic_feedback_title">Vibrar ao deslizar pela barra de brilho</string>
+    <!-- Screenshot shutter -->
+    <string name="screenshot_shutter_sound_title">Som de captura de tela</string>
+    <!-- Three-fingers-swipe to screenshot -->
+    <string name="swipe_to_screenshot_gesture_title">Deslize para capturar a tela</string>
+    <string name="swipe_to_screenshot_gesture_summary">Deslize três dedos para tirar uma captura de tela</string>
+    <!-- Deep Sleep percentage in device info -->
+    <string name="status_sleep_time">Sono profundo</string>
+    <!-- Show clipboard overlay -->
+    <string name="show_clipboard_overlay_title">Mostrar sobreposição de texto</string>
+    <string name="show_clipboard_overlay_summary">Exibe uma janela no canto inferior esquerdo da tela quando algum texto for copiado para área de transferência</string>
+    <!-- Screen resolution -->
+    <string name="custom_screen_resolution_title">Resolução de tela personalizada</string>
+    <!-- Unlimit screenrecord -->
+    <string name="unlimit_screenrecord_title">Gravação de tela sem limite</string>
+    <string name="unlimit_screenrecord_summary">Remova o limite de tamanho de arquivo 15GiB\nPode resultar em um arquivo de saída maior que o necessário</string>
+</resources>
