@@ -10,6 +10,7 @@
 -keep public class com.android.settings*.** extends androidx.fragment.app.Fragment {
     void <init>();
 }
+-keep class org.evolution.settings.**
 
 # Keep DisplaySizeData to prevent the contructor hollowing.
 # Constructor hollowing is a code optimization performed by tools like ProGuard or R8
