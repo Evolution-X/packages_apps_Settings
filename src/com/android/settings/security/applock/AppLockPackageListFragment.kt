@@ -26,7 +26,6 @@ import android.view.View
 
 import androidx.lifecycle.lifecycleScope
 import androidx.preference.Preference
-import androidx.preference.forEach
 
 import com.android.internal.logging.nano.MetricsProto
 import com.android.internal.util.evolution.Utils
@@ -77,9 +76,9 @@ class AppLockPackageListFragment : DashboardFragment() {
             }.map { packageInfo ->
                 createPreference(packageInfo, selectedPackages.contains(packageInfo.packageName))
             }
-            preferenceScreen?.let {
-                preferences.forEach { pref ->
-                    it.addPreference(pref)
+            preferenceScreen?.let { preferenceScreen ->
+                for (pref in preferences) {
+                    preferenceScreen.addPreference(pref)
                 }
             }
         }
@@ -89,9 +88,12 @@ class AppLockPackageListFragment : DashboardFragment() {
         super.onResume()
         lifecycleScope.launch {
             val selectedPackages = getSelectedPackages()
-            preferenceScreen?.forEach {
-                if (it is PrimarySwitchPreference) {
-                    it.isChecked = selectedPackages.contains(it.key)
+            preferenceScreen?.let { preferenceScreen ->
+                for (i in 0 until preferenceScreen.preferenceCount) {
+                    val pref = preferenceScreen.getPreference(i)
+                    if (pref is PrimarySwitchPreference) {
+                        pref.isChecked = selectedPackages.contains(pref.key)
+                    }
                 }
             }
         }
