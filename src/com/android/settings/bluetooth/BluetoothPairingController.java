@@ -117,11 +117,8 @@ public class BluetoothPairingController implements OnCheckedChangeListener,
 
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-        if (isChecked) {
-            mPbapAllowed = true;
-        } else {
-            mPbapAllowed = false;
-        }
+        mPbapAllowed = isChecked;
+        Log.d(TAG, "phonebook access permission toggle isChecked: " + isChecked);
     }
 
     @Override
@@ -227,36 +224,22 @@ public class BluetoothPairingController implements OnCheckedChangeListener,
      * contacts
      */
     public boolean getContactSharingState() {
-        switch (mDevice.getPhonebookAccessPermission()) {
+        int permission = mDevice.getPhonebookAccessPermission();
+        switch (permission) {
             case BluetoothDevice.ACCESS_ALLOWED:
                 return true;
             case BluetoothDevice.ACCESS_REJECTED:
                 return false;
-            default:
+            case BluetoothDevice.ACCESS_UNKNOWN:
                 if (BluetoothUtils.isDeviceClassMatched(
                         mDevice, BluetoothClass.Device.AUDIO_VIDEO_HANDSFREE)) {
                     return BluetoothDevice.EXTRA_PAIRING_INITIATOR_FOREGROUND == mInitiator;
                 }
                 return false;
+            default:
+                throw new IllegalStateException("getPhonebookAccessPermission returned " + permission);
         }
     }
-
-    /**
-     * Update Phone book permission
-     *
-     */
-     public void setContactSharingState() {
-         final int permission = mDevice.getPhonebookAccessPermission();
-         if (permission == BluetoothDevice.ACCESS_ALLOWED
-                 || (permission == BluetoothDevice.ACCESS_UNKNOWN
-                 && BluetoothUtils.isDeviceClassMatched(mDevice,
-                 BluetoothClass.Device.AUDIO_VIDEO_HANDSFREE))) {
-             onCheckedChanged(null, true);
-         } else {
-             onCheckedChanged(null, false);
-         }
-
-     }
 
     /**
      * A method for querying if the provided editable is a valid passkey/pin format for this device.
