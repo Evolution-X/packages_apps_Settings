@@ -253,7 +253,7 @@ public class BluetoothPairingDialogFragment extends InstrumentedDialogFragment i
 
         contactSharing.setVisibility(
                 mPairingController.isContactSharingVisible() ? View.VISIBLE : View.GONE);
-        mPairingController.setContactSharingState();
+        // OnCheckedChangeListener has to be registered before the initial setChecked()
         contactSharing.setOnCheckedChangeListener(mPairingController);
         contactSharing.setChecked(mPairingController.getContactSharingState());
 
@@ -349,9 +349,9 @@ public class BluetoothPairingDialogFragment extends InstrumentedDialogFragment i
                 view.findViewById(R.id.phonebook_sharing_message_confirm_pin);
         view.findViewById(R.id.phonebook_sharing).setVisibility(
                 mPairingController.isContactSharingVisible() ? View.VISIBLE : View.GONE);
-        mPairingController.setContactSharingState();
-        contactSharing.setChecked(mPairingController.getContactSharingState());
+        // OnCheckedChangeListener has to be registered before the initial setChecked()
         contactSharing.setOnCheckedChangeListener(mPairingController);
+        contactSharing.setChecked(mPairingController.getContactSharingState());
 
         messagePairing.setVisibility(mPairingController.isDisplayPairingKeyVariant()
                 ? View.VISIBLE : View.GONE);
