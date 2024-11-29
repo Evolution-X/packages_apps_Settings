@@ -75,11 +75,17 @@
             android:targetPackage="${applicationId}"/>
     </Preference>
 
+    <!-- App lock -->
+    <com.android.settingslib.RestrictedPreference
+        android:key="app_lock"
+        android:title="@string/app_lock_title"
+        android:order="-994" />
+
     <Preference
         android:key="game_settings"
         android:title="@string/game_space_title"
         android:summary="@string/game_space_summary"
-        android:order="-994"
+        android:order="-993"
         settings:controller="com.android.settings.applications.GameSpaceController">
     </Preference>
 
