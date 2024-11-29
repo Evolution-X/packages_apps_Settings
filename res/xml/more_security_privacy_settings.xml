@@ -153,12 +153,6 @@
         settings:keywords="@string/content_protection_preference_title"
         settings:controller="com.android.settings.security.ContentProtectionPreferenceController" />
 
-    <!-- App lock -->
-    <com.android.settingslib.RestrictedPreference
-        android:order="240"
-        android:key="app_lock"
-        android:title="@string/app_lock_title" />
-
     <Preference
         android:order="241"
         android:key="manage_device_admin"
