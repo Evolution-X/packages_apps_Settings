@@ -45,7 +45,6 @@ import com.android.settings.privacy.PrivacyDashboardFragment;
 import com.android.settings.safetycenter.ui.SafetyCenterFragment;
 import com.android.settings.security.ChangeProfileScreenLockPreferenceController;
 import com.android.settings.security.LockUnificationPreferenceController;
-import com.android.settings.security.applock.AppLockSettingsPreferenceController;
 import com.android.settings.security.trustagent.TrustAgentListPreferenceController;
 import com.android.settings.widget.PreferenceCategoryController;
 import com.android.settingslib.core.AbstractPreferenceController;
@@ -90,8 +89,6 @@ public final class SafetyCenterUtils {
                 .add(new CombinedBiometricProfileStatusPreferenceController(context, lifecycle));
         controllers.add(new PreferenceCategoryController(context, WORK_PROFILE_SECURITY_CATEGORY)
                 .setChildren(profileSecurityControllers));
-        controllers.add(new AppLockSettingsPreferenceController(
-                context, APP_LOCK_PREF_KEY, host, lifecycle));
         controllers.addAll(profileSecurityControllers);
         return controllers;
     }
