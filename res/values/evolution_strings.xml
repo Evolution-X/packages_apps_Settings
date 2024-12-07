@@ -37,6 +37,16 @@
     <string name="force_lte_ca">Force LTE CA</string>
     <string name="force_lte_ca_summary">Force LTE carrier aggregation to work</string>
 
+    <!-- Cloudflare Block Malware DNS Option -->
+    <string name="private_dns_mode_cloudflare_block_malware" translatable="false">Cloudflare Block Malware DNS</string>
+    <!-- Cloudflare Block Malware DNS hostname -->
+    <string name="private_dns_hostname_cloudflare_block_malware" translatable="false">security.cloudflare-dns.com</string>
+
+    <!-- Cloudflare Block Malware and Adult Content DNS Option -->
+    <string name="private_dns_mode_cloudflare_block_malware_and_adult_content" translatable="false">Cloudflare Block Malware and Adult Content DNS</string>
+    <!-- Cloudflare Block Malware and Adult Content DNS hostname -->
+    <string name="private_dns_hostname_cloudflare_block_malware_and_adult_content" translatable="false">family.cloudflare-dns.com</string>
+    
     <!-- AdGuard DNS Option -->
     <string name="private_dns_mode_adguard" translatable="false">AdGuard DNS</string>
     <!-- AdGuard DNS hostname -->
@@ -56,4 +66,19 @@
     <string name="private_dns_mode_quad9" translatable="false">Quad9 DNS</string>
     <!-- Quad9 DNS hostname -->
     <string name="private_dns_hostname_quad9" translatable="false">dns.quad9.net</string>
+
+    <!-- Quad9 Unsecured DNS Option -->
+    <string name="private_dns_mode_quad9_unsecured" translatable="false">Quad9 Unsecured DNS</string>
+    <!-- Quad9 Unsecured DNS hostname -->
+    <string name="private_dns_hostname_quad9_unsecured" translatable="false">dns10.quad9.net</string>
+
+    <!-- Quad9 ECS DNS Option -->
+    <string name="private_dns_mode_quad9_ecs" translatable="false">Quad9 with ECS DNS</string>
+    <!-- Quad9 ECS DNS hostname -->
+    <string name="private_dns_hostname_quad9_ecs" translatable="false">dns11.quad9.net</string>
+
+    <!-- Quad9 Unsecured ECS DNS Option -->
+    <string name="private_dns_mode_quad9_unsecured_ecs" translatable="false">Quad9 Unsecured with ECS DNS</string>
+    <!-- Quad9 Unsecured ECS DNS hostname -->
+    <string name="private_dns_hostname_quad9_unsecured_ecs" translatable="false">dns12.quad9.net</string>
 </resources>
