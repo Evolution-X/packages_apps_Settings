@@ -33,35 +33,55 @@
 
             <include
                 android:id="@+id/private_dns_mode_off"
-                layout="@layout/preference_widget_dialog_radiobutton"/>
+                layout="@layout/preference_widget_dialog_radiobutton" />
 
             <include
                 android:id="@+id/private_dns_mode_cloudflare"
-                layout="@layout/preference_widget_dialog_radiobutton"/>
+                layout="@layout/preference_widget_dialog_radiobutton" />
+
+            <include
+                android:id="@+id/private_dns_mode_cloudflare_block_malware"
+                layout="@layout/preference_widget_dialog_radiobutton" />
+
+            <include
+                android:id="@+id/private_dns_mode_cloudflare_block_malware_and_adult_content"
+                layout="@layout/preference_widget_dialog_radiobutton" />
 
             <include
                 android:id="@+id/private_dns_mode_adguard"
-                layout="@layout/preference_widget_dialog_radiobutton"/>
+                layout="@layout/preference_widget_dialog_radiobutton" />
 
             <include
                 android:id="@+id/private_dns_mode_open_dns"
-                layout="@layout/preference_widget_dialog_radiobutton"/>
+                layout="@layout/preference_widget_dialog_radiobutton" />
 
             <include
                 android:id="@+id/private_dns_mode_cleanbrowsing"
-                layout="@layout/preference_widget_dialog_radiobutton"/>
+                layout="@layout/preference_widget_dialog_radiobutton" />
 
             <include
                 android:id="@+id/private_dns_mode_quad9"
-                layout="@layout/preference_widget_dialog_radiobutton"/>
+                layout="@layout/preference_widget_dialog_radiobutton" />
+
+            <include
+                android:id="@+id/private_dns_mode_quad9_unsecured"
+                layout="@layout/preference_widget_dialog_radiobutton" />
+
+            <include
+                android:id="@+id/private_dns_mode_quad9_ecs"
+                layout="@layout/preference_widget_dialog_radiobutton" />
+
+            <include
+                android:id="@+id/private_dns_mode_quad9_unsecured_ecs"
+                layout="@layout/preference_widget_dialog_radiobutton" />
 
             <include
                 android:id="@+id/private_dns_mode_opportunistic"
-                layout="@layout/preference_widget_dialog_radiobutton"/>
+                layout="@layout/preference_widget_dialog_radiobutton" />
 
             <include
                 android:id="@+id/private_dns_mode_provider"
-                layout="@layout/preference_widget_dialog_radiobutton"/>
+                layout="@layout/preference_widget_dialog_radiobutton" />
 
             <EditText
                 android:id="@+id/private_dns_mode_provider_hostname"
@@ -73,13 +93,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="3dp"
                 android:layout_marginEnd="8dp"
-                android:minHeight="@dimen/developer_option_dialog_min_height"/>
+                android:minHeight="@dimen/developer_option_dialog_min_height" />
         </RadioGroup>
 
         <include
             android:id="@+id/private_dns_help_info"
-            layout="@layout/preference_widget_dialog_summary"/>
+            layout="@layout/preference_widget_dialog_summary" />
     </LinearLayout>
 
 </ScrollView>
-
