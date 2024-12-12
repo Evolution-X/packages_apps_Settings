@@ -665,8 +665,9 @@ public class AppRestrictionsFragment extends SettingsPreferenceFragment implemen
          */
         private Intent assertSafeToStartCustomActivity(Intent intent) {
             EventLog.writeEvent(0x534e4554, "223578534", -1 /* UID */, "");
+            final Intent vettedIntent = new Intent(intent);
             ResolveInfo resolveInfo = mPackageManager.resolveActivity(
-                    intent, PackageManager.MATCH_DEFAULT_ONLY);
+                    vettedIntent, PackageManager.MATCH_DEFAULT_ONLY);
 
             if (resolveInfo == null) {
                 throw new ActivityNotFoundException("No result for resolving " + intent);
@@ -680,7 +681,6 @@ public class AppRestrictionsFragment extends SettingsPreferenceFragment implemen
 
             // We were able to vet the given intent this time. Make a copy using the components
             // that were used to do the vetting, since that's as much as we've verified is safe.
-            final Intent vettedIntent = new Intent(intent);
             vettedIntent.setComponent(activityInfo.getComponentName());
             vettedIntent.setPackage(activityInfo.packageName);
             return vettedIntent;
