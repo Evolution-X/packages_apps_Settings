@@ -21,15 +21,29 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.provider.Settings;
 
+import androidx.preference.Preference;
+import androidx.preference.PreferenceScreen;
+
 import com.android.settings.R;
 import com.android.settings.core.TogglePreferenceController;
 
 public class GestureNavigationLongPressController extends TogglePreferenceController {
 
     private static final String GSA_PACKAGE = "com.google.android.googlequicksearchbox";
+    private static final String LONGPRESS_KEY = "search_all_entrypoints_enabled";
+
+    private Preference mLongPressPref;
 
     public GestureNavigationLongPressController(Context context, String key) {
         super(context, key);
+    }
+
+    @Override
+    public void displayPreference(PreferenceScreen screen) {
+        super.displayPreference(screen);
+
+        mLongPressPref = (Preference) screen.findPreference(LONGPRESS_KEY);
+	mLongPressPref.setEnabled(isChecked());
     }
 
     @Override
@@ -40,6 +54,8 @@ public class GestureNavigationLongPressController extends TogglePreferenceContro
 
     @Override
     public boolean setChecked(boolean isChecked) {
+        if (mLongPressPref != null)
+            mLongPressPref.setEnabled(isChecked);
         return Settings.System.putInt(mContext.getContentResolver(),
                 Settings.System.NAVBAR_LONG_PRESS_GESTURE, isChecked ? 1 : 0);
     }
