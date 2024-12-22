@@ -71,7 +71,6 @@ android_library {
         "res-export", // for external usage
         "res-product",
         "Evolver/res",
-        "SettingsGoogle/res",
     ],
     static_libs: [
         // External dependencies
@@ -202,11 +201,6 @@ android_library_import {
 filegroup {
     name: "Settings_proguard_flags",
     srcs: ["proguard.flags"],
-}
-
-filegroup {
-    name: "Settings_manifest",
-    srcs: ["AndroidManifest.xml"],
 }
 
 android_library_import {
