@@ -40,9 +40,11 @@ open class SearchFeatureProviderImpl : SearchFeatureProvider {
             "ExternalSettingsTrampoline intents must be called with startActivityForResult"
         }
         val isSettingsPackage = callerPackage == context.packageName
-        if (isSettingsPackage ||
-            callerPackage == getSettingsIntelligencePkgName(context) ||
-            isSignatureAllowlisted(context, callerPackage)) {
+        val isAllowlistedPackage = isSignatureAllowlisted(context, callerPackage) ||
+            callerPackage == "com.google.android.apps.nexuslauncher"
+
+        if (isSettingsPackage || isAllowlistedPackage || 
+            callerPackage == getSettingsIntelligencePkgName(context)) {
             return
         }
         throw SecurityException(
