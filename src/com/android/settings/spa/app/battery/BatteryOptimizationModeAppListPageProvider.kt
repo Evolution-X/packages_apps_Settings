@@ -156,8 +156,8 @@ class BatteryOptimizationModeAppListModel(
 }
 
 private enum class OptimizationModeSpinnerItem(val stringResId: Int) {
-    All(R.string.filter_all_apps),
-    Restricted(R.string.filter_battery_restricted_title),
+    Unrestricted(R.string.filter_battery_unrestricted_title),
     Optimized(R.string.filter_battery_optimized_title),
-    Unrestricted(R.string.filter_battery_unrestricted_title);
+    Restricted(R.string.filter_battery_restricted_title),
+    All(R.string.filter_all_apps);
 }
