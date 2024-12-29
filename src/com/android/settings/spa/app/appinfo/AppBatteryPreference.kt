@@ -36,15 +36,11 @@ import com.android.settings.Utils
 import com.android.settings.core.SubSettingLauncher
 import com.android.settings.fuelgauge.AdvancedPowerUsageDetail
 import com.android.settings.fuelgauge.BatteryOptimizeUtils
-import com.android.settings.fuelgauge.batteryusage.BatteryChartPreferenceController
-import com.android.settings.fuelgauge.batteryusage.BatteryDiffEntry
 import com.android.settingslib.spa.widget.preference.Preference
 import com.android.settingslib.spa.widget.preference.PreferenceModel
 import com.android.settingslib.spaprivileged.model.app.installed
 import com.android.settingslib.spaprivileged.model.app.userHandle
-import com.android.settingslib.spaprivileged.model.app.userId
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
@@ -64,8 +60,7 @@ fun AppBatteryPreference(app: ApplicationInfo) {
 }
 
 private class AppBatteryPresenter(private val context: Context, private val app: ApplicationInfo) {
-    private var batteryDiffEntryState: LoadingState<Pair<BatteryDiffEntry?, Int>>
-        by mutableStateOf(LoadingState.Loading)
+    private var optimizationModeState: LoadingState<Int> by mutableStateOf(LoadingState.Loading)
 
     @Composable
     fun isAvailable() = remember {
@@ -78,90 +73,39 @@ private class AppBatteryPresenter(private val context: Context, private val app:
         val current = LocalLifecycleOwner.current
         LaunchedEffect(app) {
             current.repeatOnLifecycle(Lifecycle.State.STARTED) {
-                launch { batteryDiffEntryState = LoadingState.Done(getBatteryDiffEntry()) }
+                launch { optimizationModeState = LoadingState.Done(getBatteryDiffEntry()) }
             }
         }
     }
 
-    private suspend fun getBatteryDiffEntry(): Pair<BatteryDiffEntry?, Int> = withContext(Dispatchers.IO) {
-        val batteryDiffEntry = async {
-            BatteryChartPreferenceController.getAppBatteryUsageData(
-                context, app.packageName, app.userId
-            ).also {
-                Log.d(TAG, "loadBatteryDiffEntries():\n$it")
-            }
-        }
-        val optimizationMode = BatteryOptimizeUtils(context, app.uid, app.packageName)
+    private suspend fun getBatteryDiffEntry(): Int = withContext(Dispatchers.IO) {
+        return@withContext BatteryOptimizeUtils(context, app.uid, app.packageName)
             .getAppOptimizationMode(false, false);
-        Pair(batteryDiffEntry.await(), optimizationMode)
     }
 
     val summary = {
         if (app.installed) {
-            batteryDiffEntryState.let { batteryDiffEntryState ->
+            optimizationModeState.let { batteryDiffEntryState ->
                 when (batteryDiffEntryState) {
                     is LoadingState.Loading -> context.getString(R.string.summary_placeholder)
                     is LoadingState.Done -> {
-                        val optimizationMode = when (batteryDiffEntryState.result.second) {
+                        val optimizationMode = when (batteryDiffEntryState.result) {
                             BatteryOptimizeUtils.MODE_RESTRICTED ->
                                 R.string.manager_battery_usage_restricted_title
                             BatteryOptimizeUtils.MODE_UNRESTRICTED ->
                                 R.string.manager_battery_usage_unrestricted_title
                             BatteryOptimizeUtils.MODE_OPTIMIZED ->
                                 R.string.manager_battery_usage_optimized_title
-                            else -> 0
+                            else -> return@let ""
                         }
-                        val b = StringBuilder()
-                        val bde = batteryDiffEntryState.result.first
-                        if (optimizationMode != 0) {
-                            b.append(context.getString(optimizationMode))
-                        }
-
-                        val bdeSummary = bde.getSummary()
-                        if (b.isNotEmpty() && bdeSummary.isNotEmpty()) {
-                            b.append('\n')
-                            b.append(bdeSummary)
-                            return@let b.toString()
-                        }
-
-                        return@let bdeSummary
+                        return@let context.getString(optimizationMode)
                     }
                 }
             }
         } else ""
     }
 
-    private fun BatteryDiffEntry?.getSummary(): String =
-        this?.takeIf { mConsumePower > 0 }?.let {
-            context.getString(
-                R.string.battery_summary, Utils.formatPercentage(percentage, true)
-            )
-        } ?: context.getString(R.string.no_battery_summary)
-
     fun startActivity() {
-        batteryDiffEntryState.resultOrNull?.first?.run {
-            startBatteryDetailPage()
-            return
-        }
-
-        fallbackStartBatteryDetailPage()
-    }
-
-    private fun BatteryDiffEntry.startBatteryDetailPage() {
-        Log.i(TAG, "handlePreferenceTreeClick():\n$this")
-        AdvancedPowerUsageDetail.startBatteryDetailPage(
-            context,
-            AppInfoSettingsProvider.METRICS_CATEGORY,
-            this,
-            Utils.formatPercentage(percentage, true),
-            /*slotInformation=*/ null,
-            /*showTimeInformation=*/ false,
-            /*anomalyHintPrefKey=*/ null,
-            /*anomalyHintText=*/ null
-        )
-    }
-
-    private fun fallbackStartBatteryDetailPage() {
         Log.i(TAG, "Launch : ${app.packageName} with package name")
         val args = bundleOf(
             AdvancedPowerUsageDetail.EXTRA_PACKAGE_NAME to app.packageName,
