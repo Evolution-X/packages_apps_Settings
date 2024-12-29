@@ -78,6 +78,10 @@
             android:title="@string/idle_manager_title"
             android:summary="@string/idle_manager_summary"
             android:defaultValue="false" />
+        <Preference
+            android:key="app_battery_usage"
+            android:title="@string/app_battery_usage_title"
+            settings:controller="com.android.settings.fuelgauge.AppBatteryUsagePrefController" />
     </com.android.settingslib.widget.UntitledPreferenceCategory>
 
     <com.android.settingslib.widget.UntitledPreferenceCategory
