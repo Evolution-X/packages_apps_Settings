@@ -72,6 +72,11 @@
             android:key="battery_lights"
             settings:requiresConfig="@*lineageos.platform:integer/config_deviceLightCapabilities"
             settings:requiresConfigMask="64" />
+
+        <Preference
+            android:key="app_battery_usage"
+            android:title="@string/app_battery_usage_title"
+            settings:controller="com.android.settings.fuelgauge.AppBatteryUsagePrefController" />
     </com.android.settingslib.widget.UntitledPreferenceCategory>
 
     <com.android.settingslib.widget.UntitledPreferenceCategory
