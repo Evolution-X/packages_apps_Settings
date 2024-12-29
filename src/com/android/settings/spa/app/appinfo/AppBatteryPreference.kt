@@ -57,7 +57,6 @@ fun AppBatteryPreference(app: ApplicationInfo) {
     Preference(object : PreferenceModel {
         override val title = stringResource(R.string.battery_details_title)
         override val summary = presenter.summary
-        override val enabled = presenter.enabled
         override val onClick = presenter::startActivity
     })
 
@@ -96,8 +95,6 @@ private class AppBatteryPresenter(private val context: Context, private val app:
             .getAppOptimizationMode(false, false);
         Pair(batteryDiffEntry.await(), optimizationMode)
     }
-
-    val enabled = { batteryDiffEntryState is LoadingState.Done }
 
     val summary = {
         if (app.installed) {
