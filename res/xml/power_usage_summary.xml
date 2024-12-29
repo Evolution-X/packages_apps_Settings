@@ -81,6 +81,11 @@
             settings:controller="com.google.android.settings.fuelgauge.reversecharging.ReverseChargingPreferenceController" />
     </PreferenceCategory>
 
+    <Preference
+        android:key="app_battery_usage"
+        android:title="@string/app_battery_usage_title"
+        settings:controller="com.android.settings.fuelgauge.AppBatteryUsagePrefController" />
+
     <!-- Charging control -->
     <lineageos.preference.LineagePartsPreference
         android:key="charging_control"
