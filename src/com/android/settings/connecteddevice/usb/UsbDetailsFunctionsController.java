@@ -32,6 +32,7 @@ import androidx.preference.PreferenceScreen;
 import com.android.settings.R;
 import com.android.settings.Utils;
 import com.android.settings.flags.Flags;
+import com.android.settings.wifi.dpp.WifiDppUtils;
 import com.android.settingslib.widget.SelectorWithWidgetPreference;
 
 import java.util.LinkedHashMap;
@@ -45,6 +46,9 @@ public class UsbDetailsFunctionsController extends UsbDetailsController
 
     private static final String TAG = "UsbFunctionsCtrl";
     private static final boolean DEBUG = Log.isLoggable(TAG, Log.DEBUG);
+
+    private static final String USB_MODE_KEY_ALIAS = "usb_mode_auth_key";
+    private static final int MAX_UNLOCK_SECONDS = 60;
 
     static final Map<Long, Integer> FUNCTIONS_MAP = new LinkedHashMap<>();
 
@@ -173,12 +177,16 @@ public class UsbDetailsFunctionsController extends UsbDetailsController
     }
 
     private boolean isAuthRequired(long function) {
-        if (!Flags.excludeWebcamAuthChallenge()) {
-            return true;
-        }
         // Since webcam and MIDI don't transfer any persistent data over USB
         // don't require authentication.
-        return !(function == UsbManager.FUNCTION_UVC || function == UsbManager.FUNCTION_MIDI);
+        if (Flags.excludeWebcamAuthChallenge() &&
+                (function == UsbManager.FUNCTION_UVC || function == UsbManager.FUNCTION_MIDI)) {
+            return false;
+        }
+        if (WifiDppUtils.isUnlockedWithinSeconds(USB_MODE_KEY_ALIAS, MAX_UNLOCK_SECONDS)) {
+            return false;
+        }
+        return true;
     }
 
     private boolean isClickEventIgnored(long function, long previousFunction) {
