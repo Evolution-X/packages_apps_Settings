@@ -32,6 +32,7 @@ import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Animatable2;
@@ -293,12 +294,17 @@ public class FingerprintEnrollEnrolling extends BiometricsEnrollEnrolling {
                         .setTheme(com.google.android.setupdesign.R.style.SudGlifButton_Secondary)
                         .build()
         );
+        final android.widget.LinearLayout buttonContainer = mFooterBarMixin != null
+                ? mFooterBarMixin.getButtonContainer()
+                : null;
+        if (buttonContainer != null) {
+            buttonContainer.setBackgroundColor(Color.TRANSPARENT);
+        }
 
         // If it's udfps, set the background color only for secondary button if necessary.
         if (mCanAssumeUdfps) {
             mShouldSetFooterBarBackground = false;
-            ((UdfpsEnrollEnrollingView) getLayout()).setSecondaryButtonBackground(
-                    getBackgroundColor());
+            ((UdfpsEnrollEnrollingView) getLayout()).setSecondaryButtonBackground(Color.TRANSPARENT);
         }
 
         final LayerDrawable fingerprintDrawable = mProgressBar != null
