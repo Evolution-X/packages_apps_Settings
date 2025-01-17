@@ -40,7 +40,7 @@ public class WifiTetherClientLimitPreference extends SeekBarDialogPreference imp
 
     @Override
     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromTouch) {
-        setText(getSummaryForValue(progress + mMin));
+        setSummary(getSummaryForValue(progress + mMin));
     }
 
     @Override
@@ -87,7 +87,6 @@ public class WifiTetherClientLimitPreference extends SeekBarDialogPreference imp
         mValue = value;
         String summary = getSummaryForValue(value);
         setSummary(summary);
-        setText(summary);
         if (callListener) callChangeListener(value);
     }
 
