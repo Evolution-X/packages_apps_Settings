@@ -25,6 +25,7 @@
     <com.android.settingslib.widget.IllustrationPreference
         android:key="adaptive_playback_header"
         settings:searchable="false"
+        app:dynamicColor="true"
         app:lottie_rawRes="@raw/lottie_adaptive_playback"/>
 
     <com.android.settingslib.widget.MainSwitchPreference
