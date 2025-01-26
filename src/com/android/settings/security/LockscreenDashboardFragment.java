@@ -51,6 +51,8 @@ import com.android.settingslib.search.SearchIndexable;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.evolution.settings.utils.DeviceUtils;
+
 /**
  * Settings screen for lock screen preference
  */
@@ -96,7 +98,9 @@ public class LockscreenDashboardFragment extends DashboardFragment
                 R.string.locked_work_profile_notification_title);
         replaceEnterpriseStringTitle("security_setting_lock_screen_notif_work_header",
                 WORK_PROFILE_NOTIFICATIONS_SECTION_HEADER, R.string.profile_section_header);
-        updateAmbientMusicPref();
+        if (!DeviceUtils.isCurrentlySupportedPixel()) {
+            updateAmbientMusicPref();
+        }
     }
 
     private void updateAmbientMusicPref() {
