@@ -51,6 +51,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.evolution.settings.utils.DeviceUtils;
+
 @SearchIndexable
 public class SoundSettings extends DashboardFragment implements OnActivityResultListener {
     private static final String TAG = "SoundSettings";
@@ -116,7 +118,9 @@ public class SoundSettings extends DashboardFragment implements OnActivityResult
         if (phoneRingTonePreference != null && openPhoneRingtonePicker) {
             onPreferenceTreeClick(phoneRingTonePreference);
         }
-        updateAmbientMusicPref();
+        if (!DeviceUtils.isCurrentlySupportedPixel()) {
+            updateAmbientMusicPref();
+        }
     }
 
     private void updateAmbientMusicPref() {
