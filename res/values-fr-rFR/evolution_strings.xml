@@ -11,12 +11,6 @@
     <!-- Notch: Full screen apps -->
     <string name="display_cutout_force_fullscreen_title">Applications en plein écran</string>
     <string name="display_cutout_force_fullscreen_summary">Forcer les applications à ignorer l\'encoche</string>
-    <!-- Misc Haptics -->
-    <string name="misc_vibration_category_title">Haptiques diverses</string>
-    <!-- Volume slider haptic feedback -->
-    <string name="volume_slider_haptic_feedback_title">Vibrer lors du déplacement du curseur de luminosité</string>
-    <!-- QS Tiles haptic -->
-    <string name="qs_tiles_haptic_feedback_title">Vibrer au toucher des tuiles des réglages rapides</string>
     <!-- Screenshot shutter -->
     <string name="screenshot_shutter_sound_title">Son de capture d\'écran</string>
     <!-- Deep Sleep percentage in device info -->
@@ -228,9 +222,6 @@ Les notifications flottantes seront automatiquement désactivées.</string>
     <!-- Back gesture animation -->
     <string name="back_gesture_arrow_title">Animation du geste de retour</string>
     <string name="back_gesture_arrow_summary">Afficher une flèche animée pour le geste de retour</string>
-    <!-- Back gesture haptic -->
-    <string name="back_gesture_haptic_title">Retour haptique</string>
-    <string name="back_gesture_haptic_summary">Activer le retour haptique sur le geste retour</string>
     <!-- Gesture navbar radius -->
     <string name="gesture_navbar_radius_title">Epaisseur de la barre de navigation par geste</string>
     <string name="thin_label">Fine</string>
@@ -283,4 +274,10 @@ Les notifications flottantes seront automatiquement désactivées.</string>
     <string name="pattern_custom">Personnalisé</string>
     <string name="custom_vibration_pattern_title">Modèle personnalisé</string>
     <string name="custom_vibration_pattern_summary">Définir un modèle de vibration personnalisé</string>
+    <!-- Idle manager -->
+    <string name="idle_manager_title">Gestionnaire d\'inactivité</string>
+    <string name="idle_manager_summary">Arrêter tous les processus non essentiels en arrière-plan lorsque l\'appareil est inactif</string>
+    <!-- fingerprint lockout -->
+    <string name="fingerprint_lockout_title">Désactiver le verrouillage par empreinte digitale</string>
+    <string name="fingerprint_lockout_summary">Désactive le délai d\'attente de 30 secondes ainsi que le verrouillage permanent après plusieurs tentatives de déverrouillage par empreinte échouées</string>
 </resources>
