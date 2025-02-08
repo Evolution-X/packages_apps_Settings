@@ -11,12 +11,6 @@
     <!-- Notch: Full screen apps -->
     <string name="display_cutout_force_fullscreen_title">Teljesképernyős-alkalmazások</string>
     <string name="display_cutout_force_fullscreen_summary">Alkalmazások kényszerítése, hogy a képernyőkivágást mellőzzék</string>
-    <!-- Misc Haptics -->
-    <string name="misc_vibration_category_title">További beállítások a vibráláshoz</string>
-    <!-- Volume slider haptic feedback -->
-    <string name="volume_slider_haptic_feedback_title">A Hangerő-csúszka rezgő visszajelzése</string>
-    <!-- QS Tiles haptic -->
-    <string name="qs_tiles_haptic_feedback_title">A Csempe rezgő visszajelzése</string>
     <!-- Screenshot shutter -->
     <string name="screenshot_shutter_sound_title">A képernyőmentés hangja</string>
     <!-- Deep Sleep percentage in device info -->
@@ -227,9 +221,6 @@
     <!-- Back gesture animation -->
     <string name="back_gesture_arrow_title">A \'Vissza\'-vezérlés animációja</string>
     <string name="back_gesture_arrow_summary">Mutasson egy animált nyilat a \'Vissza\'-mozdulatvezérléshez</string>
-    <!-- Back gesture haptic -->
-    <string name="back_gesture_haptic_title">Rezgés \'Vissza\'-vezérléskor</string>
-    <string name="back_gesture_haptic_summary">Rezegni fog a készülék amikor a \'Vissza\'-vezérlőt használja</string>
     <!-- Gesture navbar radius -->
     <string name="gesture_navbar_radius_title">A kapszula rádiusza</string>
     <string name="thin_label">Vékony</string>
@@ -282,4 +273,10 @@
     <string name="pattern_custom">Egyéni</string>
     <string name="custom_vibration_pattern_title">Egyéni mintázat</string>
     <string name="custom_vibration_pattern_summary">Beállíthat egyéni vibrációs mintát is</string>
+    <!-- Idle manager -->
+    <string name="idle_manager_title">Készenlét-menedzser</string>
+    <string name="idle_manager_summary">Minden, nem alapvető háttérfolyamat leállítása készenlétben</string>
+    <!-- fingerprint lockout -->
+    <string name="fingerprint_lockout_title">Az ujjlenyomat-zárolás letiltása</string>
+    <string name="fingerprint_lockout_summary">Deaktiválja a 30 másodperces időtúllépést, valamint a többszöri sikertelen ujjlenyomat-feloldási kísérlet utáni állandó zárolást</string>
 </resources>
