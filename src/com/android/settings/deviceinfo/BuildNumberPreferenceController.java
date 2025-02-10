@@ -72,6 +72,16 @@ public class BuildNumberPreferenceController extends BasePreferenceController im
     private boolean mProcessingLastDevHit;
 
     public final static java.lang.String[] insults = {
+            "Evolution X > your personality",
+            "IT'S CLOBBERING TIME!",
+            "Acknowledge me",
+            "You flash ROMs more than you shower",
+            "Maybe clean your room first?",
+            "Nice ROM, still no friends",
+            "Your phone’s stable—you’re not",
+            "Dirty flash, dirty life",
+            "More updates, same boring you",
+            "8080",
             "Hahaha, n00b!",
             "What are you doing??",
             "n00b alert!",
@@ -84,12 +94,11 @@ public class BuildNumberPreferenceController extends BasePreferenceController im
             "Pro tip: Stop doing this",
             "Perhaps this Android thing is not for you...",
             "Don't you have anything better to do?",
-            "Looks like you're evolving... Just BACKWARDS!",
+            "You're evolving... Just BACKWARDS!",
             "This won't make you look cooler to your friends",
             "Go back to your stock ROM",
             "FBI! OPEN UP!",
             "Would you prefer iOS next time?",
-            "We should hack your device just for this",
     };
 
     public BuildNumberPreferenceController(Context context, String key) {
