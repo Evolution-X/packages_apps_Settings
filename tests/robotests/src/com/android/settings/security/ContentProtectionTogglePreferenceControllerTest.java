@@ -22,8 +22,11 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.spy;
+import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
+import static org.robolectric.Shadows.shadowOf;
 
 import android.content.Context;
 import android.platform.test.flag.junit.SetFlagsRule;
@@ -33,6 +36,7 @@ import androidx.preference.PreferenceScreen;
 import androidx.test.core.app.ApplicationProvider;
 
 import com.android.settings.testutils.shadow.ShadowUtils;
+import com.android.settings.testutils.shadow.ShadowUserManager;
 import com.android.settings.widget.SettingsMainSwitchPreference;
 import com.android.settingslib.RestrictedLockUtils;
 
@@ -52,6 +56,7 @@ import org.robolectric.annotation.Config;
 @Config(
         shadows = {
             ShadowUtils.class,
+            ShadowUserManager.class,
         })
 public class ContentProtectionTogglePreferenceControllerTest {
 
@@ -65,10 +70,13 @@ public class ContentProtectionTogglePreferenceControllerTest {
     private final Context mContext = ApplicationProvider.getApplicationContext();
     private ContentProtectionTogglePreferenceController mController;
     private int mSettingBackupValue;
+    private ShadowUserManager mShadowUserManager;
 
     @Before
     public void setUp() {
         MockitoAnnotations.initMocks(this);
+        mShadowUserManager = ShadowUserManager.getShadow();
+        mShadowUserManager.setGuestUser(false);
         mController = new TestContentProtectionTogglePreferenceController();
         mSwitchPreference = new SettingsMainSwitchPreference(mContext);
         when(mMockScreen.findPreference(mController.getPreferenceKey()))
@@ -117,6 +125,7 @@ public class ContentProtectionTogglePreferenceControllerTest {
         mController.updateState(mockSwitchPreference);
 
         verify(mockSwitchPreference, never()).setDisabledByAdmin(any());
+        verify(mockSwitchPreference, never()).setEnabled(false);
     }
 
     @Test
@@ -132,6 +141,36 @@ public class ContentProtectionTogglePreferenceControllerTest {
         mController.updateState(mockSwitchPreference);
 
         verify(mockSwitchPreference).setDisabledByAdmin(mAdmin);
+        verify(mockSwitchPreference, never()).setEnabled(false);
+    }
+
+    @Test
+    public void updateState_notFullyManagedMode_guestUser_switchBarDisabled() {
+        mShadowUserManager.setGuestUser(true);
+        SettingsMainSwitchPreference mockSwitchPreference =
+                mock(SettingsMainSwitchPreference.class);
+        when(mMockScreen.findPreference(any())).thenReturn(mockSwitchPreference);
+        when(mockSwitchPreference.getKey()).thenReturn(mController.getPreferenceKey());
+
+        mController = new TestContentProtectionTogglePreferenceController();
+        mController.displayPreference(mMockScreen);
+        mController.updateState(mockSwitchPreference);
+
+        verify(mockSwitchPreference).setEnabled(false);
+    }
+
+    @Test
+    public void updateState_notFullyManagedMode_nonGuestUser_switchBarEnabled() {
+        SettingsMainSwitchPreference mockSwitchPreference =
+                mock(SettingsMainSwitchPreference.class);
+        when(mMockScreen.findPreference(any())).thenReturn(mockSwitchPreference);
+        when(mockSwitchPreference.getKey()).thenReturn(mController.getPreferenceKey());
+
+        mController = new TestContentProtectionTogglePreferenceController();
+        mController.displayPreference(mMockScreen);
+        mController.updateState(mockSwitchPreference);
+
+        verify(mockSwitchPreference, never()).setEnabled(false);
     }
 
     @Test
@@ -155,6 +194,7 @@ public class ContentProtectionTogglePreferenceControllerTest {
         mController.updateState(mockSwitchPreference);
 
         assertThat(mController.isChecked()).isFalse();
+        verify(mockSwitchPreference, never()).setEnabled(false);
     }
 
     @Test

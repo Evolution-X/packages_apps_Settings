@@ -17,6 +17,7 @@ package com.android.settings.security;
 
 import android.content.ContentResolver;
 import android.content.Context;
+import android.os.UserManager;
 import android.provider.Settings;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
@@ -91,6 +92,14 @@ public class ContentProtectionTogglePreferenceController extends TogglePreferenc
         mEnforcedAdmin = getEnforcedAdmin();
         if (mSwitchBar != null && mEnforcedAdmin != null) {
             mSwitchBar.setDisabledByAdmin(mEnforcedAdmin);
+            return;
+        }
+
+        UserManager userManager = mContext.getSystemService(UserManager.class);
+        if (userManager != null
+                && userManager.isGuestUser()
+                && mSwitchBar != null) {
+            mSwitchBar.setEnabled(false);
         }
     }
 
