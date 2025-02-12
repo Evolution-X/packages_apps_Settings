@@ -57,6 +57,7 @@ import com.android.settings.network.telephony.TelephonyConstants.TelephonyManage
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -393,9 +394,7 @@ public class EnabledNetworkModePreferenceController extends
                         uiOptions.getType().name() + " index error.");
             }
 
-            if (!lteOnlyUnsupported) {
-                addLteOnlyEntry();
-            }
+            AtomicBoolean is5GSupported = new AtomicBoolean(false);
 
             // Compose options based on given values and formats.
             IntStream.range(0, formatList.size()).forEach(entryIndex -> {
@@ -438,19 +437,31 @@ public class EnabledNetworkModePreferenceController extends
                         break;
                     case add5gEntry:
                         add5gEntry(addNrToLteNetworkType(entryValuesInt[entryIndex]));
+                        is5GSupported.set(true);
                         break;
                     case add5gAnd4gEntry:
                         add5gEntry(addNrToLteNetworkType(entryValuesInt[entryIndex]));
                         add4gEntry(entryValuesInt[entryIndex]);
+                        is5GSupported.set(true);
                         break;
                     case add5gAndLteEntry:
                         add5gEntry(addNrToLteNetworkType(entryValuesInt[entryIndex]));
                         addLteEntry(entryValuesInt[entryIndex]);
+                        is5GSupported.set(true);
                         break;
                     default:
                         throw new IllegalArgumentException("Not supported ui options format.");
                 }
             });
+
+            if (!lteOnlyUnsupported) {
+                addLteOnlyEntry();
+            }
+
+            if (!lteOnlyUnsupported && is5GSupported.get()) {
+                addNrOrLteOnlyEntry();
+                addNrOnlyEntry();
+            }
         }
 
         private int getPreferredNetworkMode() {
@@ -664,7 +675,17 @@ public class EnabledNetworkModePreferenceController extends
                     break;
 
                 case TelephonyManagerConstants.NETWORK_MODE_NR_ONLY:
+                    setSelectedEntry(
+                            TelephonyManagerConstants.NETWORK_MODE_NR_ONLY);
+                    setSummary(getResourcesForSubId().getString(R.string.network_5g_only));
+                    break;
                 case TelephonyManagerConstants.NETWORK_MODE_NR_LTE:
+                    setSelectedEntry(
+                            TelephonyManagerConstants.NETWORK_MODE_NR_LTE);
+                    setSummary(getResourcesForSubId().getString(mShow4gForLTE ?
+                            R.string.network_5g_or_4g_only : R.string.network_5g_or_lte_only)
+                    );
+                    break;
                 case TelephonyManagerConstants.NETWORK_MODE_NR_LTE_GSM_WCDMA:
                 case TelephonyManagerConstants.NETWORK_MODE_NR_LTE_WCDMA:
                     setSelectedEntry(
@@ -858,6 +879,21 @@ public class EnabledNetworkModePreferenceController extends
             } else {
                 mEntries.add(mContext.getString(R.string.network_lte_only));
                 mEntriesValue.add(TelephonyManagerConstants.NETWORK_MODE_LTE_ONLY);
+            }
+        }
+
+        private void addNrOnlyEntry() {
+            mEntries.add(mContext.getString(R.string.network_5g_only));
+            mEntriesValue.add(TelephonyManagerConstants.NETWORK_MODE_NR_ONLY);
+        }
+
+        private void addNrOrLteOnlyEntry() {
+            if (mShow4gForLTE) {
+                mEntries.add(mContext.getString(R.string.network_5g_or_4g_only));
+                mEntriesValue.add(TelephonyManagerConstants.NETWORK_MODE_NR_LTE);
+            } else {
+                mEntries.add(mContext.getString(R.string.network_5g_or_lte_only));
+                mEntriesValue.add(TelephonyManagerConstants.NETWORK_MODE_NR_LTE);
             }
         }
 

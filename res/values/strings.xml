@@ -11961,6 +11961,12 @@
     <string name="network_lte">LTE (recommended)</string>
     <!-- Text for Network lte only [CHAR LIMIT=NONE] -->
     <string name="network_lte_only">LTE only</string>
+    <!-- Text for Network 5G only [CHAR LIMIT=NONE] -->
+    <string name="network_5g_only">5G only</string>
+    <!-- Text for Network 5G or LTE only [CHAR LIMIT=NONE] -->
+    <string name="network_5g_or_lte_only">5G or LTE only</string>
+    <!-- Text for Network 5G or 4G only [CHAR LIMIT=NONE] -->
+    <string name="network_5g_or_4g_only">5G or 4G only</string>
     <!-- Text for Network 4g [CHAR LIMIT=NONE] -->
     <string name="network_4G">4G (recommended)</string>
     <!-- Text for Network 4g only [CHAR LIMIT=NONE] -->
