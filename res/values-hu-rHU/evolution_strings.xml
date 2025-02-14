@@ -279,4 +279,10 @@
     <!-- fingerprint lockout -->
     <string name="fingerprint_lockout_title">Az ujjlenyomat-zárolás letiltása</string>
     <string name="fingerprint_lockout_summary">Deaktiválja a 30 másodperces időtúllépést, valamint a többszöri sikertelen ujjlenyomat-feloldási kísérlet utáni állandó zárolást</string>
+    <!-- Long press navbar to search -->
+    <string name="navbar_long_press_gesture_title">Keresés nyomvatartással</string>
+    <string name="navbar_long_press_gesture_summary">Érintse meg és tartsa lenyomva a Kezdőlap gombját vagy a navigációs gombot, ha a képernyőn megjelenő tartalom alapján szeretne keresni</string>
+    <!-- Circle to search -->
+    <string name="search_all_entrypoints_enabled_title">Körrel keresés</string>
+    <string name="search_all_entrypoints_enabled_summary">A Google Lens helyett a \'Körrel keresés\' induljon nyomvatartáskor</string>
 </resources>
