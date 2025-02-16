@@ -285,4 +285,6 @@
     <!-- Circle to search -->
     <string name="search_all_entrypoints_enabled_title">Körrel keresés</string>
     <string name="search_all_entrypoints_enabled_summary">A Google Lens helyett a \'Körrel keresés\' induljon nyomvatartáskor</string>
+    <!-- Running services - Background processes tab -->
+    <string name="background_processes_settings_title">Háttérfolyamatok</string>
 </resources>
