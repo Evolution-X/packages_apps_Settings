@@ -38,6 +38,10 @@ public class BluetoothSampleRateDialogPreferenceController extends
     private static final String KEY = "bluetooth_sample_rate_settings";
     private static final String TAG = "BtSampleRateCtr";
 
+    // LHDCV3/V4
+    private static final int LHDCV3_CAP_V4_LLAC_MASK = 0xF00000;
+    private static final int LHDCV3_CAP_LLAC_ONLY = 0x100000;
+
     public BluetoothSampleRateDialogPreferenceController(Context context, Lifecycle lifecycle,
                                                          BluetoothA2dpConfigStore store) {
         super(context, lifecycle, store);
@@ -61,8 +65,12 @@ public class BluetoothSampleRateDialogPreferenceController extends
             case 0:
                 final BluetoothCodecConfig currentConfig = getCurrentCodecConfig();
                 if (currentConfig != null) {
-                    sampleRateValue = getHighestSampleRate(getSelectableByCodecType(
-                            currentConfig.getCodecType()));
+                    /* Savitech LHDC patch: use default by LHDC native when selecting system default */
+                    if (currentConfig.getCodecType() != BluetoothCodecConfig.SOURCE_CODEC_TYPE_LHDCV3 &&
+                        currentConfig.getCodecType() != BluetoothCodecConfig.SOURCE_CODEC_TYPE_LHDCV5) {
+                            sampleRateValue = getHighestSampleRate(getSelectableByCodecType(
+                                currentConfig.getCodecType()));
+                    }
                 }
                 break;
             case 1:
@@ -76,6 +84,12 @@ public class BluetoothSampleRateDialogPreferenceController extends
                 break;
             case 4:
                 sampleRateValue = BluetoothCodecConfig.SAMPLE_RATE_96000;
+                break;
+            case 5:
+                sampleRateValue = BluetoothCodecConfig.SAMPLE_RATE_176400;
+                break;
+            case 6:
+                sampleRateValue = BluetoothCodecConfig.SAMPLE_RATE_192000;
                 break;
             default:
                 break;
@@ -99,8 +113,19 @@ public class BluetoothSampleRateDialogPreferenceController extends
         if (currentConfig != null) {
             final int configs =
                     getSelectableByCodecType(currentConfig.getCodecType()).getSampleRate();
+            int codecType = currentConfig.getCodecType();
+            long codecSpecific1Value = currentConfig.getCodecSpecific1();
             for (int sampleRate : SAMPLE_RATES) {
                 if ((configs & sampleRate) != 0) {
+                    // (UI optional) LHDCV3/V4: LLAC-only does not support 96KHz
+                    if (codecType == BluetoothCodecConfig.SOURCE_CODEC_TYPE_LHDCV3) {
+                        if ((codecSpecific1Value & LHDCV3_CAP_V4_LLAC_MASK) == LHDCV3_CAP_LLAC_ONLY) {
+                            if (sampleRate == BluetoothCodecConfig.SAMPLE_RATE_96000 ||
+                                sampleRate == BluetoothCodecConfig.SAMPLE_RATE_192000) {
+                                continue;
+                            }
+                        }
+                    }
                     selectableIndex.add(convertCfgToBtnIndex(sampleRate));
                 }
             }
@@ -123,6 +148,12 @@ public class BluetoothSampleRateDialogPreferenceController extends
                 break;
             case BluetoothCodecConfig.SAMPLE_RATE_96000:
                 index = 4;
+                break;
+            case BluetoothCodecConfig.SAMPLE_RATE_176400:
+                index = 5;
+                break;
+            case BluetoothCodecConfig.SAMPLE_RATE_192000:
+                index = 6;
                 break;
             default:
                 Log.e(TAG, "Unsupported config:" + config);

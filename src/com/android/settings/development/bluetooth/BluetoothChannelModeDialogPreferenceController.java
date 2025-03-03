@@ -61,8 +61,12 @@ public class BluetoothChannelModeDialogPreferenceController extends
             case 0:
                 final BluetoothCodecConfig currentConfig = getCurrentCodecConfig();
                 if (currentConfig != null) {
-                    channelModeValue = getHighestChannelMode(getSelectableByCodecType(
-                            currentConfig.getCodecType()));
+                    /* Savitech patch: pick default by native decision, not always get the Highest one */
+                    if (currentConfig.getCodecType() != BluetoothCodecConfig.SOURCE_CODEC_TYPE_LHDCV3 &&
+                        currentConfig.getCodecType() != BluetoothCodecConfig.SOURCE_CODEC_TYPE_LHDCV5) {
+                            channelModeValue = getHighestChannelMode(getSelectableByCodecType(
+                                currentConfig.getCodecType()));
+                    }
                 }
                 break;
             case 1:

@@ -41,6 +41,8 @@ public abstract class AbstractBluetoothDialogPreferenceController extends
     private static final String TAG = "AbstractBtDlgCtr";
 
     protected static final int[] CODEC_TYPES = {
+            BluetoothCodecConfig.SOURCE_CODEC_TYPE_LHDCV5,
+            BluetoothCodecConfig.SOURCE_CODEC_TYPE_LHDCV3,
             BluetoothCodecConfig.SOURCE_CODEC_TYPE_OPUS,
             BluetoothCodecConfig.SOURCE_CODEC_TYPE_LC3,
             BluetoothCodecConfig.SOURCE_CODEC_TYPE_LDAC,

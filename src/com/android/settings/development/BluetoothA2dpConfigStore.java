@@ -66,16 +66,29 @@ public class BluetoothA2dpConfigStore {
         mCodecSpecific1Value = codecSpecific1Value;
     }
 
-    public void setCodecSpecific2Value(int codecSpecific2Value) {
+    public void setCodecSpecific2Value(long codecSpecific2Value) {
         mCodecSpecific2Value = codecSpecific2Value;
     }
 
-    public void setCodecSpecific3Value(int codecSpecific3Value) {
+    public void setCodecSpecific3Value(long codecSpecific3Value) {
         mCodecSpecific3Value = codecSpecific3Value;
     }
 
-    public void setCodecSpecific4Value(int codecSpecific4Value) {
+    public void setCodecSpecific4Value(long codecSpecific4Value) {
         mCodecSpecific4Value = codecSpecific4Value;
+    }
+
+    public long getCodecSpecific1Value() {
+        return mCodecSpecific1Value;
+    }
+    public long getCodecSpecific2Value() {
+        return mCodecSpecific2Value;
+    }
+    public long getCodecSpecific3Value() {
+        return mCodecSpecific3Value;
+    }
+    public long getCodecSpecific4Value() {
+        return mCodecSpecific4Value;
     }
 
     /** Create codec config utilizing {@link BluetoothCodecConfig.SourceCodecType} */

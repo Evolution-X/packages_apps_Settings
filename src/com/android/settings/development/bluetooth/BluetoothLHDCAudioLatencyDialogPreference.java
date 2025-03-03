@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 The Android Open Source Project
+ * Copyright (C) 2023 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,55 +21,57 @@ import android.util.AttributeSet;
 import android.widget.RadioGroup;
 
 import com.android.settings.R;
+import android.util.Log;
 
 /**
- * Dialog preference to set the Bluetooth A2DP config of sample rate
+ * Dialog preference to set the Bluetooth A2DP config of LHDC quality
  */
-public class BluetoothSampleRateDialogPreference extends BaseBluetoothDialogPreference implements
+public class BluetoothLHDCAudioLatencyDialogPreference extends BaseBluetoothDialogPreference implements
         RadioGroup.OnCheckedChangeListener {
 
-    public BluetoothSampleRateDialogPreference(Context context) {
+    private static final String TAG = "BtLhdcLLPref";
+
+    public BluetoothLHDCAudioLatencyDialogPreference(Context context) {
         super(context);
         initialize(context);
     }
 
-    public BluetoothSampleRateDialogPreference(Context context, AttributeSet attrs) {
+    public BluetoothLHDCAudioLatencyDialogPreference(Context context, AttributeSet attrs) {
         super(context, attrs);
         initialize(context);
     }
 
-    public BluetoothSampleRateDialogPreference(Context context, AttributeSet attrs,
-                                               int defStyleAttr) {
+    public BluetoothLHDCAudioLatencyDialogPreference(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         initialize(context);
     }
 
-    public BluetoothSampleRateDialogPreference(Context context, AttributeSet attrs,
-                                               int defStyleAttr, int defStyleRes) {
+    public BluetoothLHDCAudioLatencyDialogPreference(Context context, AttributeSet attrs, int defStyleAttr,
+                                            int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         initialize(context);
     }
 
     @Override
     protected int getRadioButtonGroupId() {
-        return R.id.bluetooth_audio_sample_rate_radio_group;
+        return R.id.bluetooth_lhdc_audio_latency_radio_group;
+    }
+
+    @Override
+    protected int getDefaultIndex() {
+        return 0; // OFF
     }
 
     private void initialize(Context context) {
-        mRadioButtonIds.add(R.id.bluetooth_audio_sample_rate_default);
-        mRadioButtonIds.add(R.id.bluetooth_audio_sample_rate_441);
-        mRadioButtonIds.add(R.id.bluetooth_audio_sample_rate_480);
-        mRadioButtonIds.add(R.id.bluetooth_audio_sample_rate_882);
-        mRadioButtonIds.add(R.id.bluetooth_audio_sample_rate_960);
-        mRadioButtonIds.add(R.id.bluetooth_audio_sample_rate_1764);
-        mRadioButtonIds.add(R.id.bluetooth_audio_sample_rate_1920);
+        mRadioButtonIds.add(R.id.bluetooth_lhdc_latency_off);
+        mRadioButtonIds.add(R.id.bluetooth_lhdc_latency_on);
         String[] stringArray = context.getResources().getStringArray(
-                com.android.settingslib.R.array.bluetooth_a2dp_codec_sample_rate_titles);
+                com.android.settingslib.R.array.bluetooth_enable_a2dp_codec_lhdc_latency_titles);
         for (int i = 0; i < stringArray.length; i++) {
             mRadioButtonStrings.add(stringArray[i]);
         }
         stringArray = context.getResources().getStringArray(
-                com.android.settingslib.R.array.bluetooth_a2dp_codec_sample_rate_summaries);
+                com.android.settingslib.R.array.bluetooth_enable_a2dp_codec_lhdc_latency_summaries);
         for (int i = 0; i < stringArray.length; i++) {
             mSummaryStrings.add(stringArray[i]);
         }

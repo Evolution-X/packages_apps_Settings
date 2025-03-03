@@ -26,40 +26,60 @@
         android:padding="8dp">
 
         <RadioGroup
-            android:id="@+id/bluetooth_audio_sample_rate_radio_group"
+            android:id="@+id/bluetooth_lhdc_audio_quality_radio_group"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/developer_option_dialog_margin_start">
 
+            <!-- 64 kbps -->
             <include
-                android:id="@+id/bluetooth_audio_sample_rate_default"
+                android:id="@+id/bluetooth_lhdc_audio_quality_low0"
                 layout="@layout/preference_widget_dialog_radiobutton"/>
 
+            <!-- 128 kbps -->
             <include
-                android:id="@+id/bluetooth_audio_sample_rate_441"
+                android:id="@+id/bluetooth_lhdc_audio_quality_low1"
                 layout="@layout/preference_widget_dialog_radiobutton"/>
 
+            <!-- 192 kbps -->
             <include
-                android:id="@+id/bluetooth_audio_sample_rate_480"
+                android:id="@+id/bluetooth_lhdc_audio_quality_low2"
                 layout="@layout/preference_widget_dialog_radiobutton"/>
 
+            <!-- 256 kbps -->
             <include
-                android:id="@+id/bluetooth_audio_sample_rate_882"
+                android:id="@+id/bluetooth_lhdc_audio_quality_low3"
                 layout="@layout/preference_widget_dialog_radiobutton"/>
 
+            <!-- 320 kbps -->
             <include
-                android:id="@+id/bluetooth_audio_sample_rate_960"
+                android:id="@+id/bluetooth_lhdc_audio_quality_low4"
                 layout="@layout/preference_widget_dialog_radiobutton"/>
 
-            <!-- Savitech LHDC - START -->
+            <!-- 400 kbps -->
             <include
-                android:id="@+id/bluetooth_audio_sample_rate_1764"
+                android:id="@+id/bluetooth_lhdc_audio_quality_low"
                 layout="@layout/preference_widget_dialog_radiobutton"/>
 
+            <!-- 500 kbps -->
             <include
-                android:id="@+id/bluetooth_audio_sample_rate_1920"
+                android:id="@+id/bluetooth_lhdc_audio_quality_mid"
                 layout="@layout/preference_widget_dialog_radiobutton"/>
-            <!-- Savitech LHDC - END -->
+
+            <!-- 900 kbps -->
+            <include
+                android:id="@+id/bluetooth_lhdc_audio_quality_high"
+                layout="@layout/preference_widget_dialog_radiobutton"/>
+
+            <!-- 1000 kbps -->
+            <include
+                android:id="@+id/bluetooth_lhdc_audio_quality_high1"
+                layout="@layout/preference_widget_dialog_radiobutton"/>
+
+            <!-- ABR -->
+            <include
+                android:id="@+id/bluetooth_lhdc_audio_quality_best_effort"
+                layout="@layout/preference_widget_dialog_radiobutton"/>
         </RadioGroup>
 
         <include
@@ -69,3 +89,4 @@
     </LinearLayout>
 
 </ScrollView>
+
