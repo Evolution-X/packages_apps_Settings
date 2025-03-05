@@ -52,12 +52,11 @@ public class TotalRAMPreferenceController extends BasePreferenceController {
         ActivityManager actManager = (ActivityManager) mContext.getSystemService(Context.ACTIVITY_SERVICE);
         ActivityManager.MemoryInfo memInfo = new ActivityManager.MemoryInfo();
         actManager.getMemoryInfo(memInfo);
-    
+
         long totRam = memInfo.totalMem;
-        double gb = (double) totRam / 1073741824.0;
-    
-        // Format to show one decimal place
-        DecimalFormat df = new DecimalFormat("#.#");
+        double gb = (double) totRam / 1000000000.0;
+        
+        DecimalFormat df = new DecimalFormat("#");
         String formattedRam = df.format(gb);
         
         return formattedRam + " GB";
