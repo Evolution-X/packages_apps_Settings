@@ -49,31 +49,17 @@ public class TotalRAMPreferenceController extends BasePreferenceController {
 
     @Override
     public CharSequence getSummary() {
-    ActivityManager actManager = (ActivityManager) mContext.getSystemService(Context.ACTIVITY_SERVICE);
-    ActivityManager.MemoryInfo memInfo = new ActivityManager.MemoryInfo();
-    actManager.getMemoryInfo(memInfo);
-
-    long totRam = memInfo.totalMem;
-    double gb = (double) totRam / 1073741824.0;
-
-    String aproxRam;
-    if (gb > 0 && gb <= 2) {
-        aproxRam = "2";
-    } else if (gb <= 3) {
-        aproxRam = "3";
-    } else if (gb <= 4) {
-        aproxRam = "4";
-    } else if (gb <= 6) {
-        aproxRam = "6";
-    } else if (gb <= 8) {
-        aproxRam = "8";
-    } else if (gb <= 12) {
-        aproxRam = "12";
-    } else {
-        aproxRam = "12+";
+        ActivityManager actManager = (ActivityManager) mContext.getSystemService(Context.ACTIVITY_SERVICE);
+        ActivityManager.MemoryInfo memInfo = new ActivityManager.MemoryInfo();
+        actManager.getMemoryInfo(memInfo);
+    
+        long totRam = memInfo.totalMem;
+        double gb = (double) totRam / 1073741824.0;
+    
+        // Format to show one decimal place
+        DecimalFormat df = new DecimalFormat("#.#");
+        String formattedRam = df.format(gb);
+        
+        return formattedRam + " GB";
     }
-
-    String actualRam = aproxRam.concat(" GB");
-    return actualRam;
-   }
 }
