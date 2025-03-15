@@ -768,7 +768,7 @@
 
         <SwitchPreferenceCompat
             android:key="override_desktop_mode_features"
-            android:title="@string/enable_desktop_mode" />
+            android:title="Enable desktop mode support" />
 
         <SwitchPreferenceCompat
             android:key="enable_freeform_support"
