@@ -639,8 +639,11 @@ public class AppRestrictionsFragment extends SettingsPreferenceFragment implemen
             } else if (restrictionsIntent != null) {
                 preference.setRestrictions(restrictions);
                 if (invokeIfCustom && AppRestrictionsFragment.this.isResumed()) {
+                    // We don't necessarily trust the given intent to launch its component.
+                    // We will first check it, and only use parts of it that were indeed checked.
+                    final Intent vettedIntent;
                     try {
-                        assertSafeToStartCustomActivity(restrictionsIntent);
+                        vettedIntent = assertSafeToStartCustomActivity(restrictionsIntent);
                     } catch (ActivityNotFoundException | SecurityException e) {
                         // return without startActivity
                         Log.e(TAG, "Cannot start restrictionsIntent " + e);
@@ -651,12 +654,16 @@ public class AppRestrictionsFragment extends SettingsPreferenceFragment implemen
                     int requestCode = generateCustomActivityRequestCode(
                             RestrictionsResultReceiver.this.preference);
                     AppRestrictionsFragment.this.startActivityForResult(
-                            new Intent(restrictionsIntent), requestCode);
+                            vettedIntent, requestCode);
                 }
             }
         }
 
-        private void assertSafeToStartCustomActivity(Intent intent) {
+        /**
+         * Checks that it is safe to start the custom activity, and, if so, returns a copy of the
+         * Intent using its vetted components.
+         */
+        private Intent assertSafeToStartCustomActivity(Intent intent) {
             EventLog.writeEvent(0x534e4554, "223578534", -1 /* UID */, "");
             ResolveInfo resolveInfo = mPackageManager.resolveActivity(
                     intent, PackageManager.MATCH_DEFAULT_ONLY);
@@ -670,6 +677,13 @@ public class AppRestrictionsFragment extends SettingsPreferenceFragment implemen
                 throw new SecurityException("Application " + packageName
                         + " is not allowed to start activity " + intent);
             }
+
+            // We were able to vet the given intent this time. Make a copy using the components
+            // that were used to do the vetting, since that's as much as we've verified is safe.
+            final Intent vettedIntent = new Intent(intent);
+            vettedIntent.setComponent(activityInfo.getComponentName());
+            vettedIntent.setPackage(activityInfo.packageName);
+            return vettedIntent;
         }
     }
 
