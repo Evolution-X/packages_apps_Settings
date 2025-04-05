@@ -32,11 +32,13 @@ import static com.google.common.truth.Truth.assertWithMessage;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.doAnswer;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import android.app.Activity;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -64,6 +66,7 @@ import com.android.settings.R;
 import com.android.settings.Settings;
 import com.android.settings.biometrics.BiometricEnrollBase;
 import com.android.settings.biometrics.BiometricUtils;
+import com.android.settings.biometrics.MultiBiometricEnrollHelper;
 import com.android.settings.password.ChooseLockSettingsHelper;
 import com.android.settings.testutils.FakeFeatureFactory;
 import com.android.settings.testutils.shadow.SettingsShadowResources;
@@ -205,6 +208,12 @@ public class FaceEnrollIntroductionTest {
         testIntent.putExtra(ChooseLockSettingsHelper.EXTRA_KEY_CHALLENGE_TOKEN, new byte[0]);
         testIntent.putExtra(BiometricUtils.EXTRA_ENROLL_REASON,
                 FaceEnrollOptions.ENROLL_REASON_SETTINGS);
+
+        testIntent.putExtra(MultiBiometricEnrollHelper.EXTRA_ENROLL_AFTER_FACE,
+                mock(PendingIntent.class));
+        testIntent.putExtra(MultiBiometricEnrollHelper.EXTRA_ENROLL_AFTER_FINGERPRINT,
+                mock(PendingIntent.class));
+        testIntent.putExtra(MultiBiometricEnrollHelper.EXTRA_SKIP_PENDING_ENROLL, false);
 
         when(mFakeFeatureFactory.mFaceFeatureProvider.getPostureGuidanceIntent(any())).thenReturn(
                 null /* Simulate no posture intent */);
@@ -690,4 +699,16 @@ public class FaceEnrollIntroductionTest {
                 .isEqualTo(FaceEnrollOptions.ENROLL_REASON_SETTINGS);
     }
 
+    @Test
+    public void drops_pendingIntents() {
+        setupActivity();
+
+        mController.start();
+        Shadows.shadowOf(Looper.getMainLooper()).idle();
+
+        final Intent intent = mActivity.getIntent();
+        assertThat(intent.hasExtra(MultiBiometricEnrollHelper.EXTRA_SKIP_PENDING_ENROLL)).isFalse();
+        assertThat(intent.hasExtra(MultiBiometricEnrollHelper.EXTRA_ENROLL_AFTER_FACE)).isFalse();
+        assertThat(intent.hasExtra(MultiBiometricEnrollHelper.EXTRA_ENROLL_AFTER_FINGERPRINT)).isFalse();
+    }
 }
