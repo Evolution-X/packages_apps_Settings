@@ -25,12 +25,16 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.view.WindowManager;
 
+import com.android.internal.util.evolution.Utils;
+
 import com.android.settings.R;
 import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.widget.LabeledSeekBarPreference;
 import com.android.settings.widget.SeekBarPreference;
 import com.android.settingslib.search.SearchIndexable;
+
+import lineageos.preference.LineageSystemSettingSwitchPreference;
 
 /**
  * A fragment to include all the settings related to Gesture Navigation mode.
@@ -43,10 +47,14 @@ public class GestureNavigationSettingsFragment extends DashboardFragment {
     public static final String GESTURE_NAVIGATION_SETTINGS =
             "com.android.settings.GESTURE_NAVIGATION_SETTINGS";
 
+    private static final String GESTURE_HINT_KEY = "navigation_bar_hint";
     private static final String LEFT_EDGE_SEEKBAR_KEY = "gesture_left_back_sensitivity";
     private static final String RIGHT_EDGE_SEEKBAR_KEY = "gesture_right_back_sensitivity";
 
     private static final String GESTURE_BACK_HEIGHT_KEY = "gesture_back_height";
+
+    private static final String NEXUSLAUNCHER_PACKAGE_NAME = "com.google.android.apps.nexuslauncher";
+    private static final String NOGESTUREHINT_OVERLAY = "com.google.android.apps.nexuslauncher.overlay.nogesturehint";
 
     private WindowManager mWindowManager;
     private BackGestureIndicatorView mIndicatorView;
@@ -83,6 +91,18 @@ public class GestureNavigationSettingsFragment extends DashboardFragment {
         initSeekBarPreference(LEFT_EDGE_SEEKBAR_KEY);
         initSeekBarPreference(RIGHT_EDGE_SEEKBAR_KEY);
         initSeekBarPreference(GESTURE_BACK_HEIGHT_KEY);
+
+        LineageSystemSettingSwitchPreference gestureHintPref =
+                getPreferenceScreen().findPreference(GESTURE_HINT_KEY);
+
+        gestureHintPref.setOnPreferenceChangeListener((preference, newValue) -> {
+            if (Utils.isPackageInstalled(getContext(), NEXUSLAUNCHER_PACKAGE_NAME)) {
+                Utils.toggleOverlay(getContext(), NOGESTUREHINT_OVERLAY, !(Boolean) newValue);
+                Utils.restartApp(NEXUSLAUNCHER_PACKAGE_NAME, getContext());
+            }
+
+            return true;
+        });
     }
 
     @Override
