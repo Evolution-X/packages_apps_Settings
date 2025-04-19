@@ -62,24 +62,34 @@ class AppLockPackageListFragment : DashboardFragment() {
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         super.onCreatePreferences(savedInstanceState, rootKey)
+
         lifecycleScope.launch {
             val selectedPackages = getSelectedPackages()
+
             val preferences = withContext(Dispatchers.Default) {
-                pm.getInstalledPackages(
+                val installedPackages = pm.getInstalledPackages(
                     PackageInfoFlags.of(PackageManager.MATCH_ALL.toLong())
-                ).filter { packageInfo ->
-                    val isSystemApp = packageInfo.applicationInfo?.isSystemApp ?: false
-                    !isSystemApp || launchablePackages.contains(packageInfo.packageName) ||
-                        whiteListedPackages.contains(packageInfo.packageName)
-                }.sortedWith { first, second ->
-                    getLabel(first).compareTo(getLabel(second))
-                }
+                )
+
+                installedPackages
+                    .filter { packageInfo ->
+                        val pkgName = packageInfo.packageName
+                        val appInfo = packageInfo.applicationInfo
+                        val isSystemApp = appInfo?.isSystemApp ?: false
+                        val isLaunchable = pm.getLaunchIntentForPackage(pkgName) != null
+                        val isWhitelisted = whiteListedPackages.contains(pkgName)
+
+                        val shouldInclude = isLaunchable && (!isSystemApp || isWhitelisted)
+                        shouldInclude
+                    }
+                    .sortedBy { getLabel(it) }
             }.map { packageInfo ->
                 createPreference(packageInfo, selectedPackages.contains(packageInfo.packageName))
             }
-            preferenceScreen?.let {
+
+            preferenceScreen?.let { screen ->
                 preferences.forEach { pref ->
-                    it.addPreference(pref)
+                    screen.addPreference(pref)
                 }
             }
         }
