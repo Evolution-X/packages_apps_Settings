@@ -82,6 +82,7 @@ public class PrivateDnsModeDialogPreference extends CustomDialogPreferenceCompat
     private static final int PRIVATE_DNS_MODE_QUAD9_UNSECURED = 11;
     private static final int PRIVATE_DNS_MODE_QUAD9_ECS = 12;
     private static final int PRIVATE_DNS_MODE_QUAD9_UNSECURED_ECS = 13;
+    private static final int PRIVATE_DNS_MODE_COMSS = 14;
 
     static {
         PRIVATE_DNS_MAP = new HashMap<>();
@@ -96,6 +97,7 @@ public class PrivateDnsModeDialogPreference extends CustomDialogPreferenceCompat
         PRIVATE_DNS_MAP.put(PRIVATE_DNS_MODE_QUAD9_UNSECURED, R.id.private_dns_mode_quad9_unsecured);
         PRIVATE_DNS_MAP.put(PRIVATE_DNS_MODE_QUAD9_ECS, R.id.private_dns_mode_quad9_ecs);
         PRIVATE_DNS_MAP.put(PRIVATE_DNS_MODE_QUAD9_UNSECURED_ECS, R.id.private_dns_mode_quad9_unsecured_ecs);
+        PRIVATE_DNS_MAP.put(PRIVATE_DNS_MODE_COMSS, R.id.private_dns_mode_comss);
         PRIVATE_DNS_MAP.put(PRIVATE_DNS_MODE_OPPORTUNISTIC, R.id.private_dns_mode_opportunistic);
         PRIVATE_DNS_MAP.put(PRIVATE_DNS_MODE_PROVIDER_HOSTNAME, R.id.private_dns_mode_provider);
     }
@@ -181,6 +183,8 @@ public class PrivateDnsModeDialogPreference extends CustomDialogPreferenceCompat
                     context.getString(R.string.private_dns_hostname_quad9_ecs);
             final String quad9unsecuredecsHostname =
                     context.getString(R.string.private_dns_hostname_quad9_unsecured_ecs);
+            final String comssHostname =
+                    context.getString(R.string.private_dns_hostname_comss);
             if (privateDnsHostname.equals(cloudflareHostname)) {
                 mMode = PRIVATE_DNS_MODE_CLOUDFLARE;
             } else if (privateDnsHostname.equals(cloudflareblockmalwareHostname)) {
@@ -201,6 +205,8 @@ public class PrivateDnsModeDialogPreference extends CustomDialogPreferenceCompat
                 mMode = PRIVATE_DNS_MODE_QUAD9_ECS;
             } else if (privateDnsHostname.equals(quad9unsecuredecsHostname)) {
                 mMode = PRIVATE_DNS_MODE_QUAD9_UNSECURED_ECS;
+            } else if (privateDnsHostname.equals(comssHostname)) {
+                mMode = PRIVATE_DNS_MODE_COMSS;
             }
         }
         mRadioGroup = view.findViewById(R.id.private_dns_radio_group);
@@ -240,6 +246,9 @@ public class PrivateDnsModeDialogPreference extends CustomDialogPreferenceCompat
         final RadioButton quad9unsecuredecsRadioButton =
                 view.findViewById(R.id.private_dns_mode_quad9_unsecured_ecs);
         quad9unsecuredecsRadioButton.setText(R.string.private_dns_mode_quad9_unsecured_ecs);
+        final RadioButton comssRadioButton =
+                view.findViewById(R.id.private_dns_mode_comss);
+        comssRadioButton.setText(R.string.private_dns_mode_comss);
         final RadioButton opportunisticRadioButton =
                 view.findViewById(R.id.private_dns_mode_opportunistic);
         opportunisticRadioButton.setText(
@@ -295,6 +304,8 @@ public class PrivateDnsModeDialogPreference extends CustomDialogPreferenceCompat
             mMode = PRIVATE_DNS_MODE_QUAD9_ECS;
         } else if (checkedId == R.id.private_dns_mode_quad9_unsecured_ecs) {
             mMode = PRIVATE_DNS_MODE_QUAD9_UNSECURED_ECS;
+        } else if (checkedId == R.id.private_dns_mode_comss) {
+            mMode = PRIVATE_DNS_MODE_COMSS;
         } else if (checkedId == R.id.private_dns_mode_opportunistic) {
             mMode = PRIVATE_DNS_MODE_OPPORTUNISTIC;
         } else if (checkedId == R.id.private_dns_mode_provider) {
@@ -434,6 +445,11 @@ public class PrivateDnsModeDialogPreference extends CustomDialogPreferenceCompat
             final String quad9unsecuredecsHostname =
                     context.getString(R.string.private_dns_hostname_quad9_unsecured_ecs);
             ConnectivitySettingsManager.setPrivateDnsHostname(context, quad9unsecuredecsHostname);
+            modeToSet = PRIVATE_DNS_MODE_PROVIDER_HOSTNAME;
+        } else if (mMode == PRIVATE_DNS_MODE_COMSS) {
+            final String comssHostname =
+                    context.getString(R.string.private_dns_hostname_comss);
+            ConnectivitySettingsManager.setPrivateDnsHostname(context, comssHostname);
             modeToSet = PRIVATE_DNS_MODE_PROVIDER_HOSTNAME;
         }
 
