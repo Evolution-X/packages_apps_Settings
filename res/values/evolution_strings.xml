@@ -73,6 +73,11 @@
     <!-- Quad9 Unsecured ECS DNS hostname -->
     <string name="private_dns_hostname_quad9_unsecured_ecs" translatable="false">dns12.quad9.net</string>
 
+    <!-- Comss DNS Option -->
+    <string name="private_dns_mode_comss" translatable="false">Comss DNS</string> 
+    <!-- Comss DNS hostname -->
+    <string name="private_dns_hostname_comss" translatable="false">dns.comss.one</string>
+
     <!-- Per-app volume -->
     <string name="app_volume">App volume</string>
     <string name="app_volume_title">Per-app volume control</string>
