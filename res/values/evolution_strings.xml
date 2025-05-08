@@ -197,7 +197,7 @@
 
     <!-- Hide screen capture status -->
     <string name="hide_screen_capture_status_title">Hide screen capture status</string>
-    <string name="hide_screen_capture_status_summary">Hide screen capture and screen record status from all applications. Can be convenient in some cases but may lead to privacy leaks. Need to restart applications for the change to take effect.</string>
+    <string name="hide_screen_capture_status_summary">Hide screen capture/record status from apps. Useful but may risk privacy. Restart apps to apply.</string>
 
     <!-- No storage restrict -->
     <string name="no_storage_restrict_title">No storage restrict</string>
