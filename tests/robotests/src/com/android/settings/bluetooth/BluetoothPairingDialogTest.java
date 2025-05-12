@@ -176,7 +176,7 @@ public class BluetoothPairingDialogTest {
         // get the relevant views
         View messagePairing = frag.getmDialog().findViewById(R.id.pairing_code_message);
         TextView pairingViewContent = frag.getmDialog().findViewById(R.id.pairing_subhead);
-        View pairingViewCaption = frag.getmDialog().findViewById(R.id.pairing_caption);
+        TextView pairingViewCaption = frag.getmDialog().findViewById(R.id.pairing_caption);
 
         // check that the relevant views are visible and that the passkey is shown
         assertThat(messagePairing.getVisibility()).isEqualTo(View.VISIBLE);
@@ -401,6 +401,23 @@ public class BluetoothPairingDialogTest {
 
         verify(controller, times(1)).onDialogNegativeClick(any());
         verify(dialogActivity, times(1)).dismiss();
+    }
+
+    @Test
+    public void confirmationDialog_showConfirmationMessage() {
+        when(controller.getDialogType()).thenReturn(BluetoothPairingController.CONFIRMATION_DIALOG);
+        when(controller.getDeviceName()).thenReturn("Device");
+        when(controller.hasPairingContent()).thenReturn(true);
+        when(controller.getPairingContent()).thenReturn(FILLER);
+
+        // build the fragment
+        BluetoothPairingDialogFragment frag = makeFragment();
+
+        TextView pairingConfirmationHint =
+                frag.getmDialog().findViewById(R.id.pairing_confirmation_hint);
+        assertThat(pairingConfirmationHint.getText())
+                .isEqualTo(frag.getString(R.string.bluetooth_pairing_confirmation_msg, "Device"));
+        assertThat(pairingConfirmationHint.getVisibility()).isEqualTo(View.VISIBLE);
     }
 
     @Ignore

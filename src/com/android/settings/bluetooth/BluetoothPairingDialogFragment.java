@@ -301,8 +301,7 @@ public class BluetoothPairingDialogFragment extends InstrumentedDialogFragment i
      * Creates a dialog with UI elements that allow the user to confirm a pairing request.
      */
     private AlertDialog createConfirmationDialog() {
-        mBuilder.setTitle(getString(R.string.bluetooth_pairing_request,
-                mPairingController.getDeviceName()));
+        mBuilder.setTitle(getString(R.string.bluetooth_pairing_confirmation_title));
         mBuilder.setView(createView());
         mBuilder.setPositiveButton(
                 getString(com.android.settingslib.R.string.bluetooth_pairing_accept), this);
@@ -342,6 +341,8 @@ public class BluetoothPairingDialogFragment extends InstrumentedDialogFragment i
      */
     private View createView() {
         View view = getActivity().getLayoutInflater().inflate(R.layout.bluetooth_pin_confirm, null);
+        TextView pairingConfirmationHint =
+                (TextView) view.findViewById(R.id.pairing_confirmation_hint);
         TextView pairingViewCaption = (TextView) view.findViewById(R.id.pairing_caption);
         TextView pairingViewContent = (TextView) view.findViewById(R.id.pairing_subhead);
         TextView messagePairing = (TextView) view.findViewById(R.id.pairing_code_message);
@@ -356,7 +357,15 @@ public class BluetoothPairingDialogFragment extends InstrumentedDialogFragment i
         messagePairing.setVisibility(mPairingController.isDisplayPairingKeyVariant()
                 ? View.VISIBLE : View.GONE);
         if (mPairingController.hasPairingContent()) {
-            pairingViewCaption.setVisibility(View.VISIBLE);
+            if (mPairingController.isDisplayPairingKeyVariant()) {
+                pairingViewCaption.setVisibility(View.VISIBLE);
+            } else {
+                pairingConfirmationHint.setText(
+                        getString(
+                                R.string.bluetooth_pairing_confirmation_msg,
+                                mPairingController.getDeviceName()));
+                pairingConfirmationHint.setVisibility(View.VISIBLE);
+            }
             pairingViewContent.setVisibility(View.VISIBLE);
             pairingViewContent.setText(mPairingController.getPairingContent());
         }
