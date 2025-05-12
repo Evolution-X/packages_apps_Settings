@@ -78,9 +78,11 @@ public class NotificationSbnAdapter extends
     private List<Integer> mEnabledProfiles = new ArrayList<>();
     private boolean mIsSnoozed;
     private UiEventLogger mUiEventLogger;
+    private ArrayList<Integer> mContentRestrictedUsers = new ArrayList<>();
 
     public NotificationSbnAdapter(Context context, PackageManager pm, UserManager um,
-            boolean isSnoozed, UiEventLogger uiEventLogger) {
+            boolean isSnoozed, UiEventLogger uiEventLogger,
+            ArrayList<Integer> contentRestrictedUsers) {
         mContext = context;
         mPm = pm;
         mUserBadgeCache = new HashMap<>();
@@ -101,6 +103,7 @@ public class NotificationSbnAdapter extends
         // If true, this is the panel for snoozed notifs, otherwise the one for dismissed notifs.
         mIsSnoozed = isSnoozed;
         mUiEventLogger = uiEventLogger;
+        mContentRestrictedUsers = contentRestrictedUsers;
     }
 
     @Override
@@ -128,8 +131,13 @@ public class NotificationSbnAdapter extends
             holder.setIconBackground(loadBackground(sbn));
             holder.setIcon(loadIcon(sbn));
             holder.setPackageLabel(loadPackageLabel(sbn.getPackageName()).toString());
-            holder.setTitle(getTitleString(sbn.getNotification()));
-            holder.setSummary(getTextString(mContext, sbn.getNotification()));
+            if (mContentRestrictedUsers.contains(sbn.getNormalizedUserId())) {
+                holder.setSummary(mContext.getString(
+                        com.android.internal.R.string.notification_hidden_text));
+            } else {
+                holder.setTitle(getTitleString(sbn.getNotification()));
+                holder.setSummary(getTextString(mContext, sbn.getNotification()));
+            }
             holder.setPostedTime(sbn.getPostTime());
             int userId = normalizeUserId(sbn);
             if (!mUserBadgeCache.containsKey(userId)) {
