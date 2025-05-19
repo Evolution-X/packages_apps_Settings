@@ -88,7 +88,8 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                style="@style/BroadcastActionButton"/>
+                style="@style/BroadcastActionButton"
+                android:featureFlag="!com.android.settings.flags.enable_bluetooth_settings_expressive_design_read_only"/>
             <Button
                 android:id="@+id/right_button"
                 android:layout_width="wrap_content"
@@ -97,7 +98,28 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                style="@style/BroadcastActionButton"/>
+                style="@style/BroadcastActionButton"
+                android:featureFlag="!com.android.settings.flags.enable_bluetooth_settings_expressive_design_read_only"/>
+            <Button
+                android:id="@+id/left_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                style="@style/Widget.SettingsLib.DialogButton.Outline"
+                android:featureFlag="com.android.settings.flags.enable_bluetooth_settings_expressive_design_read_only"/>
+            <Button
+                android:id="@+id/right_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                style="@style/Widget.SettingsLib.DialogButton.Outline"
+                android:featureFlag="com.android.settings.flags.enable_bluetooth_settings_expressive_design_read_only"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
