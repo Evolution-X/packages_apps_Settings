@@ -107,4 +107,8 @@
 
     <!-- Default Timeouts -->
     <string name="custom_timeout_summary_1hour_def">1 hour (Default)</string>
+
+    <!-- IME button space -->
+    <string name="show_ime_space_title">Show IME button space</string>
+    <string name="show_ime_space_summary">Enable the input method quick switch feature to switch input methods or hide the on-screen keyboard from the feature bar at the bottom of the screen when typing</string>
 </resources>
