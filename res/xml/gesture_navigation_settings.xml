@@ -30,6 +30,12 @@
         android:defaultValue="true" />
 
     <org.evolution.settings.preferences.SecureSettingSwitchPreference
+        android:key="sysui_show_nav_bar_ime"
+        android:title="@string/show_ime_space_title"
+        android:summary="@string/show_ime_space_summary"
+        android:defaultValue="true" />
+
+    <org.evolution.settings.preferences.SecureSettingSwitchPreference
         android:key="back_gesture_arrow"
         android:title="@string/back_gesture_arrow_title"
         android:summary="@string/back_gesture_arrow_summary"
