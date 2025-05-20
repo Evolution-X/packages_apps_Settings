@@ -95,4 +95,8 @@
     <string name="double_tap_screen_to_sleep_summary">Double tap an empty space on the lock screen to turn off the screen.</string>
     <string name="double_tap_screen_to_sleep_title">Double tap to turn off screen</string>
     <string name="keywords_double_tap_screen_to_sleep">double tap to sleep, lock screen</string>
+
+    <!-- IME button space -->
+    <string name="show_ime_space_title">Show IME button space</string>
+    <string name="show_ime_space_summary">Enable the input method quick switch feature to switch input methods or hide the on-screen keyboard from the feature bar at the bottom of the screen when typing</string>
 </resources>
