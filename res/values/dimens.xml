@@ -564,4 +564,8 @@
     <dimen name="locale_picker_dialog_title_padding">16dp</dimen>
     <dimen name="locale_picker_dialog_message_padding_left_right">24dp</dimen>
     <dimen name="locale_picker_dialog_message_padding_bottom">32dp</dimen>
+    
+    <!-- VPN -->
+    <dimen name="vpn_dialog_max_height">600dp</dimen>
+    <dimen name="vpn_dialog_margin_bottom">132dp</dimen>
 </resources>
