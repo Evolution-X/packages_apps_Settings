@@ -27,7 +27,6 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-import android.app.Dialog;
 import android.content.Context;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
@@ -108,7 +107,7 @@ public class BluetoothPairingDialogTest {
 
         // test that the positive button is enabled when passkey is valid
         frag.afterTextChanged(new SpannableStringBuilder(FILLER));
-        View button = frag.getmDialog().getButton(AlertDialog.BUTTON_POSITIVE);
+        View button = frag.getmDialog().findViewById(R.id.positive_button);
         assertThat(button).isNotNull();
         assertThat(button.getVisibility()).isEqualTo(View.VISIBLE);
     }
@@ -208,7 +207,7 @@ public class BluetoothPairingDialogTest {
         BluetoothPairingDialogFragment frag = makeFragment();
 
         // click the button and verify that the controller hook was called
-        frag.onClick(frag.getmDialog(), AlertDialog.BUTTON_POSITIVE);
+        frag.onAcceptButtonClicked();
         verify(controller, times(1)).onDialogPositiveClick(any());
     }
 
@@ -224,7 +223,7 @@ public class BluetoothPairingDialogTest {
         BluetoothPairingDialogFragment frag = makeFragment();
 
         // click the button and verify that the controller hook was called
-        frag.onClick(frag.getmDialog(), AlertDialog.BUTTON_NEGATIVE);
+        frag.onDeclineButtonClicked();
         verify(controller, times(1)).onDialogNegativeClick(any());
     }
 
@@ -269,7 +268,8 @@ public class BluetoothPairingDialogTest {
 
         // test that the positive button is enabled when passkey is valid
         frag.afterTextChanged(new SpannableStringBuilder(FILLER));
-        View button = frag.getmDialog().getButton(AlertDialog.BUTTON_POSITIVE);
+        View button = frag.getmDialog().findViewById(R.id.positive_button);
+
         assertThat(button).isNotNull();
         assertThat(button.isEnabled()).isFalse();
     }
@@ -379,7 +379,7 @@ public class BluetoothPairingDialogTest {
         BluetoothPairingDialogFragment frag = makeFragment();
 
         // click the button and verify that the controller hook was called
-        frag.onClick(frag.getmDialog(), AlertDialog.BUTTON_POSITIVE);
+        frag.onAcceptButtonClicked();
 
         verify(controller, times(1)).onDialogPositiveClick(any());
         verify(dialogActivity, times(1)).dismiss();
@@ -397,7 +397,7 @@ public class BluetoothPairingDialogTest {
         BluetoothPairingDialogFragment frag = makeFragment();
 
         // click the button and verify that the controller hook was called
-        frag.onClick(frag.getmDialog(), AlertDialog.BUTTON_NEGATIVE);
+        frag.onDeclineButtonClicked();
 
         verify(controller, times(1)).onDialogNegativeClick(any());
         verify(dialogActivity, times(1)).dismiss();
@@ -482,7 +482,7 @@ public class BluetoothPairingDialogTest {
         AlertDialog dialog = ShadowAlertDialogCompat.getLatestAlertDialog();
         assertThat(dialog).isNotNull();
         boolean expected = !TextUtils.isEmpty(existingText);
-        assertThat(dialog.getButton(Dialog.BUTTON_POSITIVE).isEnabled()).isEqualTo(expected);
+        assertThat(dialog.findViewById(R.id.positive_button).isEnabled()).isEqualTo(expected);
     }
 
     private void setupFragment(BluetoothPairingDialogFragment frag) {
