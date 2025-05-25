@@ -198,11 +198,18 @@ public class SfpsEnrollmentFeatureImpl implements SfpsEnrollmentFeature {
 
     private static final int VENDOR_STRING_FINGERPRINT_ACQUIRED_IMMOBILE = 0;
 
-    private static String getVendorString(Context ctx, int index) {
-        String[] strings = ctx.getResources().getStringArray(R.array.fingerprint_acquired_vendor);
-        Preconditions.checkArgumentInRange(index, 0, strings.length - 1, "vendor string index");
-        return strings[index];
+private static String getVendorString(Context ctx, int index) {
+    String[] strings = ctx.getResources().getStringArray(R.array.fingerprint_acquired_vendor);
+    if (strings == null || strings.length == 0) {
+        Log.e(TAG, "Vendor string array is null or empty");
+        return "";
     }
+    if (index < 0 || index >= strings.length) {
+        Log.e(TAG, "vendor string index is out of range: " + index + " (size: " + strings.length + ")");
+        return "";
+    }
+    return strings[index];
+}
 
     @Nullable
     private static IFingerprintExt getGoogleFingerprintExt() {
