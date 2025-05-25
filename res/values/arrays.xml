@@ -1647,6 +1647,8 @@
     <!-- Packages that will not show Display over other apps permission -->
     <string-array name="display_over_apps_permission_change_exempt">
     </string-array>
-    <string-array name="fingerprint_acquired_vendor" />
+    <string-array name="fingerprint_acquired_vendor">
+        <item>Fingerprint is immobile</item>
+    </string-array>
 
 </resources>
