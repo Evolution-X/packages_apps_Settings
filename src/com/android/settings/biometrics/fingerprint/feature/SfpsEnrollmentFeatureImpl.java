@@ -200,7 +200,14 @@ public class SfpsEnrollmentFeatureImpl implements SfpsEnrollmentFeature {
 
     private static String getVendorString(Context ctx, int index) {
         String[] strings = ctx.getResources().getStringArray(R.array.fingerprint_acquired_vendor);
-        Preconditions.checkArgumentInRange(index, 0, strings.length - 1, "vendor string index");
+        if (strings == null || strings.length == 0) {
+            Log.e(TAG, "Vendor string array is null or empty");
+            return "";
+        }
+        if (index < 0 || index >= strings.length) {
+            Log.e(TAG, "vendor string index is out of range: " + index + " (size: " + strings.length + ")");
+            return "";
+        }
         return strings[index];
     }
 
