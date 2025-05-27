@@ -31,6 +31,7 @@ import androidx.preference.PreferenceViewHolder;
 
 import com.android.settings.CustomListPreference;
 import com.android.settings.R;
+import com.android.settingslib.widget.SettingsThemeHelper;
 
 /**
  * Spell checker service preference.
@@ -48,8 +49,9 @@ class SpellCheckerPreference extends CustomListPreference {
     public SpellCheckerPreference(final Context context, final SpellCheckerInfo[] scis) {
         super(context, null);
         mScis = scis;
-        setLayoutResource(
-                com.android.settingslib.widget.preference.twotarget.R.layout.preference_two_target);
+        setLayoutResource(SettingsThemeHelper.isExpressiveTheme(context)
+                ? com.android.settingslib.widget.preference.twotarget.R.layout.settingslib_expressive_preference_two_target
+                : com.android.settingslib.widget.preference.twotarget.R.layout.preference_two_target);
 
         setWidgetLayoutResource(R.layout.preference_widget_gear);
         if (scis == null) {
