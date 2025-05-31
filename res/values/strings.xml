@@ -2569,6 +2569,22 @@
     <string name="retry">Retry</string>
     <!-- Label for the check box to share a network with other users on the same device -->
     <string name="wifi_shared">Share with other device users</string>
+    <!-- Label for the shared wifi message -->
+    <string name="shared_message">shared</string>
+    <!-- Label for the private wifi message -->
+    <string name="private_message">private</string>
+    <!-- Label for the conflict wifi dialog confirm button -->
+    <string name="wifi_conflict_dialog_confirm">Confirm</string>
+    <!-- Label for the conflict wifi dialog cancel button -->
+    <string name="wifi_conflict_dialog_cancel">Cancel</string>
+    <!-- Title for the preference to share a network with other users on the same device -->
+    <string name="wifi_share_preference_title">This is a shared network</string>
+    <!-- Summary for the preference to share a network with other users on the same device -->
+    <string name="wifi_share_preference_summary">All users with the exception of guest users, will be able to view, edit and delete this network</string>
+    <!-- Alert dialog title, informing the user to switch to the conflicting network.  [CHAR LIMIT=250] -->
+    <string name="wifi_conflict_dialog_title">Switch to <xliff:g id="shared">%1$s</xliff:g> \"<xliff:g id="network_name">%2$s</xliff:g>\" network?</string>
+    <!-- Alert dialog summary, informing the user to switch to the conflicting network.  [CHAR LIMIT=250] -->
+    <string name="wifi_conflict_dialog_message">You\'re currently connected to a <xliff:g id="shared">%1$s</xliff:g> network with the same name. When you switch, you\'ll disconnect from the <xliff:g id="shared">%2$s</xliff:g> network and then reconnect to the <xliff:g id="private">%3$s</xliff:g> network. You may temporarily have no internet.</string>
     <!-- Hint for unchanged fields -->
     <string name="wifi_unchanged">(unchanged)</string>
     <!-- Label for the check box to allow other device users to edit network details -->
