@@ -29,6 +29,7 @@ import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Binder;
+import android.os.Build;
 import android.os.StrictMode;
 import android.os.UserManager;
 import android.provider.Settings;
@@ -375,19 +376,30 @@ public class SettingsSliceProvider extends SliceProvider {
         if (descendants == null) {
             Log.d(TAG, "No descendants to grant permission with, skipping.");
         }
-        final String[] allowlistPackages =
+        final List<String> allowlist = new ArrayList<>();
+        final String[] packages =
                 context.getResources().getStringArray(R.array.slice_allowlist_package_names);
-        if (allowlistPackages == null || allowlistPackages.length == 0) {
+        if (packages != null) {
+            allowlist.addAll(Arrays.asList(packages));
+        }
+        if (Build.IS_DEBUGGABLE) {
+            final String[] devPackages = context.getResources().getStringArray(
+                    R.array.slice_allowlist_package_names_for_dev);
+            if (devPackages != null) {
+                allowlist.addAll(Arrays.asList(devPackages));
+            }
+        }
+        if (allowlist.size() == 0) {
             Log.d(TAG, "No packages to allowlist, skipping.");
             return;
         } else {
             Log.d(TAG, String.format(
                     "Allowlisting %d uris to %d pkgs.",
-                    descendants.size(), allowlistPackages.length));
+                    descendants.size(), allowlist.size()));
         }
         final SliceManager sliceManager = context.getSystemService(SliceManager.class);
         for (Uri descendant : descendants) {
-            for (String toPackage : allowlistPackages) {
+            for (String toPackage : allowlist) {
                 sliceManager.grantSlicePermission(toPackage, descendant);
             }
         }

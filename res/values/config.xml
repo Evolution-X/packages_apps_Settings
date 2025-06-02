@@ -201,6 +201,9 @@
     <!-- List of packages that should be allowlisted for slice uri access. Do not translate -->
     <string-array name="slice_allowlist_package_names" translatable="false"/>
 
+    <!-- List of packages that should be allowlisted for slice uri access for debugging purpose. Do not translate -->
+    <string-array name="slice_allowlist_package_names_for_dev" translatable="false"/>
+
     <!-- Whether to use a UI variant that minimizes the number of UI elements on screen. This is
          typically used when there is not enough space to display everything, because pattern view
          doesn't interact well with scroll view -->
