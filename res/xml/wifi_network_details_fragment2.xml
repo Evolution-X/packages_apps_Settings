@@ -102,10 +102,16 @@
         android:entries="@array/wifi_privacy_entries_ext"
         android:entryValues="@array/wifi_privacy_values_ext"/>
 
-    <com.android.settings.spa.preference.ComposePreference
-        android:key="privacy_settings"
-        android:title="@string/wifi_privacy_settings"
-        settings:controller="com.android.settings.wifi.details2.WifiPrivacyPreferenceController"/>
+      <SwitchPreferenceCompat
+          android:key="edit_configuration"
+          android:icon="@drawable/ic_edit_24dp"
+          android:title="@string/wifi_allow_edit_configuration_title"
+          settings:isPreferenceVisible="true"/>
+
+        <com.android.settings.spa.preference.ComposePreference
+            android:key="privacy_settings"
+            android:title="@string/wifi_privacy_settings"
+            settings:controller="com.android.settings.wifi.details2.WifiPrivacyPreferenceController"/>
 
     <Preference
         android:key="subscription_detail"
