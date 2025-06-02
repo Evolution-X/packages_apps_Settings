@@ -61,6 +61,7 @@ import com.android.settings.wifi.details2.CertificateDetailsPreferenceController
 import com.android.settings.wifi.details2.ServerNamePreferenceController;
 import com.android.settings.wifi.details2.WifiAutoConnectPreferenceController2;
 import com.android.settings.wifi.details2.WifiDetailPreferenceController2;
+import com.android.settings.wifi.details2.WifiEditConfigPreferenceController;
 import com.android.settings.wifi.details2.WifiMeteredPreferenceController2;
 import com.android.settings.wifi.details2.WifiPrivacyPreferenceController;
 import com.android.settings.wifi.details2.WifiPrivacyPreferenceController2;
@@ -98,6 +99,7 @@ public class WifiNetworkDetailsFragment extends RestrictedDashboardFragment impl
             "hotspot_device_details_internet_source";
     public static final String KEY_HOTSPOT_DEVICE_BATTERY = "hotspot_device_details_battery";
     public static final String KEY_HOTSPOT_CONNECTION_CATEGORY = "hotspot_connection_category";
+    public static final String KEY_EDIT_CONFIG_TOGGLE = "edit_configuration";
 
     // Max age of tracked WifiEntries
     private static final long MAX_SCAN_AGE_MILLIS = 15_000;
@@ -281,6 +283,11 @@ public class WifiNetworkDetailsFragment extends RestrictedDashboardFragment impl
                 new WifiAutoConnectPreferenceController2(context);
         wifiAutoConnectPreferenceController2.setWifiEntry(wifiEntry);
         mControllers.add(wifiAutoConnectPreferenceController2);
+
+        final WifiEditConfigPreferenceController wifiEditConfigPreferenceController =
+                new WifiEditConfigPreferenceController(
+                        context, KEY_EDIT_CONFIG_TOGGLE, wifiEntry);
+        mControllers.add(wifiEditConfigPreferenceController);
 
         final AddDevicePreferenceController2 addDevicePreferenceController2 =
                 new AddDevicePreferenceController2(context);
