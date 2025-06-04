@@ -47,6 +47,7 @@ import com.android.settings.Utils;
 import com.android.settings.overlay.FeatureFactory;
 import com.android.settings.wifi.dpp.WifiDppUtils;
 import com.android.settingslib.core.lifecycle.ObservableActivity;
+import com.android.settingslib.widget.SettingsThemeHelper;
 import com.android.settingslib.wifi.AccessPoint;
 import com.android.wifitrackerlib.NetworkDetailsTracker;
 import com.android.wifitrackerlib.WifiEntry;
@@ -121,6 +122,10 @@ public class WifiDialogActivity extends ObservableActivity implements WifiDialog
         mIntent = getIntent();
         if (WizardManagerHelper.isSetupWizardIntent(mIntent)) {
             setTheme(SetupWizardUtils.getTransparentTheme(this, mIntent));
+        } else {
+            int themeId = SettingsThemeHelper.isExpressiveTheme(this)
+                    ? R.style.Theme_SubSettings_Expressive : R.style.Theme_SubSettings;
+            setTheme(themeId);
         }
 
         super.onCreate(savedInstanceState);
