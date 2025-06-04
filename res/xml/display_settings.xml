@@ -17,6 +17,7 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res/com.android.settings"
     android:key="display_settings_screen"
     android:title="@string/display_settings"
     settings:keywords="@string/keywords_display">
@@ -194,6 +195,16 @@
             android:title="@string/hdr_display_title"
             android:summary="@string/hdr_display_summary"
             settings:controller="com.android.settings.display.HdrDisplayPreferenceController"/>
+
+        <org.evolution.settings.preferences.SecureSettingSeekBarPreference
+            android:key="hdr_max_brightness_percent"
+            android:title="@string/hdr_max_brightness_percent_title"
+            android:max="100"
+            app:min="10"
+            android:defaultValue="100"
+            android:dependency="hdr_display"
+            settings:controller="com.android.settings.display.HdrDisplayBrightnessPreferenceController"
+            settings:interval="1"/>      
 
         <ListPreference
             android:key="max_refresh_rate"
