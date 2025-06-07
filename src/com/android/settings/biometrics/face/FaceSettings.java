@@ -95,8 +95,8 @@ public class FaceSettings extends DashboardFragment {
     private FaceManager mFaceManager;
     private DevicePolicyManager mDevicePolicyManager;
     private int mUserId;
-    private int mSensorId;
-    private long mChallenge;
+    private int mSensorId = -1;
+    private long mChallenge = 0;
     private byte[] mToken;
     private FaceSettingsAttentionPreferenceController mAttentionController;
     private FaceSettingsRemoveButtonPreferenceController mRemoveController;
@@ -181,12 +181,19 @@ public class FaceSettings extends DashboardFragment {
         mUserManager = context.getSystemService(UserManager.class);
         mFaceManager = context.getSystemService(FaceManager.class);
         mDevicePolicyManager = context.getSystemService(DevicePolicyManager.class);
-        mToken = getIntent().getByteArrayExtra(KEY_TOKEN);
-        mSensorId = getIntent().getIntExtra(BiometricEnrollBase.EXTRA_KEY_SENSOR_ID, -1);
-        mChallenge = getIntent().getLongExtra(BiometricEnrollBase.EXTRA_KEY_CHALLENGE, 0L);
 
-        mUserId = getActivity().getIntent().getIntExtra(
-                Intent.EXTRA_USER_ID, UserHandle.myUserId());
+        final SettingsActivity activity = (SettingsActivity) requireActivity();
+        final String callingPackage = activity.getInitialCallingPackage();
+        if (callingPackage == null || !callingPackage.equals(activity.getPackageName())) {
+            mUserId = UserHandle.myUserId();
+        } else {
+            // only allow these extras when called internally by Settings
+            mToken = getIntent().getByteArrayExtra(KEY_TOKEN);
+            mSensorId = getIntent().getIntExtra(BiometricEnrollBase.EXTRA_KEY_SENSOR_ID, -1);
+            mChallenge = getIntent().getLongExtra(BiometricEnrollBase.EXTRA_KEY_CHALLENGE, 0L);
+            mUserId = getIntent().getIntExtra(Intent.EXTRA_USER_ID, UserHandle.myUserId());
+        }
+
         mFaceFeatureProvider = FeatureFactory.getFeatureFactory().getFaceFeatureProvider();
 
         if (mUserManager.getUserInfo(mUserId).isManagedProfile()) {
