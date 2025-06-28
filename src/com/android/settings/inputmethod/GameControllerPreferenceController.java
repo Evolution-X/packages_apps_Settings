@@ -68,6 +68,7 @@ public class GameControllerPreferenceController extends TogglePreferenceControll
             return UNSUPPORTED_ON_DEVICE;
         }
 
+        /*
         final int[] devices = mIm.getInputDeviceIds();
         for (int deviceId : devices) {
             InputDevice device = mIm.getInputDevice(deviceId);
@@ -76,6 +77,8 @@ public class GameControllerPreferenceController extends TogglePreferenceControll
             }
         }
         return CONDITIONALLY_UNAVAILABLE;
+        */
+        return AVAILABLE;
     }
 
     @Override
