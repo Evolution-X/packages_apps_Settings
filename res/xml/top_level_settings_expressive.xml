@@ -32,7 +32,7 @@
         android:layout="@layout/settingslib_preference_category_no_title">
         <com.android.settings.widget.HomepagePreference
             android:fragment="org.evolution.settings.EvolutionSettings"
-            android:icon="@drawable/ic_settings_evolution_filled"
+            android:icon="@drawable/ic_homepage_evolution"
             android:key="top_level_evolver"
             android:order="-160"
             android:title="@string/evolver_dashboard_title"
