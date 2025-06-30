@@ -44,6 +44,8 @@ public class NfcAndPaymentFragmentController extends BasePreferenceController
     private final IntentFilter mIntentFilter;
     private Preference mPreference;
 
+    private boolean mIsReceiverRegistered = false;
+
     private final BroadcastReceiver mReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -99,20 +101,18 @@ public class NfcAndPaymentFragmentController extends BasePreferenceController
 
     @Override
     public void onStop() {
-        if (!isNfcAvailable()) {
-            return;
+        if (mIsReceiverRegistered) {
+            mContext.unregisterReceiver(mReceiver);
+            mIsReceiverRegistered = false;
         }
-
-        mContext.unregisterReceiver(mReceiver);
     }
 
     @Override
     public void onResume() {
-        if (!isNfcAvailable()) {
-            return;
+        if (isNfcAvailable() && !mIsReceiverRegistered) {
+            mContext.registerReceiver(mReceiver, mIntentFilter);
+            mIsReceiverRegistered = true;
         }
-
-        mContext.registerReceiver(mReceiver, mIntentFilter);
     }
 
     private boolean isNfcAvailable() {
