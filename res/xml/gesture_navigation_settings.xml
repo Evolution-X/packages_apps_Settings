@@ -35,7 +35,7 @@
         android:summary="@string/back_gesture_arrow_summary"
         android:defaultValue="true" />
 
-    <com.android.settings.widget.LabeledSeekBarPreference
+    <com.android.settingslib.widget.SliderPreference
         android:key="gesture_back_height"
         android:title="@string/back_height_title"
         android:summary="@string/back_height_summary"
@@ -86,14 +86,14 @@
         android:persistent="false"
         android:title="@string/back_sensitivity_dialog_title">
 
-        <com.android.settings.widget.LabeledSeekBarPreference
+        <com.android.settingslib.widget.SliderPreference
             android:key="gesture_left_back_sensitivity"
             android:title="@string/left_edge"
             android:max="2"
             settings:textStart="@string/low_label"
             settings:textEnd="@string/high_label"/>
 
-        <com.android.settings.widget.LabeledSeekBarPreference
+        <com.android.settingslib.widget.SliderPreference
             android:key="gesture_right_back_sensitivity"
             android:title="@string/right_edge"
             android:max="2"
