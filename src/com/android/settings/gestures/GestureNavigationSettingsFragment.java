@@ -31,10 +31,9 @@ import com.android.internal.util.evolution.Utils;
 import com.android.settings.R;
 import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
-import com.android.settings.widget.LabeledSeekBarPreference;
-import com.android.settings.widget.SeekBarPreference;
 import com.android.settingslib.search.SearchIndexable;
 import com.android.settingslib.widget.ButtonPreference;
+import com.android.settingslib.widget.SliderPreference;
 
 import lineageos.preference.LineageSystemSettingSwitchPreference;
 
@@ -170,9 +169,11 @@ public class GestureNavigationSettingsFragment extends DashboardFragment {
     }
 
     private void initSeekBarPreference(final String key) {
-        final LabeledSeekBarPreference pref = getPreferenceScreen().findPreference(key);
-        pref.setContinuousUpdates(true);
-        pref.setHapticFeedbackMode(SeekBarPreference.HAPTIC_FEEDBACK_MODE_ON_TICKS);
+        final SliderPreference pref = getPreferenceScreen().findPreference(key);
+        pref.setUpdatesContinuously(true);
+        pref.setHapticFeedbackMode(SliderPreference.HAPTIC_FEEDBACK_MODE_ON_TICKS);
+        pref.setSliderIncrement(1);
+        pref.setTickVisible(true);
 
         String settingsKey;
         float initScale = 0;
@@ -221,7 +222,7 @@ public class GestureNavigationSettingsFragment extends DashboardFragment {
                 minDistanceIndex = i;
             }
         }
-        pref.setProgress(minDistanceIndex);
+        pref.setValue(minDistanceIndex);
 
         pref.setOnPreferenceChangeListener((p, v) -> {
             if (key != GESTURE_BACK_HEIGHT_KEY) {
@@ -243,10 +244,7 @@ public class GestureNavigationSettingsFragment extends DashboardFragment {
                 mIndicatorView.setIndicatorWidth(mCurrentRightWidth, false);
                 mIndicatorView.setIndicatorWidth(mCurrentLefttWidth, true);
             }
-            return true;
-        });
 
-        pref.setOnPreferenceChangeStopListener((p, v) -> {
             final float scale = mBackGestureInsetScales[(int) v];
             if (key == GESTURE_BACK_HEIGHT_KEY) {
                 mIndicatorView.setIndicatorWidth(0, false);
