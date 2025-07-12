@@ -118,6 +118,7 @@ public class CloneBackend {
             } else {
                 mCloneUserId = -1;
             }
+            android.os.SystemProperties.set("persist.sys.cloned_apps_userId", String.valueOf(mCloneUserId));
         }
 
         if (mCloneUserId > 0) {
