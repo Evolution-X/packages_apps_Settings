@@ -954,7 +954,7 @@
     <string name="reset_internet_text" product="tablet">This will end your phone call</string>
 
     <!-- Help URI, battery saver page [DO NOT TRANSLATE] -->
-    <string name="help_url_battery_saver_settings" translatable="false" product="default"></string>
+    <string name="help_url_battery_saver_settings" translatable="false" product="default">https://support.google.com/pixelphone/?p=battery_saver_settings</string>
 
     <!-- Help URI, app usage page [DO NOT TRANSLATE] -->
     <string name="help_url_app_usage_settings" translatable="false" product="default"></string>

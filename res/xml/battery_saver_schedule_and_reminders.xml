@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:title="@string/battery_schedule_title"
+    android:key="battery_saver_schedule_and_reminders">
+    <PreferenceCategory
+        android:title="@string/battery_saver_schedule_category"
+        android:key="battery_saver_schedule_entry"
+        android:order="10"
+        app:controller="com.google.android.settings.fuelgauge.batterysaver.BatterySaverSchedulePreferenceController">
+        <SwitchPreferenceCompat
+            android:title="@string/battery_saver_schedule_switch_title"
+            android:key="battery_saver_base_on_percentage"
+            android:summary="@string/battery_saver_schedule_switch_summary"
+            android:order="30"
+            app:allowDividerBelow="false"/>
+        <SwitchPreferenceCompat
+            android:title="@string/battery_saver_sticky_title_new"
+            android:key="battery_saver_sticky"
+            android:summary="@string/summary_placeholder"
+            android:order="70"
+            app:controller="com.android.settings.fuelgauge.batterysaver.BatterySaverStickyPreferenceController"
+            app:keywords="@string/keywords_battery_saver_sticky"/>
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="@string/battery_saver_reminder_category"
+        android:key="battery_saver_reminder_entry"
+        android:order="90">
+        <SwitchPreferenceCompat
+            android:title="@string/battery_saver_reminder_switch_title"
+            android:key="battery_saver_reminders"
+            android:summary="@string/battery_saver_reminder_switch_summary"
+            app:allowDividerBelow="false"
+            app:controller="com.google.android.settings.fuelgauge.batterysaver.BatterySaverReminderPreferenceController"/>
+    </PreferenceCategory>
+</PreferenceScreen>
