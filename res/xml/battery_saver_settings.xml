@@ -17,14 +17,37 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res-auto"
+    android:key="battery_saver_screen"
     android:title="@string/battery_saver"
     settings:keywords="@string/keywords_battery_saver">
 
-    <com.android.settingslib.widget.MainSwitchPreference
+    <com.android.settingslib.widget.TopIntroPreference
         android:order="-100"
+        android:key="battery_saver_top_intro"
+        android:title="@string/unified_battery_saver_page_intro"
+        settings:searchable="false"/>
+
+    <com.android.settingslib.widget.MainSwitchPreference
+        android:order="10"
         android:key="battery_saver"
         android:title="@string/battery_saver_master_switch_title"
         settings:controller="com.android.settings.fuelgauge.batterysaver.BatterySaverButtonPreferenceController"/>
+
+    <PreferenceCategory
+        android:layout="@layout/preference_category_no_label"
+        android:key="battery_saver_group"
+        android:order="30"
+        settings:controller="com.google.android.settings.fuelgauge.batterysaver.BatterySaverModePreferenceController">
+        <com.android.settingslib.widget.SelectorWithWidgetPreference
+            android:title="@string/basic_battery_saver_title"
+            android:key="basic_battery_saver"
+            android:summary="@string/basic_battery_saver_summary"/>
+
+        <com.android.settingslib.widget.SelectorWithWidgetPreference
+            android:title="@string/extreme_battery_saver_title"
+            android:key="extreme_battery_saver"
+            android:summary="@string/extreme_battery_saver_summary"/>
+    </PreferenceCategory>
 
     <Preference
         android:order="50"
@@ -34,17 +57,29 @@
         settings:keywords="@string/keywords_battery_saver_schedule"
         settings:controller="com.android.settings.fuelgauge.batterysaver.BatterySaverSchedulePreferenceController"/>
 
-    <SwitchPreferenceCompat
-        android:order="80"
-        android:key="battery_saver_sticky"
-        android:title="@string/battery_saver_sticky_title_new"
-        android:summary="@string/summary_placeholder"
-        settings:keywords="@string/keywords_battery_saver_sticky"
-        settings:controller="com.android.settings.fuelgauge.batterysaver.BatterySaverStickyPreferenceController"/>
+    <com.google.android.settings.fuelgauge.batterysaver.ExpandDividerPreference
+        android:title="@string/smart_battery_title"
+        android:key="battery_saver_expand_entry"
+        android:order="70"
+        settings:allowDividerAbove="false"
+        settings:allowDividerBelow="false"
+        settings:controller="com.google.android.settings.fuelgauge.batterysaver.AdaptiveBatteryExpandController">
+        <com.android.settingslib.widget.TopIntroPreference
+            android:title="@string/smart_battery_summary"
+            android:key="adaptive_battery_top_intro"
+            android:order="110"
+            settings:searchable="false"/>
+
+        <com.android.settingslib.widget.MainSwitchPreference
+            android:title="@string/adaptive_battery_switch_title"
+            android:key="adaptive_battery_management_enabled"
+            android:order="130"/>
+    </com.google.android.settings.fuelgauge.batterysaver.ExpandDividerPreference>
 
     <com.android.settingslib.widget.FooterPreference
-        android:order="100"
+        android:order="150"
         android:key="battery_saver_footer_preference"
         android:title="@*android:string/battery_saver_description"
+        settings:controller="com.google.android.settings.fuelgauge.batterysaver.BatterySaverFooterPreferenceController"
         settings:searchable="false"/>
 </PreferenceScreen>
