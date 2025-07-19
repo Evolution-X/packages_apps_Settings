@@ -388,4 +388,40 @@
     <!-- Wake gestures haptics -->
     <string name="doze_gesture_vibrate_title">Haptic feedback</string>
     <string name="doze_gesture_vibrate_summary">Vibrate when this gesture is invoked</string>
+
+    <!-- Button settings -->
+    <string name="touchscreen_gesture_action_play_pause_music">Play/pause music playback</string>
+    <string name="hardware_keys_action_nothing">No action</string>
+    <string name="hardware_keys_action_menu">Open/close menu</string>
+    <string name="hardware_keys_action_app_switch">Recent apps switcher</string>
+    <string name="hardware_keys_action_search">Search assistant</string>
+    <string name="hardware_keys_action_voice_search">Voice search</string>
+    <string name="hardware_keys_action_in_app_search">In-app search</string>
+    <string name="hardware_keys_action_launch_camera">Launch camera</string>
+    <string name="hardware_keys_action_sleep">Turn screen off</string>
+    <string name="hardware_keys_action_last_app">Last app</string>
+    <string name="hardware_keys_action_split_screen">Split screen</string>
+    <string name="hardware_keys_action_close_app">Kill app</string>
+    <string name="hardware_keys_action_play_pause_music" translatable="false">@string/touchscreen_gesture_action_play_pause_music</string>
+    <string name="hardware_keys_action_torch">Toggle torch</string>
+    <string name="hardware_keys_action_screenshot">Take screenshot</string>
+    <string name="hardware_keys_action_volume_panel">Toggle volume panel</string>
+    <string name="hardware_keys_action_clear_all_notifications">Clear all notifications</string>
+    <string name="hardware_keys_action_notifications_panel">Toggle notifications panel</string>
+    <string name="hardware_keys_action_expand_qs_panel">Expand QS panel</string>
+    <string name="hardware_keys_action_ringer_modes">Change ringer mode</string>
+
+    <!-- Three Finger Gestures -->
+    <string name="three_finger_gesture_action_title">Three Finger Swipe Gestures</string>
+    <string name="three_finger_gesture_action_dialog_title">Swipe Three Finger Gestures Actions</string>
+    <string name="three_finger_long_press_action_title">Three Finger Long Press Gestures</string>
+    <string name="three_finger_long_press_action_dialog_title">Swipe Three Finger Gestures Actions</string>
+    
+    <!-- NT Three finger -->
+    <string name="nt_gesture_three_finger_swipe">Three finger swipe</string>
+    <string name="nt_gesture_three_finger_swipe_summary">Swipe down with three fingers to perform actions.</string>
+    <string name="nt_gesture_three_finger_long_press">Three finger long press</string>
+    <string name="nt_gesture_three_finger_long_press_summary">Press and hold with three fingers and then swipe down to take an area screenshot.</string>
+    <string name="nt_combination_power_volume_click">Disable power button &amp; volume down button</string>
+    <string name="nt_combination_power_volume_click_summary">Disable the function of taking a screenshot by pressing and holding the power button and the volume down button.</string>
 </resources>
