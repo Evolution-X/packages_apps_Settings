@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" xmlns:settings="http://schemas.android.com/apk/res-auto" android:title="@string/power_off_verify_title">
+    <com.android.settingslib.widget.IllustrationPreference
+        android:selectable="false"
+        settings:lottie_rawRes="@raw/nt_power_off_verify"
+        settings:searchable="false"/>
+    <org.evolution.settings.preferences.SecureSettingSwitchPreference
+        android:title="@string/power_off_verify_title"
+        android:key="power_off_verify"
+        android:summary="@string/power_off_verify_summary"/>
+    <com.android.settingslib.widget.FooterPreference
+        android:title="@string/power_off_verify_footer"
+        android:selectable="false"
+        settings:searchable="false"/>
+</PreferenceScreen>
