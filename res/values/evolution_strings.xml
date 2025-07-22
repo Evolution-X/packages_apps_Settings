@@ -424,4 +424,9 @@
     <string name="nt_gesture_three_finger_long_press_summary">Press and hold with three fingers and then swipe down to take an area screenshot.</string>
     <string name="nt_combination_power_volume_click">Disable power button &amp; volume down button</string>
     <string name="nt_combination_power_volume_click_summary">Disable the function of taking a screenshot by pressing and holding the power button and the volume down button.</string>
+
+    <!-- Power off verify -->
+    <string name="power_off_verify_footer">Power off verification protects your device by preventing others from turning it off immediately after it\'s lost, increasing the chances of recovery. You only need to enter your lock screen password when powering off or restarting the phone from the lock screen.</string>
+    <string name="power_off_verify_summary">When your device is locked, you\'ll need to use your password to power off or restart.</string>
+    <string name="power_off_verify_title">Power off verify</string>
 </resources>
