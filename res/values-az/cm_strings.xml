@@ -77,10 +77,10 @@
     <string name="app_notification_sound_timeout_value_30_minutes">30 dəqiqə</string>
     <string name="auto_brightness_one_shot_title">Tək çəkilişdə avto-parlaqlıq</string>
     <string name="auto_brightness_one_shot_summary">Parlaqlıq nizamı yalnız ekran açılanda icra edilir</string>
-    <string name="data_usage_app_restrict_all">Şəbəkə müraciətinə icazə ver</string>
+    <string name="data_usage_app_restrict_all">Şəbəkə erişiminə icazə ver</string>
     <string name="data_usage_app_restrict_all_summary">Şəbəkə istifadəsini fəallaşdır</string>
-    <string name="data_usage_app_restrict_mobile">Mobil internet</string>
-    <string name="data_usage_app_restrict_mobile_summary">Mobil internet istifadəsini fəallaşdır</string>
+    <string name="data_usage_app_restrict_mobile">Mobil veri</string>
+    <string name="data_usage_app_restrict_mobile_summary">Mobil veri istifadəsini fəallaşdır</string>
     <string name="data_usage_app_restrict_vpn">VPN</string>
     <string name="data_usage_app_restrict_vpn_summary">VPN istifadəsini fəallaşdır</string>
     <string name="data_usage_app_restrict_wifi">Wi\u2011Fi</string>
@@ -101,9 +101,9 @@
     <string name="ambient_display_screen_off_udfps_title" product="tablet">Planşetin kilidini açmaq üçün barmaq izi sensoruna uzun basın</string>
     <string name="ambient_display_screen_off_udfps_title" product="device">Cihazın kilidini açmaq üçün barmaq izi sensoruna uzun basın</string>
     <string name="ambient_display_screen_off_udfps_summary">Ekranı oyandırmaq və kilidi açmaq üçün, ekran altındakı barmaq izi sensoruna uzun basın.</string>
-    <string name="storage_warning_internal">Xəbərdarlıq: Bu seçim, düzgün işləməyə və ya məlumat itkisinə səbəb ola bilər, buna görə də tövsiyə edilmir!</string>
+    <string name="storage_warning_internal">Xəbərdarlıq: Bu seçim, düzgün işləməyə və ya veri itkisinə səbəb ola bilər, buna görə də tövsiyə edilmir!</string>
     <string name="assisted_gps">Köməkli GPS istifadə edin</string>
-    <string name="assisted_gps_summary">GPS-in başlatma performansını əhəmiyyətli dərəcədə artıra bilən peyk köməkçi datalarını internetdən endirin. Fövqəladə hal zəngləri üçün köməkçi GPS-ə həmişə icazə verilir.</string>
+    <string name="assisted_gps_summary">GPS-in başlatma performansını əhəmiyyətli dərəcədə artırmaq üçün internetdən peyk köməkçi verilərini endirin. Fövqəladə hal zəngləri üçün köməkçi GPS-ə həmişə icazə verilir.</string>
     <string name="battery_technology">Texnologiya</string>
     <string name="battery_health">Sağlamlıq</string>
     <string name="battery_health_good">Yaxşı</string>

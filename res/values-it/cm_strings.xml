@@ -43,7 +43,7 @@
     <string name="lock_settings_picker_pattern_size_message">Scegli la dimensione della sequenza</string>
     <string name="lockpattern_settings_enable_error_path_title">Mostra sequenza errata</string>
     <string name="lockpattern_settings_enable_dots_title">Mostra punti sequenza</string>
-    <string name="max_refresh_rate_title">Frequenza massima di aggiornamento</string>
+    <string name="max_refresh_rate_title">Frequenza di aggiornamento massima</string>
     <string name="min_refresh_rate_title">Frequenza di aggiornamento minima</string>
     <string name="fingerprint_enroll_find_sensor_message_front" product="tablet">Individua il sensore d\'impronte digitali sulla parte anteriore del tuo tablet.</string>
     <string name="fingerprint_enroll_find_sensor_message_front" product="device">Individua il sensore d\'impronte digitali sulla parte anteriore del tuo dispositivo.</string>
