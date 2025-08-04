@@ -732,8 +732,7 @@ public class FingerprintSettings extends SubSettings {
 
         private boolean isScreenOffUnlcokSupported() {
             if (isUdfps()) {
-                return getContext().getResources().getBoolean(
-                        com.android.internal.R.bool.config_screen_off_udfps_enabled);
+                return screenOffUnlockUdfps();
             } else if (isSfps()) {
                 return getContext().getResources().getBoolean(
                         org.lineageos.platform.internal.R.bool.config_fingerprintWakeAndUnlock);
