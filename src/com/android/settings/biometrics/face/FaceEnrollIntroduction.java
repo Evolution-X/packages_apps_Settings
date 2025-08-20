@@ -239,9 +239,8 @@ public class FaceEnrollIntroduction extends BiometricEnrollIntroduction {
         if (token != null) {
             intent.putExtra(ChooseLockSettingsHelper.EXTRA_KEY_CHALLENGE_TOKEN, token);
         }
-        final int userId = getIntent().getIntExtra(Intent.EXTRA_USER_ID, UserHandle.myUserId());
-        if (userId != UserHandle.USER_NULL) {
-            intent.putExtra(Intent.EXTRA_USER_ID, userId);
+        if (mUserId != UserHandle.USER_NULL) {
+            intent.putExtra(Intent.EXTRA_USER_ID, mUserId);
         }
         BiometricUtils.copyMultiBiometricExtras(getIntent(), intent);
         intent.putExtra(EXTRA_FROM_SETTINGS_SUMMARY, true);

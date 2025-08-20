@@ -182,6 +182,11 @@ public class FaceEnrollIntroductionTest {
         public boolean isInMultiWindowMode() {
             return mIsMultiWindowMode;
         }
+
+        @Override
+        public String getLaunchedFromPackage() {
+            return getPackageName();
+        }
     }
 
     @Before
