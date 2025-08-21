@@ -312,4 +312,16 @@
     <!-- Battery saver refresh rate -->
     <string name="battery_saver_refresh_rate_title">Reduce refresh rate</string>
     <string name="battery_saver_refresh_rate_summary">Use 60 Hz screen refresh rate to save power when Battery Saver is on</string>
+        
+    <!-- Refresh rate -->
+    <string name="refresh_rate_settings_title">Display Refresh Rate</string>
+    <string name="refresh_rate_dynamic">Dynamic</string>
+    <string name="refresh_rate_high">High</string>
+    <string name="refresh_rate_standard">Standard</string>
+    <string name="refresh_rate_dynamic_summary">
+        Dynamically switch refresh rate according to content to optimize battery life.
+    </string>
+    <string name="refresh_rate_summary">A maximum refresh rate of</string>
+    <string name="refresh_rate_high_summary">for smoother scrolling and animations.</string>
+    <string name="refresh_rate_standard_summary">for better battery life.</string>
 </resources>
