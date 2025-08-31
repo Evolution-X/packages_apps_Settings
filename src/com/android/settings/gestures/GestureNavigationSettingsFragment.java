@@ -244,7 +244,10 @@ public class GestureNavigationSettingsFragment extends DashboardFragment {
                 mIndicatorView.setIndicatorWidth(mCurrentRightWidth, false);
                 mIndicatorView.setIndicatorWidth(mCurrentLefttWidth, true);
             }
+            return true;
+        });
 
+        pref.setOnPreferenceChangeStopListener((p,v) -> {
             final float scale = mBackGestureInsetScales[(int) v];
             if (key == GESTURE_BACK_HEIGHT_KEY) {
                 mIndicatorView.setIndicatorWidth(0, false);
