@@ -16,6 +16,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="keyboard_extras_title">Дадаткі</string>
+    <string name="adb_enable_root">Адладка суперкарыстальнікам</string>
     <string name="backup_transport_setting_label">Змяніць пастаўшчыка рэзервовага капіявання</string>
     <string name="status_bar_double_tap_to_sleep_title">Націсніце для сну</string>
     <string name="status_bar_double_tap_to_sleep_summary">Двойчы націсніце на панэль стану або экран блакіроўкі, каб перавесці прыладу ў рэжым сну</string>
