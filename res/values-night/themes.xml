@@ -28,11 +28,7 @@
 
     <style name="Theme.SubSettings" parent="Theme.SubSettings.Base"/>
 
-    <style name="Theme.AlertDialog.Base" parent="@style/Theme.AppCompat.DayNight.Dialog.Alert">
-        <item name="colorAccent">@android:color/system_primary_dark</item>
-        <item name="android:colorError">@color/settings_dialog_colorError</item>
-        <item name="android:colorBackground">@android:color/system_surface_container_high_dark</item>
-    </style>
+    <style name="Theme.AlertDialog.Base" parent="@style/Theme.AlertDialog.SettingsLib"/>
 
     <style name="Theme.Panel.Material" parent="Theme.Panel" >
         <item name="notification_importance_button_background_color_unselected">@android:color/transparent</item>
