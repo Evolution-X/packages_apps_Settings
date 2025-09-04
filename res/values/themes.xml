@@ -118,11 +118,11 @@
     <style name="ThemeOverlay.SwitchBar.Settings"
         parent="@*android:style/ThemeOverlay.DeviceDefault.ActionBar" />
 
-    <style name="ThemeOverlay.AlertDialog" parent="@android:style/ThemeOverlay.Material.Dialog.Alert">
+    <style name="ThemeOverlay.AlertDialog" parent="@style/Theme.AlertDialog.SettingsLib">
         <item name="android:windowSoftInputMode">adjustResize</item>
     </style>
 
-    <style name="Theme.AlertDialog" parent="@style/Theme.AppCompat.DayNight.Dialog.Alert">
+    <style name="Theme.AlertDialog" parent="@style/Theme.AlertDialog.SettingsLib">
         <item name="android:windowSoftInputMode">adjustResize</item>
         <item name="android:clipToPadding">true</item>
         <item name="android:clipChildren">true</item>
@@ -140,7 +140,7 @@
     </style>
 
 
-    <style name="Theme.AlertDialog.SimConfirmDialog">
+    <style name="Theme.AlertDialog.SimConfirmDialog" parent="@style/Theme.AlertDialog.SettingsLib">
         <item name="buttonBarStyle">@style/SimConfirmDialog.ButtonBarStyle</item>
         <item name="buttonBarButtonStyle">@style/SimConfirmDialog.OutlineButton</item>
         <item name="android:textAllCaps">false</item>
