@@ -307,4 +307,7 @@
     <!-- Force LTE_CA -->
     <string name="force_lte_ca_title">Carrier Aggregation</string>
     <string name="force_lte_ca_summary">Enhances LTE bandwidth by aggregating supported bands</string>
+
+    <!-- Screenshot shutter -->
+    <string name="screenshot_shutter_sound_title">Screenshot sound</string>
 </resources>
