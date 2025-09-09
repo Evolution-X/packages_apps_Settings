@@ -817,9 +817,7 @@ public class FingerprintSettings extends SubSettings {
         private PreferenceScreen createPreferenceHierarchy() {
             PreferenceScreen root = getPreferenceScreen();
             addFingerprintPreferences(root);
-            if (Flags.biometricsOnboardingEducation()) {
-                setupUseFingerprintToPreferences();
-            }
+            setupUseFingerprintToPreferences();
             setPreferenceScreen(root);
             return root;
         }
