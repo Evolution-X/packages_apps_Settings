@@ -114,6 +114,7 @@ public class FaceSettings extends DashboardFragment {
 
     private boolean mConfirmingPassword;
     private boolean mBiometricsAuthenticationRequested;
+    private boolean mFaceFeaturesEnabled = true;
 
     private final FaceSettingsRemoveButtonPreferenceController.Listener mRemovalListener = () -> {
 
@@ -232,7 +233,7 @@ public class FaceSettings extends DashboardFragment {
         mTogglePreferences = new ArrayList<>(
                 Arrays.asList(keyguardPref, appPref, attentionPref, confirmPref, bypassPref));
 
-        if (Flags.biometricsOnboardingEducation()) {
+        if (mFaceFeaturesEnabled) {
             if (use(FaceSettingsKeyguardUnlockPreferenceController.class) != null) {
                 Preference unlockKeyguard = findPreference(
                         use(FaceSettingsKeyguardUnlockPreferenceController.class)
@@ -257,7 +258,7 @@ public class FaceSettings extends DashboardFragment {
         mRemoveButton = findPreference(FaceSettingsRemoveButtonPreferenceController.KEY);
         mEnrollButton = findPreference(FaceSettingsEnrollButtonPreferenceController.KEY);
 
-        if (Flags.biometricsOnboardingEducation()) {
+        if (mFaceFeaturesEnabled) {
             mFaceEnrolledCategory = findPreference(PREF_KEY_FACE_ENROLLED_CATEGORY);
             mFaceRemoveButton = findPreference(PREF_KEY_FACE_REMOVE);
             mFaceRemoveButton.setIcon(R.drawable.ic_face);
@@ -296,7 +297,7 @@ public class FaceSettings extends DashboardFragment {
             mConfirmingPassword = savedInstanceState.getBoolean(KEY_CONFIRMING_PASSWORD);
         }
 
-        if (Flags.biometricsOnboardingEducation()) {
+        if (mFaceFeaturesEnabled) {
             final PreferenceCategory category =
                     findPreference(PREF_KEY_USE_FACE_TO_CATEGORY);
             category.setVisible(true);
@@ -317,7 +318,7 @@ public class FaceSettings extends DashboardFragment {
             final boolean isReEnrollFaceUnlock = getIntent().getBooleanExtra(
                     FaceSettings.KEY_RE_ENROLL_FACE, false);
             if (isReEnrollFaceUnlock) {
-                if (Flags.biometricsOnboardingEducation()) {
+                if (mFaceFeaturesEnabled) {
                     if (mFaceRemoveButton.isEnabled()) {
                         mRemoveController.onPreferenceClick(mFaceRemoveButton);
                     }
@@ -466,7 +467,7 @@ public class FaceSettings extends DashboardFragment {
     }
 
     private void updateFaceAddAndRemovePreference(boolean hasEnrolled) {
-        if (Flags.biometricsOnboardingEducation()) {
+        if (mFaceFeaturesEnabled) {
             mFaceEnrolledCategory.setVisible(true);
             mFaceRemoveButton.setVisible(hasEnrolled);
             mFaceEnrollButton.setVisible(!hasEnrolled);
