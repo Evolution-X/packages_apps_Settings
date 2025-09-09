@@ -47,6 +47,7 @@ public class FaceSettingsEnrollButtonPreferenceController extends BasePreference
     private static final String TAG = "FaceSettings/Remove";
     static final String KEY = "security_settings_face_enroll_faces_container";
     static final String KEY_1 = "security_settings_face_enroll";
+    private static final boolean FACE_FEATURES_ENABLED = true;
 
     private final Context mContext;
 
@@ -57,7 +58,7 @@ public class FaceSettingsEnrollButtonPreferenceController extends BasePreference
     private Listener mListener;
 
     public FaceSettingsEnrollButtonPreferenceController(Context context) {
-        this(context, Flags.biometricsOnboardingEducation() ? KEY_1 : KEY);
+        this(context, FACE_FEATURES_ENABLED ? KEY_1 : KEY);
     }
 
     public FaceSettingsEnrollButtonPreferenceController(Context context, String preferenceKey) {
@@ -70,7 +71,7 @@ public class FaceSettingsEnrollButtonPreferenceController extends BasePreference
         super.updateState(preference);
         final boolean isAdminBlockingAuth = isAdminRestricted();
 
-        if (Flags.biometricsOnboardingEducation()) {
+        if (FACE_FEATURES_ENABLED) {
             preference.setEnabled(!isAdminBlockingAuth);
         } else {
             mButton = ((LayoutPreference) preference).findViewById(
