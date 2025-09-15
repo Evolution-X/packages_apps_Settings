@@ -74,6 +74,7 @@
     <string name="app_notification_sound_timeout_value_30_seconds">30 sekund</string>
     <string name="app_notification_sound_timeout_value_1_minute">1 minuta</string>
     <string name="app_notification_sound_timeout_value_5_minutes">5 minut</string>
+    <string name="app_notification_sound_timeout_value_15_minutes">15 minut</string>
     <string name="app_notification_sound_timeout_value_30_minutes">30 minut</string>
     <string name="auto_brightness_one_shot_title">Rychlé nastavení automatického jasu</string>
     <string name="auto_brightness_one_shot_summary">K úpravě jasu dojde pouze v okamžiku zapnutí obrazovky</string>
@@ -104,4 +105,20 @@
     <string name="storage_warning_internal">Varování: Tato možnost nemusí fungovat správně nebo může vést ke ztrátě dat, proto se nedoporučuje!</string>
     <string name="assisted_gps">Použit asistované GPS</string>
     <string name="assisted_gps_summary">Stáhněte si data satelitní asistence z internetu, což může výrazně zlepšit výkon spuštění systému GPS. Při tísňových voláních je asistovaná GPS vždy povolena</string>
+    <string name="battery_technology">Technologie</string>
+    <string name="battery_health">Zdraví</string>
+    <string name="battery_health_good">Dobrý</string>
+    <string name="battery_health_overheat">Přehřátá</string>
+    <string name="battery_health_dead">Vybitá</string>
+    <string name="battery_health_over_voltage">Přepětí</string>
+    <string name="battery_health_unspecified_failure">Nezadaná chyba</string>
+    <string name="battery_health_cold">Studená</string>
+    <string name="battery_health_unknown">Neznámá</string>
+    <string name="battery_temperature">Teplota</string>
+    <string name="battery_voltage">Napětí</string>
+    <string name="battery_charge_counter_summary">%1$d mAh</string>
+    <string name="battery_design_capacity">Konstrukční kapacita</string>
+    <string name="battery_design_capacity_summary">%1$d mAh</string>
+    <string name="battery_maximum_capacity">Maximální kapacita</string>
+    <string name="battery_maximum_capacity_summary">%1$d mAh (%2$d%%)</string>
 </resources>

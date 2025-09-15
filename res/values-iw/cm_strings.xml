@@ -35,7 +35,7 @@
     <string name="high_touch_polling_rate_title">קצב דיגום נגיעה גבוה</string>
     <string name="high_touch_polling_rate_summary">הגברת קצב דיגום מסך מגע</string>
     <string name="heads_up_notifications_enabled_title">התראות קופצות</string>
-    <string name="heads_up_notifications_enabled_summary">הראה התראות חשובות בחלון צף קטן</string>
+    <string name="heads_up_notifications_enabled_summary">הצגת התראות חשובות בחלון צף קטן</string>
     <string name="high_touch_sensitivity_title">רגישות גבוהה למגע</string>
     <string name="high_touch_sensitivity_summary">הגברת רגישות מסך המגע, כך שניתן יהיה להשתמש בו בעת עטיית כפפות</string>
     <string name="tethering_allow_vpn_upstreams_title">אפשר ללקוחות להשתמש ב-VPN</string>
