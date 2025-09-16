@@ -22,6 +22,10 @@
     <!-- Traffic light package to use -->
     <string name="config_face_enroll_traffic_light_package"></string>
 
-    <!-- Battery Info: mAh -->
+    <!-- Battery Info: mAh divider
+         Some devices with prebuilt kernels report battery capacity in different units.
+         This value is used to convert from microampere-hours (uAh) to milliampere-hours (mAh).
+         Default: 1000 (converts uAh to mAh)
+         Example: If device reports 4000uAh instead of 4000mAh, set this to 1 -->
     <integer name="config_battery_divider" translatable="false">1000</integer>
 </resources>
