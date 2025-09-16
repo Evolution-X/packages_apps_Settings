@@ -50,7 +50,16 @@ public class BatteryHeaderPreferenceController extends BasePreferenceController
 
     public BatteryHeaderPreferenceController(Context context, String key) {
         super(context, key);
-        mBatteryDivider = mContext.getResources().getInteger(R.integer.config_battery_divider);
+        try {
+            mBatteryDivider = mContext.getResources().getInteger(R.integer.config_battery_divider);
+            // Validate divider value to prevent division by zero or unreasonable values
+            if (mBatteryDivider <= 0 || mBatteryDivider > 10000) {
+                mBatteryDivider = 1000; // Default fallback
+            }
+        } catch (Exception e) {
+            // Fallback to default value if resource is not found
+            mBatteryDivider = 1000;
+        }
     }
 
     @Override
