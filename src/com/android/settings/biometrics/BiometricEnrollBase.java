@@ -212,12 +212,14 @@ public abstract class BiometricEnrollBase extends InstrumentedActivity {
         super.onPostCreate(savedInstanceState);
         initViews();
 
-        if (mShouldSetFooterBarBackground) {
-            @SuppressLint("VisibleForTests")
-            final LinearLayout buttonContainer = mFooterBarMixin != null
-                    ? mFooterBarMixin.getButtonContainer()
-                    : null;
-            if (buttonContainer != null) {
+        @SuppressLint("VisibleForTests")
+        final LinearLayout buttonContainer =
+                (mFooterBarMixin != null) ? mFooterBarMixin.getButtonContainer() : null;
+
+        if (buttonContainer != null) {
+            if (getClass() == FingerprintEnrollEnrolling.class) {
+                buttonContainer.setBackgroundColor(Color.TRANSPARENT);
+            } else if (mShouldSetFooterBarBackground) {
                 buttonContainer.setBackgroundColor(getBackgroundColor());
             }
         }
