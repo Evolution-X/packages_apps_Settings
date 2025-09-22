@@ -16,10 +16,13 @@
 
 package com.android.settings.applications;
 
+import static com.android.settings.Utils.PROPERTY_CLONED_APPS_ENABLED;
+
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.UserHandle;
+import android.provider.DeviceConfig;
 
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleObserver;
@@ -27,7 +30,6 @@ import androidx.lifecycle.OnLifecycleEvent;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceScreen;
 
-import com.android.settings.custom.utils.AppUtils;
 import com.android.settings.R;
 import com.android.settings.Utils;
 import com.android.settings.core.BasePreferenceController;
@@ -43,7 +45,6 @@ public class ClonedAppsPreferenceController extends BasePreferenceController
         implements LifecycleObserver {
     private Preference mPreference;
     private Context mContext;
-    private AppUtils appUtils = new AppUtils();
 
     public ClonedAppsPreferenceController(Context context, String preferenceKey) {
         super(context, preferenceKey);
@@ -52,7 +53,9 @@ public class ClonedAppsPreferenceController extends BasePreferenceController
 
     @Override
     public int getAvailabilityStatus() {
-        return mContext.getResources().getBoolean(R.bool.config_cloned_apps_page_enabled)
+        return DeviceConfig.getBoolean(DeviceConfig.NAMESPACE_APP_CLONING,
+                PROPERTY_CLONED_APPS_ENABLED, true)
+                && mContext.getResources().getBoolean(R.bool.config_cloned_apps_page_enabled)
                 ? AVAILABLE : UNSUPPORTED_ON_DEVICE;
     }
 
@@ -78,7 +81,9 @@ public class ClonedAppsPreferenceController extends BasePreferenceController
             @Override
             protected Integer[] doInBackground(Void... unused) {
                 // Get list of allowlisted cloneable apps.
-                List<String> cloneableApps = appUtils.getCloneableAppListStr(mContext);
+                List<String> cloneableApps = Arrays.asList(
+                        mContext.getResources().getStringArray(
+                                com.android.internal.R.array.cloneable_apps));
                 List<String> primaryUserApps = mContext.getPackageManager()
                         .getInstalledPackagesAsUser(/* flags*/ 0, UserHandle.myUserId()).stream()
                         .map(x -> x.packageName).toList();
