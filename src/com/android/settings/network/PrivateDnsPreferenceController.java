@@ -77,7 +77,6 @@ public class PrivateDnsPreferenceController extends BasePreferenceController
     private static final int PRIVATE_DNS_MODE_QUAD9_UNSECURED = 11;
     private static final int PRIVATE_DNS_MODE_QUAD9_ECS = 12;
     private static final int PRIVATE_DNS_MODE_QUAD9_UNSECURED_ECS = 13;
-    private static final int PRIVATE_DNS_MODE_COMSS = 14;
 
     private final Handler mHandler;
     private final ContentObserver mSettingsObserver;
@@ -155,7 +154,6 @@ public class PrivateDnsPreferenceController extends BasePreferenceController
             case PRIVATE_DNS_MODE_QUAD9_UNSECURED:
             case PRIVATE_DNS_MODE_QUAD9_ECS:
             case PRIVATE_DNS_MODE_QUAD9_UNSECURED_ECS:
-            case PRIVATE_DNS_MODE_COMSS:
             case PRIVATE_DNS_MODE_OPPORTUNISTIC:
                 return dnsesResolved ? res.getString(R.string.private_dns_mode_on)
                         : res.getString(
@@ -187,8 +185,6 @@ public class PrivateDnsPreferenceController extends BasePreferenceController
                         res.getString(R.string.private_dns_hostname_quad9_ecs);
                 final String quad9unsecuredecsHostname =
                         res.getString(R.string.private_dns_hostname_quad9_unsecured_ecs);
-                final String comssHostname =
-                        res.getString(R.string.private_dns_hostname_comss);
                 if (privateDnsHostname.equals(cloudflareHostname)) {
                     return res.getString(R.string.private_dns_mode_cloudflare);
                 } else if (privateDnsHostname.equals(adguardHostname)) {
@@ -199,8 +195,6 @@ public class PrivateDnsPreferenceController extends BasePreferenceController
                     return res.getString(R.string.private_dns_mode_cleanbrowsing);
                 } else if (privateDnsHostname.equals(quad9Hostname)) {
                     return res.getString(R.string.private_dns_mode_quad9);
-                } else if (privateDnsHostname.equals(comssHostname)) {
-                    return res.getString(R.string.private_dns_mode_comss);
                 }
                 return privateDnsHostname;
         }
