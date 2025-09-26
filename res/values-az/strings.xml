@@ -804,6 +804,8 @@
     <string name="bluetooth_pairing_shares_phonebook" msgid="4329325125260724843">"Kontaktlar və zəng tarixçəsinə giriş icazəsi verin"</string>
     <string name="bluetooth_pairing_phonebook_toggle_text" msgid="2474015367387690034">"Kontaktlar və zəng tarixçəsinə də giriş imkanı verin"</string>
     <string name="bluetooth_pairing_phonebook_toggle_details" msgid="1367197978487212581">"Məlumat zəng elanı və s. üçün istifadə ediləcək"</string>
+    <string name="bluetooth_pairing_confirmation_title" msgid="3359642089708714808">"Qoşulma kodlarını yoxlayın"</string>
+    <string name="bluetooth_pairing_confirmation_msg" msgid="8204761740738350792">"Bu kodun <xliff:g id="DEVICE_NAME">%1$s</xliff:g> cihazındakı ilə uyğun olub-olmadığını yoxlayın.\n\nTəhlükəsizliyiniz üçün bu kodu heç bir yerə daxil etməyin."</string>
     <string name="bluetooth_error_title" msgid="2284738188253690278"></string>
     <string name="bluetooth_connecting_error_message" msgid="3941893154784152112">"<xliff:g id="DEVICE_NAME">%1$s</xliff:g> cihazına qoşula bilmədi."</string>
     <string name="bluetooth_preference_found_media_devices" msgid="830061195998352840">"Əlçatan cihazlar"</string>

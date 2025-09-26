@@ -804,6 +804,8 @@
     <string name="bluetooth_pairing_shares_phonebook" msgid="4329325125260724843">"మీ కాంటాక్ట్‌లకు, కాల్ హిస్టరీకి యాక్సెస్‌ను అనుమతించండి"</string>
     <string name="bluetooth_pairing_phonebook_toggle_text" msgid="2474015367387690034">"కాంటాక్ట్‌లకు, కాల్ హిస్టరీకి కూడా యాక్సెస్‌ను అనుమతించండి"</string>
     <string name="bluetooth_pairing_phonebook_toggle_details" msgid="1367197978487212581">"సమాచారం, కాల్ అనౌన్స్‌మెంట్‌లు, ఇంకా మరిన్నింటి కోసం ఉపయోగించబడుతుంది"</string>
+    <string name="bluetooth_pairing_confirmation_title" msgid="3359642089708714808">"పెయిరింగ్ కోడ్‌లను చెక్ చేయండి"</string>
+    <string name="bluetooth_pairing_confirmation_msg" msgid="8204761740738350792">"ఈ కోడ్, <xliff:g id="DEVICE_NAME">%1$s</xliff:g>లో ఉన్న దానితో సరిపోతుందో లేదో చెక్ చేయండి.\n\nమీ భద్రతా కారణాల దృష్ట్యా, ఈ కోడ్‌ను ఎక్కడా ఎంటర్ చేయకండి."</string>
     <string name="bluetooth_error_title" msgid="2284738188253690278"></string>
     <string name="bluetooth_connecting_error_message" msgid="3941893154784152112">"<xliff:g id="DEVICE_NAME">%1$s</xliff:g>కి కనెక్ట్ చేయడం సాధ్యపడలేదు."</string>
     <string name="bluetooth_preference_found_media_devices" msgid="830061195998352840">"అందుబాటులో ఉన్న పరికరాలు"</string>

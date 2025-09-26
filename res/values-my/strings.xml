@@ -804,6 +804,8 @@
     <string name="bluetooth_pairing_shares_phonebook" msgid="4329325125260724843">"သင်၏ အဆက်အသွယ်များနှင့် ခေါ်ဆိုမှုမှတ်တမ်းကို ကြည့်ခွင့်ပြုသည်"</string>
     <string name="bluetooth_pairing_phonebook_toggle_text" msgid="2474015367387690034">"အဆက်အသွယ်များနှင့် ခေါ်ဆိုမှုမှတ်တမ်းကိုလည်း သုံးခွင့်ပေးရန်"</string>
     <string name="bluetooth_pairing_phonebook_toggle_details" msgid="1367197978487212581">"အချက်အလက်ကို ဖုန်းခေါ်ဆိုမှု ကြေညာချက်နှင့် အခြားအရာများအတွက် သုံးမည်"</string>
+    <string name="bluetooth_pairing_confirmation_title" msgid="3359642089708714808">"တွဲချိတ်ကုဒ်များကို စစ်ဆေးပါ"</string>
+    <string name="bluetooth_pairing_confirmation_msg" msgid="8204761740738350792">"ဤကုဒ်သည် <xliff:g id="DEVICE_NAME">%1$s</xliff:g> ရှိ ကုဒ်နှင့် တူမတူ စစ်ကြည့်ပါ။\n\nသင့်လုံခြုံမှုအတွက် ဤကုဒ်ကို မည်သည့်နေရာတွင်မျှ မထည့်ပါနှင့်။"</string>
     <string name="bluetooth_error_title" msgid="2284738188253690278"></string>
     <string name="bluetooth_connecting_error_message" msgid="3941893154784152112">"<xliff:g id="DEVICE_NAME">%1$s</xliff:g> ကို ချိတ်ဆက်မရပါ။"</string>
     <string name="bluetooth_preference_found_media_devices" msgid="830061195998352840">"ရနိုင်သည့် စက်များ"</string>

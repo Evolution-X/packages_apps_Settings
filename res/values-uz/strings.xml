@@ -804,6 +804,8 @@
     <string name="bluetooth_pairing_shares_phonebook" msgid="4329325125260724843">"Kontakt va chaqiruvlar tarixiga ruxsat berish"</string>
     <string name="bluetooth_pairing_phonebook_toggle_text" msgid="2474015367387690034">"Shuningdek, kontaktlar va chaqiruvlar tarixiga kirish uchun ruxsat bering"</string>
     <string name="bluetooth_pairing_phonebook_toggle_details" msgid="1367197978487212581">"Maʼlumotlar chaqiruvlar haqida xabar berish uchun ishlatiladi"</string>
+    <string name="bluetooth_pairing_confirmation_title" msgid="3359642089708714808">"Ulanish kodlarini tekshirish"</string>
+    <string name="bluetooth_pairing_confirmation_msg" msgid="8204761740738350792">"Bu kod <xliff:g id="DEVICE_NAME">%1$s</xliff:g> qurilmasidagi kod bilan mos kelishini tekshiring.\n\nXavfsizligingiz uchun bu kodni hech qayerga kiritmang."</string>
     <string name="bluetooth_error_title" msgid="2284738188253690278"></string>
     <string name="bluetooth_connecting_error_message" msgid="3941893154784152112">"<xliff:g id="DEVICE_NAME">%1$s</xliff:g>ga o‘zaro bog‘lanmadi."</string>
     <string name="bluetooth_preference_found_media_devices" msgid="830061195998352840">"Mavjud qurilmalar"</string>

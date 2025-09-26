@@ -804,6 +804,8 @@
     <string name="bluetooth_pairing_shares_phonebook" msgid="4329325125260724843">"আপনার পরিচিতি এবং কল ইতিহাস অ্যাক্সেসের অনুমতি দিন"</string>
     <string name="bluetooth_pairing_phonebook_toggle_text" msgid="2474015367387690034">"এছাড়াও পরিচিতি ও কলের ইতিহাস অ্যাক্সেস করার অনুমতি দিন"</string>
     <string name="bluetooth_pairing_phonebook_toggle_details" msgid="1367197978487212581">"কল সম্পর্কিত ঘোষণা ও আরও অনেক কিছুর জন্য তথ্য ব্যবহার করা হবে"</string>
+    <string name="bluetooth_pairing_confirmation_title" msgid="3359642089708714808">"পেয়ারিং কোড দেখুন"</string>
+    <string name="bluetooth_pairing_confirmation_msg" msgid="8204761740738350792">"এই কোড <xliff:g id="DEVICE_NAME">%1$s</xliff:g>-এর কোডের সাথে মিলছে কিনা তা দেখুন।\n\nআপনার নিরাপত্তার জন্য, এই কোড কোথাও লিখবেন না।"</string>
     <string name="bluetooth_error_title" msgid="2284738188253690278"></string>
     <string name="bluetooth_connecting_error_message" msgid="3941893154784152112">"<xliff:g id="DEVICE_NAME">%1$s</xliff:g> এ কানেকশন করতে পারেনি।"</string>
     <string name="bluetooth_preference_found_media_devices" msgid="830061195998352840">"উপলভ্য ডিভাইস"</string>

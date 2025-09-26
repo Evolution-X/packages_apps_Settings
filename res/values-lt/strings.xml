@@ -804,6 +804,8 @@
     <string name="bluetooth_pairing_shares_phonebook" msgid="4329325125260724843">"Leisti pasiekti jūsų kontaktus ir skambučių istoriją"</string>
     <string name="bluetooth_pairing_phonebook_toggle_text" msgid="2474015367387690034">"Taip pat leiskite pasiekti kontaktus ir skambučių istoriją"</string>
     <string name="bluetooth_pairing_phonebook_toggle_details" msgid="1367197978487212581">"Informacija bus naudojama skambučių pranešimams ir kt."</string>
+    <string name="bluetooth_pairing_confirmation_title" msgid="3359642089708714808">"Patikrinkite susiejimo kodus"</string>
+    <string name="bluetooth_pairing_confirmation_msg" msgid="8204761740738350792">"Patikrinkite, ar šis kodas atitinka kodą „<xliff:g id="DEVICE_NAME">%1$s</xliff:g>“ įrenginyje.\n\nSaugos sumetimais niekur neįveskite šio kodo."</string>
     <string name="bluetooth_error_title" msgid="2284738188253690278"></string>
     <string name="bluetooth_connecting_error_message" msgid="3941893154784152112">"Nepavyko prisijungti prie „<xliff:g id="DEVICE_NAME">%1$s</xliff:g>“."</string>
     <string name="bluetooth_preference_found_media_devices" msgid="830061195998352840">"Pasiekiami įrenginiai"</string>

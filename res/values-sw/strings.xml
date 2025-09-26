@@ -804,6 +804,8 @@
     <string name="bluetooth_pairing_shares_phonebook" msgid="4329325125260724843">"Ruhusu ufikiaji wa anwani na historia ya simu ulizopiga"</string>
     <string name="bluetooth_pairing_phonebook_toggle_text" msgid="2474015367387690034">"Ruhusu pia ufikiaji wa anwani na rekodi ya simu zilizopigwa"</string>
     <string name="bluetooth_pairing_phonebook_toggle_details" msgid="1367197978487212581">"Maelezo yatatumiwa kwa matangazo ya simu na zaidi"</string>
+    <string name="bluetooth_pairing_confirmation_title" msgid="3359642089708714808">"Angalia misimbo ya kuunganisha"</string>
+    <string name="bluetooth_pairing_confirmation_msg" msgid="8204761740738350792">"Angalia kama msimbo huu unalingana na ulio kwenye <xliff:g id="DEVICE_NAME">%1$s</xliff:g>.\n\nKwa usalama wako, usiweke msimbo huu popote."</string>
     <string name="bluetooth_error_title" msgid="2284738188253690278"></string>
     <string name="bluetooth_connecting_error_message" msgid="3941893154784152112">"Haikuweza kuunganisha kwa <xliff:g id="DEVICE_NAME">%1$s</xliff:g>."</string>
     <string name="bluetooth_preference_found_media_devices" msgid="830061195998352840">"Vifaa vinavyopatikana"</string>

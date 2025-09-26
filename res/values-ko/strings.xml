@@ -804,6 +804,8 @@
     <string name="bluetooth_pairing_shares_phonebook" msgid="4329325125260724843">"연락처 및 통화 기록 액세스 허용"</string>
     <string name="bluetooth_pairing_phonebook_toggle_text" msgid="2474015367387690034">"연락처 및 통화 기록에 대한 액세스도 허용합니다."</string>
     <string name="bluetooth_pairing_phonebook_toggle_details" msgid="1367197978487212581">"정보는 전화 알림 등에 사용됩니다."</string>
+    <string name="bluetooth_pairing_confirmation_title" msgid="3359642089708714808">"페어링 코드를 확인하세요"</string>
+    <string name="bluetooth_pairing_confirmation_msg" msgid="8204761740738350792">"이 코드가 <xliff:g id="DEVICE_NAME">%1$s</xliff:g>에 표시된 코드와 일치하는지 확인하세요.\n\n보안을 위해 이 코드를 어디에도 입력하지 마세요."</string>
     <string name="bluetooth_error_title" msgid="2284738188253690278"></string>
     <string name="bluetooth_connecting_error_message" msgid="3941893154784152112">"<xliff:g id="DEVICE_NAME">%1$s</xliff:g>에 연결할 수 없습니다."</string>
     <string name="bluetooth_preference_found_media_devices" msgid="830061195998352840">"사용할 수 있는 기기"</string>

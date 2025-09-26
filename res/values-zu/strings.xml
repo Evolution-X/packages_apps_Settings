@@ -804,6 +804,8 @@
     <string name="bluetooth_pairing_shares_phonebook" msgid="4329325125260724843">"Vumela ukufinyelela koxhumana nabo nomlando wekholi"</string>
     <string name="bluetooth_pairing_phonebook_toggle_text" msgid="2474015367387690034">"Phinda futhi uvumele ukufinyelela koxhumana nabo nomlando wekholi"</string>
     <string name="bluetooth_pairing_phonebook_toggle_details" msgid="1367197978487212581">"Ulwazi luzosetshenziselwa izimemezelo zekholi nokunye okwengeziwe"</string>
+    <string name="bluetooth_pairing_confirmation_title" msgid="3359642089708714808">"Hlola amakhodi okubhangqa"</string>
+    <string name="bluetooth_pairing_confirmation_msg" msgid="8204761740738350792">"Maka uma le khodi iqondana naleyo eku-<xliff:g id="DEVICE_NAME">%1$s</xliff:g>.\n\nUkuze uphephe, ungayifaki noma kuphi le khodi."</string>
     <string name="bluetooth_error_title" msgid="2284738188253690278"></string>
     <string name="bluetooth_connecting_error_message" msgid="3941893154784152112">"Ayikwazanga ukuxhuma ku-<xliff:g id="DEVICE_NAME">%1$s</xliff:g>."</string>
     <string name="bluetooth_preference_found_media_devices" msgid="830061195998352840">"Amadivayisi atholakalayo"</string>

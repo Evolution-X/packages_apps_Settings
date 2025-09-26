@@ -804,6 +804,8 @@
     <string name="bluetooth_pairing_shares_phonebook" msgid="4329325125260724843">"Eman kontaktuak eta deien historia erabiltzeko baimena"</string>
     <string name="bluetooth_pairing_phonebook_toggle_text" msgid="2474015367387690034">"Eman kontaktuak eta deien historia erabiltzeko baimena ere"</string>
     <string name="bluetooth_pairing_phonebook_toggle_details" msgid="1367197978487212581">"Deiak iragartzeko eta beste gauza batzuetarako erabiliko da informazioa"</string>
+    <string name="bluetooth_pairing_confirmation_title" msgid="3359642089708714808">"Egiaztatu parekatze-kodeak"</string>
+    <string name="bluetooth_pairing_confirmation_msg" msgid="8204761740738350792">"Egiaztatu kode hau bat datorrela <xliff:g id="DEVICE_NAME">%1$s</xliff:g> gailuan agertzen denarekin.\n\nZure segurtasuna bermatzeko, ez idatzi kode hau inon ere."</string>
     <string name="bluetooth_error_title" msgid="2284738188253690278"></string>
     <string name="bluetooth_connecting_error_message" msgid="3941893154784152112">"Ezin izan da <xliff:g id="DEVICE_NAME">%1$s</xliff:g> gailura konektatu."</string>
     <string name="bluetooth_preference_found_media_devices" msgid="830061195998352840">"Gailu erabilgarriak"</string>

@@ -804,6 +804,8 @@
     <string name="bluetooth_pairing_shares_phonebook" msgid="4329325125260724843">"Cho phép truy cập vào danh bạ và nhật ký cuộc gọi của bạn"</string>
     <string name="bluetooth_pairing_phonebook_toggle_text" msgid="2474015367387690034">"Cho phép truy cập cả danh bạ và nhật ký cuộc gọi"</string>
     <string name="bluetooth_pairing_phonebook_toggle_details" msgid="1367197978487212581">"Thông tin sẽ được sử dụng cho tính năng thông báo cuộc gọi và nhiều tính năng khác"</string>
+    <string name="bluetooth_pairing_confirmation_title" msgid="3359642089708714808">"Kiểm tra mã ghép nối"</string>
+    <string name="bluetooth_pairing_confirmation_msg" msgid="8204761740738350792">"Kiểm tra xem mã này có khớp với mã trên <xliff:g id="DEVICE_NAME">%1$s</xliff:g> hay không.\n\nĐể bảo mật, bạn không nên nhập mã này ở bất cứ đâu."</string>
     <string name="bluetooth_error_title" msgid="2284738188253690278"></string>
     <string name="bluetooth_connecting_error_message" msgid="3941893154784152112">"Không thể kết nối với <xliff:g id="DEVICE_NAME">%1$s</xliff:g>."</string>
     <string name="bluetooth_preference_found_media_devices" msgid="830061195998352840">"Thiết bị có sẵn"</string>

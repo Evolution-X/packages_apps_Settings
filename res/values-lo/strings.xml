@@ -804,6 +804,8 @@
     <string name="bluetooth_pairing_shares_phonebook" msgid="4329325125260724843">"ອະນຸຍາດໃຫ້ເຂົ້າເຖິງລາຍຊື່ຜູ້ຕິດຕໍ່ ແລະ ປະຫວັດການໂທຂອງທ່ານ"</string>
     <string name="bluetooth_pairing_phonebook_toggle_text" msgid="2474015367387690034">"ອະນຸຍາດໃຫ້ເຂົ້າເຖິງລາຍຊື່ຜູ້ຕິດຕໍ່ ແລະ ປະຫວັດການໂທນຳ"</string>
     <string name="bluetooth_pairing_phonebook_toggle_details" msgid="1367197978487212581">"ຂໍ້ມູນຈະຖືກໃຊ້ສຳລັບປະກາດການໂທ ແລະ ອື່ນໆ"</string>
+    <string name="bluetooth_pairing_confirmation_title" msgid="3359642089708714808">"ກວດເບິ່ງລະຫັດການຈັບຄູ່"</string>
+    <string name="bluetooth_pairing_confirmation_msg" msgid="8204761740738350792">"ກວດເບິ່ງວ່າລະຫັດນີ້ກົງກັບອັນທີ່ຢູ່ໃນ <xliff:g id="DEVICE_NAME">%1$s</xliff:g> ຫຼືບໍ່.\n\nເພື່ອຄວາມປອດໄພຂອງທ່ານ, ຢ່າປ້ອນລະຫັດນີ້ໃສ່ບ່ອນໃດໆ."</string>
     <string name="bluetooth_error_title" msgid="2284738188253690278"></string>
     <string name="bluetooth_connecting_error_message" msgid="3941893154784152112">"ບໍ່ສາມາດເຊື່ອມຕໍ່ຫາ <xliff:g id="DEVICE_NAME">%1$s</xliff:g> ໄດ້."</string>
     <string name="bluetooth_preference_found_media_devices" msgid="830061195998352840">"ອຸປະກອນທີ່ສາມາດໃຊ້ໄດ້"</string>

@@ -804,6 +804,8 @@
     <string name="bluetooth_pairing_shares_phonebook" msgid="4329325125260724843">"Permet l\'accés als contactes i a l\'historial de trucades"</string>
     <string name="bluetooth_pairing_phonebook_toggle_text" msgid="2474015367387690034">"Permet també l\'accés als contactes i a l\'historial de trucades"</string>
     <string name="bluetooth_pairing_phonebook_toggle_details" msgid="1367197978487212581">"La informació s\'utilitzarà per als avisos de trucades i més"</string>
+    <string name="bluetooth_pairing_confirmation_title" msgid="3359642089708714808">"Comprova els codis de vinculació"</string>
+    <string name="bluetooth_pairing_confirmation_msg" msgid="8204761740738350792">"Comprova si aquest codi coincideix amb el de <xliff:g id="DEVICE_NAME">%1$s</xliff:g>.\n\nPer a la teva seguretat, no introdueixis aquest codi enlloc."</string>
     <string name="bluetooth_error_title" msgid="2284738188253690278"></string>
     <string name="bluetooth_connecting_error_message" msgid="3941893154784152112">"No s\'ha pogut connectar amb <xliff:g id="DEVICE_NAME">%1$s</xliff:g>."</string>
     <string name="bluetooth_preference_found_media_devices" msgid="830061195998352840">"Dispositius disponibles"</string>

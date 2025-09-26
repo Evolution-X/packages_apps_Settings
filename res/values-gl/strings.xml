@@ -804,6 +804,8 @@
     <string name="bluetooth_pairing_shares_phonebook" msgid="4329325125260724843">"Permitir o acceso aos teus contactos e ao historial de chamadas"</string>
     <string name="bluetooth_pairing_phonebook_toggle_text" msgid="2474015367387690034">"Permitir tamén o acceso aos contactos e ao historial de chamadas"</string>
     <string name="bluetooth_pairing_phonebook_toggle_details" msgid="1367197978487212581">"A información empregarase para avisos de chamadas e moito máis"</string>
+    <string name="bluetooth_pairing_confirmation_title" msgid="3359642089708714808">"Comprobar os códigos de vinculación"</string>
+    <string name="bluetooth_pairing_confirmation_msg" msgid="8204761740738350792">"Comproba se este código coincide co do dispositivo <xliff:g id="DEVICE_NAME">%1$s</xliff:g>.\n\nPola túa seguranza, non escribas o código en ningún lugar."</string>
     <string name="bluetooth_error_title" msgid="2284738188253690278"></string>
     <string name="bluetooth_connecting_error_message" msgid="3941893154784152112">"Non se puido conectar a <xliff:g id="DEVICE_NAME">%1$s</xliff:g>."</string>
     <string name="bluetooth_preference_found_media_devices" msgid="830061195998352840">"Dispositivos dispoñibles"</string>

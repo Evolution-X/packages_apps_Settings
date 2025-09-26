@@ -804,6 +804,8 @@
     <string name="bluetooth_pairing_shares_phonebook" msgid="4329325125260724843">"Toegang geven tot je contacten en gespreksgeschiedenis"</string>
     <string name="bluetooth_pairing_phonebook_toggle_text" msgid="2474015367387690034">"Ook toegang geven tot contacten en gespreksgeschiedenis"</string>
     <string name="bluetooth_pairing_phonebook_toggle_details" msgid="1367197978487212581">"De informatie wordt onder andere gebruikt voor gespreksaankondigingen"</string>
+    <string name="bluetooth_pairing_confirmation_title" msgid="3359642089708714808">"Koppelingscodes checken"</string>
+    <string name="bluetooth_pairing_confirmation_msg" msgid="8204761740738350792">"Check of deze code overeenkomt met de code op de <xliff:g id="DEVICE_NAME">%1$s</xliff:g>.\n\nVoer deze code nergens in."</string>
     <string name="bluetooth_error_title" msgid="2284738188253690278"></string>
     <string name="bluetooth_connecting_error_message" msgid="3941893154784152112">"Kan geen verbinding maken met <xliff:g id="DEVICE_NAME">%1$s</xliff:g>."</string>
     <string name="bluetooth_preference_found_media_devices" msgid="830061195998352840">"Beschikbare apparaten"</string>

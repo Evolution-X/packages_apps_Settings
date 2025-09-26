@@ -804,6 +804,8 @@
     <string name="bluetooth_pairing_shares_phonebook" msgid="4329325125260724843">"Թույլատրել կոնտակտների ու զանգերի պատմության հասանելիությունը"</string>
     <string name="bluetooth_pairing_phonebook_toggle_text" msgid="2474015367387690034">"Նաև հասանելի դարձնել կոնտակտները և զանգերի պատմությունը"</string>
     <string name="bluetooth_pairing_phonebook_toggle_details" msgid="1367197978487212581">"Տեղեկությունները կօգտագործվեն զանգերի մասին ծանուցումների համար և այլ նպատակներով"</string>
+    <string name="bluetooth_pairing_confirmation_title" msgid="3359642089708714808">"Ստուգեք զուգակցման կոդերը"</string>
+    <string name="bluetooth_pairing_confirmation_msg" msgid="8204761740738350792">"Ստուգեք՝ արդյոք այս կոդը համընկնում է <xliff:g id="DEVICE_NAME">%1$s</xliff:g> սարքում նշվածի հետ։\n\nԱնվտանգության նկատառումներից ելնելով՝ այս կոդը ոչ մի տեղ մի մուտքագրեք։"</string>
     <string name="bluetooth_error_title" msgid="2284738188253690278"></string>
     <string name="bluetooth_connecting_error_message" msgid="3941893154784152112">"Հնարավոր չեղավ միանալ <xliff:g id="DEVICE_NAME">%1$s</xliff:g>-ին:"</string>
     <string name="bluetooth_preference_found_media_devices" msgid="830061195998352840">"Հասանելի սարքեր"</string>

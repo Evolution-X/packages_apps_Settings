@@ -804,6 +804,8 @@
     <string name="bluetooth_pairing_shares_phonebook" msgid="4329325125260724843">"Allow access to your contacts and call history"</string>
     <string name="bluetooth_pairing_phonebook_toggle_text" msgid="2474015367387690034">"Also allow access to contacts and call history"</string>
     <string name="bluetooth_pairing_phonebook_toggle_details" msgid="1367197978487212581">"Info will be used for call announcements and more"</string>
+    <string name="bluetooth_pairing_confirmation_title" msgid="3359642089708714808">"Check pairing codes"</string>
+    <string name="bluetooth_pairing_confirmation_msg" msgid="8204761740738350792">"Check if this code matches the one on <xliff:g id="DEVICE_NAME">%1$s</xliff:g>.\n\nFor your security, do not enter this code anywhere."</string>
     <string name="bluetooth_error_title" msgid="2284738188253690278"></string>
     <string name="bluetooth_connecting_error_message" msgid="3941893154784152112">"Couldn\'t connect to <xliff:g id="DEVICE_NAME">%1$s</xliff:g>."</string>
     <string name="bluetooth_preference_found_media_devices" msgid="830061195998352840">"Available devices"</string>
