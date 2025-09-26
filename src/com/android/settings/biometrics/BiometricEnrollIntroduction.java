@@ -48,6 +48,8 @@ import com.google.android.setupdesign.span.LinkSpan;
 import com.google.android.setupdesign.template.RequireScrollMixin;
 import com.google.android.setupdesign.util.DynamicColorPalette;
 
+import java.util.List;
+
 /**
  * Abstract base class for the intro onboarding activity for biometric enrollment.
  */
@@ -236,6 +238,19 @@ public abstract class BiometricEnrollIntroduction extends BiometricEnrollBase
                         mHasScrolledToBottom = true;
                     }
                 });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        if (!getPackageName().equals(getCallingPackage())) {
+            for (String key : List.of(MultiBiometricEnrollHelper.EXTRA_SKIP_PENDING_ENROLL,
+                    MultiBiometricEnrollHelper.EXTRA_ENROLL_AFTER_FACE,
+                    MultiBiometricEnrollHelper.EXTRA_ENROLL_AFTER_FINGERPRINT)) {
+                getIntent().removeExtra(key);
+            }
+        }
     }
 
     @Override
@@ -465,14 +480,15 @@ public abstract class BiometricEnrollIntroduction extends BiometricEnrollBase
         getIntent().removeExtra(MultiBiometricEnrollHelper.EXTRA_ENROLL_AFTER_FINGERPRINT);
     }
 
-    protected void removeEnrollNextBiometricIfSkipEnroll(@Nullable Intent data) {
+    private void removeEnrollNextBiometricIfSkipEnroll(@Nullable Intent data) {
         if (data != null
                 && data.getBooleanExtra(
                         MultiBiometricEnrollHelper.EXTRA_SKIP_PENDING_ENROLL, false)) {
             removeEnrollNextBiometric();
         }
     }
-    protected void handleBiometricResultSkipOrFinished(int resultCode, @Nullable Intent data) {
+
+    private void handleBiometricResultSkipOrFinished(int resultCode, @Nullable Intent data) {
         removeEnrollNextBiometricIfSkipEnroll(data);
         if (resultCode == RESULT_SKIP) {
             onEnrollmentSkipped(data);

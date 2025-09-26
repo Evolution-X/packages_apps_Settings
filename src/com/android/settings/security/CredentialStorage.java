@@ -17,6 +17,7 @@
 package com.android.settings.security;
 
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.app.admin.DevicePolicyManager;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -331,15 +332,25 @@ public final class CredentialStorage extends FragmentActivity {
         }
     }
 
+    private String getCallingPackageName() {
+        try {
+            return ActivityManager.getService().getLaunchedFromPackage(getActivityToken());
+        } catch (RemoteException re) {
+            // Error talking to ActivityManager, just give up
+            return null;
+        }
+    }
+
     /**
      * Check that the caller is either certinstaller or Settings running in a profile of this user.
      */
     private boolean checkCallerIsCertInstallerOrSelfInProfile() {
-        if (TextUtils.equals("com.android.certinstaller", getCallingPackage())) {
+        String callingPackage = getCallingPackageName();
+        if (TextUtils.equals("com.android.certinstaller", callingPackage)) {
             // CertInstaller is allowed to install credentials if it has the same signature as
             // Settings package.
             return getPackageManager().checkSignatures(
-                    getCallingPackage(), getPackageName()) == PackageManager.SIGNATURE_MATCH;
+                    callingPackage, getPackageName()) == PackageManager.SIGNATURE_MATCH;
         }
 
         final int launchedFromUserId;
