@@ -81,22 +81,27 @@ public class SetGpuRendererPreferenceController extends
     }
 
     private void writeDebugHwRendererOptions(Object newValue) {
-        SystemProperties.set(ThreadedRenderer.DEBUG_RENDERER_PROPERTY,
-                newValue == null ? "" : newValue.toString());
+        SystemProperties.set("persist.sys.ax_hwui_renderer",
+                newValue == null ? getDefaultRenderer() : newValue.toString());
         SystemPropPoker.getInstance().poke();
     }
 
     private void updateDebugHwRendererOptions() {
-        final String value = SystemProperties.get(
-                ThreadedRenderer.DEBUG_RENDERER_PROPERTY, "" /* default */);
         int index = 0; // default
         for (int i = 0; i < mListValues.length; i++) {
-            if (TextUtils.equals(value, mListValues[i])) {
+            if (TextUtils.equals(getDefaultRenderer(), mListValues[i])) {
                 index = i;
                 break;
             }
         }
         mPreference.setValue(mListValues[index]);
         mPreference.setSummary(mListSummaries[index]);
+    }
+    
+    private String getDefaultRenderer() {
+        boolean useVulkan = SystemProperties.getBoolean("ro.hwui.use_vulkan", false);
+        final String value = SystemProperties.get(
+            "persist.sys.ax_hwui_renderer", useVulkan ? "skiavk" : "skiagl"); //matches hwui peekRenderPipelineType
+        return value;
     }
 }
