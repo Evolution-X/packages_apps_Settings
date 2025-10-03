@@ -36,6 +36,8 @@ import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceScreen;
 
+import com.android.internal.util.evolution.Utils;
+
 import com.android.settings.R;
 import com.android.settings.RingtonePreference;
 import com.android.settings.core.OnActivityResultListener;
@@ -53,8 +55,6 @@ import com.android.settingslib.search.SearchIndexable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-import org.evolution.settings.utils.DeviceUtils;
 
 @SearchIndexable
 public class SoundSettings extends DashboardFragment implements OnActivityResultListener {
@@ -127,7 +127,7 @@ public class SoundSettings extends DashboardFragment implements OnActivityResult
             }
             return null;
         });
-        if (!DeviceUtils.isCurrentlySupportedPixel()) {
+        if (!Utils.isCurrentlySupportedPixel()) {
             updateAmbientMusicPref();
         }
     }

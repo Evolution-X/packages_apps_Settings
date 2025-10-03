@@ -35,6 +35,8 @@ import androidx.annotation.VisibleForTesting;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceScreen;
 
+import com.android.internal.util.evolution.Utils;
+
 import com.android.settings.R;
 import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.display.AmbientDisplayAlwaysOnPreferenceController;
@@ -52,8 +54,6 @@ import com.android.settingslib.search.SearchIndexable;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import org.evolution.settings.utils.DeviceUtils;
 
 /**
  * Settings screen for lock screen preference
@@ -99,7 +99,7 @@ public class LockscreenDashboardFragment extends DashboardFragment
                 R.string.locked_work_profile_notification_title);
         replaceEnterpriseStringTitle("security_setting_lock_screen_notif_work_header",
                 WORK_PROFILE_NOTIFICATIONS_SECTION_HEADER, R.string.profile_section_header);
-        if (!DeviceUtils.isCurrentlySupportedPixel()) {
+        if (!Utils.isCurrentlySupportedPixel()) {
             updateAmbientMusicPref();
         }
     }
