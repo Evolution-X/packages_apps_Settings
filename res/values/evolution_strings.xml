@@ -271,4 +271,10 @@
     <string name="software_update_up_to_date_header">Your %1$s is up to date</string>
     <string name="software_update_up_to_specific_date_summary">Updated to %1$s</string>
     <string name="system_update_entry_title">System update</string>
+
+    <!-- Doze brightness -->
+    <string name="doze_brightness_force_title">Force brightness values</string>
+    <string name="doze_brightness_force_summary">Use custom brightness values instead of screen brightness</string>
+    <string name="ambient_pulse_brightness_title">Ambient display brightness</string>
+    <string name="ambient_doze_brightness_title">Always on display brightness</string>
 </resources>
