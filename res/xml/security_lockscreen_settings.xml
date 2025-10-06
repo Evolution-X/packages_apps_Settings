@@ -161,6 +161,28 @@
             android:summary="@string/doze_summary"
             settings:controller="com.android.settings.display.AmbientDisplayNotificationsPreferenceController" />
 
+        <org.evolution.settings.preferences.SystemSettingSeekBarPreference
+            android:key="doze_brightness"
+            android:title="@string/ambient_doze_brightness_title"
+            android:max="255"
+            settings:min="1"
+            android:persistent="false"
+            settings:controller="com.android.settings.security.DozeBrightnessPreferenceController" />
+
+        <org.evolution.settings.preferences.SystemSettingSeekBarPreference
+            android:key="pulse_brightness"
+            android:title="@string/ambient_pulse_brightness_title"
+            android:max="255"
+            settings:min="1"
+            android:persistent="false"
+            settings:controller="com.android.settings.security.DozeBrightnessPreferenceController" />
+
+        <org.evolution.settings.preferences.SystemSettingSwitchPreference
+            android:key="doze_brightness_force"
+            android:title="@string/doze_brightness_force_title"
+            android:summary="@string/doze_brightness_force_summary"
+            android:defaultValue="false" />
+
         <com.android.settingslib.PrimarySwitchPreference
             android:key="doze_device_settings"
             android:title="@string/ambient_display_screen_title"
