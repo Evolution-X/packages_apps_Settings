@@ -20,13 +20,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:title="@string/notification_bundle_title">
 
-    <com.android.settingslib.widget.IllustrationPreference
-        android:key="illustration"
-        settings:searchable="false"
-        android:selectable="false"
-        app:lottie_cacheComposition="false"
-        settings:dynamicColor="true"/>
-
     <com.android.settingslib.widget.TopIntroPreference
         android:key="feature_description"
         settings:searchable="false"
