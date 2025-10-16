@@ -451,4 +451,8 @@
 
     <!-- Confirm dialog -->
     <string name="confirm_before_enable_title">Continue to enable?</string>
+
+    <!-- Override Mock Location restriction -->
+    <string name="override_mock_location_title">Override MockLocation restriction</string>
+    <string name="override_mock_location_summary">When enabled, apps cannot detect mock locations</string>
 </resources>

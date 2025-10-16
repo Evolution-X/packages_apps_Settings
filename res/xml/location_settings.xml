@@ -41,6 +41,14 @@
         android:summary="@string/assisted_gps_summary"
         settings:controller="com.android.settings.location.AgpsPreferenceController"/>
 
+    <SwitchPreferenceCompat
+        android:key="override_mock_location"
+        android:title="@string/override_mock_location_title"
+        android:summaryOn="Mock locations are hidden from apps"
+        android:summaryOff="Apps can detect mock locations"
+        android:defaultValue="false"
+        settings:controller="com.android.settings.location.OverrideMockLocationPreferenceController" />
+
     <PreferenceCategory
         android:key="location_advanced_settings"
         android:layout="@layout/preference_category_no_label">
