@@ -157,6 +157,10 @@
     <uses-permission android:name="android.permission.READ_SYSTEM_GRAMMATICAL_GENDER" />
     <uses-permission android:name="android.permission.MANAGE_COMPANION_DEVICES" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
+    <uses-permission android:name="android.permission.SET_WALLPAPER_HINTS" />
+    <uses-permission android:name="android.permission.BIND_WALLPAPER" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <!-- App lock -->
     <uses-permission android:name="android.permission.MANAGE_APP_LOCK" />
@@ -5318,6 +5322,20 @@
                        android:value="true"/>
             <meta-data android:name="android.service.quicksettings.TILE_CATEGORY"
                        android:value="android.service.quicksettings.CATEGORY_DISPLAY" />
+        </service>
+
+        <service
+            android:name="org.evolution.settings.fragments.themes.VideoWallpaperService"
+            android:enabled="true"
+            android:exported="true"
+            android:label="Video Wallpaper"
+            android:permission="android.permission.BIND_WALLPAPER">
+            <intent-filter>
+                <action android:name="android.service.wallpaper.WallpaperService" />
+            </intent-filter>
+            <meta-data
+                android:name="android.service.wallpaper"
+                android:resource="@layout/video_wallpaper" />
         </service>
 
         <activity
