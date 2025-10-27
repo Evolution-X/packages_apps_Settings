@@ -156,6 +156,8 @@ public final class Utils extends com.android.settingslib.Utils {
 
     public static final String PHONE_PACKAGE_NAME = "com.android.phone";
 
+    public static final String ESIM_SETTINGS_PACKAGE_NAME = "org.lineageos.settings.esimswitcher";
+
     public static final String OS_PKG = "os";
 
     /**
