@@ -165,7 +165,7 @@
     <string name="hide_from_launcher_summary">Заборонити показ цієї програми в лаунчері. Необхідний перезапуск лаунчера, щоб зміни набрали чинності.</string>
     <!-- Doze on charge -->
     <string name="doze_on_charge_title">Завжди показувати під час заряджання</string>
-    <string name="doze_on_charge_summary">Показати пристрій заряджається</string>
+    <string name="doze_on_charge_summary">Показувати інформацію коли пристрій заряджається</string>
     <!-- Incall vibrate options -->
     <string name="incall_vibration_category">Параметри вібрації під час дзвінка</string>
     <string name="incall_vibrate_connect_title">Вибрація при з\'єднанні</string>
@@ -235,13 +235,14 @@
     <!-- HDR Display -->
     <string name="hdr_display_title">Підвищення яскравості HDR</string>
     <string name="hdr_display_summary">Brighten і розширювати діапазон кольорів і чіткість у високодинамічному діапазоні (HDR) зображення та відео. HDR вміст буде виглядати яскравішим. Це збільшить використання заряду акумулятора</string>
+    <string name="hdr_max_brightness_percent_title">Інтенсивність дисплея HDR</string>
     <!-- Ambient wake toggles -->
     <string name="doze_gesture_ambient_title">Показати Активний екран</string>
     <string name="doze_gesture_ambient_summary">Показати Активний екран замість повного пробудження екрану</string>
     <string name="gesture_wake_ambient">Показати Активний екран</string>
     <string name="gesture_wake">Повністю пробудження</string>
     <!-- Pocket mode -->
-    <string name="proximity_wake_title">Запобігати випадкового пробудження</string>
+    <string name="proximity_wake_title">Кишеньковий режим</string>
     <string name="proximity_wake_summary">Перевірте датчик наближення для пробудження екрану</string>
     <!-- Adaptive Playback -->
     <string name="adaptive_playback_screen_title">Розумна Пауза</string>
@@ -287,49 +288,6 @@
     <!-- Wake gestures haptics -->
     <string name="doze_gesture_vibrate_title">Вібровідгук</string>
     <string name="doze_gesture_vibrate_summary">Вібрувати, коли цей жест активується</string>
-    <!-- Per-app configs -->
-    <string name="per_app_config_empty_text">Відсутні встановлені додатки підтримки поточних параметрів</string>
-    <!-- Per-app refresh rate -->
-    <string name="per_app_refresh_rate_title">Максимальна частота оновлення</string>
-    <string name="per_app_refresh_rate_summary">Налаштувати ставку оновлення індивідуально для кожного додатка</string>
-    <string name="per_app_refresh_rate_default">Наслідувати систему</string>
-    <!-- Screen refresh rate -->
-    <string name="screen_refresh_rate_title">Частота оновлення екрана</string>
-    <string name="min_refresh_rate_title">Мінімальна частота оновлення</string>
-    <string name="max_refresh_rate_title">Максимальна частота оновлення</string>
-    <string name="battery_saver_refresh_rate_title">Зменшити частоту оновлення</string>
-    <string name="battery_saver_refresh_rate_summary">Використовувати 60 Гц, щоб зберегти заряд батареї, коли ввімкнено режим економії заряду акумулятора</string>
-    <string name="battery_saver_refresh_rate_disabled_summary">Екстремальна частота оновлення ввімкнена</string>
-    <!-- Extreme refresh rate -->
-    <string name="extreme_refresh_rate_title">Екстремальний рівень оновлення</string>
-    <string name="extreme_refresh_rate_summary">Примусово підвищити швидкість оновлення для всіх додатків</string>
-    <string name="extreme_refresh_rate_warning">Це дозволить системі вибрати найвищий рівень оновлень, ігноруючи налаштування користувача і бажані для них параметри. Додатки, які потребують додатків, можуть працювати неналежним чином.</string>
-    <!-- Confirm dialog -->
-    <string name="confirm_before_enable_title">Продовжити увімкнення?</string>
-    <!-- Battery Saver -->
-    <string name="adaptive_battery_switch_title">Увімкнути адаптивний акумулятор</string>
-    <string name="basic_battery_saver_title">Стандартний режим економії заряду акумулятора</string>
-    <string name="basic_battery_saver_summary">Обмежує візуальні ефекти та фонову активність. Увімкніть темну тему, якщо не увімкнено.</string>
-    <string name="battery_saver_reminder_category">Нагадування</string>
-    <string name="battery_saver_reminder_switch_title">Нагадування про енергозбереження</string>
-    <string name="battery_saver_reminder_switch_summary">Отримати нагадування про низький заряд батареї</string>
-    <string name="battery_saver_schedule_category">Розклад</string>
-    <string name="battery_saver_schedule_switch_title">Вмикати на основі рівня заряду акумулятора</string>
-    <string name="battery_saver_schedule_switch_summary">Режим економії заряду акумулятора вмикається, коли акумулятор зарядиться до рівня, який ви встановлюєте</string>
-    <string name="battery_schedule_title">Заплановані та нагадування</string>
-    <string name="battery_schedule_summary">Керувати при увімкненні режиму енергозбереження</string>
-    <string name="extreme_battery_saver_title">Екстремальний режим економії заряду акумулятора</string>
-    <string name="extreme_battery_saver_summary">Включає всі зміни, що зазначені вище. Також увімкнено паузи для неважливих додатків та їх сповіщень.</string>
-    <string name="smart_battery_a11y_expand_label">Розгорнути, Адаптивна батарея</string>
-    <string name="smart_battery_a11y_collapse_label">Згорнути, Адаптивний акумулятор</string>
-    <string name="smart_battery_title">Адаптивний акумулятор</string>
-    <string name="unified_battery_saver_page_intro">Збереження енергії, щоб акумулятор телефону працював довше між заряджаннями</string>
-    <!-- IME button space -->
-    <string name="show_ime_space_title">Показати пробіл для кнопки IME</string>
-    <string name="show_ime_space_summary">Увімкніть опцію швидкого перемикання між методами введення або для приховування екранної клавіатури з панелі функцій в нижній частині екрана при введенні тексту</string>
-    <!-- Pulse on music track change -->
-    <string name="pulse_on_new_tracks_title">Підсвічувати музику</string>
-    <string name="pulse_on_new_tracks_summary">Підсвічувати екран коли відтворюється новий музичний трек</string>
     <!-- Button settings -->
     <string name="touchscreen_gesture_action_play_pause_music">Відтворити/призупинити відтворення музики</string>
     <string name="hardware_keys_action_nothing">Жодної дії</string>
@@ -366,4 +324,47 @@
     <string name="power_off_verify_footer">Вимкнення перевірки, що захищає ваш пристрій, не даючи іншим вимикати його відразу після його втрати, збільшуючи шанси на відновлення. Вам лише потрібно ввести пароль екрану блокування під час вимкнення або перезапуску телефону на екрані блокування.</string>
     <string name="power_off_verify_summary">Коли пристрій заблоковано, вам потрібно буде використовувати свій пароль, щоб вимкнути або перезавантажитися.</string>
     <string name="power_off_verify_title">Вимкнути перевірку</string>
+    <!-- Battery Saver -->
+    <string name="adaptive_battery_switch_title">Увімкнути адаптивний акумулятор</string>
+    <string name="basic_battery_saver_title">Стандартний режим економії заряду акумулятора</string>
+    <string name="basic_battery_saver_summary">Обмежує візуальні ефекти та фонову активність. Увімкніть темну тему, якщо не увімкнено.</string>
+    <string name="battery_saver_reminder_category">Нагадування</string>
+    <string name="battery_saver_reminder_switch_title">Нагадування про енергозбереження</string>
+    <string name="battery_saver_reminder_switch_summary">Отримати нагадування про низький заряд батареї</string>
+    <string name="battery_saver_schedule_category">Розклад</string>
+    <string name="battery_saver_schedule_switch_title">Вмикати на основі рівня заряду акумулятора</string>
+    <string name="battery_saver_schedule_switch_summary">Режим економії заряду акумулятора вмикається, коли акумулятор зарядиться до рівня, який ви встановлюєте</string>
+    <string name="battery_schedule_title">Заплановані та нагадування</string>
+    <string name="battery_schedule_summary">Керувати при увімкненні режиму енергозбереження</string>
+    <string name="extreme_battery_saver_title">Екстремальний режим економії заряду акумулятора</string>
+    <string name="extreme_battery_saver_summary">Включає всі зміни, що зазначені вище. Також увімкнено паузи для неважливих додатків та їх сповіщень.</string>
+    <string name="smart_battery_a11y_expand_label">Розгорнути, Адаптивна батарея</string>
+    <string name="smart_battery_a11y_collapse_label">Згорнути, Адаптивний акумулятор</string>
+    <string name="smart_battery_title">Адаптивний акумулятор</string>
+    <string name="unified_battery_saver_page_intro">Збереження енергії, щоб акумулятор телефону працював довше між заряджаннями</string>
+    <!-- IME button space -->
+    <string name="show_ime_space_title">Показати пробіл для кнопки IME</string>
+    <string name="show_ime_space_summary">Увімкніть опцію швидкого перемикання між методами введення або для приховування екранної клавіатури з панелі функцій в нижній частині екрана при введенні тексту</string>
+    <!-- Pulse on music track change -->
+    <string name="pulse_on_new_tracks_title">Підсвічувати музику</string>
+    <string name="pulse_on_new_tracks_summary">Підсвічувати екран коли відтворюється новий музичний трек</string>
+    <!-- Per-app configs -->
+    <string name="per_app_config_empty_text">Відсутні встановлені додатки підтримки поточних параметрів</string>
+    <!-- Per-app refresh rate -->
+    <string name="per_app_refresh_rate_title">Максимальна частота оновлення</string>
+    <string name="per_app_refresh_rate_summary">Налаштувати ставку оновлення індивідуально для кожного додатка</string>
+    <string name="per_app_refresh_rate_default">Наслідувати систему</string>
+    <!-- Screen refresh rate -->
+    <string name="screen_refresh_rate_title">Частота оновлення екрана</string>
+    <string name="min_refresh_rate_title">Мінімальна частота оновлення</string>
+    <string name="max_refresh_rate_title">Максимальна частота оновлення</string>
+    <string name="battery_saver_refresh_rate_title">Зменшити частоту оновлення</string>
+    <string name="battery_saver_refresh_rate_summary">Використовувати 60 Гц, щоб зберегти заряд батареї, коли ввімкнено режим економії заряду акумулятора</string>
+    <string name="battery_saver_refresh_rate_disabled_summary">Екстремальна частота оновлення ввімкнена</string>
+    <!-- Extreme refresh rate -->
+    <string name="extreme_refresh_rate_title">Екстремальний рівень оновлення</string>
+    <string name="extreme_refresh_rate_summary">Примусово підвищити швидкість оновлення для всіх додатків</string>
+    <string name="extreme_refresh_rate_warning">Це дозволить системі вибрати найвищий рівень оновлень, ігноруючи налаштування користувача і бажані для них параметри. Додатки, які потребують додатків, можуть працювати неналежним чином.</string>
+    <!-- Confirm dialog -->
+    <string name="confirm_before_enable_title">Продовжити увімкнення?</string>
 </resources>
