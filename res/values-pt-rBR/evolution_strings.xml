@@ -231,6 +231,7 @@
     <!-- HDR Display -->
     <string name="hdr_display_title">Brilho de HDR melhorado</string>
     <string name="hdr_display_summary">Iluminar e expandir o intervalo de cores e clareza em imagens e vídeos de Alta Faixa Dinâmica (HDR). O conteúdo do HDR aparecerá mais claro. Isso aumentará o uso da bateria</string>
+    <string name="hdr_max_brightness_percent_title">Intensidade de exibição HDR</string>
     <!-- Ambient wake toggles -->
     <string name="doze_gesture_ambient_title">Mostrar tela ambiente</string>
     <string name="doze_gesture_ambient_summary">Mostrar a tela ambiente ao invés de ativar a tela completamente</string>
@@ -281,25 +282,42 @@ other {# horas restantes}
     <!-- Wake gestures haptics -->
     <string name="doze_gesture_vibrate_title">Resposta tátil</string>
     <string name="doze_gesture_vibrate_summary">Vibrar quando este gesto for acionado</string>
-    <!-- Per-app configs -->
-    <string name="per_app_config_empty_text">Nenhum app instalado suporta configurações atuais</string>
-    <!-- Per-app refresh rate -->
-    <string name="per_app_refresh_rate_title">Taxa de atualização por aplicativo</string>
-    <string name="per_app_refresh_rate_summary">Configurar taxa de atualização individualmente para cada app</string>
-    <string name="per_app_refresh_rate_default">Seguir sistema</string>
-    <!-- Screen refresh rate -->
-    <string name="screen_refresh_rate_title">Taxa de atualização da tela</string>
-    <string name="min_refresh_rate_title">Taxa de atualização mínima</string>
-    <string name="max_refresh_rate_title">Taxa de atualização máxima</string>
-    <string name="battery_saver_refresh_rate_title">Reduzir taxa de atualização</string>
-    <string name="battery_saver_refresh_rate_summary">Usar taxa de atualização da tela de 60 Hz para economizar energia quando o modo Economia de Bateria estiver ativado</string>
-    <string name="battery_saver_refresh_rate_disabled_summary">Taxa de atualização extrema ativada</string>
-    <!-- Extreme refresh rate -->
-    <string name="extreme_refresh_rate_title">Taxa de atualização extrema</string>
-    <string name="extreme_refresh_rate_summary">Forçar a maior taxa de atualização para todos os apps</string>
-    <string name="extreme_refresh_rate_warning">Isto garantirá que o sistema selecione a taxa de atualização mais alta, ignorando as opções preferidas do usuário e do app. Apps que exigem uma taxa de atualização específica podem ser executados de forma anormal.</string>
-    <!-- Confirm dialog -->
-    <string name="confirm_before_enable_title">Continuar a ativar?</string>
+    <!-- Button settings -->
+    <string name="touchscreen_gesture_action_play_pause_music">Reproduzir/pausar reprodução de música</string>
+    <string name="hardware_keys_action_nothing">Nenhuma ação</string>
+    <string name="hardware_keys_action_menu">Abrir/fechar menu</string>
+    <string name="hardware_keys_action_app_switch">Alternador de aplicativos recentes</string>
+    <string name="hardware_keys_action_search">Assistente de busca</string>
+    <string name="hardware_keys_action_voice_search">Pesquisa por voz</string>
+    <string name="hardware_keys_action_in_app_search">Busca dentro do aplicativo</string>
+    <string name="hardware_keys_action_launch_camera">Iniciar a câmera</string>
+    <string name="hardware_keys_action_sleep">Desligar a tela</string>
+    <string name="hardware_keys_action_last_app">Último app</string>
+    <string name="hardware_keys_action_split_screen">Dividir a tela</string>
+    <string name="hardware_keys_action_close_app">Encerrar aplicativo</string>
+    <string name="hardware_keys_action_torch">Alternar lanterna</string>
+    <string name="hardware_keys_action_screenshot">Tirar uma captura de tela</string>
+    <string name="hardware_keys_action_volume_panel">Alternar painel de volume</string>
+    <string name="hardware_keys_action_clear_all_notifications">Limpar todas as notificações</string>
+    <string name="hardware_keys_action_notifications_panel">Alternar painel de notificações</string>
+    <string name="hardware_keys_action_expand_qs_panel">Expandir painel de configurações rápidas</string>
+    <string name="hardware_keys_action_ringer_modes">Alterar modo de toque</string>
+    <!-- Three Finger Gestures -->
+    <string name="three_finger_gesture_action_title">Três gestos de deslize de dedo</string>
+    <string name="three_finger_gesture_action_dialog_title">Ações do gesto de deslizar com três dedos</string>
+    <string name="three_finger_long_press_action_title">Gestos de pressão longa com três dedos</string>
+    <string name="three_finger_long_press_action_dialog_title">Gestos de deslizar com três dedos</string>
+    <!-- NT Three finger -->
+    <string name="nt_gesture_three_finger_swipe">Deslizar três dedos</string>
+    <string name="nt_gesture_three_finger_swipe_summary">Deslize o dedo para baixo com três dedos para realizar ações.</string>
+    <string name="nt_gesture_three_finger_long_press">Pressionamento longo com três dedos</string>
+    <string name="nt_gesture_three_finger_long_press_summary">Pressione e segure com três dedos e então deslize para baixo para capturar a tela da área.</string>
+    <string name="nt_combination_power_volume_click">Desativar o botão liga/desliga &amp; botão de volume para baixo</string>
+    <string name="nt_combination_power_volume_click_summary">Desativar a função de capturar uma tela pressionando e segurando o botão liga/desliga e diminuindo o volume.</string>
+    <!-- Power off verify -->
+    <string name="power_off_verify_footer">A verificação de desligamento protege seu dispositivo, impedindo que outras pessoas o desliguem imediatamente após a perda, aumentando as chances de recuperação. Você só precisa digitar a senha da tela de bloqueio ao desligar ou reiniciar o telefone a partir da tela de bloqueio.</string>
+    <string name="power_off_verify_summary">Quando o dispositivo estiver bloqueado, você precisará usar sua senha para desligar ou reiniciar.</string>
+    <string name="power_off_verify_title">Desligar a verificação</string>
     <!-- Battery Saver -->
     <string name="adaptive_battery_switch_title">Usar Bateria Adaptável</string>
     <string name="basic_battery_saver_title">Economia de bateria padrão</string>
@@ -324,4 +342,23 @@ other {# horas restantes}
     <!-- Pulse on music track change -->
     <string name="pulse_on_new_tracks_title">Marcador de música</string>
     <string name="pulse_on_new_tracks_summary">Mostrar a tela ambiente ao reproduzir uma nova música</string>
+    <!-- Per-app configs -->
+    <string name="per_app_config_empty_text">Nenhum app instalado suporta configurações atuais</string>
+    <!-- Per-app refresh rate -->
+    <string name="per_app_refresh_rate_title">Taxa de atualização por aplicativo</string>
+    <string name="per_app_refresh_rate_summary">Configurar taxa de atualização individualmente para cada app</string>
+    <string name="per_app_refresh_rate_default">Seguir sistema</string>
+    <!-- Screen refresh rate -->
+    <string name="screen_refresh_rate_title">Taxa de atualização da tela</string>
+    <string name="min_refresh_rate_title">Taxa de atualização mínima</string>
+    <string name="max_refresh_rate_title">Taxa de atualização máxima</string>
+    <string name="battery_saver_refresh_rate_title">Reduzir taxa de atualização</string>
+    <string name="battery_saver_refresh_rate_summary">Usar taxa de atualização da tela de 60 Hz para economizar energia quando o modo Economia de Bateria estiver ativado</string>
+    <string name="battery_saver_refresh_rate_disabled_summary">Taxa de atualização extrema ativada</string>
+    <!-- Extreme refresh rate -->
+    <string name="extreme_refresh_rate_title">Taxa de atualização extrema</string>
+    <string name="extreme_refresh_rate_summary">Forçar a maior taxa de atualização para todos os apps</string>
+    <string name="extreme_refresh_rate_warning">Isto garantirá que o sistema selecione a taxa de atualização mais alta, ignorando as opções preferidas do usuário e do app. Apps que exigem uma taxa de atualização específica podem ser executados de forma anormal.</string>
+    <!-- Confirm dialog -->
+    <string name="confirm_before_enable_title">Continuar a ativar?</string>
 </resources>
