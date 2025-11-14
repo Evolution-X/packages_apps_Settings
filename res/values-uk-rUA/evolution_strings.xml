@@ -367,4 +367,7 @@
     <string name="extreme_refresh_rate_warning">Це дозволить системі вибрати найвищий рівень оновлень, ігноруючи налаштування користувача і бажані для них параметри. Додатки, які потребують додатків, можуть працювати неналежним чином.</string>
     <!-- Confirm dialog -->
     <string name="confirm_before_enable_title">Продовжити увімкнення?</string>
+    <!-- Override Mock Location restriction -->
+    <string name="override_mock_location_title">Перевизначити обмеження MockLocation</string>
+    <string name="override_mock_location_summary">Коли цю функцію ввімкнено, програми не можуть виявляти фіктивні місця розташування</string>
 </resources>
