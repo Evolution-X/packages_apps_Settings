@@ -324,24 +324,6 @@
     <string name="power_off_verify_footer">Вимкнення перевірки, що захищає ваш пристрій, не даючи іншим вимикати його відразу після його втрати, збільшуючи шанси на відновлення. Вам лише потрібно ввести пароль екрану блокування під час вимкнення або перезапуску телефону на екрані блокування.</string>
     <string name="power_off_verify_summary">Коли пристрій заблоковано, вам потрібно буде використовувати свій пароль, щоб вимкнути або перезавантажитися.</string>
     <string name="power_off_verify_title">Вимкнути перевірку</string>
-    <!-- Battery Saver -->
-    <string name="adaptive_battery_switch_title">Увімкнути адаптивний акумулятор</string>
-    <string name="basic_battery_saver_title">Стандартний режим економії заряду акумулятора</string>
-    <string name="basic_battery_saver_summary">Обмежує візуальні ефекти та фонову активність. Увімкніть темну тему, якщо не увімкнено.</string>
-    <string name="battery_saver_reminder_category">Нагадування</string>
-    <string name="battery_saver_reminder_switch_title">Нагадування про енергозбереження</string>
-    <string name="battery_saver_reminder_switch_summary">Отримати нагадування про низький заряд батареї</string>
-    <string name="battery_saver_schedule_category">Розклад</string>
-    <string name="battery_saver_schedule_switch_title">Вмикати на основі рівня заряду акумулятора</string>
-    <string name="battery_saver_schedule_switch_summary">Режим економії заряду акумулятора вмикається, коли акумулятор зарядиться до рівня, який ви встановлюєте</string>
-    <string name="battery_schedule_title">Заплановані та нагадування</string>
-    <string name="battery_schedule_summary">Керувати при увімкненні режиму енергозбереження</string>
-    <string name="extreme_battery_saver_title">Екстремальний режим економії заряду акумулятора</string>
-    <string name="extreme_battery_saver_summary">Включає всі зміни, що зазначені вище. Також увімкнено паузи для неважливих додатків та їх сповіщень.</string>
-    <string name="smart_battery_a11y_expand_label">Розгорнути, Адаптивна батарея</string>
-    <string name="smart_battery_a11y_collapse_label">Згорнути, Адаптивний акумулятор</string>
-    <string name="smart_battery_title">Адаптивний акумулятор</string>
-    <string name="unified_battery_saver_page_intro">Збереження енергії, щоб акумулятор телефону працював довше між заряджаннями</string>
     <!-- IME button space -->
     <string name="show_ime_space_title">Показати пробіл для кнопки IME</string>
     <string name="show_ime_space_summary">Увімкніть опцію швидкого перемикання між методами введення або для приховування екранної клавіатури з панелі функцій в нижній частині екрана при введенні тексту</string>
@@ -367,4 +349,7 @@
     <string name="extreme_refresh_rate_warning">Це дозволить системі вибрати найвищий рівень оновлень, ігноруючи налаштування користувача і бажані для них параметри. Додатки, які потребують додатків, можуть працювати неналежним чином.</string>
     <!-- Confirm dialog -->
     <string name="confirm_before_enable_title">Продовжити увімкнення?</string>
+    <!-- Override Mock Location restriction -->
+    <string name="override_mock_location_title">Перевизначити обмеження MockLocation</string>
+    <string name="override_mock_location_summary">Коли цю функцію ввімкнено, програми не можуть виявляти фіктивні місця розташування</string>
 </resources>
