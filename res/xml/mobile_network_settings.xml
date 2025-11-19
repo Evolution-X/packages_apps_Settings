@@ -285,6 +285,11 @@
                 settings:controller="com.android.settings.network.telephony.gsm.OpenNetworkSelectPagePreferenceController"/>
 
             <SwitchPreferenceCompat
+                android:key="force_lte_ca"
+                android:title="@string/force_lte_ca_title"
+                android:summary="@string/force_lte_ca_summary" />
+                
+            <SwitchPreferenceCompat
                 android:key="smart_5g"
                 android:title="@string/smart_5g_title"
                 android:persistent="false"
