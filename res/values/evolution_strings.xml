@@ -183,4 +183,8 @@
     <string name="app_volume">App volume</string>
     <string name="app_volume_title">Per-app volume control</string>
     <string name="app_volume_summary">Show per-app volume button into volume dialog</string>
+
+    <!-- Force LTE_CA -->
+    <string name="force_lte_ca_title">Carrier aggregation</string>
+    <string name="force_lte_ca_summary">Enhances LTE bandwidth by aggregating supported bands</string>
 </resources>
