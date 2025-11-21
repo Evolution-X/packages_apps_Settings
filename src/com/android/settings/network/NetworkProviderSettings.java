@@ -581,7 +581,9 @@ public class NetworkProviderSettings extends RestrictedDashboardFragment
 
         if (mIsInSetupWizard) {
             mConfigureWifiSettingsPreference.setVisible(false);
-            mDataUsagePreference.setVisible(false);
+            if (!isCatalystEnabled()) {
+                mDataUsagePreference.setVisible(false);
+            }
         }
 
         if (savedInstanceState != null) {
