@@ -288,7 +288,7 @@ public class WifiConfigController2 implements TextWatcher,
         mWifiManager = wifiManager;
         mAndroidKeystoreAliasLoader = androidKeystoreAliasLoader;
         mIsMultiUser = mContext.getSystemService(UserManager.class).getUserCount() > 1;
-        if (mWifiEntry != null) {
+        if (mWifiEntry != null && mWifiEntry.getWifiConfiguration() != null) {
             mIsNetworkEditable = WifiUtils.isNetworkEditable(mWifiEntry, mContext);
         }
         initWifiConfigController2(wifiEntry);
