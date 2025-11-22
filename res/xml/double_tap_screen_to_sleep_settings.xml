@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res-auto"
+    android:title="@string/double_tap_screen_to_sleep_title">
+
+    <com.android.settingslib.widget.IllustrationPreference
+        android:key="gesture_double_tap_screen_to_sleep_video"
+        settings:lottie_rawRes="@raw/lottie_tap_to_sleep"
+        settings:searchable="false" />
+
+    <SwitchPreferenceCompat
+        android:title="@string/double_tap_screen_to_sleep_title"
+        android:key="gesture_double_tap_screen_to_sleep"
+        android:summary="@string/double_tap_screen_to_sleep_summary"
+        settings:controller="com.android.settings.gestures.DoubleTapScreenToSleepPreferenceController"
+        settings:keywords="@string/keywords_double_tap_screen_to_sleep" />
+
+</PreferenceScreen>
