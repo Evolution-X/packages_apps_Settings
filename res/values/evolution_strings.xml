@@ -123,4 +123,9 @@
     <string name="reading_engine_mode_title">Comfort display (Reading mode)</string>
     <string name="display_engine_default">Default</string>
     <string name="display_engine_mode_footer_text">Inspired by Sony\'s Bravia/X-Reality engine, the Display Engine features Vivid mode for enhanced brightness and color saturation, X-Reality mode for improved detail and color accuracy, and Triluminous mode for a wider color range.</string>
+
+    <!-- Double tap to sleep -->
+   <string name="double_tap_screen_to_sleep_summary">Double tap an empty space on the lock screen to turn off the screen.</string>
+   <string name="double_tap_screen_to_sleep_title">Double tap to turn off screen</string>
+   <string name="keywords_double_tap_screen_to_sleep">double tap to sleep, lock screen</string>
 </resources>
