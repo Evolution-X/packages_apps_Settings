@@ -90,4 +90,9 @@
     <!-- Clipboard -->
     <string name="copied_to_clipboard">Copied to clipboard</string>
     <string name="longpress_to_clipboard">Long-press to copy</string>
+
+    <!-- Dt2Sleep -->
+    <string name="double_tap_screen_to_sleep_summary">Double tap an empty space on the lock screen to turn off the screen.</string>
+    <string name="double_tap_screen_to_sleep_title">Double tap to turn off screen</string>
+    <string name="keywords_double_tap_screen_to_sleep">double tap to sleep, lock screen</string>
 </resources>

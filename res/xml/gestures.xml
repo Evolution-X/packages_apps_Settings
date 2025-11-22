@@ -74,6 +74,13 @@
         settings:searchable="false"
         settings:controller="com.android.settings.gestures.TapScreenGesturePreferenceController" />
 
+    <Preference 
+        android:key="gesture_double_tap_screen_to_sleep_summary"
+        android:title="@string/double_tap_screen_to_sleep_title"
+        android:fragment="com.android.settings.gestures.DoubleTapScreenToSleepSettings"
+        settings:searchable="false"
+        settings:controller="com.android.settings.gestures.DoubleTapScreenToSleepPreferenceController" />
+
     <Preference
         android:key="gesture_double_tap_screen_input_summary"
         android:title="@string/ambient_display_title"
