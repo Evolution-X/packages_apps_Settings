@@ -369,6 +369,12 @@ public class WifiUtils extends com.android.settingslib.wifi.WifiUtils {
 
         int currentUserId = currentUserHandle.getIdentifier();
 
+        WifiConfiguration config = wifiEntry.getWifiConfiguration();
+        if (config == null) {
+            // Networks without a saved configuration cannot be edited
+            return false;
+        }
+
         int creatorUid = wifiEntry.getWifiConfiguration().creatorUid;
         UserHandle userHandle = UserHandle.getUserHandleForUid(creatorUid);
 
