@@ -16,12 +16,17 @@
 
 package com.android.settings.gestures;
 
+import android.app.ActivityManager;
 import android.app.settings.SettingsEnums;
 import android.content.Context;
 import android.content.Intent;
+import android.content.om.IOverlayManager;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.os.Bundle;
+import android.os.RemoteException;
+import android.os.ServiceManager;
+import android.os.UserHandle;
 import android.provider.Settings;
 import android.view.WindowManager;
 
@@ -100,8 +105,19 @@ public class GestureNavigationSettingsFragment extends DashboardFragment {
 
         gestureHintPref.setOnPreferenceChangeListener((preference, newValue) -> {
             if (Utils.isPackageInstalled(getContext(), NEXUSLAUNCHER_PACKAGE_NAME)) {
-                Utils.toggleOverlay(getContext(), NOGESTUREHINT_OVERLAY, !(Boolean) newValue);
-                Utils.restartApp(NEXUSLAUNCHER_PACKAGE_NAME, getContext());
+                IOverlayManager overlayManager = IOverlayManager.Stub.asInterface(
+                        ServiceManager.getService(Context.OVERLAY_SERVICE));
+                try {
+                    overlayManager.setEnabled(NOGESTUREHINT_OVERLAY, !(Boolean) newValue, UserHandle.myUserId());
+                } catch (RemoteException e) {
+                    e.printStackTrace();
+                }
+                try {
+                    ActivityManager.getService().forceStopPackage(
+                            NEXUSLAUNCHER_PACKAGE_NAME, UserHandle.USER_CURRENT);
+                } catch (RemoteException e) {
+                    e.printStackTrace();
+                }
             }
 
             return true;
