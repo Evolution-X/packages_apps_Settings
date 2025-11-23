@@ -108,37 +108,42 @@ public class ChooseLockPatternSize extends SettingsActivity {
         @Override
         public void onViewCreated(View view, Bundle savedInstanceState) {
             super.onViewCreated(view, savedInstanceState);
-            GlifPreferenceLayout layout = (GlifPreferenceLayout) view;
-            layout.setDividerItemDecoration(new SettingsDividerItemDecoration(getContext()));
 
-            layout.setIcon(getContext().getDrawable(R.drawable.ic_lock));
+            if (view instanceof GlifPreferenceLayout) {
+                final GlifPreferenceLayout layout = (GlifPreferenceLayout) view;
 
-            if (getActivity() != null) {
-                getActivity().setTitle(R.string.lock_settings_picker_pattern_size_message);
-            }
-
-            layout.setHeaderText(R.string.lock_settings_picker_pattern_size_message);
-
-            // Remove the padding on the start of the header text.
-            if (ThemeHelper.shouldApplyMaterialYouStyle(getContext())) {
-                final LinearLayout headerLayout = layout.findManagedViewById(
-                        com.google.android.setupdesign.R.id.sud_layout_header);
-                if (headerLayout != null) {
-                    headerLayout.setPadding(0, layout.getPaddingTop(), 0,
-                            layout.getPaddingBottom());
+                final boolean isExpressiveStyle = ThemeHelper.shouldApplyGlifExpressiveStyle(
+                        requireContext());
+                if (!isExpressiveStyle) {
+                    layout.setDividerItemDecoration(
+                            new SettingsDividerItemDecoration(getContext()));
+                    layout.setDividerInset(getContext().getResources().getDimensionPixelSize(
+                            com.google.android.setupdesign.R.dimen
+                                    .sud_items_glif_text_divider_inset));
                 }
-            }
 
-            // Use the dividers in SetupWizardRecyclerLayout. Suppress the dividers in
-            // PreferenceFragment.
-            setDivider(null);
+                layout.setIcon(getContext().getDrawable(R.drawable.ic_lock));
+
+                if (getActivity() != null) {
+                    getActivity().setTitle(R.string.lock_settings_picker_pattern_size_message);
+                }
+
+                layout.setHeaderText(R.string.lock_settings_picker_pattern_size_message);
+                // Use the dividers in SetupWizardRecyclerLayout. Suppress the dividers in
+                // PreferenceFragment.
+                setDivider(null);
+            }
         }
 
         @Override
         public RecyclerView onCreateRecyclerView(LayoutInflater inflater, ViewGroup parent,
                 Bundle savedInstanceState) {
-            GlifPreferenceLayout layout = (GlifPreferenceLayout) parent;
-            return layout.onCreateRecyclerView(inflater, parent, savedInstanceState);
+            if (parent instanceof GlifPreferenceLayout layout) {
+                // Usually for setup wizard
+                return layout.onCreateRecyclerView(inflater, parent, savedInstanceState);
+            } else {
+                return super.onCreateRecyclerView(inflater, parent, savedInstanceState);
+            }
         }
 
         @Override
