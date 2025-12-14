@@ -203,9 +203,14 @@ public class UsbDetailsFunctionsController extends UsbDetailsController
     private boolean isAuthRequired(long function) {
         // Since webcam and MIDI don't transfer any persistent data over USB
         // don't require authentication.
+        if (function == UsbManager.FUNCTION_UVC || function == UsbManager.FUNCTION_MIDI) {
+            return false;
+        }
+
         if (WifiDppUtils.isUnlockedWithinSeconds(USB_MODE_KEY_ALIAS, MAX_UNLOCK_SECONDS)) {
             return false;
         }
+
         return true;
     }
 
