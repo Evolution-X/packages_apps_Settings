@@ -324,4 +324,10 @@
     <string name="refresh_rate_summary">A maximum refresh rate of</string>
     <string name="refresh_rate_high_summary">for smoother scrolling and animations.</string>
     <string name="refresh_rate_standard_summary">for better battery life.</string>
+
+    <!-- Locale Picker -->
+    <string name="clear_search_query_description">Clear query</string>
+    <string name="language_picker_page">Language picker page</string>
+    <string name="search_region">Search regions</string>
+    <string name="search_region_page">Search region page</string>
 </resources>
