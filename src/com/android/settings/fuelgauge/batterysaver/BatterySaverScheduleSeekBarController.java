@@ -48,8 +48,8 @@ import com.android.settingslib.fuelgauge.BatterySaverUtils;
 public class BatterySaverScheduleSeekBarController
         implements OnPreferenceChangeListener, OnSeekBarChangeListener {
 
-    public static final int MAX_SEEKBAR_VALUE = 15;
-    public static final int MIN_SEEKBAR_VALUE = 4;
+    public static final int MAX_SEEKBAR_VALUE = 18;
+    public static final int MIN_SEEKBAR_VALUE = 1;
     public static final String KEY_BATTERY_SAVER_SEEK_BAR = "battery_saver_seek_bar";
     private static final int LEVEL_UNIT_SCALE = 5;
 
@@ -104,10 +104,12 @@ public class BatterySaverScheduleSeekBarController
         if (KEY_PERCENTAGE.equals(mode)) {
             final int threshold =
                     Settings.Global.getInt(resolver, Global.LOW_POWER_MODE_TRIGGER_LEVEL, 0);
-            final int currentSeekbarValue = Math.max(threshold / 5, MIN_SEEKBAR_VALUE);
+            final int currentSeekbarValue = Math.max(
+                    threshold / LEVEL_UNIT_SCALE, MIN_SEEKBAR_VALUE);
             mSeekBarPreference.setVisible(true);
             mSeekBarPreference.setProgress(currentSeekbarValue);
-            final CharSequence stateDescription = formatStateDescription(currentSeekbarValue * 5);
+            final CharSequence stateDescription = formatStateDescription(
+                    currentSeekbarValue * LEVEL_UNIT_SCALE);
             mSeekBarPreference.setTitle(stateDescription);
             mSeekBarPreference.overrideSeekBarStateDescription(stateDescription);
         } else {
