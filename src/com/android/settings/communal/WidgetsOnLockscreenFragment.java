@@ -17,6 +17,7 @@
 package com.android.settings.communal;
 
 import android.app.settings.SettingsEnums;
+import android.content.Context;
 
 import com.android.settings.R;
 import com.android.settings.dashboard.DashboardFragment;
@@ -46,5 +47,10 @@ public class WidgetsOnLockscreenFragment extends DashboardFragment {
     }
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.widgets_on_lockscreen_settings);
+            new BaseSearchIndexProvider() {
+                @Override
+                protected boolean isPageSearchEnabled(Context context) {
+                    return false;
+                }
+            };
 }
