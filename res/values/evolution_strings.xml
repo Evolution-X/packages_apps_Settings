@@ -216,4 +216,8 @@
     <!-- Fingerprint lockout -->
     <string name="fingerprint_lockout_title">Disable fingerprint lockout</string>
     <string name="fingerprint_lockout_summary">Deactivates 30 second timeout as well as permanent lockout after multiple failed fingerprint unlock attempts</string>
+
+    <!-- Multi Audio Focus -->
+    <string name="multi_audio_focus_title">Multi audio focus</string>
+    <string name="multi_audio_focus_summary">Allow multiple apps to play audio simultaneously</string>
 </resources>
