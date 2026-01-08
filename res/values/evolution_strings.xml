@@ -390,4 +390,8 @@
     <!-- Vibration settings for sliders -->
     <string name="accessibility_slider_haptics_category_title">Sliders</string>
     <string name="accessibility_volume_dialog_haptic_title">Volume slider haptic</string>
+
+    <!-- Multi Audio Focus -->
+    <string name="multi_audio_focus_title">Multi audio focus</string>
+    <string name="multi_audio_focus_summary">Allow multiple apps to play audio simultaneously</string>
 </resources>
