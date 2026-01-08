@@ -21,11 +21,13 @@ import static android.app.admin.DevicePolicyResources.Strings.Settings.WORK_PROF
 import android.app.settings.SettingsEnums;
 import android.content.Context;
 import android.content.Intent;
+import android.media.AudioManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.os.UserHandle;
+import android.provider.Settings;
 import android.text.TextUtils;
 
 import androidx.annotation.NonNull;
@@ -49,6 +51,8 @@ import com.android.settingslib.core.instrumentation.Instrumentable;
 import com.android.settingslib.core.lifecycle.Lifecycle;
 import com.android.settingslib.preference.UtilsKt;
 import com.android.settingslib.search.SearchIndexable;
+
+import org.evolution.settings.preferences.SystemSettingSwitchPreference;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -123,6 +127,18 @@ public class SoundSettings extends DashboardFragment implements OnActivityResult
                 ((VolumeSliderPreference) preference).setCallback(mVolumeSliderCallback);
             }
             return null;
+        });
+
+        boolean mediaFocus = Settings.System.getIntForUser(getContext().getContentResolver(),
+            Settings.System.MULTI_AUDIO_FOCUS_ENABLED, 0, UserHandle.USER_CURRENT) != 0;
+        SystemSettingSwitchPreference mediaFocusPref =
+            (SystemSettingSwitchPreference) findPreference("multi_audio_focus_enabled");
+        mediaFocusPref.setChecked(mediaFocus);
+        mediaFocusPref.setOnPreferenceChangeListener((preference, newValue) -> {
+            final boolean enabled = (Boolean) newValue;
+            AudioManager audioManager = getContext().getSystemService(AudioManager.class);
+            audioManager.setMultiAudioFocusEnabled(enabled);
+            return true;
         });
     }
 
