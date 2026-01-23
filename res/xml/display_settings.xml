@@ -279,6 +279,12 @@
             android:key="lift_to_wake"
             android:title="@string/lift_to_wake_title"/>
 
+        <Preference
+            android:key="blur_settings"
+            android:title="@string/window_blurs"
+            android:fragment="com.android.settings.display.BlurSettings"
+            settings:controller="com.android.settings.display.BlurSettingsPreferenceController" />
+
         <SwitchPreferenceCompat
             android:key="tap_to_wake"
             android:title="@string/tap_to_wake"
