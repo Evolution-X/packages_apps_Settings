@@ -32,6 +32,7 @@ import com.android.settings.display.ExternalDisplayPreferenceController;
 import com.android.settings.display.LiftToWakePreferenceController;
 import com.android.settings.display.ShowOperatorNamePreferenceController;
 import com.android.settings.display.TapToWakePreferenceController;
+import com.android.settings.display.BlurSettingsPreferenceController;
 import com.android.settings.display.ThemePreferenceController;
 import com.android.settings.display.VrDisplayPreferenceController;
 import com.android.settings.display.EmulateDisplayCutoutPreferenceController;
@@ -99,6 +100,7 @@ public class DisplaySettings extends DashboardFragment {
         controllers.add(new CameraGesturePreferenceController(context));
         controllers.add(new LiftToWakePreferenceController(context));
         controllers.add(new TapToWakePreferenceController(context));
+        controllers.add(new BlurSettingsPreferenceController(context));
         controllers.add(new VrDisplayPreferenceController(context));
         controllers.add(new ShowOperatorNamePreferenceController(context));
         controllers.add(new ThemePreferenceController(context));
