@@ -12,8 +12,6 @@ class AdaptiveBatteryTopIntroPreference :
 
     companion object {}
 
-    override fun isIndexable(context: Context) = false
-
     override val key: String
         get() = "adaptive_battery_top_intro"
 
