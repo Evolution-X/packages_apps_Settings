@@ -6,21 +6,36 @@ import com.android.settings.metrics.PreferenceActionMetricsProvider
 import com.android.settingslib.datastore.KeyValueStore
 import com.android.settingslib.datastore.KeyValueStoreDelegate
 import com.android.settingslib.datastore.SettingsGlobalStore
-import com.android.settingslib.metadata.MainSwitchPreference
+import com.android.settingslib.metadata.BooleanValuePreference
 import com.android.settingslib.metadata.PreferenceAvailabilityProvider
 import com.android.settingslib.metadata.ReadWritePermit
 import com.android.settingslib.metadata.SensitivityLevel
+import com.android.settingslib.widget.MainSwitchPreferenceBinding
 import com.android.settings.R
 
-class AdaptiveBatteryPreference :
-    MainSwitchPreference(
-        "adaptive_battery_management_enabled",
-        R.string.adaptive_battery_switch_title,
-    ),
+class AdaptiveBatteryPreference(
+    private val dataStore: KeyValueStore
+) : BooleanValuePreference,
+    MainSwitchPreferenceBinding,
     PreferenceActionMetricsProvider,
     PreferenceAvailabilityProvider {
 
-    companion object {}
+    companion object {
+        fun getAdaptiveBatteryDataStore(context: Context): KeyValueStore {
+            val store = SettingsGlobalStore.get(context)
+            store.setDefaultValue(
+                "adaptive_battery_management_enabled",
+                true
+            )
+            return store
+        }
+    }
+
+    override val key: String
+        get() = "adaptive_battery_management_enabled"
+
+    override val title: Int
+        get() = R.string.adaptive_battery_switch_title
 
     override val preferenceActionMetrics: Int
         get() = ACTION_ADAPTIVE_BATTERY

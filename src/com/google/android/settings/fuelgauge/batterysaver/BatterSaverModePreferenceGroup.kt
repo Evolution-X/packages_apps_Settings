@@ -11,7 +11,9 @@ class BatterSaverModePreferenceGroup : PreferenceGroup, PreferenceBinding {
         get() = "battery_saver_group"
 
     override fun bind(preference: Preference, preferenceMetadata: PreferenceMetadata) {
-        preference.setLayoutResource(com.android.settings.R.layout.preference_category_no_label)
+        preference.setLayoutResource(
+                    com.android.settingslib.widget.category.R.layout
+                            .settingslib_expressive_untitled_preference_category)
         super.bind(preference, preferenceMetadata)
     }
 }
