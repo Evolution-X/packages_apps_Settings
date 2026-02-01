@@ -38,6 +38,8 @@
     <string name="heads_up_notifications_enabled_summary">Küçük bir yüzen pencerede öncelikli bildirimleri görüntüle</string>
     <string name="high_touch_sensitivity_title">Yüksek dokunma hassasiyeti</string>
     <string name="high_touch_sensitivity_summary">Dokunmatik ekran hassasiyetini arttırarak eldiven ile kullanıma olanak verir</string>
+    <string name="tethering_allow_vpn_upstreams_title">Bağlanan aygıtlar için VPN kullan</string>
+    <string name="tethering_allow_vpn_upstreams_summary">Bu aygıt VPN kullanırken hotspot ile bağlanan tüm aygıtlar da aynı VPN\'yi kullanacaktır.</string>
     <string name="lock_settings_picker_pattern_size_message">Bir desen boyutu seçin</string>
     <string name="lockpattern_settings_enable_error_path_title">Desen hatasını göster</string>
     <string name="lockpattern_settings_enable_dots_title">Desen noktalarını göster</string>
