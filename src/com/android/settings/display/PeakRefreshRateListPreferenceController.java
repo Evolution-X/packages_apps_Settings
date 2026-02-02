@@ -87,7 +87,9 @@ public class PeakRefreshRateListPreferenceController extends BasePreferenceContr
                         m.getPhysicalHeight() == mode.getPhysicalHeight()) {
                     mEntries.add(String.format("%.02fHz", m.getRefreshRate())
                             .replaceAll("[\\.,]00", ""));
-                    mValues.add(String.format(Locale.US, "%.02f", m.getRefreshRate()));
+                    mValues.add(mValues.isEmpty()
+                            ? "Infinity"
+                            : String.format(Locale.US, "%.02f", m.getRefreshRate()));
                 }
             }
         }
