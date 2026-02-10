@@ -390,4 +390,8 @@
     <string name="app_volume">App volume</string>
     <string name="app_volume_title">Per-app volume control</string>
     <string name="app_volume_summary">Show per-app volume button into volume dialog</string>
+
+    <!-- Vibration settings for sliders -->
+    <string name="accessibility_slider_haptics_category_title">Sliders</string>
+    <string name="accessibility_volume_dialog_haptic_title">Volume slider haptic</string>
 </resources>
