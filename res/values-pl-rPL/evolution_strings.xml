@@ -279,9 +279,6 @@
     <string name="language_picker_page">Strona wyboru języka</string>
     <string name="search_region">Wyszukaj region</string>
     <string name="search_region_page">Wyszukaj stronę regionu</string>
-    <!-- Multi Audio Focus -->
-    <string name="multi_audio_focus_title">Skoncentrowanie wielu dźwięków</string>
-    <string name="multi_audio_focus_summary">Zezwalaj wielu aplikacjom na jednoczesne odtwarzanie dźwięku</string>
     <!-- Doze brightness -->
     <string name="doze_brightness_force_title">Wymuś wartość jasności</string>
     <string name="doze_brightness_force_summary">Użyj niestandardowej wartości jasności zamiast jasności ekranu</string>
