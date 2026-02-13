@@ -273,9 +273,6 @@
     <string name="language_picker_page">Trang chọn ngôn ngữ</string>
     <string name="search_region">Tìm kiếm vùng</string>
     <string name="search_region_page">Trang tìm kiếm vùng</string>
-    <!-- Multi Audio Focus -->
-    <string name="multi_audio_focus_title">Đa tiêu điểm âm thanh</string>
-    <string name="multi_audio_focus_summary">Cho phép nhiều ứng dụng phát âm thanh đồng thời</string>
     <!-- Doze brightness -->
     <string name="doze_brightness_force_title">Giá trị độ sáng cưỡng bức</string>
     <string name="doze_brightness_force_summary">Sử dụng các giá trị độ sáng tùy chỉnh thay vì độ sáng màn hình</string>
