@@ -8,16 +8,12 @@
     <string name="evolution_license_title">Evolução X legal</string>
     <!-- Android version screen, build maintainer -->
     <string name="build_maintainer">Mantenedor</string>
-    <!-- Screenshot shutter -->
-    <string name="screenshot_shutter_sound_title">Som de captura de tela</string>
+    <string name="device_name">Dispositivo</string>
     <!-- Deep Sleep percentage in device info -->
     <string name="status_sleep_time">Sono profundo</string>
     <!-- Show clipboard overlay -->
     <string name="show_clipboard_overlay_title">Mostrar sobreposição de texto</string>
     <string name="show_clipboard_overlay_summary">Exibe uma janela no canto inferior esquerdo da tela quando algum texto for copiado para área de transferência</string>
-    <!-- Force LTE_CA -->
-    <string name="force_lte_ca">Forçar LTE CA</string>
-    <string name="force_lte_ca_summary">Forçar agregação de portadora LTE</string>
     <!-- AdGuard DNS Option -->
     <!-- AdGuard DNS hostname -->
     <!-- Open DNS Option -->
@@ -26,14 +22,6 @@
     <!-- Cleanbrowsing DNS hostname -->
     <!-- Quad9 DNS Option -->
     <!-- Quad9 DNS hostname -->
-    <!-- Per-app volume -->
-    <string name="app_volume">Volume de aplicativos</string>
-    <string name="app_volume_title">Controle de volume por aplicativo</string>
-    <string name="app_volume_summary">Permite definir diferentes níveis de volume para cada aplicativo</string>
-    <!-- Wi-Fi MAC address randomization -->
-    <string name="wifi_per_connection_random_mac_addr">Usar por conexão MAC aleatório (padrão)</string>
-    <string name="wifi_per_network_random_mac_addr">Usar MAC fornecido pela rede</string>
-    <string name="wifi_device_mac_addr">Usar MAC do dispositivo</string>
     <!-- Hardware info -->
     <string name="device_market_name">Nome de mercado</string>
     <string name="soc_model">Modelo do SoC</string>
@@ -138,6 +126,8 @@
     <!-- App search preference -->
     <string name="search">Pesquisar</string>
     <string name="search_apps">Pesquisar aplicativos</string>
+    <!-- Device SKU -->
+    <string name="hardware_sku">Hardware SKU</string>
     <!-- App lock -->
     <string name="app_lock_title">Bloqueio de aplicativos</string>
     <plurals name="app_lock_summary">
@@ -172,40 +162,19 @@
     <string name="increasing_ring_volume_option_title">Toque crescente</string>
     <string name="increasing_ring_min_volume_title">Volume inicial</string>
     <string name="increasing_ring_ramp_up_time_title">Intervalo de aumento</string>
-    <!-- Back gesture height -->
-    <string name="back_height_low_label">Largo</string>
-    <string name="back_height_high_label">Inferior</string>
-    <string name="back_height_title">Área sensível para o gesto voltar</string>
-    <string name="back_height_summary">Altura da área da tela usada como região sensível para o gesto de voltar</string>
-    <!-- Back gesture animation -->
-    <string name="back_gesture_arrow_title">Animação no gesto de voltar</string>
-    <string name="back_gesture_arrow_summary">Mostrar uma seta animada para o gesto de voltar</string>
     <!-- Enforce DNS for VPN -->
     <string name="vpn_enforce_dns_title">Desabilitar para VPN</string>
     <string name="vpn_enforce_dns_summary">Desativar o DNS privado quando conectado a uma VPN\nRestaurará ao desconectar</string>
     <!-- Cycle through ringer modes gesture -->
     <string name="prevent_ringing_option_cycle">Ciclo entre modos</string>
     <string name="prevent_ringing_option_cycle_summary">Ligado (alternar entre modos)</string>
-    <!-- Volume Steps -->
-    <string name="volume_steps_title">Níveis de volume</string>
-    <string name="volume_steps_summary">Controle os níveis de volume para cada setor</string>
-    <string name="max_music_volume_title">Mídia</string>
-    <string name="max_call_volume_title">Chamadas</string>
-    <string name="max_alarm_volume_title">Alarmes</string>
-    <string name="steps_unit">passos</string>
-    <!-- AOD/Extra dim schedule -->
-    <string name="extra_dim_schedule_title">Escurecer a tela programado</string>
-    <string name="string_disabled">Desativado</string>
+    <!-- AOD Schedule -->
     <string name="always_on_display_schedule_title">Cronograma da tela ambiente sempre ativa</string>
+    <string name="string_disabled">Desativado</string>
     <string name="always_on_display_schedule_sunset">Pôr do sol</string>
     <string name="always_on_display_schedule_sunrise">Nascer do sol</string>
     <string name="always_on_display_schedule_mixed_sunset">Ativado do anoitecer até um tempo específico</string>
     <string name="always_on_display_schedule_mixed_sunrise">Ativado do tempo específico até o amanhecer</string>
-    <!-- Vibration patterns -->
-    <string name="vibration_pattern_title">Padrão de vibração do toque</string>
-    <string name="pattern_custom">Personalizado</string>
-    <string name="custom_vibration_pattern_title">Padrão personalizado</string>
-    <string name="custom_vibration_pattern_summary">Definir um padrão de vibração personalizado</string>
     <!-- Idle manager -->
     <string name="idle_manager_title">Gerenciador de ociosidade</string>
     <string name="idle_manager_summary">Parar todos os processos em segundo plano não essenciais quando o dispositivo entrar em modo ocioso</string>
@@ -228,114 +197,25 @@
     <string name="triluminos_engine_mode_title">Exibição de Triluminos</string>
     <string name="display_engine_default">Padrão</string>
     <string name="display_engine_mode_footer_text">Inspirado pelo mecanismo Bravia/X-Realidade de Sony, o mecanismo de exibição apresenta recursos vivivid para melhor brilho e saturação de cor Modo X-Realidade para melhorar a precisão dos detalhes e da cor e o modo Triluminos para uma notória precisão de cor.</string>
-    <!-- HDR Display -->
-    <string name="hdr_display_title">Brilho de HDR melhorado</string>
-    <string name="hdr_display_summary">Iluminar e expandir o intervalo de cores e clareza em imagens e vídeos de Alta Faixa Dinâmica (HDR). O conteúdo do HDR aparecerá mais claro. Isso aumentará o uso da bateria</string>
-    <string name="hdr_max_brightness_percent_title">Intensidade de exibição HDR</string>
     <!-- Ambient wake toggles -->
     <string name="doze_gesture_ambient_title">Mostrar tela ambiente</string>
     <string name="doze_gesture_ambient_summary">Mostrar a tela ambiente ao invés de ativar a tela completamente</string>
     <string name="gesture_wake_ambient">Mostrar tela ambiente</string>
     <string name="gesture_wake">Acordar totalmente</string>
     <!-- Pocket mode -->
-    <string name="proximity_wake_title">Prevenir ligar a tela acidentalmente</string>
+    <string name="proximity_wake_title">Modo de Bolso</string>
     <string name="proximity_wake_summary">Verifique o sensor de proximidade antes de ativar a tela</string>
-    <!-- Adaptive Playback -->
-    <string name="adaptive_playback_screen_title">Pausa inteligente</string>
-    <string name="adaptive_playback_enabled">Pausa inteligente</string>
-    <string name="adaptive_playback_disabled_summary">Desativado</string>
-    <string name="adaptive_playback_intro_text">Pausa automaticamente a mídia quando o volume é silenciado e retoma automaticamente quando o volume é restaurado dentro do tempo definido.</string>
-    <string name="adaptive_playback_timeout_title">Usar um tempo limite de</string>
-    <string name="adaptive_playback_timeout_none">Sem tempo limite</string>
-    <string name="adaptive_playback_timeout_none_summary">Ativado (sem limite de tempo)</string>
-    <string name="adaptive_playback_timeout_30_secs">30 segundos</string>
-    <string name="adaptive_playback_timeout_30_secs_summary">Ativado (30 segundos)</string>
-    <string name="adaptive_playback_timeout_1_min">1 minuto</string>
-    <string name="adaptive_playback_timeout_1_min_summary">Ativado (1 minuto)</string>
-    <string name="adaptive_playback_timeout_2_min">2 minutos</string>
-    <string name="adaptive_playback_timeout_2_min_summary">Ativado (2 minutos)</string>
-    <string name="adaptive_playback_timeout_5_min">5 minutos</string>
-    <string name="adaptive_playback_timeout_5_min_summary">Ativado (5 minutos)</string>
-    <string name="adaptive_playback_timeout_10_min">10 minutos</string>
-    <string name="adaptive_playback_timeout_10_min_summary">Ativado (10 minutos)</string>
     <!-- Reset auto brightness adjustment -->
     <string name="reset_auto_brightness_adjustment_title">Resetar preferências</string>
     <string name="reset_auto_brightness_adjustment_summary">Deixe o sistema esquecer sua preferência de brilho e redefini-la para o padrão</string>
     <string name="reset_auto_brightness_adjustment_done">Preferências de brilho automático foram redefinidas</string>
-    <!-- Force dark mode -->
-    <string name="force_dark_title">Modo escuro para aplicativos de terceiros</string>
-    <string name="force_dark_summary">Força as cores mais escuras em apps que carecem de modo escuro. Algumas telas podem aparecer desligadas.</string>
-    <!-- Data Usage Cycle -->
-    <string name="billing_cycle_type_title">Tipo de ciclo de uso de dados móveis</string>
-    <string name="billing_cycle_type_monthly">Mensalmente</string>
-    <string name="billing_cycle_type_weekly">Semanalmente</string>
-    <string name="billing_cycle_type_daily">Diariamente</string>
-    <string name="billing_cycle_less_than_one_hour_left">Resta menos de 1 hora</string>
-    <string name="billing_cycle_hours_left">{count, plural,
-=1 {# hora restante}
-other {# horas restantes}
-}</string>
-    <string name="cycle_type_weekly_title">Data do ciclo de uso</string>
-    <string name="cycle_type_weekly_sub">Dia de cada semana:\n1 = segunda-feira</string>
-    <string name="cycle_type_daily_title">Hora de redefinição do ciclo de uso</string>
-    <string name="cycle_type_daily_sub">Hora de cada dia:</string>
     <!-- Wake gestures haptics -->
     <string name="doze_gesture_vibrate_title">Resposta tátil</string>
     <string name="doze_gesture_vibrate_summary">Vibrar quando este gesto for acionado</string>
-    <!-- Button settings -->
-    <string name="touchscreen_gesture_action_play_pause_music">Reproduzir/pausar reprodução de música</string>
-    <string name="hardware_keys_action_nothing">Nenhuma ação</string>
-    <string name="hardware_keys_action_menu">Abrir/fechar menu</string>
-    <string name="hardware_keys_action_app_switch">Alternador de aplicativos recentes</string>
-    <string name="hardware_keys_action_search">Assistente de busca</string>
-    <string name="hardware_keys_action_voice_search">Pesquisa por voz</string>
-    <string name="hardware_keys_action_in_app_search">Busca dentro do aplicativo</string>
-    <string name="hardware_keys_action_launch_camera">Iniciar a câmera</string>
-    <string name="hardware_keys_action_sleep">Desligar a tela</string>
-    <string name="hardware_keys_action_last_app">Último app</string>
-    <string name="hardware_keys_action_split_screen">Dividir a tela</string>
-    <string name="hardware_keys_action_close_app">Encerrar aplicativo</string>
-    <string name="hardware_keys_action_torch">Alternar lanterna</string>
-    <string name="hardware_keys_action_screenshot">Tirar uma captura de tela</string>
-    <string name="hardware_keys_action_volume_panel">Alternar painel de volume</string>
-    <string name="hardware_keys_action_clear_all_notifications">Limpar todas as notificações</string>
-    <string name="hardware_keys_action_notifications_panel">Alternar painel de notificações</string>
-    <string name="hardware_keys_action_expand_qs_panel">Expandir painel de configurações rápidas</string>
-    <string name="hardware_keys_action_ringer_modes">Alterar modo de toque</string>
-    <!-- Three Finger Gestures -->
-    <string name="three_finger_gesture_action_title">Três gestos de deslize de dedo</string>
-    <string name="three_finger_gesture_action_dialog_title">Ações do gesto de deslizar com três dedos</string>
-    <string name="three_finger_long_press_action_title">Gestos de pressão longa com três dedos</string>
-    <string name="three_finger_long_press_action_dialog_title">Gestos de deslizar com três dedos</string>
-    <!-- NT Three finger -->
-    <string name="nt_gesture_three_finger_swipe">Deslizar três dedos</string>
-    <string name="nt_gesture_three_finger_swipe_summary">Deslize o dedo para baixo com três dedos para realizar ações.</string>
-    <string name="nt_gesture_three_finger_long_press">Pressionamento longo com três dedos</string>
-    <string name="nt_gesture_three_finger_long_press_summary">Pressione e segure com três dedos e então deslize para baixo para capturar a tela da área.</string>
-    <string name="nt_combination_power_volume_click">Desativar o botão liga/desliga &amp; botão de volume para baixo</string>
-    <string name="nt_combination_power_volume_click_summary">Desativar a função de capturar uma tela pressionando e segurando o botão liga/desliga e diminuindo o volume.</string>
     <!-- Power off verify -->
     <string name="power_off_verify_footer">A verificação de desligamento protege seu dispositivo, impedindo que outras pessoas o desliguem imediatamente após a perda, aumentando as chances de recuperação. Você só precisa digitar a senha da tela de bloqueio ao desligar ou reiniciar o telefone a partir da tela de bloqueio.</string>
     <string name="power_off_verify_summary">Quando o dispositivo estiver bloqueado, você precisará usar sua senha para desligar ou reiniciar.</string>
     <string name="power_off_verify_title">Desligar a verificação</string>
-    <!-- Battery Saver -->
-    <string name="adaptive_battery_switch_title">Usar Bateria Adaptável</string>
-    <string name="basic_battery_saver_title">Economia de bateria padrão</string>
-    <string name="basic_battery_saver_summary">Limita efeitos visuais e atividade em segundo plano. Ativa o tema Escuro, se não estiver ativado.</string>
-    <string name="battery_saver_reminder_category">Lembretes</string>
-    <string name="battery_saver_reminder_switch_title">Lembretes da Economia de bateria</string>
-    <string name="battery_saver_reminder_switch_summary">Obter lembretes quando a bateria estiver fraca</string>
-    <string name="battery_saver_schedule_category">Agendar</string>
-    <string name="battery_saver_schedule_switch_title">Ativar com base no nível da bateria</string>
-    <string name="battery_saver_schedule_switch_summary">A Economia de bateria é ativada quando a bateria cai para um nível definido</string>
-    <string name="battery_schedule_title">Programação e lembretes</string>
-    <string name="battery_schedule_summary">Gerenciar quando a Economia de bateria for ativada</string>
-    <string name="extreme_battery_saver_title">Economia de Bateria Extrema</string>
-    <string name="extreme_battery_saver_summary">Inclui todas as alterações listadas acima. Também pausa os apps não essenciais e suas notificações.</string>
-    <string name="smart_battery_a11y_expand_label">Expandir bateria adaptável</string>
-    <string name="smart_battery_a11y_collapse_label">Colapso, Bateria Adaptativa</string>
-    <string name="smart_battery_title">Bateria Adaptável</string>
-    <string name="unified_battery_saver_page_intro">Economize energia para ajudar a bateria do telefone a durar mais entre as cargas</string>
     <!-- IME button space -->
     <string name="show_ime_space_title">Mostrar espaço do botão IME</string>
     <string name="show_ime_space_summary">Habilite o recurso de troca rápida do método de entrada para alternar os métodos de entrada ou ocultar o teclado na tela da barra de recursos na parte inferior da tela ao digitar</string>
@@ -361,4 +241,74 @@ other {# horas restantes}
     <string name="extreme_refresh_rate_warning">Isto garantirá que o sistema selecione a taxa de atualização mais alta, ignorando as opções preferidas do usuário e do app. Apps que exigem uma taxa de atualização específica podem ser executados de forma anormal.</string>
     <!-- Confirm dialog -->
     <string name="confirm_before_enable_title">Continuar a ativar?</string>
+    <!-- Override Mock Location restriction -->
+    <string name="override_mock_location_title">Substituir restrição de MockLocation</string>
+    <string name="override_mock_location_summary">Quando ativado, os aplicativos não podem detectar localizações fictícias</string>
+    <!-- Force LTE_CA -->
+    <string name="force_lte_ca_title">Agregação da transportadora</string>
+    <string name="force_lte_ca_summary">Forçar agregação de portadora LTE</string>
+    <!-- Screenshot shutter -->
+    <string name="screenshot_shutter_sound_title">Som de captura de tela</string>
+    <!-- Back gesture height -->
+    <string name="back_height_low_label">Largo</string>
+    <string name="back_height_high_label">Inferior</string>
+    <string name="back_height_title">Área sensível para o gesto voltar</string>
+    <string name="back_height_summary">Altura da área da tela usada como região sensível para o gesto de voltar</string>
+    <!-- Back gesture animation -->
+    <string name="back_gesture_arrow_title">Animação no gesto de voltar</string>
+    <string name="back_gesture_arrow_summary">Mostrar uma seta animada para o gesto de voltar</string>
+    <!-- Back gesture haptic -->
+    <string name="back_gesture_haptic_title">Resposta tátil do gesto voltar</string>
+    <string name="back_gesture_haptic_summary">Vibrar ao realizar um gesto voltar</string>
+    <!-- Vibration patterns -->
+    <string name="vibration_pattern_title">Padrão de vibração do toque</string>
+    <string name="pattern_dzzz_dzzz">dzzz-dzzz</string>
+    <string name="pattern_dzzz_da">dzzz-da</string>
+    <string name="pattern_mm_mm_mm">mm-mm-mm</string>
+    <string name="pattern_da_da_dzzz">da-da-dzzz</string>
+    <string name="pattern_da_dzzz_da">da-dzzz-da</string>
+    <string name="pattern_custom">Personalizado</string>
+    <string name="custom_vibration_pattern_title">Padrão personalizado</string>
+    <string name="custom_vibration_pattern_summary">Definir um padrão de vibração personalizado</string>
+    <!-- Locale Picker -->
+    <string name="clear_search_query_description">Limpar consulta</string>
+    <string name="language_picker_page">Página seletor de idioma</string>
+    <string name="search_region">Região de pesquisa</string>
+    <string name="search_region_page">Página de pesquisa de região</string>
+    <!-- Doze brightness -->
+    <string name="doze_brightness_force_title">Forçar valores de brilho</string>
+    <string name="doze_brightness_force_summary">Usar valores de brilho personalizado ao invés do brilho da tela</string>
+    <string name="ambient_pulse_brightness_title">Nível de brilho da tela ambiente</string>
+    <string name="ambient_doze_brightness_title">Brilho da tela sempre ativo</string>
+    <!-- Swipe to screenshot -->
+    <string name="swipe_to_screenshot_title">Deslize para capturar a tela</string>
+    <string name="swipe_to_screenshot_summary">Deslize 3 dedos para baixo na tela para tirar uma captura de tela</string>
+    <!-- Battery Saver -->
+    <string name="adaptive_battery_switch_title">Usar Bateria Adaptável</string>
+    <string name="basic_battery_saver_title">Economia de bateria padrão</string>
+    <string name="basic_battery_saver_summary">Limita efeitos visuais e atividade em segundo plano. Ativa o tema Escuro, se não estiver ativado.</string>
+    <string name="battery_saver_reminder_category">Lembretes</string>
+    <string name="battery_saver_reminder_switch_title">Lembretes da Economia de bateria</string>
+    <string name="battery_saver_reminder_switch_summary">Obter lembretes quando a bateria estiver fraca</string>
+    <string name="battery_saver_schedule_category">Agendar</string>
+    <string name="battery_saver_schedule_switch_title">Ativar com base no nível da bateria</string>
+    <string name="battery_saver_schedule_switch_summary">A Economia de bateria é ativada quando a bateria cai para um nível definido</string>
+    <string name="battery_schedule_title">Programação e lembretes</string>
+    <string name="battery_schedule_summary">Gerenciar quando a Economia de bateria for ativada</string>
+    <string name="extreme_battery_saver_title">Economia de Bateria Extrema</string>
+    <string name="extreme_battery_saver_summary">Inclui todas as alterações listadas acima. Também pausa os apps não essenciais e suas notificações.</string>
+    <string name="smart_battery_a11y_expand_label">Expandir bateria adaptável</string>
+    <string name="smart_battery_a11y_collapse_label">Colapso, Bateria Adaptativa</string>
+    <string name="smart_battery_title">Bateria Adaptável</string>
+    <string name="unified_battery_saver_page_intro">Economize energia para ajudar a bateria do telefone a durar mais entre as cargas</string>
+    <!-- Per-app volume -->
+    <string name="app_volume">Volume de aplicativos</string>
+    <string name="app_volume_title">Controle de volume por aplicativo</string>
+    <string name="app_volume_summary">Permite definir diferentes níveis de volume para cada aplicativo</string>
+    <!-- Vibration settings for sliders -->
+    <string name="accessibility_slider_haptics_category_title">Deslizantes</string>
+    <string name="accessibility_volume_dialog_haptic_title">Ativar controle deslizante de volume</string>
+    <!-- Multi Audio Focus -->
+    <string name="multi_audio_focus_title">Foco multiplo de áudio</string>
+    <string name="multi_audio_focus_summary">Permitir que vários apps reproduzam áudio simultaneamente</string>
 </resources>
