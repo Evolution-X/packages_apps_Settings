@@ -246,7 +246,7 @@
     <string name="override_mock_location_summary">Ha ez engedélyezve van, az alkalmazások nem tudnak hamis helyszíneket észlelni</string>
     <!-- Force LTE_CA -->
     <string name="force_lte_ca_title">Sávegyesítés</string>
-    <string name="force_lte_ca_summary">A működéshez kényszerítse az LTE szolgáltató aggregációt</string>
+    <string name="force_lte_ca_summary">LTE sávszélesítés a támogatott sávok egyesítésével</string>
     <!-- Screenshot shutter -->
     <string name="screenshot_shutter_sound_title">A képernyőmentés hangja</string>
     <!-- Back gesture height -->
