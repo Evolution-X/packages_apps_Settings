@@ -306,4 +306,7 @@
     <!-- Vibration settings for sliders -->
     <string name="accessibility_slider_haptics_category_title">Thanh trượt</string>
     <string name="accessibility_volume_dialog_haptic_title">Rung phản hồi xúc giác của thanh trượt âm lượng</string>
+    <!-- Multi Audio Focus -->
+    <string name="multi_audio_focus_title">Đa tiêu điểm âm thanh</string>
+    <string name="multi_audio_focus_summary">Cho phép nhiều ứng dụng phát âm thanh đồng thời</string>
 </resources>
