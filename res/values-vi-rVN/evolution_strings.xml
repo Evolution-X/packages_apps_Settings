@@ -278,9 +278,6 @@
     <string name="doze_brightness_force_summary">Sử dụng các giá trị độ sáng tùy chỉnh thay vì độ sáng màn hình</string>
     <string name="ambient_pulse_brightness_title">Độ sáng màn hình môi trường xung quanh</string>
     <string name="ambient_doze_brightness_title">Độ sáng Always on display</string>
-    <!-- Swipe to screenshot -->
-    <string name="swipe_to_screenshot_title">Vuốt để chụp màn hình</string>
-    <string name="swipe_to_screenshot_summary">Vuốt 3 ngón tay xuống màn hình để chụp ảnh màn hình</string>
     <!-- Battery Saver -->
     <string name="adaptive_battery_switch_title">Dùng pin thích ứng</string>
     <string name="basic_battery_saver_title">Tiết kiệm pin tiêu chuẩn</string>
