@@ -284,9 +284,6 @@
     <string name="doze_brightness_force_summary">Użyj niestandardowej wartości jasności zamiast jasności ekranu</string>
     <string name="ambient_pulse_brightness_title">Poziom jasności ekranu otoczenia</string>
     <string name="ambient_doze_brightness_title">Poziom jasności ekranu otoczenia</string>
-    <!-- Swipe to screenshot -->
-    <string name="swipe_to_screenshot_title">Przesuń, aby zrobić zrzut ekranu</string>
-    <string name="swipe_to_screenshot_summary">Przesuń trzema placami w dół ekranu, aby wykonać zrzut ekranu</string>
     <!-- Battery Saver -->
     <string name="adaptive_battery_switch_title">Użyj trybu adaptacyjnego baterii</string>
     <string name="basic_battery_saver_title">Standardowe oszczędzanie baterii</string>
@@ -312,4 +309,7 @@
     <!-- Vibration settings for sliders -->
     <string name="accessibility_slider_haptics_category_title">Suwaki</string>
     <string name="accessibility_volume_dialog_haptic_title">Wibracje suwaka głośności</string>
+    <!-- Multi Audio Focus -->
+    <string name="multi_audio_focus_title">Skoncentrowanie wielu dźwięków</string>
+    <string name="multi_audio_focus_summary">Zezwalaj wielu aplikacjom na jednoczesne odtwarzanie dźwięku</string>
 </resources>
