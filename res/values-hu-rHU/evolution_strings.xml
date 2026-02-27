@@ -308,4 +308,18 @@
     <!-- Multi Audio Focus -->
     <string name="multi_audio_focus_title">Többszörözött audió</string>
     <string name="multi_audio_focus_summary">Lehetővé teszi, hogy egy időben több alkalmazás is hangot játsszon le egyidejűleg</string>
+    <!-- Data Usage Cycle -->
+    <string name="billing_cycle_type_title">A mobiladat-felhasználási ciklus típusa</string>
+    <string name="billing_cycle_type_monthly">Havi</string>
+    <string name="billing_cycle_type_weekly">Heti</string>
+    <string name="billing_cycle_type_daily">Napi</string>
+    <string name="billing_cycle_less_than_one_hour_left">Kevesebb mint 1 óra maradt</string>
+    <string name="billing_cycle_hours_left">{count, plural,
+        =1      {# óra maradt}
+        other   {# óra maradt}
+        }</string>
+    <string name="cycle_type_weekly_title">A ciklus visszaállításának napja</string>
+    <string name="cycle_type_weekly_sub">Minden héten: \n1 = Hétfő</string>
+    <string name="cycle_type_daily_title">A ciklus visszaállításának órája</string>
+    <string name="cycle_type_daily_sub">Minden napon ekkor:</string>
 </resources>
