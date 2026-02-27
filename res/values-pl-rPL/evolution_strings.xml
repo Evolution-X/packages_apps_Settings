@@ -312,4 +312,18 @@
     <!-- Multi Audio Focus -->
     <string name="multi_audio_focus_title">Skoncentrowanie wielu dźwięków</string>
     <string name="multi_audio_focus_summary">Zezwalaj wielu aplikacjom na jednoczesne odtwarzanie dźwięku</string>
+    <!-- Data Usage Cycle -->
+    <string name="billing_cycle_type_title">Typ cyklu wykorzystania danych mobilnych</string>
+    <string name="billing_cycle_type_monthly">Miesięczny</string>
+    <string name="billing_cycle_type_weekly">Tygodniowy</string>
+    <string name="billing_cycle_type_daily">Codzienny</string>
+    <string name="billing_cycle_less_than_one_hour_left">Pozostała mniej niż 1 godzina</string>
+    <string name="billing_cycle_hours_left">{count, plural,
+        =1      {# godzina pozostała}
+        other   {# godzin pozostało}
+        }</string>
+    <string name="cycle_type_weekly_title">Dzień resetowania cyklu użytkowania</string>
+    <string name="cycle_type_weekly_sub">Dzień każdego tygodnia:\n1 = Poniedziałek</string>
+    <string name="cycle_type_daily_title">Godzina resetowania cyklu użytkowania</string>
+    <string name="cycle_type_daily_sub">Godzina każdego dnia:</string>
 </resources>
