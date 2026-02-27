@@ -306,4 +306,18 @@
     <!-- Multi Audio Focus -->
     <string name="multi_audio_focus_title">Đa tiêu điểm âm thanh</string>
     <string name="multi_audio_focus_summary">Cho phép nhiều ứng dụng phát âm thanh đồng thời</string>
+    <!-- Data Usage Cycle -->
+    <string name="billing_cycle_type_title">Chu kỳ sử dụng dữ liệu di động</string>
+    <string name="billing_cycle_type_monthly">Hàng tháng</string>
+    <string name="billing_cycle_type_weekly">Hàng tuần</string>
+    <string name="billing_cycle_type_daily">Hàng ngày</string>
+    <string name="billing_cycle_less_than_one_hour_left">Còn dưới 1 giờ</string>
+    <string name="billing_cycle_hours_left">{count, plural,
+        =1      {Còn # giờ}
+        other   {Còn # giờ}
+        }</string>
+    <string name="cycle_type_weekly_title">Ngày đặt lại chu kỳ</string>
+    <string name="cycle_type_weekly_sub">Ngày trong tuần:\n1 = Thứ Hai</string>
+    <string name="cycle_type_daily_title">Giờ đặt lại chu kỳ</string>
+    <string name="cycle_type_daily_sub">Giờ trong ngày:</string>
 </resources>
