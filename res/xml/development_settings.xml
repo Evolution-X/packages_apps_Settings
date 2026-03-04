@@ -851,9 +851,6 @@
         android:title="@string/location_category"
         android:order="1400">
 
-        <Preference android:key="mock_location_app"
-                    android:title="@string/mock_location_app" />
-
         <SwitchPreferenceCompat
             android:key="enable_gnss_raw_meas_full_tracking"
             android:title="@string/enable_gnss_raw_meas_full_tracking"
