@@ -1008,17 +1008,27 @@ public class FingerprintSettings extends SubSettings {
                     });
         }
 
-        private void setupFingerprintUnlockCategoryPreferencesForScreenOffUnlock() {
-            mScreenOffUnlockUdfpsPreference = findPreference(KEY_SCREEN_OFF_FINGERPRINT_UNLOCK);
-            mScreenOffUnlockUdfpsPreference.setChecked(
-                    mScreenOffUnlockUdfpsPreferenceController.isChecked());
-            mScreenOffUnlockUdfpsPreference.setOnPreferenceChangeListener(
-                    (preference, newValue) -> {
-                        final boolean isChecked = ((TwoStatePreference) preference).isChecked();
-                        mScreenOffUnlockUdfpsPreferenceController.setChecked(!isChecked);
-                        return true;
-                    });
+private void setupFingerprintUnlockCategoryPreferencesForScreenOffUnlock() {
+    mScreenOffUnlockUdfpsPreference = findPreference(KEY_SCREEN_OFF_FINGERPRINT_UNLOCK);
+
+    // Fix: controller can be null due to flag/config mismatch; don't crash Settings.
+    if (mScreenOffUnlockUdfpsPreferenceController == null) {
+        if (mScreenOffUnlockUdfpsPreference != null) {
+            mScreenOffUnlockUdfpsPreference.setVisible(false);
         }
+        return;
+    }
+    if (mScreenOffUnlockUdfpsPreference == null) return;
+
+    mScreenOffUnlockUdfpsPreference.setChecked(
+            mScreenOffUnlockUdfpsPreferenceController.isChecked());
+    mScreenOffUnlockUdfpsPreference.setOnPreferenceChangeListener(
+            (preference, newValue) -> {
+                final boolean isChecked = ((TwoStatePreference) preference).isChecked();
+                mScreenOffUnlockUdfpsPreferenceController.setChecked(!isChecked);
+                return true;
+            });
+}
 
         private void setupUseFingerprintToPreferences() {
             final PreferenceCategory category =
