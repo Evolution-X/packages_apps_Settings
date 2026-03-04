@@ -37,11 +37,13 @@ import androidx.preference.PreferenceGroup;
 import com.android.settings.R;
 import com.android.settings.SettingsActivity;
 import com.android.settings.dashboard.DashboardFragment;
+import com.android.settingslib.core.AbstractPreferenceController;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.widget.SettingsMainSwitchBar;
 import com.android.settingslib.location.RecentLocationApps;
 import com.android.settingslib.search.SearchIndexable;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -193,5 +195,12 @@ public class LocationSettings extends DashboardFragment implements
     @Override
     public @Nullable String getPreferenceScreenBindingKey(@NonNull Context context) {
         return LocationScreen.KEY;
+    }
+
+    @Override
+    protected List<AbstractPreferenceController> createPreferenceControllers(Context context) {
+        final List<AbstractPreferenceController> controllers = new ArrayList<>();
+        controllers.add(new MockLocationAppPreferenceController(context, this));
+        return controllers;
     }
 }
