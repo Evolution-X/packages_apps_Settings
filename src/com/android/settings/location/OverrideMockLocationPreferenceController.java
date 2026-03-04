@@ -16,6 +16,7 @@
 
 package com.android.settings.location;
 
+import android.app.AppOpsManager;
 import android.content.Context;
 import android.os.SystemProperties;
 
@@ -27,6 +28,8 @@ import com.android.settings.core.BasePreferenceController;
 import com.android.settingslib.core.lifecycle.LifecycleObserver;
 import com.android.settingslib.core.lifecycle.events.OnResume;
 
+import java.util.List;
+
 /**
  * Controller for the "Override MockLocation restriction" toggle in More security settings.
  * This toggle controls whether apps can detect mock locations through isMock() and 
@@ -37,11 +40,14 @@ public class OverrideMockLocationPreferenceController extends BasePreferenceCont
 
     private static final String KEY_OVERRIDE_MOCK_LOCATION = "override_mock_location";
     private static final String PROPERTY_OVERRIDE_MOCK = "persist.sys.override_mock_location";
+    private static final int[] MOCK_LOCATION_APP_OPS = new int[]{AppOpsManager.OP_MOCK_LOCATION};
 
     private SwitchPreferenceCompat mPreference;
+    private final AppOpsManager mAppsOpsManager;
 
     public OverrideMockLocationPreferenceController(Context context, String preferenceKey) {
         super(context, preferenceKey);
+        mAppsOpsManager = context.getSystemService(AppOpsManager.class);
     }
 
     @Override
@@ -84,7 +90,26 @@ public class OverrideMockLocationPreferenceController extends BasePreferenceCont
             // Get current state from system property
             final boolean enabled = SystemProperties.getBoolean(PROPERTY_OVERRIDE_MOCK, false);
             mPreference.setChecked(enabled);
+            mPreference.setEnabled(hasSelectedMockLocationApp());
         }
+    }
+
+    private boolean hasSelectedMockLocationApp() {
+        if (mAppsOpsManager == null) {
+            return false;
+        }
+        final List<AppOpsManager.PackageOps> packageOps =
+                mAppsOpsManager.getPackagesForOps(MOCK_LOCATION_APP_OPS);
+        if (packageOps == null) {
+            return false;
+        }
+
+        for (AppOpsManager.PackageOps packageOp : packageOps) {
+            if (packageOp.getOps().get(0).getMode() == AppOpsManager.MODE_ALLOWED) {
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override
