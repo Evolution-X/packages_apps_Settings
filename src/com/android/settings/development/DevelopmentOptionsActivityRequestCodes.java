@@ -24,5 +24,4 @@ public interface DevelopmentOptionsActivityRequestCodes {
 
     int REQUEST_CODE_DEBUG_APP = 1;
 
-    int REQUEST_MOCK_LOCATION_APP = 2;
 }
