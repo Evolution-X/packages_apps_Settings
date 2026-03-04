@@ -50,6 +50,11 @@
         android:summary="@string/assisted_gps_summary"
         settings:controller="com.android.settings.location.AgpsPreferenceController"/>
 
+    <Preference
+        android:key="mock_location_app"
+        android:title="@string/mock_location_app"
+        settings:controller="com.android.settings.location.MockLocationAppPreferenceController"/>
+
     <SwitchPreferenceCompat
         android:key="override_mock_location"
         android:title="@string/override_mock_location_title"
