@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 The Android Open Source Project
+ * Copyright (C) 2024 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,9 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.development;
-
-import static com.android.settings.development.DevelopmentOptionsActivityRequestCodes.REQUEST_MOCK_LOCATION_APP;
+package com.android.settings.location;
 
 import android.Manifest;
 import android.app.Activity;
@@ -30,33 +28,45 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.text.TextUtils;
 
+import android.preference.PreferenceManager.OnActivityResultListener;
+
 import androidx.annotation.Nullable;
-import androidx.annotation.VisibleForTesting;
 import androidx.preference.Preference;
+import androidx.preference.PreferenceScreen;
 
 import com.android.settings.core.PreferenceControllerMixin;
 import com.android.settings.core.SubSettingLauncher;
-import com.android.settingslib.development.DeveloperOptionsPreferenceController;
+import com.android.settings.development.AppPicker;
+import com.android.settings.development.DevelopmentAppPicker;
+import com.android.settings.development.Flags;
+import com.android.settingslib.core.AbstractPreferenceController;
 
 import java.util.List;
 
-public class MockLocationAppPreferenceController extends DeveloperOptionsPreferenceController
-        implements PreferenceControllerMixin, OnActivityResultListener {
+/** Controller for choosing the mock location app in Location settings. */
+public class MockLocationAppPreferenceController extends AbstractPreferenceController
+        implements PreferenceControllerMixin, OnActivityResultListener,
+        Preference.OnPreferenceClickListener {
 
     private static final String MOCK_LOCATION_APP_KEY = "mock_location_app";
+    private static final int REQUEST_MOCK_LOCATION_APP = 1000;
     private static final int[] MOCK_LOCATION_APP_OPS = new int[]{AppOpsManager.OP_MOCK_LOCATION};
 
-    @Nullable private final DevelopmentSettingsDashboardFragment mFragment;
+    private final LocationSettings mFragment;
+    @Nullable private Preference mPreference;
     private final AppOpsManager mAppsOpsManager;
     private final PackageManager mPackageManager;
 
-    public MockLocationAppPreferenceController(Context context,
-            @Nullable DevelopmentSettingsDashboardFragment fragment) {
+    public MockLocationAppPreferenceController(Context context, LocationSettings fragment) {
         super(context);
-
         mFragment = fragment;
         mAppsOpsManager = (AppOpsManager) context.getSystemService(Context.APP_OPS_SERVICE);
         mPackageManager = context.getPackageManager();
+    }
+
+    @Override
+    public boolean isAvailable() {
+        return true;
     }
 
     @Override
@@ -65,10 +75,36 @@ public class MockLocationAppPreferenceController extends DeveloperOptionsPrefere
     }
 
     @Override
-    public boolean handlePreferenceTreeClick(Preference preference) {
+    public void updateState(Preference preference) {
+        mPreference = preference;
+        final String mockLocationApp = getCurrentMockLocationApp();
+        if (!TextUtils.isEmpty(mockLocationApp)) {
+            preference.setSummary(
+                    mContext.getResources().getString(
+                            com.android.settingslib.R.string.mock_location_app_set,
+                            getAppLabel(mockLocationApp)));
+        } else {
+            preference.setSummary(
+                    mContext.getResources().getString(
+                            com.android.settingslib.R.string.mock_location_app_not_set));
+        }
+    }
+
+    @Override
+    public void displayPreference(PreferenceScreen screen) {
+        super.displayPreference(screen);
+        final Preference preference = screen.findPreference(getPreferenceKey());
+        if (preference != null) {
+            preference.setOnPreferenceClickListener(this);
+        }
+    }
+
+    @Override
+    public boolean onPreferenceClick(Preference preference) {
         if (!TextUtils.equals(preference.getKey(), getPreferenceKey())) {
             return false;
         }
+
         if (Flags.deprecateListActivity()) {
             final Bundle args = new Bundle();
             args.putString(DevelopmentAppPicker.EXTRA_REQUESTING_PERMISSION,
@@ -78,7 +114,7 @@ public class MockLocationAppPreferenceController extends DeveloperOptionsPrefere
             args.putString(DevelopmentAppPicker.EXTRA_SELECTING_APP, debugApp);
             new SubSettingLauncher(mContext)
                     .setDestination(DevelopmentAppPicker.class.getName())
-                    .setSourceMetricsCategory(SettingsEnums.DEVELOPMENT)
+                    .setSourceMetricsCategory(SettingsEnums.LOCATION)
                     .setArguments(args)
                     .setTitleRes(com.android.settingslib.R.string.select_application)
                     .setResultListener(mFragment, REQUEST_MOCK_LOCATION_APP)
@@ -93,44 +129,20 @@ public class MockLocationAppPreferenceController extends DeveloperOptionsPrefere
     }
 
     @Override
-    public void updateState(Preference preference) {
-        updateMockLocation();
-    }
-
-    @Override
     public boolean onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode != REQUEST_MOCK_LOCATION_APP || resultCode != Activity.RESULT_OK) {
+        if (requestCode != REQUEST_MOCK_LOCATION_APP || resultCode != Activity.RESULT_OK
+                || data == null) {
             return false;
         }
         writeMockLocation(data.getAction());
-        updateMockLocation();
-        return true;
-    }
-
-    @Override
-    public void onDeveloperOptionsDisabled() {
-        super.onDeveloperOptionsDisabled();
-        removeAllMockLocations();
-    }
-
-    private void updateMockLocation() {
-        final String mockLocationApp = getCurrentMockLocationApp();
-
-        if (!TextUtils.isEmpty(mockLocationApp)) {
-            mPreference.setSummary(
-                    mContext.getResources()
-                            .getString(com.android.settingslib.R.string.mock_location_app_set,
-                                    getAppLabel(mockLocationApp)));
-        } else {
-            mPreference.setSummary(
-                    mContext.getResources()
-                            .getString(com.android.settingslib.R.string.mock_location_app_not_set));
+        if (mPreference != null) {
+            updateState(mPreference);
         }
+        return true;
     }
 
     private void writeMockLocation(String mockLocationAppName) {
         removeAllMockLocations();
-        // Enable the app op of the new mock location app if such.
         if (!TextUtils.isEmpty(mockLocationAppName)) {
             try {
                 final ApplicationInfo ai = mPackageManager.getApplicationInfo(
@@ -138,7 +150,7 @@ public class MockLocationAppPreferenceController extends DeveloperOptionsPrefere
                 mAppsOpsManager.setMode(AppOpsManager.OP_MOCK_LOCATION, ai.uid,
                         mockLocationAppName, AppOpsManager.MODE_ALLOWED);
             } catch (PackageManager.NameNotFoundException e) {
-                /* ignore */
+                // Ignore.
             }
         }
     }
@@ -155,13 +167,11 @@ public class MockLocationAppPreferenceController extends DeveloperOptionsPrefere
     }
 
     private void removeAllMockLocations() {
-        // Disable the app op of the previous mock location app if such.
-        final List<AppOpsManager.PackageOps> packageOps = mAppsOpsManager.getPackagesForOps(
-                MOCK_LOCATION_APP_OPS);
+        final List<AppOpsManager.PackageOps> packageOps =
+                mAppsOpsManager.getPackagesForOps(MOCK_LOCATION_APP_OPS);
         if (packageOps == null) {
             return;
         }
-        // Should be one but in case we are in a bad state due to use of command line tools.
         for (AppOpsManager.PackageOps packageOp : packageOps) {
             if (packageOp.getOps().get(0).getMode() != AppOpsManager.MODE_ERRORED) {
                 removeMockLocationForApp(packageOp.getPackageName());
@@ -176,14 +186,14 @@ public class MockLocationAppPreferenceController extends DeveloperOptionsPrefere
             mAppsOpsManager.setMode(AppOpsManager.OP_MOCK_LOCATION, ai.uid,
                     appName, AppOpsManager.MODE_ERRORED);
         } catch (PackageManager.NameNotFoundException e) {
-            /* ignore */
+            // Ignore.
         }
     }
 
-    @VisibleForTesting
-    String getCurrentMockLocationApp() {
-        final List<AppOpsManager.PackageOps> packageOps = mAppsOpsManager.getPackagesForOps(
-                MOCK_LOCATION_APP_OPS);
+    @Nullable
+    private String getCurrentMockLocationApp() {
+        final List<AppOpsManager.PackageOps> packageOps =
+                mAppsOpsManager.getPackagesForOps(MOCK_LOCATION_APP_OPS);
         if (packageOps != null) {
             for (AppOpsManager.PackageOps packageOp : packageOps) {
                 if (packageOp.getOps().get(0).getMode() == AppOpsManager.MODE_ALLOWED) {
