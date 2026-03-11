@@ -20,13 +20,14 @@ public final class BatteryDataBroadcastReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         String batteryData = intent.getAction();
+        if (batteryData == null) return;
+
         switch (batteryData) {
-            // Fetch device usage data
             case "settings.intelligence.battery.action.FETCH_BATTERY_USAGE_DATA":
                 mFetchBatteryUsageData = true;
-                BatteryDataFetchService.enqueueWork(context);
+                BatteryDataFetchService.enqueueWork(context, intent);
                 break;
-            // Fetch bluetooth device usage data
+
             case "settings.intelligence.battery.action.FETCH_BLUETOOTH_BATTERY_DATA":
                 try {
                     BluetoothBatteryDataFetch.returnBluetoothDevices(context, intent);
@@ -34,8 +35,24 @@ public final class BatteryDataBroadcastReceiver extends BroadcastReceiver {
                     Log.e(TAG, "returnBluetoothDevices() error: ", e);
                 }
                 break;
+
+            case Intent.ACTION_POWER_CONNECTED:
+            case Intent.ACTION_POWER_DISCONNECTED:
+            case Intent.ACTION_BATTERY_LOW:
+            case Intent.ACTION_BATTERY_OKAY:
+                Log.d(TAG, "Battery state changed: " + batteryData + " — notifying Intelligence");
+                notifyIntelligence(context);
+                break;
+
             default:
                 break;
         }
+    }
+
+    private void notifyIntelligence(Context context) {
+        Intent notify = new Intent(
+                "settings.intelligence.battery.action.BATTERY_STATE_CHANGED");
+        notify.setPackage("com.google.android.settings.intelligence");
+        context.sendBroadcast(notify);
     }
 }
