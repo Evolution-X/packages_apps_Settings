@@ -90,6 +90,7 @@ public class UserBackupSettingsActivity extends FragmentActivity implements Inde
                 Log.d(TAG, "Manufacturer provided backup settings, showing the preference screen");
             }
 
+            setContentView(R.layout.settings_main_prefs);
             InsetUtils.applyWindowInsetsListener(findViewById(R.id.main_content));
 
             // mFragmentManager can be set by {@link #setFragmentManager()} for testing
