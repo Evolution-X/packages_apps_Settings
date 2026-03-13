@@ -78,4 +78,17 @@
         </LinearLayout>
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/side_skip_button"
+        style="@style/FingerprintEnrollSideSkipText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|start"
+        android:layout_marginStart="@dimen/fingerprint_side_skip_margin"
+        android:layout_marginBottom="@dimen/fingerprint_side_skip_margin"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/security_settings_fingerprint_enroll_enrolling_skip"
+        android:visibility="gone" />
+
 </com.android.settings.biometrics.fingerprint.UdfpsEnrollEnrollingView>
