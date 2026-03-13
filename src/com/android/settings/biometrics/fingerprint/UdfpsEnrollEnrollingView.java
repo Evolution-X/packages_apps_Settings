@@ -32,7 +32,6 @@ import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.Display;
 import android.view.DisplayInfo;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Surface;
 import android.view.View;
@@ -40,14 +39,11 @@ import android.view.ViewGroup;
 import android.view.WindowInsets;
 import android.view.WindowManager;
 import android.view.accessibility.AccessibilityManager;
-import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import androidx.annotation.ColorInt;
 import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.VisibleForTesting;
@@ -57,7 +53,6 @@ import com.android.settings.flags.Flags;
 import com.android.systemui.biometrics.UdfpsUtils;
 import com.android.systemui.biometrics.shared.model.UdfpsOverlayParams;
 
-import com.google.android.setupcompat.template.FooterBarMixin;
 import com.google.android.setupdesign.GlifLayout;
 import com.google.android.setupdesign.view.BottomScrollView;
 
@@ -80,6 +75,7 @@ public class UdfpsEnrollEnrollingView extends GlifLayout {
 
     private UdfpsEnrollView mUdfpsEnrollView;
     private View mHeaderView;
+    private TextView mSideSkipTextView;
     private AccessibilityManager mAccessibilityManager;
 
     private ObjectAnimator mHeaderScrollAnimator;
@@ -103,6 +99,7 @@ public class UdfpsEnrollEnrollingView extends GlifLayout {
         super.onFinishInflate();
         mHeaderView = findViewById(com.google.android.setupdesign.R.id.sud_landscape_header_area);
         mUdfpsEnrollView = findViewById(R.id.udfps_animation_view);
+        mSideSkipTextView = findViewById(R.id.side_skip_button);
     }
 
     @Override
@@ -282,25 +279,13 @@ public class UdfpsEnrollEnrollingView extends GlifLayout {
         setOnHoverListener();
     }
 
-    void setSecondaryButtonBackground(@ColorInt int color) {
-        // Set the button background only when the button is not under udfps overlay to avoid UI
-        // overlap.
-        if (!mIsLandscape || mShouldUseReverseLandscape) {
+    void showSideSkipButton(@NonNull View.OnClickListener onClickListener) {
+        if (mIsLandscape || mSideSkipTextView == null) {
             return;
         }
-        final Button secondaryButtonView =
-                getMixin(FooterBarMixin.class).getSecondaryButtonView();
-        secondaryButtonView.setBackgroundColor(color);
-        if (mRotation == Surface.ROTATION_90) {
-            secondaryButtonView.setGravity(Gravity.START);
-        } else {
-            secondaryButtonView.setGravity(Gravity.END);
-        }
-        mHeaderView.post(() -> {
-            secondaryButtonView.setLayoutParams(
-                    new LinearLayout.LayoutParams(mHeaderView.getMeasuredWidth(),
-                            ViewGroup.LayoutParams.WRAP_CONTENT));
-        });
+        mSideSkipTextView.setOnClickListener(onClickListener);
+        mSideSkipTextView.setVisibility(View.VISIBLE);
+        mSideSkipTextView.bringToFront();
     }
 
     private void initUdfpsEnrollView(FingerprintSensorPropertiesInternal udfpsProps,
