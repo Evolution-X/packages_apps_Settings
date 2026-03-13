@@ -516,6 +516,19 @@
         <item name="android:layout_gravity">start|top</item>
     </style>
 
+    <style name="FingerprintEnrollSideSkipText" parent="@style/TextAppearance.SudGlifBody">
+        <item name="android:layout_gravity">start|top</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:gravity">start|center_vertical</item>
+        <item name="android:minHeight">40dp</item>
+        <item name="android:paddingStart">8dp</item>
+        <item name="android:paddingEnd">8dp</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">4dp</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:textAlignment">viewStart</item>
+    </style>
+
     <style name="Theme.LockPassword" parent="@style/Theme.Material3.DynamicColors.DayNight">
         <item name="textInputStyle">@style/Widget.Material3.TextInputLayout.OutlinedBox</item>
     </style>

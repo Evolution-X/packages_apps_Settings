@@ -9,4 +9,7 @@
 
     <!-- Device image for HW info -->
     <string name="config_deviceImageDrawable" translatable="false"></string>
+
+    <!-- Uses the legacy UDFPS enrollment UI with side text instead of a footer button. -->
+    <bool name="config_useLegacyUdfpsUi" translatable="false">false</bool>
 </resources>
