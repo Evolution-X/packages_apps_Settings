@@ -38,6 +38,8 @@
     <string name="heads_up_notifications_enabled_summary">Wichtige Benachrichtigungen in einem kleinen, schwebenden Fenster anzeigen</string>
     <string name="high_touch_sensitivity_title">Hohe Touch-Empfindlichkeit</string>
     <string name="high_touch_sensitivity_summary">Touch-Empfindlichkeit erhöhen, um den Touchscreen auch mit Handschuhen bedienen zu können</string>
+    <string name="tethering_allow_vpn_upstreams_title">VPN für verbundene Geräte verwenden</string>
+    <string name="tethering_allow_vpn_upstreams_summary">Wenn dieses Gerät ein VPN verwendet, werden alle Geräte, die mit dem Hotspot verbunden sind, dasselbe VPN verwenden</string>
     <string name="lock_settings_picker_pattern_size_message">Größe des Musters auswählen</string>
     <string name="lockpattern_settings_enable_error_path_title">Sperrmuster-Fehler anzeigen</string>
     <string name="lockpattern_settings_enable_dots_title">Sperrmuster-Punkte anzeigen</string>
