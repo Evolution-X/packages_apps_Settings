@@ -110,8 +110,9 @@ class HideDeveloperStatusSettings: Fragment(R.layout.hide_developer_status_layou
      * @return an initial list of packages that should appear as selected.
      */
     private fun getInitialCheckedList(): List<String> {
+        val ctx = context ?: return emptyList()
         val flattenedString = Settings.Secure.getString(
-            requireContext().contentResolver, getKey()
+            ctx.contentResolver, getKey()
         )
         return flattenedString?.takeIf {
             it.isNotBlank()
@@ -153,6 +154,7 @@ class HideDeveloperStatusSettings: Fragment(R.layout.hide_developer_status_layou
 
             override fun onQueryTextChange(newText: String): Boolean {
                 searchText = newText
+                if (!isAdded) return true
                 refreshList()
                 return true
             }
@@ -196,18 +198,18 @@ class HideDeveloperStatusSettings: Fragment(R.layout.hide_developer_status_layou
      * @param list a [List<String>] of selected items.
      */
     private fun onListUpdate(packageName: String, isChecked: Boolean) {
+        val ctx = context ?: return
         if (packageName.isBlank()) return
         for (info in userInfos) {
             if (isChecked) {
-                hideDeveloperStatusUtils.addApp(requireContext(), packageName, info.id)
+                hideDeveloperStatusUtils.addApp(ctx, packageName, info.id)
             } else {
-                hideDeveloperStatusUtils.removeApp(requireContext(), packageName, info.id)
+                hideDeveloperStatusUtils.removeApp(ctx, packageName, info.id)
             }
         }
         try {
             activityManager.forceStopPackage(packageName)
-        } catch (ignored: Exception) {
-        }
+        } catch (ignored: Exception) {}
     }
 
     private fun getKey(): String {
@@ -215,15 +217,17 @@ class HideDeveloperStatusSettings: Fragment(R.layout.hide_developer_status_layou
     }
 
     private fun refreshList() {
+        val ctx = context ?: return
+        
         var list = packageList.filter {
             if (!showSystem) {
                 !it.applicationInfo!!.isSystemApp()
-                && !resources.getStringArray(
+                && !ctx.resources.getStringArray(
                         R.array.hide_developer_status_hidden_apps)
                             .asList().contains(it.applicationInfo!!.packageName)
                 && !it.applicationInfo!!.packageName.contains("android.settings")
             } else {
-                !resources.getStringArray(
+                !ctx.resources.getStringArray(
                     R.array.hide_developer_status_hidden_apps)
                         .asList().contains(it.applicationInfo!!.packageName)
                 && !it.applicationInfo!!.packageName.contains("android.settings")
