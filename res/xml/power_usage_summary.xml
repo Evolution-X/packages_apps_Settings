@@ -74,6 +74,12 @@
             settings:requiresConfigMask="64" />
 
         <Preference
+            android:key="idle_manager"
+            android:title="@string/idle_manager_title"
+            android:summary="@string/idle_manager_summary"
+            android:fragment="org.evolution.settings.fragments.miscellaneous.IdleManagerSettings" />
+
+        <Preference
             android:key="app_battery_usage"
             android:title="@string/app_battery_usage_title"
             settings:controller="com.android.settings.fuelgauge.AppBatteryUsagePrefController" />
