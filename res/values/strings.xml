@@ -3406,6 +3406,10 @@
     <string name="screen_timeout_summary">After <xliff:g id="timeout_description">%1$s</xliff:g> of inactivity</string>
     <!-- Sound & display settings screen, setting option summary if there is no matching candidate -->
     <string name="screen_timeout_summary_not_set">Not set</string>
+    <!-- Display settings screen, setting option to toggle sleep on face down -->
+    <string name="face_down_sleep_title">Face down detection</string>
+    <!-- Display settings screen, setting option summary to toggle sleep on face down -->
+    <string name="face_down_sleep_summary">Turn off screen after a short period when device is flipped over</string>
     <!-- Wallpaper settings title [CHAR LIMIT=30] -->
     <string name="wallpaper_settings_title">Wallpaper</string>
     <!-- Styles & Wallpapers settings title [CHAR LIMIT=30] -->
