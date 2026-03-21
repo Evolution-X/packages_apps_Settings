@@ -63,8 +63,8 @@ public class DoubleTapPowerForWalletPreferenceController extends BasePreferenceC
                             DoubleTapPowerSettingsUtils
                                     .DOUBLE_TAP_POWER_BUTTON_GESTURE_TARGET_ACTION_URI)) {
                         mPreference.setChecked(
-                                !DoubleTapPowerSettingsUtils
-                                       .isDoubleTapPowerButtonGestureForCameraLaunchEnabled(
+                                DoubleTapPowerSettingsUtils
+                                     .isDoubleTapPowerButtonGestureForWalletLaunchEnabled(
                                                mContext));
                     }
                 }
@@ -123,8 +123,8 @@ public class DoubleTapPowerForWalletPreferenceController extends BasePreferenceC
         if (preference instanceof SelectorWithWidgetPreference) {
             ((SelectorWithWidgetPreference) preference)
                     .setChecked(
-                            !DoubleTapPowerSettingsUtils
-                                    .isDoubleTapPowerButtonGestureForCameraLaunchEnabled(mContext));
+                            DoubleTapPowerSettingsUtils
+                                .isDoubleTapPowerButtonGestureForWalletLaunchEnabled(mContext));
         }
     }
 
