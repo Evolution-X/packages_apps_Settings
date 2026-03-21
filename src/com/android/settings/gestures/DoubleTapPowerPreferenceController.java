@@ -93,15 +93,20 @@ public class DoubleTapPowerPreferenceController extends BasePreferenceController
         }
         if (DoubleTapPowerSettingsUtils.isDoubleTapPowerButtonGestureEnabled(mContext)) {
             final CharSequence onString =
-                    mContext.getText(com.android.settings.R.string.gesture_setting_on);
-            final CharSequence actionString =
-                    DoubleTapPowerSettingsUtils.isDoubleTapPowerButtonGestureForCameraLaunchEnabled(
-                            mContext)
-                            ? mContext.getText(R.string.double_tap_power_camera_action_summary)
-                            : mContext.getText(R.string.double_tap_power_wallet_action_summary);
+                    mContext.getText(R.string.gesture_setting_on);
+            final CharSequence actionString;
+            if (DoubleTapPowerSettingsUtils
+                    .isDoubleTapPowerButtonGestureForCameraLaunchEnabled(mContext)) {
+                actionString = mContext.getText(R.string.double_tap_power_camera_action_summary);
+            } else if (DoubleTapPowerSettingsUtils
+                    .isDoubleTapPowerButtonGestureForTorchEnabled(mContext)) {
+                actionString = mContext.getText(R.string.double_tap_power_torch_action_title);
+            } else {
+                actionString = mContext.getText(R.string.double_tap_power_wallet_action_summary);
+            }
             return mContext.getString(R.string.double_tap_power_summary, onString, actionString);
         }
-        return mContext.getText(com.android.settings.R.string.gesture_setting_off);
+        return mContext.getText(R.string.gesture_setting_off);
     }
 }
 // LINT.ThenChange(DoubleTapPowerScreen.kt)
