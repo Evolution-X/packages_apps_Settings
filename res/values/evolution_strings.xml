@@ -376,4 +376,6 @@
     <string name="cycle_type_weekly_sub">Day of each week:\n1 = Monday</string>
     <string name="cycle_type_daily_title">Usage cycle reset hour</string>
     <string name="cycle_type_daily_sub">Hour of each day:</string>
+
+    <string name="double_tap_power_torch_action_title">Flashlight</string>
 </resources>
