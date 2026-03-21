@@ -42,6 +42,10 @@
             android:title="@string/double_tap_power_wallet_action_title"
             settings:keywords="@string/keywords_double_tap_power_wallet_action"
             settings:controller="com.android.settings.gestures.DoubleTapPowerForWalletPreferenceController"/>
+        <com.android.settingslib.widget.SelectorWithWidgetPreference
+            android:key="gesture_double_power_tap_torch"
+            android:title="@string/double_tap_power_torch_action_title"
+            settings:controller="com.android.settings.gestures.DoubleTapPowerForTorchPreferenceController"/>
     </PreferenceCategory>
     <com.android.settingslib.widget.CardPreference
         android:key="gesture_double_tap_power_lockscreen_shortcut_tip"

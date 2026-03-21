@@ -58,6 +58,7 @@ final class DoubleTapPowerSettingsUtils {
 
     private static final int DOUBLE_TAP_POWER_BUTTON_CAMERA_LAUNCH_VALUE = 0;
     private static final int DOUBLE_TAP_POWER_BUTTON_WALLET_LAUNCH_VALUE = 1;
+    private static final int DOUBLE_TAP_POWER_BUTTON_TORCH_LAUNCH_VALUE = 2;
 
     static final int ON = 1;
     static final int OFF = 0;
@@ -151,6 +152,54 @@ final class DoubleTapPowerSettingsUtils {
                 DOUBLE_TAP_POWER_BUTTON_WALLET_LAUNCH_VALUE);
     }
 
+    /**
+     * @param context App context
+     * @return true if double tap on the power button gesture for torch is currently enabled.
+     */
+    public static boolean isDoubleTapPowerButtonGestureForTorchEnabled(
+            @NonNull Context context) {
+        return Settings.Secure.getInt(
+                context.getContentResolver(),
+                DOUBLE_TAP_POWER_BUTTON_GESTURE_TARGET_ACTION,
+                context.getResources()
+                        .getInteger(
+                                com.android.internal.R.integer
+                                        .config_doubleTapPowerGestureMultiTargetDefaultAction))
+                == DOUBLE_TAP_POWER_BUTTON_TORCH_LAUNCH_VALUE;
+    }
+    
+    /**
+     * Sets double tap power button gesture behavior to toggle torch.
+     *
+     * @param context App context
+     * @return {@code true} if the setting is updated.
+     */
+    public static boolean setDoubleTapPowerButtonForTorch(@NonNull Context context) {
+        getMetricsFeatureProvider().action(
+                context, SettingsEnums.ACTION_DOUBLE_TAP_POWER_BUTTON_BEHAVIOR,
+                DOUBLE_TAP_POWER_BUTTON_TORCH_LAUNCH_VALUE);
+        return Settings.Secure.putInt(
+                context.getContentResolver(),
+                DOUBLE_TAP_POWER_BUTTON_GESTURE_TARGET_ACTION,
+                DOUBLE_TAP_POWER_BUTTON_TORCH_LAUNCH_VALUE);
+    }
+
+    /**
+     * @param context App context
+     * @return true if double tap on the power button gesture for wallet launch is currently enabled.
+     */
+    public static boolean isDoubleTapPowerButtonGestureForWalletLaunchEnabled(
+            @NonNull Context context) {
+        return Settings.Secure.getInt(
+                context.getContentResolver(),
+                DOUBLE_TAP_POWER_BUTTON_GESTURE_TARGET_ACTION,
+                context.getResources()
+                        .getInteger(
+                                com.android.internal.R.integer
+                                        .config_doubleTapPowerGestureMultiTargetDefaultAction))
+                == DOUBLE_TAP_POWER_BUTTON_WALLET_LAUNCH_VALUE;
+    }
+  
     /**
      * Registers observer for settings state.
      *
