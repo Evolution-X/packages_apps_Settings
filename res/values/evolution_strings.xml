@@ -378,4 +378,7 @@
     <string name="cycle_type_daily_sub">Hour of each day:</string>
 
     <string name="double_tap_power_torch_action_title">Flashlight</string>
+
+    <string name="gesture_navbar_auto_hide_title">Auto-hide navigation hint</string>
+    <string name="gesture_navbar_auto_hide_summary">Automatically hide the navigation hint after a short period of inactivity</string>
 </resources>
