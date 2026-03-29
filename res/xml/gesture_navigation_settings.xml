@@ -40,6 +40,13 @@
         android:summary="@string/show_navbar_hint_summary"
         android:defaultValue="true" />
 
+    <org.evolution.settings.preferences.SystemSettingSwitchPreference
+        android:key="gesture_navbar_auto_hide"
+        android:title="@string/gesture_navbar_auto_hide_title"
+        android:summary="@string/gesture_navbar_auto_hide_summary"
+        android:defaultValue="false"
+        android:dependency="navigation_bar_hint" />
+
     <org.evolution.settings.preferences.SecureSettingSwitchPreference
         android:key="sysui_show_nav_bar_ime"
         android:title="@string/show_ime_space_title"
