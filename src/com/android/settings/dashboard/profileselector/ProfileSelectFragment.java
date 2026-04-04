@@ -59,6 +59,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Base fragment class for profile settings.
@@ -224,35 +225,54 @@ public abstract class ProfileSelectFragment extends DashboardFragment {
         return TAG;
     }
 
+    /**
+     * Despite the name of this function, this returns the index of the tab in the
+     * {@link TabLayout} given by {@link R.id.tabs}. {@link #onCreateView} treats this tabId as an
+     * index.
+     *
+     * <p>
+     * However, it's possible to have tabId != tabIndex in certain cases like launching
+     * android.settings.CREDENTIAL_PROVIDER in an app from a private profile. {@link #PRIVATE_TAB}
+     * is 2, but if there was no work profile, then there would only be Personal (index 0) and
+     * Private (index 1) tabs. Using {@link #PRIVATE_TAB} (2) as the index results in an NPE in
+     * onCreateView. If there was a work profile, then there would be Personal, Private, and Work
+     * tabs. The intent android.settings.CREDENTIAL_PROVIDER from private profile will actually
+     * select the Work tab, because the index {@link #PRIVATE_TAB} (2) is used with Work tab in that
+     * index.
+     *
+     * <p> We fixed this from upstream so that the actual tab index is always returned. This is
+     * marked {@link VisibleForTesting}, so we don't expect this function to be used anywhere else.
+     */
     @VisibleForTesting
     int getTabId(Activity activity, Bundle bundle) {
+        var adapter = (ViewPagerAdapter) Objects.requireNonNull(mViewPager.getAdapter());
         if (bundle != null) {
             final int extraTab = bundle.getInt(SettingsActivity.EXTRA_SHOW_FRAGMENT_TAB, -1);
             if (extraTab != -1) {
-                return ((ViewPagerAdapter) mViewPager.getAdapter())
-                        .getPositionForProfileTab(extraTab);
+                // very confusing function name: upstream is returning position here, not tab id
+                return adapter.getPositionForProfileTab(extraTab);
             }
             final int userId = bundle.getInt(EXTRA_USER_ID, activity.getUserId());
             final boolean isWorkProfile = UserManager.get(activity).isManagedProfile(userId);
             if (isWorkProfile) {
-                return WORK_TAB;
+                return adapter.getPositionForProfileTab(WORK_TAB);
             }
             UserInfo userInfo = UserManager.get(activity).getUserInfo(userId);
             if (userInfo != null && userInfo.isPrivateProfile()) {
-                return PRIVATE_TAB;
+                return adapter.getPositionForProfileTab(PRIVATE_TAB);
             }
         }
         // Start intent from a specific user eg: adb shell --user 10
         final int intentUser = activity.getIntent().getContentUserHint();
         if (UserManager.get(activity).isManagedProfile(intentUser)) {
-            return WORK_TAB;
+            return adapter.getPositionForProfileTab(WORK_TAB);
         }
         UserInfo userInfo = UserManager.get(activity).getUserInfo(intentUser);
         if (userInfo != null && userInfo.isPrivateProfile()) {
-            return PRIVATE_TAB;
+            return adapter.getPositionForProfileTab(PRIVATE_TAB);
         }
 
-        return PERSONAL_TAB;
+        return adapter.getPositionForProfileTab(PERSONAL_TAB);
     }
 
     private CharSequence getPageTitle(int position) {
