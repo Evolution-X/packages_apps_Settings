@@ -100,8 +100,22 @@ public class ProfileSelectFragmentTest {
         mUserManager = ShadowUserManager.getShadow();
     }
 
+    private void setUpViewPager(ProfileSelectFragment fragment) {
+        ViewPager2 viewPager = new ViewPager2(mContext);
+        ViewPagerAdapter viewPagerAdapter =
+                new TestViewPagerAdapter(mFragmentManager, mLifecycle, fragment);
+        when(mFragmentManager.beginTransaction()).thenReturn(mFragmentTransaction);
+        viewPager.setAdapter(viewPagerAdapter);
+        mFragment.setViewPager(viewPager);
+        fragment.setViewPager(viewPager);
+        mFragmentManager.beginTransaction().add(fragment, "tag");
+    }
+
     @Test
     public void getTabId_no_setCorrectTab() {
+        TestProfileSelectFragment profileSelectFragment = new TestProfileSelectFragment();
+        setUpViewPager(profileSelectFragment);
+
         assertThat(mFragment.getTabId(mActivity, null)).isEqualTo(PERSONAL_TAB);
     }
 
@@ -109,16 +123,8 @@ public class ProfileSelectFragmentTest {
     public void getTabId_setArgumentWork_setCorrectTab() {
         final Bundle bundle = new Bundle();
         bundle.putInt(SettingsActivity.EXTRA_SHOW_FRAGMENT_TAB, WORK_TAB);
-        ViewPager2 viewPager = new ViewPager2(mContext);
         TestProfileSelectFragment profileSelectFragment = new TestProfileSelectFragment();
-        ViewPagerAdapter viewPagerAdapter =
-                new TestViewPagerAdapter(mFragmentManager, mLifecycle, profileSelectFragment);
-
-        when(mFragmentManager.beginTransaction()).thenReturn(mFragmentTransaction);
-        viewPager.setAdapter(viewPagerAdapter);
-        mFragment.setViewPager(viewPager);
-        profileSelectFragment.setViewPager(viewPager);
-        mFragmentManager.beginTransaction().add(profileSelectFragment, "tag");
+        setUpViewPager(profileSelectFragment);
 
         // The expected position '2' comes from the order in which fragments are added in
         // TestProfileSelectFragment#getFragments()
@@ -129,16 +135,8 @@ public class ProfileSelectFragmentTest {
     public void getTabId_setArgumentPrivate_setCorrectTab() {
         final Bundle bundle = new Bundle();
         bundle.putInt(SettingsActivity.EXTRA_SHOW_FRAGMENT_TAB, PRIVATE_TAB);
-        ViewPager2 viewPager = new ViewPager2(mContext);
         TestProfileSelectFragment profileSelectFragment = new TestProfileSelectFragment();
-        ViewPagerAdapter viewPagerAdapter =
-                new TestViewPagerAdapter(mFragmentManager, mLifecycle, profileSelectFragment);
-
-        when(mFragmentManager.beginTransaction()).thenReturn(mFragmentTransaction);
-        viewPager.setAdapter(viewPagerAdapter);
-        mFragment.setViewPager(viewPager);
-        profileSelectFragment.setViewPager(viewPager);
-        mFragmentManager.beginTransaction().add(profileSelectFragment, "tag");
+        setUpViewPager(profileSelectFragment);
 
         // The expected position '1' comes from the order in which fragments are added in
         // TestProfileSelectFragment#getFragments()
@@ -149,16 +147,8 @@ public class ProfileSelectFragmentTest {
     public void getTabId_setArgumentPersonal_setCorrectTab() {
         final Bundle bundle = new Bundle();
         bundle.putInt(SettingsActivity.EXTRA_SHOW_FRAGMENT_TAB, PERSONAL_TAB);
-        ViewPager2 viewPager = new ViewPager2(mContext);
         TestProfileSelectFragment profileSelectFragment = new TestProfileSelectFragment();
-        ViewPagerAdapter viewPagerAdapter =
-                new TestViewPagerAdapter(mFragmentManager, mLifecycle, profileSelectFragment);
-
-        when(mFragmentManager.beginTransaction()).thenReturn(mFragmentTransaction);
-        viewPager.setAdapter(viewPagerAdapter);
-        mFragment.setViewPager(viewPager);
-        profileSelectFragment.setViewPager(viewPager);
-        mFragmentManager.beginTransaction().add(profileSelectFragment, "tag");
+        setUpViewPager(profileSelectFragment);
 
         assertThat(mFragment.getTabId(mActivity, bundle)).isEqualTo(PERSONAL_TAB);
     }
@@ -170,8 +160,11 @@ public class ProfileSelectFragmentTest {
         final Set<Integer> profileIds = new HashSet<>();
         profileIds.add(10);
         mUserManager.setManagedProfiles(profileIds);
+        TestProfileSelectFragment profileSelectFragment = new TestProfileSelectFragment();
+        setUpViewPager(profileSelectFragment);
 
-        assertThat(mFragment.getTabId(mActivity, bundle)).isEqualTo(WORK_TAB);
+        // Work fragment is at position 2 in TestProfileSelectFragment#getFragments()
+        assertThat(mFragment.getTabId(mActivity, bundle)).isEqualTo(2);
     }
 
     @Test
@@ -179,14 +172,19 @@ public class ProfileSelectFragmentTest {
         final Bundle bundle = new Bundle();
         bundle.putInt(EXTRA_USER_ID, 11);
         mUserManager.setPrivateProfile(11, "private", 0);
+        TestProfileSelectFragment profileSelectFragment = new TestProfileSelectFragment();
+        setUpViewPager(profileSelectFragment);
 
-        assertThat(mFragment.getTabId(mActivity, bundle)).isEqualTo(PRIVATE_TAB);
+        // Private fragment is at position 1 in TestProfileSelectFragment#getFragments()
+        assertThat(mFragment.getTabId(mActivity, bundle)).isEqualTo(1);
     }
 
     @Test
     public void getTabId_setPersonalId_getCorrectTab() {
         final Bundle bundle = new Bundle();
         bundle.putInt(EXTRA_USER_ID, 0);
+        TestProfileSelectFragment profileSelectFragment = new TestProfileSelectFragment();
+        setUpViewPager(profileSelectFragment);
 
         assertThat(mFragment.getTabId(mActivity, bundle)).isEqualTo(PERSONAL_TAB);
     }
@@ -199,8 +197,47 @@ public class ProfileSelectFragmentTest {
         final Intent intent = spy(new Intent());
         when(intent.getContentUserHint()).thenReturn(10);
         when(mActivity.getIntent()).thenReturn(intent);
+        TestProfileSelectFragment profileSelectFragment = new TestProfileSelectFragment();
+        setUpViewPager(profileSelectFragment);
 
-        assertThat(mFragment.getTabId(mActivity, null)).isEqualTo(WORK_TAB);
+        // Work fragment is at position 2 in TestProfileSelectFragment#getFragments()
+        assertThat(mFragment.getTabId(mActivity, null)).isEqualTo(2);
+    }
+
+    @Test
+    public void getTabId_privateProfileNoWorkProfile_getsCorrectPosition() {
+        final int privateUserId = 11;
+        when(mActivity.getUserId()).thenReturn(privateUserId);
+        mUserManager.setPrivateProfile(privateUserId, PRIVATE_USER_NAME, 0);
+
+        // Bundle with no EXTRA_USER_ID -- falls back to activity.getUserId()
+        final Bundle bundle = new Bundle();
+
+        // Adapter with only Personal (pos 0) and Private (pos 1) -- no Work
+        TestPersonalAndPrivateOnlyFragment profileSelectFragment =
+                new TestPersonalAndPrivateOnlyFragment();
+        setUpViewPager(profileSelectFragment);
+
+        // Should return position 1 (where Private actually is), not PRIVATE_TAB (2)
+        assertThat(mFragment.getTabId(mActivity, bundle)).isEqualTo(1);
+    }
+
+    @Test
+    public void getTabId_privateProfileWithWorkProfile_getsPrivateNotWork() {
+        final int privateUserId = 11;
+        when(mActivity.getUserId()).thenReturn(privateUserId);
+        mUserManager.setPrivateProfile(privateUserId, PRIVATE_USER_NAME, 0);
+
+        // Bundle with no EXTRA_USER_ID, falls back to activity.getUserId()
+        final Bundle bundle = new Bundle();
+
+        // Adapter with all 3 tabs: Personal (pos 0), Private (pos 1), Work (pos 2).
+        // getTabId should not return PRIVATE_TAB (2), which is the Work tab position.
+        TestProfileSelectFragment profileSelectFragment = new TestProfileSelectFragment();
+        setUpViewPager(profileSelectFragment);
+
+        // Should return position 1 (Private), not 2 (which is Work in this ordering)
+        assertThat(mFragment.getTabId(mActivity, bundle)).isEqualTo(1);
     }
 
     @Test
@@ -344,6 +381,28 @@ public class ProfileSelectFragmentTest {
                     privateFragment,
                     workFragment
             };
+        }
+    }
+
+    /**
+     * Simulates a user with a personal and private profile but no work profile. The ordering
+     * reflects the iteration order in {@link ProfileSelectFragment#getFragments} when no work
+     * profile is present.
+     */
+    public static class TestPersonalAndPrivateOnlyFragment extends ProfileSelectFragment {
+        @Override
+        public Fragment[] getFragments() {
+            Fragment personalFragment = new SettingsPreferenceFragmentTest.TestFragment();
+            Bundle personalBundle = new Bundle();
+            personalBundle.putInt(EXTRA_PROFILE, ProfileType.PERSONAL);
+            personalFragment.setArguments(personalBundle);
+
+            Fragment privateFragment = new SettingsPreferenceFragmentTest.TestFragment();
+            Bundle privateBundle = new Bundle();
+            privateBundle.putInt(EXTRA_PROFILE, ProfileType.PRIVATE);
+            privateFragment.setArguments(privateBundle);
+
+            return new Fragment[]{personalFragment, privateFragment};
         }
     }
 
