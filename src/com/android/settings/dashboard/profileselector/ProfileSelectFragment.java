@@ -310,6 +310,10 @@ public abstract class ProfileSelectFragment extends DashboardFragment {
 
         try {
             UserManager userManager = context.getSystemService(UserManager.class);
+            // ProfileSelectFragment can be used in a private or work profile via an app launching
+            // Settings.ACTION_CREDENTIAL_PROVIDER. When this happens, UserHandle.myUserId() will
+            // actually be the userId of the private / work profile. userManager.getProfiles returns
+            // the entire profile group, so the parent and its profiles will always be in there.
             List<UserInfo> userInfos = userManager.getProfiles(UserHandle.myUserId());
 
             for (UserInfo userInfo : userInfos) {
