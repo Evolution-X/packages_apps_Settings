@@ -317,7 +317,13 @@ public abstract class ProfileSelectFragment extends DashboardFragment {
             List<UserInfo> userInfos = userManager.getProfiles(UserHandle.myUserId());
 
             for (UserInfo userInfo : userInfos) {
-                if (userInfo.canHaveProfile()) {
+                // 16 QPR3: userInfo.isMain() was changed to userInfo.canHaveProfile(). However,
+                // userInfo.canHaveProfile() doesn't return true in full secondary (non-guest) users
+                // until the aconfig flag android.multiuser.profiles_for_all and
+                // config_supportProfilesOnNonMainUser are both enabled. Use downstream check for it
+                // in canHaveProfile(UserManager.USER_TYPE_PROFILE_PRIVATE) for now
+                if (userInfo.canHaveProfile()
+                        || userInfo.canHaveProfile(UserManager.USER_TYPE_PROFILE_PRIVATE)) {
                     fragments.add(
                             createAndGetFragment(
                                     ProfileType.PERSONAL,
