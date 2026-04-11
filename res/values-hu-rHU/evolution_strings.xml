@@ -175,10 +175,7 @@
     <string name="always_on_display_schedule_sunrise">Napkelte</string>
     <string name="always_on_display_schedule_mixed_sunset">Napnyugtától egy bizonyos ideig bekapcsol</string>
     <string name="always_on_display_schedule_mixed_sunrise">Egy adott időponttól Napkeltéig kapcsol be</string>
-    <!-- Idle manager -->
-    <string name="idle_manager_title">Készenlét-menedzser</string>
-    <string name="idle_manager_summary">Minden, nem alapvető háttérfolyamat leállítása készenlétben</string>
-    <!-- fingerprint lockout -->
+    <!-- Fingerprint lockout -->
     <string name="fingerprint_lockout_title">Az ujjlenyomat-zárolás letiltása</string>
     <string name="fingerprint_lockout_summary">Deaktiválja a 30 másodperces időtúllépést, valamint a többszöri sikertelen ujjlenyomat-feloldási kísérlet utáni állandó zárolást</string>
     <!-- Long press navbar to search -->
@@ -322,4 +319,44 @@
     <string name="cycle_type_weekly_sub">Minden héten: \n1 = Hétfő</string>
     <string name="cycle_type_daily_title">A ciklus visszaállításának órája</string>
     <string name="cycle_type_daily_sub">Minden napon ekkor:</string>
+    <string name="double_tap_power_torch_action_title">Zseblámpa</string>
+    <string name="gesture_navbar_auto_hide_title">Automatikus navigációs-tipp rejtés</string>
+    <string name="gesture_navbar_auto_hide_summary">Rövid inaktivitás után automatikusan elrejti a navigációs tippet</string>
+    <!-- Sleep Mode -->
+    <string name="sleep_mode_title">Alvómód</string>
+    <string name="sleep_mode_summary_on">Be / <xliff:g name="auto_mode_summary" example="Never turn off automatically">%1$s</xliff:g></string>
+    <string name="sleep_mode_summary_off">Ki / <xliff:g name="auto_mode_summary" example="Never turn on automatically">%1$s</xliff:g></string>
+    <string name="sleep_mode_ringer_title">Csengési mód</string>
+    <string name="sleep_mode_ringer_off_title">Ne változzon</string>
+    <string name="sleep_mode_ringer_vibrate_title">Rezgés</string>
+    <string name="sleep_mode_ringer_dnd_title">Ne zavarjanak (DND)</string>
+    <string name="sleep_mode_ringer_silent_title">Néma</string>
+    <string name="sleep_mode_schedule_sunset">Napnyugta</string>
+    <string name="sleep_mode_schedule_sunrise">Napkelte</string>
+    <string name="sleep_mode_schedule_mixed_sunset">Bekapcsolódik napnyugtától az Ön által megadott ideig</string>
+    <string name="sleep_mode_schedule_mixed_sunrise">Bekapcsolódik az Ön által megadott időtől napkeltéig</string>
+    <string name="sleep_mode_toggles_title">Kapcsolók</string>
+    <string name="sleep_mode_wifi_toggle_title">Wi-Fi-kikapcsolás</string>
+    <string name="sleep_mode_wifi_toggle_summary">Letiltja a Wi-Fi-t, ha az Alvómód be van kapcsolva</string>
+    <string name="sleep_mode_bluetooth_toggle_title">Bluetooth-kikapcsolás</string>
+    <string name="sleep_mode_bluetooth_toggle_summary">Letiltja a Bluetooth-ot, ha az Alvómód be van kapcsolva</string>
+    <string name="sleep_mode_cellular_toggle_title">Mobiladat-kikapcsolás</string>
+    <string name="sleep_mode_cellular_toggle_summary">Letiltja a Mobilinternetet, ha az Alvómód be van kapcsolva</string>
+    <string name="sleep_mode_location_toggle_title">Lokalizáció-kikapcsolás</string>
+    <string name="sleep_mode_location_toggle_summary">Letiltja a helymeghatározást, ha az Alvómód be van kapcsolva</string>
+    <string name="sleep_mode_sensors_toggle_title">Szenzor-kikapcsolás</string>
+    <string name="sleep_mode_sensors_toggle_summary">Letiltja a szenzorokat, ha az Alvómód be van kapcsolva</string>
+    <string name="sleep_mode_display_text">Az Alvómód lehetővé teszi Önnek szolgáltatások letiltását az akkumulátor kímélése és a telefon alvás közbeni némítása érdekében.</string>
+    <!-- Display settings screen, activation button action for manual mode. [CHAR LIMIT=40] -->
+    <string name="night_display_activation_on_manual">Bekapcsolás most</string>
+    <!-- Display settings screen, deactivation button action for manual mode. [CHAR LIMIT=40] -->
+    <string name="night_display_activation_off_manual">Kikapcsolás most</string>
+    <!-- Display settings screen, activation button action for sunset-to-sunrise schedule [CHAR LIMIT=40] -->
+    <string name="night_display_activation_on_twilight">Bekapcsolás napkeltéig</string>
+    <!-- Display settings screen, deactivation button action for sunset-to-sunrise schedule [CHAR LIMIT=40] -->
+    <string name="night_display_activation_off_twilight">Kikapcsolás napnyugtáig</string>
+    <!-- Display settings screen, activation button action for custom schedule [CHAR LIMIT=40] -->
+    <string name="night_display_activation_on_custom">Bekapcsolás eddig: <xliff:g name="time" example="6 AM">%1$s</xliff:g></string>
+    <!-- Display settings screen, deactivation button action for custom schedule [CHAR LIMIT=40] -->
+    <string name="night_display_activation_off_custom">Kikapcsolás eddig: <xliff:g name="time" example="10 PM">%1$s</xliff:g></string>
 </resources>
