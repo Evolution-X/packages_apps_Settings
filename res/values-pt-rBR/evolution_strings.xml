@@ -107,7 +107,7 @@
     <string name="clipboard_auto_clear_enabled_title">Usar limpeza automática de transferência</string>
     <string name="clipboard_auto_clear_timeout_disable_clipboard">Desativar área de transferência</string>
     <!-- Game space -->
-    <string name="game_space_title">Modo Gamer</string>
+    <string name="game_space_title">Espaço de Jogo</string>
     <string name="game_space_summary">Melhore sua experiência em jogos</string>
     <!-- Unlimit screenrecord -->
     <string name="unlimit_screenrecord_title">Gravação de tela sem limite</string>
@@ -175,10 +175,7 @@
     <string name="always_on_display_schedule_sunrise">Nascer do sol</string>
     <string name="always_on_display_schedule_mixed_sunset">Ativado do anoitecer até um tempo específico</string>
     <string name="always_on_display_schedule_mixed_sunrise">Ativado do tempo específico até o amanhecer</string>
-    <!-- Idle manager -->
-    <string name="idle_manager_title">Gerenciador de ociosidade</string>
-    <string name="idle_manager_summary">Parar todos os processos em segundo plano não essenciais quando o dispositivo entrar em modo ocioso</string>
-    <!-- fingerprint lockout -->
+    <!-- Fingerprint lockout -->
     <string name="fingerprint_lockout_title">Desativar bloqueio de digital</string>
     <string name="fingerprint_lockout_summary">Desativa o tempo limite de 30 segundos, bem como o bloqueio permanente após várias tentativas de desbloqueio com impressão digital falhadas</string>
     <!-- Long press navbar to search -->
@@ -280,9 +277,6 @@
     <string name="doze_brightness_force_summary">Usar valores de brilho personalizado ao invés do brilho da tela</string>
     <string name="ambient_pulse_brightness_title">Nível de brilho da tela ambiente</string>
     <string name="ambient_doze_brightness_title">Brilho da tela sempre ativo</string>
-    <!-- Swipe to screenshot -->
-    <string name="swipe_to_screenshot_title">Deslize para capturar a tela</string>
-    <string name="swipe_to_screenshot_summary">Deslize 3 dedos para baixo na tela para tirar uma captura de tela</string>
     <!-- Battery Saver -->
     <string name="adaptive_battery_switch_title">Usar Bateria Adaptável</string>
     <string name="basic_battery_saver_title">Economia de bateria padrão</string>
@@ -311,4 +305,58 @@
     <!-- Multi Audio Focus -->
     <string name="multi_audio_focus_title">Foco multiplo de áudio</string>
     <string name="multi_audio_focus_summary">Permitir que vários apps reproduzam áudio simultaneamente</string>
+    <!-- Data Usage Cycle -->
+    <string name="billing_cycle_type_title">Tipo de ciclo de uso de dados móveis</string>
+    <string name="billing_cycle_type_monthly">Mensal</string>
+    <string name="billing_cycle_type_weekly">Semanal</string>
+    <string name="billing_cycle_type_daily">Diário</string>
+    <string name="billing_cycle_less_than_one_hour_left">Resta menos de 1 hora</string>
+    <string name="billing_cycle_hours_left">{count, plural,
+=1 {# hora restante}
+other {# horas restantes}
+}</string>
+    <string name="cycle_type_weekly_title">Data do ciclo de uso</string>
+    <string name="cycle_type_weekly_sub">Dia de cada semana:\n1 = segunda-feira</string>
+    <string name="cycle_type_daily_title">Hora de redefinição do ciclo de uso</string>
+    <string name="cycle_type_daily_sub">Hora de cada dia:</string>
+    <string name="double_tap_power_torch_action_title">Lanterna</string>
+    <string name="gesture_navbar_auto_hide_title">Ocultar dica de navegação automaticamente</string>
+    <string name="gesture_navbar_auto_hide_summary">Ocultar automaticamente a dica de navegação após um curto período de inatividade</string>
+    <!-- Sleep Mode -->
+    <string name="sleep_mode_title">Modo dormir</string>
+    <string name="sleep_mode_summary_on">Ativado / %1$s</string>
+    <string name="sleep_mode_summary_off">Desativado / %1$s</string>
+    <string name="sleep_mode_ringer_title">Modo de toque</string>
+    <string name="sleep_mode_ringer_off_title">Não alterar</string>
+    <string name="sleep_mode_ringer_vibrate_title">Vibrar</string>
+    <string name="sleep_mode_ringer_dnd_title">Não perturbe</string>
+    <string name="sleep_mode_ringer_silent_title">Silencioso</string>
+    <string name="sleep_mode_schedule_sunset">Pôr do sol</string>
+    <string name="sleep_mode_schedule_sunrise">Nascer do sol</string>
+    <string name="sleep_mode_schedule_mixed_sunset">Ativa do pôr do sol até um horário personalizado</string>
+    <string name="sleep_mode_schedule_mixed_sunrise">Ativa de um horário personalizado até o nascer do sol</string>
+    <string name="sleep_mode_toggles_title">Controles</string>
+    <string name="sleep_mode_wifi_toggle_title">Desligar Wi-Fi</string>
+    <string name="sleep_mode_wifi_toggle_summary">Desativar o Wi-Fi quando o modo dormir for ativado</string>
+    <string name="sleep_mode_bluetooth_toggle_title">Desligar Bluetooth</string>
+    <string name="sleep_mode_bluetooth_toggle_summary">Desativar o Bluetooth quando o modo dormir for ativado</string>
+    <string name="sleep_mode_cellular_toggle_title">Desligar dados móveis</string>
+    <string name="sleep_mode_cellular_toggle_summary">Desativar dados móveis quando o modo dormir for ativado</string>
+    <string name="sleep_mode_location_toggle_title">Desligar localização</string>
+    <string name="sleep_mode_location_toggle_summary">Desativar a localização quando o modo dormir for ativado</string>
+    <string name="sleep_mode_sensors_toggle_title">Desligar sensores</string>
+    <string name="sleep_mode_sensors_toggle_summary">Desativar os sensores quando o modo dormir for ativado</string>
+    <string name="sleep_mode_display_text">O modo dormir permite desativar determinados serviços para economizar bateria e silenciar o celular enquanto você dorme.</string>
+    <!-- Display settings screen, activation button action for manual mode. [CHAR LIMIT=40] -->
+    <string name="night_display_activation_on_manual">Ativar agora</string>
+    <!-- Display settings screen, deactivation button action for manual mode. [CHAR LIMIT=40] -->
+    <string name="night_display_activation_off_manual">Desativar agora</string>
+    <!-- Display settings screen, activation button action for sunset-to-sunrise schedule [CHAR LIMIT=40] -->
+    <string name="night_display_activation_on_twilight">Ativar até o nascer do sol</string>
+    <!-- Display settings screen, deactivation button action for sunset-to-sunrise schedule [CHAR LIMIT=40] -->
+    <string name="night_display_activation_off_twilight">Desativar até o pôr do sol</string>
+    <!-- Display settings screen, activation button action for custom schedule [CHAR LIMIT=40] -->
+    <string name="night_display_activation_on_custom">Ativar até %1$s</string>
+    <!-- Display settings screen, deactivation button action for custom schedule [CHAR LIMIT=40] -->
+    <string name="night_display_activation_off_custom">Desativar até %1$s</string>
 </resources>
