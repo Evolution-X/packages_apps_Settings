@@ -60,7 +60,7 @@
     <!-- Summary for Wellbeing screen time usage. [CHAR LIMIT=NONE] -->
     <string name="screen_time_summary_usage_today">%1$s dzisiaj</string>
     <!-- Auto pin confirm -->
-    <string name="lock_screen_auto_pin_confirm_summary_custom">Odblokuj automatycznie po wprowadzeniu poprawnego kodu PIN. Jest to nieco mniej bezpieczne niż dotknięcie przycisku Enter w celu potwierdzenia.</string>
+    <string name="lock_screen_auto_pin_confirm_summary_custom">Odblokuj automatycznie po wprowadzeniu poprawnego kodu PIN. Jest to nieco mniej bezpieczne niż dotknięcie przycisku enter do potwierdzenia.</string>
     <!-- Radio Info -->
     <string name="radio_info_title">Informacje o radiu</string>
     <!-- USB configuration -->
@@ -173,16 +173,13 @@
     <string name="prevent_ringing_option_cycle">Przełączaj między trybami</string>
     <string name="prevent_ringing_option_cycle_summary">Włącz (przełączaj między trybami)</string>
     <!-- AOD Schedule -->
-    <string name="always_on_display_schedule_title">Harmonogram dla trybu Ekran zawsze włączony</string>
+    <string name="always_on_display_schedule_title">Harmonogram dla Ekran zawsze włączony</string>
     <string name="string_disabled">Wyłączony</string>
     <string name="always_on_display_schedule_sunset">Zachód słońca</string>
     <string name="always_on_display_schedule_sunrise">Wschód słońca</string>
     <string name="always_on_display_schedule_mixed_sunset">Od zachodu słońca do ustalonego czasu</string>
     <string name="always_on_display_schedule_mixed_sunrise">Od ustalonego czasu do wschodu słońca</string>
-    <!-- Idle manager -->
-    <string name="idle_manager_title">Menedżer bezczynności</string>
-    <string name="idle_manager_summary">Zatrzymaj wszystkie zbędne procesy działające w tle, gdy urządzenie jest w trybie bezczynności.</string>
-    <!-- fingerprint lockout -->
+    <!-- Fingerprint lockout -->
     <string name="fingerprint_lockout_title">Wyłącz blokadę odciskiem palca</string>
     <string name="fingerprint_lockout_summary">Dezaktywuj 30-sekundowy limit czasu oraz trwałą blokadę po wielu nieudanych próbach odblokowania odciskiem palca.</string>
     <!-- Long press navbar to search -->
@@ -200,7 +197,7 @@
     <string name="vivid_engine_mode_title">Żywy wyświetlacz</string>
     <string name="triluminos_engine_mode_title">Wyświetlacz Triluminos</string>
     <string name="display_engine_default">Domyślny</string>
-    <string name="display_engine_mode_footer_text">Zainspirowany silnikiem Bravia/X-Reality firmy Sony, silnik Display Engine oferuje tryb Vivid zapewniający lepszą jasność i nasycenie kolorów, tryb X-Reality zapewniający większą szczegółowość i dokładność kolorów oraz tryb Triluminos zapewniający znaną dokładność wyświetlania kolorów.</string>
+    <string name="display_engine_mode_footer_text">Zainspirowany silnikiem Bravia/X-Reality firmy Sony, silnik wyświetlania oferuje tryb Żywy dla większej jasności i nasycenia kolorów. Tryb X-Reality poprawia szczegółowość i dokładność kolorów, a Triluminos zapewnia wyjątkowo precyzyjne odwzorowanie barw.</string>
     <!-- Ambient wake toggles -->
     <string name="doze_gesture_ambient_title">Pokaż ekran otoczenia</string>
     <string name="doze_gesture_ambient_summary">Pokaż ekran otoczenia, zamiast wybudzać ekran</string>
@@ -217,7 +214,7 @@
     <string name="doze_gesture_vibrate_title">Wibracja przy dotknięciu</string>
     <string name="doze_gesture_vibrate_summary">Wibracja po wywołaniu tego gestu</string>
     <!-- Power off verify -->
-    <string name="power_off_verify_footer">Weryfikacja wyłączania chroni Twoje urządzenie, uniemożliwiając innym osobom wyłączenie go natychmiast po utracie, zwiększając szanse na jego odzyskanie. Hasło blokady ekranu należy wprowadzić tylko podczas wyłączania lub ponownego uruchamiania telefonu z poziomu ekranu blokady.</string>
+    <string name="power_off_verify_footer">Weryfikacja wyłączania chroni twoje urządzenie, uniemożliwiając innym osobom wyłączenie go natychmiast po utracie, zwiększając szanse na jego odzyskanie. Hasło blokady ekranu należy wprowadzić tylko podczas wyłączania lub ponownego uruchamiania telefonu z poziomu ekranu blokady.</string>
     <string name="power_off_verify_summary">Jeśli urządzenie jest zablokowane, do jego wyłączenia lub ponownego uruchomienia konieczne będzie podanie hasła.</string>
     <string name="power_off_verify_title">Weryfikacja wyłączania </string>
     <!-- IME button space -->
@@ -271,7 +268,7 @@
     <string name="pattern_mm_mm_mm">mm-mm-mm</string>
     <string name="pattern_da_da_dzzz">da-da-dzzz</string>
     <string name="pattern_da_dzzz_da">da-dzzz-da</string>
-    <string name="pattern_custom">Własny</string>
+    <string name="pattern_custom">Niestandardowy</string>
     <string name="custom_vibration_pattern_title">Niestandardowy wzór</string>
     <string name="custom_vibration_pattern_summary">Ustaw niestandardowy wzór wibracji</string>
     <!-- Locale Picker -->
@@ -326,4 +323,44 @@
     <string name="cycle_type_weekly_sub">Dzień każdego tygodnia:\n1 = Poniedziałek</string>
     <string name="cycle_type_daily_title">Godzina resetowania cyklu użytkowania</string>
     <string name="cycle_type_daily_sub">Godzina każdego dnia:</string>
+    <string name="double_tap_power_torch_action_title">Latarka</string>
+    <string name="gesture_navbar_auto_hide_title">Automatyczne ukrywanie podpowiedzi nawigacji</string>
+    <string name="gesture_navbar_auto_hide_summary">Automatycznie ukrywa podpowiedzi nawigacji po krótkim okresie bezczynności</string>
+    <!-- Sleep Mode -->
+    <string name="sleep_mode_title">Tryb uśpienia</string>
+    <string name="sleep_mode_summary_on">Włączone / <xliff:g name="auto_mode_summary" example="Never turn off automatically">%1$s</xliff:g></string>
+    <string name="sleep_mode_summary_off">Wyłączone / <xliff:g name="auto_mode_summary" example="Never turn on automatically">%1$s</xliff:g></string>
+    <string name="sleep_mode_ringer_title">Tryb dzwonka</string>
+    <string name="sleep_mode_ringer_off_title">Nie zmieniaj</string>
+    <string name="sleep_mode_ringer_vibrate_title">Wibracje</string>
+    <string name="sleep_mode_ringer_dnd_title">Nie przeszkadzać</string>
+    <string name="sleep_mode_ringer_silent_title">Wyciszenie</string>
+    <string name="sleep_mode_schedule_sunset">Zachód słońca</string>
+    <string name="sleep_mode_schedule_sunrise">Wschód słońca</string>
+    <string name="sleep_mode_schedule_mixed_sunset">Włącza się od zachodu słońca do wybranego czasu</string>
+    <string name="sleep_mode_schedule_mixed_sunrise">Włącza się o określonej godzinie do wschodu słońca</string>
+    <string name="sleep_mode_toggles_title">Przełączniki</string>
+    <string name="sleep_mode_wifi_toggle_title">Wyłącz Wi-Fi</string>
+    <string name="sleep_mode_wifi_toggle_summary">Wyłącz Wi-Fi, gdy włączony jest tryb uśpienia</string>
+    <string name="sleep_mode_bluetooth_toggle_title">Wyłącz Bluetooth</string>
+    <string name="sleep_mode_bluetooth_toggle_summary">Wyłącz Bluetooth, gdy włączony jest tryb uśpienia</string>
+    <string name="sleep_mode_cellular_toggle_title">Wyłącz dane mobilne</string>
+    <string name="sleep_mode_cellular_toggle_summary">Wyłącz dane mobilne, gdy włączony jest tryb uśpienia</string>
+    <string name="sleep_mode_location_toggle_title">Wyłącz lokalizację</string>
+    <string name="sleep_mode_location_toggle_summary">Wyłącz lokalizację, gdy włączony jest tryb uśpienia</string>
+    <string name="sleep_mode_sensors_toggle_title">Wyłącz czujniki</string>
+    <string name="sleep_mode_sensors_toggle_summary">Wyłącz czujniki, gdy włączony jest tryb uśpienia</string>
+    <string name="sleep_mode_display_text">Tryb uśpienia pozwala wyłączyć niektóre usługi, aby pomóc oszczędzać baterię i wyciszyć telefon, gdy śpisz</string>
+    <!-- Display settings screen, activation button action for manual mode. [CHAR LIMIT=40] -->
+    <string name="night_display_activation_on_manual">Włącz teraz</string>
+    <!-- Display settings screen, deactivation button action for manual mode. [CHAR LIMIT=40] -->
+    <string name="night_display_activation_off_manual">Wyłącz teraz</string>
+    <!-- Display settings screen, activation button action for sunset-to-sunrise schedule [CHAR LIMIT=40] -->
+    <string name="night_display_activation_on_twilight">Włącz do wschodu słońca</string>
+    <!-- Display settings screen, deactivation button action for sunset-to-sunrise schedule [CHAR LIMIT=40] -->
+    <string name="night_display_activation_off_twilight">Wyłącz do zachodu słońca</string>
+    <!-- Display settings screen, activation button action for custom schedule [CHAR LIMIT=40] -->
+    <string name="night_display_activation_on_custom">Włącz do <xliff:g name="time" example="6 AM">%1$s</xliff:g></string>
+    <!-- Display settings screen, deactivation button action for custom schedule [CHAR LIMIT=40] -->
+    <string name="night_display_activation_off_custom">Wyłącz do <xliff:g name="time" example="10 PM">%1$s</xliff:g></string>
 </resources>
