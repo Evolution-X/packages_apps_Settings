@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: Evolution X
+     SPDX-License-Identifier: Apache-2.0
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="20dp"
+    android:height="20dp"
+    android:viewportWidth="512"
+    android:viewportHeight="512">
+
+    <path
+        android:fillColor="#4CAF50"
+        android:pathData="M459.9,166.95c0.58,-4.45 0.9,-8.93 0.9,-13.35 0,-60.9 -54.88,-109.78 -115.75,-101.5 C327.33,20.52 293.52,0 256,0 c-37.55,0 -71.32,20.52 -89.07,52.1 C105.93,43.83 51.2,92.7 51.2,154.6 c0,4.42 0.3,8.9 0.88,13.35 C20.52,184.7 0,218.5 0,256 s20.52,71.3 52.08,89.08 c-0.58,4.45 -0.88,8.9 -0.88,13.32 c0,60.9 54.73,109.65 115.73,101.5 C184.68,491.48 218.45,512 256,512 c37.52,0 71.33,-20.52 89.05,-52.1 c60.88,8.15 115.75,-40.6 115.75,-101.5 c0,-4.42 -0.32,-8.88 -0.9,-13.32 C491.45,327.3 512,293.5 512,256 s-20.55,-71.3 -52.1,-89.05" />
+
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M229.25,369.05l-93.88,-95.07 l36.45,-35.95 l57.78,58.52 l110.77,-109.92 l36.05,36.35 z" />
+
+</vector>
