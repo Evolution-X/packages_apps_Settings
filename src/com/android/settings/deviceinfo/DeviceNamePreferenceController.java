@@ -34,6 +34,7 @@ import androidx.preference.PreferenceScreen;
 import com.android.settings.R;
 import com.android.settings.bluetooth.BluetoothLengthDeviceNameFilter;
 import com.android.settings.core.BasePreferenceController;
+import com.android.settings.deviceinfo.DeviceNameUtils;
 import com.android.settings.widget.ValidatedEditTextPreference;
 import com.android.settings.wifi.tether.WifiDeviceNameTextValidator;
 import com.android.settingslib.core.lifecycle.LifecycleObserver;
@@ -86,11 +87,18 @@ public class DeviceNamePreferenceController extends BasePreferenceController
 
         // Try using market name if there is not set device name
         if (deviceName == null) {
-            deviceName = SystemProperties.get(KEY_MARKET_NAME_PROP, null);
+            String manufacturer = DeviceNameUtils.sanitize(
+                    SystemProperties.get("ro.product.manufacturer", Build.MANUFACTURER));
+            String marketName = DeviceNameUtils.sanitize(
+                    SystemProperties.get(KEY_MARKET_NAME_PROP, ""));
 
-            // If market name is not available, fallback to device model
-            if (deviceName == null)
-                deviceName = Build.MODEL;
+            if (!marketName.isEmpty()) {
+                deviceName = DeviceNameUtils.prefixIfNeeded(manufacturer, marketName);
+            } else {
+                // If market name is not available, fallback to device model
+                String model = DeviceNameUtils.sanitize(Build.MODEL);
+                deviceName = DeviceNameUtils.prefixIfNeeded(manufacturer, model);
+            }
         }
         mDeviceName = deviceName;
     }
