@@ -29,6 +29,7 @@ import androidx.preference.Preference;
 
 import com.android.settings.R;
 import com.android.settings.core.BasePreferenceController;
+import com.android.settings.deviceinfo.DeviceNameUtils;
 
 public class AboutDeviceNamePreferenceController extends BasePreferenceController {
 
@@ -49,13 +50,26 @@ public class AboutDeviceNamePreferenceController extends BasePreferenceControlle
 
     @Override
     public CharSequence getSummary() {
-        String deviceBrand = SystemProperties.get(KEY_BRAND_NAME_PROP,
-                mContext.getString(R.string.device_info_default));
-        String deviceCodename = SystemProperties.get(KEY_DEVICE_NAME_PROP,
-                mContext.getString(R.string.device_info_default));
-        String deviceModel = Build.MODEL;
-        String deviceMarketname = SystemProperties.get(KEY_MARKET_NAME_PROP,
-                deviceBrand + " " + deviceModel);
-        return deviceMarketname + " | " + deviceCodename;
+        final String fallback = mContext.getString(R.string.device_info_default);
+
+        String manufacturer = DeviceNameUtils.sanitize(
+                SystemProperties.get(KEY_BRAND_NAME_PROP, Build.MANUFACTURER));
+        if (manufacturer.isEmpty()) manufacturer = DeviceNameUtils.sanitize(fallback);
+
+        String codename = DeviceNameUtils.sanitize(
+                SystemProperties.get(KEY_DEVICE_NAME_PROP, Build.DEVICE));
+        if (codename.isEmpty()) codename = DeviceNameUtils.sanitize(fallback);
+
+        String marketName = DeviceNameUtils.sanitize(
+                SystemProperties.get(KEY_MARKET_NAME_PROP, ""));
+        if (marketName.isEmpty()) {
+            marketName = DeviceNameUtils.sanitize(Build.MODEL);
+        }
+        if (marketName.isEmpty()) {
+            marketName = fallback;
+        }
+
+        String displayName = DeviceNameUtils.prefixIfNeeded(manufacturer, marketName);
+        return displayName + " | " + codename;
     }
 }
