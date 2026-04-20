@@ -48,6 +48,11 @@ public class SoCModelPreferenceController extends BasePreferenceController {
 
     @Override
     public CharSequence getSummary() {
+        return getSocModel();
+    }
+
+    /** Platform string shared with the Model page; empty when unknown. */
+    public static String getSocModel() {
         if (!Build.SOC_MODEL.equals(Build.UNKNOWN)) {
             if (!Build.SOC_MANUFACTURER.equals(Build.UNKNOWN)) {
                 return Build.SOC_MANUFACTURER + " " + Build.SOC_MODEL;
