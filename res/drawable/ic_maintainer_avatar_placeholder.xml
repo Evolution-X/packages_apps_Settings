@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: Evolution X
+     SPDX-License-Identifier: Apache-2.0
+-->
+<!--
+    Placeholder shown in the maintainer avatar slot before the GitHub avatar
+    is fetched (or when no GitHub username is available).
+
+    Renders a filled circle in colorSecondaryContainer with a centred person
+    silhouette in colorOnSecondaryContainer, so it blends seamlessly with the
+    maintainer card background in both light and dark themes.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="56dp"
+    android:height="56dp"
+    android:viewportWidth="56"
+    android:viewportHeight="56">
+
+    <!-- Background circle -->
+    <path
+        android:fillColor="?attr/colorSurfaceVariant"
+        android:pathData="M28,0 A28,28 0 1,1 28,56 A28,28 0 1,1 28,0 Z" />
+
+    <!-- Head -->
+    <path
+        android:fillColor="?attr/colorOnSurfaceVariant"
+        android:fillAlpha="0.6"
+        android:pathData="M28,14 A7,7 0 1,1 28,28 A7,7 0 1,1 28,14 Z" />
+
+    <!-- Shoulders / body -->
+    <path
+        android:fillColor="?attr/colorOnSurfaceVariant"
+        android:fillAlpha="0.6"
+        android:pathData="M14,46 C14,37.16 20.27,30 28,30 C35.73,30 42,37.16 42,46 Z" />
+
+</vector>
