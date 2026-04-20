@@ -22,6 +22,7 @@ import android.os.SystemProperties;
 
 import com.android.settings.R;
 import com.android.settings.core.BasePreferenceController;
+import com.android.settings.deviceinfo.DeviceNameUtils;
 import com.android.settings.slices.Sliceable;
 
 public class MarketNamePreferenceController extends BasePreferenceController {
@@ -48,6 +49,10 @@ public class MarketNamePreferenceController extends BasePreferenceController {
 
     @Override
     public CharSequence getSummary() {
-        return SystemProperties.get("ro.product.marketname", Build.DEVICE);
+        String manufacturer = DeviceNameUtils.sanitize(
+                SystemProperties.get("ro.product.manufacturer", Build.MANUFACTURER));
+        String marketOrDevice = DeviceNameUtils.sanitize(
+                SystemProperties.get("ro.product.marketname", Build.DEVICE));
+        return DeviceNameUtils.prefixIfNeeded(manufacturer, marketOrDevice);
     }
 }
