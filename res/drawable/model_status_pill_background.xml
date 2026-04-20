@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: Evolution X
+     SPDX-License-Identifier: Apache-2.0
+-->
+<!-- Static tag: rounded square, so it reads apart from the round (interactive) controls. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/settingslib_materialColorTertiaryContainer" />
+    <corners android:radius="@dimen/model_chip_radius" />
+</shape>
