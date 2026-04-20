@@ -8,14 +8,17 @@
     <string name="evolution_license_title">Evolution X legal</string>
 
     <!-- Android version screen, build maintainer -->
+    <string name="build_maintainer_label">Maintained by</string>
     <string name="build_maintainer">Build maintainer</string>
     <string name="build_maintainer_summary" translatable="false">Unknown</string>
     <string name="build_maintainer_donate_url" translatable="false">https://linktr.ee/joeyhuab</string>
+    <string name="maintainer_link_github">GitHub profile</string>
+    <string name="maintainer_link_donate">Donate</string>
     <string name="device_name">Device</string>
 
     <!-- Hardware info -->
     <string name="device_market_name">Market Name</string>
-    <string name="soc_model">SoC Model</string>
+    <string name="hardware_platform_label">Platform</string>
     <string name="total_ram">Total RAM</string>
 
     <!-- Device SKU -->

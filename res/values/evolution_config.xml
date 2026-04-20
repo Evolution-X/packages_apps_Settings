@@ -6,4 +6,7 @@
 <resources>
     <!-- Whether to show vendor security patch level -->
     <bool name="config_show_vendor_patch_level" translatable="false">true</bool>
+
+    <!-- Device image for HW info -->
+    <string name="config_deviceImageDrawable" translatable="false"></string>
 </resources>
