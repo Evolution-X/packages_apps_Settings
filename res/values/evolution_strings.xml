@@ -8,14 +8,18 @@
     <string name="evolution_license_title">Evolution X legal</string>
 
     <!-- Android version screen, build maintainer -->
+    <string name="build_maintainer_label">Maintained by</string>
     <string name="build_maintainer">Build maintainer</string>
     <string name="build_maintainer_summary" translatable="false">Unknown</string>
     <string name="build_maintainer_donate_url" translatable="false">https://linktr.ee/joeyhuab</string>
+    <string name="maintainer_link_github">GitHub profile</string>
+    <string name="maintainer_link_donate">Donate</string>
+    <string name="maintainer_support">Support</string>
     <string name="device_name">Device</string>
 
     <!-- Hardware info -->
     <string name="device_market_name">Market Name</string>
-    <string name="soc_model">SoC Model</string>
+    <string name="hardware_platform_label">Platform</string>
     <string name="total_ram">Total RAM</string>
 
     <!-- Device SKU -->
@@ -404,4 +408,11 @@
 
     <!-- Label for a numbered SIM card.  [CHAR LIMIT=40] -->
     <string name="sim_card_number_title" translatable="false">SIM <xliff:g id="card_number">%1$d</xliff:g></string>
+
+    <!-- Model page -->
+    <string name="hardware_codename">Codename</string>
+    <string name="build_type_official">Official build</string>
+    <string name="build_type_unofficial">Unofficial build</string>
+    <string name="model_serial_hidden">Hidden</string>
+    <string name="model_serial_hidden_ends_in">Hidden, ends in <xliff:g id="last_four" example="1A2B">%1$s</xliff:g></string>
 </resources>

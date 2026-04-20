@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: Evolution X
+     SPDX-License-Identifier: Apache-2.0
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/settingslib_expressive_space_small1"
+    android:paddingTop="@dimen/settingslib_expressive_space_small1">
+
+            <!-- ======================================================== -->
+            <!-- Hero: ONE flat tonal surface (primaryContainer), 48dp     -->
+            <!-- corners. Tile, status tag, headline, OEM and a nested     -->
+            <!-- 28dp maintainer container (hero 48 - 20 pad = 28,         -->
+            <!-- concentric).                                              -->
+            <!-- ======================================================== -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/settingslib_expressive_space_small1"
+                android:background="@drawable/model_hero_background"
+                android:clipToOutline="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingBottom="12dp"
+                        android:paddingHorizontal="@dimen/model_hero_padding"
+                        android:paddingTop="@dimen/model_hero_padding">
+
+                        <!-- Device tile: placeholder -> ContainedLoadingIndicator -> image -->
+                        <FrameLayout
+                            android:id="@+id/device_image_tile"
+                            android:layout_width="@dimen/model_tile_size"
+                            android:layout_height="@dimen/model_tile_size"
+                            android:clipChildren="false"
+                            android:clipToPadding="false">
+
+                            <ImageView
+                                android:id="@+id/device_image_placeholder"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="center"
+                                android:contentDescription="@null"
+                                android:src="@drawable/ic_model_phone" />
+
+                            <androidx.compose.ui.platform.ComposeView
+                                android:id="@+id/device_image_loading"
+                                android:layout_width="@dimen/model_loader_size"
+                                android:layout_height="@dimen/model_loader_size"
+                                android:layout_gravity="center"
+                                android:visibility="gone" />
+
+                            <ImageView
+                                android:id="@+id/device_image"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:alpha="0"
+                                android:contentDescription="@null"
+                                android:padding="@dimen/model_tile_image_inset"
+                                android:scaleType="fitCenter" />
+
+                        </FrameLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/settingslib_expressive_space_small1"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <!-- Static build tag (rounded square: not interactive) -->
+                            <TextView
+                                android:id="@+id/model_status_pill"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/settingslib_expressive_space_extrasmall4"
+                                android:background="@drawable/model_status_pill_background"
+                                android:drawablePadding="6dp"
+                                android:gravity="center_vertical"
+                                android:paddingHorizontal="12dp"
+                                android:paddingVertical="6dp"
+                                android:textAppearance="@style/TextAppearance.SettingsLib.BodySmall.Emphasized"
+                                android:textColor="@color/settingslib_materialColorOnTertiaryContainer"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:id="@+id/model_headline"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:ellipsize="end"
+                                android:fontFamily="variable-display-small-emphasized"
+                                android:maxLines="2"
+                                android:textAppearance="@style/TextAppearance.SettingsLib.DisplaySmall"
+                                android:textColor="@color/settingslib_materialColorOnPrimaryContainer"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:id="@+id/oem_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:ellipsize="end"
+                                android:maxLines="2"
+                                android:textAppearance="@style/TextAppearance.SettingsLib.BodyLarge"
+                                android:textColor="@color/settingslib_materialColorOnPrimaryContainer"
+                                android:visibility="gone" />
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <!-- Maintainer container: nested 28dp surface (solid SurfaceBright); tap opens GitHub. -->
+                    <LinearLayout
+                        android:id="@+id/maintainer_card"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/model_hero_padding"
+                        android:layout_marginHorizontal="@dimen/model_hero_padding"
+                        android:alpha="0"
+                        android:background="@drawable/model_maintainer_background"
+                        android:clipToOutline="true"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="12dp"
+                        android:visibility="gone">
+
+                        <!-- Initial sits underneath; the GitHub avatar covers it once loaded.
+                             Cookie9Sided clip is applied in code (ModelPageShapes). -->
+                        <FrameLayout
+                            android:id="@+id/maintainer_avatar_frame"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:clipToOutline="true">
+
+                            <TextView
+                                android:id="@+id/maintainer_avatar_initial"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/model_avatar_initial_background"
+                                android:gravity="center"
+                                android:textAppearance="@style/TextAppearance.SettingsLib.TitleMedium.Emphasized"
+                                android:textColor="@color/settingslib_materialColorOnPrimary" />
+
+                            <ImageView
+                                android:id="@+id/maintainer_avatar"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:contentDescription="@null"
+                                android:scaleType="centerCrop" />
+
+                        </FrameLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/settingslib_expressive_space_extrasmall6"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/maintainer_label"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:singleLine="true"
+                                android:textAppearance="@style/TextAppearance.SettingsLib.BodySmall"
+                                android:textColor="@color/settingslib_materialColorOnSurfaceVariant" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/maintainer_name"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:ellipsize="end"
+                                    android:singleLine="true"
+                                    android:textAppearance="@style/TextAppearance.SettingsLib.TitleMedium.Emphasized"
+                                    android:textColor="@color/settingslib_materialColorOnSurface" />
+
+                                <!-- Shown only when currently_maintained=true. SoftBurst clip in code (ModelPageShapes.clipToBadge). -->
+                                <ImageView
+                                    android:id="@+id/maintainer_verified_badge"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_marginStart="@dimen/settingslib_expressive_space_extrasmall4"
+                                    android:background="@drawable/model_avatar_initial_background"
+                                    android:clipToOutline="true"
+                                    android:contentDescription="@null"
+                                    android:padding="4dp"
+                                    android:src="@drawable/ic_model_verified_check"
+                                    android:visibility="gone" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <!-- Support: a Material 3 Button composed in ModelPageShapes.setSupportButton.
+                             Shown only when a donate link exists. -->
+                        <androidx.compose.ui.platform.ComposeView
+                            android:id="@+id/maintainer_support_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/settingslib_expressive_space_extrasmall4"
+                            android:visibility="gone" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+            <!-- ======================================================== -->
+            <!-- Specs: segmented rows (outer corner token / inner 4dp,   -->
+            <!-- shaped in code from model_spec_row so optional rows       -->
+            <!-- leave no gaps)                                            -->
+            <!-- ======================================================== -->
+            <LinearLayout
+                android:id="@+id/info_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:alpha="0"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+
+                <LinearLayout
+                    android:id="@+id/specs_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+
+            </LinearLayout>
+
+</LinearLayout>
