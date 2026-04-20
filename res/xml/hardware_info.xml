@@ -21,76 +21,99 @@
     android:title="@string/model_info"
     settings:keywords="@string/keywords_model_and_hardware">
 
-    <!-- Market Name -->
+    <!--
+        This LayoutPreference hosts the device image, maintainer card, OEM card,
+        and hardware-specs card.  All individual spec Preferences below are hidden
+        (isPreferenceVisible="false") so they continue to feed the search index
+        and their controllers remain registered, but they are not rendered.
+        HardwareInfoPreferenceController reads the same data and presents it
+        inside the unified custom card instead.
+    -->
+    <com.android.settingslib.widget.LayoutPreference
+        android:key="hardware_info_device_image"
+        android:layout="@layout/preference_hardware_info"
+        android:selectable="false"
+        settings:allowDividerBelow="false"
+        settings:isPreferenceVisible="true" />
+
+    <!-- Market Name — search index only; not rendered -->
     <Preference
         android:key="hardware_info_market_name"
         android:title="@string/device_market_name"
         android:summary="@string/summary_placeholder"
         android:selectable="false"
         settings:controller="com.android.settings.deviceinfo.hardwareinfo.MarketNamePreferenceController"
-        settings:enableCopying="true"/>
+        settings:enableCopying="true"
+        settings:isPreferenceVisible="false" />
 
-    <!-- Model -->
+    <!-- Model — search index only; not rendered -->
     <Preference
         android:key="hardware_info_device_model"
         android:title="@string/model_info"
         android:summary="@string/summary_placeholder"
         android:selectable="false"
         settings:controller="com.android.settings.deviceinfo.hardwareinfo.DeviceModelPreferenceController"
-        settings:enableCopying="true"/>
+        settings:enableCopying="true"
+        settings:isPreferenceVisible="false" />
 
-    <!-- SoC Model -->
+    <!-- Platform label — search index only; not rendered -->
     <Preference
         android:key="hardware_info_soc_model"
-        android:title="@string/soc_model"
+        android:title="@string/hardware_platform_label"
         android:summary="@string/summary_placeholder"
         android:selectable="false"
         settings:controller="com.android.settings.deviceinfo.hardwareinfo.SoCModelPreferenceController"
-        settings:enableCopying="true"/>
+        settings:enableCopying="true"
+        settings:isPreferenceVisible="false" />
 
-    <!-- Total RAM -->
+    <!-- Total RAM — search index only; not rendered -->
     <Preference
         android:key="hardware_info_ram"
         android:title="@string/total_ram"
         android:summary="@string/summary_placeholder"
         android:selectable="false"
         settings:controller="com.android.settings.deviceinfo.hardwareinfo.TotalRAMPreferenceController"
-        settings:enableCopying="true"/>
+        settings:enableCopying="true"
+        settings:isPreferenceVisible="false" />
 
-    <!-- SerialNumber -->
+    <!-- Serial Number — search index only; not rendered -->
     <Preference
         android:key="hardware_info_device_serial"
         android:title="@string/status_serial_number"
         android:summary="@string/summary_placeholder"
         android:selectable="false"
         settings:controller="com.android.settings.deviceinfo.hardwareinfo.SerialNumberPreferenceController"
-        settings:enableCopying="true"/>
+        settings:enableCopying="true"
+        settings:isPreferenceVisible="false" />
 
-    <!-- Hardware revision -->
+    <!-- Hardware revision — search index only; not rendered -->
     <Preference
         android:key="hardware_info_device_revision"
         android:title="@string/hardware_revision"
         android:summary="@string/summary_placeholder"
         android:selectable="false"
         settings:controller="com.android.settings.deviceinfo.hardwareinfo.HardwareRevisionPreferenceController"
-        settings:enableCopying="true"/>
+        settings:enableCopying="true"
+        settings:isPreferenceVisible="false" />
 
-    <!-- Manufactured year -->
+    <!-- Manufactured year — search index only; not rendered -->
     <Preference
         android:key="hardware_info_manufactured_year"
         android:title="@string/manufactured_year"
         android:summary="@string/summary_placeholder"
         android:selectable="false"
         settings:controller="com.android.settings.deviceinfo.hardwareinfo.ManufacturedYearPreferenceController"
-        settings:enableCopying="true"/>
+        settings:enableCopying="true"
+        settings:isPreferenceVisible="false" />
 
-    <!-- Device SKU -->
+    <!-- Device SKU — search index only; not rendered -->
     <Preference
         android:key="hardware_info_device_sku"
         android:title="@string/hardware_sku"
         android:summary="@string/summary_placeholder"
         android:selectable="false"
         settings:controller="com.android.settings.deviceinfo.hardwareinfo.HardwareSkuPreferenceController"
-        settings:enableCopying="true"/>
+        settings:enableCopying="true"
+        settings:isPreferenceVisible="false" />
 
 </PreferenceScreen>

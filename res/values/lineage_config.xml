@@ -85,4 +85,7 @@
 
     <!-- Show Now Playing -->
     <bool name="config_show_now_playing">false</bool>
+
+    <!-- Device image for HW info -->
+    <string name="config_deviceImageDrawable" translatable="false"></string>
 </resources>
