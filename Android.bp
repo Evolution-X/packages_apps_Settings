@@ -80,6 +80,7 @@ android_library {
     static_libs: [
         // External dependencies
         "androidx.compose.runtime_runtime-livedata",
+        "androidx.dynamicanimation_dynamicanimation",
         "androidx.lifecycle_lifecycle-livedata-ktx",
         "androidx.navigation_navigation-fragment-ktx",
         "androidx.slice_slice-builders",
