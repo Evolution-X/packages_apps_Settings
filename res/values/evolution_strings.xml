@@ -407,6 +407,8 @@
     <string name="sleep_mode_location_toggle_summary">Disable Location when Sleep mode is turned on</string>
     <string name="sleep_mode_sensors_toggle_title">Turn off Sensors</string>
     <string name="sleep_mode_sensors_toggle_summary">Disable Sensors when Sleep mode is turned on</string>
+    <string name="sleep_mode_idle_toggle_title">Deep Sleep</string>
+    <string name="sleep_mode_idle_toggle_summary">Pauses background activity for user apps while Sleep mode is active. Notifications may be delayed until it ends.</string>
     <string name="sleep_mode_display_text">Sleep mode allows you to disable certain services to help save battery and silence your phone while you sleep.</string>
 
     <!-- Display settings screen, activation button action for manual mode. [CHAR LIMIT=40] -->
