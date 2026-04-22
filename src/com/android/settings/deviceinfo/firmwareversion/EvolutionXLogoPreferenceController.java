@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019-2024 The Evolution X Project
+ * SPDX-FileCopyrightText: Evolution X
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -15,9 +15,12 @@ import android.util.Log;
 import android.view.View;
 
 import androidx.preference.Preference;
+import androidx.preference.PreferenceScreen;
 
+import com.android.internal.util.evolution.PixelPropsUtils;
 import com.android.settings.R;
 import com.android.settings.core.BasePreferenceController;
+import com.android.settingslib.widget.LayoutPreference;
 
 public class EvolutionXLogoPreferenceController extends BasePreferenceController {
 
@@ -32,7 +35,39 @@ public class EvolutionXLogoPreferenceController extends BasePreferenceController
     }
 
     @Override
+    public void displayPreference(PreferenceScreen screen) {
+        super.displayPreference(screen);
+        final LayoutPreference logoPref = screen.findPreference(getPreferenceKey());
+        if (logoPref == null) return;
+        final View root = logoPref.findViewById(R.id.evolution_logo_container);
+        if (root == null) return;
+
+        // Check if we're in light theme
+        int nightMode = mContext.getResources().getConfiguration().uiMode
+                & android.content.res.Configuration.UI_MODE_NIGHT_MASK;
+        boolean isLightTheme = (nightMode == android.content.res.Configuration.UI_MODE_NIGHT_NO);
+
+        if (isLightTheme) {
+            // Light theme: use old logo, no glow/animation
+            android.widget.ImageView logo = root.findViewById(R.id.evolution_logo_main);
+            if (logo != null) {
+                logo.setImageResource(R.drawable.ic_evolution_logo);
+                logo.clearColorFilter();
+            }
+            // Hide the glow view entirely
+            View glow = root.findViewById(R.id.evolution_rgb_glow);
+            if (glow != null) glow.setVisibility(View.GONE);
+        } else {
+            // Dark theme: full synthwave animation
+            EvolutionLogoAnimator.bind(root);
+        }
+    }
+
+    @Override
     public int getAvailabilityStatus() {
+        if (PixelPropsUtils.isCustomForkBuild()) {
+            return UNSUPPORTED_ON_DEVICE;
+        }
         return AVAILABLE;
     }
 
