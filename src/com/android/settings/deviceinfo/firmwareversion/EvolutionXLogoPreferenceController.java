@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019-2024 The Evolution X Project
+ * SPDX-FileCopyrightText: Evolution X
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -9,15 +9,16 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
-import android.os.SystemProperties;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 
 import androidx.preference.Preference;
+import androidx.preference.PreferenceScreen;
 
 import com.android.settings.R;
 import com.android.settings.core.BasePreferenceController;
+import com.android.settingslib.widget.LayoutPreference;
 
 public class EvolutionXLogoPreferenceController extends BasePreferenceController {
 
@@ -29,6 +30,18 @@ public class EvolutionXLogoPreferenceController extends BasePreferenceController
     public EvolutionXLogoPreferenceController(Context context, String preferenceKey) {
         super(context, preferenceKey);
         mPackageManager = mContext.getPackageManager();
+    }
+
+    @Override
+    public void displayPreference(PreferenceScreen screen) {
+        super.displayPreference(screen);
+        final LayoutPreference logoPref = screen.findPreference(getPreferenceKey());
+        if (logoPref == null) return;
+        final View root = logoPref.findViewById(R.id.evolution_logo_container);
+        if (root == null) return;
+
+        // GlowView resolves its own ink color from the current theme.
+        EvolutionLogoAnimator.bind(root);
     }
 
     @Override
