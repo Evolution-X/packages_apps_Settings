@@ -67,6 +67,12 @@
             android:summary="@string/sleep_mode_sensors_toggle_summary"
             android:defaultValue="true" />
 
+        <org.evolution.settings.preferences.SecureSettingSwitchPreference
+            android:key="sleep_mode_idle_toggle"
+            android:title="@string/sleep_mode_idle_toggle_title"
+            android:summary="@string/sleep_mode_idle_toggle_summary"
+            android:defaultValue="false" />
+
         <org.evolution.settings.preferences.SecureSettingListPreference
             android:key="sleep_mode_ringer_mode"
             android:title="@string/sleep_mode_ringer_title"
