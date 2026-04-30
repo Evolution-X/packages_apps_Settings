@@ -31,6 +31,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.os.SystemProperties;
 import android.provider.Settings.Secure;
 import android.view.View;
 import android.view.ViewGroup;
@@ -65,6 +66,8 @@ public class ColorModePreferenceFragment extends RadioButtonPickerFragment {
     private static final int COLOR_MODE_FALLBACK = COLOR_MODE_NATURAL;
 
     static final String PAGE_VIEWER_SELECTION_INDEX = "page_viewer_selection_index";
+
+    private static final String PROP_DISPLAY_ENGINE_ENABLED = "persist.display.reality.engine.enabled";
 
     private static final int DOT_INDICATOR_SIZE = 12;
     private static final int DOT_INDICATOR_LEFT_PADDING = 6;
@@ -205,10 +208,21 @@ public class ColorModePreferenceFragment extends RadioButtonPickerFragment {
     @Override
     public void updateCandidates() {
         super.updateCandidates();
-        PreferenceScreen screen = getPreferenceScreen();
+        final PreferenceScreen screen = getPreferenceScreen();
         if (ColorDisplayManager.isColorTransformAccelerated(screen.getContext())) {
             getPreferenceManager().inflateFromResource(screen.getContext(), R.xml.color_mode_settings,
                     screen);
+        }
+        updateDisplayEngineCategoryVisibility(screen);
+    }
+
+    private void updateDisplayEngineCategoryVisibility(PreferenceScreen screen) {
+        final androidx.preference.PreferenceGroup category =
+                screen.findPreference("display_engine_category");
+        if (category != null) {
+            final boolean enabled =
+                    SystemProperties.getBoolean(PROP_DISPLAY_ENGINE_ENABLED, false);
+            category.setVisible(enabled);
         }
     }
 
