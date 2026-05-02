@@ -212,6 +212,12 @@
             settings:requiresFeature="android.hardware.sensor.accelerometer" />
 
         <Preference
+            android:key="gpu_composition_apps"
+            android:title="@string/use_gpu_for_screen_composition_title"
+            android:summary="@string/use_gpu_for_screen_composition_summary"
+            settings:controller="com.android.settings.display.GpuCompositionAppsPreferenceController" />
+
+        <Preference
             android:key="screen_resolution"
             android:title="@string/screen_resolution_title"
             android:fragment="com.android.settings.display.ScreenResolutionFragment"
