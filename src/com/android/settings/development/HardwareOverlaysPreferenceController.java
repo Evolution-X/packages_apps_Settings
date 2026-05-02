@@ -24,6 +24,7 @@ import android.os.ServiceManager;
 
 import androidx.annotation.VisibleForTesting;
 import androidx.preference.Preference;
+import androidx.preference.PreferenceScreen;
 import androidx.preference.TwoStatePreference;
 
 import com.android.settings.core.PreferenceControllerMixin;
@@ -57,26 +58,35 @@ public class HardwareOverlaysPreferenceController extends DeveloperOptionsPrefer
     }
 
     @Override
+    public void displayPreference(PreferenceScreen screen) {
+        super.displayPreference(screen);
+        if (mPreference != null) {
+            mPreference.setEnabled(false);
+        }
+    }
+
+    @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        final boolean isEnabled = (Boolean) newValue;
-        writeHardwareOverlaysSetting(isEnabled);
-        return true;
+        return false;
     }
 
     @Override
     public void updateState(Preference preference) {
         updateHardwareOverlaysSetting();
+        preference.setEnabled(false);
+    }
+
+    @Override
+    protected void onDeveloperOptionsSwitchEnabled() {
+        if (mPreference != null) {
+            updateState(mPreference);
+        }
     }
 
     @Override
     protected void onDeveloperOptionsSwitchDisabled() {
-        super.onDeveloperOptionsSwitchDisabled();
-        final TwoStatePreference switchPreference = (TwoStatePreference) mPreference;
-        if (switchPreference.isChecked()) {
-            // Writing false to the preference when the setting is already off will have a
-            // side effect of turning on the preference that we wish to avoid
-            writeHardwareOverlaysSetting(false);
-            switchPreference.setChecked(false);
+        if (mPreference != null) {
+            mPreference.setEnabled(false);
         }
     }
 
