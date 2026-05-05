@@ -16,17 +16,17 @@
     <string name="maintainer_link_donate">Donate</string>
     <string name="device_name">Device</string>
 
-     <!-- Display settings screen, setting option to toggle sleep on face down -->
+    <!-- Display settings screen, setting option to toggle sleep on face down -->
     <string name="face_down_sleep_title">Face down detection</string>
     <!-- Display settings screen, setting option summary to toggle sleep on face down -->
-    <string name="face_down_sleep_summary">Turn off screen after a short period when device is flipped over</string>
-     
+    <string name="face_down_sleep_summary">Turn off the screen after a short period when the device is flipped over</string>
+
     <!-- Deep Sleep percentage in device info -->
     <string name="status_sleep_time">Deep sleep</string>
 
     <!-- Show clipboard overlay -->
     <string name="show_clipboard_overlay_title">Show clipboard overlay</string>
-    <string name="show_clipboard_overlay_summary">Show an overlay in the left bottom corner of the screen when something is copied to the clipboard</string>
+    <string name="show_clipboard_overlay_summary">Show an overlay in the bottom-left corner of the screen when something is copied to the clipboard</string>
 
     <!-- AdGuard DNS Option -->
     <string name="private_dns_mode_adguard" translatable="false">AdGuard DNS</string>
@@ -49,14 +49,14 @@
     <string name="private_dns_hostname_quad9" translatable="false">dns.quad9.net</string>
 
     <!-- Hardware info -->
-    <string name="device_market_name">Market Name</string>
+    <string name="device_market_name">Market name</string>
     <string name="hardware_platform_label">Platform</string>
     <string name="total_ram">Total RAM</string>
 
-    <!-- Wifi/Bluetooth auto timeout -->
-    <string name="wifi_timeout">WiFi timeout</string>
-    <string name="wifi_timeout_summary">Do not automatically turn off WiFi</string>
-    <string name="wifi_timeout_summary_auto">WiFi will turn off after <xliff:g id="timeout_description">%1$s</xliff:g> if no network connected</string>
+    <!-- Wi-Fi/Bluetooth auto timeout -->
+    <string name="wifi_timeout">Wi-Fi timeout</string>
+    <string name="wifi_timeout_summary">Do not automatically turn off Wi-Fi</string>
+    <string name="wifi_timeout_summary_auto">Wi-Fi will turn off after <xliff:g id="timeout_description">%1$s</xliff:g> if no network connected</string>
     <string name="bluetooth_timeout">Bluetooth timeout</string>
     <string name="bluetooth_timeout_summary">Do not automatically turn off Bluetooth</string>
     <string name="bluetooth_timeout_summary_auto">Bluetooth will turn off after <xliff:g id="timeout_description">%1$s</xliff:g> if no devices connected</string>
@@ -81,11 +81,11 @@
     <string name="custom_timeout_summary_48hours">48 hours</string>
     <string name="custom_timeout_summary_72hours">72 hours</string>
 
-    <!-- Default Timeouts -->
-    <string name="custom_timeout_summary_1hour_def">1 hour (Default)</string>
+    <!-- Default timeouts -->
+    <string name="custom_timeout_summary_1hour_def">1 hour (default)</string>
 
-    <!-- Default getTimeSpentInApp string for Wellbeing to display. [CHAR LIMIT=NONE] --> 
-    <string name="duration_less_than_one_minute">Less than 1 Minute</string>
+    <!-- Default getTimeSpentInApp string for Wellbeing to display. [CHAR LIMIT=NONE] -->
+    <string name="duration_less_than_one_minute">Less than 1 minute</string>
 
     <!-- Summary for Wellbeing screen time usage. [CHAR LIMIT=NONE] -->
     <string name="screen_time_summary_usage_today">%1$s today</string>
@@ -112,15 +112,15 @@
     <string name="copied_to_clipboard">Copied to clipboard</string>
     <string name="longpress_to_clipboard">Long-press to copy</string>
 
-    <!-- WiFi Hotspot -->
+    <!-- Wi-Fi Hotspot -->
     <string name="wifi_hotspot_hidden_ssid_title">Hidden network</string>
     <string name="wifi_hotspot_hidden_ssid_summary">Your mobile hotspot\'s name won\'t appear in the list of available WLAN networks.</string>
     <string name="wifi_hotspot_client_manager_title">Connected devices</string>
     <string name="wifi_hotspot_client_manager_summary">List and manage devices connected to the hotspot</string>
     <string name="wifi_hotspot_client_manager_list_only_summary">List devices connected to the hotspot</string>
     <string name="wifi_hotspot_client_limit_title">Limit of connected devices</string>
-    <string name="wifi_hotspot_blocked_clients_list_title">Blocked Devices</string>
-    <string name="wifi_hotspot_connected_clients_list_title">Connected Devices</string>
+    <string name="wifi_hotspot_blocked_clients_list_title">Blocked devices</string>
+    <string name="wifi_hotspot_connected_clients_list_title">Connected devices</string>
     <string name="wifi_hotspot_block_client_dialog_title">Block device</string>
     <string name="wifi_hotspot_block_client_dialog_text">This action will disconnect \"<xliff:g id="device_name">%1$s</xliff:g>\" from this device and add it to blocklist</string>
     <string name="wifi_hotspot_unblock_client_dialog_title">Unblock device</string>
@@ -133,7 +133,7 @@
 
     <!-- Smart 5G -->
     <string name="smart_5g_title">Smart 5G</string>
-    <string name="smart_5g_summary">Automatically switch between 5G and 4G to reduce battery consumption</string>
+    <string name="smart_5g_summary">Automatically switch between 5G and 4G to save battery</string>
 
     <!-- Doze on double tap -->
     <string name="double_tap_title">Double tap</string>
@@ -143,7 +143,7 @@
     <!-- Clipboard auto clear -->
     <string name="clipboard_auto_clear_timeout_title">Clipboard auto clear timeout</string>
     <string name="clipboard_auto_clear_title">Clipboard auto clear</string>
-    <string name="clipboard_auto_clear_summary">Automatically clear clipboard at the scheduled time</string>
+    <string name="clipboard_auto_clear_summary">Automatically clear the clipboard at the scheduled time</string>
     <string name="clipboard_auto_clear_enabled_title">Use clipboard auto clear</string>
     <string name="clipboard_auto_clear_timeout_disable_clipboard">Disable clipboard</string>
 
@@ -157,13 +157,13 @@
 
     <!-- Hide screen capture status -->
     <string name="hide_screen_capture_status_title">Hide screen capture status</string>
-    <string name="hide_screen_capture_status_summary">Hide screen capture/record status from apps. Useful but may risk privacy. Restart apps to apply.</string>
+    <string name="hide_screen_capture_status_summary">Hide screen capture and record status from apps. May risk privacy. Restart apps to apply.</string>
 
     <!-- No storage restrict -->
     <string name="no_storage_restrict_title">No storage restrict</string>
-    <string name="no_storage_restrict_summary">Remove the restriction when selecting folders through Storage Access Framework. Can be convenient in some cases but may lead to privacy leaks.</string>
+    <string name="no_storage_restrict_summary">Remove the folder selection restriction in Storage Access Framework. May be convenient in some cases but could lead to privacy leaks.</string>
 
-    <!-- Wifi Display settings. The title of a menu item to disable mirroring confimration [CHAR LIMIT=40] -->
+    <!-- Wi-Fi Display settings. The title of a menu item to disable mirroring confirmation [CHAR LIMIT=40] -->
     <string name="mirroring_confirmation_disable_menu_item">Disable mirroring confirmation</string>
 
     <!-- Device SKU -->
@@ -171,7 +171,7 @@
 
     <!-- Doze on charge -->
     <string name="doze_on_charge_title">Always show when charging</string>
-    <string name="doze_on_charge_summary">Display info when device is charging</string>
+    <string name="doze_on_charge_summary">Display info while the device is charging</string>
 
     <!-- Incall vibrate options -->
     <string name="incall_vibration_category">In-call vibration options</string>
@@ -179,7 +179,7 @@
     <string name="incall_vibrate_call_wait_title">Vibrate on call waiting</string>
     <string name="incall_vibrate_disconnect_title">Vibrate on disconnect</string>
 
-    <!-- Label for a numbered SIM card.  [CHAR LIMIT=40] -->
+    <!-- Label for a numbered SIM card. [CHAR LIMIT=40] -->
     <string name="sim_card_number_title" translatable="false">SIM <xliff:g id="card_number">%1$d</xliff:g></string>
 
     <!-- Increasing ring tone volume -->
@@ -205,7 +205,7 @@
 
     <!-- Fingerprint lockout -->
     <string name="fingerprint_lockout_title">Disable fingerprint lockout</string>
-    <string name="fingerprint_lockout_summary">Deactivates 30 second timeout as well as permanent lockout after multiple failed fingerprint unlock attempts</string>
+    <string name="fingerprint_lockout_summary">Disables the 30-second timeout and permanent lockout after multiple failed fingerprint unlock attempts</string>
 
     <!-- Long press navbar to search -->
     <string name="navbar_long_press_gesture_title">Long press to search</string>
@@ -228,9 +228,9 @@
     <string name="display_engine_mode_footer_text">Inspired by Sony\'s Bravia/X-Reality engine, the Display Engine features Vivid mode for enhanced brightness and color saturation, X-Reality mode for improved detail and color accuracy, and Triluminos mode for notorious display color accuracy.</string>
 
     <!-- Ambient wake toggles -->
-    <string name="doze_gesture_ambient_title">Show Ambient</string>
-    <string name="doze_gesture_ambient_summary">Show Ambient Display instead of fully waking the screen up</string>
-    <string name="gesture_wake_ambient">Show Ambient</string>
+    <string name="doze_gesture_ambient_title">Show ambient</string>
+    <string name="doze_gesture_ambient_summary">Show Ambient Display instead of fully waking the screen</string>
+    <string name="gesture_wake_ambient">Show ambient</string>
     <string name="gesture_wake">Fully wake</string>
 
     <!-- Pocket mode -->
@@ -239,7 +239,7 @@
 
     <!-- Reset auto brightness adjustment -->
     <string name="reset_auto_brightness_adjustment_title">Reset preference</string>
-    <string name="reset_auto_brightness_adjustment_summary">Let the system forget your brightness preference and reset it to the default one</string>
+    <string name="reset_auto_brightness_adjustment_summary">Reset the system brightness preference back to the default</string>
     <string name="reset_auto_brightness_adjustment_done">Auto brightness preference has been reset</string>
 
     <!-- Wake gestures haptics -->
@@ -253,18 +253,18 @@
 
     <!-- IME button space -->
     <string name="show_ime_space_title">Show IME button space</string>
-    <string name="show_ime_space_summary">Enable the input method quick switch feature to switch input methods or hide the on-screen keyboard from the feature bar at the bottom of the screen when typing</string>
+    <string name="show_ime_space_summary">Switch input methods or hide the on-screen keyboard from the bar at the bottom of the screen while typing</string>
 
     <!-- Pulse on music track change -->
     <string name="pulse_on_new_tracks_title">Music ticker</string>
-    <string name="pulse_on_new_tracks_summary">Show Ambient Display when a new music track is played</string>
+    <string name="pulse_on_new_tracks_summary">Show Ambient Display when a new music track starts playing</string>
 
     <!-- Per-app configs -->
     <string name="per_app_config_empty_text">No installed apps support current settings</string>
 
     <!-- Per-app refresh rate -->
     <string name="per_app_refresh_rate_title">Per-app refresh rate config</string>
-    <string name="per_app_refresh_rate_summary">Configure refresh rate individually for each apps</string>
+    <string name="per_app_refresh_rate_summary">Configure refresh rate individually for each app</string>
     <string name="per_app_refresh_rate_default">Follow system</string>
 
     <!-- Screen refresh rate -->
@@ -278,7 +278,7 @@
     <!-- Extreme refresh rate -->
     <string name="extreme_refresh_rate_title">Extreme refresh rate</string>
     <string name="extreme_refresh_rate_summary">Force highest refresh rate for all apps</string>
-    <string name="extreme_refresh_rate_warning">This will ensure system select highest refresh rate, ignoring user selected and app preferred options. Apps that require specific refresh rate may run abnormally.</string>
+    <string name="extreme_refresh_rate_warning">Forces the highest refresh rate for all apps, ignoring user and app preferences. Apps that require a specific refresh rate may behave unexpectedly.</string>
 
     <!-- Confirm dialog -->
     <string name="confirm_before_enable_title">Continue to enable?</string>
@@ -298,7 +298,7 @@
     <string name="back_height_low_label">Full</string>
     <string name="back_height_high_label">Bottom</string>
     <string name="back_height_title">Back gesture height</string>
-    <string name="back_height_summary">Screen height valid for back gesture</string>
+    <string name="back_height_summary">Screen area valid for the back gesture</string>
 
     <!-- Back gesture animation -->
     <string name="back_gesture_arrow_title">Back gesture animation</string>
@@ -327,7 +327,7 @@
 
     <!-- Doze brightness -->
     <string name="doze_brightness_force_title">Force brightness values</string>
-    <string name="doze_brightness_force_summary">Use custom brightness values instead of screen brightness</string>
+    <string name="doze_brightness_force_summary">Use custom brightness values instead of the current screen brightness</string>
     <string name="ambient_pulse_brightness_title">Ambient display brightness</string>
     <string name="ambient_doze_brightness_title">Always on display brightness</string>
 
@@ -353,7 +353,7 @@
     <!-- Per-app volume -->
     <string name="app_volume">App volume</string>
     <string name="app_volume_title">Per-app volume control</string>
-    <string name="app_volume_summary">Show per-app volume button into volume dialog</string>
+    <string name="app_volume_summary">Show per-app volume button in the volume dialog</string>
 
     <!-- Vibration settings for sliders -->
     <string name="accessibility_slider_haptics_category_title">Sliders</string>
@@ -361,7 +361,7 @@
 
     <!-- Multi Audio Focus -->
     <string name="multi_audio_focus_title">Multi audio focus</string>
-    <string name="multi_audio_focus_summary">Allow multiple apps to play audio simultaneously</string>
+    <string name="multi_audio_focus_summary">Allow multiple apps to play audio at the same time</string>
 
     <!-- Data Usage Cycle -->
     <string name="billing_cycle_type_title">Mobile data usage cycle type</string>
@@ -381,10 +381,10 @@
     <string name="double_tap_power_torch_action_title">Flashlight</string>
 
     <string name="gesture_navbar_auto_hide_title">Auto-hide navigation hint</string>
-    <string name="gesture_navbar_auto_hide_summary">Automatically hide the navigation hint after a short period of inactivity</string>
+    <string name="gesture_navbar_auto_hide_summary">Automatically hide the navigation hint after a period of inactivity</string>
 
-    <!-- Sleep Mode -->
-    <string name="sleep_mode_title">Sleep Mode</string>
+    <!-- Sleep mode -->
+    <string name="sleep_mode_title">Sleep mode</string>
     <string name="sleep_mode_summary_on">On / <xliff:g name="auto_mode_summary" example="Never turn off automatically">%1$s</xliff:g></string>
     <string name="sleep_mode_summary_off">Off / <xliff:g name="auto_mode_summary" example="Never turn on automatically">%1$s</xliff:g></string>
     <string name="sleep_mode_ringer_title">Ringer mode</string>
@@ -408,6 +408,7 @@
     <string name="sleep_mode_sensors_toggle_title">Turn off Sensors</string>
     <string name="sleep_mode_sensors_toggle_summary">Disable Sensors when Sleep mode is turned on</string>
     <string name="sleep_mode_display_text">Sleep mode allows you to disable certain services to help save battery and silence your phone while you sleep.</string>
+
     <!-- Display settings screen, activation button action for manual mode. [CHAR LIMIT=40] -->
     <string name="night_display_activation_on_manual">Turn on now</string>
     <!-- Display settings screen, deactivation button action for manual mode. [CHAR LIMIT=40] -->
