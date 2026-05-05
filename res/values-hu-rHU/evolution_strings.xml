@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2019-2024 The Evolution X Project
+     SPDX-FileCopyrightText: Evolution X
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Device Info screen. Evolution X legal. -->
     <string name="evolution_license_title">Hivatalos Evolution X</string>
     <!-- Android version screen, build maintainer -->
+    <string name="build_maintainer_label">Készítette</string>
     <string name="build_maintainer">A kiadás felelőse</string>
+    <string name="maintainer_link_github">GitHub-profil</string>
+    <string name="maintainer_link_donate">Támogasson</string>
     <string name="device_name">Készülék</string>
+    <!-- Display settings screen, setting option to toggle sleep on face down -->
+    <string name="face_down_sleep_title">Lefelé fordítás érzékelése</string>
+    <!-- Display settings screen, setting option summary to toggle sleep on face down -->
+    <string name="face_down_sleep_summary">Képernyő-kikapcsolás rövid idő elteltével, ha a készüléket képernyővel lefordítják</string>
     <!-- Deep Sleep percentage in device info -->
     <string name="status_sleep_time">Mélyalvás</string>
     <!-- Show clipboard overlay -->
@@ -24,7 +31,7 @@
     <!-- Quad9 DNS hostname -->
     <!-- Hardware info -->
     <string name="device_market_name">Az Áruház neve</string>
-    <string name="soc_model">CPU modell</string>
+    <string name="hardware_platform_label">Platform</string>
     <string name="total_ram">Az összes RAM</string>
     <!-- Wifi/Bluetooth auto timeout -->
     <string name="wifi_timeout">Wi-Fi-időkorlát</string>
@@ -120,35 +127,8 @@
     <string name="no_storage_restrict_summary">Távolítsa el a korlátozást, amikor a Tárhelyhozzáférés Keretrendszer segítségével választ ki mappákat. Bizonyos esetekben kényelmes lehet, de adatszivárgáshoz vezethet.</string>
     <!-- Wifi Display settings. The title of a menu item to disable mirroring confimration [CHAR LIMIT=40] -->
     <string name="mirroring_confirmation_disable_menu_item">Megerősítés nélküli tükrözés</string>
-    <!-- Hide developer status -->
-    <string name="hide_developer_status_title">Rejtett fejlesztői állapot</string>
-    <string name="hide_developer_status_summary">A fejlesztői állapot elrejtése az alkalmazások elől</string>
-    <!-- App search preference -->
-    <string name="search">Keresés</string>
-    <string name="search_apps">Alkalmazások keresése</string>
     <!-- Device SKU -->
     <string name="hardware_sku">Hardver SKU</string>
-    <!-- App lock -->
-    <string name="app_lock_title">Alkalmazás-zár</string>
-    <plurals name="app_lock_summary">
-        <item quantity="one"><xliff:g example="1" id="Number of applications">%1$d</xliff:g> alkalmazás védett</item>
-        <item quantity="other"><xliff:g example="10" id="Number of applications">%1$d</xliff:g> alkalmazás védett</item>
-    </plurals>
-    <string name="app_lock_authentication_dialog_title">Zárfeloldás</string>
-    <string name="enable_debugging">Hibakeresés engedélyezése</string>
-    <string name="disable_debugging">Hibakeresés kikapcsolása</string>
-    <string name="app_lock_packages_title">Védett alkalmazások</string>
-    <string name="app_lock_packages_summary">Válassza ki a biometrikus- vagy készülékhitelesítő-adatokkal védeni kívánt alkalmazásokat</string>
-    <string name="app_lock_timeout_title">Az automatikus lezárás időkorlátja</string>
-    <string name="app_lock_timeout_summary">Az az időtartam, amely után a feloldott alkalmazás a háttérben visszazár</string>
-    <string name="app_lock_notifications_title">Összezárt értesítések</string>
-    <string name="app_lock_notifications_summary">A kiválasztott zárolt alkalmazások értesítései elrejtődnek és összecsukódnak. A lebegő értesítések automatikusan letiltásra kerülnek.</string>
-    <string name="app_lock_notifications_disabled_summary">Előbb állítson be legalább egy védett alkalmazást</string>
-    <string name="app_lock_biometrics_allowed_title">Biometria-bekapcsolás a feloldáshoz</string>
-    <string name="app_lock_footer_text">A buborékok az időkorlát letelte után automatikusan eltűnnek</string>
-    <string name="enable_protection">Védelem-engedélyezés</string>
-    <string name="hide_from_launcher_title">Elrejtés a Launcherből</string>
-    <string name="hide_from_launcher_summary">Megakadályozza hogy ez az alkalmazás látszódjon bármilyen launcheren. A funkcióhoz újra kell indítani a launchert.</string>
     <!-- Doze on charge -->
     <string name="doze_on_charge_title">Töltés közben mindig látszik</string>
     <string name="doze_on_charge_summary">Ha a készülék töltődik; akkor megjelenik</string>
