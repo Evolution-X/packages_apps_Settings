@@ -33,7 +33,7 @@
     <string name="device_market_name">Nazwa rynkowa</string>
     <string name="hardware_platform_label">Platforma</string>
     <string name="total_ram">Całkowita ilość pamięci RAM</string>
-    <!-- Wifi/Bluetooth auto timeout -->
+    <!-- Wi-Fi/Bluetooth auto timeout -->
     <string name="wifi_timeout">Limit czasu Wi-Fi</string>
     <string name="wifi_timeout_summary">Nie wyłączaj Wi-Fi automatycznie</string>
     <string name="wifi_timeout_summary_auto">Wi-Fi zostanie wyłączone po <xliff:g id="timeout_description">%1$s</xliff:g>, jeśli nie ma połączenia</string>
@@ -60,7 +60,7 @@
     <string name="custom_timeout_summary_36hours">36 godzin</string>
     <string name="custom_timeout_summary_48hours">48 godzin</string>
     <string name="custom_timeout_summary_72hours">72 godziny</string>
-    <!-- Default Timeouts -->
+    <!-- Default timeouts -->
     <string name="custom_timeout_summary_1hour_def">1 godzina (domyślnie)</string>
     <!-- Default getTimeSpentInApp string for Wellbeing to display. [CHAR LIMIT=NONE] -->
     <string name="duration_less_than_one_minute">Mniej niż 1 minuta</string>
@@ -82,7 +82,7 @@
     <!-- Clipboard -->
     <string name="copied_to_clipboard">Skopiowano do schowka</string>
     <string name="longpress_to_clipboard">Przytrzymaj, aby skopiować</string>
-    <!-- WiFi Hotspot -->
+    <!-- Wi-Fi Hotspot -->
     <string name="wifi_hotspot_hidden_ssid_title">Ukryta sieć</string>
     <string name="wifi_hotspot_hidden_ssid_summary">Nazwa twojego mobilnego punktu dostępu nie pojawi się na liście dostępnych sieci WLAN.</string>
     <string name="wifi_hotspot_client_manager_title">Podłączone urządzenia</string>
@@ -127,7 +127,7 @@
     <!-- No storage restrict -->
     <string name="no_storage_restrict_title">Brak ograniczeń przechowywania</string>
     <string name="no_storage_restrict_summary">Usuń ograniczenie podczas wybierania folderów za pomocą dostępu do pamięci. W niektórych przypadkach może być wygodne, ale może prowadzić do wycieków prywatności.</string>
-    <!-- Wifi Display settings. The title of a menu item to disable mirroring confimration [CHAR LIMIT=40] -->
+    <!-- Wi-Fi Display settings. The title of a menu item to disable mirroring confirmation [CHAR LIMIT=40] -->
     <string name="mirroring_confirmation_disable_menu_item">Wyłącz potwierdzenie kopii lustrzanej</string>
     <!-- Device SKU -->
     <string name="hardware_sku">Identyfikator SKU sprzętu</string>
@@ -139,7 +139,7 @@
     <string name="incall_vibrate_connect_title">Wibracja przy połączeniu</string>
     <string name="incall_vibrate_call_wait_title">Wibracja przy połączeniu oczekującym</string>
     <string name="incall_vibrate_disconnect_title">Wibracja przy rozłączeniu</string>
-    <!-- Label for a numbered SIM card.  [CHAR LIMIT=40] -->
+    <!-- Label for a numbered SIM card. [CHAR LIMIT=40] -->
     <!-- Increasing ring tone volume -->
     <string name="increasing_ring_volume_option_title">Narastająca głośność dzwonka</string>
     <string name="increasing_ring_min_volume_title">Głośność początkowa</string>
@@ -304,7 +304,7 @@
     <string name="double_tap_power_torch_action_title">Latarka</string>
     <string name="gesture_navbar_auto_hide_title">Automatyczne ukrywanie podpowiedzi nawigacji</string>
     <string name="gesture_navbar_auto_hide_summary">Automatycznie ukrywa podpowiedzi nawigacji po krótkim okresie bezczynności</string>
-    <!-- Sleep Mode -->
+    <!-- Sleep mode -->
     <string name="sleep_mode_title">Tryb uśpienia</string>
     <string name="sleep_mode_summary_on">Włączone / <xliff:g name="auto_mode_summary" example="Never turn off automatically">%1$s</xliff:g></string>
     <string name="sleep_mode_summary_off">Wyłączone / <xliff:g name="auto_mode_summary" example="Never turn on automatically">%1$s</xliff:g></string>
