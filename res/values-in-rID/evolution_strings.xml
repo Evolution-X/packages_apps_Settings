@@ -33,7 +33,7 @@
     <string name="device_market_name">Nama Market</string>
     <string name="hardware_platform_label">Platform</string>
     <string name="total_ram">Total RAM</string>
-    <!-- Wifi/Bluetooth auto timeout -->
+    <!-- Wi-Fi/Bluetooth auto timeout -->
     <string name="wifi_timeout">Batas waktu WiFi</string>
     <string name="wifi_timeout_summary">Jangan nonaktifkan WiFi secara otomatis</string>
     <string name="wifi_timeout_summary_auto">WiFi akan dinonaktifkan setelah <xliff:g id="timeout_description">%1$s</xliff:g> jika tidak ada jaringan terhubung</string>
@@ -60,7 +60,7 @@
     <string name="custom_timeout_summary_36hours">36 jam</string>
     <string name="custom_timeout_summary_48hours">48 jam</string>
     <string name="custom_timeout_summary_72hours">72 jam</string>
-    <!-- Default Timeouts -->
+    <!-- Default timeouts -->
     <string name="custom_timeout_summary_1hour_def">1 jam (Bawaan)</string>
     <!-- Default getTimeSpentInApp string for Wellbeing to display. [CHAR LIMIT=NONE] -->
     <string name="duration_less_than_one_minute">Kurang dari 1 Menit</string>
@@ -82,7 +82,7 @@
     <!-- Clipboard -->
     <string name="copied_to_clipboard">Disalin ke papan klip</string>
     <string name="longpress_to_clipboard">Tekan lama untuk menyalin</string>
-    <!-- WiFi Hotspot -->
+    <!-- Wi-Fi Hotspot -->
     <string name="wifi_hotspot_hidden_ssid_title">Jaringan tersembunyi</string>
     <string name="wifi_hotspot_hidden_ssid_summary">Nama hotspot seluler Anda tidak akan muncul dalam daftar jaringan WiFi yang tersedia.</string>
     <string name="wifi_hotspot_client_manager_title">Perangkat terhubung</string>
@@ -124,7 +124,7 @@
     <!-- No storage restrict -->
     <string name="no_storage_restrict_title">Tidak ada batasan penyimpanan</string>
     <string name="no_storage_restrict_summary">Hapus batasan saat memilih folder melalui Storage Access Framework. Mungkin praktis dalam beberapa kasus, tetapi dapat menyebabkan kebocoran privasi.</string>
-    <!-- Wifi Display settings. The title of a menu item to disable mirroring confimration [CHAR LIMIT=40] -->
+    <!-- Wi-Fi Display settings. The title of a menu item to disable mirroring confirmation [CHAR LIMIT=40] -->
     <string name="mirroring_confirmation_disable_menu_item">Nonaktifkan konfirmasi pencerminan</string>
     <!-- Device SKU -->
     <string name="hardware_sku">SKU Perangkat Keras</string>
@@ -136,7 +136,7 @@
     <string name="incall_vibrate_connect_title">Bergetar saat terhubung</string>
     <string name="incall_vibrate_call_wait_title">Bergetar saat menunggu panggilan</string>
     <string name="incall_vibrate_disconnect_title">Bergetar saat terputus</string>
-    <!-- Label for a numbered SIM card.  [CHAR LIMIT=40] -->
+    <!-- Label for a numbered SIM card. [CHAR LIMIT=40] -->
     <!-- Increasing ring tone volume -->
     <string name="increasing_ring_volume_option_title">Tingkatkan volume dering</string>
     <string name="increasing_ring_min_volume_title">Mulai volume</string>
@@ -301,7 +301,7 @@
     <string name="double_tap_power_torch_action_title">Senter</string>
     <string name="gesture_navbar_auto_hide_title">Petunjuk navigasi sembunyikan otomatis</string>
     <string name="gesture_navbar_auto_hide_summary">Sembunyikan petunjuk navigasi secara otomatis setelah periode tidak aktif yang singkat</string>
-    <!-- Sleep Mode -->
+    <!-- Sleep mode -->
     <string name="sleep_mode_title">Mode Tidur</string>
     <string name="sleep_mode_summary_on">Aktif / <xliff:g name="auto_mode_summary" example="Never turn off automatically">%1$s</xliff:g></string>
     <string name="sleep_mode_summary_off">Nonaktif / <xliff:g name="auto_mode_summary" example="Never turn on automatically">%1$s</xliff:g></string>
