@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2019-2024 The Evolution X Project
+     SPDX-FileCopyrightText: Evolution X
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Device Info screen. Evolution X legal. -->
     <string name="evolution_license_title">Evolution X legal</string>
     <!-- Android version screen, build maintainer -->
+    <string name="build_maintainer_label">Dikelola oleh</string>
     <string name="build_maintainer">Pengelola</string>
+    <string name="maintainer_link_github">Profil GitHub</string>
+    <string name="maintainer_link_donate">Donasi</string>
     <string name="device_name">Perangkat</string>
+    <!-- Display settings screen, setting option to toggle sleep on face down -->
+    <string name="face_down_sleep_title">Deteksi wajah menghadap ke bawah</string>
+    <!-- Display settings screen, setting option summary to toggle sleep on face down -->
+    <string name="face_down_sleep_summary">Layar akan mati setelah beberapa saat ketika perangkat dibalik</string>
     <!-- Deep Sleep percentage in device info -->
     <string name="status_sleep_time">Tidur nyenyak</string>
     <!-- Show clipboard overlay -->
@@ -24,7 +31,7 @@
     <!-- Quad9 DNS hostname -->
     <!-- Hardware info -->
     <string name="device_market_name">Nama Market</string>
-    <string name="soc_model">Model SoC</string>
+    <string name="hardware_platform_label">Platform</string>
     <string name="total_ram">Total RAM</string>
     <!-- Wifi/Bluetooth auto timeout -->
     <string name="wifi_timeout">Batas waktu WiFi</string>
@@ -119,34 +126,8 @@
     <string name="no_storage_restrict_summary">Hapus batasan saat memilih folder melalui Storage Access Framework. Mungkin praktis dalam beberapa kasus, tetapi dapat menyebabkan kebocoran privasi.</string>
     <!-- Wifi Display settings. The title of a menu item to disable mirroring confimration [CHAR LIMIT=40] -->
     <string name="mirroring_confirmation_disable_menu_item">Nonaktifkan konfirmasi pencerminan</string>
-    <!-- Hide developer status -->
-    <string name="hide_developer_status_title">Sembunyikan status pengembang</string>
-    <string name="hide_developer_status_summary">Sembunyikan status pengembang dari aplikasi</string>
-    <!-- App search preference -->
-    <string name="search">Cari</string>
-    <string name="search_apps">Cari aplikasi</string>
     <!-- Device SKU -->
     <string name="hardware_sku">SKU Perangkat Keras</string>
-    <!-- App lock -->
-    <string name="app_lock_title">Kunci Aplikasi</string>
-    <plurals name="app_lock_summary">
-        <item quantity="other"><xliff:g example="10" id="Number of applications">%1$d</xliff:g> aplikasi dilindungi</item>
-    </plurals>
-    <string name="app_lock_authentication_dialog_title">Buka</string>
-    <string name="enable_debugging">Aktifkan debugging</string>
-    <string name="disable_debugging">Matikan debugging</string>
-    <string name="app_lock_packages_title">Aplikasi dilindungi</string>
-    <string name="app_lock_packages_summary">Pilih aplikasi yang akan dilindungi dengan biometrik atau kredensial perangkat</string>
-    <string name="app_lock_timeout_title">Batas waktu penguncian otomatis</string>
-    <string name="app_lock_timeout_summary">Durasi waktu setelah aplikasi yang tidak terkunci di latar belakang harus dikunci</string>
-    <string name="app_lock_notifications_title">Matikan notifikasi</string>
-    <string name="app_lock_notifications_summary">Konten notifikasi akan disembunyikan dan diciutkan untuk aplikasi yang dipilih saat dikunci. Notifikasi mengambang akan dinonaktifkan secara otomatis.</string>
-    <string name="app_lock_notifications_disabled_summary">Lindungi aplikasi terlebih dahulu</string>
-    <string name="app_lock_biometrics_allowed_title">Aktifkan biometrik untuk membuka kunci</string>
-    <string name="app_lock_footer_text">Gelembung akan ditutup secara otomatis setelah waktu habis</string>
-    <string name="enable_protection">Aktifkan perlindungan</string>
-    <string name="hide_from_launcher_title">Sembunyikan dari Launcher</string>
-    <string name="hide_from_launcher_summary">Cegah aplikasi ini muncul di peluncur apa pun. Membutuhkan mulai ulang peluncur agar perubahan diterapkan.</string>
     <!-- Doze on charge -->
     <string name="doze_on_charge_title">Selalu tampilkan saat mengisi daya</string>
     <string name="doze_on_charge_summary">Tampilkan info saat perangkat sedang mengisi daya</string>
@@ -173,10 +154,7 @@
     <string name="always_on_display_schedule_sunrise">Matahari terbit</string>
     <string name="always_on_display_schedule_mixed_sunset">Menyala dari matahari terbenam sampai waktu tertentu</string>
     <string name="always_on_display_schedule_mixed_sunrise">Menyala dari waktu tertentu sampai matahari terbit</string>
-    <!-- Idle manager -->
-    <string name="idle_manager_title">Manajer Menganggur</string>
-    <string name="idle_manager_summary">Hentikan semua proses latar belakang yang tidak penting saat perangkat tidak digunakan</string>
-    <!-- fingerprint lockout -->
+    <!-- Fingerprint lockout -->
     <string name="fingerprint_lockout_title">Nonaktifkan penguncian sidik jari</string>
     <string name="fingerprint_lockout_summary">Menonaktifkan batas waktu 30 detik serta penguncian permanen setelah beberapa kali upaya membuka kunci sidik jari yang gagal</string>
     <!-- Long press navbar to search -->
@@ -320,4 +298,44 @@
     <string name="cycle_type_weekly_sub">Hari dalam seminggu:\n1 = Senin</string>
     <string name="cycle_type_daily_title">Reset ulang jam siklus penggunaan</string>
     <string name="cycle_type_daily_sub">Jam setiap hari:</string>
+    <string name="double_tap_power_torch_action_title">Senter</string>
+    <string name="gesture_navbar_auto_hide_title">Petunjuk navigasi sembunyikan otomatis</string>
+    <string name="gesture_navbar_auto_hide_summary">Sembunyikan petunjuk navigasi secara otomatis setelah periode tidak aktif yang singkat</string>
+    <!-- Sleep Mode -->
+    <string name="sleep_mode_title">Mode Tidur</string>
+    <string name="sleep_mode_summary_on">Aktif / <xliff:g name="auto_mode_summary" example="Never turn off automatically">%1$s</xliff:g></string>
+    <string name="sleep_mode_summary_off">Nonaktif / <xliff:g name="auto_mode_summary" example="Never turn on automatically">%1$s</xliff:g></string>
+    <string name="sleep_mode_ringer_title">Mode dering</string>
+    <string name="sleep_mode_ringer_off_title">Jangan diubah</string>
+    <string name="sleep_mode_ringer_vibrate_title">Getar</string>
+    <string name="sleep_mode_ringer_dnd_title">Jangan Ganggu</string>
+    <string name="sleep_mode_ringer_silent_title">Senyap</string>
+    <string name="sleep_mode_schedule_sunset">Matahari terbenam</string>
+    <string name="sleep_mode_schedule_sunrise">Matahari terbit</string>
+    <string name="sleep_mode_schedule_mixed_sunset">Menyala dari matahari terbenam ke waktu khusus</string>
+    <string name="sleep_mode_schedule_mixed_sunrise">Menyala dari waktu khusus hingga matahari terbit</string>
+    <string name="sleep_mode_toggles_title">Pilihan</string>
+    <string name="sleep_mode_wifi_toggle_title">Nonaktifkan Wi-Fi</string>
+    <string name="sleep_mode_wifi_toggle_summary">Nonaktifkan Wi-Fi saat Mode Tidur diaktifkan</string>
+    <string name="sleep_mode_bluetooth_toggle_title">Nonaktifkan Bluetooth</string>
+    <string name="sleep_mode_bluetooth_toggle_summary">Nonaktifkan Bluetooth saat Mode Tidur diaktifkan</string>
+    <string name="sleep_mode_cellular_toggle_title">Nonaktifkan data seluler</string>
+    <string name="sleep_mode_cellular_toggle_summary">Nonaktifkan data seluler saat Mode Tidur diaktifkan</string>
+    <string name="sleep_mode_location_toggle_title">Nonaktifkan Lokasi</string>
+    <string name="sleep_mode_location_toggle_summary">Nonaktifkan Lokasi saat Mode Tidur diaktifkan</string>
+    <string name="sleep_mode_sensors_toggle_title">Nonaktifkan Sensor</string>
+    <string name="sleep_mode_sensors_toggle_summary">Nonaktifkan Sensor saat Mode Tidur diaktifkan</string>
+    <string name="sleep_mode_display_text">Mode Tidur memungkinkan Anda menonaktifkan layanan tertentu untuk membantu menghemat baterai dan membungkam ponsel saat Anda tidur.</string>
+    <!-- Display settings screen, activation button action for manual mode. [CHAR LIMIT=40] -->
+    <string name="night_display_activation_on_manual">Aktifkan sekarang</string>
+    <!-- Display settings screen, deactivation button action for manual mode. [CHAR LIMIT=40] -->
+    <string name="night_display_activation_off_manual">Nonaktifkan sekarang</string>
+    <!-- Display settings screen, activation button action for sunset-to-sunrise schedule [CHAR LIMIT=40] -->
+    <string name="night_display_activation_on_twilight">Aktifkan sampai matahari terbit</string>
+    <!-- Display settings screen, deactivation button action for sunset-to-sunrise schedule [CHAR LIMIT=40] -->
+    <string name="night_display_activation_off_twilight">Nonaktifkan sampai matahari terbenam</string>
+    <!-- Display settings screen, activation button action for custom schedule [CHAR LIMIT=40] -->
+    <string name="night_display_activation_on_custom">Aktifkan sampai <xliff:g name="time" example="6 AM">%1$s</xliff:g></string>
+    <!-- Display settings screen, deactivation button action for custom schedule [CHAR LIMIT=40] -->
+    <string name="night_display_activation_off_custom">Nonaktifkan sampai <xliff:g name="time" example="10 AM">%1$s</xliff:g></string>
 </resources>
