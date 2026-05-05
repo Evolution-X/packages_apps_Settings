@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2019-2024 The Evolution X Project
+     SPDX-FileCopyrightText: Evolution X
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Device Info screen. Evolution X legal. -->
     <string name="evolution_license_title">Informacje prawne Evolution X</string>
     <!-- Android version screen, build maintainer -->
+    <string name="build_maintainer_label">Utrzymywane przez</string>
     <string name="build_maintainer">Opiekun kompilacji</string>
+    <string name="maintainer_link_github">Profil GitHub</string>
+    <string name="maintainer_link_donate">Wesprzyj</string>
     <string name="device_name">Urządzenie</string>
+    <!-- Display settings screen, setting option to toggle sleep on face down -->
+    <string name="face_down_sleep_title">Wykrywanie położenia ekranem do dołu</string>
+    <!-- Display settings screen, setting option summary to toggle sleep on face down -->
+    <string name="face_down_sleep_summary">Wyłącz ekran po krótkim czasie, gdy urządzenie jest odwrócone</string>
     <!-- Deep Sleep percentage in device info -->
     <string name="status_sleep_time">Głębokie uśpienie</string>
     <!-- Show clipboard overlay -->
@@ -24,13 +31,13 @@
     <!-- Quad9 DNS hostname -->
     <!-- Hardware info -->
     <string name="device_market_name">Nazwa rynkowa</string>
-    <string name="soc_model">Model procesora</string>
+    <string name="hardware_platform_label">Platforma</string>
     <string name="total_ram">Całkowita ilość pamięci RAM</string>
     <!-- Wifi/Bluetooth auto timeout -->
-    <string name="wifi_timeout">Przekroczenie limitu czasu Wi-Fi</string>
+    <string name="wifi_timeout">Limit czasu Wi-Fi</string>
     <string name="wifi_timeout_summary">Nie wyłączaj Wi-Fi automatycznie</string>
-    <string name="wifi_timeout_summary_auto">Wi-Fi zostanie wyłączone po czasie <xliff:g id="timeout_description">%1$s</xliff:g>, jeśli nie ma połączenia</string>
-    <string name="bluetooth_timeout">Przekroczenie limitu czasu Bluetooth</string>
+    <string name="wifi_timeout_summary_auto">Wi-Fi zostanie wyłączone po <xliff:g id="timeout_description">%1$s</xliff:g>, jeśli nie ma połączenia</string>
+    <string name="bluetooth_timeout">Limit czasu Bluetooth</string>
     <string name="bluetooth_timeout_summary">Nie wyłączaj Bluetooth automatycznie</string>
     <string name="bluetooth_timeout_summary_auto">Bluetooth wyłączy się po <xliff:g id="timeout_description">%1$s</xliff:g> jeśli nie ma podłączonych urządzeń</string>
     <string name="custom_timeout_summary_never">Nigdy</string>
@@ -79,9 +86,9 @@
     <string name="wifi_hotspot_hidden_ssid_title">Ukryta sieć</string>
     <string name="wifi_hotspot_hidden_ssid_summary">Nazwa twojego mobilnego punktu dostępu nie pojawi się na liście dostępnych sieci WLAN.</string>
     <string name="wifi_hotspot_client_manager_title">Podłączone urządzenia</string>
-    <string name="wifi_hotspot_client_manager_summary">Pokaż i zarządzaj urządzeniami podłączonymi do punktu dostępu</string>
-    <string name="wifi_hotspot_client_manager_list_only_summary">Pokaż urządzenia podłączone do punktu dostępu</string>
-    <string name="wifi_hotspot_client_limit_title">Maksymalna liczba podłączonych urządzeń</string>
+    <string name="wifi_hotspot_client_manager_summary">Wyświetl i zarządzaj urządzeniami podłączonymi do punktu dostępu</string>
+    <string name="wifi_hotspot_client_manager_list_only_summary">Wyświetl urządzenia podłączone do punktu dostępu</string>
+    <string name="wifi_hotspot_client_limit_title">Limit podłączonych urządzeń</string>
     <string name="wifi_hotspot_blocked_clients_list_title">Zablokowane urządzenia</string>
     <string name="wifi_hotspot_connected_clients_list_title">Podłączone urządzenia</string>
     <string name="wifi_hotspot_block_client_dialog_title">Zablokuj urządzenie</string>
@@ -109,8 +116,8 @@
     <string name="clipboard_auto_clear_enabled_title">Użyj automatycznego czyszczenia schowka</string>
     <string name="clipboard_auto_clear_timeout_disable_clipboard">Wyłącz schowek</string>
     <!-- Game space -->
-    <string name="game_space_title">Panel gier</string>
-    <string name="game_space_summary">Popraw swoje wrażenia z gry</string>
+    <string name="game_space_title">Przestrzeń gier</string>
+    <string name="game_space_summary">Zwiększ swoje wrażenia z gry</string>
     <!-- Unlimit screenrecord -->
     <string name="unlimit_screenrecord_title">Nielimitowane nagrywanie ekranu</string>
     <string name="unlimit_screenrecord_summary">Usuń limit rozmiaru pliku 15GB\nMoże spowodować większy niż wymagany plik wyjściowy</string>
@@ -122,45 +129,16 @@
     <string name="no_storage_restrict_summary">Usuń ograniczenie podczas wybierania folderów za pomocą dostępu do pamięci. W niektórych przypadkach może być wygodne, ale może prowadzić do wycieków prywatności.</string>
     <!-- Wifi Display settings. The title of a menu item to disable mirroring confimration [CHAR LIMIT=40] -->
     <string name="mirroring_confirmation_disable_menu_item">Wyłącz potwierdzenie kopii lustrzanej</string>
-    <!-- Hide developer status -->
-    <string name="hide_developer_status_title">Ukryj status programisty</string>
-    <string name="hide_developer_status_summary">Ukryj status programisty w aplikacjach</string>
-    <!-- App search preference -->
-    <string name="search">Szukaj</string>
-    <string name="search_apps">Wyszukaj aplikacje</string>
     <!-- Device SKU -->
     <string name="hardware_sku">Identyfikator SKU sprzętu</string>
-    <!-- App lock -->
-    <string name="app_lock_title">Blokada aplikacji</string>
-    <plurals name="app_lock_summary">
-        <item quantity="one"><xliff:g example="1" id="Number of applications">%1$d</xliff:g> aplikacja jest zabezpieczona</item>
-        <item quantity="few"><xliff:g example="10" id="Number of applications">%1$d</xliff:g> aplikacji jest zabezpieczonych</item>
-        <item quantity="many"><xliff:g example="10" id="Number of applications">%1$d</xliff:g> aplikacji jest zabezpieczonych</item>
-        <item quantity="other"><xliff:g example="10" id="Number of applications">%1$d</xliff:g> aplikacji jest zabezpieczonych</item>
-    </plurals>
-    <string name="app_lock_authentication_dialog_title">Odblokuj</string>
-    <string name="enable_debugging">Włącz debugowanie</string>
-    <string name="disable_debugging">Wyłącz debugowanie</string>
-    <string name="app_lock_packages_title">Zabezpieczone aplikacje</string>
-    <string name="app_lock_packages_summary">Wybierz aplikacje do zabezpieczenia za pomocą danych biometrycznych lub hasła</string>
-    <string name="app_lock_timeout_title">Czas automatycznego blokowania</string>
-    <string name="app_lock_timeout_summary">Czas, po którym odbezpieczona aplikacja w tle powinna być zabezpieczona</string>
-    <string name="app_lock_notifications_title">Zwiń powiadomienia</string>
-    <string name="app_lock_notifications_summary">Zawartość powiadomień zostanie ukryta i zwinięta dla wybranych aplikacji, gdy są zablokowane. Wyskakujące powiadomienia będą automatycznie wyłączone.</string>
-    <string name="app_lock_notifications_disabled_summary">Najpierw zabezpiecz aplikację</string>
-    <string name="app_lock_biometrics_allowed_title">Użyj danych biometrycznych do odblokowania</string>
-    <string name="app_lock_footer_text">Dymki zostaną automatycznie odrzucone po przekroczeniu limitu czasowego</string>
-    <string name="enable_protection">Włącz ochronę</string>
-    <string name="hide_from_launcher_title">Ukryj w launcherze</string>
-    <string name="hide_from_launcher_summary">Zablokuj wyświetlanie tej aplikacji w jakimkolwiek launcherze. Wprowadzenie zmian wymaga ponownego uruchomienia launchera.</string>
     <!-- Doze on charge -->
     <string name="doze_on_charge_title">Zawsze włączone podczas ładowania</string>
     <string name="doze_on_charge_summary">Wyświetlaj informacje podczas ładowania urządzenia</string>
     <!-- Incall vibrate options -->
     <string name="incall_vibration_category">Opcje wibracji podczas połączenia</string>
-    <string name="incall_vibrate_connect_title">Wibracje przy połączeniu</string>
-    <string name="incall_vibrate_call_wait_title">Wibracje przy połączeniu oczekującym</string>
-    <string name="incall_vibrate_disconnect_title">Wibracje przy rozłączeniu</string>
+    <string name="incall_vibrate_connect_title">Wibracja przy połączeniu</string>
+    <string name="incall_vibrate_call_wait_title">Wibracja przy połączeniu oczekującym</string>
+    <string name="incall_vibrate_disconnect_title">Wibracja przy rozłączeniu</string>
     <!-- Label for a numbered SIM card.  [CHAR LIMIT=40] -->
     <!-- Increasing ring tone volume -->
     <string name="increasing_ring_volume_option_title">Narastająca głośność dzwonka</string>
@@ -173,7 +151,7 @@
     <string name="prevent_ringing_option_cycle">Przełączaj między trybami</string>
     <string name="prevent_ringing_option_cycle_summary">Włącz (przełączaj między trybami)</string>
     <!-- AOD Schedule -->
-    <string name="always_on_display_schedule_title">Harmonogram dla Ekran zawsze włączony</string>
+    <string name="always_on_display_schedule_title">Harmonogram Ekran zawsze włączony</string>
     <string name="string_disabled">Wyłączony</string>
     <string name="always_on_display_schedule_sunset">Zachód słońca</string>
     <string name="always_on_display_schedule_sunrise">Wschód słońca</string>
@@ -197,7 +175,7 @@
     <string name="vivid_engine_mode_title">Żywy wyświetlacz</string>
     <string name="triluminos_engine_mode_title">Wyświetlacz Triluminos</string>
     <string name="display_engine_default">Domyślny</string>
-    <string name="display_engine_mode_footer_text">Zainspirowany silnikiem Bravia/X-Reality firmy Sony, silnik wyświetlania oferuje tryb Żywy dla większej jasności i nasycenia kolorów. Tryb X-Reality poprawia szczegółowość i dokładność kolorów, a Triluminos zapewnia wyjątkowo precyzyjne odwzorowanie barw.</string>
+    <string name="display_engine_mode_footer_text">Zainspirowany silnikiem Bravia/X-Reality firmy Sony, silnik wyświetlania oferuje tryb żywy dla większej jasności i nasycenia kolorów. Tryb X-Reality poprawia szczegółowość i dokładność kolorów, a Triluminos zapewnia wyjątkowo precyzyjne odwzorowanie barw.</string>
     <!-- Ambient wake toggles -->
     <string name="doze_gesture_ambient_title">Pokaż ekran otoczenia</string>
     <string name="doze_gesture_ambient_summary">Pokaż ekran otoczenia, zamiast wybudzać ekran</string>
@@ -211,7 +189,7 @@
     <string name="reset_auto_brightness_adjustment_summary">Pozwól systemowi zapomnieć o Twoich preferencjach dotyczących jasności i zresetuj je do ustawień domyślnych</string>
     <string name="reset_auto_brightness_adjustment_done">Preferencje automatycznej jasności zostały zresetowane</string>
     <!-- Wake gestures haptics -->
-    <string name="doze_gesture_vibrate_title">Wibracja przy dotknięciu</string>
+    <string name="doze_gesture_vibrate_title">Wibracja dotykowa</string>
     <string name="doze_gesture_vibrate_summary">Wibracja po wywołaniu tego gestu</string>
     <!-- Power off verify -->
     <string name="power_off_verify_footer">Weryfikacja wyłączania chroni twoje urządzenie, uniemożliwiając innym osobom wyłączenie go natychmiast po utracie, zwiększając szanse na jego odzyskanie. Hasło blokady ekranu należy wprowadzić tylko podczas wyłączania lub ponownego uruchamiania telefonu z poziomu ekranu blokady.</string>
@@ -260,7 +238,7 @@
     <string name="back_gesture_arrow_summary">Pokaż animowaną strzałkę dla gestu wstecz</string>
     <!-- Back gesture haptic -->
     <string name="back_gesture_haptic_title">Wibracja gestu wstecz</string>
-    <string name="back_gesture_haptic_summary">Wibruj podczas wykonywania gestu wstecz</string>
+    <string name="back_gesture_haptic_summary">Wibracja podczas wykonywania gestu wstecz</string>
     <!-- Vibration patterns -->
     <string name="vibration_pattern_title">Wzór wibracji dzwonka</string>
     <string name="pattern_dzzz_dzzz">dzzz-dzzz</string>
@@ -305,7 +283,7 @@
     <string name="app_volume_summary">Pozwól ustawić różne poziomy głośności dla każdej aplikacji</string>
     <!-- Vibration settings for sliders -->
     <string name="accessibility_slider_haptics_category_title">Suwaki</string>
-    <string name="accessibility_volume_dialog_haptic_title">Wibracje suwaka głośności</string>
+    <string name="accessibility_volume_dialog_haptic_title">Wibracja suwaka głośności</string>
     <!-- Multi Audio Focus -->
     <string name="multi_audio_focus_title">Skoncentrowanie wielu dźwięków</string>
     <string name="multi_audio_focus_summary">Zezwalaj wielu aplikacjom na jednoczesne odtwarzanie dźwięku</string>
@@ -332,9 +310,9 @@
     <string name="sleep_mode_summary_off">Wyłączone / <xliff:g name="auto_mode_summary" example="Never turn on automatically">%1$s</xliff:g></string>
     <string name="sleep_mode_ringer_title">Tryb dzwonka</string>
     <string name="sleep_mode_ringer_off_title">Nie zmieniaj</string>
-    <string name="sleep_mode_ringer_vibrate_title">Wibracje</string>
+    <string name="sleep_mode_ringer_vibrate_title">Wibracja</string>
     <string name="sleep_mode_ringer_dnd_title">Nie przeszkadzać</string>
-    <string name="sleep_mode_ringer_silent_title">Wyciszenie</string>
+    <string name="sleep_mode_ringer_silent_title">Cisza</string>
     <string name="sleep_mode_schedule_sunset">Zachód słońca</string>
     <string name="sleep_mode_schedule_sunrise">Wschód słońca</string>
     <string name="sleep_mode_schedule_mixed_sunset">Włącza się od zachodu słońca do wybranego czasu</string>
