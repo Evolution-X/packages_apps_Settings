@@ -33,7 +33,7 @@
     <string name="device_market_name">Nome do mercado</string>
     <string name="hardware_platform_label">Plataforma</string>
     <string name="total_ram">Total de RAM</string>
-    <!-- Wifi/Bluetooth auto timeout -->
+    <!-- Wi-Fi/Bluetooth auto timeout -->
     <string name="wifi_timeout">Tempo limite do Wi-Fi</string>
     <string name="wifi_timeout_summary">Não desligue o WiFi automaticamente</string>
     <string name="wifi_timeout_summary_auto">O Wi-Fi será desligado após <xliff:g id="timeout_description">%1$s</xliff:g> se nenhuma rede estiver conectada</string>
@@ -60,7 +60,7 @@
     <string name="custom_timeout_summary_36hours">36 horas</string>
     <string name="custom_timeout_summary_48hours">48 horas</string>
     <string name="custom_timeout_summary_72hours">72 horas</string>
-    <!-- Default Timeouts -->
+    <!-- Default timeouts -->
     <string name="custom_timeout_summary_1hour_def">1 hora (Padrão)</string>
     <!-- Default getTimeSpentInApp string for Wellbeing to display. [CHAR LIMIT=NONE] -->
     <string name="duration_less_than_one_minute">Menos de 1 minuto</string>
@@ -82,7 +82,7 @@
     <!-- Clipboard -->
     <string name="copied_to_clipboard">Copiado para a área de transferência</string>
     <string name="longpress_to_clipboard">Pressione e segure para copiar</string>
-    <!-- WiFi Hotspot -->
+    <!-- Wi-Fi Hotspot -->
     <string name="wifi_hotspot_hidden_ssid_title">Rede oculta</string>
     <string name="wifi_hotspot_hidden_ssid_summary">O nome do seu ponto de acesso não aparecerá na lista de redes wi-fi disponíveis.</string>
     <string name="wifi_hotspot_client_manager_title">Dispositivos conectados</string>
@@ -125,7 +125,7 @@
     <!-- No storage restrict -->
     <string name="no_storage_restrict_title">Sem restrição de armazenamento</string>
     <string name="no_storage_restrict_summary">Remova a restrição ao selecionar pastas por meio do Storage Access Framework. Pode ser conveniente em alguns casos, mas pode levar a vazamentos de privacidade.</string>
-    <!-- Wifi Display settings. The title of a menu item to disable mirroring confimration [CHAR LIMIT=40] -->
+    <!-- Wi-Fi Display settings. The title of a menu item to disable mirroring confirmation [CHAR LIMIT=40] -->
     <string name="mirroring_confirmation_disable_menu_item">Desativar confirmação de espelhamento</string>
     <!-- Device SKU -->
     <string name="hardware_sku">Hardware SKU</string>
@@ -137,7 +137,7 @@
     <string name="incall_vibrate_connect_title">Vibrar ao conectar</string>
     <string name="incall_vibrate_call_wait_title">Vibrar na chamada em espera</string>
     <string name="incall_vibrate_disconnect_title">Vibrar ao desconectar</string>
-    <!-- Label for a numbered SIM card.  [CHAR LIMIT=40] -->
+    <!-- Label for a numbered SIM card. [CHAR LIMIT=40] -->
     <!-- Increasing ring tone volume -->
     <string name="increasing_ring_volume_option_title">Toque crescente</string>
     <string name="increasing_ring_min_volume_title">Volume inicial</string>
@@ -302,7 +302,7 @@
     <string name="double_tap_power_torch_action_title">Lanterna</string>
     <string name="gesture_navbar_auto_hide_title">Ocultar dica de navegação automaticamente</string>
     <string name="gesture_navbar_auto_hide_summary">Ocultar automaticamente a dica de navegação após um curto período de inatividade</string>
-    <!-- Sleep Mode -->
+    <!-- Sleep mode -->
     <string name="sleep_mode_title">Modo de suspensão</string>
     <string name="sleep_mode_summary_on">Ligado / <xliff:g name="auto_mode_summary" example="Nunca desligue automaticamente">%1$s</xliff:g></string>
     <string name="sleep_mode_summary_off">Desligado / <xliff:g name="auto_mode_summary" example="Nunca ligar automaticamente">%1$s</xliff:g></string>
