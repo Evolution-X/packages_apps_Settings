@@ -68,6 +68,8 @@ import java.util.Locale;
  */
 public class UdfpsEnrollEnrollingView extends GlifLayout {
 
+    private static final float LOW_UDFPS_THRESHOLD = 0.93f;
+
     private final UdfpsUtils mUdfpsUtils;
     private final Context mContext;
     // We don't need to listen to onConfigurationChanged() for mRotation here because
@@ -300,6 +302,34 @@ public class UdfpsEnrollEnrollingView extends GlifLayout {
             secondaryButtonView.setLayoutParams(
                     new LinearLayout.LayoutParams(mHeaderView.getMeasuredWidth(),
                             ViewGroup.LayoutParams.WRAP_CONTENT));
+        });
+    }
+
+    void adjustFooterButtonForLowUdfps() {
+        if (mIsLandscape || mUdfpsEnrollView == null) {
+            return;
+        }
+
+        final UdfpsOverlayParams params = mUdfpsEnrollView.getOverlayParams();
+        if (params == null || params.getNaturalDisplayHeight() <= 0
+                || params.getSensorBounds().bottom
+                        <= params.getNaturalDisplayHeight() * LOW_UDFPS_THRESHOLD) {
+            return;
+        }
+
+        final FooterBarMixin footerBarMixin = getMixin(FooterBarMixin.class);
+        final LinearLayout buttonContainer = footerBarMixin.getButtonContainer();
+        final Button secondaryButton = footerBarMixin.getSecondaryButtonView();
+        if (buttonContainer == null || secondaryButton == null) {
+            return;
+        }
+
+        buttonContainer.post(() -> {
+            buttonContainer.setGravity(Gravity.START | Gravity.CENTER_VERTICAL);
+
+            final ViewGroup.LayoutParams layoutParams = secondaryButton.getLayoutParams();
+            layoutParams.width = ViewGroup.LayoutParams.WRAP_CONTENT;
+            secondaryButton.setLayoutParams(layoutParams);
         });
     }
 
