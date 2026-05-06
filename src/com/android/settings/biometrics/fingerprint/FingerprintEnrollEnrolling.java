@@ -300,8 +300,9 @@ public class FingerprintEnrollEnrolling extends BiometricsEnrollEnrolling {
         // If it's udfps, set the background color only for secondary button if necessary.
         if (mCanAssumeUdfps) {
             mShouldSetFooterBarBackground = false;
-            ((UdfpsEnrollEnrollingView) getLayout()).setSecondaryButtonBackground(
-                    getBackgroundColor());
+            final UdfpsEnrollEnrollingView udfpsLayout = (UdfpsEnrollEnrollingView) getLayout();
+            udfpsLayout.setSecondaryButtonBackground(getBackgroundColor());
+            udfpsLayout.adjustFooterButtonForLowUdfps();
         }
 
         final LayerDrawable fingerprintDrawable = mProgressBar != null
