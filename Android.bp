@@ -138,6 +138,8 @@ android_library {
         "org.lineageos.platform.internal",
         "LineagePreferenceLib",
         "androidx.room_room-runtime",
+
+        "commonutils",
     ],
 
     plugins: [
