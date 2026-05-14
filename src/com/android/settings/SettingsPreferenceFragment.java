@@ -47,6 +47,8 @@ import androidx.preference.PreferenceScreen;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.android.evolution.utils.IconTinterUtils;
+
 import com.android.settings.core.InstrumentedPreferenceFragment;
 import com.android.settings.core.instrumentation.InstrumentedDialogFragment;
 import com.android.settings.flags.Flags;
@@ -175,6 +177,7 @@ public abstract class SettingsPreferenceFragment extends InstrumentedPreferenceF
     public void addPreferencesFromResource(@XmlRes int preferencesResId) {
         super.addPreferencesFromResource(preferencesResId);
         checkAvailablePrefs(getPreferenceScreen());
+        IconTinterUtils.tintIcons(getPreferenceScreen(), getContext());
     }
 
     @VisibleForTesting
