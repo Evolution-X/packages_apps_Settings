@@ -83,9 +83,12 @@
     <string name="battery_health_good">Baik</string>
     <string name="battery_health_dead">Mati</string>
     <string name="battery_health_cold">Dingin</string>
+    <string name="battery_health_unknown">Tidak diketahui</string>
     <string name="battery_temperature">Suhu</string>
     <string name="battery_voltage">Tegangan</string>
     <string name="battery_charge_counter_summary">%1$d mAh</string>
+    <string name="battery_design_capacity">Kapasitas yang dirancang</string>
     <string name="battery_design_capacity_summary">%1$d mAh</string>
+    <string name="battery_maximum_capacity">Kapasitas maksimum</string>
     <string name="battery_maximum_capacity_summary">%1$d mAh (%2$d%%)</string>
 </resources>

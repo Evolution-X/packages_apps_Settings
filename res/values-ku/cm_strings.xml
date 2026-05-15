@@ -15,18 +15,96 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="lineagelicense_title">یاسای وەشانەکە</string>
-    <string name="show_dev_on_cm">تۆ ڕێکخستنی گەشەپێدەریت چالاککرد!</string>
-    <string name="show_dev_already_cm">پێویست ناکا، تۆ پێشتر چالاکت کردوە.</string>
-    <string name="high_touch_sensitivity_title">هەستیاری ساوانی بەرز</string>
-    <string name="high_touch_sensitivity_summary">هەستیاری ساوڕوونما برز بکەوە، ئەوە ئەتوانرێ بەکاربهێنرێت کاتێک دەستەوانت لە دەستدایە</string>
-    <string name="lockpattern_settings_enable_error_path_title">پیشاندانی هەڵەی چنراو</string>
-    <string name="lockpattern_settings_enable_dots_title">پیشاندانی خاڵەکانی چنراو</string>
-    <string name="unlock_scramble_pin_layout_title">ته‌خته‌ی تێکه‌ڵ</string>
-    <string name="unlock_scramble_pin_layout_summary">ته‌خته‌ی PIN تێکه‌ڵ له‌کاتی کردنه‌وه‌ی ئامێره‌که‌</string>
-    <string name="proximity_wake_title">قه‌ده‌غه‌کردنی هه‌ستانی ڕێکه‌وت</string>
-    <string name="touchscreen_hovering_title">دەستلێدانی شاشە سوڕانەوە</string>
-    <string name="touchscreen_hovering_summary">هەمیشە شاشەکە بسوڕێنەوە وەکو مشک لە وێبگەری ماڵپەر، ڕومێزی دور،هتد</string>
-    <string name="wake_when_plugged_or_unplugged_title">هەڵسان لە پلاگ</string>
-    <string name="wake_when_plugged_or_unplugged_summary">کردنەوەی ڕۆشای ڕوونماکە لە کاتی پەیوەندکردن یان پچڕانی لەکارەبا</string>
+    <string name="keyboard_extras_title">زیادکراوەکان</string>
+    <string name="advanced_keyboard_settings_title">ڕێکخستنە پێشکەوتووەکان</string>
+    <string name="adb_enable_root">ڕاستکردنەوەی هەڵە بە ڕووت (Root)</string>
+    <string name="adb_enable_summary_root">ڕێگەدان بە کارکردنی ڕێکخستنەوەی ئەندرۆید (ADB) وەک ڕووت</string>
+    <string name="backup_transport_setting_label">گۆڕینی دابینکەری کۆپییەدەکەک (Backup)</string>
+    <string name="backup_transport_title">دابینکەری کۆپییەدەگەک هەڵبژێرە</string>
+    <string name="berry_black_theme_title">تەواو ڕەش</string>
+    <string name="berry_black_theme_summary">پاشبنەمای تەواو ڕەش بۆ ڕوکاری تاریك</string>
+    <string name="lineagelicense_title">یاساکانی LineageOS</string>
+    <string name="show_dev_countdown_cm">{count, plural,
+      =1      {تۆ تەنها # هەنگاو دووریت لە چالاککردنی ڕێکخستنەکانی گەشەپێدەر.}
+      other   {تۆ تەنها # هەنگاو دووریت لە چالاککردنی ڕێکخستنەکانی گەشەپێدەر.}
+    }</string>
+    <string name="show_dev_on_cm">ڕێکخستنەکانی گەشەپێدەرت چالاک کرد!</string>
+    <string name="show_dev_already_cm">پێویست ناکات، پێشتر ڕێکخستنەکانی گەشەپێدەرت چالاک کردووە.</string>
+    <string name="status_bar_double_tap_to_sleep_title">دوو گرتە بۆ خەواندن</string>
+    <string name="status_bar_double_tap_to_sleep_summary">دووجار دەست بنێ بە شریتی دۆخ یان ڕوونمای قوفڵ بۆ کوژاندنەوەی ڕوونما</string>
+    <string name="high_touch_polling_rate_title">خێرایی بەرزی وەڵامدانەوەی دەستلێدان</string>
+    <string name="high_touch_polling_rate_summary">زیادکردنی خێرایی وەڵامدانەوەی ڕوونمای دەستلێدان</string>
+    <string name="heads_up_notifications_enabled_title">ئاگادارکردنەوەی سەرهەڵدەر (Heads-up)</string>
+    <string name="heads_up_notifications_enabled_summary">پیشاندانی ئاگادارکردنەوە گرنگەکان لە پەنجەرەیەکی بچووکی سەرئاوکەوتوودا</string>
+    <string name="high_touch_sensitivity_title">هەستیاریی بەرزی دەستلێدان</string>
+    <string name="high_touch_sensitivity_summary">زیادکردنی هەستیاریی ڕوونمای دەستلێدان بۆ ئەوەی بتوانرێت لە کاتی لەدەستکردنی دەستەوانەدا بەکاربهێنرێت</string>
+    <string name="tethering_allow_vpn_upstreams_title">بەکارهێنانی VPN بۆ ئامێرە پەیوەستبووەکان</string>
+    <string name="tethering_allow_vpn_upstreams_summary">کاتێک ئەم ئامێرە VPN بەکاردەهێنێت، هەموو ئەو ئامێرانەی بە هۆتسپۆتەکەوە پەیوەستن هەمان VPN بەکاردەهێنن</string>
+    <string name="lock_settings_picker_pattern_size_message">قەبارەی نەخشی قوفڵ هەڵبژێرە</string>
+    <string name="lockpattern_settings_enable_error_path_title">پیشاندانی هەڵەی نەخش (Pattern)</string>
+    <string name="lockpattern_settings_enable_dots_title">پیشاندانی خاڵەکانی نەخش (Pattern)</string>
+    <string name="max_refresh_rate_title">بەرزترین خێرایی نوێبوونەوە (Peak)</string>
+    <string name="min_refresh_rate_title">کەمترین خێرایی نوێبوونەوە</string>
+    <string name="fingerprint_enroll_find_sensor_message_front" product="tablet">هەستەوەرەکە لە پێشەوەی تابلێتەکەت بدۆزەرەوە.</string>
+    <string name="fingerprint_enroll_find_sensor_message_front" product="device">هەستەوەرەکە لە پێشەوەی ئامێرەکەت بدۆزەرەوە.</string>
+    <string name="fingerprint_enroll_find_sensor_message_front" product="default">هەستەوەرەکە لە پێشەوەی مۆبایلەکەت بدۆزەرەوە.</string>
+    <string name="fingerprint_enroll_find_sensor_message_rear" product="tablet">هەستەوەرەکە لە پشتەوەی تابلێتەکەت بدۆزەرەوە.</string>
+    <string name="fingerprint_enroll_find_sensor_message_rear" product="device">هەستەوەرەکە لە پشتەوەی ئامێرەکەت بدۆزەرەوە.</string>
+    <string name="fingerprint_enroll_find_sensor_message_rear" product="default">هەستەوەرەکە لە پشتەوەی مۆبایلەکەت بدۆزەرەوە.</string>
+    <string name="fingerprint_enroll_find_sensor_message_side" product="tablet">هەستەوەرەکە لە تەنیشتی تابلێتەکەت بدۆزەرەوە.</string>
+    <string name="fingerprint_enroll_find_sensor_message_side" product="device">هەستەوەرەکە لە تەنیشتی ئامێرەکەت بدۆزەرەوە.</string>
+    <string name="fingerprint_enroll_find_sensor_message_side" product="default">هەستەوەرەکە لە تەنیشتی مۆبایلەکەت بدۆزەرەوە.</string>
+    <string name="fingerprint_enroll_touch_dialog_message_front" product="tablet">دەست بنێ بە هەستەوەرەکەی پێشەوەی تابلێتەکەت.</string>
+    <string name="fingerprint_enroll_touch_dialog_message_front" product="device">دەست بنێ بە هەستەوەرەکەی پێشەوەی ئامێرەکەت.</string>
+    <string name="fingerprint_enroll_touch_dialog_message_front" product="default">دەست بنێ بە هەستەوەرەکەی پێشەوەی مۆبایلەکەت.</string>
+    <string name="fingerprint_enroll_touch_dialog_message_rear" product="tablet">دەست بنێ بە هەستەوەرەکەی پشتەوەی تابلێتەکەت.</string>
+    <string name="fingerprint_enroll_touch_dialog_message_rear" product="device">دەست بنێ بە هەستەوەرەکەی پشتەوەی ئامێرەکەت.</string>
+    <string name="fingerprint_enroll_touch_dialog_message_rear" product="default">دەست بنێ بە هەستەوەرەکەی پشتەوەی مۆبایلەکەت.</string>
+    <string name="fingerprint_enroll_touch_dialog_message_side" product="tablet">دەست بنێ بە هەستەوەرەکەی تەنیشتی تابلێتەکەت.</string>
+    <string name="fingerprint_enroll_touch_dialog_message_side" product="device">دەست بنێ بە هەستەوەرەکەی تەنیشتی ئامێرەکەت.</string>
+    <string name="fingerprint_enroll_touch_dialog_message_side" product="default">دەست بنێ بە هەستەوەرەکەی تەنیشتی مۆبایلەکەت.</string>
+    <string name="security_settings_require_screen_on_to_auth_with_proximity_description">دەست لە هەستەوەرەکە بدە بۆ کردنەوەی قوفڵ، تەنانەت کاتێک ڕوونما کوژاوەتەوە. هەستەوەری نزیکی (Proximity) ڕێگری دەکات لە کردنەوەی قوفڵی هەڵەکەوت.</string>
+    <string name="show_navbar_hint_title">نیشاندەری ڕێدۆزی (Navigation hint)</string>
+    <string name="show_navbar_hint_summary">پیشاندانی شریتی نیشاندەری ڕێدۆزی لە خوارەوەی ڕوونما</string>
+    <string name="auto_brightness_one_shot_title">ڕووناکی خودکاری یەکجارە</string>
+    <string name="auto_brightness_one_shot_summary">ڕێکخستنی ڕووناکی تەنها لەو ساتەدا ڕوودەدات کە ڕوونماکە دادەگیرسێت</string>
+    <string name="data_usage_app_restrict_all">ڕێگەدان بە دەستگەیشتن بە تۆڕ</string>
+    <string name="data_usage_app_restrict_all_summary">چالاککردنی بەکارهێنانی تۆڕ</string>
+    <string name="data_usage_app_restrict_mobile">داتای مۆبایل</string>
+    <string name="data_usage_app_restrict_mobile_summary">چالاککردنی بەکارهێنانی داتای مۆبایل</string>
+    <string name="data_usage_app_restrict_vpn">داتای VPN</string>
+    <string name="data_usage_app_restrict_vpn_summary">چالاککردنی بەکارهێنانی داتای VPN</string>
+    <string name="data_usage_app_restrict_wifi">داتای Wi-Fi</string>
+    <string name="data_usage_app_restrict_wifi_summary">چالاککردنی بەکارهێنانی داتای Wi-Fi</string>
+    <string name="unlock_scramble_pin_layout_title">تێکەڵکردنی تەختەکلیل</string>
+    <string name="unlock_scramble_pin_layout_summary">تێکەڵکردنی تەختەکلیلی PIN لەکاتی کردنەوەی ئامێرەکەدا</string>
+    <string name="proximity_wake_title">ڕێگریکردن لە هەڵسانی ڕێکەوت</string>
+    <string name="proximity_wake_summary">پشکنینی هەستەوەری نزیکی پێش داگیرساندنی ڕوونما</string>
+    <string name="touchscreen_gesture_settings_title">جوڵەکانی ڕوونمای دەستلێدان</string>
+    <string name="touchscreen_gesture_settings_summary">ئەنجامدانی جوڵەی جۆراوجۆر لەسەر ڕوونما بۆ کارە خێراکان</string>
+    <string name="touchscreen_hovering_title">فڕینی دەست بەسەر ڕوونما (Hovering)</string>
+    <string name="touchscreen_hovering_summary">ڕێگەت پێ دەدات دەستت بەسەر ڕوونمادا بفڕێنیت وەک مشکی کۆمپیوتەر لە وێبگەڕەکان و هتد</string>
+    <string name="wake_when_plugged_or_unplugged_title">هەڵسان لە کاتی بەستن بە کارەباوە</string>
+    <string name="wake_when_plugged_or_unplugged_summary">داگیرساندنی ڕوونما لە کاتی بەستن یان پچڕانی سەرچاوەی وزە</string>
+    <string name="fast_charging_title">بارگاویکردنەوەی خێرا</string>
+    <string name="fast_charging_summary">ناچالاکی بکە بۆ کەمکردنەوەی گەرمی ئامێرەکە یان بۆ درێژکردنەوەی تەمەنی باتری</string>
+    <string name="storage_warning_internal">ئاگاداری: ئەم بژاردەیە ڕەنگە بە دروستی کار نەکات یان ببێتە هۆی لەدەستدانی داتا، بۆیە پێشنیار ناکرێت!</string>
+    <string name="assisted_gps">بەکارهێنانی Assisted GPS</string>
+    <string name="assisted_gps_summary">دابەزاندنی زانیارییەکانی مانگی دەستکرد لە ئینتەرنێتەوە کە یارمەتیدەرە بۆ خێراکردنی کارکردنی GPS. بۆ پەیوەندییە فریاگوزارییەکان هەمیشە ڕێگەپێدراوە.</string>
+    <string name="battery_technology">تەکنەلۆژیا</string>
+    <string name="battery_health">تەندروستیی باتری</string>
+    <string name="battery_health_good">باشە</string>
+    <string name="battery_health_overheat">زۆر گەرمە</string>
+    <string name="battery_health_dead">لەکارکەوتووە</string>
+    <string name="battery_health_over_voltage">ڤۆڵتیەی زۆرە</string>
+    <string name="battery_health_unspecified_failure">کێشەیەکی نادیار</string>
+    <string name="battery_health_cold">ساردە</string>
+    <string name="battery_health_unknown">نادیار</string>
+    <string name="battery_temperature">پلەی گەرمی</string>
+    <string name="battery_voltage">ڤۆڵتیە (Voltage)</string>
+    <string name="battery_charge_counter_summary">%1$d میلی ئەمپێر کاتژمێر (mAh)</string>
+    <string name="battery_design_capacity">توانستی بنەڕەتی</string>
+    <string name="battery_design_capacity_summary">%1$d میلی ئەمپێر کاتژمێر (mAh)</string>
+    <string name="battery_maximum_capacity">زۆرترین توانست</string>
+    <string name="battery_maximum_capacity_summary">%1$d میلی ئەمپێر کاتژمێر (mAh) (%2$d%%)</string>
 </resources>
