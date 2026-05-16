@@ -22,6 +22,7 @@ import android.app.settings.SettingsEnums;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.hardware.fingerprint.FingerprintManager;
 import android.hardware.fingerprint.FingerprintSensorPropertiesInternal;
 import android.os.Bundle;
@@ -99,6 +100,13 @@ public class FingerprintEnrollFindSensor extends BiometricEnrollBase implements
                         .setTheme(com.google.android.setupdesign.R.style.SudGlifButton_Secondary)
                         .build()
         );
+
+        if (mCanAssumeUdfps) {
+            mShouldSetFooterBarBackground = false;
+            if (mFooterBarMixin != null && mFooterBarMixin.getButtonContainer() != null) {
+                mFooterBarMixin.getButtonContainer().setBackgroundColor(Color.TRANSPARENT);
+            }
+        }
         getLayout().getHeaderTextView().setHyphenationFrequency(HYPHENATION_FREQUENCY_NORMAL);
 
         listenOrientationEvent();
