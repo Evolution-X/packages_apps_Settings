@@ -117,11 +117,14 @@
             settings:controller="com.android.settings.display.BatteryPercentagePreferenceController" />
     </com.android.settingslib.widget.UntitledPreferenceCategory>
 
-    <Preference
-        android:key="battery_info"
-        android:title="@string/battery_info"
-        android:fragment="com.android.settings.deviceinfo.batteryinfo.BatteryInfoFragment"
-        settings:keywords="@string/keywords_battery_info"/>
+    <com.android.settingslib.widget.UntitledPreferenceCategory
+        android:key="battery_info_category">
+        <Preference
+            android:key="battery_info"
+            android:title="@string/battery_info"
+            android:fragment="com.android.settings.deviceinfo.batteryinfo.BatteryInfoFragment"
+            settings:keywords="@string/keywords_battery_info"/>
+    </com.android.settingslib.widget.UntitledPreferenceCategory>
 
     <com.android.settingslib.widget.FooterPreference
         android:key="power_usage_footer"
