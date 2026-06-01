@@ -53,7 +53,8 @@ public class FetchPackageStorageAsyncLoader extends AsyncLoaderCompat<AppStorage
     public AppStorageStats loadInBackground() {
         AppStorageStats result = null;
         try {
-            result = mSource.getStatsForPackage(mInfo.volumeUuid, mInfo.packageName, mUser);
+            result = AppStorageStatsUtils.normalizeStats(mInfo,
+                    mSource.getStatsForPackage(mInfo.volumeUuid, mInfo.packageName, mUser));
         } catch (NameNotFoundException | IOException e) {
             Log.w(TAG, "Package may have been removed during query, failing gracefully", e);
         }
