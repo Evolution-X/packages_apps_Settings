@@ -25,6 +25,7 @@ import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
 import com.android.settings.R
 import com.android.settings.applications.AppStorageSettings
+import com.android.settings.applications.AppStorageStatsUtils
 import com.android.settings.contract.TAG_DEVICE_STATE_PREFERENCE
 import com.android.settings.contract.TAG_DEVICE_STATE_SCREEN
 import com.android.settings.core.PreferenceScreenMixin
@@ -68,7 +69,8 @@ open class AppInfoStorageScreen(context: Context, override val arguments: Bundle
     override fun getTitle(context: Context): CharSequence? =
         appInfo.loadLabel(context.packageManager)
 
-    override fun getSummary(context: Context): CharSequence? = repo.formatSize(appInfo)
+    override fun getSummary(context: Context): CharSequence? =
+        context.getStatsForPackage()?.let { repo.formatSizeBytes(it.totalBytes) } ?: ""
 
     override fun isFlagEnabled(context: Context) = Flags.catalystAppList()
 
@@ -96,8 +98,15 @@ open class AppInfoStorageScreen(context: Context, override val arguments: Bundle
 
     private fun Context.getStatsForPackage() =
         try {
-            StorageStatsSource(this)
-                .getStatsForPackage(appInfo.volumeUuid, appInfo.packageName, UserHandle.of(userId))
+            AppStorageStatsUtils.normalizeStats(
+                appInfo,
+                StorageStatsSource(this)
+                    .getStatsForPackage(
+                        appInfo.volumeUuid,
+                        appInfo.packageName,
+                        UserHandle.of(userId),
+                    ),
+            )
         } catch (_: Exception) {
             // error during lookup, return no result
             null
