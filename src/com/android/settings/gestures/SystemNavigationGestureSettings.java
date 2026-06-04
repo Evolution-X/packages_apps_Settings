@@ -28,6 +28,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.om.IOverlayManager;
 import android.content.om.OverlayInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.content.res.Resources;
 import android.os.RemoteException;
 import android.os.ServiceManager;
@@ -150,8 +152,8 @@ public class SystemNavigationGestureSettings extends RadioButtonPickerFragment i
                     .setPackage(getContext().getPackageName())));
         }
 
-        // With flag enabled, the button order preference will always be available
-        boolean navbarAvailable = android.view.accessibility.Flags.navbarFlipOrderOption()
+        // Show button order preference when Launcher3 is the default home app
+        boolean navbarAvailable = isLauncher3DefaultHome(getContext())
                 || !PreferenceControllerListHelper.areAllPreferencesUnavailable(
                         getContext(), getPreferenceManager(), R.xml.button_navigation_settings);
 
@@ -272,6 +274,14 @@ public class SystemNavigationGestureSettings extends RadioButtonPickerFragment i
         } catch (RemoteException e) {
             throw e.rethrowFromSystemServer();
         }
+    }
+
+    private static boolean isLauncher3DefaultHome(Context context) {
+        ResolveInfo info = context.getPackageManager().resolveActivity(
+                new Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_HOME),
+                PackageManager.MATCH_DEFAULT_ONLY);
+        if (info == null || info.activityInfo == null) return false;
+        return "com.android.launcher3".equals(info.activityInfo.packageName);
     }
 
     private void setIllustrationVideo(IllustrationPreference videoPref,
