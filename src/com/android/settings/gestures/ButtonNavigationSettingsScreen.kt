@@ -18,7 +18,8 @@ package com.android.settings.gestures
 
 import android.app.settings.SettingsEnums
 import android.content.Context
-import android.view.accessibility.Flags
+import android.content.Intent
+import android.content.pm.PackageManager
 import com.android.settings.R
 import com.android.settings.core.PreferenceScreenMixin
 import com.android.settingslib.metadata.PreferenceCategory
@@ -29,7 +30,15 @@ import kotlinx.coroutines.CoroutineScope
 @ProvidePreferenceScreen(ButtonNavigationSettingsScreen.KEY)
 class ButtonNavigationSettingsScreen : PreferenceScreenMixin {
     override fun isFlagEnabled(context: Context): Boolean {
-        return Flags.navbarFlipOrderOption()
+        return isLauncher3DefaultHome(context)
+    }
+
+    private fun isLauncher3DefaultHome(context: Context): Boolean {
+        val info = context.packageManager.resolveActivity(
+            Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_HOME),
+            PackageManager.MATCH_DEFAULT_ONLY,
+        ) ?: return false
+        return info.activityInfo?.packageName == "com.android.launcher3"
     }
 
     override val key: String
