@@ -12,7 +12,6 @@ import android.provider.Settings
 import android.provider.Settings.Secure.DOZE_ENABLED
 import com.android.settings.R
 import com.android.settings.core.TogglePreferenceController
-import com.android.systemui.shared.Flags.ambientAod
 
 class AmbientDisplaySettingsController(
     context: Context,
@@ -20,12 +19,7 @@ class AmbientDisplaySettingsController(
 ) : TogglePreferenceController(context, key) {
 
     override fun getAvailabilityStatus(): Int =
-        AVAILABLE.takeIf  {
-            when (preferenceKey) {
-                "ambient_display_external_settings" -> ambientAod()
-                else -> !ambientAod()
-            } && isExternallyManaged(mContext)
-        } ?: UNSUPPORTED_ON_DEVICE
+        if (isExternallyManaged(mContext)) AVAILABLE else UNSUPPORTED_ON_DEVICE
 
     override fun getSliceHighlightMenuRes(): Int = R.string.menu_key_display
 
