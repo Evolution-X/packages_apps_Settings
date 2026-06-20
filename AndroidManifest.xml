@@ -5462,6 +5462,11 @@
                        android:value="android.service.quicksettings.CATEGORY_DISPLAY" />
         </service>
 
+        <service
+            android:name="org.evolution.settings.utils.WallpaperSubjectExtractorService"
+            android:exported="false"
+            android:permission="android.permission.MANAGE_USERS" />
+
         <activity
             android:name=".HelpTrampoline"
             android:exported="true"
