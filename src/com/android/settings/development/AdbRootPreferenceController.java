@@ -16,7 +16,7 @@
 
 package com.android.settings.development;
 
-import android.adb.ADBRootService;
+import android.adb.AdbRootService;
 import android.content.Context;
 import android.os.UserManager;
 
@@ -34,13 +34,13 @@ public class AdbRootPreferenceController extends DeveloperOptionsPreferenceContr
     private static final String TAG = "AdbRootPreferenceController";
     private static final String PREF_KEY = "enable_adb_root";
 
-    private final ADBRootService mADBRootService;
+    private final AdbRootService mAdbRootService;
 
     public AdbRootPreferenceController(Context context,
             DevelopmentSettingsDashboardFragment fragment) {
         super(context);
 
-        mADBRootService = new ADBRootService();
+        mAdbRootService = new AdbRootService();
     }
 
     @Override
@@ -50,14 +50,14 @@ public class AdbRootPreferenceController extends DeveloperOptionsPreferenceContr
 
     @Override
     public boolean isAvailable() {
-        return mADBRootService.isSupported();
+        return mAdbRootService.isSupported();
     }
 
     @Override
     public void displayPreference(PreferenceScreen screen) {
         super.displayPreference(screen);
 
-        ((SwitchPreferenceCompat) mPreference).setChecked(mADBRootService.getEnabled());
+        ((SwitchPreferenceCompat) mPreference).setChecked(mAdbRootService.getEnabled());
 
         if (!isAdminUser()) {
             mPreference.setEnabled(false);
@@ -67,7 +67,7 @@ public class AdbRootPreferenceController extends DeveloperOptionsPreferenceContr
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         final boolean rootEnabled = (Boolean) newValue;
-        mADBRootService.setEnabled(rootEnabled);
+        mAdbRootService.setEnabled(rootEnabled);
         return true;
     }
 
@@ -75,7 +75,7 @@ public class AdbRootPreferenceController extends DeveloperOptionsPreferenceContr
     protected void onDeveloperOptionsSwitchDisabled() {
         super.onDeveloperOptionsSwitchDisabled();
 
-        mADBRootService.setEnabled(false);
+        mAdbRootService.setEnabled(false);
         ((SwitchPreferenceCompat) mPreference).setChecked(false);
     }
 
