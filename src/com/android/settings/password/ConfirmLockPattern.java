@@ -284,7 +284,8 @@ public class ConfirmLockPattern extends ConfirmDeviceCredentialBaseActivity {
                 }
                 if (savedInstanceState.containsKey(KEY_INPUT_PATTERN)) {
                     mInputPattern = LockPatternUtils.byteArrayToPattern(
-                            savedInstanceState.getString(KEY_INPUT_PATTERN).getBytes());
+                            savedInstanceState.getString(KEY_INPUT_PATTERN).getBytes(),
+                            mPatternSize);
                 }
             }
             mAppearAnimationUtils = new AppearAnimationUtils(getContext(),
@@ -367,7 +368,8 @@ public class ConfirmLockPattern extends ConfirmDeviceCredentialBaseActivity {
                 outState.putString(KEY_INPUT_MODE, mInputMode.name());
             }
             if (mInputPattern != null && !mInputPattern.isEmpty()) {
-                byte[] patternBytes = LockPatternUtils.patternToByteArray(mInputPattern);
+                byte[] patternBytes = LockPatternUtils.patternToByteArray(mInputPattern,
+                        mPatternSize);
                 if (patternBytes != null) {
                     outState.putString(KEY_INPUT_PATTERN, new String(patternBytes));
                 }

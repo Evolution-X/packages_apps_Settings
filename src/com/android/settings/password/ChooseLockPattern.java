@@ -695,7 +695,8 @@ public class ChooseLockPattern extends SettingsActivity {
                 }
                 if (savedInstanceState.containsKey(KEY_INPUT_PATTERN)) {
                     mInputPattern = LockPatternUtils.byteArrayToPattern(
-                            savedInstanceState.getString(KEY_INPUT_PATTERN).getBytes());
+                            savedInstanceState.getString(KEY_INPUT_PATTERN).getBytes(),
+                            mPatternSize);
                 }
                 mLockPatternView.setPattern(DisplayMode.Correct,
                         LockPatternUtils.byteArrayToPattern(
@@ -861,7 +862,8 @@ public class ChooseLockPattern extends SettingsActivity {
             }
 
             if (mInputPattern != null && !mInputPattern.isEmpty()) {
-                byte[] patternBytes = LockPatternUtils.patternToByteArray(mInputPattern);
+                byte[] patternBytes = LockPatternUtils.patternToByteArray(mInputPattern,
+                        mPatternSize);
                 if (patternBytes != null) {
                     outState.putString(KEY_INPUT_PATTERN, new String(patternBytes));
                 }
