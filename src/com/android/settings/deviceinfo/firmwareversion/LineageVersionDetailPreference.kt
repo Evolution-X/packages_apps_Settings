@@ -43,6 +43,9 @@ class LineageVersionDetailPreference :
     override val key: String
         get() = "lineage_version"
 
+    override val purpose: Int
+        get() = R.string.os_firmware_version_purpose
+
     override val title: Int
         get() = org.lineageos.platform.internal.R.string.lineage_version
 

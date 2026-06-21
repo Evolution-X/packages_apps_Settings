@@ -30,6 +30,9 @@ class LineageBuildDatePreference :
     override val key: String
         get() = "os_build_date"
 
+    override val purpose: Int
+        get() = R.string.os_firmware_version_purpose
+
     override val title: Int
         get() = org.lineageos.platform.internal.R.string.build_date
 

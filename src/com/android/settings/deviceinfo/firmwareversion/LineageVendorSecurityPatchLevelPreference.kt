@@ -35,6 +35,9 @@ class LineageVendorSecurityPatchLevelPreference :
     override val key: String
         get() = "vendor_security_key"
 
+    override val purpose: Int
+        get() = R.string.security_key_purpose
+
     override val title: Int
         get() = org.lineageos.platform.internal.R.string.lineage_vendor_security_patch
 
