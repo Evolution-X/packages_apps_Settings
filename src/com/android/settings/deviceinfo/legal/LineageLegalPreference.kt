@@ -21,11 +21,16 @@ import android.net.Uri
 import android.os.SystemProperties
 import androidx.annotation.StringRes
 import com.android.settingslib.metadata.PreferenceAvailabilityProvider
+import com.android.settingslib.metadata.preferencesapi.preconditions.PreconditionStability
 import com.android.settingslib.metadata.PreferenceMetadata
 import com.android.settingslib.metadata.PreferenceTitleProvider
+import com.android.settingslib.metadata.UI_ONLY_PREFERENCE
 
-class LineageLegalPreference(override val key: String, @StringRes val defaultTitle: Int = 0) :
-    PreferenceMetadata, PreferenceTitleProvider, PreferenceAvailabilityProvider {
+class LineageLegalPreference(
+    override val key: String,
+    @StringRes override val purpose: Int,
+    @StringRes val defaultTitle: Int = 0,
+) : PreferenceMetadata, PreferenceTitleProvider, PreferenceAvailabilityProvider {
 
     private companion object {
         const val PROPERTY_LINEAGE_LICENSE_URL = "ro.lineagelegal.url"
@@ -34,6 +39,10 @@ class LineageLegalPreference(override val key: String, @StringRes val defaultTit
     private fun getLicenseUrl(): String = SystemProperties.get(PROPERTY_LINEAGE_LICENSE_URL)
 
     override fun getTitle(context: Context): CharSequence? = context.getText(defaultTitle)
+
+    override val availabilityDescription = UI_ONLY_PREFERENCE
+
+    override fun getAvailabilityStability() = PreconditionStability.STABLE_UNTIL_APK_UPDATE
 
     override fun isAvailable(context: Context): Boolean {
         val url = getLicenseUrl()

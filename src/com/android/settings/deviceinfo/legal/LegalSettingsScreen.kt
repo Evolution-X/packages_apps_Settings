@@ -63,6 +63,7 @@ open class LegalSettingsScreen : PreferenceScreenMixin {
             )
             +LineageLegalPreference(
                 "lineage_license",
+                R.string.terms_purpose,
                 R.string.lineagelicense_title,
             )
             +LegalPreference(
