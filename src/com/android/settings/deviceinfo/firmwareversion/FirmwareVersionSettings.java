@@ -53,5 +53,6 @@ public class FirmwareVersionSettings extends DashboardFragment {
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider(
-                    Flags.catalystSettingsSearch() ? 0 : R.xml.firmware_version);
+                    Flags.catalystFirmwareVersion() && Flags.catalystSettingsSearch() ? 0
+                            : R.xml.firmware_version);
 }
