@@ -100,7 +100,7 @@ open class MyDeviceInfoScreen :
                     for (i in 0 until activeModemCount) {
                         +ImeiPreference(context, i, activeModemCount, imeiList) order (i + 33)
                     }
-                    +FirmwareVersionScreen.KEY order 42
+                    if (Flags.catalystFirmwareVersion()) +FirmwareVersionScreen.KEY order 42
                 }
         }
 
