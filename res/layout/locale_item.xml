@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:baselineAligned="false" android:importantForAccessibility="yes" style="?sudItemContainerStyle"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:gravity="start" android:layout_gravity="center_vertical" android:id="@+id/sud_items_icon_container" android:layout_height="wrap_content" android:importantForAccessibility="noHideDescendants" style="?sudItemIconContainerStyle">
+        <ImageView android:id="@+id/sud_items_icon" android:layout_height="wrap_content" style="?sudItemIconStyle" />
+    </FrameLayout>
+    <LinearLayout android:gravity="center_vertical" android:layout_gravity="center_vertical" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" android:importantForAccessibility="noHideDescendants">
+        <com.google.android.setupdesign.view.RichTextView android:gravity="start" android:id="@+id/sud_items_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:textAlignment="viewStart" style="?sudItemTitleStyle" />
+        <com.google.android.setupdesign.view.RichTextView android:gravity="start" android:id="@+id/sud_items_summary" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:textAlignment="viewStart" style="?sudItemSummaryStyle" />
+    </LinearLayout>
+</LinearLayout>

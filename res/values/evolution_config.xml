@@ -28,4 +28,7 @@
          Default: 1000 (converts uAh to mAh)
          Example: If device reports 4000uAh instead of 4000mAh, set this to 1 -->
     <integer name="config_battery_divider" translatable="false">1000</integer>
+
+    <!-- Whether to show the search box in the Setup Wizard locale picker. -->
+    <bool name="config_show_setuplocalepicker_region_searchbox">true</bool>
 </resources>
