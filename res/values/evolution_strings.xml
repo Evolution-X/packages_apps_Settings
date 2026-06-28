@@ -223,4 +223,10 @@
 
     <!-- Expressive QR -->
     <string name="wifi_qr_code_animation_control">pause the animation</string>
+
+    <!-- Locale Picker -->
+    <string name="clear_search_query_description">Clear query</string>
+    <string name="language_picker_page">Language picker page</string>
+    <string name="search_region">Search regions</string>
+    <string name="search_region_page">Search region page</string>
 </resources>

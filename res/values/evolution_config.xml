@@ -21,4 +21,7 @@
 
     <!-- Traffic light package to use -->
     <string name="config_face_enroll_traffic_light_package"></string>
+
+    <!-- Whether to show the search box in the Setup Wizard locale picker. -->
+    <bool name="config_show_setuplocalepicker_region_searchbox">true</bool>
 </resources>

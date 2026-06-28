@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.setupdesign.GlifRecyclerLayout android:icon="@drawable/ic_suw_language_picker" android:entries="@xml/language_locale_items" android:id="@+id/setup_wizard_language_picker_layout" android:layout_width="fill_parent" android:layout_height="fill_parent" app:sudAnimationIcon="@raw/ic_animated_language"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" />
