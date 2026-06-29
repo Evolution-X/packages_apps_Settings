@@ -61,6 +61,16 @@
         settings:controller="com.android.settings.applications.DefaultAppsPreferenceController"/>
 
     <Preference
+        android:key="local_app_backup_restore"
+        android:title="@string/local_app_backup_restore_title"
+        android:summary="@string/local_app_backup_restore_summary"
+        android:persistent="false">
+        <intent
+            android:action="android.settings.APP_DATA_BACKUP_SETTINGS"
+            android:targetPackage="com.android.appdatabackup" />
+    </Preference>
+
+    <Preference
         android:key="cloned_apps"
         android:title="@string/cloned_apps_dashboard_title"
         android:summary="@string/summary_placeholder"
