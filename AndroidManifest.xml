@@ -161,7 +161,7 @@
     <application
             android:name=".SettingsApplication"
             android:label="@string/settings_label"
-            android:icon="@drawable/ic_launcher_settings"
+            android:icon="@mipmap/ic_launcher_settings"
             android:theme="@style/Theme.Settings"
             android:hardwareAccelerated="true"
             android:requiredForAllUsers="true"
