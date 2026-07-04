@@ -41,9 +41,24 @@
             android:summary="@string/summary_placeholder"
             android:icon="@drawable/ic_system_update"
             settings:keywords="@string/keywords_system_update_settings"
-            settings:controller="com.android.settings.system.SystemUpdatePreferenceController">
+            settings:controller="com.google.android.settings.update.GoogleSystemUpdatePreferenceController">
             <intent android:action="android.settings.SYSTEM_UPDATE_SETTINGS"/>
         </Preference>
+
+        <com.android.settings.spa.preference.ComposePreference
+            android:key="software_update_settings"
+            android:title="@string/software_update_entry_title"
+            settings:keywords="@string/keywords_system_update_settings"
+            settings:controller="com.google.android.settings.update.SoftwareUpdateController"/>
+
+        <Preference
+            android:key="software_update_settings_v2"
+            android:title="@string/software_update_entry_title"
+            android:icon="@drawable/ic_system_update"
+            settings:keywords="@string/keywords_system_update_settings"
+            settings:fragment="com.google.android.settings.update.SoftwareUpdateFragment"
+            settings:controller="com.google.android.settings.update.SoftwareUpdateController2"/>
+
     </PreferenceCategory>
 
     <PreferenceCategory

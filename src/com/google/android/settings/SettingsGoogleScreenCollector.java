@@ -6,11 +6,12 @@ import com.android.settingslib.metadata.PreferenceScreenMetadataFactory;
 import com.google.android.settings.fuelgauge.batterysaver.AdaptiveBatteryScreen;
 import com.google.android.settings.fuelgauge.batterysaver.BatterySaverGoogleScreen;
 import com.google.android.settings.fuelgauge.batterysaver.BatterySaverScheduleScreen;
+import com.google.android.settings.update.SoftwareUpdateScreen;
 
 public abstract class SettingsGoogleScreenCollector {
 
     public static FixedArrayMap<String, PreferenceScreenMetadataFactory> get() {
-        return new FixedArrayMap<>(3, SettingsGoogleScreenCollector::init);
+        return new FixedArrayMap<>(4, SettingsGoogleScreenCollector::init);
     }
 
     private static void init(
@@ -24,5 +25,8 @@ public abstract class SettingsGoogleScreenCollector {
         initializer.put(
                 "battery_saver_screen",
                 (PreferenceScreenMetadataFactory) context -> new BatterySaverGoogleScreen());
+        initializer.put(
+                "software_update_settings_v2",
+                (PreferenceScreenMetadataFactory) context -> new SoftwareUpdateScreen());
     }
 }
