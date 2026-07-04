@@ -12,4 +12,8 @@
     <color name="wifi_qr_secondary_background">@android:color/system_on_surface_light</color>
     <color name="wifi_qr_secondary_foreground">@android:color/system_secondary_light</color>
     <color name="wifi_qr_tertiary_background">@android:color/system_tertiary_container_light</color>
+
+    <!-- System Updates -->
+    <color name="security_green">#1e8e3e</color>
+    <color name="security_yellow">#f9ab00</color>
 </resources>
