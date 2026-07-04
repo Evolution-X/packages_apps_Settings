@@ -6446,6 +6446,20 @@
             </intent-filter>
         </receiver>
 
+        <!-- System Updates -->
+        <activity
+            android:name="com.google.android.settings.update.SoftwareUpdateActivity"
+            android:exported="true"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="com.google.android.settings.update.SOFTWARE_UPDATE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <meta-data android:name="com.android.settings.HIGHLIGHT_MENU_KEY"
+                android:value="@string/menu_key_system"/>
+        </activity>
+
         <!-- This is the longest AndroidManifest.xml ever. -->
 
     </application>

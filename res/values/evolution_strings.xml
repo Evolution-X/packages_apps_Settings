@@ -257,4 +257,18 @@
     <string name="battery_saver_group_purpose" translatable="false">battery_saver_group</string>
     <string name="battery_saver_reminder_entry_purpose" translatable="false">battery_saver_reminder_entry</string>
     <string name="battery_saver_schedule_category_purpose" translatable="false">battery_saver_schedule_category</string>
+
+    <!-- System Updates -->
+    <string name="play_application_detail_indication_summary">Check for updates</string>
+    <string name="play_application_update_entry_title">App updates</string>
+    <string name="software_update_banner_checking">Checking for updates…</string>
+    <string name="software_update_banner_up_to_date">Your device is up to date</string>
+    <string name="software_update_banner_update_available">Updates available</string>
+    <string name="software_update_can_be_updated_header">Make your Pixel even better</string>
+    <string name="software_update_entry_title">Software updates</string>
+    <string name="software_update_pending_update_summary">Pending update</string>
+    <string name="software_update_settings_v2_purpose">Provides a centralized dashboard for users to monitor and initiate updates across the operating system, Google Play system components, and installed applications to ensure device security and performance.</string>
+    <string name="software_update_up_to_date_header">Your Pixel is up to date</string>
+    <string name="software_update_up_to_specific_date_summary">Updated to %1$s</string>
+    <string name="system_update_entry_title">System update</string>
 </resources>
