@@ -39,7 +39,8 @@
     <string name="high_touch_sensitivity_title">רגישות גבוהה למגע</string>
     <string name="high_touch_sensitivity_summary">הגברת רגישות מסך המגע, כך שניתן יהיה להשתמש בו בעת עטיית כפפות</string>
     <string name="tethering_allow_vpn_upstreams_title">אפשר ללקוחות להשתמש ב-VPN</string>
-    <string name="tethering_allow_vpn_upstreams_summary">אפשר ללקוחות נקודת חמה להשתמש בחיבורי ה-VPN של התקן זה לצורך גישה לרשת</string>
+    <string name="tethering_allow_vpn_upstreams_summary">אפשר ללקוחות נקודת חמה להשתמש בחיבורי ה-VPN של התקן זה לצורך גישה לרשת
+</string>
     <string name="lock_settings_picker_pattern_size_message">בחירת גודל תבנית</string>
     <string name="lockpattern_settings_enable_error_path_title">הצגת שגיאת תבנית</string>
     <string name="lockpattern_settings_enable_dots_title">הצגת נקודות תבנית</string>
