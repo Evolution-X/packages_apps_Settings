@@ -268,7 +268,7 @@
     <string name="software_update_entry_title">Software updates</string>
     <string name="software_update_pending_update_summary">Pending update</string>
     <string name="software_update_settings_v2_purpose">Provides a centralized dashboard for users to monitor and initiate updates across the operating system, Google Play system components, and installed applications to ensure device security and performance.</string>
-    <string name="software_update_up_to_date_header">Your Pixel is up to date</string>
+    <string name="software_update_up_to_date_header">Your %1$s is up to date</string>
     <string name="software_update_up_to_specific_date_summary">Updated to %1$s</string>
     <string name="system_update_entry_title">System update</string>
 </resources>
