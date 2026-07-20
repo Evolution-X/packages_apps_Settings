@@ -174,4 +174,8 @@
     <!-- Pocket mode -->
     <string name="proximity_wake_title">Prevent accidental wake-up</string>
     <string name="proximity_wake_summary">Check the proximity sensor prior to waking up screen</string>
+
+    <!-- Advanced VPN -->
+    <string name="advanced_vpn_preference_group_title">Built-in</string>
+    <string name="vpn_preference_group_title">Others</string>
 </resources>
