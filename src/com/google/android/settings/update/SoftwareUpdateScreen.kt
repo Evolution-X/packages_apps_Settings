@@ -3,6 +3,8 @@ package com.google.android.settings.update
 import android.app.settings.SettingsEnums
 import android.content.Context
 import android.content.Intent
+import android.os.Build
+import android.os.SystemProperties
 import com.android.settings.R
 import com.android.settings.core.PreferenceScreenMixin
 import com.android.settings.utils.makeLaunchIntent
@@ -18,6 +20,10 @@ import kotlinx.coroutines.CoroutineScope
 
 class SoftwareUpdateScreen :
     PreferenceScreenMixin, PreferenceAvailabilityProvider, PreferenceSummaryProvider {
+
+    companion object {
+        private const val KEY_MARKET_NAME_PROP = "ro.product.marketname"
+    }
 
     override val availabilityDescription: String =
         "Requires Android 16 (Baklava) or higher with the 'Material Expressive Design' feature enabled."
@@ -47,7 +53,8 @@ class SoftwareUpdateScreen :
         return if (SystemUpdatePreferenceController.Companion.isSystemUpdatable(context)) {
             context.getString(R.string.software_update_can_be_updated_header)
         } else {
-            context.getString(R.string.software_update_up_to_date_header)
+            val deviceName = SystemProperties.get(KEY_MARKET_NAME_PROP, Build.MODEL)
+            context.getString(R.string.software_update_up_to_date_header, deviceName)
         }
     }
 
@@ -69,8 +76,6 @@ class SoftwareUpdateScreen :
             +SoftwareUpdateScreenPreference(this@SoftwareUpdateScreen)
         }
     }
-
-    companion object inner
 
     class SoftwareUpdateScreenPreference(private val screenMetadata: SoftwareUpdateScreen) :
         PreferenceMetadata,
