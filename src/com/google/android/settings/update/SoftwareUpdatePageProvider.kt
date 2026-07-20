@@ -1,6 +1,8 @@
 package com.google.android.settings.update
 
 import android.content.Context
+import android.os.Build
+import android.os.SystemProperties
 import android.os.Bundle
 import android.util.Log
 import androidx.compose.foundation.clickable
@@ -110,15 +112,16 @@ fun SoftwareUpdatePage(status: Int) {
     }
 }
 
+private const val KEY_MARKET_NAME_PROP = "ro.product.marketname"
+
 @Composable
 internal fun getUpdateHeader(status: Int): String {
-    val resId =
-        if (status == 0) {
-            R.string.software_update_up_to_date_header
-        } else {
-            R.string.software_update_can_be_updated_header
-        }
-    return stringResource(resId)
+    val modelName = SystemProperties.get(KEY_MARKET_NAME_PROP, Build.MODEL)
+    return if (status == 0) {
+        stringResource(R.string.software_update_up_to_date_header, modelName)
+    } else {
+        stringResource(R.string.software_update_can_be_updated_header)
+    }
 }
 
 @Composable
