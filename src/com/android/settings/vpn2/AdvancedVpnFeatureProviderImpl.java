@@ -18,37 +18,39 @@ package com.android.settings.vpn2;
 
 import android.content.Context;
 
+import com.android.settings.R;
+
 /**
  * Feature provider implementation for advanced vpn.
  */
 public class AdvancedVpnFeatureProviderImpl implements AdvancedVpnFeatureProvider {
     @Override
     public String getAdvancedVpnPackageName() {
-        return null;
+        return "com.google.android.apps.privacy.wildlife";
     }
 
     @Override
     public boolean isAdvancedVpnSupported(Context context) {
-        return false;
+        return true;
     }
 
     @Override
     public String getAdvancedVpnPreferenceGroupTitle(Context context) {
-        return null;
+        return context.getString(R.string.advanced_vpn_preference_group_title);
     }
 
     @Override
     public String getVpnPreferenceGroupTitle(Context context) {
-        return null;
+        return context.getString(R.string.vpn_preference_group_title);
     }
 
     @Override
     public boolean isAdvancedVpnRemovable() {
-        return true;
+        return false;
     }
 
     @Override
     public boolean isDisconnectDialogEnabled() {
-        return true;
+        return false;
     }
 }
