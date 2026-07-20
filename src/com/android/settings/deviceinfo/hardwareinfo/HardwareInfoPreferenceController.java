@@ -59,6 +59,10 @@ import java.util.concurrent.Executors;
  *   3. OEM + specs card — OEM name from OTA JSON falling back to
  *                         ro.product.manufacturer.
  *
+ * OTA JSON is resolved per-branch, trying OTA_BRANCHES in order (cnb, then
+ * bka) so Android 17 CNB builds prefer the CNB OTA JSON and only fall back
+ * to the legacy Android 16 bka branch if the device has no CNB entry yet.
+ *
  * All network calls share a single-thread executor and a common LruCache so
  * device images are never fetched twice.
  */
@@ -75,14 +79,19 @@ public class HardwareInfoPreferenceController extends BasePreferenceController {
     private static final String LINEAGE_IMAGE_URL =
             "https://raw.githubusercontent.com/LineageOS/lineage_wiki/main/images/devices/%s.png";
     private static final String EVO_OTA_URL =
-            "https://raw.githubusercontent.com/Evolution-X/OTA/bka/builds/%s.json";
+            "https://raw.githubusercontent.com/Evolution-X/OTA/%s/builds/%s.json";
+
+    // Branch lookup order for OTA JSON resolution. CNB (Android 17) is tried
+    // first; bka (Android 16) is the legacy fallback for devices that don't
+    // yet have a published CNB entry.
+    private static final String[] OTA_BRANCHES = { "cnb", "bka" };
 
     // -------------------------------------------------------------------------
     // Disk-cache SharedPreferences name
     // -------------------------------------------------------------------------
 
     private static final String PREFS_NAME            = "evolution_maintainer_cache";
-    private static final int    CACHE_VERSION          = 2;
+    private static final int    CACHE_VERSION          = 3;
     private static final String KEY_CACHE_VERSION      = "cache_version";
     private static final String KEY_HAS_ENTRY_PREFIX   = "has_entry_";
     private static final String KEY_MAINTAINER_PREFIX  = "maintainer_";
@@ -423,9 +432,12 @@ public class HardwareInfoPreferenceController extends BasePreferenceController {
 
             OtaEntry data = null;
 
-            for (String candidate : getCodenameCandidates(codename)) {
-                data = resolveOtaData(candidate);
-                if (data != null) break;
+            outer:
+            for (String branch : OTA_BRANCHES) {
+                for (String candidate : getCodenameCandidates(codename)) {
+                    data = resolveOtaData(branch, candidate);
+                    if (data != null) break outer;
+                }
             }
 
             // OEM fallback for unofficial devices
@@ -620,52 +632,59 @@ public class HardwareInfoPreferenceController extends BasePreferenceController {
     // OTA JSON resolution  (disk cache + ETag revalidation via HttpCachePrefs)
     // -------------------------------------------------------------------------
 
-    private OtaEntry resolveOtaData(String codename) {
-        HttpCachePrefs cache = new HttpCachePrefs(mPrefs, codename);
-        boolean hasCached = mPrefs.getBoolean(KEY_HAS_ENTRY_PREFIX + codename, false);
+    /**
+     * Resolves OTA data for a single (branch, codename) pair. Cache keys are
+     * namespaced by branch so a cached miss/hit from one branch (e.g. bka)
+     * can never shadow a lookup against another branch (e.g. cnb).
+     */
+    private OtaEntry resolveOtaData(String branch, String codename) {
+        String cacheSuffix = branch + "_" + codename;
+        HttpCachePrefs cache = new HttpCachePrefs(mPrefs, cacheSuffix);
+        boolean hasCached = mPrefs.getBoolean(KEY_HAS_ENTRY_PREFIX + cacheSuffix, false);
 
         if (hasCached && !cache.isStale()) {
-            return readCachedOtaData(codename);
+            return readCachedOtaData(cacheSuffix);
         }
-        return fetchOtaDataForCodename(codename, cache);
+        return fetchOtaDataForCodename(branch, codename, cacheSuffix, cache);
     }
 
-    private OtaEntry readCachedOtaData(String codename) {
-        if (!mPrefs.getBoolean(KEY_HAS_ENTRY_PREFIX + codename, false)) return null;
-        String maintainer = UrlUtils.trimToEmpty(mPrefs.getString(KEY_MAINTAINER_PREFIX + codename, ""));
+    private OtaEntry readCachedOtaData(String cacheSuffix) {
+        if (!mPrefs.getBoolean(KEY_HAS_ENTRY_PREFIX + cacheSuffix, false)) return null;
+        String maintainer = UrlUtils.trimToEmpty(mPrefs.getString(KEY_MAINTAINER_PREFIX + cacheSuffix, ""));
         return new OtaEntry(
                 maintainer.isEmpty() ? null : maintainer,
-                mPrefs.getString(KEY_GITHUB_PREFIX      + codename, ""),
-                mPrefs.getString(KEY_DONATE_PREFIX      + codename, ""),
-                mPrefs.getString("oem_"                 + codename, ""),
-                mPrefs.getBoolean(KEY_MAINTAINED_PREFIX + codename, false)
+                mPrefs.getString(KEY_GITHUB_PREFIX      + cacheSuffix, ""),
+                mPrefs.getString(KEY_DONATE_PREFIX      + cacheSuffix, ""),
+                mPrefs.getString("oem_"                 + cacheSuffix, ""),
+                mPrefs.getBoolean(KEY_MAINTAINED_PREFIX + cacheSuffix, false)
         );
     }
 
-    private OtaEntry fetchOtaDataForCodename(String codename, HttpCachePrefs cache) {
+    private OtaEntry fetchOtaDataForCodename(String branch, String codename,
+            String cacheSuffix, HttpCachePrefs cache) {
         try {
             NetworkUtils.FetchResult r = NetworkUtils.fetchWithStatus(
-                    String.format(EVO_OTA_URL, codename),
+                    String.format(EVO_OTA_URL, branch, codename),
                     cache.buildHeaders(null));
 
             if (r.isNotModified()) {
                 cache.touchLastCheck();
-                return readCachedOtaData(codename);
+                return readCachedOtaData(cacheSuffix);
             }
 
             if (!r.isOk() || r.bytes == null) {
-                return readCachedOtaData(codename);
+                return readCachedOtaData(cacheSuffix);
             }
 
             JSONObject root     = new JSONObject(r.bodyAsString());
             JSONArray  response = root.optJSONArray("response");
             if (response == null || response.length() == 0) {
-                clearCache(codename, cache);
+                clearCache(cacheSuffix, cache);
                 return null;
             }
 
             JSONObject entry = response.optJSONObject(0);
-            if (entry == null) { clearCache(codename, cache); return null; }
+            if (entry == null) { clearCache(cacheSuffix, cache); return null; }
 
             boolean maintained = entry.optBoolean("currently_maintained", false);
             String  maintainer = UrlUtils.trimToEmpty(entry.optString("maintainer", null));
@@ -674,7 +693,7 @@ public class HardwareInfoPreferenceController extends BasePreferenceController {
             String  oem        = UrlUtils.trimToEmpty(entry.optString("oem",        null));
 
             if (!maintained || maintainer.isEmpty()) {
-                clearCache(codename, cache);
+                clearCache(cacheSuffix, cache);
                 if (!oem.isEmpty()) {
                     return new OtaEntry(null, null, null, oem, false);
                 }
@@ -682,31 +701,31 @@ public class HardwareInfoPreferenceController extends BasePreferenceController {
             }
 
             mPrefs.edit()
-                    .putBoolean(KEY_HAS_ENTRY_PREFIX  + codename, true)
-                    .putBoolean(KEY_MAINTAINED_PREFIX + codename, maintained)
-                    .putString(KEY_MAINTAINER_PREFIX  + codename, maintainer)
-                    .putString(KEY_DONATE_PREFIX      + codename, paypal)
-                    .putString(KEY_GITHUB_PREFIX      + codename, github)
-                    .putString("oem_"                 + codename, oem)
+                    .putBoolean(KEY_HAS_ENTRY_PREFIX  + cacheSuffix, true)
+                    .putBoolean(KEY_MAINTAINED_PREFIX + cacheSuffix, maintained)
+                    .putString(KEY_MAINTAINER_PREFIX  + cacheSuffix, maintainer)
+                    .putString(KEY_DONATE_PREFIX      + cacheSuffix, paypal)
+                    .putString(KEY_GITHUB_PREFIX      + cacheSuffix, github)
+                    .putString("oem_"                 + cacheSuffix, oem)
                     .apply();
             cache.write(r.etag, r.lastModified);
 
             return new OtaEntry(maintainer, github, paypal, oem, maintained);
 
         } catch (Exception e) {
-            Log.d(TAG, "OTA fetch failed for " + codename, e);
-            return readCachedOtaData(codename);
+            Log.d(TAG, "OTA fetch failed for " + branch + "/" + codename, e);
+            return readCachedOtaData(cacheSuffix);
         }
     }
 
-    private void clearCache(String codename, HttpCachePrefs cache) {
+    private void clearCache(String cacheSuffix, HttpCachePrefs cache) {
         mPrefs.edit()
-                .putBoolean(KEY_HAS_ENTRY_PREFIX  + codename, false)
-                .remove(KEY_MAINTAINER_PREFIX     + codename)
-                .remove(KEY_MAINTAINED_PREFIX     + codename)
-                .remove(KEY_DONATE_PREFIX         + codename)
-                .remove(KEY_GITHUB_PREFIX         + codename)
-                .remove("oem_"                    + codename)
+                .putBoolean(KEY_HAS_ENTRY_PREFIX  + cacheSuffix, false)
+                .remove(KEY_MAINTAINER_PREFIX     + cacheSuffix)
+                .remove(KEY_MAINTAINED_PREFIX     + cacheSuffix)
+                .remove(KEY_DONATE_PREFIX         + cacheSuffix)
+                .remove(KEY_GITHUB_PREFIX         + cacheSuffix)
+                .remove("oem_"                    + cacheSuffix)
                 .apply();
         cache.invalidate();
     }
