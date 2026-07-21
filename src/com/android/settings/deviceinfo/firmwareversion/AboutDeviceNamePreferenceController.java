@@ -72,4 +72,20 @@ public class AboutDeviceNamePreferenceController extends BasePreferenceControlle
         String displayName = DeviceNameUtils.prefixIfNeeded(manufacturer, marketName);
         return displayName + " | " + codename;
     }
+
+    @Override
+    public boolean handlePreferenceTreeClick(Preference preference) {
+        if (!TextUtils.equals(preference.getKey(), getPreferenceKey())) {
+            return false;
+        }
+        final Intent intent = new Intent();
+        intent.setClassName("com.android.settings",
+                "org.evolution.settings.fragments.about.ChangelogActivity");
+        try {
+            mContext.startActivity(intent);
+        } catch (Exception e) {
+            Log.e(TAG, "Unable to start ChangelogActivity", e);
+        }
+        return true;
+    }
 }
