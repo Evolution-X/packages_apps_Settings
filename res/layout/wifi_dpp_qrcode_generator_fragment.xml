@@ -45,18 +45,33 @@
             android:id="@+id/wifi_dpp_layout"
             android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/qrcode_view"
-                android:layout_width="@dimen/qrcode_size"
-                android:layout_height="@dimen/qrcode_size"
-                android:src="@android:color/transparent"/>
+            <FrameLayout
+                android:id="@+id/qrcode_view_frame_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/qrcode_view"
+                    android:layout_width="@dimen/qrcode_size"
+                    android:layout_height="@dimen/qrcode_size"
+                    android:src="@android:color/transparent"/>
+
+                <androidx.fragment.app.FragmentContainerView
+                    android:id="@+id/qr_code_fragment_container_view"
+                    android:visibility="gone"
+                    android:layout_width="@dimen/wifi_sharing_qrcode_fragment_size"
+                    android:layout_height="@dimen/wifi_sharing_qrcode_fragment_size"/>
+
+            </FrameLayout>
 
             <TextView
                 android:id="@+id/password"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:minHeight="@dimen/min_tap_target_size"
-                android:layout_marginBottom="24dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:gravity="center"
                 android:textAlignment="center"
                 android:focusable="true"
                 android:longClickable="true"

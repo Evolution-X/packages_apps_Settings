@@ -5,4 +5,8 @@
 -->
 <resources>
     <dimen name="fingerprint_side_skip_margin">24dp</dimen>
+
+    <!-- Expressive QR -->
+    <dimen name="wifi_sharing_qrcode_fragment_margin_size">23dp</dimen>
+    <dimen name="wifi_sharing_qrcode_fragment_size">264dp</dimen>
 </resources>
