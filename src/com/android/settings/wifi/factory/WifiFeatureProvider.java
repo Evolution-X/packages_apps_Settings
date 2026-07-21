@@ -40,6 +40,8 @@ import com.android.settings.wifi.tether.WifiHotspotSecurityViewModel;
 import com.android.settings.wifi.tether.WifiHotspotSpeedViewModel;
 import com.android.settings.wifi.tether.WifiTetherViewModel;
 
+import com.google.android.settings.wifi.dpp.WifiDppQrCodeGeneratorFragmentGoogleImpl;
+
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -229,7 +231,7 @@ public class WifiFeatureProvider {
      * Gets an instance of WifiDppQrCodeGeneratorFragment
      */
     public WifiDppQrCodeGeneratorFragment getWifiDppQrCodeGeneratorFragment() {
-        WifiDppQrCodeGeneratorFragment fragment = new WifiDppQrCodeGeneratorFragment();
+        WifiDppQrCodeGeneratorFragment fragment = new WifiDppQrCodeGeneratorFragmentGoogleImpl();
         verboseLog(TAG, "getWifiDppQrCodeGeneratorFragment():" + fragment);
         return fragment;
     }

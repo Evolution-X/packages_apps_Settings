@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/material_shape_qr_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/standard_qr_code_img_view"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:importantForAccessibility="yes"/>
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/qr_code_background_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:importantForAccessibility="no"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/lottie_qrcode_background"/>
+    <ImageView
+        android:id="@+id/qr_code_img_view_for_non_finder_patterns"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/wifi_sharing_qrcode_fragment_margin_size"
+        android:importantForAccessibility="no"/>
+    <ImageView
+        android:id="@+id/qr_code_img_view_for_finder_patterns"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/wifi_sharing_qrcode_fragment_margin_size"
+        android:importantForAccessibility="yes"/>
+</FrameLayout>

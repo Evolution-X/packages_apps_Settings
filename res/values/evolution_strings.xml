@@ -220,4 +220,7 @@
     <!-- Multi Audio Focus -->
     <string name="multi_audio_focus_title">Multi audio focus</string>
     <string name="multi_audio_focus_summary">Allow multiple apps to play audio simultaneously</string>
+
+    <!-- Expressive QR -->
+    <string name="wifi_qr_code_animation_control">pause the animation</string>
 </resources>
