@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2026 VoltageOS
+     SPDX-License-Identifier: Apache-2.0
+-->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res-auto"
+    android:key="app_lock_settings"
+    android:title="@string/app_lock_settings_title">
+
+    <PreferenceCategory
+        android:key="app_lock_customization_category"
+        android:title="@string/app_lock_customization_category">
+
+        <SwitchPreferenceCompat
+            android:key="app_lock_auto_biometric_prompt"
+            android:persistent="false"
+            android:title="@string/app_lock_auto_biometric_prompt_title"
+            android:summary="@string/app_lock_auto_biometric_prompt_summary" />
+
+        <ListPreference
+            android:key="app_lock_relock_behavior"
+            android:persistent="false"
+            android:title="@string/app_lock_relock_behavior_title"
+            android:entries="@array/app_lock_relock_behavior_entries"
+            android:entryValues="@array/app_lock_relock_behavior_values" />
+
+        <ListPreference
+            android:key="app_lock_grace_period"
+            android:persistent="false"
+            android:title="@string/app_lock_grace_period_title"
+            android:entries="@array/app_lock_grace_period_entries"
+            android:entryValues="@array/app_lock_grace_period_values" />
+
+        <Preference
+            android:key="app_lock_separate_credential"
+            android:persistent="false"
+            android:title="@string/app_lock_separate_credential_title"
+            android:summary="@string/app_lock_separate_credential_none" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="app_lock_apps_category"
+        android:title="@string/app_lock_apps_category" />
+</PreferenceScreen>

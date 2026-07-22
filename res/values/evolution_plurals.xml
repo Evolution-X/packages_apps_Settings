@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: Evolution X
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- App Lock -->
+    <plurals name="app_lock_summary_count">
+        <item quantity="one">1 app locked</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> apps locked</item>
+    </plurals>
+</resources>
