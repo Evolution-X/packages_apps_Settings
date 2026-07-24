@@ -285,6 +285,12 @@
             android:fragment="com.android.settings.display.BlurSettings"
             settings:controller="com.android.settings.display.BlurSettingsPreferenceController" />
 
+        <Preference
+            android:key="vehicle_motion_cues"
+            android:title="@string/vehicle_motion_cues_title"
+            android:summary="@string/vehicle_motion_cues_summary"
+            android:fragment="com.android.settings.display.VehicleMotionCuesSettings" />
+
         <SwitchPreferenceCompat
             android:key="tap_to_wake"
             android:title="@string/tap_to_wake"
