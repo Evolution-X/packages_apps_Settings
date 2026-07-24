@@ -976,7 +976,8 @@
     <!-- Message for battery tip dialog to show the battery summary -->
     <string name="battery_tip_dialog_summary_message" product="desktop">Your apps are using a normal amount of battery. If apps use too much battery, your device will suggest actions you can take.\n\nYou can always turn on Battery Saver if you\u2019re running low on battery.</string>
     <!-- Summary for the smart battery toggle [CHAR LIMIT=NONE] -->
-    <string name="smart_battery_summary" product="default">Limit battery for apps that you don\u2019t use often</string>
+    <string name="smart_battery_summary" product="default">Adaptive Battery learns from your phone usage to continuously optimize how apps use battery. To extend battery life, it may reduce performance and delay notifications.</string>
+    <string name="smart_battery_summary" product="tablet">Adaptive Battery learns from your tablet usage to continuously optimize how apps use battery. To extend battery life, it may reduce performance and delay notifications.</string>
     <!-- [CHAR_LIMIT=NONE] Battery usage main screen footer content -->
     <string name="battery_usage_screen_footer" product="default">Battery usage and screen time are not measured while the phone is charging</string>
     <!-- [CHAR_LIMIT=NONE] Battery usage main screen footer content -->
@@ -1093,7 +1094,11 @@
     <string name="reset_internet_text" product="tablet">This will end your phone call</string>
 
     <!-- Help URI, battery saver page [DO NOT TRANSLATE] -->
-    <string name="help_url_battery_saver_settings" translatable="false" product="default"></string>
+    <string name="help_url_battery_saver_settings" translatable="false" product="default">https://support.google.com/pixelphone/?p=battery_saver_settings</string>
+    <string name="help_url_battery_saver_settings" translatable="false" product="tablet">https://support.google.com/googlepixeltablet/?p=battery_saver</string>
+
+    <string name="unified_battery_saver_page_intro" product="default">Save power to help your phone battery last longer between charges</string>
+    <string name="unified_battery_saver_page_intro" product="tablet">Save power to help your tablet battery last longer between charges</string>
 
     <!-- Help URI, app usage page [DO NOT TRANSLATE] -->
     <string name="help_url_app_usage_settings" translatable="false" product="default"></string>
