@@ -6995,7 +6995,7 @@
     <!-- Title for the smart battery manager preference [CHAR LIMIT=NONE] -->
     <string name="smart_battery_manager_title">Battery Manager</string>
     <!-- Title for the smart battery toggle [CHAR LIMIT=NONE] -->
-    <string name="smart_battery_title">Manage apps automatically</string>
+    <string name="smart_battery_title">Adaptive Battery</string>
     <!-- Footer for the aosp smart battery page -->
     <string name="smart_battery_footer">When Battery Manager detects that apps are draining battery, you\u2019ll have the option to restrict these apps. Restricted apps may not work properly and notifications may be delayed.</string>
     <!-- Title for restricted app preference, clicking it will goes to restricted app list [CHAR LIMIT=NONE] -->
