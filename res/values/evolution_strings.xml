@@ -304,4 +304,14 @@
 
     <!-- Confirm dialog -->
     <string name="confirm_before_enable_title">Continue to enable?</string>
+
+    <!-- Vehicle Motion Cues -->
+    <string name="vehicle_motion_cues_title">Vehicle Motion Cues</string>
+    <string name="vehicle_motion_cues_summary">Show animated dots on screen edges that move with vehicle motion to help prevent motion sickness</string>
+    <string name="vehicle_motion_cues_dot_size_title">Dot Size</string>
+    <string name="vehicle_motion_cues_dot_size_summary">Size of the animated motion cue dots</string>
+    <string name="vehicle_motion_cues_sensitivity_title">Motion Sensitivity</string>
+    <string name="vehicle_motion_cues_sensitivity_summary">Strength of the dot translations relative to vehicle forces</string>
+    <string name="vehicle_motion_cues_dot_count_title">Dot Count</string>
+    <string name="vehicle_motion_cues_dot_count_summary">Number of animated motion cue dots shown along the screen margins</string>
 </resources>
