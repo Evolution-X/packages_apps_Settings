@@ -229,4 +229,32 @@
     <string name="language_picker_page">Language picker page</string>
     <string name="search_region">Search regions</string>
     <string name="search_region_page">Search region page</string>
+
+    <!-- Battery Saver -->
+    <string name="adaptive_battery_entry_purpose">Allows users to enable or disable Adaptive Battery, which optimizes app battery usage based on phone usage patterns to extend battery life.</string>
+    <string name="adaptive_battery_management_enabled_purpose">Whether Adaptive Battery is enabled to optimize battery usage based on app usage patterns.</string>
+    <string name="adaptive_battery_switch_title">Use Adaptive Battery</string>
+    <string name="basic_battery_saver_title">Standard Battery Saver</string>
+    <string name="basic_battery_saver_summary">Limits visual effects and background activity. Turns on Dark theme, if not already on.</string>
+    <string name="basic_battery_saver_purpose">Enables Standard Battery Saver mode which limits visual effects and background activity</string>
+    <string name="battery_saver_reminder_category">Reminders</string>
+    <string name="battery_saver_reminder_switch_title">Battery Saver reminders</string>
+    <string name="battery_saver_reminder_switch_summary">Get reminders when battery is low</string>
+    <string name="battery_saver_schedule_category">Schedule</string>
+    <string name="battery_saver_schedule_switch_title">Turn on based on battery level</string>
+    <string name="battery_saver_schedule_switch_summary">Battery Saver turns on when battery falls to a level you set</string>
+    <string name="battery_saver_schedule_purpose">Allows users to configure Battery Saver schedules, including automatic activation based on battery percentage and automatic deactivation when charged, as well as managing low-battery notification reminders.</string>
+    <string name="battery_schedule_title">Schedule and reminders</string>
+    <string name="battery_schedule_summary">Manage when Battery Saver turns on</string>
+    <string name="extreme_battery_saver_title">Extreme Battery Saver</string>
+    <string name="extreme_battery_saver_summary">Includes all changes listed above. Also pauses non-essential apps and their notifications.</string>
+    <string name="extreme_battery_saver_purpose">Enables Extreme Battery Saver mode which pauses non-essential apps and notifications</string>
+    <string name="low_power_mode_reminder_enabled_purpose">Whether to receive notification reminders when the battery is low</string>
+
+    <string name="adaptive_battery_category_purpose" translatable="false">adaptive_battery_category</string>
+    <string name="adaptive_battery_illustration_purpose" translatable="false">adaptive_battery_illustration</string>
+    <string name="adaptive_battery_top_intro_purpose" translatable="false">adaptive_battery_top_intro</string>
+    <string name="battery_saver_group_purpose" translatable="false">battery_saver_group</string>
+    <string name="battery_saver_reminder_entry_purpose" translatable="false">battery_saver_reminder_entry</string>
+    <string name="battery_saver_schedule_category_purpose" translatable="false">battery_saver_schedule_category</string>
 </resources>
