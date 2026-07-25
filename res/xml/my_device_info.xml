@@ -144,6 +144,31 @@
             android:summary="@string/summary_placeholder"
             android:fragment="com.android.settings.deviceinfo.firmwareversion.FirmwareVersionSettings"
             settings:controller="com.android.settings.deviceinfo.firmwareversion.FirmwareVersionPreferenceController"/>
+
+        <!-- Build number -->
+        <Preference
+            android:key="build_number"
+            android:order="43"
+            android:title="@string/build_number"
+            android:summary="@string/summary_placeholder"
+            settings:enableCopying="true"
+            settings:controller="com.android.settings.deviceinfo.BuildNumberPreferenceController"/>
+
+        <!-- Device up time -->
+        <Preference
+            android:key="up_time"
+            android:order="44"
+            android:title="@string/status_up_time"
+            android:summary="@string/summary_placeholder"
+            android:selectable="false"/>
+
+        <!-- Device deep sleep time -->
+        <Preference
+            android:key="sleep_time"
+            android:order="45"
+            android:title="@string/status_sleep_time"
+            android:summary="@string/summary_placeholder"
+            android:selectable="false"/>
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -153,7 +178,7 @@
         <!--IP address -->
         <Preference
             android:key="wifi_ip_address"
-            android:order="44"
+            android:order="46"
             android:title="@string/wifi_ip_address"
             android:summary="@string/summary_placeholder"
             android:selectable="false"
@@ -162,7 +187,7 @@
         <!-- Wi-Fi MAC address -->
         <Preference
             android:key="saved_accesspoints_wifi_mac_address"
-            android:order="45"
+            android:order="47"
             android:title="@string/status_wifi_mac_address"
             android:summary="@string/view_saved_network"
             android:fragment="com.android.settings.wifi.savedaccesspoints2.SavedAccessPointsWifiSettings2"
@@ -171,7 +196,7 @@
         <!-- Factory Wi-Fi MAC address -->
         <Preference
             android:key="wifi_mac_address"
-            android:order="46"
+            android:order="48"
             android:title="@string/status_device_wifi_mac_address"
             android:summary="@string/summary_placeholder"
             android:selectable="false"
@@ -180,27 +205,11 @@
         <!-- Bluetooth address -->
         <Preference
             android:key="bt_address"
-            android:order="47"
+            android:order="49"
             android:title="@string/status_bt_address"
             android:summary="@string/summary_placeholder"
             android:selectable="false"
             settings:enableCopying="true"/>
-
-        <!-- Device up time -->
-        <Preference
-            android:key="up_time"
-            android:order="48"
-            android:title="@string/status_up_time"
-            android:summary="@string/summary_placeholder"
-            android:selectable="false"/>
-
-        <!-- Device deep sleep time -->
-        <Preference
-            android:key="sleep_time"
-            android:order="49"
-            android:title="@string/status_sleep_time"
-            android:summary="@string/summary_placeholder"
-            android:selectable="false"/>
 
         <!-- Manual -->
         <Preference
@@ -224,15 +233,6 @@
             android:order="52"
             android:title="@string/fcc_equipment_id"
             android:summary="@string/summary_placeholder"/>
-
-        <!-- Build number -->
-        <Preference
-            android:key="build_number"
-            android:order="53"
-            android:title="@string/build_number"
-            android:summary="@string/summary_placeholder"
-            settings:enableCopying="true"
-            settings:controller="com.android.settings.deviceinfo.BuildNumberPreferenceController"/>
     </PreferenceCategory>
 
 </PreferenceScreen>
