@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: Evolution X
+     SPDX-License-Identifier: Apache-2.0
+-->
+<!-- M3E extra-extra-large (48dp) on every corner. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/settingslib_materialColorPrimaryContainer" />
+    <corners android:radius="@dimen/model_hero_radius" />
+</shape>
