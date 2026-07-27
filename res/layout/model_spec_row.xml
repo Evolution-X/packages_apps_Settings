@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: Evolution X
+     SPDX-License-Identifier: Apache-2.0
+-->
+<!-- One segmented row. Background, corner radii, gap and the pressed shape
+     morph are applied in ModelPageController.styleRows().
+     Tap or long-press copies the value. -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/spec_content"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    android:gravity="center_vertical"
+    android:minHeight="56dp"
+    android:orientation="horizontal"
+    android:paddingHorizontal="@dimen/settingslib_expressive_space_small1"
+    android:paddingVertical="@dimen/settingslib_expressive_space_extrasmall4">
+
+    <TextView
+        android:id="@+id/spec_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="2"
+        android:maxWidth="@dimen/model_spec_label_max_width"
+        android:textAppearance="@style/TextAppearance.SettingsLib.BodyMedium"
+        android:textColor="@color/settingslib_materialColorOnSurfaceVariant" />
+
+    <TextView
+        android:id="@+id/spec_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/settingslib_expressive_space_small1"
+        android:layout_weight="1"
+        android:ellipsize="middle"
+        android:gravity="end"
+        android:singleLine="true"
+        android:textAppearance="@style/TextAppearance.SettingsLib.BodyLarge"
+        android:textColor="@color/settingslib_materialColorOnSurface" />
+
+</LinearLayout>
