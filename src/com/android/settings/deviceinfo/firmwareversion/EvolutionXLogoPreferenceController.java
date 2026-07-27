@@ -17,7 +17,6 @@ import android.view.View;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceScreen;
 
-import com.android.internal.util.evolution.PixelPropsUtils;
 import com.android.settings.R;
 import com.android.settings.core.BasePreferenceController;
 import com.android.settingslib.widget.LayoutPreference;
@@ -65,9 +64,6 @@ public class EvolutionXLogoPreferenceController extends BasePreferenceController
 
     @Override
     public int getAvailabilityStatus() {
-        if (PixelPropsUtils.isCustomForkBuild()) {
-            return UNSUPPORTED_ON_DEVICE;
-        }
         return AVAILABLE;
     }
 
