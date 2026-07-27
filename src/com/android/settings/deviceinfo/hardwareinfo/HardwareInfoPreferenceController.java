@@ -25,7 +25,6 @@ import android.widget.TextView;
 
 import androidx.preference.Preference;
 
-import com.android.internal.util.evolution.PixelPropsUtils;
 import com.android.settings.R;
 import com.android.settings.core.BasePreferenceController;
 import com.android.settingslib.widget.LayoutPreference;
@@ -142,11 +141,6 @@ public class HardwareInfoPreferenceController extends BasePreferenceController {
 
     @Override
     public void updateState(Preference preference) {
-        if (PixelPropsUtils.isCustomForkBuild()) {
-            preference.setVisible(false);
-            return;
-        }
-
         super.updateState(preference);
         if (!(preference instanceof LayoutPreference)) return;
 
