@@ -23,7 +23,7 @@ import com.android.settings.R;
 import com.android.settings.core.BasePreferenceController;
 import com.android.settings.slices.Sliceable;
 
-import java.text.DecimalFormat;
+import java.util.Locale;
 
 public class TotalRAMPreferenceController extends BasePreferenceController {
 
@@ -49,16 +49,40 @@ public class TotalRAMPreferenceController extends BasePreferenceController {
 
     @Override
     public CharSequence getSummary() {
-        ActivityManager actManager = (ActivityManager) mContext.getSystemService(Context.ACTIVITY_SERVICE);
-        ActivityManager.MemoryInfo memInfo = new ActivityManager.MemoryInfo();
-        actManager.getMemoryInfo(memInfo);
-
-        long totRam = memInfo.totalMem;
-        double gb = (double) totRam / 1000000000.0;
-        
-        DecimalFormat df = new DecimalFormat("#");
-        String formattedRam = df.format(gb);
-        
-        return formattedRam + " GB";
+        return getTotalRam(mContext);
     }
+
+    /** Total RAM rounded to the nearest marketed size; empty when unavailable. */
+    public static String getTotalRam(Context context) {
+        ActivityManager am = context.getSystemService(ActivityManager.class);
+        if (am == null) return "";
+        ActivityManager.MemoryInfo mi = new ActivityManager.MemoryInfo();
+        am.getMemoryInfo(mi);
+        long rounded = roundToTier(mi.totalMem / (1024 * 1024));
+        if (rounded >= 1024) {
+            float gb = rounded / 1024f;
+            return (gb == (long) gb)
+                    ? (long) gb + " GB"
+                    : String.format(Locale.getDefault(), "%.1f GB", gb);
+        }
+        return rounded + " MB";
+    }
+
+    /**
+     * MemoryInfo.totalMem is MemTotal from /proc/meminfo, which is the installed RAM minus what
+     * the kernel, modem, DSP, camera and GPU carve out at boot. It is therefore always below the
+     * marketed size, and on some SoCs by well over 1 GB. Round up to the next marketed tier
+     * rather than to the nearest one, otherwise an 8 GB device reporting ~6.9 GB is shown as 6 GB.
+     */
+    private static long roundToTier(long mb) {
+        for (long tier : MARKETED_TIERS_MB) {
+            if (mb <= tier) return tier;
+        }
+        // Above the largest known tier: round up to the next whole GB.
+        return ((mb + 1023) / 1024) * 1024;
+    }
+
+    private static final long[] MARKETED_TIERS_MB = {
+        512, 1024, 2048, 3072, 4096, 6144, 8192, 10240, 12288, 16384, 18432, 24576, 32768
+    };
 }

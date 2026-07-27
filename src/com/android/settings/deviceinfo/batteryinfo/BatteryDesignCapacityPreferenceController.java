@@ -43,19 +43,26 @@ public class BatteryDesignCapacityPreferenceController extends BasePreferenceCon
 
     @Override
     public CharSequence getSummary() {
-        Intent batteryIntent = BatteryUtils.getBatteryIntent(mContext);
-        int designCapacityUah =
-                batteryIntent.getIntExtra(BatteryManager.EXTRA_DESIGN_CAPACITY, -1);
-        if (designCapacityUah <= 0) {
-            final PowerProfile profile = new PowerProfile(mContext);
-            designCapacityUah = (int) profile.getBatteryCapacity() * 1000;
-        }
-
-        if (designCapacityUah > 0) {
-            int designCapacity = designCapacityUah / 1_000;
+        final int designCapacity = getDesignCapacityMah(mContext);
+        if (designCapacity > 0) {
             return mContext.getString(R.string.battery_design_capacity_summary, designCapacity);
         }
 
         return mContext.getString(R.string.battery_design_capacity_not_available);
+    }
+
+    /**
+     * Design capacity in mAh from the battery intent, falling back to the power profile.
+     * Returns 0 when the device reports none. Shared with the Model page.
+     */
+    public static int getDesignCapacityMah(Context context) {
+        Intent batteryIntent = BatteryUtils.getBatteryIntent(context);
+        int designCapacityUah =
+                batteryIntent.getIntExtra(BatteryManager.EXTRA_DESIGN_CAPACITY, -1);
+        if (designCapacityUah <= 0) {
+            final PowerProfile profile = new PowerProfile(context);
+            designCapacityUah = (int) profile.getBatteryCapacity() * 1000;
+        }
+        return designCapacityUah > 0 ? designCapacityUah / 1_000 : 0;
     }
 }
