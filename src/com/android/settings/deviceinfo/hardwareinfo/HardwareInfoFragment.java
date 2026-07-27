@@ -24,7 +24,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.preference.Preference;
 
-import com.android.internal.util.evolution.PixelPropsUtils;
 import com.android.settings.R;
 import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
@@ -79,13 +78,6 @@ public class HardwareInfoFragment extends DashboardFragment {
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         super.onCreatePreferences(savedInstanceState, rootKey);
-
-        if (PixelPropsUtils.isCustomForkBuild()) {
-            if (getPreferenceScreen() != null) {
-                getPreferenceScreen().removeAll();
-            }
-            return;
-        }
 
         String[] hiddenKeys = {
             "hardware_info_market_name",
