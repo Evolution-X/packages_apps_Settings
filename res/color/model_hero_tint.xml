@@ -3,7 +3,7 @@
      SPDX-FileCopyrightText: Evolution X
      SPDX-License-Identifier: Apache-2.0
 -->
+<!-- 12% onPrimaryContainer over the hero: device tile. -->
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <!-- Dark theme -->
-    <item android:color="#1FFFFFFF" android:state_enabled="true" />
+    <item android:alpha="0.12" android:color="@color/settingslib_materialColorOnPrimaryContainer" />
 </selector>
