@@ -36,6 +36,7 @@ import com.android.settings.utils.highlightPreference
 import com.android.settingslib.datastore.HandlerExecutor
 import com.android.settingslib.datastore.KeyedObserver
 import com.android.settingslib.datastore.SettingsSecureStore
+import com.android.settingslib.metadata.PreferenceAvailabilityProvider
 import com.android.settingslib.metadata.PreferenceCategory
 import com.android.settingslib.metadata.PreferenceLifecycleContext
 import com.android.settingslib.metadata.PreferenceLifecycleProvider
@@ -45,10 +46,14 @@ import com.android.settingslib.metadata.ProvidePreferenceScreen
 import com.android.settingslib.metadata.preferenceHierarchy
 import kotlinx.coroutines.CoroutineScope
 import com.android.settingslib.metadata.preferencesapi.PreferencesApiScreen.Companion.APP_FUNCTION_UNCATEGORIZED
+import com.android.settingslib.metadata.preferencesapi.preconditions.PreconditionStability
 
 @ProvidePreferenceScreen(ColorInversionScreen.KEY)
 open class ColorInversionScreen :
-    PreferenceScreenMixin, PreferenceSummaryProvider, PreferenceLifecycleProvider {
+    PreferenceScreenMixin,
+    PreferenceSummaryProvider,
+    PreferenceLifecycleProvider,
+    PreferenceAvailabilityProvider {
     override fun tags(context: Context) = arrayOf(APP_FUNCTION_UNCATEGORIZED)
 
     override val key: String
@@ -87,6 +92,16 @@ open class ColorInversionScreen :
             R.string.color_inversion_state_on,
             R.string.color_inversion_state_off,
         )
+
+    override val availabilityDescription: String
+        get() = "Requires config_displayInversionAvailable to be true"
+
+    override fun isAvailable(context: Context): Boolean =
+        context.resources.getBoolean(
+            com.android.internal.R.bool.config_displayInversionAvailable)
+
+    override fun getAvailabilityStability(): PreconditionStability =
+        PreconditionStability.STABLE_UNTIL_APK_UPDATE
 
     override fun onCreate(context: PreferenceLifecycleContext) {
         if (isEntryPoint(context)) {
