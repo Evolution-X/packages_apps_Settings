@@ -113,6 +113,7 @@
     <Preference
         android:key="cellular_security_network_internet"
         android:title="@string/cellular_security_title"
+        android:icon="@drawable/ic_cellular_security_network_internet"
         android:summary="@string/cellular_security_summary"
         android:order="30"
         settings:controller="com.android.settings.network.CellularSecurityPreferenceController"/>
