@@ -106,4 +106,33 @@
         <item>en-US</item>
         <item>es-US</item>
     </array>
+
+    <!-- App Lock -->
+    <string-array name="app_lock_relock_behavior_entries">
+        <item>After timeout</item>
+        <item>When screen turns off</item>
+    </string-array>
+
+    <string-array name="app_lock_relock_behavior_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+
+    <string-array name="app_lock_grace_period_entries">
+        <item>Immediately</item>
+        <item>5 seconds</item>
+        <item>15 seconds</item>
+        <item>30 seconds</item>
+        <item>1 minute</item>
+        <item>5 minutes</item>
+    </string-array>
+
+    <string-array name="app_lock_grace_period_values" translatable="false">
+        <item>0</item>
+        <item>5000</item>
+        <item>15000</item>
+        <item>30000</item>
+        <item>60000</item>
+        <item>300000</item>
+    </string-array>
 </resources>
