@@ -197,6 +197,7 @@ import com.android.settings.regionalpreferences.TemperatureUnitFragment;
 import com.android.settings.safetycenter.MoreSecurityPrivacyFragment;
 import com.android.settings.safetycenter.ui.SafetyCenterFragment;
 import com.android.settings.safetycenter.ui.SafetyCenterQsFragment;
+import com.android.settings.security.AppLockSettingsFragment;
 import com.android.settings.security.ContentProtectionPreferenceFragment;
 import com.android.settings.security.LockscreenDashboardFragment;
 import com.android.settings.security.MemtagPage;
@@ -431,6 +432,7 @@ public class SettingsGateway {
             ZenModeCallsFragment.class.getName(),
             ContactsStorageSettings.class.getName(),
             ContentProtectionPreferenceFragment.class.getName(),
+            AppLockSettingsFragment.class.getName(),
             MagnificationPreferenceFragment.class.getName(),
             FlashNotificationsPreferenceFragment.class.getName(),
             BundlePreferenceFragment.class.getName(),
