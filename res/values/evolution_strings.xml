@@ -331,4 +331,62 @@
     <!-- Backup -->
     <string name="local_app_backup_restore_title">Local app backup and restore</string>
     <string name="local_app_backup_restore_summary">Save APKs and app data as normal tar archives in internal storage</string>
+
+    <!-- App lock -->
+    <string name="app_lock_title">App lock</string>
+    <string name="app_lock_authentication_dialog_title">Unlock</string>
+    <string name="enable_debugging">Enable debugging</string>
+    <string name="disable_debugging">Disable debugging</string>
+    <string name="app_lock_packages_title">Protected apps</string>
+    <string name="app_lock_packages_summary">Select the apps to protect with biometrics or device credentials</string>
+    <string name="app_lock_timeout_title">Auto lock timeout</string>
+    <string name="app_lock_timeout_summary">Duration of time after which an unlocked app in background should be locked</string>
+    <string name="app_lock_notifications_title">Redact notifications</string>
+    <string name="app_lock_notifications_summary">Notification content will be hidden and collapsed for selected apps when they are locked. Heads up notifications will be automatically disabled.</string>
+    <string name="app_lock_notifications_disabled_summary">Protect an application first</string>
+    <string name="app_lock_biometrics_allowed_title">Enable biometrics for unlocking</string>
+    <string name="app_lock_footer_text">Bubbles will be automatically dismissed after timeout</string>
+    <string name="enable_protection">Enable protection</string>
+    <string name="hide_from_launcher_title">Hide from launcher</string>
+    <string name="hide_from_launcher_summary">Prevent this application from showing up in any launcher. Requires a launcher restart for changes to take effect.</string>
+
+    <!-- App Lock settings -->
+    <string name="app_lock_summary">Protect apps using your device credential</string>
+    <string name="app_lock_search_placeholder">Search apps…</string>
+    <string name="app_lock_show_system">Show system apps</string>
+    <string name="app_lock_dashboard_card_title">App Lock</string>
+    <string name="app_lock_dashboard_card_summary_none">No apps protected</string>
+    <string name="app_lock_dashboard_card_summary_multiple"><xliff:g id="count" example="3">%d</xliff:g> apps protected</string>
+    <string name="app_lock_not_secure_title">Set a screen lock</string>
+    <string name="app_lock_not_secure_summary">To use App Lock, you need to first set a secure screen lock (PIN, pattern, or password) in Settings.</string>
+    <string name="app_lock_not_secure_button">Set screen lock</string>
+    <string name="app_lock_timeout_immediately">Immediately</string>
+    <string name="app_lock_timeout_5s">5 seconds (Default)</string>
+    <string name="app_lock_timeout_30s">30 seconds</string>
+    <string name="app_lock_timeout_1m">1 minute</string>
+    <string name="app_lock_timeout_5m">5 minutes</string>
+    <string name="app_lock_timeout_screen_lock">Only when screen locks</string>
+
+    <!-- App Lock custom credential settings strings -->
+    <string name="app_lock_settings_title">App lock settings</string>
+    <string name="app_lock_settings_summary">Configure lock timeout and credential authentication method</string>
+    <string name="app_lock_method_title">App lock method</string>
+    <string name="app_lock_method_device_lock">Device Lock</string>
+    <string name="app_lock_method_device_lock_summary">Use system screen lock PIN/Pattern/Password &amp; Biometrics</string>
+    <string name="app_lock_method_pin">PIN</string>
+    <string name="app_lock_method_pin_summary">4-digit code</string>
+    <string name="app_lock_method_password">Password</string>
+    <string name="app_lock_method_password_summary">Alphanumeric password</string>
+    <string name="app_lock_method_pattern">Pattern</string>
+    <string name="app_lock_method_pattern_summary">Draw pattern to unlock</string>
+    <string name="app_lock_setup_pin_title">Set App Lock PIN</string>
+    <string name="app_lock_confirm_pin_title">Confirm App Lock PIN</string>
+    <string name="app_lock_setup_password_title">Set App Lock Password</string>
+    <string name="app_lock_confirm_password_title">Confirm App Lock Password</string>
+    <string name="app_lock_setup_pattern_title">Draw App Lock Pattern</string>
+    <string name="app_lock_confirm_pattern_title">Confirm App Lock Pattern</string>
+    <string name="app_lock_credential_mismatch">Credentials do not match. Try again.</string>
+    <string name="app_lock_credential_incorrect">Incorrect PIN, Password, or Pattern.</string>
+    <string name="app_lock_biometrics_title">Allow Biometrics</string>
+    <string name="app_lock_biometrics_summary">Unlock locked apps using fingerprint or face unlock when custom lock is enabled</string>
 </resources>
