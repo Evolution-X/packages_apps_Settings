@@ -148,6 +148,14 @@
         settings:controller="com.android.settings.security.ContentProtectionPreferenceController" />
 
     <Preference
+        android:order="235"
+        android:key="app_lock_settings"
+        android:title="@string/app_lock_title"
+        android:summary="@string/app_lock_summary"
+        android:fragment="com.android.settings.security.AppLockSettingsFragment"
+        settings:controller="com.android.settings.security.AppLockPreferenceController" />
+
+    <Preference
         android:order="241"
         android:key="manage_device_admin"
         android:title="@string/manage_device_admin"
