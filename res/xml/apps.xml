@@ -86,6 +86,14 @@
     </Preference>
 
     <Preference
+        android:key="app_lock_settings"
+        android:title="@string/app_lock_title"
+        android:summary="@string/app_lock_summary"
+        android:order="-994"
+        android:fragment="com.android.settings.security.AppLockSettingsFragment"
+        settings:controller="com.android.settings.security.AppLockPreferenceController"/>
+
+    <Preference
         android:key="game_settings"
         android:title="@string/game_space_title"
         android:summary="@string/game_space_summary"
