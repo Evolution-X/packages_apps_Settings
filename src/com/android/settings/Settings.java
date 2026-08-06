@@ -295,6 +295,7 @@ public class Settings extends SettingsActivity {
     }
     /** Activity for the More settings page. */
     public static class MoreSecurityPrivacySettingsActivity extends SettingsActivity { /* empty */ }
+    public static class AppLockSettingsActivity extends SettingsActivity { /* empty */ }
     public static class UsageAccessSettingsActivity extends SettingsActivity { /* empty */ }
     public static class AppUsageAccessSettingsActivity extends SettingsActivity { /* empty */ }
     public static class LocationSettingsActivity extends SettingsActivity { /* empty */ }
