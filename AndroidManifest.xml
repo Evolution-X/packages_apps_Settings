@@ -21,6 +21,8 @@
         android:name="com.google.android.settings.biometrics.face.POSTURE_GUIDANCE"
         android:protectionLevel="privileged|signature"/>
 
+    <uses-permission android:name="android.permission.LOCK_APPS" />
+    <uses-permission android:name="android.permission.TEST_LOCK_APPS" />
     <uses-permission android:name="android.permission.REQUEST_NETWORK_SCORES" />
     <uses-permission android:name="android.permission.WRITE_MEDIA_STORAGE" />
     <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
@@ -2447,8 +2449,20 @@
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                        android:value="com.android.settings.safetycenter.MoreSecurityPrivacyFragment" />
+        </activity>
+
+        <activity
+            android:name="Settings$AppLockSettingsActivity"
+            android:label="@string/app_lock_title"
+            android:exported="true">
+            <intent-filter android:priority="1">
+                <action android:name="com.android.settings.APP_LOCK_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                       android:value="com.android.settings.security.AppLockSettingsFragment" />
             <meta-data android:name="com.android.settings.HIGHLIGHT_MENU_KEY"
-                       android:value="@string/menu_key_safety_center"/>
+                       android:value="@string/menu_key_security"/>
         </activity>
 
         <activity android:name="MonitoringCertInfoActivity"
