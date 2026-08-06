@@ -26,6 +26,7 @@ import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
 import android.graphics.drawable.Drawable
 import android.os.Bundle
+import android.os.UserHandle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -94,6 +95,15 @@ import kotlinx.coroutines.withContext
 import org.evolution.settings.fragments.miscellaneous.AppPickerItem
 import org.evolution.settings.fragments.miscellaneous.AppPickerSearchField
 
+import com.android.internal.app.AppLockCredentialUtils
+import com.android.settings.core.SubSettingLauncher
+
+import android.hardware.biometrics.BiometricManager
+import android.hardware.biometrics.BiometricPrompt
+import android.os.CancellationSignal
+import androidx.compose.ui.viewinterop.AndroidView
+import com.android.internal.app.AppLockCustomCredentialView
+
 class AppLockSettingsFragment : SettingsPreferenceFragment() {
 
     private lateinit var authenticateLauncher: ActivityResultLauncher<Intent>
@@ -135,21 +145,46 @@ class AppLockSettingsFragment : SettingsPreferenceFragment() {
 
     override fun onResume() {
         super.onResume()
-        val km = requireContext().getSystemService(Context.KEYGUARD_SERVICE) as KeyguardManager
-        val isSecureNow = km.isDeviceSecure
+        val userId = UserHandle.myUserId()
+        val isSecureNow = AppLockCredentialUtils.isAppLockSecure(requireContext(), userId)
         isDeviceSecureState.value = isSecureNow
         if (isSecureNow && !isAuthenticatedState.value) {
-            val builder = ChooseLockSettingsHelper.Builder(requireActivity(), this)
-            val launched = builder.setRequestCode(1)
-                .setTitle(getString(R.string.app_lock_title))
-                .setActivityResultLauncher(authenticateLauncher)
-                .show()
-            if (!launched) {
-                isAuthenticatedState.value = true
+            val credType = AppLockCredentialUtils.getCredentialType(requireContext(), userId)
+            if (credType == AppLockCredentialUtils.CREDENTIAL_TYPE_DEVICE) {
+                val builder = ChooseLockSettingsHelper.Builder(requireActivity(), this)
+                val launched = builder.setRequestCode(1)
+                    .setTitle(getString(R.string.app_lock_title))
+                    .setActivityResultLauncher(authenticateLauncher)
+                    .show()
+                if (!launched) {
+                    isAuthenticatedState.value = true
+                }
+            } else if (AppLockCredentialUtils.isBiometricEnabled(requireContext(), userId)) {
+                showBiometricPromptForSettings(userId)
             }
         } else if (!isSecureNow) {
             isAuthenticatedState.value = false
         }
+    }
+
+    private fun showBiometricPromptForSettings(userId: Int) {
+        val prompt = BiometricPrompt.Builder(requireContext())
+            .setTitle(getString(R.string.app_lock_title))
+            .setSubtitle("Unlock App Lock Settings")
+            .setNegativeButton(getString(R.string.cancel), requireActivity().mainExecutor) { _, _ -> }
+            .setAllowedAuthenticators(BiometricManager.Authenticators.BIOMETRIC_STRONG)
+            .build()
+
+        prompt.authenticate(
+            CancellationSignal(),
+            requireActivity().mainExecutor,
+            object : BiometricPrompt.AuthenticationCallback() {
+                override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult?) {
+                    super.onAuthenticationSucceeded(result)
+                    isAuthenticatedState.value = true
+                }
+            }
+        )
     }
 }
 
@@ -165,11 +200,32 @@ fun AppLockSettingsMainScreen(fragment: AppLockSettingsFragment) {
             fragment.startActivity(intent)
         }
     } else if (!isAuthenticated) {
-        Box(
-            modifier = Modifier.fillMaxSize(),
-            contentAlignment = Alignment.Center
-        ) {
-            LoadingIndicator()
+        val credType = AppLockCredentialUtils.getCredentialType(fragment.requireContext(), UserHandle.myUserId())
+        if (credType != AppLockCredentialUtils.CREDENTIAL_TYPE_DEVICE) {
+            AndroidView(
+                modifier = Modifier.fillMaxSize(),
+                factory = { ctx ->
+                    AppLockCustomCredentialView(ctx).apply {
+                        setUserId(UserHandle.myUserId())
+                        setAppDetails("App Lock Settings", null)
+                        setOnUnlockListener(object : AppLockCustomCredentialView.OnUnlockListener {
+                            override fun onUnlocked() {
+                                fragment.isAuthenticatedState.value = true
+                            }
+                            override fun onCancelled() {
+                                fragment.requireActivity().finish()
+                            }
+                        })
+                    }
+                }
+            )
+        } else {
+            Box(
+                modifier = Modifier.fillMaxSize(),
+                contentAlignment = Alignment.Center
+            ) {
+                LoadingIndicator()
+            }
         }
     } else {
         AppLockSettingsContent(fragment, fragment.requireContext().packageManager)
@@ -237,32 +293,6 @@ fun AppLockSettingsContent(
     var showSystemApps by remember { mutableStateOf(false) }
     var isLoading by remember { mutableStateOf(true) }
     val allApps = remember { mutableStateListOf<AppEntry>() }
-
-    var showTimeoutDialog by remember { mutableStateOf(false) }
-    var currentTimeout by remember {
-        mutableStateOf(
-            android.provider.Settings.Secure.getLong(
-                context.contentResolver,
-                "app_lock_timeout",
-                5000L
-            )
-        )
-    }
-
-    val timeoutOptions = remember {
-        listOf(
-            0L to context.getString(R.string.app_lock_timeout_immediately),
-            5000L to context.getString(R.string.app_lock_timeout_5s),
-            30000L to context.getString(R.string.app_lock_timeout_30s),
-            60000L to context.getString(R.string.app_lock_timeout_1m),
-            300000L to context.getString(R.string.app_lock_timeout_5m),
-            -1L to context.getString(R.string.app_lock_timeout_screen_lock)
-        )
-    }
-
-    val currentTimeoutLabel = remember(currentTimeout) {
-        timeoutOptions.find { it.first == currentTimeout }?.second ?: context.getString(R.string.app_lock_timeout_5s)
-    }
 
     fun loadApps() {
         isLoading = true
@@ -345,7 +375,7 @@ fun AppLockSettingsContent(
                         )
                     }
                     Spacer(modifier = Modifier.width(16.dp))
-                    Column {
+                    Column(modifier = Modifier.weight(1f)) {
                         Text(
                             text = stringResource(R.string.app_lock_dashboard_card_title),
                             style = MaterialTheme.typography.titleLarge,
@@ -360,30 +390,18 @@ fun AppLockSettingsContent(
                             color = MaterialTheme.colorScheme.onSurfaceVariant
                         )
                     }
-                }
-            }
-
-            Spacer(modifier = Modifier.height(12.dp))
-
-            Card(
-                modifier = Modifier.fillMaxWidth(),
-                shape = RoundedCornerShape(24.dp),
-                colors = CardDefaults.cardColors(
-                    containerColor = MaterialTheme.colorScheme.surfaceBright
-                ),
-                onClick = { showTimeoutDialog = true }
-            ) {
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(20.dp),
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
                     Box(
                         modifier = Modifier
                             .size(40.dp)
                             .clip(CircleShape)
-                            .background(MaterialTheme.colorScheme.secondaryContainer),
+                            .background(MaterialTheme.colorScheme.secondaryContainer)
+                            .clickable {
+                                SubSettingLauncher(context)
+                                    .setDestination(AppLockSubSettingsFragment::class.java.name)
+                                    .setTitleRes(R.string.app_lock_settings_title)
+                                    .setSourceMetricsCategory(fragment.metricsCategory)
+                                    .launch()
+                            },
                         contentAlignment = Alignment.Center
                     ) {
                         Icon(
@@ -393,86 +411,7 @@ fun AppLockSettingsContent(
                             modifier = Modifier.size(20.dp)
                         )
                     }
-                    Spacer(modifier = Modifier.width(16.dp))
-                    Column(modifier = Modifier.weight(1f)) {
-                        Text(
-                            text = stringResource(R.string.app_lock_timeout_title),
-                            style = MaterialTheme.typography.titleMedium,
-                            fontWeight = FontWeight.Bold
-                        )
-                        Text(
-                            text = currentTimeoutLabel,
-                            style = MaterialTheme.typography.bodyMedium,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant
-                        )
-                    }
                 }
-            }
-
-            if (showTimeoutDialog) {
-                AlertDialog(
-                    onDismissRequest = { showTimeoutDialog = false },
-                    title = {
-                        Text(
-                            text = stringResource(R.string.app_lock_timeout_title),
-                            style = MaterialTheme.typography.titleLarge,
-                            fontWeight = FontWeight.Bold
-                        )
-                    },
-                    text = {
-                        Column(
-                            modifier = Modifier.fillMaxWidth(),
-                            verticalArrangement = Arrangement.spacedBy(8.dp)
-                        ) {
-                            Text(
-                                text = stringResource(R.string.app_lock_timeout_summary),
-                                style = MaterialTheme.typography.bodyMedium,
-                                color = MaterialTheme.colorScheme.onSurfaceVariant,
-                                modifier = Modifier.padding(bottom = 8.dp)
-                            )
-                            timeoutOptions.forEach { (value, label) ->
-                                Row(
-                                    modifier = Modifier
-                                        .fillMaxWidth()
-                                        .clickable {
-                                            android.provider.Settings.Secure.putLong(
-                                                context.contentResolver,
-                                                "app_lock_timeout",
-                                                value
-                                            )
-                                            currentTimeout = value
-                                            showTimeoutDialog = false
-                                        }
-                                        .padding(vertical = 8.dp),
-                                    verticalAlignment = Alignment.CenterVertically
-                                ) {
-                                    RadioButton(
-                                        selected = (currentTimeout == value),
-                                        onClick = {
-                                            android.provider.Settings.Secure.putLong(
-                                                context.contentResolver,
-                                                "app_lock_timeout",
-                                                value
-                                            )
-                                            currentTimeout = value
-                                            showTimeoutDialog = false
-                                        }
-                                    )
-                                    Spacer(modifier = Modifier.width(12.dp))
-                                    Text(
-                                        text = label,
-                                        style = MaterialTheme.typography.bodyLarge
-                                    )
-                                }
-                            }
-                        }
-                    },
-                    confirmButton = {
-                        TextButton(onClick = { showTimeoutDialog = false }) {
-                            Text(stringResource(android.R.string.cancel))
-                        }
-                    }
-                )
             }
 
             Spacer(modifier = Modifier.height(12.dp))
