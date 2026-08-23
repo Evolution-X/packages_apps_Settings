@@ -235,6 +235,7 @@ android_app {
     flags_packages: [
         "android.app.flags-aconfig",
     ],
+    use_embedded_native_libs: true,
     jni_libs: [
         "libtensorflowlite_jni",
         "libtensorflowlite_gpu_jni",
