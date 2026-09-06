@@ -130,7 +130,12 @@ constructor(
     }
 
     override fun getAvailabilityStatus(subId: Int): Int {
-        return if (SubscriptionManager.isValidSubscriptionId(subId)) AVAILABLE
+        if (!SubscriptionManager.isValidSubscriptionId(subId)) {
+            return CONDITIONALLY_UNAVAILABLE
+        }
+        val repository =
+            FeatureFactory.featureFactory.telephonyFeatureProvider.satelliteSettingsRepository
+        return if (repository.isSatelliteAttachSupported(subId)) AVAILABLE
         else CONDITIONALLY_UNAVAILABLE
     }
 
