@@ -17,6 +17,7 @@ package com.android.settings.network.telephony.satellite
 
 import android.content.Context
 import android.content.Intent
+import android.telephony.SubscriptionManager
 import android.telephony.CarrierConfigManager.CARRIER_ROAMING_NTN_CONNECT_AUTOMATIC
 import android.telephony.CarrierConfigManager.CARRIER_ROAMING_NTN_CONNECT_HYBRID
 import android.telephony.CarrierConfigManager.CARRIER_ROAMING_NTN_CONNECT_MANUAL
@@ -25,6 +26,8 @@ import androidx.preference.Preference
 import androidx.preference.PreferenceManager
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import com.android.settings.core.BasePreferenceController.AVAILABLE
+import com.android.settings.core.BasePreferenceController.CONDITIONALLY_UNAVAILABLE
 import com.android.settings.network.SatelliteRepository
 import com.android.settings.testutils.FakeFeatureFactory
 import com.google.common.truth.Truth.assertThat
@@ -78,6 +81,29 @@ class SatelliteSettingPreferenceControllerTest {
                 key = KEY,
                 satelliteRepository = mockSatelliteRepository,
             )
+    }
+
+    @Test
+    fun getAvailabilityStatus_unsupportedSubscription_unavailable() {
+        whenever(mockSatelliteSettingsRepository.isSatelliteAttachSupported(TEST_SUB_ID))
+            .thenReturn(false)
+
+        assertThat(controller.getAvailabilityStatus(TEST_SUB_ID))
+            .isEqualTo(CONDITIONALLY_UNAVAILABLE)
+    }
+
+    @Test
+    fun getAvailabilityStatus_supportedSubscription_available() {
+        whenever(mockSatelliteSettingsRepository.isSatelliteAttachSupported(TEST_SUB_ID))
+            .thenReturn(true)
+
+        assertThat(controller.getAvailabilityStatus(TEST_SUB_ID)).isEqualTo(AVAILABLE)
+    }
+
+    @Test
+    fun getAvailabilityStatus_invalidSubscription_unavailable() {
+        assertThat(controller.getAvailabilityStatus(SubscriptionManager.INVALID_SUBSCRIPTION_ID))
+            .isEqualTo(CONDITIONALLY_UNAVAILABLE)
     }
 
     @Test

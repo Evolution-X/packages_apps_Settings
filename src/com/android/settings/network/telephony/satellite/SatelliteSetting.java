@@ -86,6 +86,7 @@ public class SatelliteSetting extends RestrictedDashboardFragment {
             Log.d(TAG, "SatelliteSettings: isSatelliteAttachSupported is false, "
                     + "do nothing.");
             finish();
+            return;
         }
         mTelephonyManager = getContext().getSystemService(TelephonyManager.class);
         if (mTelephonyManager != null) {
