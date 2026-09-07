@@ -68,14 +68,16 @@ open class SatelliteTileStateReceiver(
 ) : BroadcastReceiver() {
 
     override fun onReceive(context: Context, intent: Intent) {
-        Log.i(TAG, "onReceive: intent=$intent")
+        // SERVICE_STATE fires very often; keep this at debug so devices without
+        // satellite support aren't spammed on every signal change.
+        logd { "onReceive: intent=$intent" }
         if (UserHandle.myUserId() != UserHandle.USER_SYSTEM) {
-            Log.i(TAG, "Not running on system user, ignoring.")
+            logd { "Not running on system user, ignoring." }
             return
         }
 
         if (!isSatelliteTileFeatureEnabled(context)) {
-            Log.i(TAG, "Satellite tile feature is disabled. Ignoring intent.")
+            logd { "Satellite tile feature is disabled. Ignoring intent." }
             // EXPLICITLY disable the tile service to clean up legacy state
             updateTileServiceEnabledState(context, false)
             return
@@ -136,7 +138,7 @@ open class SatelliteTileStateReceiver(
      * so we refresh the tile's enabled state.
      */
     private suspend fun handleSubscriptionOrConfigChanged(context: Context) {
-        Log.i(TAG, "Handling subscription or config change.")
+        logd { "Handling subscription or config change." }
         updateTileServiceEnabledState(context, isAnyNtnSupported(context))
         scheduleEligibilityJob(context)
     }
@@ -229,13 +231,13 @@ open class SatelliteTileStateReceiver(
                 ActivityManager.isRunningInTestHarness() ||
                     ActivityManager.isRunningInUserTestHarness()
             ) {
-                Log.i(TAG, "isRunningInTestHarness is true. Suppressing satellite tile.")
+                logd { "isRunningInTestHarness is true. Suppressing satellite tile." }
                 return false
             }
 
             // Master aconfig flag check for the entire feature
             if (!Flags.enableSatelliteTile()) {
-                Log.i(TAG, "enable_satellite_tile aconfig flag is false.")
+                logd { "enable_satellite_tile aconfig flag is false." }
                 return false
             }
 
@@ -243,17 +245,17 @@ open class SatelliteTileStateReceiver(
             if (
                 !context.packageManager.hasSystemFeature(PackageManager.FEATURE_TELEPHONY_SATELLITE)
             ) {
-                Log.i(TAG, "FEATURE_TELEPHONY_SATELLITE not supported.")
+                logd { "FEATURE_TELEPHONY_SATELLITE not supported." }
                 return false
             }
 
             // OEM opt-in for the feature
             if (!context.resources.getBoolean(R.bool.config_show_satellite_tile)) {
-                Log.i(TAG, "config_show_satellite_tile is false, feature disabled.")
+                logd { "config_show_satellite_tile is false, feature disabled." }
                 return false
             }
 
-            Log.i(TAG, "Satellite tile static feature configs are enabled for this device.")
+            logd { "Satellite tile static feature configs are enabled for this device." }
             return true
         }
 
