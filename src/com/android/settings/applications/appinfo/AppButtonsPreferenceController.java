@@ -246,8 +246,10 @@ public class AppButtonsPreferenceController extends BasePreferenceController imp
                 mFragment.startActivityForResult(uninstallDaIntent, mRequestRemoveDeviceAdmin);
                 return;
             }
-            if (!showAdminSupportDialogIfRestricted(packageName)
-                    && (mAppEntry.info.flags & ApplicationInfo.FLAG_SYSTEM) != 0) {
+            if (showAdminSupportDialogIfRestricted(packageName)) {
+                return;
+            }
+            if ((mAppEntry.info.flags & ApplicationInfo.FLAG_SYSTEM) != 0) {
                 if (mAppEntry.info.enabled && !isDisabledUntilUsed()) {
                     showDialogInner(ButtonActionDialogFragment.DialogType.DISABLE);
                 } else if (mAppEntry.info.enabled) {
@@ -291,8 +293,8 @@ public class AppButtonsPreferenceController extends BasePreferenceController imp
                     RestrictedLockUtilsInternal.checkIfUninstallBlocked(mActivity, packageName,
                             mUserId);
             boolean uninstallBlockedBySystem = mAppsControlDisallowedBySystem
-                    || RestrictedLockUtilsInternal.hasBaseUserRestriction(mActivity, packageName,
-                    mUserId);
+                    || RestrictedLockUtilsInternal.hasBaseUserRestriction(mActivity,
+                            UserManager.DISALLOW_UNINSTALL_APPS, mUserId);
             if (admin != null && !uninstallBlockedBySystem) {
                 RestrictedLockUtils.sendShowAdminSupportDetailsIntent(mActivity, admin);
                 return true;
