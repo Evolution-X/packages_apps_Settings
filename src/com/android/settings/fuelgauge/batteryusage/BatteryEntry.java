@@ -591,6 +591,14 @@ public class BatteryEntry {
                 name = context.getResources().getString(R.string.power_camera);
                 iconId = R.drawable.ic_settings_camera;
                 break;
+            case BatteryConsumer.POWER_COMPONENT_AUDIO:
+                name = context.getResources().getString(R.string.power_audio);
+                iconId = R.drawable.ic_power_system;
+                break;
+            case BatteryConsumer.POWER_COMPONENT_VIDEO:
+                name = context.getResources().getString(R.string.power_video);
+                iconId = R.drawable.ic_power_system;
+                break;
             case BatteryConsumer.POWER_COMPONENT_FLASHLIGHT: // id: 6
                 name = context.getResources().getString(R.string.power_flashlight);
                 iconId = R.drawable.ic_settings_flashlight;
@@ -598,6 +606,10 @@ public class BatteryEntry {
             case BatteryConsumer.POWER_COMPONENT_MOBILE_RADIO: // id: 8
                 name = context.getResources().getString(R.string.power_cell);
                 iconId = R.drawable.ic_settings_cellular;
+                break;
+            case BatteryConsumer.POWER_COMPONENT_SENSORS:
+                name = context.getResources().getString(R.string.power_sensors);
+                iconId = R.drawable.ic_power_system;
                 break;
             case BatteryConsumer.POWER_COMPONENT_GNSS: // id: 10
                 name = context.getResources().getString(R.string.power_gps);
@@ -607,6 +619,10 @@ public class BatteryEntry {
                 name = context.getResources().getString(R.string.power_wifi);
                 iconId = R.drawable.ic_settings_wireless_no_theme;
                 break;
+            case BatteryConsumer.POWER_COMPONENT_MEMORY:
+                name = context.getResources().getString(R.string.power_memory);
+                iconId = R.drawable.ic_power_system;
+                break;
             case BatteryConsumer.POWER_COMPONENT_PHONE: // id: 14
                 name = context.getResources().getString(R.string.power_phone);
                 iconId = R.drawable.ic_settings_voice_calls;
@@ -614,6 +630,18 @@ public class BatteryEntry {
             case BatteryConsumer.POWER_COMPONENT_AMBIENT_DISPLAY: // id :15
                 name = context.getResources().getString(R.string.ambient_display_screen_title);
                 iconId = R.drawable.ic_settings_aod;
+                break;
+            case BatteryConsumer.POWER_COMPONENT_IDLE:
+                name = context.getResources().getString(R.string.power_idle);
+                iconId = R.drawable.ic_power_system;
+                break;
+            case BatteryConsumer.POWER_COMPONENT_SYSTEM_SERVICES:
+            case BatteryConsumer.POWER_COMPONENT_WAKELOCK:
+            case BatteryConsumer.POWER_COMPONENT_REATTRIBUTED_TO_OTHER_CONSUMERS:
+            case BatteryConsumer.POWER_COMPONENT_BASE:
+                // These accounting entries do not have standalone UI rows.
+                name = null;
+                iconId = R.drawable.ic_power_system;
                 break;
             default:
                 Log.w(
