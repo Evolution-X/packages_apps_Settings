@@ -7054,6 +7054,13 @@
     <!-- Label for power consumed by Calling -->
     <string name="power_phone">Voice calls</string>
 
+    <!-- Labels for power consumed by system components. -->
+    <string name="power_audio">Audio</string>
+    <string name="power_video">Video</string>
+    <string name="power_sensors">Sensors</string>
+    <string name="power_memory">Memory</string>
+    <string name="power_idle">Phone idle</string>
+
     <!-- Description for battery screen usage time for an app, i.e. Screen usage 30min. Note: ^1 should be used in all translations [CHAR LIMIT=60] -->
     <string name="battery_screen_usage">Screen usage <xliff:g id="time">^1</xliff:g></string>
     <!-- Description for battery usage info for an app, i.e. 60% used by facebook. [CHAR LIMIT=60] -->
