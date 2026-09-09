@@ -3000,6 +3000,11 @@
     <string name="power_bluetooth" msgid="5085900180846238196">"Bluetooth"</string>
     <string name="power_cell" msgid="7793805106954398186">"Sieć komórkowa"</string>
     <string name="power_phone" msgid="2768396619208561670">"Połączenia głosowe"</string>
+    <string name="power_audio">Dźwięk</string>
+    <string name="power_video">Wideo</string>
+    <string name="power_sensors">Czujniki</string>
+    <string name="power_memory">Pamięć</string>
+    <string name="power_idle">Bezczynność telefonu</string>
     <string name="battery_screen_usage" msgid="90008745183187461">"Wykorzystanie przez ekran (<xliff:g id="TIME">^1</xliff:g>)"</string>
     <string name="battery_used_by" msgid="6457305178016189330">"<xliff:g id="PERCENT">%1$s</xliff:g> zużyte przez: <xliff:g id="APP">%2$s</xliff:g>"</string>
     <string name="battery_overall_usage" msgid="8940140259734182014">"<xliff:g id="PERCENT">%1$s</xliff:g> całkowitego zużycia baterii"</string>
