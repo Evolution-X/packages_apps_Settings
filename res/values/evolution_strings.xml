@@ -345,4 +345,9 @@
 
     <!-- Radio Info -->
     <string name="radio_info_title">Radio info</string>
+
+    <!-- Repair Mode -->
+    <string name="repair_mode_title">Repair mode</string>
+    <string name="repair_mode_summary">Secure environment for device repair</string>
+    <string name="repair_mode_active_summary">In repair mode</string>
 </resources>

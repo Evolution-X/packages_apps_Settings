@@ -180,6 +180,16 @@
         android:order="-340">
 
         <Preference
+            android:key="repair_mode_settings"
+            android:title="@string/repair_mode_title"
+            android:summary="@string/summary_placeholder"
+            android:icon="@drawable/ic_repair_mode"
+            settings:controller="com.google.android.settings.repairmode.RepairModePreferenceController">
+            <intent android:action="com.google.android.intent.action.REPAIR_MODE_SETTINGS"
+                android:targetPackage="com.google.android.repairmode"/>
+        </Preference>
+
+        <Preference
             android:key="device_diagnostics"
             android:title="@string/device_diagnostics_title"
             android:icon="@drawable/ic_device_diagnostics"
