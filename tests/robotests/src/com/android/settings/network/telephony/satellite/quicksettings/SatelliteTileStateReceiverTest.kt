@@ -385,9 +385,9 @@ class SatelliteTileStateReceiverTest {
             shadowSatelliteManager.triggerOnSupportedStateChanged(false)
             advanceUntilIdle()
 
-            // The tile should remain enabled because LTE NTN is supported
-            // In the current implementation, setComponentEnabledSetting is called always.
-            verifyTileEnabledState(PackageManager.COMPONENT_ENABLED_STATE_ENABLED)
+            // The tile should remain enabled because LTE NTN is supported; with no state
+            // transition the PackageManager write is skipped.
+            verify(packageManager, never()).setComponentEnabledSetting(any(), anyInt(), anyInt())
         }
 
     @Test
@@ -458,14 +458,13 @@ class SatelliteTileStateReceiverTest {
     }
 
     @Test
-    fun updateTileServiceEnabledState_ntnSupported_stateUnchanged_enablesTileAndDoesNotScheduleJob() {
+    fun updateTileServiceEnabledState_ntnSupported_stateUnchanged_skipsWriteAndDoesNotScheduleJob() {
         componentEnabledState = PackageManager.COMPONENT_ENABLED_STATE_ENABLED
 
         SatelliteTileStateReceiver.updateTileServiceEnabledState(context, true)
 
-        // In the current implementation, setComponentEnabledSetting is called always.
-        verifyTileEnabledState(PackageManager.COMPONENT_ENABLED_STATE_ENABLED)
-        // Job is NOT scheduled inside updateTileServiceEnabledState because state didn't change
+        // No state transition: the PackageManager write is skipped.
+        verify(packageManager, never()).setComponentEnabledSetting(any(), anyInt(), anyInt())
         verify(mockJobScheduler, never()).schedule(any())
     }
 
@@ -480,13 +479,13 @@ class SatelliteTileStateReceiverTest {
     }
 
     @Test
-    fun updateTileServiceEnabledState_ntnNotSupported_stateUnchanged_disablesTileAndDoesNotScheduleJob() {
+    fun updateTileServiceEnabledState_ntnNotSupported_stateUnchanged_skipsWriteAndDoesNotScheduleJob() {
         componentEnabledState = PackageManager.COMPONENT_ENABLED_STATE_DISABLED
 
         SatelliteTileStateReceiver.updateTileServiceEnabledState(context, false)
 
-        // In the current implementation, setComponentEnabledSetting is called always.
-        verifyTileEnabledState(PackageManager.COMPONENT_ENABLED_STATE_DISABLED)
+        // No state transition: the PackageManager write is skipped.
+        verify(packageManager, never()).setComponentEnabledSetting(any(), anyInt(), anyInt())
         verify(mockJobScheduler, never()).schedule(any())
     }
 
