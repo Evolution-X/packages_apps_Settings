@@ -286,19 +286,23 @@ open class SatelliteTileStateReceiver(
                     PackageManager.COMPONENT_ENABLED_STATE_DISABLED
                 }
 
-                // This enables or disables the service, making the tile appear or disappear.
-                packageManager.setComponentEnabledSetting(
-                    componentName,
-                    newState,
-                    PackageManager.DONT_KILL_APP,
-                )
+            if (oldState == newState) {
+                // No transition: avoid a PackageManager write on every SERVICE_STATE
+                // broadcast, which can fire once per second on some networks.
+                return
+            }
 
-		if (oldState != newState) {
-                    Log.i(TAG, "Setting SatelliteTileService enabled state to: $isAnyNtnSupported")
-                if(newState == PackageManager.COMPONENT_ENABLED_STATE_ENABLED) {
-                    Log.i(TAG, "cc Scheduling eligibility job")
-                    scheduleEligibilityJob(context)
-                }
+            // This enables or disables the service, making the tile appear or disappear.
+            packageManager.setComponentEnabledSetting(
+                componentName,
+                newState,
+                PackageManager.DONT_KILL_APP,
+            )
+
+            Log.i(TAG, "Setting SatelliteTileService enabled state to: $isAnyNtnSupported")
+            if (newState == PackageManager.COMPONENT_ENABLED_STATE_ENABLED) {
+                Log.i(TAG, "cc Scheduling eligibility job")
+                scheduleEligibilityJob(context)
             }
         }
     }
