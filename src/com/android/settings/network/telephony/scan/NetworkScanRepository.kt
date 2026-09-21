@@ -18,6 +18,7 @@ package com.android.settings.network.telephony.scan
 
 import android.content.Context
 import android.telephony.AccessNetworkConstants.AccessNetworkType
+import android.telephony.CarrierConfigManager
 import android.telephony.CellInfo
 import android.telephony.NetworkScanRequest
 import android.telephony.PhoneCapability
@@ -39,7 +40,7 @@ import kotlinx.coroutines.flow.conflate
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.onEach
 
-class NetworkScanRepository(private val context: Context, subId: Int) {
+class NetworkScanRepository(private val context: Context, private val subId: Int) {
     enum class NetworkScanState {
         ACTIVE, COMPLETE, ERROR
     }
@@ -84,8 +85,16 @@ class NetworkScanRepository(private val context: Context, subId: Int) {
             }
 
             override fun onError(error: Int) {
-                state = NetworkScanState.ERROR
-                sendResult()
+                Log.w(TAG, "network scan onError: $error, falling back to visible cells")
+                val fallbackCells = getFallbackCellInfos()
+                if (fallbackCells.isNotEmpty() && cellInfos.isEmpty()) {
+                    cellInfos = fallbackCells.distinctBy { CellInfoScanKey(it) }
+                    state = NetworkScanState.COMPLETE
+                    sendResult()
+                } else {
+                    state = NetworkScanState.ERROR
+                    sendResult()
+                }
                 close()
             }
 
@@ -94,19 +103,46 @@ class NetworkScanRepository(private val context: Context, subId: Int) {
             }
         }
 
-        val networkScan = telephonyManager.requestNetworkScan(
-            createNetworkScan(),
-            // requestNetworkScan() could call callbacks concurrently, so we use a single thread
-            // to avoid racing conditions.
-            Executors.newSingleThreadExecutor(),
-            callback,
-        )
+        val networkScan = try {
+            telephonyManager.requestNetworkScan(
+                createNetworkScan(),
+                // requestNetworkScan() could call callbacks concurrently, so we use a single thread
+                // to avoid racing conditions.
+                Executors.newSingleThreadExecutor(),
+                callback,
+            )
+        } catch (e: Exception) {
+            Log.e(TAG, "requestNetworkScan failed to start", e)
+            val fallbackCells = getFallbackCellInfos()
+            if (fallbackCells.isNotEmpty()) {
+                trySend(
+                    NetworkScanResult(
+                        NetworkScanState.COMPLETE,
+                        fallbackCells.distinctBy { CellInfoScanKey(it) },
+                    )
+                )
+            } else {
+                trySend(NetworkScanResult(NetworkScanState.ERROR, emptyList()))
+            }
+            close()
+            null
+        }
 
         awaitClose {
-            networkScan.stopScan()
+            try {
+                networkScan?.stopScan()
+            } catch (e: Exception) {
+                Log.w(TAG, "network scan stopScan failed", e)
+            }
             Log.d(TAG, "network scan stopped")
         }
     }.conflate().onEach { Log.d(TAG, "networkScanFlow: $it") }.flowOn(Dispatchers.Default)
+
+    private fun getFallbackCellInfos(): List<CellInfo> = runCatching {
+        telephonyManager.allCellInfo?.filter {
+            it.cellIdentity.getNetworkTitle() != null
+        } ?: emptyList()
+    }.getOrDefault(emptyList())
 
     /** Create network scan for allowed network types. */
     private fun createNetworkScan(): NetworkScanRequest {
@@ -115,12 +151,17 @@ class NetworkScanRepository(private val context: Context, subId: Int) {
         val radioAccessSpecifiers = allowedNetworkTypes
             .map { RadioAccessSpecifier(it, null, null) }
             .toTypedArray()
+        val isIncremental = runCatching {
+            val carrierConfigManager = context.getSystemService(CarrierConfigManager::class.java)
+            carrierConfigManager?.getConfigForSubId(subId)
+                ?.getBoolean("incremental_network_scan_supported_bool", false)
+        }.getOrNull() ?: false
         return NetworkScanRequest(
             NetworkScanRequest.SCAN_TYPE_ONE_SHOT,
             radioAccessSpecifiers,
             NetworkScanRequest.MIN_SEARCH_PERIODICITY_SEC, // one shot, not used
             context.resources.getInteger(R.integer.config_network_scan_helper_max_search_time_sec),
-            true,
+            isIncremental,
             INCREMENTAL_RESULTS_PERIODICITY_SEC,
             null,
         )
