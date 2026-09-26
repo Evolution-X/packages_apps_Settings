@@ -17,10 +17,12 @@ package com.android.settings.network.telephony;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.spy;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import android.content.Context;
@@ -210,6 +212,75 @@ public class NetworkSelectSettingsTest {
 
         // Should not Crash
         mNetworkSelectSettings.updateForbiddenPlmns();
+    }
+
+    @Test
+    public void handleCarrierConfigChanged_otherSubscription_ignored() {
+        PersistableBundle initialConfig = new PersistableBundle();
+        initialConfig.putBoolean(
+                CarrierConfigManager.KEY_REMOVE_SATELLITE_PLMN_IN_MANUAL_NETWORK_SCAN_BOOL, true);
+        doReturn(initialConfig).when(mCarrierConfigManager).getConfigForSubId(eq(SUB_ID),
+                eq(CarrierConfigManager.KEY_SHOW_4G_FOR_LTE_DATA_ICON_BOOL),
+                eq(CarrierConfigManager.KEY_REMOVE_SATELLITE_PLMN_IN_MANUAL_NETWORK_SCAN_BOOL));
+
+        mNetworkSelectSettings.onCreateInitialization();
+
+        PersistableBundle otherSubConfig = new PersistableBundle();
+        otherSubConfig.putBoolean(
+                CarrierConfigManager.KEY_REMOVE_SATELLITE_PLMN_IN_MANUAL_NETWORK_SCAN_BOOL, false);
+        doReturn(otherSubConfig).when(mCarrierConfigManager).getConfigForSubId(eq(SUB_ID + 1),
+                eq(CarrierConfigManager.KEY_REMOVE_SATELLITE_PLMN_IN_MANUAL_NETWORK_SCAN_BOOL));
+
+        List<String> satellitePlmns = new ArrayList<>(Arrays.asList("123232"));
+        doReturn(satellitePlmns).when(
+                mNetworkSelectSettings).getSatellitePlmnsForCarrierWrapper();
+
+        mNetworkSelectSettings.handleCarrierConfigChanged(SUB_ID + 1);
+
+        List<CellInfo> cells = Arrays.asList(
+                createLteCellInfo(false, 123, "123", "232", "CarrierA"),
+                createGsmCellInfo(false, 123, "123", "233", "CarrierB"));
+        assertThat(mNetworkSelectSettings.filterOutSatellitePlmn(cells))
+                .containsExactly(cells.get(1));
+    }
+
+    @Test
+    public void handleCarrierConfigChanged_currentSubscription_updatesFilter() {
+        PersistableBundle initialConfig = new PersistableBundle();
+        initialConfig.putBoolean(
+                CarrierConfigManager.KEY_REMOVE_SATELLITE_PLMN_IN_MANUAL_NETWORK_SCAN_BOOL, true);
+        doReturn(initialConfig).when(mCarrierConfigManager).getConfigForSubId(eq(SUB_ID),
+                eq(CarrierConfigManager.KEY_SHOW_4G_FOR_LTE_DATA_ICON_BOOL),
+                eq(CarrierConfigManager.KEY_REMOVE_SATELLITE_PLMN_IN_MANUAL_NETWORK_SCAN_BOOL));
+
+        mNetworkSelectSettings.onCreateInitialization();
+
+        PersistableBundle updatedConfig = new PersistableBundle();
+        updatedConfig.putBoolean(
+                CarrierConfigManager.KEY_REMOVE_SATELLITE_PLMN_IN_MANUAL_NETWORK_SCAN_BOOL, false);
+        doReturn(updatedConfig).when(mCarrierConfigManager).getConfigForSubId(eq(SUB_ID),
+                eq(CarrierConfigManager.KEY_REMOVE_SATELLITE_PLMN_IN_MANUAL_NETWORK_SCAN_BOOL));
+
+        mNetworkSelectSettings.handleCarrierConfigChanged(SUB_ID);
+
+        List<String> satellitePlmns = new ArrayList<>(Arrays.asList("123232"));
+        doReturn(satellitePlmns).when(
+                mNetworkSelectSettings).getSatellitePlmnsForCarrierWrapper();
+
+        List<CellInfo> cells = Arrays.asList(
+                createLteCellInfo(false, 123, "123", "232", "CarrierA"),
+                createGsmCellInfo(false, 123, "123", "233", "CarrierB"));
+        assertThat(mNetworkSelectSettings.filterOutSatellitePlmn(cells)).containsExactlyElementsIn(
+                cells);
+    }
+
+    @Test
+    public void onDestroy_unregistersCarrierConfigListener() {
+        mNetworkSelectSettings.onCreateInitialization();
+
+        mNetworkSelectSettings.onDestroy();
+
+        verify(mCarrierConfigManager).unregisterCarrierConfigChangeListener(any());
     }
 
     @Test

@@ -349,7 +349,12 @@ public class NetworkSelectSettings extends DashboardFragment {
         }
     }
 
-    private void handleCarrierConfigChanged(int subId) {
+    @VisibleForTesting
+    void handleCarrierConfigChanged(int subId) {
+        if (subId != mSubId) {
+            return;
+        }
+
         PersistableBundle config = mCarrierConfigManager.getConfigForSubId(subId,
                 CarrierConfigManager.KEY_REMOVE_SATELLITE_PLMN_IN_MANUAL_NETWORK_SCAN_BOOL);
         boolean shouldFilterSatellitePlmn = config.getBoolean(
@@ -498,6 +503,11 @@ public class NetworkSelectSettings extends DashboardFragment {
 
     @Override
     public void onDestroy() {
+        if (mCarrierConfigManager != null && mCarrierConfigChangeListener != null) {
+            mCarrierConfigManager.unregisterCarrierConfigChangeListener(
+                    mCarrierConfigChangeListener);
+            mCarrierConfigChangeListener = null;
+        }
         mNetworkScanExecutor.shutdown();
         super.onDestroy();
     }
