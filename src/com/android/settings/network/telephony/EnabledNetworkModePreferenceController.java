@@ -60,7 +60,9 @@ import com.android.settingslib.RestrictedLockUtilsInternal;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -83,7 +85,7 @@ public class EnabledNetworkModePreferenceController extends
     private static final long BITMASK_3G = TelephonyManager.NETWORK_TYPE_BITMASK_HSDPA
             | TelephonyManager.NETWORK_TYPE_BITMASK_HSPA
             | TelephonyManager.NETWORK_TYPE_BITMASK_HSUPA
-            | TelephonyManager.NETWORK_TYPE_BITMASK_HSDPA
+            | TelephonyManager.NETWORK_TYPE_BITMASK_HSPAP
             | TelephonyManager.NETWORK_TYPE_BITMASK_UMTS
             | TelephonyManager.NETWORK_TYPE_BITMASK_TD_SCDMA
             | TelephonyManager.NETWORK_TYPE_BITMASK_EHRPD
@@ -92,6 +94,14 @@ public class EnabledNetworkModePreferenceController extends
             | TelephonyManager.NETWORK_TYPE_BITMASK_EVDO_B;
     private static final long BITMASK_4G = TelephonyManager.NETWORK_TYPE_BITMASK_LTE;
     private static final long BITMASK_5G = TelephonyManager.NETWORK_TYPE_BITMASK_NR;
+
+    private static final int CUSTOM_MODE_BASE = 1000;
+    private static final int GENERATION_2G = 1;
+    private static final int GENERATION_3G = 1 << 1;
+    private static final int GENERATION_4G = 1 << 2;
+    private static final int GENERATION_5G = 1 << 3;
+    private static final int GENERATION_ALL = GENERATION_2G | GENERATION_3G
+            | GENERATION_4G | GENERATION_5G;
 
     private int mSubId = SubscriptionManager.INVALID_SUBSCRIPTION_ID;
     private AllowedNetworkTypesListener mAllowedNetworkTypesListener;
@@ -245,7 +255,14 @@ public class EnabledNetworkModePreferenceController extends
         listPreference.setValue(Integer.toString(mBuilder.getSelectedEntryValue()));
         listPreference.setSummary(mBuilder.getSummary());
 
-        setAllowedNetworkTypes(mTelephonyManager, mViewLifecycleOwner, newPreferredNetworkMode);
+        if (mBuilder.isCustomMode(newPreferredNetworkMode)) {
+            setAllowedNetworkTypes(
+                    mTelephonyManager,
+                    mViewLifecycleOwner,
+                    mBuilder.getCustomAllowedNetworkTypes(newPreferredNetworkMode));
+        } else {
+            setAllowedNetworkTypes(mTelephonyManager, mViewLifecycleOwner, newPreferredNetworkMode);
+        }
         return true;
     }
 
@@ -307,12 +324,15 @@ public class EnabledNetworkModePreferenceController extends
         private boolean mDisplay3gOptions;
         private boolean mDisplay4gOptions;
         private boolean mDisplay5gOptions;
+        private long mSupportedRaf;
         private int mSelectedEntry;
         private int mSubId;
         private String mSummary = "";
 
         private List<String> mEntries = new ArrayList<>();
         private List<Integer> mEntriesValue = new ArrayList<>();
+        private final Map<Integer, Long> mCustomModeRaf = new HashMap<>();
+        private final Map<Integer, String> mCustomModeSummary = new HashMap<>();
 
         PreferenceEntriesBuilder(Context context, int subId) {
             this.mContext = context;
@@ -329,6 +349,7 @@ public class EnabledNetworkModePreferenceController extends
 
             // Load the network types actually supported by the baseband.
             final long supportedRaf = mTelephonyManager.getSupportedRadioAccessFamily();
+            mSupportedRaf = supportedRaf;
             final boolean supported5g = checkSupportedRadioBitmask(supportedRaf, BITMASK_5G);
             final boolean supported4g = checkSupportedRadioBitmask(supportedRaf, BITMASK_4G);
             final boolean supported3g = checkSupportedRadioBitmask(supportedRaf, BITMASK_3G);
@@ -581,6 +602,8 @@ public class EnabledNetworkModePreferenceController extends
                         throw new IllegalArgumentException("Not supported ui options format.");
                 }
             });
+
+            addAdvancedEntries();
         }
 
         private int getPreferredNetworkMode() {
@@ -675,6 +698,12 @@ public class EnabledNetworkModePreferenceController extends
          *                    the choice list. The nearest choice is selected instead
          */
         void setPreferenceValueAndSummary(int networkMode) {
+            if (isCustomMode(networkMode)) {
+                setSelectedEntry(networkMode);
+                setSummary(mCustomModeSummary.get(networkMode));
+                return;
+            }
+
             setSelectedEntry(networkMode);
             switch (networkMode) {
                 case TelephonyManager.NETWORK_MODE_TDSCDMA_WCDMA:
@@ -822,6 +851,15 @@ public class EnabledNetworkModePreferenceController extends
         }
 
         private void setPreferenceValueAndSummary() {
+            final long currentUserRaf = mTelephonyManager.getAllowedNetworkTypesForReason(
+                    TelephonyManager.ALLOWED_NETWORK_TYPES_REASON_USER);
+            for (Map.Entry<Integer, Long> entry : mCustomModeRaf.entrySet()) {
+                if (entry.getValue() == currentUserRaf) {
+                    setSelectedEntry(entry.getKey());
+                    setSummary(mCustomModeSummary.get(entry.getKey()));
+                    return;
+                }
+            }
             setPreferenceValueAndSummary(getPreferredNetworkMode());
         }
 
@@ -894,6 +932,105 @@ public class EnabledNetworkModePreferenceController extends
             mEntriesValue.add(value);
         }
 
+
+        private int getSelectableGenerationMaskInternal() {
+            int generations = 0;
+            if (mDisplay2gOptions) generations |= GENERATION_2G;
+            if (mDisplay3gOptions) generations |= GENERATION_3G;
+            if (mDisplay4gOptions) generations |= GENERATION_4G;
+            if (mDisplay5gOptions) generations |= GENERATION_5G;
+            return generations;
+        }
+
+        private void addAdvancedEntries() {
+            final int selectableGenerations = getSelectableGenerationMaskInternal();
+            for (int generationCount = Integer.bitCount(GENERATION_ALL);
+                    generationCount >= 1; generationCount--) {
+                for (int combination = GENERATION_ALL; combination >= GENERATION_2G;
+                        combination--) {
+                    if (Integer.bitCount(combination) == generationCount
+                            && (combination & selectableGenerations) == combination) {
+                        addGenerationCombination(combination);
+                    }
+                }
+            }
+        }
+
+        private void addGenerationCombination(int generations) {
+            final long raf = buildGenerationRaf(generations);
+            if (raf == 0 || containsEntryWithRaf(raf)) {
+                return;
+            }
+
+            final int customValue = CUSTOM_MODE_BASE + generations;
+            final String label = getResourcesForSubId().getString(
+                    R.string.evolver_network_mode_only_format,
+                    buildGenerationLabel(generations));
+            mEntries.add(label);
+            mEntriesValue.add(customValue);
+            mCustomModeRaf.put(customValue, raf);
+            mCustomModeSummary.put(customValue, label);
+        }
+
+        private long buildGenerationRaf(int generations) {
+            long raf = 0;
+            if ((generations & GENERATION_2G) != 0) raf |= mSupportedRaf & BITMASK_2G;
+            if ((generations & GENERATION_3G) != 0) raf |= mSupportedRaf & BITMASK_3G;
+            if ((generations & GENERATION_4G) != 0) raf |= mSupportedRaf & BITMASK_4G;
+            if ((generations & GENERATION_5G) != 0) raf |= mSupportedRaf & BITMASK_5G;
+            return raf;
+        }
+
+        private String buildGenerationLabel(int generations) {
+            final List<String> labels = new ArrayList<>();
+            if ((generations & GENERATION_5G) != 0) labels.add("5G");
+            if ((generations & GENERATION_4G) != 0) labels.add(mShow4gForLTE ? "4G" : "LTE");
+            if ((generations & GENERATION_3G) != 0) labels.add("3G");
+            if ((generations & GENERATION_2G) != 0) labels.add("2G");
+            return String.join(" / ", labels);
+        }
+
+        private boolean containsEntryWithRaf(long targetRaf) {
+            final long selectableRaf = buildGenerationRaf(getSelectableGenerationMaskInternal());
+            for (Integer value : mEntriesValue) {
+                final Long customRaf = mCustomModeRaf.get(value);
+                final long entryRaf = customRaf != null
+                        ? customRaf
+                        : Integer.toUnsignedLong(RadioAccessFamily.getRafFromNetworkType(value));
+                if ((entryRaf & selectableRaf) == targetRaf) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        @VisibleForTesting
+        int getSelectableGenerationMask() {
+            return getSelectableGenerationMaskInternal();
+        }
+
+        @VisibleForTesting
+        boolean hasGenerationCombination(int generations) {
+            final int selectableGenerations = getSelectableGenerationMaskInternal();
+            if ((generations & selectableGenerations) != generations) {
+                return false;
+            }
+            final long targetRaf = buildGenerationRaf(generations);
+            if (targetRaf == 0) {
+                return false;
+            }
+            return containsEntryWithRaf(targetRaf);
+        }
+
+        boolean isCustomMode(int value) {
+            return mCustomModeRaf.containsKey(value);
+        }
+
+        long getCustomAllowedNetworkTypes(int value) {
+            final Long raf = mCustomModeRaf.get(value);
+            return raf != null ? raf : 0;
+        }
+
         private void addCustomEntry(String name, int value) {
             mEntries.add(name);
             mEntriesValue.add(value);
@@ -906,6 +1043,9 @@ public class EnabledNetworkModePreferenceController extends
         private void clearAllEntries() {
             mEntries.clear();
             mEntriesValue.clear();
+            mCustomModeRaf.clear();
+            mCustomModeSummary.clear();
+            mIs5gEntryDisplayed = false;
         }
 
         private String[] getEntryValues() {

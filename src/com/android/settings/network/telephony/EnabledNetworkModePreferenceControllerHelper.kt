@@ -33,10 +33,20 @@ fun TelephonyManager.setAllowedNetworkTypes(
     viewLifecycleOwner: LifecycleOwner,
     newPreferredNetworkMode: Int,
 ) {
+    setAllowedNetworkTypes(
+        viewLifecycleOwner,
+        Integer.toUnsignedLong(RadioAccessFamily.getRafFromNetworkType(newPreferredNetworkMode)),
+    )
+}
+
+fun TelephonyManager.setAllowedNetworkTypes(
+    viewLifecycleOwner: LifecycleOwner,
+    allowedNetworkTypes: Long,
+) {
     viewLifecycleOwner.lifecycleScope.launch(Dispatchers.Default) {
         setAllowedNetworkTypesForReason(
             TelephonyManager.ALLOWED_NETWORK_TYPES_REASON_USER,
-            RadioAccessFamily.getRafFromNetworkType(newPreferredNetworkMode).toLong(),
+            allowedNetworkTypes,
         )
     }
 }

@@ -520,6 +520,51 @@ public class EnabledNetworkModePreferenceControllerTest {
                 ResourcesUtils.getResourcesString(mContext, "network_5G_recommended"));
     }
 
+
+    @UiThreadTest
+    @Test
+    public void updateState_allSelectableGenerations_exposesCompletePowerset() {
+        when(mContext.getSystemService(Context.DEVICE_POLICY_SERVICE)).thenReturn(null);
+        mPersistableBundle.putBoolean(CarrierConfigManager.KEY_PREFER_2G_BOOL, true);
+        mPersistableBundle.putBoolean(CarrierConfigManager.KEY_LTE_ENABLED_BOOL, true);
+        mockAllowedNetworkTypes(ALLOWED_ALL_NETWORK_TYPE);
+        when(mTelephonyManager.getAllowedNetworkTypesForReason(
+                TelephonyManager.ALLOWED_NETWORK_TYPES_REASON_ENABLE_2G)).thenReturn(BITMASK_2G);
+        mockPhoneType(TelephonyManager.PHONE_TYPE_GSM);
+        mockAccessFamily(TelephonyManager.NETWORK_MODE_NR_LTE_TDSCDMA_GSM_WCDMA);
+        mController.init(SUB_ID, mFragmentManager);
+
+        mController.updateState(mPreference);
+
+        assertEquals(15, mController.mBuilder.getSelectableGenerationMask());
+        for (int combination = 1; combination <= 15; combination++) {
+            assertTrue(
+                    "Missing selectable generation combination " + combination,
+                    mController.mBuilder.hasGenerationCombination(combination));
+        }
+    }
+
+    @UiThreadTest
+    @Test
+    public void updateState_2gHidden_doesNotExpose2gCombinations() {
+        when(mContext.getSystemService(Context.DEVICE_POLICY_SERVICE)).thenReturn(null);
+        mPersistableBundle.putBoolean(CarrierConfigManager.KEY_PREFER_2G_BOOL, false);
+        mPersistableBundle.putBoolean(CarrierConfigManager.KEY_LTE_ENABLED_BOOL, true);
+        mockAllowedNetworkTypes(ALLOWED_ALL_NETWORK_TYPE);
+        when(mTelephonyManager.getAllowedNetworkTypesForReason(
+                TelephonyManager.ALLOWED_NETWORK_TYPES_REASON_ENABLE_2G)).thenReturn(BITMASK_2G);
+        mockPhoneType(TelephonyManager.PHONE_TYPE_GSM);
+        mockAccessFamily(TelephonyManager.NETWORK_MODE_NR_LTE_TDSCDMA_GSM_WCDMA);
+        mController.init(SUB_ID, mFragmentManager);
+
+        mController.updateState(mPreference);
+
+        assertEquals(14, mController.mBuilder.getSelectableGenerationMask());
+        assertFalse(mController.mBuilder.hasGenerationCombination(1));
+        assertFalse(mController.mBuilder.hasGenerationCombination(15));
+        assertTrue(mController.mBuilder.hasGenerationCombination(14));
+    }
+
     @UiThreadTest
     @Test
     public void updateState_satelliteIsStartedAndSelectedSubForSatellite_disablePreference() {

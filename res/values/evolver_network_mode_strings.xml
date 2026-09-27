@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Preferred-network generation combinations exposed from selectable generations. -->
+    <string name="evolver_network_mode_only_format">%1$s only</string>
+</resources>
