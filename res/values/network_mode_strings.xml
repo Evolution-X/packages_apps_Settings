@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="network_mode_generation_2g" translatable="false">2G</string>
+    <string name="network_mode_generation_3g" translatable="false">3G</string>
+    <string name="network_mode_generation_4g" translatable="false">4G</string>
+    <string name="network_mode_generation_5g" translatable="false">5G</string>
+    <string name="network_mode_generation_separator" translatable="false">" + "</string>
+    <string name="network_mode_radio_separator" translatable="false">" / "</string>
+    <string name="network_mode_radio_nr" translatable="false">NR</string>
+    <string name="network_mode_radio_lte" translatable="false">LTE</string>
+    <string name="network_mode_radio_tdscdma" translatable="false">TD-SCDMA</string>
+    <string name="network_mode_radio_wcdma" translatable="false">WCDMA</string>
+    <string name="network_mode_radio_evdo" translatable="false">EVDO</string>
+    <string name="network_mode_radio_cdma" translatable="false">CDMA</string>
+    <string name="network_mode_radio_gsm" translatable="false">GSM</string>
+    <string name="network_mode_technical_variant" translatable="false"><xliff:g id="families">%1$s</xliff:g> · <xliff:g id="variant">%2$s</xliff:g></string>
+    <string name="network_mode_technical_aliases" translatable="false"><xliff:g id="families">%1$s</xliff:g> · <xliff:g id="aliases">%2$s</xliff:g></string>
+    <string name="network_mode_alias_separator" translatable="false">" / "</string>
+    <string name="network_mode_status_separator" translatable="false">" · "</string>
+</resources>

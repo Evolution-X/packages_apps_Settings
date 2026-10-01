@@ -18,6 +18,8 @@ package com.android.settings.network.telephony
 
 import android.content.ContextWrapper
 import android.os.UserManager
+import android.telephony.CarrierConfigManager
+import android.telephony.RadioAccessFamily
 import android.telephony.SubscriptionInfo
 import android.telephony.SubscriptionManager
 import android.telephony.SubscriptionManager.INVALID_SUBSCRIPTION_ID
@@ -60,11 +62,22 @@ class MobileNetworkDataTest {
 
     @Before
     fun setUp() {
+        CarrierConfigRepository.resetForTest()
+        CarrierConfigRepository.setBooleanForTest(
+            0,
+            CarrierConfigManager.KEY_CARRIER_CONFIG_APPLIED_BOOL,
+            true,
+        )
         mockUserManager.stub { on { isAdminUser } doReturn true }
         mockTelephonyManager.stub {
             on { isDataCapable } doReturn true
             on { isDeviceVoiceCapable } doReturn true
             on { createForSubscriptionId(anyInt()) } doReturn mockTelephonyManager
+            on {
+                isRadioInterfaceCapabilitySupported(
+                    TelephonyManager.CAPABILITY_USES_ALLOWED_NETWORK_TYPES_BITMASK
+                )
+            } doReturn true
             on { primaryImei } doReturn IMEI_1
         }
         mockSubscriptionInfo.stub { on { getMccString() } doReturn MCC }
@@ -113,6 +126,58 @@ class MobileNetworkDataTest {
     @Test
     fun getPhoneNumber_hasPhoneNumber_returnFormattedPhoneNumber() {
         assertThat(mobileNetworkData.getPhoneNumber()).isEqualTo(FORMATTED_PHONE_NUMBER)
+    }
+
+    @Test
+    fun refreshEnabledNetworkModeData_updatesSelectedAndEffectiveSummary() = runBlocking {
+        val selectedMode = TelephonyManager.NETWORK_MODE_NR_LTE
+        val effectiveMode = TelephonyManager.NETWORK_MODE_LTE_ONLY
+        val selectedRaf =
+            Integer.toUnsignedLong(RadioAccessFamily.getRafFromNetworkType(selectedMode))
+        val effectiveRaf =
+            Integer.toUnsignedLong(RadioAccessFamily.getRafFromNetworkType(effectiveMode))
+
+        mockTelephonyManager.stub {
+            on { supportedRadioAccessFamily } doReturn selectedRaf
+            on {
+                getAllowedNetworkTypesForReason(
+                    TelephonyManager.ALLOWED_NETWORK_TYPES_REASON_USER
+                )
+            } doReturn selectedRaf
+            on {
+                getAllowedNetworkTypesForReason(
+                    TelephonyManager.ALLOWED_NETWORK_TYPES_REASON_CARRIER
+                )
+            } doReturn effectiveRaf
+            on {
+                getAllowedNetworkTypesForReason(
+                    TelephonyManager.ALLOWED_NETWORK_TYPES_REASON_POWER
+                )
+            } doReturn -1L
+            on {
+                getAllowedNetworkTypesForReason(
+                    TelephonyManager.ALLOWED_NETWORK_TYPES_REASON_TEST
+                )
+            } doReturn -1L
+            on {
+                getAllowedNetworkTypesForReason(
+                    TelephonyManager.ALLOWED_NETWORK_TYPES_REASON_ENABLE_2G
+                )
+            } doReturn -1L
+        }
+
+        mobileNetworkData = MobileNetworkData(context, testScope, 0)
+        mobileNetworkData.refreshEnabledNetworkModeData()
+        delay(100)
+
+        assertThat(mobileNetworkData.enabledNetworkModeFlow.value.summary)
+            .isEqualTo(
+                context.getString(
+                    R.string.network_mode_summary_effective,
+                    "5G + 4G",
+                    "4G",
+                )
+            )
     }
 
     @Test
