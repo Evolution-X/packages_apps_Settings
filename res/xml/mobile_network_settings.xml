@@ -186,7 +186,7 @@
             settings:controller="com.android.settings.network.telephony.PreferredNetworkModePreferenceController"/>
 
         <!-- Settings search is handled by EnabledNetworkModeSearchItem. -->
-        <ListPreference
+        <com.android.settings.network.telephony.NetworkModePreference
             android:key="enabled_networks_key"
             android:order="200"
             android:title="@string/preferred_network_mode_title"

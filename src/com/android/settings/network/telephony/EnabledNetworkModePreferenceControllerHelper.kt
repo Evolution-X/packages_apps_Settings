@@ -21,24 +21,220 @@ import android.telephony.CarrierConfigManager
 import android.telephony.RadioAccessFamily
 import android.telephony.SubscriptionManager
 import android.telephony.TelephonyManager
+import android.util.Log
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.lifecycleScope
 import com.android.settings.R
 import com.android.settings.network.telephony.MobileNetworkSettingsSearchIndex.MobileNetworkSettingsSearchItem
 import com.android.settings.network.telephony.MobileNetworkSettingsSearchIndex.MobileNetworkSettingsSearchResult
+import com.android.settings.network.telephony.mode.NetworkModes.NETWORK_MODE_UNKNOWN
+import com.android.settings.network.telephony.mode.NetworkModes.getStandardNetworkModeFromRaf
+import com.android.settings.network.telephony.mode.NetworkModes.mergePreferredNetworkModeRaf
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.NonCancellable
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+
+fun interface NetworkModeApplyCallback {
+    fun onResult(requestedMode: Int, actualMode: Int, success: Boolean)
+}
+
+private data class NetworkModeApplyResult(
+    val actualMode: Int,
+    val success: Boolean,
+)
+
+private const val NETWORK_MODE_VERIFY_ATTEMPTS = 8
+private const val NETWORK_MODE_VERIFY_DELAY_MS = 125L
 
 fun TelephonyManager.setAllowedNetworkTypes(
     viewLifecycleOwner: LifecycleOwner,
     newPreferredNetworkMode: Int,
 ) {
-    viewLifecycleOwner.lifecycleScope.launch(Dispatchers.Default) {
-        setAllowedNetworkTypesForReason(
-            TelephonyManager.ALLOWED_NETWORK_TYPES_REASON_USER,
-            RadioAccessFamily.getRafFromNetworkType(newPreferredNetworkMode).toLong(),
-        )
+    setAllowedNetworkTypes(
+        viewLifecycleOwner,
+        newPreferredNetworkMode,
+        callback = NetworkModeApplyCallback { _, _, _ -> },
+    )
+}
+
+fun TelephonyManager.setAllowedNetworkTypes(
+    viewLifecycleOwner: LifecycleOwner,
+    newPreferredNetworkMode: Int,
+    callback: NetworkModeApplyCallback,
+) {
+    viewLifecycleOwner.lifecycleScope.launch {
+        val result =
+            // Once the USER write begins, finish verification/rollback even if the screen is
+            // destroyed. Lifecycle cancellation may suppress the callback, but must never leave
+            // the radio configuration halfway through a failed transaction.
+            withContext(Dispatchers.Default + NonCancellable) {
+                val controlledRaf =
+                    Integer.toUnsignedLong(
+                        RadioAccessFamily.getRafFromNetworkType(
+                            TelephonyManager
+                                .NETWORK_MODE_NR_LTE_TDSCDMA_CDMA_EVDO_GSM_WCDMA
+                        )
+                    )
+                val requestedRaf =
+                    Integer.toUnsignedLong(
+                        RadioAccessFamily.getRafFromNetworkType(newPreferredNetworkMode)
+                    )
+
+                var previousUserRaf = -1L
+                var writeAttempted = false
+
+                try {
+                    previousUserRaf =
+                        getAllowedNetworkTypesForReason(
+                            TelephonyManager.ALLOWED_NETWORK_TYPES_REASON_USER
+                        )
+
+                    if (requestedRaf == 0L) {
+                        val currentMode =
+                            if (previousUserRaf >= 0) {
+                                getStandardNetworkModeFromRaf(
+                                    previousUserRaf and controlledRaf
+                                )
+                            } else {
+                                NETWORK_MODE_UNKNOWN
+                            }
+                        return@withContext NetworkModeApplyResult(
+                            actualMode = currentMode,
+                            success = false,
+                        )
+                    }
+
+                    val requestedUserRaf =
+                        mergePreferredNetworkModeRaf(
+                            previousUserRaf,
+                            supportedRadioAccessFamily,
+                            newPreferredNetworkMode,
+                        )
+
+                    writeAttempted = true
+                    setAllowedNetworkTypesForReason(
+                        TelephonyManager.ALLOWED_NETWORK_TYPES_REASON_USER,
+                        requestedUserRaf,
+                    )
+
+                    var actualRaf =
+                        awaitControlledUserRaf(
+                            controlledRaf = controlledRaf,
+                            expectedControlledRaf = requestedRaf,
+                        )
+                    val success =
+                        actualRaf >= 0 && (actualRaf and controlledRaf) == requestedRaf
+
+                    if (!success && previousUserRaf >= 0) {
+                        // Treat a rejected or normalized USER write as a transaction failure.
+                        // Restore the exact previous USER reason so a failed experiment cannot
+                        // leave a partially changed preferred-network configuration behind.
+                        try {
+                            setAllowedNetworkTypesForReason(
+                                TelephonyManager.ALLOWED_NETWORK_TYPES_REASON_USER,
+                                previousUserRaf,
+                            )
+                            actualRaf = awaitExactUserRaf(previousUserRaf)
+                        } catch (rollbackError: RuntimeException) {
+                            Log.w(
+                                "EnabledNetworkMode",
+                                "Unable to roll back rejected network mode",
+                                rollbackError,
+                            )
+                        }
+                    }
+
+                    val actualControlledRaf =
+                        if (actualRaf >= 0) actualRaf and controlledRaf else 0L
+                    NetworkModeApplyResult(
+                        actualMode =
+                            if (actualRaf >= 0) {
+                                getStandardNetworkModeFromRaf(actualControlledRaf)
+                            } else {
+                                NETWORK_MODE_UNKNOWN
+                            },
+                        success = success,
+                    )
+                } catch (e: RuntimeException) {
+                    Log.w("EnabledNetworkMode", "Unable to apply network mode", e)
+
+                    if (writeAttempted && previousUserRaf >= 0) {
+                        try {
+                            setAllowedNetworkTypesForReason(
+                                TelephonyManager.ALLOWED_NETWORK_TYPES_REASON_USER,
+                                previousUserRaf,
+                            )
+                            awaitExactUserRaf(previousUserRaf)
+                        } catch (rollbackError: RuntimeException) {
+                            Log.w(
+                                "EnabledNetworkMode",
+                                "Unable to roll back network mode after exception",
+                                rollbackError,
+                            )
+                        }
+                    }
+
+                    val actualMode =
+                        try {
+                            val actualRaf =
+                                getAllowedNetworkTypesForReason(
+                                    TelephonyManager.ALLOWED_NETWORK_TYPES_REASON_USER
+                                )
+                            if (actualRaf >= 0) {
+                                getStandardNetworkModeFromRaf(actualRaf and controlledRaf)
+                            } else {
+                                NETWORK_MODE_UNKNOWN
+                            }
+                        } catch (_: RuntimeException) {
+                            NETWORK_MODE_UNKNOWN
+                        }
+                    NetworkModeApplyResult(actualMode = actualMode, success = false)
+                }
+            }
+
+        callback.onResult(newPreferredNetworkMode, result.actualMode, result.success)
     }
+}
+
+private suspend fun TelephonyManager.awaitControlledUserRaf(
+    controlledRaf: Long,
+    expectedControlledRaf: Long,
+): Long {
+    var actualRaf =
+        getAllowedNetworkTypesForReason(
+            TelephonyManager.ALLOWED_NETWORK_TYPES_REASON_USER
+        )
+    for (attempt in 1 until NETWORK_MODE_VERIFY_ATTEMPTS) {
+        if (actualRaf >= 0 && (actualRaf and controlledRaf) == expectedControlledRaf) {
+            break
+        }
+        delay(NETWORK_MODE_VERIFY_DELAY_MS)
+        actualRaf =
+            getAllowedNetworkTypesForReason(
+                TelephonyManager.ALLOWED_NETWORK_TYPES_REASON_USER
+            )
+    }
+    return actualRaf
+}
+
+private suspend fun TelephonyManager.awaitExactUserRaf(expectedUserRaf: Long): Long {
+    var actualRaf =
+        getAllowedNetworkTypesForReason(
+            TelephonyManager.ALLOWED_NETWORK_TYPES_REASON_USER
+        )
+    for (attempt in 1 until NETWORK_MODE_VERIFY_ATTEMPTS) {
+        if (actualRaf == expectedUserRaf) {
+            break
+        }
+        delay(NETWORK_MODE_VERIFY_DELAY_MS)
+        actualRaf =
+            getAllowedNetworkTypesForReason(
+                TelephonyManager.ALLOWED_NETWORK_TYPES_REASON_USER
+            )
+    }
+    return actualRaf
 }
 
 enum class NetworkModePreferenceType {
@@ -48,7 +244,10 @@ enum class NetworkModePreferenceType {
 }
 
 fun getNetworkModePreferenceType(context: Context, subId: Int): NetworkModePreferenceType {
-    if (!SubscriptionManager.isValidSubscriptionId(subId)) return NetworkModePreferenceType.None
+    if (!SubscriptionManager.isValidSubscriptionId(subId)) {
+        return NetworkModePreferenceType.None
+    }
+
     data class Config(
         val carrierConfigApplied: Boolean,
         val hideCarrierNetworkSettings: Boolean,

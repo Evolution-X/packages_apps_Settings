@@ -94,7 +94,8 @@ open class MobileNetworkData(
         }
     }
 
-    private fun refreshEnabledNetworkModeData() {
+    @VisibleForTesting
+    fun refreshEnabledNetworkModeData() {
         coroutineScope?.launch {
             withContext(Dispatchers.Default) {
                 enabledNetworkModeEntriesBuilder.refresh()

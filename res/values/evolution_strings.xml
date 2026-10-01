@@ -349,4 +349,27 @@
     <!-- Override Mock Location restriction -->
     <string name="override_mock_location_title">Override mock location restriction</string>
     <string name="override_mock_location_summary">When enabled, apps cannot detect mock locations</string>
+    <!-- Preferred network mode selector -->
+    <string name="network_mode_unknown_mode">Network mode <xliff:g id="mode">%1$d</xliff:g></string>
+    <string name="network_mode_current_selection">Current selection</string>
+    <string name="network_mode_current_unlisted">Current modem mode</string>
+    <string name="network_mode_current_unlisted_detail">Reported by telephony but not present in the standard mode catalog</string>
+    <string name="network_mode_restricted_carrier">Currently limited by the carrier</string>
+    <string name="network_mode_restricted_power">Temporarily limited by system power policy</string>
+    <string name="network_mode_restricted_test">Temporarily limited by telephony test policy</string>
+    <string name="network_mode_restricted_2g">2G is currently disabled by the system</string>
+    <string name="network_mode_restricted_admin">2G is restricted by device policy</string>
+    <string name="network_mode_applying">Applying network mode…</string>
+    <string name="network_mode_apply_failed">The modem did not accept this network mode. The active selection was refreshed.</string>
+    <string name="network_mode_effective_now">Effective now</string>
+    <string name="network_mode_summary_effective"><xliff:g id="selected">%1$s</xliff:g> · Effective: <xliff:g id="effective">%2$s</xliff:g></string>
+    <string name="network_mode_group_5g">5G combinations</string>
+    <string name="network_mode_group_4g">4G combinations</string>
+    <string name="network_mode_group_3g">3G combinations</string>
+    <string name="network_mode_group_2g">2G combinations</string>
+    <string name="network_mode_group_legacy">Legacy combinations</string>
+    <string name="network_mode_nr_dc_enabled">5G dual connectivity enabled</string>
+    <string name="network_mode_nr_dc_disabled">5G dual connectivity disabled</string>
+    <string name="network_mode_vonr_enabled">VoNR enabled</string>
+    <string name="network_mode_vonr_disabled">VoNR disabled</string>
 </resources>

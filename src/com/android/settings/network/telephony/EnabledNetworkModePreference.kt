@@ -19,10 +19,8 @@ package com.android.settings.network.telephony
 import android.Manifest
 import android.content.Context
 import android.util.Log
-import androidx.fragment.app.FragmentManager
+import android.widget.Toast
 import androidx.lifecycle.LifecycleOwner
-import androidx.preference.ListPreference
-import androidx.preference.ListPreferenceDialogFragmentCompat
 import androidx.preference.Preference
 import com.android.settings.R
 import com.android.settings.network.SatelliteRepository
@@ -108,7 +106,7 @@ class EnabledNetworkModePreference(
             isTelephonyChangeableFlow().collect { isChangeable ->
                 isEnabled = isChangeable
                 if (!isChangeable) {
-                    dismissListPreference(context.fragmentManager)
+                    NetworkModePreference.dismissDialog(context.fragmentManager)
                 }
                 context.notifyPreferenceChange(KEY)
             }
@@ -116,24 +114,43 @@ class EnabledNetworkModePreference(
     }
 
     override fun onResume(context: PreferenceLifecycleContext) {
-        val listPreference = context.findPreference<ListPreference>(KEY) ?: return
-        val builder = data.enabledNetworkModeEntriesBuilder
-        builder.updateListPreference(listPreference)
+        val networkPreference = context.findPreference<NetworkModePreference>(KEY) ?: return
+        data.enabledNetworkModeEntriesBuilder.updateListPreference(networkPreference)
     }
 
     override fun onPreferenceChange(preference: Preference, newValue: Any): Boolean {
-        val newPreferredNetworkMode = (newValue as String).toInt()
-        val listPreference = preference as ListPreference
-        val builder = data.enabledNetworkModeEntriesBuilder
-        builder.setPreferenceValueAndSummary(newPreferredNetworkMode)
-        listPreference.value = builder.selectedEntryValue.toString()
-        listPreference.summary = builder.summary
-        Log.d(TAG, "onPreferenceChange(), listPreference=$listPreference")
+        val networkPreference = preference as? NetworkModePreference ?: return false
+        val newPreferredNetworkMode = (newValue as? String)?.toIntOrNull() ?: return false
+        val telephonyManager = data.context.telephonyManager(data.subId) ?: return false
 
-        data.context
-            .telephonyManager(data.subId)
-            .setAllowedNetworkTypes(lifecycleOwner, newPreferredNetworkMode)
-        return true
+        networkPreference.isEnabled = false
+        networkPreference.setSummary(R.string.network_mode_applying)
+
+        telephonyManager.setAllowedNetworkTypes(
+            lifecycleOwner,
+            newPreferredNetworkMode,
+        ) { requestedMode, actualMode, success ->
+            val builder = data.enabledNetworkModeEntriesBuilder
+            builder.updateListPreference(networkPreference)
+            data.refreshEnabledNetworkModeData()
+            networkPreference.isEnabled = isEnabled
+
+            if (!success) {
+                Log.w(
+                    TAG,
+                    "Network mode rejected. requested=$requestedMode, actual=$actualMode",
+                )
+                Toast.makeText(
+                        data.context,
+                        R.string.network_mode_apply_failed,
+                        Toast.LENGTH_LONG,
+                    )
+                    .show()
+            }
+        }
+
+        // Apply only after the telephony stack confirms the USER reason value.
+        return false
     }
 
     override val valueType: Class<CharSequence>
@@ -180,14 +197,6 @@ class EnabledNetworkModePreference(
         override fun onLastObserverRemoved() {}
     }
 
-    private fun dismissListPreference(fragmentManager: FragmentManager) {
-        for (fragment in fragmentManager.fragments) {
-            if (fragment is ListPreferenceDialogFragmentCompat) {
-                fragment.dismiss()
-                Log.w(TAG, "Dismiss the Preferred Network Type dialog!")
-            }
-        }
-    }
 
     companion object {
         private const val TAG = "EnabledNetworkModePreference"
