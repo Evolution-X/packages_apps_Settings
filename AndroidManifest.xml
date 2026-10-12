@@ -31,6 +31,8 @@
     <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
     <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <!-- Allow Settings/Evolver to control the signature-protected Glymps receiver. -->
+    <uses-permission android:name="com.android.systemui.permission.CONTROL_LOCK_GLYMPS" />
     <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
     <uses-permission android:name="android.permission.DEVICE_POWER" />
     <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
