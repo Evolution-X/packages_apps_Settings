@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: Evolution X
+     SPDX-License-Identifier: Apache-2.0
+-->
+<!-- Equal radius on every corner. The device tile inside is 24dp: this radius
+     minus the 16dp hero padding, so the two stay concentric. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/settingslib_materialColorPrimaryContainer" />
+    <corners android:radius="40dp" />
+</shape>

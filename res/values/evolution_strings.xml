@@ -404,4 +404,10 @@
     <!-- Cycle through ringer modes gesture -->
     <string name="prevent_ringing_option_cycle">Cycle through modes</string>
     <string name="prevent_ringing_option_cycle_summary">On (cycle through modes)</string>
+
+    <!-- Model page -->
+    <string name="hardware_codename">Codename</string>
+    <string name="build_type_official">Official build</string>
+    <string name="build_type_unofficial">Unofficial build</string>
+    <string name="model_hardware_section">Hardware</string>
 </resources>
