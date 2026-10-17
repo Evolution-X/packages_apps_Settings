@@ -59,7 +59,7 @@ public class GlowView extends View {
     private static final float FRINGE_SHIFT  = 2f;
     private static final int   FRINGE_ALPHA  = 128;  // 50%
 
-    // Shine: a skewed white band crossing the logo, then a pause.
+    // Shine: a skewed band crossing the logo, then a pause.
     private static final long  SHINE_MS     = 5000L;
     private static final float SHINE_ACTIVE = 0.3f;  // fraction of the period spent moving
     private static final float SHINE_FROM   = 120f;

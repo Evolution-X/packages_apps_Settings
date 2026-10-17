@@ -23,7 +23,6 @@
         android:layout_gravity="center"
         android:scaleType="centerInside"
         android:adjustViewBounds="true"
-        android:src="@drawable/ic_evolution_logo_outline"
-        android:tint="?android:attr/textColorPrimary" />
+        android:src="@drawable/ic_evolution_logo_outline" />
 
 </FrameLayout>
