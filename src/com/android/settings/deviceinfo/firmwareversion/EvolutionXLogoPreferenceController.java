@@ -41,25 +41,8 @@ public class EvolutionXLogoPreferenceController extends BasePreferenceController
         final View root = logoPref.findViewById(R.id.evolution_logo_container);
         if (root == null) return;
 
-        // Check if we're in light theme
-        int nightMode = mContext.getResources().getConfiguration().uiMode
-                & android.content.res.Configuration.UI_MODE_NIGHT_MASK;
-        boolean isLightTheme = (nightMode == android.content.res.Configuration.UI_MODE_NIGHT_NO);
-
-        if (isLightTheme) {
-            // Light theme: use old logo, no glow/animation
-            android.widget.ImageView logo = root.findViewById(R.id.evolution_logo_main);
-            if (logo != null) {
-                logo.setImageResource(R.drawable.ic_evolution_logo);
-                logo.clearColorFilter();
-            }
-            // Hide the glow view entirely
-            View glow = root.findViewById(R.id.evolution_rgb_glow);
-            if (glow != null) glow.setVisibility(View.GONE);
-        } else {
-            // Dark theme: full synthwave animation
-            EvolutionLogoAnimator.bind(root);
-        }
+        // GlowView resolves its own ink color from the current theme.
+        EvolutionLogoAnimator.bind(root);
     }
 
     @Override

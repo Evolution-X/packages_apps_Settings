@@ -7,6 +7,7 @@ package com.android.settings.deviceinfo.firmwareversion;
 
 import android.animation.ValueAnimator;
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.BlurMaskFilter;
 import android.graphics.Canvas;
 import android.graphics.LinearGradient;
@@ -121,6 +122,8 @@ public class GlowView extends View {
     }
 
     private void init(Context ctx) {
+        final int ink = resolveInk(ctx);
+
         for (String data : ctx.getResources().getStringArray(R.array.evolution_logo_paths)) {
             mLogoUnits.addPath(PathParser.createPathFromPathData(data));
         }
@@ -154,15 +157,27 @@ public class GlowView extends View {
         mStrokePaint.setStrokeCap(Paint.Cap.ROUND);
 
         mShineFill.setStyle(Paint.Style.FILL);
-        mShineFill.setColor(0xFFFFFFFF);
+        mShineFill.setColor(ink);
         mShineFill.setAlpha(SHINE_FILL_ALPHA);
 
         mShineStroke.setStyle(Paint.Style.STROKE);
         mShineStroke.setStrokeJoin(Paint.Join.ROUND);
-        mShineStroke.setColor(0xFFFFFFFF);
+        mShineStroke.setColor(ink);
 
         mBandPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
-        mSparklePaint.setColor(0xFFFFFFFF);
+        mSparklePaint.setColor(ink);
+    }
+
+    // Shine and sparkles follow the theme's primary text color: light on dark
+    // surfaces, dark on light ones. Forced opaque, the paints set their own alpha.
+    private static int resolveInk(Context ctx) {
+        final TypedArray a = ctx.obtainStyledAttributes(
+                new int[] { android.R.attr.textColorPrimary });
+        try {
+            return a.getColor(0, 0xFFFFFFFF) | 0xFF000000;
+        } finally {
+            a.recycle();
+        }
     }
 
     @Override
