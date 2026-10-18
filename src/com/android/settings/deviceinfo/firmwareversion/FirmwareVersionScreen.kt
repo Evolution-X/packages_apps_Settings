@@ -24,7 +24,6 @@ import com.android.settings.R
 import com.android.settings.Settings.FirmwareVersionActivity
 import com.android.settings.contract.TAG_DEVICE_STATE_SCREEN
 import com.android.settings.core.PreferenceScreenMixin
-import com.android.settings.flags.Flags
 import com.android.settings.utils.makeLaunchIntent
 import com.android.settingslib.metadata.PreferenceMetadata
 import com.android.settingslib.metadata.PreferenceSummaryProvider
@@ -36,8 +35,6 @@ import com.android.settingslib.metadata.preferencesapi.PreferencesApiScreen.Comp
 @ProvidePreferenceScreen(FirmwareVersionScreen.KEY)
 open class FirmwareVersionScreen : PreferenceScreenMixin, PreferenceSummaryProvider {
     override fun tags(context: Context) = arrayOf(APP_FUNCTION_UNCATEGORIZED, TAG_DEVICE_STATE_SCREEN)
-
-    override fun isFlagEnabled(context: Context) = Flags.catalystFirmwareVersion()
 
     override val key: String
         get() = KEY
@@ -73,6 +70,8 @@ open class FirmwareVersionScreen : PreferenceScreenMixin, PreferenceSummaryProvi
 
     override fun getPreferenceHierarchy(context: Context, coroutineScope: CoroutineScope) =
         preferenceHierarchy(context) {
+            +EvolutionXLogoPreference()
+            +AboutDeviceNamePreference()
             +FirmwareVersionDetailPreference()
             +LineageVersionDetailPreference()
             +SecurityPatchLevelPreference()

@@ -21,8 +21,10 @@ import android.os.SystemProperties
 import android.text.format.DateFormat
 import androidx.preference.Preference
 import com.android.settings.R
+import com.android.settingslib.metadata.PreferenceAvailabilityProvider
 import com.android.settingslib.metadata.PreferenceMetadata
 import com.android.settingslib.metadata.PreferenceSummaryProvider
+import com.android.settingslib.metadata.preferencesapi.preconditions.PreconditionStability
 import com.android.settingslib.preference.PreferenceBinding
 import java.text.ParseException
 import java.text.SimpleDateFormat
@@ -30,7 +32,7 @@ import java.util.Date
 import java.util.Locale
 
 class LineageVendorSecurityPatchLevelPreference :
-    PreferenceMetadata, PreferenceSummaryProvider, PreferenceBinding {
+    PreferenceMetadata, PreferenceSummaryProvider, PreferenceBinding, PreferenceAvailabilityProvider {
 
     override val key: String
         get() = "vendor_security_key"
@@ -40,6 +42,14 @@ class LineageVendorSecurityPatchLevelPreference :
 
     override val title: Int
         get() = org.lineageos.platform.internal.R.string.lineage_vendor_security_patch
+
+    override val availabilityDescription =
+        "The config_show_vendor_patch_level overlay must be enabled."
+
+    override fun getAvailabilityStability() = PreconditionStability.STABLE_UNTIL_APK_UPDATE
+
+    override fun isAvailable(context: Context) =
+        context.resources.getBoolean(R.bool.config_show_vendor_patch_level)
 
     override fun bind(preference: Preference, metadata: PreferenceMetadata) {
         super.bind(preference, metadata)
