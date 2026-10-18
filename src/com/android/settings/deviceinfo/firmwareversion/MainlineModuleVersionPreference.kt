@@ -67,7 +67,17 @@ class MainlineModuleVersionPreference :
         if (version.isEmpty()) return null
 
         val locale = context.getLocale()
-        fun parseDate(pattern: String): Date? {
+        val date = parseDate(version, locale)
+        return if (date == null) {
+            Log.w(TAG, "Cannot parse mainline versionName ($version) as date")
+            version
+        } else {
+            DateFormat.format(DateFormat.getBestDateTimePattern(locale, "dMMMMyyyy"), date)
+        }
+    }
+
+    private fun parseDate(version: String, locale: java.util.Locale): Date? {
+        fun parse(pattern: String): Date? {
             val simpleDateFormat = SimpleDateFormat(pattern, locale)
             simpleDateFormat.timeZone = TimeZone.getDefault()
             return try {
@@ -76,14 +86,7 @@ class MainlineModuleVersionPreference :
                 null
             }
         }
-
-        val date = parseDate("yyyy-MM-dd") ?: parseDate("yyyy-MM")
-        return if (date == null) {
-            Log.w(TAG, "Cannot parse mainline versionName ($version) as date")
-            version
-        } else {
-            DateFormat.format(DateFormat.getBestDateTimePattern(locale, "dMMMMyyyy"), date)
-        }
+        return parse("yyyy-MM-dd") ?: parse("yyyy-MM")
     }
 
     override fun intent(context: Context): Intent? {
@@ -100,11 +103,14 @@ class MainlineModuleVersionPreference :
     }
 
     override val availabilityDescription =
-        "The device must have a mainline module version."
+        "The device must have a mainline module version that is a date."
 
     override fun getAvailabilityStability() = PreconditionStability.STABLE_UNTIL_APK_UPDATE
 
-    override fun isAvailable(context: Context) = getModuleVersion(context).isNotEmpty()
+    override fun isAvailable(context: Context): Boolean {
+        val version = getModuleVersion(context)
+        return version.isNotEmpty() && parseDate(version, context.getLocale()) != null
+    }
 
     override fun bind(preference: Preference, metadata: PreferenceMetadata) {
         super.bind(preference, metadata)
