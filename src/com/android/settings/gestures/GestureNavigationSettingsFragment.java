@@ -134,7 +134,8 @@ public class GestureNavigationSettingsFragment extends DashboardFragment {
                 getPreferenceScreen().findPreference("sysui_show_nav_bar_ime");
 
         showImeSpacePref.setOnPreferenceChangeListener((preference, newValue) -> {
-            Utils.toggleOverlay(getContext(), IME_NAV_BAR_SPACE_OVERLAY, !(Boolean) newValue);
+            Utils.toggleOverlay(getContext(), IME_NAV_BAR_SPACE_OVERLAY, !(Boolean) newValue,
+                    true);
             if (Utils.isPackageInstalled(getContext(), NEXUSLAUNCHER_PACKAGE_NAME)) {
                 Utils.restartApp(NEXUSLAUNCHER_PACKAGE_NAME, getContext());
             }
