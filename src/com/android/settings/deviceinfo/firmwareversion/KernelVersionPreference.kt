@@ -17,6 +17,7 @@
 package com.android.settings.deviceinfo.firmwareversion
 
 import android.content.Context
+import android.util.Log
 import androidx.preference.Preference
 import com.android.settings.R
 import com.android.settingslib.DeviceInfoUtils
@@ -26,9 +27,16 @@ import com.android.settingslib.metadata.PreferenceMetadata
 import com.android.settingslib.metadata.PreferenceSummaryProvider
 import com.android.settingslib.metadata.SensitivityLevel
 import com.android.settingslib.preference.PreferenceBinding
+import java.io.File
+import java.io.IOException
 
 // LINT.IfChange
-class KernelVersionPreference : PersistentPreference<String>, PreferenceMetadata, PreferenceSummaryProvider, PreferenceBinding {
+class KernelVersionPreference :
+    PersistentPreference<String>,
+    PreferenceMetadata,
+    PreferenceSummaryProvider,
+    PreferenceBinding,
+    Preference.OnPreferenceClickListener {
 
     override val key: String
         get() = "kernel_version"
@@ -50,12 +58,36 @@ class KernelVersionPreference : PersistentPreference<String>, PreferenceMetadata
 
     override fun bind(preference: Preference, metadata: PreferenceMetadata) {
         super.bind(preference, metadata)
-        preference.isSelectable = false
         preference.isCopyingEnabled = true
+        preference.onPreferenceClickListener = this
     }
+
+    private var showingFullVersion = false
+
+    // Tap to toggle between the formatted and the unformatted /proc/version
+    override fun onPreferenceClick(preference: Preference): Boolean {
+        showingFullVersion = !showingFullVersion
+        preference.summary =
+            if (showingFullVersion) getFullKernelVersion()
+            else DeviceInfoUtils.getFormattedKernelVersion(preference.context)
+        return true
+    }
+
+    private fun getFullKernelVersion(): String =
+        try {
+            File(FILENAME_PROC_VERSION).bufferedReader(Charsets.UTF_8, 256).use { it.readLine() }
+                ?: "Unavailable"
+        } catch (e: IOException) {
+            Log.e(TAG, "IO Exception when getting kernel version for Device Info screen", e)
+            "Unavailable"
+        }
 
     override val sensitivityLevel
         get() = SensitivityLevel.NO_SENSITIVITY
 
+    companion object {
+        private const val TAG = "KernelVersionPreference"
+        private const val FILENAME_PROC_VERSION = "/proc/version"
+    }
 }
 // LINT.ThenChange(KernelVersionPreferenceController.java)
