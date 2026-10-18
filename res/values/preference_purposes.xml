@@ -206,6 +206,7 @@
     <string name="firmware_version_purpose" translatable="false">Provides information about the device Android version and other firmware components</string>
     <string name="kernel_version_purpose" translatable="false">The kernel version of the device</string>
     <string name="module_version_purpose" translatable="false">The date of the last system update</string>
+    <string name="evolution_logo_purpose" translatable="false">Evolution X logo banner; opens the project website</string>
     <string name="os_build_number_purpose" translatable="false">The device build number</string>
     <string name="os_firmware_version_purpose" translatable="false">The Android version name or number</string>
     <string name="security_key_purpose" translatable="false">The date of the last Android security update</string>
