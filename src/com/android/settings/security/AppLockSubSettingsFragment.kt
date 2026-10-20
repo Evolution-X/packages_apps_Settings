@@ -25,6 +25,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -42,19 +43,16 @@ import androidx.compose.material.icons.filled.Pin
 import androidx.compose.material.icons.filled.Shield
 import androidx.compose.material.icons.filled.Smartphone
 import androidx.compose.material.icons.filled.Timer
-import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
@@ -80,6 +78,13 @@ import com.android.internal.widget.LockPatternView
 import com.android.settings.R
 import com.android.settings.SettingsPreferenceFragment
 import com.android.settingslib.spa.framework.theme.SettingsTheme
+import org.evolution.settings.fragments.miscellaneous.ExpressiveChoiceRow
+import org.evolution.settings.fragments.miscellaneous.ExpressiveDialog
+import org.evolution.settings.fragments.miscellaneous.ExpressiveGroup
+import org.evolution.settings.fragments.miscellaneous.ExpressiveTextButton
+import org.evolution.settings.fragments.miscellaneous.ExpressiveTextField
+import org.evolution.settings.fragments.miscellaneous.expressiveVerticalScroll
+import org.evolution.settings.fragments.miscellaneous.radioButtonFocusRing
 
 import android.app.Activity
 import android.content.Intent
@@ -470,18 +475,20 @@ fun AppLockSubSettingsContent(context: Context) {
 
         // Timeout Selection Dialog
         if (showTimeoutDialog) {
-            AlertDialog(
+            ExpressiveDialog(
                 onDismissRequest = { showTimeoutDialog = false },
                 title = {
                     Text(
                         text = stringResource(R.string.app_lock_timeout_title),
-                        style = MaterialTheme.typography.titleLarge,
-                        fontWeight = FontWeight.Bold
+                        style = MaterialTheme.typography.headlineSmall
                     )
                 },
                 text = {
                     Column(
-                        modifier = Modifier.fillMaxWidth(),
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .heightIn(max = 360.dp)
+                            .expressiveVerticalScroll(),
                         verticalArrangement = Arrangement.spacedBy(8.dp)
                     ) {
                         Text(
@@ -490,45 +497,29 @@ fun AppLockSubSettingsContent(context: Context) {
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
                             modifier = Modifier.padding(bottom = 8.dp)
                         )
-                        timeoutOptions.forEach { (value, label) ->
-                            Row(
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                                    .clickable {
-                                        android.provider.Settings.Secure.putLong(
-                                            context.contentResolver,
-                                            AppLockCredentialUtils.KEY_APP_LOCK_TIMEOUT,
-                                            value
-                                        )
-                                        currentTimeout = value
-                                        showTimeoutDialog = false
-                                    }
-                                    .padding(vertical = 8.dp),
-                                verticalAlignment = Alignment.CenterVertically
-                            ) {
-                                RadioButton(
-                                    selected = (currentTimeout == value),
-                                    onClick = {
-                                        android.provider.Settings.Secure.putLong(
-                                            context.contentResolver,
-                                            AppLockCredentialUtils.KEY_APP_LOCK_TIMEOUT,
-                                            value
-                                        )
-                                        currentTimeout = value
-                                        showTimeoutDialog = false
-                                    }
-                                )
-                                Spacer(modifier = Modifier.width(12.dp))
-                                Text(
-                                    text = label,
-                                    style = MaterialTheme.typography.bodyLarge
-                                )
+                        ExpressiveGroup(title = "", horizontalInset = 0.dp) {
+                            timeoutOptions.forEach { (value, label) ->
+                                item {
+                                    ExpressiveChoiceRow(
+                                        title = label,
+                                        selected = (currentTimeout == value),
+                                        onClick = {
+                                            android.provider.Settings.Secure.putLong(
+                                                context.contentResolver,
+                                                AppLockCredentialUtils.KEY_APP_LOCK_TIMEOUT,
+                                                value
+                                            )
+                                            currentTimeout = value
+                                            showTimeoutDialog = false
+                                        }
+                                    )
+                                }
                             }
                         }
                     }
                 },
                 confirmButton = {
-                    TextButton(onClick = { showTimeoutDialog = false }) {
+                    ExpressiveTextButton(onClick = { showTimeoutDialog = false }) {
                         Text(stringResource(android.R.string.cancel))
                     }
                 }
@@ -599,7 +590,8 @@ fun CredentialMethodItem(
         Spacer(modifier = Modifier.width(8.dp))
         RadioButton(
             selected = selected,
-            onClick = onClick
+            onClick = onClick,
+            modifier = Modifier.radioButtonFocusRing()
         )
     }
 }
@@ -625,13 +617,12 @@ fun CredentialSetupDialog(
             if (step == 1) R.string.app_lock_setup_pattern_title else R.string.app_lock_confirm_pattern_title
     }
 
-    AlertDialog(
+    ExpressiveDialog(
         onDismissRequest = onDismiss,
         title = {
             Text(
                 text = stringResource(titleRes),
-                style = MaterialTheme.typography.titleLarge,
-                fontWeight = FontWeight.Bold
+                style = MaterialTheme.typography.headlineSmall
             )
         },
         text = {
@@ -650,7 +641,7 @@ fun CredentialSetupDialog(
 
                 when (type) {
                     AppLockCredentialUtils.CREDENTIAL_TYPE_PIN -> {
-                        OutlinedTextField(
+                        ExpressiveTextField(
                             value = currentInput,
                             onValueChange = { input ->
                                 if (input.length <= 8 && input.all { it.isDigit() }) {
@@ -658,26 +649,22 @@ fun CredentialSetupDialog(
                                     errorMessage = ""
                                 }
                             },
-                            label = { Text(stringResource(R.string.app_lock_method_pin)) },
+                            label = stringResource(R.string.app_lock_method_pin),
                             visualTransformation = PasswordVisualTransformation(),
                             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.NumberPassword),
-                            singleLine = true,
-                            modifier = Modifier.fillMaxWidth()
                         )
                     }
 
                     AppLockCredentialUtils.CREDENTIAL_TYPE_PASSWORD -> {
-                        OutlinedTextField(
+                        ExpressiveTextField(
                             value = currentInput,
                             onValueChange = { input ->
                                 currentInput = input
                                 errorMessage = ""
                             },
-                            label = { Text(stringResource(R.string.app_lock_method_password)) },
+                            label = stringResource(R.string.app_lock_method_password),
                             visualTransformation = PasswordVisualTransformation(),
                             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
-                            singleLine = true,
-                            modifier = Modifier.fillMaxWidth()
                         )
                     }
 
@@ -714,11 +701,11 @@ fun CredentialSetupDialog(
             }
         },
         confirmButton = {
-            TextButton(
+            ExpressiveTextButton(
                 onClick = {
                     if (currentInput.isEmpty()) {
                         errorMessage = "Cannot be empty"
-                        return@TextButton
+                        return@ExpressiveTextButton
                     }
                     if (step == 1) {
                         firstInput = currentInput
@@ -748,7 +735,7 @@ fun CredentialSetupDialog(
             }
         },
         dismissButton = {
-            TextButton(onClick = onDismiss) {
+            ExpressiveTextButton(onClick = onDismiss) {
                 Text(stringResource(android.R.string.cancel))
             }
         }
