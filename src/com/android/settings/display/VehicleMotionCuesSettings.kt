@@ -26,8 +26,10 @@ import androidx.compose.animation.core.*
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.gestures.Orientation
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
@@ -48,6 +50,7 @@ import com.android.axion.compose.preferences.SliderPreference
 import com.android.axion.compose.preferences.SwitchPreference
 import com.android.axion.compose.theme.AxionTheme
 import com.android.settings.R
+import com.android.settings.widget.scrollbar
 import kotlin.math.sin
 import kotlin.math.roundToInt
 
@@ -102,10 +105,13 @@ class VehicleMotionCuesSettings : Fragment() {
         Scaffold(
             containerColor = MaterialTheme.colorScheme.surfaceContainer,
         ) { paddingValues ->
+            val listState = rememberLazyListState()
             LazyColumn(
+                state = listState,
                 modifier = Modifier
                     .fillMaxSize()
                     .padding(paddingValues)
+                    .scrollbar(listState.scrollIndicatorState, Orientation.Vertical)
                     .padding(horizontal = 16.dp),
                 verticalArrangement = Arrangement.spacedBy(12.dp),
                 contentPadding = PaddingValues(top = 16.dp, bottom = 32.dp)
