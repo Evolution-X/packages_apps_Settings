@@ -24,6 +24,8 @@ import android.provider.Settings
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.compose.foundation.gestures.Orientation
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.core.graphics.ColorUtils
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.Canvas
@@ -73,6 +75,7 @@ import com.android.axion.compose.preferences.SliderPreference
 import com.android.axion.compose.preferences.SwitchPreference
 import com.android.axion.compose.theme.AxionTheme
 import com.android.settings.R
+import com.android.settings.widget.scrollbar
 import java.time.LocalTime
 import java.time.format.DateTimeFormatter
 import kotlinx.coroutines.delay
@@ -126,10 +129,13 @@ class BlurSettings : Fragment() {
         Scaffold(
             containerColor = MaterialTheme.colorScheme.surfaceContainer,
         ) { paddingValues ->
+            val listState = rememberLazyListState()
             LazyColumn(
+                state = listState,
                 modifier = Modifier
                     .fillMaxSize()
                     .padding(paddingValues)
+                    .scrollbar(listState.scrollIndicatorState, Orientation.Vertical)
                     .padding(horizontal = 16.dp),
                 verticalArrangement = Arrangement.spacedBy(12.dp),
                 contentPadding = PaddingValues(top = 16.dp, bottom = 32.dp)
