@@ -421,4 +421,15 @@
     <string name="battery_saver_dark_theme_summary">Dark theme turns on and stays on while Battery Saver is on. Saves the most battery on OLED screens.</string>
     <!-- Not shown in the UI; describes the preference for the settings API -->
     <string name="battery_saver_dark_theme_purpose">Controls whether Battery Saver turns on dark theme and prevents changing it until Battery Saver turns off.</string>
+
+    <!-- Lock screen display timeout -->
+    <string name="lockscreen_display_timeout_title">Lock screen timeout</string>
+    <string name="lockscreen_display_timeout_10s">10 seconds (default)</string>
+    <string name="lockscreen_display_timeout_15s">15 seconds</string>
+    <string name="lockscreen_display_timeout_30s">30 seconds</string>
+    <string name="lockscreen_display_timeout_1m">1 minute</string>
+    <string name="lockscreen_display_timeout_2m">2 minutes</string>
+    <string name="lockscreen_display_timeout_5m">5 minutes</string>
+    <string name="lockscreen_display_timeout_10m">10 minutes</string>
+    <string name="lockscreen_display_timeout_30m">30 minutes</string>
 </resources>
