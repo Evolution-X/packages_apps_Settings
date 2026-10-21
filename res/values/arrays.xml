@@ -47,6 +47,29 @@
         <item>1800000</item>
     </string-array>
 
+    <!-- Lock screen display timeout. Values are in milliseconds. -->
+    <string-array name="lockscreen_display_timeout_entries">
+        <item>@string/lockscreen_display_timeout_10s</item>
+        <item>@string/lockscreen_display_timeout_15s</item>
+        <item>@string/lockscreen_display_timeout_30s</item>
+        <item>@string/lockscreen_display_timeout_1m</item>
+        <item>@string/lockscreen_display_timeout_2m</item>
+        <item>@string/lockscreen_display_timeout_5m</item>
+        <item>@string/lockscreen_display_timeout_10m</item>
+        <item>@string/lockscreen_display_timeout_30m</item>
+    </string-array>
+
+    <string-array name="lockscreen_display_timeout_values" translatable="false">
+        <item>10000</item>
+        <item>15000</item>
+        <item>30000</item>
+        <item>60000</item>
+        <item>120000</item>
+        <item>300000</item>
+        <item>600000</item>
+        <item>1800000</item>
+    </string-array>
+
     <!-- Dark theme scheduling preferences  [CHAR LIMIT=NONE] -->
     <string-array name="dark_ui_scheduler_preference_titles">
         <!-- 0: None -->

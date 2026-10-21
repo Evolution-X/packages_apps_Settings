@@ -96,6 +96,14 @@
             settings:controller="com.android.settings.display.FoldLockBehaviorPreferenceController"
             settings:keywords="@string/keywords_fold_lock_behavior" />
 
+        <org.evolution.settings.preferences.SystemSettingListPreference
+            android:key="lockscreen_display_timeout"
+            android:title="@string/lockscreen_display_timeout_title"
+            android:summary="%s"
+            android:entries="@array/lockscreen_display_timeout_entries"
+            android:entryValues="@array/lockscreen_display_timeout_values"
+            android:defaultValue="10000" />
+
         <com.android.settingslib.RestrictedPreference
             android:key="screen_timeout"
             android:title="@string/screen_timeout"
