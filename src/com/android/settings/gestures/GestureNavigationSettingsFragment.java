@@ -17,13 +17,18 @@
 package com.android.settings.gestures;
 
 import android.app.settings.SettingsEnums;
+import android.content.ComponentName;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.os.UserHandle;
 import android.provider.Settings;
+import android.text.TextUtils;
 import android.view.Display;
 import android.view.WindowManager;
 
@@ -76,6 +81,8 @@ public class GestureNavigationSettingsFragment extends DashboardFragment {
     private static final String LAUNCHER3_PACKAGE_NAME = "com.android.launcher3";
     private static final String LAUNCHER3_NOGESTUREHINT_OVERLAY = "com.android.launcher3.overlay.nogesturehint";
     private static final String IME_NAV_BAR_SPACE_OVERLAY = "com.android.systemui.overlay.imenavbarspace";
+    private static final String AOSP_IME_PACKAGE_NAME = "com.android.inputmethod.latin";
+    private static final String GBOARD_PACKAGE_NAME = "com.google.android.inputmethod.latin";
 
     private WindowManager mWindowManager;
     private BackGestureIndicatorView mIndicatorView;
@@ -142,6 +149,8 @@ public class GestureNavigationSettingsFragment extends DashboardFragment {
             if (Utils.isPackageInstalled(getContext(), LAUNCHER3_PACKAGE_NAME)) {
                 Utils.restartApp(LAUNCHER3_PACKAGE_NAME, getContext());
             }
+            restartImeIfInstalled(getContext(), AOSP_IME_PACKAGE_NAME);
+            restartImeIfInstalled(getContext(), GBOARD_PACKAGE_NAME);
 
             return true;
         });
@@ -183,6 +192,46 @@ public class GestureNavigationSettingsFragment extends DashboardFragment {
     @Override
     protected String getLogTag() {
         return TAG;
+    }
+
+    private static void restartImeIfInstalled(Context context, String packageName) {
+        if (!Utils.isPackageInstalled(context, packageName, false)) {
+            return;
+        }
+
+        final Context appContext = context.getApplicationContext();
+        final ContentResolver resolver = appContext.getContentResolver();
+        final String currentIme = Settings.Secure.getStringForUser(resolver,
+                Settings.Secure.DEFAULT_INPUT_METHOD, UserHandle.USER_CURRENT);
+        final String currentSubtype = Settings.Secure.getStringForUser(resolver,
+                Settings.Secure.SELECTED_INPUT_METHOD_SUBTYPE, UserHandle.USER_CURRENT);
+        final ComponentName imeComponent = currentIme != null
+                ? ComponentName.unflattenFromString(currentIme) : null;
+        final boolean isCurrentIme = imeComponent != null
+                && packageName.equals(imeComponent.getPackageName());
+
+        Utils.restartApp(packageName, appContext);
+
+        if (!isCurrentIme) {
+            return;
+        }
+
+        // Stopping the active IME can make the system fall back to another one, so put the
+        // previous IME and subtype back once it has had time to restart.
+        new Handler(Looper.getMainLooper()).postDelayed(() -> {
+            final String nowIme = Settings.Secure.getStringForUser(resolver,
+                    Settings.Secure.DEFAULT_INPUT_METHOD, UserHandle.USER_CURRENT);
+            if (!TextUtils.equals(nowIme, currentIme)) {
+                Settings.Secure.putStringForUser(resolver,
+                        Settings.Secure.DEFAULT_INPUT_METHOD, currentIme,
+                        UserHandle.USER_CURRENT);
+                if (currentSubtype != null) {
+                    Settings.Secure.putStringForUser(resolver,
+                            Settings.Secure.SELECTED_INPUT_METHOD_SUBTYPE, currentSubtype,
+                            UserHandle.USER_CURRENT);
+                }
+            }
+        }, 1000);
     }
 
     @Override
