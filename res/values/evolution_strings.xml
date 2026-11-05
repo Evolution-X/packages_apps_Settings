@@ -415,4 +415,10 @@
     <string name="build_type_unofficial">Unofficial build</string>
     <string name="model_serial_hidden">Hidden</string>
     <string name="model_serial_hidden_ends_in">Hidden, ends in <xliff:g id="last_four" example="1A2B">%1$s</xliff:g></string>
+
+    <!-- Battery saver dark theme -->
+    <string name="battery_saver_dark_theme_title">Turn on with Battery Saver</string>
+    <string name="battery_saver_dark_theme_summary">Dark theme turns on and stays on while Battery Saver is on. Saves the most battery on OLED screens.</string>
+    <!-- Not shown in the UI; describes the preference for the settings API -->
+    <string name="battery_saver_dark_theme_purpose">Controls whether Battery Saver turns on dark theme and prevents changing it until Battery Saver turns off.</string>
 </resources>
