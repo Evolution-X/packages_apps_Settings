@@ -55,4 +55,45 @@
     <string name="touchscreen_hovering_summary">يسمح لك بالمرور فوق الشاشة مثل الماوس في مستعرضات الويب، أو سطح المكتب عن بُعد، إلخ</string>
     <string name="wake_when_plugged_or_unplugged_title">الإيقاظ عند التوصيل</string>
     <string name="wake_when_plugged_or_unplugged_summary">تشغيل الشاشة عند الاتصال أو قطع الاتصال بمصدر الطاقة</string>
+
+    <!-- Added: completed Arabic translations (strings) -->
+    <string name="show_dev_countdown_cm">{count, plural,
+      =1      {أنت الآن على بُعد خطوة واحدة من تفعيل إعدادات المطوّر.}
+      other   {أنت الآن على بُعد # خطوة من تفعيل إعدادات المطوّر.}
+    }</string>
+    <string name="high_touch_polling_rate_title">معدل استطلاع مرتفع لشاشة اللمس</string>
+    <string name="high_touch_polling_rate_summary">زيادة معدل استطلاع شاشة اللمس</string>
+    <string name="tethering_allow_vpn_upstreams_title">استخدام VPN للأجهزة المتصلة</string>
+    <string name="tethering_allow_vpn_upstreams_summary">عند استخدام هذا الجهاز لشبكة VPN، ستستخدم جميع الأجهزة المتصلة بنقطة الاتصال شبكة VPN نفسها</string>
+    <string name="fingerprint_enroll_find_sensor_message_front">حدد موقع مستشعر بصمة الإصبع في مقدمة هاتفك.</string>
+    <string name="fingerprint_enroll_find_sensor_message_rear">حدد موقع مستشعر بصمة الإصبع في مؤخرة هاتفك.</string>
+    <string name="fingerprint_enroll_find_sensor_message_side">حدد موقع مستشعر بصمة الإصبع على جانب هاتفك.</string>
+    <string name="fingerprint_enroll_touch_dialog_message_front">المس المستشعر في مقدمة هاتفك.</string>
+    <string name="fingerprint_enroll_touch_dialog_message_rear">المس المستشعر في مؤخرة هاتفك.</string>
+    <string name="fingerprint_enroll_touch_dialog_message_side">المس المستشعر على جانب هاتفك.</string>
+    <string name="auto_brightness_one_shot_title">السطوع التلقائي بضغطة واحدة</string>
+    <string name="auto_brightness_one_shot_summary">لن يتم ضبط السطوع إلا لحظة تشغيل الشاشة</string>
+    <string name="storage_warning_internal">تحذير: قد لا يعمل هذا الخيار بشكل صحيح أو قد يؤدي إلى فقدان البيانات، ولذلك لا يُنصح به!</string>
+    <string name="assisted_gps">استخدام GPS المعزز</string>
+    <string name="assisted_gps_summary">تنزيل بيانات مساعدة الأقمار الصناعية من الإنترنت، ما قد يحسّن أداء بدء تشغيل GPS بشكل كبير. أما في المكالمات الطارئة، فيُسمح دائمًا باستخدام GPS المعزز.</string>
+    <string name="battery_technology">التقنية</string>
+    <string name="battery_health">الصحة</string>
+    <string name="battery_health_good">جيدة</string>
+    <string name="battery_health_overheat">ارتفاع الحرارة</string>
+    <string name="battery_health_dead">معطلة</string>
+    <string name="battery_health_over_voltage">جهد زائد</string>
+    <string name="battery_health_unspecified_failure">عطل غير محدد</string>
+    <string name="battery_health_cold">باردة</string>
+    <string name="battery_health_unknown">غير معروفة</string>
+    <string name="battery_temperature">درجة الحرارة</string>
+    <string name="battery_voltage">الجهد</string>
+    <string name="battery_charge_counter_summary">%1$d mAh</string>
+    <string name="battery_design_capacity">سعة التصميم</string>
+    <string name="battery_design_capacity_summary">%1$d mAh</string>
+    <string name="battery_maximum_capacity">السعة القصوى</string>
+    <string name="battery_maximum_capacity_summary">%1$d mAh (%2$d%%)</string>
+    <string name="face_enrolling_close_to_continue">اطوِ الهاتف أثناء الإعداد</string>
+    <string name="face_enrolling_close_to_continue_description">يجب طي الهاتف لإعداد فتح القفل بالوجه أو استخدامه</string>
+    <string name="face_enrolling_do_it_later">إجراء ذلك لاحقًا</string>
+
 </resources>
