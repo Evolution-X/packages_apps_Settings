@@ -414,11 +414,10 @@
     <item msgid="4295717421282345505">"تصحيح الأخطاء"</item>
     <item msgid="8657797891533816070">"مطوّل"</item>
   </string-array>
-      <string-array name="cdma_system_select_choices">
-        <item>"الرئيسية فقط"</item>
-        <item>"تلقائي"</item>
-        <item>تلقائي</item>
-    </string-array>
+  <string-array name="cdma_system_select_choices">
+    <item>"الرئيسية فقط"</item>
+    <item>"تلقائي"</item>
+  </string-array>
   <string-array name="preferred_network_mode_choices">
     <item msgid="5746729990546256950">"‏GSM/WCDMA المُفضَّل"</item>
     <item msgid="6443811977675152844">"‏نظام GSM فقط"</item>
