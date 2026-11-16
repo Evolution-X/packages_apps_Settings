@@ -2523,7 +2523,7 @@
     <string name="accessibility_tutorial_dialog_message_volume" msgid="3785791536286606664">"لاستخدام هذه الميزة، اضغط مع الاستمرار على كلا مفتاحَي مستوى الصوت"</string>
     <string name="accessibility_tutorial_dialog_message_triple" msgid="5219991116201165146">"لبدء استخدام ميزة التكبير أو إيقافها، انقر ثلاث مرات في أي مكان على الشاشة."</string>
     <string name="accessibility_tutorial_dialog_tripletap_instruction" msgid="7549293553589934">"‏لبدء استخدام ميزة التكبير أو إيقافها، انقر سريعًا على الشاشة %1$d مرّات"</string>
-    <string name="accessibility_tutorial_dialog_twofinger_doubletap_instruction" msgid="1007756360115974649">"لبدء استخدام ميزة التكبير أو إيقافها، انقر سريعًا على الشاشة مرّتين باستخدام إصبعين"</string>
+    <string name="accessibility_tutorial_dialog_twofinger_doubletap_instruction" msgid="1007756360115974649">"لبدء استخدام ميزة التكبير أو إيقافها، انقر سريعًا على الشاشة مرّتين باستخدام %1$d من الأصابع"</string>
     <string name="accessibility_tutorial_dialog_message_quick_setting" msgid="3715446725334547432">"{count,plural, =1{لاستخدام هذه الميزة، مرِّر سريعًا من أعلى الشاشة إلى أسفلها. ثم ابحث عن مربّع {featureName}.}zero{لاستخدام هذه الميزة، مرِّر سريعًا من أعلى الشاشة إلى أسفلها باستخدام # إصبع. ثم ابحث عن مربّع {featureName}.}two{لاستخدام هذه الميزة، مرِّر سريعًا من أعلى الشاشة إلى أسفلها باستخدام إصبعين. ثم ابحث عن مربّع {featureName}.}few{لاستخدام هذه الميزة، مرِّر سريعًا من أعلى الشاشة إلى أسفلها باستخدام # أصابع. ثم ابحث عن مربّع {featureName}.}many{لاستخدام هذه الميزة، مرِّر سريعًا من أعلى الشاشة إلى أسفلها باستخدام # إصبعًا. ثم ابحث عن مربّع {featureName}.}other{لاستخدام هذه الميزة، مرِّر سريعًا من أعلى الشاشة إلى أسفلها باستخدام # إصبع. ثم ابحث عن مربّع {featureName}.}}"</string>
     <string name="accessibility_tutorial_dialog_shortcut_unavailable_in_suw" msgid="3847728530771929959">"سيكون هذا الاختصار متاحًا بعد الانتهاء من عملية إعداد الجهاز."</string>
     <string name="accessibility_tutorial_dialog_message_gesture" msgid="4148062210755434854">"لاستخدام هذه الميزة، مرِّر سريعًا من أسفل الشاشة للأعلى بإصبعين.\n\nللتبديل بين الميزات، مرِّر سريعًا للأعلى بإصبعين مع تثبيتهما."</string>
@@ -6235,4 +6235,38 @@
     <string name="permit_access_hid" msgid="870824396872060949">"‏السماح للتطبيق بالعثور على أجهزة الواجهة البشرية (HID)"</string>
     <string name="allow_access_hid_description" msgid="5950783046013896271">"‏في حال منح الإذن، قد تعيد التطبيقات الضارة برمجة أجهزة الواجهة البشرية (HID) لاختراق نظامك. على سبيل المثال، يمكن للتطبيقات محاكاة إدخالات لوحة المفاتيح أو الماوس للتحكّم في نظامك عندما لا يكون مفتوحًا. لذا يُرجى التأكّد من أنّ تلك التطبيقات موثوقة عند منحها إذن الوصول."</string>
     <string name="keywords_access_hid" msgid="682455265293135353">"جهاز واجهة بشرية، بشرية، وصول، جهاز"</string>
+
+    <!-- Added: completed Arabic translations (strings) -->
+    <string name="wifi_calling_roaming_mode_summary"><xliff:g id="wfc_roaming_preference" example="Wi-Fi">%1$s</xliff:g></string>
+    <string name="status_iccid">ICCID</string>
+    <string name="service_client_name"><xliff:g id="client_name">%1$s</xliff:g></string>
+    <string name="service_process_name"><xliff:g id="process">%1$s</xliff:g></string>
+    <string name="testing_sim_toolkit">مجموعة أدوات SIM</string>
+    <string name="power_audio">الصوت</string>
+    <string name="power_video">الفيديو</string>
+    <string name="power_sensors">المستشعرات</string>
+    <string name="power_memory">الذاكرة</string>
+    <string name="power_idle">خمول الهاتف</string>
+    <string name="battery_saver_seekbar_title"><xliff:g id="percent">%1$s</xliff:g></string>
+    <string name="zen_mode_calls_summary_one"><xliff:g id="caller type" example="contacts">%1$s</xliff:g></string>
+    <string name="storage_percentage_format">
+        <xliff:g id="percentage" example="16%">%1$s%%</xliff:g>
+    </string>
+    <string name="platform_compat_target_sdk_title">مفعّل لـ targetSdkVersion &gt;= <xliff:g id="number" example="29">%d</xliff:g></string>
+    <string name="personal_context_title">مدير السياق الشخصي</string>
+
+
+    <!-- Added: completed Arabic translations (string-arrays) -->
+    <string-array name="graphics_driver_all_apps_preference_values">
+        <item>@string/graphics_driver_app_preference_default</item>
+        <item>@string/graphics_driver_app_preference_production_driver</item>
+        <item>@string/graphics_driver_app_preference_prerelease_driver</item>
+    </string-array>
+    <string-array name="graphics_driver_app_preference_values">
+        <item>@string/graphics_driver_app_preference_default</item>
+        <item>@string/graphics_driver_app_preference_prerelease_driver</item>
+        <item>@string/graphics_driver_app_preference_production_driver</item>
+        <item>@string/graphics_driver_app_preference_system</item>
+    </string-array>
+
 </resources>
