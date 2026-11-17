@@ -415,8 +415,8 @@
     <item msgid="8657797891533816070">"مطوّل"</item>
   </string-array>
   <string-array name="cdma_system_select_choices">
-    <item msgid="1205665684426617345">"الرئيسية فقط"</item>
-    <item msgid="6691772120712000966">"تلقائي"</item>
+    <item>"الرئيسية فقط"</item>
+    <item>"تلقائي"</item>
   </string-array>
   <string-array name="preferred_network_mode_choices">
     <item msgid="5746729990546256950">"‏GSM/WCDMA المُفضَّل"</item>
@@ -532,4 +532,113 @@
     <item msgid="5687603742365489342">"الإعدادات السريعة"</item>
     <item msgid="5454862951059393431">"شاشة القفل"</item>
   </string-array>
+
+    <!-- Added: completed Arabic translations (string-arrays) -->
+    <string-array name="lockscreen_display_timeout_entries">
+        <item>@string/lockscreen_display_timeout_10s</item>
+        <item>@string/lockscreen_display_timeout_15s</item>
+        <item>@string/lockscreen_display_timeout_30s</item>
+        <item>@string/lockscreen_display_timeout_1m</item>
+        <item>@string/lockscreen_display_timeout_2m</item>
+        <item>@string/lockscreen_display_timeout_5m</item>
+        <item>@string/lockscreen_display_timeout_10m</item>
+        <item>@string/lockscreen_display_timeout_30m</item>
+    </string-array>
+    <string-array name="dark_ui_scheduler_preference_titles">
+        <item>@string/dark_ui_auto_mode_never</item>
+        <item>@string/dark_ui_auto_mode_custom</item>
+        <item>@string/dark_ui_auto_mode_auto</item>
+    </string-array>
+    <string-array name="dark_ui_scheduler_with_bedtime_preference_titles">
+        <item>@string/dark_ui_auto_mode_never</item>
+        <item>@string/dark_ui_auto_mode_custom</item>
+        <item>@string/dark_ui_auto_mode_auto</item>
+        <item>@string/dark_ui_auto_mode_custom_bedtime</item>
+    </string-array>
+    <string-array name="wifi_tether_security">
+        <item>@string/wifi_security_sae</item>
+        <item>@string/wifi_security_psk_sae</item>
+        <item>@string/wifi_security_wpa2</item>
+        <item>@string/wifi_security_none</item>
+    </string-array>
+    <string-array name="swipe_direction_titles">
+        <item>@string/swipe_direction_rtl</item>
+        <item>@string/swipe_direction_ltr</item>
+    </string-array>
+    <string-array name="wifi_privacy_entries_ext">
+        <item>استخدام عنوان MAC عشوائي لكل اتصال (الإعداد التلقائي)</item>
+        <item>استخدام عنوان MAC عشوائي لكل شبكة</item>
+        <item>استخدام MAC الجهاز</item>
+    </string-array>
+    <string-array name="enhanced_4g_lte_mode_title_variant">
+        <item>@string/enhanced_4g_lte_mode_title</item>
+        <item>@string/enhanced_4g_lte_mode_title_advanced_calling</item>
+        <item>@string/enhanced_4g_lte_mode_title_4g_calling</item>
+    </string-array>
+    <string-array name="rtt_setting_mode">
+        <item></item>
+        <item>@string/rtt_settings_no_visible</item>
+        <item>@string/rtt_settings_visible_during_call</item>
+        <item>@string/rtt_settings_always_visible</item>
+    </string-array>
+    <string-array name="ingress_rate_limit_entries">
+        <item>@string/ingress_rate_limit_no_limit_entry</item>
+        <item>128kbps</item>
+        <item>256kbps</item>
+        <item>1Mbps</item>
+        <item>5Mbps</item>
+        <item>15Mbps</item>
+    </string-array>
+    <string-array name="ingress_rate_limit_values">
+        <item>-1</item>
+        <item>16000</item>
+        <item>32000</item>
+        <item>125000</item>
+        <item>625000</item>
+        <item>1875000</item>
+    </string-array>
+    <string-array name="temperature_units">
+        <item>default</item>
+        <item>celsius</item>
+        <item>fahrenhe</item>
+    </string-array>
+    <string-array name="first_day_of_week">
+        <item>default</item>
+        <item>sun</item>
+        <item>mon</item>
+        <item>tue</item>
+        <item>wed</item>
+        <item>thu</item>
+        <item>fri</item>
+        <item>sat</item>
+    </string-array>
+    <string-array name="measurement_system">
+        <item>default</item>
+        <item>metric</item>
+        <item>ussystem</item>
+        <item>uksystem</item>
+    </string-array>
+    <string-array name="terms_of_address">
+        <item>غير محدّد</item>
+        <item>محايد</item>
+        <item>مؤنث</item>
+        <item>مذكر</item>
+    </string-array>
+    <string-array name="terms_of_address_unsupported_locales">
+    </string-array>
+    <string-array name="terms_of_address_supported_languages">
+        <item>fr</item>
+        <item>es</item>
+        <item>it</item>
+        <item>de</item>
+    </string-array>
+    <string-array name="private_space_auto_lock_options">
+        <item>@string/private_space_auto_lock_every_time</item>
+        <item>@string/private_space_auto_lock_after_inactivity</item>
+        <item>@string/private_space_auto_lock_after_device_restart</item>
+    </string-array>
+    <string-array name="fingerprint_acquired_vendor">
+        <item>بصمة الإصبع غير متحركة</item>
+    </string-array>
+
 </resources>
