@@ -26,8 +26,8 @@ import androidx.core.graphics.PathParser;
 import com.android.settings.R;
 
 /**
- * Draws the Evolution X wordmark with a K-pop holographic treatment: a pink,
- * violet and cyan gradient sweeping across the outline, a soft neon glow with
+ * Draws the Evolution X wordmark with a Vice City sunset treatment: a purple,
+ * pink and orange gradient sweeping across the outline, a soft neon glow with
  * a chromatic fringe, a periodic shine streak and a few twinkling sparkles.
  *
  * All geometry is expressed in the 1080x240 viewport of
@@ -37,9 +37,11 @@ public class GlowView extends View {
     private static final float VIEWPORT_W = 1080f;
     private static final float VIEWPORT_H = 240f;
 
-    private static final int PINK   = 0xFFFF2E9A;
-    private static final int VIOLET = 0xFF8B5CF6;
-    private static final int CYAN   = 0xFF22D3EE;
+    // Vice City sunset palette (GTA VI): violet dusk into hot pink, then
+    // a warm orange horizon.
+    private static final int PURPLE = 0xFF7B2FF7;
+    private static final int PINK   = 0xFFFF3D9A;
+    private static final int ORANGE = 0xFFFF8A3D;
 
     // Gradient vector (viewport units). One sweep moves it by its own length,
     // so the repeating gradient loops seamlessly.
@@ -85,8 +87,8 @@ public class GlowView extends View {
     private final Matrix mShaderMatrix = new Matrix();
 
     private final Paint mGlowPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-    private final Paint mCyanPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-    private final Paint mPinkPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+    private final Paint mCoolFringePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+    private final Paint mWarmFringePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
     private final Paint mFillPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
     private final Paint mStrokePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
     private final Paint mShineFill = new Paint(Paint.ANTI_ALIAS_FLAG);
@@ -139,15 +141,15 @@ public class GlowView extends View {
         mGlowPaint.setStrokeJoin(Paint.Join.ROUND);
         mGlowPaint.setAlpha(GLOW_ALPHA);
 
-        mCyanPaint.setStyle(Paint.Style.STROKE);
-        mCyanPaint.setStrokeJoin(Paint.Join.ROUND);
-        mCyanPaint.setColor(CYAN);
-        mCyanPaint.setAlpha(FRINGE_ALPHA);
+        mCoolFringePaint.setStyle(Paint.Style.STROKE);
+        mCoolFringePaint.setStrokeJoin(Paint.Join.ROUND);
+        mCoolFringePaint.setColor(PURPLE);
+        mCoolFringePaint.setAlpha(FRINGE_ALPHA);
 
-        mPinkPaint.setStyle(Paint.Style.STROKE);
-        mPinkPaint.setStrokeJoin(Paint.Join.ROUND);
-        mPinkPaint.setColor(PINK);
-        mPinkPaint.setAlpha(FRINGE_ALPHA);
+        mWarmFringePaint.setStyle(Paint.Style.STROKE);
+        mWarmFringePaint.setStrokeJoin(Paint.Join.ROUND);
+        mWarmFringePaint.setColor(ORANGE);
+        mWarmFringePaint.setAlpha(FRINGE_ALPHA);
 
         mFillPaint.setStyle(Paint.Style.FILL);
         mFillPaint.setAlpha(FILL_ALPHA);
@@ -206,18 +208,18 @@ public class GlowView extends View {
 
         mGlowPaint.setStrokeWidth(GLOW_STROKE * mScale);
         mGlowPaint.setMaskFilter(glowBlur);
-        mCyanPaint.setStrokeWidth(FRINGE_STROKE * mScale);
-        mCyanPaint.setMaskFilter(fringeBlur);
-        mPinkPaint.setStrokeWidth(FRINGE_STROKE * mScale);
-        mPinkPaint.setMaskFilter(fringeBlur);
+        mCoolFringePaint.setStrokeWidth(FRINGE_STROKE * mScale);
+        mCoolFringePaint.setMaskFilter(fringeBlur);
+        mWarmFringePaint.setStrokeWidth(FRINGE_STROKE * mScale);
+        mWarmFringePaint.setMaskFilter(fringeBlur);
         mStrokePaint.setStrokeWidth(MAIN_STROKE * mScale);
         mShineStroke.setStrokeWidth(MAIN_STROKE * mScale);
 
         mHolo = new LinearGradient(
                 mOx + GRAD_X1 * mScale, mOy + GRAD_Y1 * mScale,
                 mOx + GRAD_X2 * mScale, mOy + GRAD_Y2 * mScale,
-                new int[]{ PINK, VIOLET, CYAN, PINK },
-                new float[]{ 0f, 0.33f, 0.66f, 1f },
+                new int[]{ PURPLE, PINK, ORANGE, PINK, PURPLE },
+                new float[]{ 0f, 0.25f, 0.5f, 0.75f, 1f },
                 Shader.TileMode.REPEAT);
     }
 
@@ -242,12 +244,12 @@ public class GlowView extends View {
 
         canvas.save();
         canvas.translate(-FRINGE_SHIFT * mScale, 0f);
-        canvas.drawPath(mLogo, mCyanPaint);
+        canvas.drawPath(mLogo, mCoolFringePaint);
         canvas.restore();
 
         canvas.save();
         canvas.translate(FRINGE_SHIFT * mScale, 0f);
-        canvas.drawPath(mLogo, mPinkPaint);
+        canvas.drawPath(mLogo, mWarmFringePaint);
         canvas.restore();
 
         // Glassy fill and gradient outline
