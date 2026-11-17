@@ -27,7 +27,7 @@
     <string name="show_dev_on_cm">مكّنتَ خيارات المطور!</string>
     <string name="show_dev_already_cm">لا داعي، فخيارات المطور مفعّلة.</string>
     <string name="status_bar_double_tap_to_sleep_title">اضغط للنوم</string>
-    <string name="status_bar_double_tap_to_sleep_summary">الضغط مرتين فوق شريط الحالة لإطفاء الشاشة</string>
+    <string name="status_bar_double_tap_to_sleep_summary">انقر مرتين على مساحة فارغة في الشاشة الرئيسية لإطفاء الشاشة</string>
     <string name="heads_up_notifications_enabled_title">الإشعارات العائمة</string>
     <string name="heads_up_notifications_enabled_summary">عرض الإشعارات ذات الأولوية في إطار عائم صغير</string>
     <string name="high_touch_sensitivity_title">حساسية ذات لمس عالي</string>
