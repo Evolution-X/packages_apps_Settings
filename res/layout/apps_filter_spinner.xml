@@ -35,7 +35,7 @@
         android:layout_width="56dp"
         android:layout_height="56dp"
         android:layout_centerHorizontal="true"
-        android:layout_toRightOf="@+id/filter_spinner"
+        android:layout_toEndOf="@+id/filter_spinner"
         android:contentDescription="@string/configure"
         android:scaleType="center"
         android:src="@drawable/ic_apps_filter_settings_24dp"

@@ -24,14 +24,15 @@
         android:id="@+id/app_icon"
         style="@style/AppAuthenticationPolicyIcon"
         android:layout_width="24dp"
-        android:layout_height="24dp"/>
+        android:layout_height="24dp"
+        android:layout_alignParentStart="true"/>
 
     <RelativeLayout
         android:id="@+id/app_details"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/app_icon"
-        android:layout_toLeftOf="@id/expand"
+        android:layout_toEndOf="@id/app_icon"
+        android:layout_toStartOf="@id/expand"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:orientation="vertical">
