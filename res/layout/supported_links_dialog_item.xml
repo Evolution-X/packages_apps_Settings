@@ -28,5 +28,5 @@
      android:textAlignment="viewStart"
      android:textAppearance="?android:attr/textAppearanceListItemSmall"
      android:textColor="?android:attr/textColorAlertDialogListItem"
-     android:drawableLeft="?android:attr/listChoiceIndicatorMultiple" />
+     android:drawableStart="?android:attr/listChoiceIndicatorMultiple" />
 
