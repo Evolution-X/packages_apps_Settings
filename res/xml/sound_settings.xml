@@ -206,6 +206,14 @@
             android:defaultValue="false"
             android:order="-112"/>
 
+        <!-- Volume steps -->
+        <Preference
+            android:key="volume_steps"
+            android:title="@string/volume_steps_title"
+            android:summary="@string/volume_steps_summary"
+            android:fragment="com.android.settings.sound.VolumeSteps"
+            android:order="-113"/>
+
         <!-- Spatial audio -->
         <Preference
             android:key="spatial_audio_summary"
