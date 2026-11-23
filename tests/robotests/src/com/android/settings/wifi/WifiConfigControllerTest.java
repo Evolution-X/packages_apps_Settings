@@ -17,7 +17,7 @@
 package com.android.settings.wifi;
 
 import static com.android.settings.wifi.WifiConfigController.PRIVACY_PREF_INDEX_DEVICE_MAC;
-import static com.android.settings.wifi.WifiConfigController.PRIVACY_PREF_INDEX_PER_CONNECTION_RANDOMIZED_MAC;
+import static com.android.settings.wifi.WifiConfigController.PRIVACY_PREF_INDEX_PER_NETWORK_RANDOMIZED_MAC;
 import static com.android.settings.wifi.WifiConfigController.DHCP_SPINNER_INDEX_SEND_DHCP_HOST_NAME_ENABLE;
 import static com.android.settings.wifi.WifiConfigController.DHCP_SPINNER_INDEX_SEND_DHCP_HOST_NAME_DISABLE;
 
@@ -359,7 +359,7 @@ public class WifiConfigControllerTest {
 
         assertThat(privacySetting.getVisibility()).isEqualTo(View.VISIBLE);
         assertThat(privacySetting.getSelectedItemPosition()).isEqualTo(
-                PRIVACY_PREF_INDEX_PER_CONNECTION_RANDOMIZED_MAC);
+                PRIVACY_PREF_INDEX_PER_NETWORK_RANDOMIZED_MAC);
     }
 
     @Test

@@ -367,6 +367,11 @@ public class WifiConfigController2 implements TextWatcher,
         if (!mHideMeteredAndPrivacy && mWifiManager.isConnectedMacRandomizationSupported()) {
             mPrivacySettingsSpinner = mView.findViewById(R.id.privacy_settings);
             mPrivacySettingsSpinner.setAdapter(getSpinnerAdapter(R.array.wifi_privacy_entries_ext));
+            // A new network defaults to a stable per-network MAC. Without this, the spinner stays
+            // on index 0, which is RANDOMIZATION_ALWAYS (100) in this ROM: the MAC is
+            // re-randomized on every connection and every association burns a new DHCP lease.
+            mPrivacySettingsSpinner.setSelection(
+                    WifiConfigController.PRIVACY_PREF_INDEX_PER_NETWORK_RANDOMIZED_MAC);
             if (Flags.androidVWifiApi()) {
                 mDhcpSettingsSpinner = mView.findViewById(R.id.dhcp_settings);
                 mDhcpSettingsSpinner.setAdapter(getSpinnerAdapter(R.array.wifi_dhcp_entries));

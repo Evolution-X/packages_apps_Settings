@@ -130,7 +130,9 @@ public class WifiPrivacyPreferenceController2 extends BasePreferenceController i
             case PRIVACY_PREF_INDEX_DEVICE_MAC -> WifiConfiguration.RANDOMIZATION_NONE;
             case PRIVACY_PREF_INDEX_PER_NETWORK_RANDOMIZED_MAC -> WifiConfiguration.RANDOMIZATION_PERSISTENT;
             case PRIVACY_PREF_INDEX_PER_CONNECTION_RANDOMIZED_MAC -> WifiConfiguration.RANDOMIZATION_ALWAYS;
-            default -> WifiConfiguration.RANDOMIZATION_ALWAYS;
+            // Fall back to the per-network value instead of 100: an unexpected index must not
+            // turn into RANDOMIZATION_ALWAYS, which re-randomizes the MAC on every connection.
+            default -> WifiConfiguration.RANDOMIZATION_PERSISTENT;
         };
     }
 
