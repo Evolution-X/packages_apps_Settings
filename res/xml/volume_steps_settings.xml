@@ -42,4 +42,20 @@
         settings:interval="1"
         settings:units="@string/steps_unit" />
 
+    <org.evolution.settings.preferences.CustomSeekBarPreference
+        android:key="max_ring_volume"
+        android:title="@string/max_ring_volume_title"
+        android:max="30"
+        settings:min="5"
+        settings:interval="1"
+        settings:units="@string/steps_unit" />
+
+    <org.evolution.settings.preferences.CustomSeekBarPreference
+        android:key="max_notification_volume"
+        android:title="@string/max_notification_volume_title"
+        android:max="30"
+        settings:min="5"
+        settings:interval="1"
+        settings:units="@string/steps_unit" />
+
 </PreferenceScreen>
