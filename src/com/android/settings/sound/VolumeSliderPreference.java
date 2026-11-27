@@ -18,7 +18,10 @@ package com.android.settings.sound;
 
 import static com.android.internal.jank.InteractionJankMonitor.CUJ_SETTINGS_SLIDER;
 
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.media.AudioManager;
 import android.text.TextUtils;
 import android.util.AttributeSet;
@@ -66,6 +69,42 @@ public class VolumeSliderPreference extends RestrictedSliderPreference {
     private Locale mLocale;
     private NumberFormat mNumberFormat;
 
+    private final MaxChangedReceiver mMaxChangedReceiver = new MaxChangedReceiver();
+    private boolean mReceiverRegistered;
+
+    private final class MaxChangedReceiver extends BroadcastReceiver {
+        public void init(Context context) {
+            if (mReceiverRegistered) {
+                return;
+            }
+            final IntentFilter filter = new IntentFilter(AudioManager.ACTION_MAX_CHANGED);
+            context.registerReceiver(this, filter, Context.RECEIVER_NOT_EXPORTED);
+            mReceiverRegistered = true;
+        }
+
+        public void unregister(Context context) {
+            if (!mReceiverRegistered) {
+                return;
+            }
+            context.unregisterReceiver(this);
+            mReceiverRegistered = false;
+        }
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if (mAudioManager == null) {
+                return;
+            }
+            final int max = mAudioManager.getStreamMaxVolume(mStream);
+            if (mVolumizer != null) {
+                mVolumizer.updateMaxVolume(max);
+            }
+            setMax(max);
+            setMin(mAudioManager.getStreamMinVolumeInt(mStream));
+            setValue(mAudioManager.getStreamVolume(mStream));
+        }
+    }
+
     public VolumeSliderPreference(Context context, AttributeSet attrs, int defStyleAttr,
             String packageName, int uid) {
         super(context, attrs, defStyleAttr, packageName, uid);
@@ -102,6 +141,7 @@ public class VolumeSliderPreference extends RestrictedSliderPreference {
         // eg: AudioManager.STREAM_BLUETOOTH_SCO
         setMin(mAudioManager.getStreamMinVolumeInt(mStream));
         setValue(mAudioManager.getStreamVolume(mStream));
+        mMaxChangedReceiver.init(getContext());
     }
 
     public void setCallback(Callback callback) {
@@ -114,6 +154,7 @@ public class VolumeSliderPreference extends RestrictedSliderPreference {
 
     @Override
     public void onDetached() {
+        mMaxChangedReceiver.unregister(getContext());
         destroyVolumizer();
         super.onDetached();
     }

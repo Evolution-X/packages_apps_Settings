@@ -113,7 +113,7 @@ public class SliderVolumizer implements OnSliderTouchListener, OnChangeListener,
     private final AudioManager mAudioManager;
     private final NotificationManager mNotificationManager;
     private final int mStreamType;
-    private final int mMaxStreamVolume;
+    private int mMaxStreamVolume;
     private boolean mAffectedByRingerMode;
     private boolean mNotificationOrRing;
     private final Receiver mReceiver = new Receiver();
@@ -286,6 +286,17 @@ public class SliderVolumizer implements OnSliderTouchListener, OnChangeListener,
         updateSliderState();
         mSlider.addOnChangeListener(this);
         mSlider.addOnSliderTouchListener(this);
+    }
+
+    public void updateMaxVolume() {
+        updateMaxVolume(mAudioManager.getStreamMaxVolume(mStreamType));
+    }
+
+    public void updateMaxVolume(int max) {
+        mMaxStreamVolume = max;
+        if (mSlider != null) {
+            mSlider.setValueTo(max);
+        }
     }
 
     private boolean isZenMuted() {
