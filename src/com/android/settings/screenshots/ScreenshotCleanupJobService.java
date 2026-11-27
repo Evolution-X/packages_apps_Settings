@@ -26,46 +26,32 @@ import java.util.concurrent.TimeUnit;
  */
 public class ScreenshotCleanupJobService extends JobService {
 
-    public static final String SETTING_KEY = "screenshot_delete_after_days";
+    public static final String SETTING_KEY = "screenshot_delete_after_hours";
 
     private static final String TAG = "ScreenshotCleanup";
     private static final int JOB_ID = 0x5343524E;
-    private static final int MIN_DAYS = 1;
-    private static final int MAX_DAYS = 7;
+    private static final int MIN_HOURS = 1;
+    private static final int MAX_HOURS = 7 * 24;
 
     /**
-     * Schedules or cancels the cleanup job for the supplied setting value.
+     * Schedules the cleanup job using an interval based on the retention period,
+     * or cancels it for any other value.
      */
-    public static void schedule(Context context, String days) {
-        int value = 0;
-        if (days != null) {
-            try {
-                value = Integer.parseInt(days);
-            } catch (NumberFormatException ignored) {
-                // Treat malformed values as disabled.
-            }
-        }
-        schedule(context, value);
-    }
-
-    /**
-     * Schedules the cleanup job for 1-7 days, or cancels it for any other value.
-     */
-    public static void schedule(Context context, int days) {
+    public static void schedule(Context context, int hours) {
         final JobScheduler jobScheduler = context.getSystemService(JobScheduler.class);
         if (jobScheduler == null) {
             Log.w(TAG, "JobScheduler unavailable");
             return;
         }
 
-        if (days < MIN_DAYS || days > MAX_DAYS) {
+        if (hours < MIN_HOURS || hours > MAX_HOURS) {
             jobScheduler.cancel(JOB_ID);
             return;
         }
 
         final JobInfo job = new JobInfo.Builder(JOB_ID,
                 new ComponentName(context, ScreenshotCleanupJobService.class))
-                .setPeriodic(TimeUnit.DAYS.toMillis(1))
+                .setPeriodic(TimeUnit.HOURS.toMillis(Math.min(hours, 24)))
                 .setPersisted(true)
                 .build();
         if (jobScheduler.schedule(job) != JobScheduler.RESULT_SUCCESS) {
@@ -91,14 +77,14 @@ public class ScreenshotCleanupJobService extends JobService {
     }
 
     private void deleteOldScreenshots() {
-        final int days = Settings.System.getIntForUser(getContentResolver(), SETTING_KEY, 0,
+        final int hours = Settings.System.getIntForUser(getContentResolver(), SETTING_KEY, MAX_HOURS,
                 UserHandle.myUserId());
-        if (days < MIN_DAYS || days > MAX_DAYS) {
+        if (hours < MIN_HOURS || hours > MAX_HOURS) {
             return;
         }
 
         final long cutoff = (System.currentTimeMillis() / 1000)
-                - TimeUnit.DAYS.toSeconds(days);
+                - TimeUnit.HOURS.toSeconds(hours);
         final String screenshotsPath = Environment.DIRECTORY_PICTURES
                 + "/" + Environment.DIRECTORY_SCREENSHOTS + "/";
         final Uri collection = MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
@@ -113,7 +99,7 @@ public class ScreenshotCleanupJobService extends JobService {
         try {
             final ContentResolver resolver = getContentResolver();
             final int deleted = resolver.delete(collection, selection, selectionArgs);
-            Log.i(TAG, "Deleted " + deleted + " screenshot(s) older than " + days + " day(s)");
+            Log.i(TAG, "Deleted " + deleted + " screenshot(s) older than " + hours + " hour(s)");
         } catch (Exception e) {
             Log.e(TAG, "Unable to delete old screenshots", e);
         }
